@@ -3,6 +3,8 @@
 Vollständige Compliance-Dokumentation und CI/CD-Automatisierung für den **EU Cyber Resilience Act** (Verordnung (EU) 2024/2847) und die **NIS2-Richtlinie** (Richtlinie (EU) 2022/2555) der BAUER GROUP.
 
 > **Live-Dokumentation:** [cra.docs.bauer-group.com](https://cra.docs.bauer-group.com)
+>
+> Verfügbar in **Deutsch**, **English** und **简体中文** (Vereinfachtes Chinesisch)
 
 ## Regulatorische Fristen
 
@@ -18,10 +20,11 @@ Vollständige Compliance-Dokumentation und CI/CD-Automatisierung für den **EU C
 ├── docs/                          # VitePress-Dokumentation
 │   ├── de/                        # Deutsche Dokumentation (69 Seiten)
 │   ├── en/                        # Englische Dokumentation (69 Seiten)
+│   ├── zh/                        # Chinesische Dokumentation (69 Seiten, 简体中文)
 │   ├── public/                    # Statische Assets (Logo, Favicon)
 │   └── .vitepress/
 │       ├── config.ts              # VitePress-Konfiguration
-│       ├── locales/               # DE/EN Navigation + Sidebar
+│       ├── locales/               # DE/EN/ZH Navigation + Sidebar
 │       └── theme/                 # Custom Theme (BAUER CI)
 ├── .github/
 │   ├── actions/                   # 4 Composite Actions (CRA-spezifisch)
@@ -33,20 +36,19 @@ Vollständige Compliance-Dokumentation und CI/CD-Automatisierung für den **EU C
 
 ## Dokumentation
 
-138 Markdown-Seiten in vollständiger DE/EN-Parität, aufgeteilt in 8 Sektionen:
+207 Markdown-Seiten in vollständiger DE/EN/ZH-Parität (69 Seiten × 3 Sprachen), aufgeteilt in 8 Kapitel + Anhang:
 
-| Sektion | Inhalt | Seiten |
-|---------|--------|--------|
-| **Ueberblick** | CRA-Einfuehrung, Zeitplan, Geltungsbereich, Wirtschaftsakteure, Durchsetzung, NIS2 | 15 |
-| **SBOM & Signierung** | Generierung, Format, Speicherung, Signierung, Schluessel, Verifikation | 7 |
-| **Schwachstellenmanagement** | CVE-Monitoring, Dependency-Monitoring, Patch-Management, Risikobewertung, Handling | 6 |
-| **Incident Response** | ENISA-Meldung, Playbook, Kommunikation, Disclosure Policy | 5 |
-| **Supply Chain** | Dependency-Policy, Base-Image-Policy, Third-Party-Assessment, Wirtschaftsakteur-ID | 5 |
-| **Technische Dokumentation** | Produktbeschreibung, Sicherheitsarchitektur, Update-Mechanismus, Support-Zeitraum, Annex VII | 7 |
-| **Konformität** | CE-Kennzeichnung, EU-Erklärung, Selbstbewertung, Module B/C/H, EUCC, Produktklassifizierung | 11 |
-| **Compliance-Matrix** | Anforderungs-Tooling-Zuordnung | 2 |
-
-Zusätzlich: **9 Templates** (ENISA-Fruehwarnung/-Meldung/-Abschlussbericht, Incident-Report, Vulnerability-Report, Risikobewertung, EU-Konformitätserklärung, Produktsicherheitsinformation)
+| Kapitel | Sektion | Inhalt | Seiten |
+|---------|---------|--------|--------|
+| **1** | Überblick | CRA-Einführung, Zeitplan, Geltungsbereich, Wirtschaftsakteure, Durchsetzung, NIS2 | 15 |
+| **2** | SBOM & Signierung | Generierung, Format, Speicherung, Signierung, Schlüssel, Verifikation | 7 |
+| **3** | Schwachstellenmanagement | CVE-Monitoring, Dependency-Monitoring, Patch-Management, Risikobewertung, Handling | 6 |
+| **4** | Incident Response | ENISA-Meldung, Playbook, Kommunikation, Disclosure Policy | 5 |
+| **5** | Supply Chain | Dependency-Policy, Base-Image-Policy, Third-Party-Assessment, Wirtschaftsakteur-ID | 5 |
+| **6** | Technische Dokumentation | Produktbeschreibung, Sicherheitsarchitektur, Update-Mechanismus, Support-Zeitraum, Annex VII | 7 |
+| **7** | Konformität | CE-Kennzeichnung, EU-Erklärung, Selbstbewertung, Module B/C/H, EUCC, Produktklassifizierung | 11 |
+| **8** | Compliance-Matrix | Anforderungs-Tooling-Zuordnung | 2 |
+| **A** | Templates | ENISA-Frühwarnung/-Meldung/-Abschlussbericht, Incident-/Vulnerability-Report, Risikobewertung, EU-Konformitätserklärung, Produktsicherheitsinformation | 9 |
 
 ### CRA-Abdeckung
 
