@@ -1,6 +1,6 @@
 # CRA Compliance Documentation
 
-Vollstaendige Compliance-Dokumentation und CI/CD-Automatisierung fuer den **EU Cyber Resilience Act** (Verordnung (EU) 2024/2847) und die **NIS2-Richtlinie** (Richtlinie (EU) 2022/2555) der BAUER GROUP.
+Vollständige Compliance-Dokumentation und CI/CD-Automatisierung für den **EU Cyber Resilience Act** (Verordnung (EU) 2024/2847) und die **NIS2-Richtlinie** (Richtlinie (EU) 2022/2555) der BAUER GROUP.
 
 > **Live-Dokumentation:** [cra.docs.bauer-group.com](https://cra.docs.bauer-group.com)
 
@@ -9,7 +9,7 @@ Vollstaendige Compliance-Dokumentation und CI/CD-Automatisierung fuer den **EU C
 | Frist | Pflicht |
 |-------|---------|
 | **11.09.2026** | Meldepflichten (24h/72h/14d an ENISA) |
-| **11.12.2027** | Vollstaendige Anwendbarkeit (CE-Kennzeichnung, technische Dokumentation, Konformitaetsbewertung) |
+| **11.12.2027** | Vollständige Anwendbarkeit (CE-Kennzeichnung, technische Dokumentation, Konformitätsbewertung) |
 
 ## Projektstruktur
 
@@ -33,7 +33,7 @@ Vollstaendige Compliance-Dokumentation und CI/CD-Automatisierung fuer den **EU C
 
 ## Dokumentation
 
-138 Markdown-Seiten in vollstaendiger DE/EN-Paritaet, aufgeteilt in 8 Sektionen:
+138 Markdown-Seiten in vollständiger DE/EN-Parität, aufgeteilt in 8 Sektionen:
 
 | Sektion | Inhalt | Seiten |
 |---------|--------|--------|
@@ -43,14 +43,14 @@ Vollstaendige Compliance-Dokumentation und CI/CD-Automatisierung fuer den **EU C
 | **Incident Response** | ENISA-Meldung, Playbook, Kommunikation, Disclosure Policy | 5 |
 | **Supply Chain** | Dependency-Policy, Base-Image-Policy, Third-Party-Assessment, Wirtschaftsakteur-ID | 5 |
 | **Technische Dokumentation** | Produktbeschreibung, Sicherheitsarchitektur, Update-Mechanismus, Support-Zeitraum, Annex VII | 7 |
-| **Konformitaet** | CE-Kennzeichnung, EU-Erklaerung, Selbstbewertung, Module B/C/H, EUCC, Produktklassifizierung | 11 |
+| **Konformität** | CE-Kennzeichnung, EU-Erklärung, Selbstbewertung, Module B/C/H, EUCC, Produktklassifizierung | 11 |
 | **Compliance-Matrix** | Anforderungs-Tooling-Zuordnung | 2 |
 
-Zusaetzlich: **9 Templates** (ENISA-Fruehwarnung/-Meldung/-Abschlussbericht, Incident-Report, Vulnerability-Report, Risikobewertung, EU-Konformitaetserklaerung, Produktsicherheitsinformation)
+Zusätzlich: **9 Templates** (ENISA-Fruehwarnung/-Meldung/-Abschlussbericht, Incident-Report, Vulnerability-Report, Risikobewertung, EU-Konformitätserklärung, Produktsicherheitsinformation)
 
 ### CRA-Abdeckung
 
-- Alle 10 Annexe vollstaendig dokumentiert (I-VII + vereinfachte Erklaerung)
+- Alle 10 Annexe vollständig dokumentiert (I-VII + vereinfachte Erklärung)
 - Alle herstellerrelevanten Artikel (Art. 10-14)
 - Alle Wirtschaftsakteur-Rollen (Art. 15-20)
 - Durchsetzungskette (Art. 22-23, 52-58, 64)
@@ -93,7 +93,7 @@ Zusaetzlich: **9 Templates** (ENISA-Fruehwarnung/-Meldung/-Abschlussbericht, Inc
 ## Quickstart
 
 ```bash
-# Abhaengigkeiten installieren
+# Abhängigkeiten installieren
 npm install
 
 # Entwicklungsserver starten
@@ -121,7 +121,7 @@ npm run docs:preview
 
 ## Deployment
 
-Push auf `main` (Aenderungen in `docs/`, `package.json`, `package-lock.json`) triggert automatisch:
+Push auf `main` (änderungen in `docs/`, `package.json`, `package-lock.json`) triggert automatisch:
 
 1. Checkout + Node.js Setup (via `.nvmrc`)
 2. `npm ci` + Markdown-Lint
@@ -133,7 +133,7 @@ Push auf `main` (Aenderungen in `docs/`, `package.json`, `package-lock.json`) tr
 Die Workflows sind als **Reusable Workflows** konzipiert und koennen von jedem Repository der Organisation eingebunden werden:
 
 ```yaml
-# Taeglicher Vulnerability-Scan
+# Täglicher Vulnerability-Scan
 on:
   schedule:
     - cron: '0 6 * * *'
@@ -166,4 +166,4 @@ Dieses Repository verwendet ein **Dual-License-Modell**:
 
 Die Dokumentation darf mit Namensnennung geteilt und bearbeitet werden, jedoch **nicht fuer kommerzielle Zwecke** verwendet werden.
 
-Copyright (c) 2026 BAUER GROUP
+Copyright © 2026 BAUER GROUP
