@@ -5,6 +5,7 @@ import { zh } from './locales/zh'
 
 export default defineConfig({
   title: 'CRA Compliance',
+  titleTemplate: ':title | BAUER GROUP',
   lastUpdated: true,
   cleanUrls: true,
 
