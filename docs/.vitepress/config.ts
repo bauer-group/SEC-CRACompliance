@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { de } from './locales/de'
 import { en } from './locales/en'
+import { zh } from './locales/zh'
 
 export default defineConfig({
   title: 'CRA Compliance',
@@ -19,7 +20,7 @@ export default defineConfig({
   // Locales (see ./locales/ for nav, sidebar, translations)
   // ---------------------------------------------------------------------------
 
-  locales: { de, en },
+  locales: { de, en, zh },
 
   // ---------------------------------------------------------------------------
   // Shared Theme Config
@@ -55,6 +56,16 @@ export default defineConfig({
                 noResultsText: 'No results for',
                 resetButtonTitle: 'Reset search',
                 footer: { selectText: 'Select', navigateText: 'Navigate', closeText: 'Close' }
+              }
+            }
+          },
+          zh: {
+            translations: {
+              button: { buttonText: '搜索', buttonAriaLabel: '搜索' },
+              modal: {
+                noResultsText: '未找到相关结果',
+                resetButtonTitle: '重置搜索',
+                footer: { selectText: '选择', navigateText: '导航', closeText: '关闭' }
               }
             }
           }

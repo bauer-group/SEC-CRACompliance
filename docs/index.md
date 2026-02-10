@@ -10,6 +10,8 @@ onMounted(() => {
   const lang = navigator.language || navigator.userLanguage || 'en'
   if (lang.startsWith('de')) {
     window.location.href = '/de/'
+  } else if (lang.startsWith('zh')) {
+    window.location.href = '/zh/'
   } else {
     window.location.href = '/en/'
   }
@@ -24,5 +26,9 @@ onMounted(() => {
   <a href="/en/" style="display: flex; flex-direction: column; align-items: center; padding: 2rem 3rem; border: 2px solid var(--vp-c-brand-1); border-radius: 12px; text-decoration: none; transition: all 0.2s;">
     <span style="font-size: 2.5rem;">🇬🇧</span>
     <span style="font-size: 1.2rem; font-weight: 600; margin-top: 0.5rem; color: var(--vp-c-brand-1);">English</span>
+  </a>
+  <a href="/zh/" style="display: flex; flex-direction: column; align-items: center; padding: 2rem 3rem; border: 2px solid var(--vp-c-brand-1); border-radius: 12px; text-decoration: none; transition: all 0.2s;">
+    <span style="font-size: 2.5rem;">🇨🇳</span>
+    <span style="font-size: 1.2rem; font-weight: 600; margin-top: 0.5rem; color: var(--vp-c-brand-1);">简体中文</span>
   </a>
 </div>
