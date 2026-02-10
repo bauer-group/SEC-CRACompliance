@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch, nextTick } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { useData } from 'vitepress'
 
 const { theme } = useData()
@@ -7,12 +7,12 @@ const dismissed = ref(false)
 const bannerRef = ref<HTMLElement | null>(null)
 let observer: ResizeObserver | null = null
 
-const announcement = theme.value.announcement as {
+const announcement = computed(() => theme.value.announcement as {
   text?: string
   type?: 'warning' | 'info' | 'danger'
   dismissible?: boolean
   link?: { url: string; text: string }
-} | undefined
+} | undefined)
 
 const typeStyles: Record<string, Record<string, string>> = {
   warning: {
@@ -32,8 +32,10 @@ const typeStyles: Record<string, Record<string, string>> = {
   },
 }
 
-const bannerType = announcement?.type || 'warning'
-const colors = typeStyles[bannerType] || typeStyles.warning
+const colors = computed(() => {
+  const bannerType = announcement.value?.type || 'warning'
+  return typeStyles[bannerType] || typeStyles.warning
+})
 
 function updateHeight() {
   const height = bannerRef.value?.offsetHeight || 0
