@@ -1,3 +1,9 @@
+## [0.3.1](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.3.0...v0.3.1) (2026-02-10)
+
+### 🐛 Bug Fixes
+
+* Update documentation structure and section numbering across multiple files ([1da2098](https://github.com/bauer-group/SEC-CRACompliance/commit/1da209869ff7b168dd58234494c4b0fbc2d98af1))
+
 ## [0.3.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.2.0...v0.3.0) (2026-02-10)
 
 ### 🚀 Features
