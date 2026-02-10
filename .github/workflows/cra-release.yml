@@ -155,7 +155,7 @@ jobs:
       sbom-signed: ${{ steps.sign.outputs.signed }}
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -163,7 +163,7 @@ jobs:
 
       - name: 📦 Setup Node.js
         if: inputs.run-validation
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ inputs.node-version }}
           cache: npm
@@ -211,13 +211,13 @@ jobs:
 
       - name: 📤 Upload SARIF to GitHub Security
         if: always()
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: ${{ steps.scan.outputs.sarif-path }}
         continue-on-error: true
 
       - name: 📦 Upload CRA artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: cra-release-artifacts
           retention-days: ${{ inputs.retention-days }}
