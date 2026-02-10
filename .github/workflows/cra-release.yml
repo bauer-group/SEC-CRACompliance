@@ -1,0 +1,274 @@
+# =============================================================================
+# CRA Reusable Workflow: Release (Repo-Local)
+# =============================================================================
+# Type 1 Workflow: Generates, signs, and archives CRA compliance artifacts
+# as part of a release. All output stays in the executing repository.
+#
+# Artifacts produced:
+#   - CycloneDX SBOM (signed with Cosign)
+#   - Vulnerability scan report (Trivy + optional Grype + OSV-Scanner)
+#   - SARIF upload to GitHub Security tab
+#
+# Optional: Node.js project validation (lint, build) before artifact generation.
+# Inspired by bauer-group/Automation-Templates nodejs-build.yml.
+#
+# Usage (zero-config):
+#   jobs:
+#     cra-release:
+#       uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-release.yml@main
+#       permissions:
+#         contents: write
+#         id-token: write
+#         security-events: write
+#
+# Usage (with Node.js validation):
+#   jobs:
+#     cra-release:
+#       uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-release.yml@main
+#       with:
+#         run-validation: true
+#         node-version: '24'
+#         validation-command: 'npm run ci'
+#       permissions:
+#         contents: write
+#         id-token: write
+#         security-events: write
+#
+# CRA Reference: Art. 10 Abs. 12, Art. 13 Abs. 23
+# =============================================================================
+
+name: 📦 CRA Release
+
+on:
+  workflow_call:
+    inputs:
+      # -------------------------------------------------------------------
+      # Validation (optional)
+      # -------------------------------------------------------------------
+      run-validation:
+        description: 'Run project validation before generating CRA artifacts'
+        type: boolean
+        required: false
+        default: false
+      node-version:
+        description: 'Node.js version for validation (requires run-validation: true)'
+        type: string
+        required: false
+        default: '24'
+      validation-command:
+        description: 'Validation command (e.g., npm run ci, npm run validate)'
+        type: string
+        required: false
+        default: 'npm run lint'
+
+      # -------------------------------------------------------------------
+      # SBOM & Scanning
+      # -------------------------------------------------------------------
+      scan-target:
+        description: 'Target to scan (directory path or container image)'
+        type: string
+        required: false
+        default: '.'
+      scan-type:
+        description: 'Scan type: fs, image, auto'
+        type: string
+        required: false
+        default: 'auto'
+      sbom-filename:
+        description: 'SBOM output filename'
+        type: string
+        required: false
+        default: 'sbom.cdx.json'
+      sign-sbom:
+        description: 'Sign SBOM with Cosign (requires id-token: write)'
+        type: boolean
+        required: false
+        default: true
+      fail-on-critical:
+        description: 'Fail workflow if CRITICAL vulnerabilities found'
+        type: boolean
+        required: false
+        default: false
+      enable-grype:
+        description: 'Run Grype as additional scan engine'
+        type: boolean
+        required: false
+        default: false
+      enable-osv:
+        description: 'Run OSV-Scanner as additional scan engine'
+        type: boolean
+        required: false
+        default: true
+
+      # -------------------------------------------------------------------
+      # Release & Retention
+      # -------------------------------------------------------------------
+      upload-to-release:
+        description: 'Attach artifacts to GitHub release (requires contents: write)'
+        type: boolean
+        required: false
+        default: true
+      retention-days:
+        description: 'Artifact retention in days'
+        type: number
+        required: false
+        default: 90
+
+    outputs:
+      sbom-path:
+        description: 'Path to the generated SBOM'
+        value: ${{ jobs.cra-release.outputs.sbom-path }}
+      vulnerability-count:
+        description: 'Total vulnerabilities found'
+        value: ${{ jobs.cra-release.outputs.vulnerability-count }}
+      critical-count:
+        description: 'Critical vulnerabilities found'
+        value: ${{ jobs.cra-release.outputs.critical-count }}
+      sbom-signed:
+        description: 'Whether SBOM was signed'
+        value: ${{ jobs.cra-release.outputs.sbom-signed }}
+
+# ---------------------------------------------------------------------------
+# Permissions
+# ---------------------------------------------------------------------------
+
+permissions:
+  contents: write
+  id-token: write
+  security-events: write
+
+# =============================================================================
+# Jobs
+# =============================================================================
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Job: CRA Release Artifacts
+  # ---------------------------------------------------------------------------
+  cra-release:
+    name: 📦 CRA Release Artifacts
+    runs-on: ubuntu-latest
+    outputs:
+      sbom-path: ${{ steps.sbom.outputs.sbom-path }}
+      vulnerability-count: ${{ steps.scan.outputs.total-count }}
+      critical-count: ${{ steps.scan.outputs.critical-count }}
+      sbom-signed: ${{ steps.sign.outputs.signed }}
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ---- Optional: Node.js Validation ----
+
+      - name: 📦 Setup Node.js
+        if: inputs.run-validation
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: npm
+
+      - name: 📚 Install dependencies
+        if: inputs.run-validation
+        run: npm ci
+
+      - name: 🔍 Validate project
+        if: inputs.run-validation
+        run: ${{ inputs.validation-command }}
+
+      # ---- SBOM Generation ----
+
+      - name: 📋 Generate SBOM
+        id: sbom
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-sbom-generate@main
+        with:
+          scan-target: ${{ inputs.scan-target }}
+          scan-type: ${{ inputs.scan-type }}
+          output-file: ${{ inputs.sbom-filename }}
+
+      # ---- SBOM Signing ----
+
+      - name: 🔏 Sign SBOM
+        id: sign
+        if: inputs.sign-sbom
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-sbom-sign@main
+        with:
+          sbom-path: ${{ steps.sbom.outputs.sbom-path }}
+
+      # ---- Vulnerability Scan ----
+
+      - name: 🛡️ Vulnerability scan
+        id: scan
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-vulnerability-scan@main
+        with:
+          scan-target: ${{ inputs.scan-target }}
+          scan-type: ${{ inputs.scan-type }}
+          fail-on-critical: ${{ inputs.fail-on-critical && 'true' || 'false' }}
+          enable-grype: ${{ inputs.enable-grype && 'true' || 'false' }}
+          enable-osv: ${{ inputs.enable-osv && 'true' || 'false' }}
+
+      # ---- Upload & Publish ----
+
+      - name: 📤 Upload SARIF to GitHub Security
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ${{ steps.scan.outputs.sarif-path }}
+        continue-on-error: true
+
+      - name: 📦 Upload CRA artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cra-release-artifacts
+          retention-days: ${{ inputs.retention-days }}
+          path: |
+            ${{ steps.sbom.outputs.sbom-path }}
+            ${{ steps.sbom.outputs.sbom-path }}.sig
+            ${{ steps.sbom.outputs.sbom-path }}.cert
+            ${{ steps.scan.outputs.report-path }}
+
+      - name: 📎 Attach to GitHub Release
+        if: inputs.upload-to-release && github.event_name == 'release'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          SBOM="${{ steps.sbom.outputs.sbom-path }}"
+
+          echo "Attaching CRA artifacts to release ${TAG}"
+
+          # SBOM
+          gh release upload "$TAG" "$SBOM" --clobber
+
+          # Signature + Certificate (if signed)
+          if [ -f "${SBOM}.sig" ]; then
+            gh release upload "$TAG" "${SBOM}.sig" --clobber
+            gh release upload "$TAG" "${SBOM}.cert" --clobber
+          fi
+
+          # Vulnerability report
+          VULN_REPORT="${{ steps.scan.outputs.report-path }}"
+          if [ -f "$VULN_REPORT" ]; then
+            gh release upload "$TAG" "$VULN_REPORT" --clobber
+          fi
+
+      # ---- Summary ----
+
+      - name: 📊 Generate summary
+        if: always()
+        shell: bash
+        run: |
+          echo "## 📦 CRA Release Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Artifact | Status |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|----------|--------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| SBOM (${{ inputs.sbom-filename }}) | ${{ steps.sbom.outputs.component-count }} components |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| SBOM Signed | ${{ steps.sign.outputs.signed || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Vulnerabilities | ${{ steps.scan.outputs.total-count }} total (${{ steps.scan.outputs.critical-count }} critical) |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Project Type | ${{ steps.sbom.outputs.project-type }} |" >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "${{ inputs.run-validation }}" = "true" ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "**Validation:** \`${{ inputs.validation-command }}\` ✅" >> "$GITHUB_STEP_SUMMARY"
+          fi

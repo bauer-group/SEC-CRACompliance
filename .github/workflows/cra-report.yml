@@ -1,0 +1,272 @@
+# =============================================================================
+# CRA Reusable Workflow: API Report (CRA Hub)
+# =============================================================================
+# Type 2 Workflow: Collects all CRA compliance data and sends it to the
+# CRA Compliance Hub application via API.
+#
+# Sends:
+#   - SbomReport:         Full SBOM with component inventory
+#   - VulnerabilityScan:  Scan results with severity counts
+#   - ReleaseInfo:        Release metadata, signatures, attestations
+#
+# All data is pulled from GitHub (no auth needed).
+# API payload uses versioned envelope (cra.docs.bauer-group.com/v1).
+#
+# Usage (zero-config):
+#   jobs:
+#     cra-report:
+#       uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-report.yml@main
+#       permissions:
+#         contents: read
+#         id-token: write
+#
+# Usage (with options):
+#   jobs:
+#     cra-report:
+#       uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-report.yml@main
+#       with:
+#         api-url: 'https://staging.cra.docs.bauer-group.com/api/v1/ingest'
+#         product-name: 'My Application'
+#         dry-run: true
+#       permissions:
+#         contents: read
+#         id-token: write
+#
+# CRA Reference: Art. 10, Art. 13, Annex VII
+# =============================================================================
+
+name: 📡 CRA Hub Report
+
+on:
+  workflow_call:
+    inputs:
+      # -------------------------------------------------------------------
+      # API Configuration
+      # -------------------------------------------------------------------
+      api-url:
+        description: 'CRA Hub API endpoint URL'
+        type: string
+        required: false
+        default: 'https://cra.docs.bauer-group.com/api/v1/ingest'
+      product-name:
+        description: 'Product name override (auto-detected from repo name if empty)'
+        type: string
+        required: false
+        default: ''
+      dry-run:
+        description: 'Assemble payloads but do not send (for testing)'
+        type: boolean
+        required: false
+        default: false
+
+      # -------------------------------------------------------------------
+      # Scan Configuration
+      # -------------------------------------------------------------------
+      scan-target:
+        description: 'Target to scan (directory, image reference)'
+        type: string
+        required: false
+        default: '.'
+      scan-type:
+        description: 'Scan type: fs, image, auto'
+        type: string
+        required: false
+        default: 'auto'
+
+      # -------------------------------------------------------------------
+      # Report Selection
+      # -------------------------------------------------------------------
+      send-sbom:
+        description: 'Send SBOM report to Hub'
+        type: boolean
+        required: false
+        default: true
+      send-vulnerabilities:
+        description: 'Send vulnerability scan report to Hub'
+        type: boolean
+        required: false
+        default: true
+      send-release-info:
+        description: 'Send release metadata to Hub'
+        type: boolean
+        required: false
+        default: true
+
+    outputs:
+      sbom-request-id:
+        description: 'Request ID for SBOM report'
+        value: ${{ jobs.cra-report.outputs.sbom-request-id }}
+      scan-request-id:
+        description: 'Request ID for vulnerability scan report'
+        value: ${{ jobs.cra-report.outputs.scan-request-id }}
+      release-request-id:
+        description: 'Request ID for release info report'
+        value: ${{ jobs.cra-report.outputs.release-request-id }}
+
+# ---------------------------------------------------------------------------
+# Permissions
+# ---------------------------------------------------------------------------
+
+permissions:
+  contents: read
+  id-token: write
+
+# =============================================================================
+# Jobs
+# =============================================================================
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Job: CRA Hub Report
+  # ---------------------------------------------------------------------------
+  cra-report:
+    name: 📡 CRA Hub Report
+    runs-on: ubuntu-latest
+    outputs:
+      sbom-request-id: ${{ steps.report-sbom.outputs.request-id }}
+      scan-request-id: ${{ steps.report-scan.outputs.request-id }}
+      release-request-id: ${{ steps.report-release.outputs.request-id }}
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ---- Data Collection ----
+
+      - name: 📋 Generate SBOM
+        id: sbom
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-sbom-generate@main
+        with:
+          scan-target: ${{ inputs.scan-target }}
+          scan-type: ${{ inputs.scan-type }}
+
+      - name: 🛡️ Vulnerability scan
+        id: scan
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-vulnerability-scan@main
+        with:
+          scan-target: ${{ inputs.scan-target }}
+          scan-type: ${{ inputs.scan-type }}
+          enable-osv: 'true'
+
+      - name: 📊 Collect release metadata
+        id: release-meta
+        shell: bash
+        run: |
+          RELEASE_JSON="${GITHUB_WORKSPACE}/.cra-release-meta.json"
+
+          # Detect languages/frameworks
+          LANGUAGES="[]"
+          if command -v jq &>/dev/null; then
+            LANG_ARRAY="[]"
+            [ -f "package.json" ] && LANG_ARRAY=$(echo "$LANG_ARRAY" | jq '. + ["nodejs"]')
+            [ -f "go.mod" ] && LANG_ARRAY=$(echo "$LANG_ARRAY" | jq '. + ["golang"]')
+            [ -f "requirements.txt" ] || [ -f "pyproject.toml" ] && LANG_ARRAY=$(echo "$LANG_ARRAY" | jq '. + ["python"]')
+            [ -f "Cargo.toml" ] && LANG_ARRAY=$(echo "$LANG_ARRAY" | jq '. + ["rust"]')
+            [ -f "Dockerfile" ] && LANG_ARRAY=$(echo "$LANG_ARRAY" | jq '. + ["docker"]')
+            ls *.csproj 1>/dev/null 2>&1 && LANG_ARRAY=$(echo "$LANG_ARRAY" | jq '. + ["dotnet"]')
+            LANGUAGES="$LANG_ARRAY"
+          fi
+
+          # Get tags
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "none")
+          TAG_COUNT=$(git tag -l | wc -l | tr -d ' ')
+
+          # Build release metadata JSON
+          jq -n \
+            --arg latestTag "$LATEST_TAG" \
+            --argjson tagCount "$TAG_COUNT" \
+            --argjson componentCount "${{ steps.sbom.outputs.component-count }}" \
+            --argjson criticalVulns "${{ steps.scan.outputs.critical-count }}" \
+            --argjson highVulns "${{ steps.scan.outputs.high-count }}" \
+            --argjson totalVulns "${{ steps.scan.outputs.total-count }}" \
+            --arg projectType "${{ steps.sbom.outputs.project-type }}" \
+            --argjson languages "$LANGUAGES" \
+            --arg sbomFormat "CycloneDX" \
+            --arg sbomFile "${{ steps.sbom.outputs.sbom-filename }}" \
+            '{
+              release: {
+                latestTag: $latestTag,
+                tagCount: $tagCount
+              },
+              sbom: {
+                format: $sbomFormat,
+                filename: $sbomFile,
+                componentCount: $componentCount
+              },
+              vulnerabilities: {
+                critical: $criticalVulns,
+                high: $highVulns,
+                total: $totalVulns
+              },
+              project: {
+                type: $projectType,
+                languages: $languages
+              }
+            }' > "$RELEASE_JSON"
+
+          echo "release-meta-path=${RELEASE_JSON}" >> "$GITHUB_OUTPUT"
+
+      # ---- Send Reports to CRA Hub ----
+
+      - name: 📡 Report SBOM to CRA Hub
+        id: report-sbom
+        if: inputs.send-sbom
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-hub-report@main
+        with:
+          api-url: ${{ inputs.api-url }}
+          kind: SbomReport
+          payload-file: ${{ steps.sbom.outputs.sbom-path }}
+          product-name: ${{ inputs.product-name }}
+          dry-run: ${{ inputs.dry-run && 'true' || 'false' }}
+
+      - name: 📡 Report vulnerabilities to CRA Hub
+        id: report-scan
+        if: inputs.send-vulnerabilities
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-hub-report@main
+        with:
+          api-url: ${{ inputs.api-url }}
+          kind: VulnerabilityScan
+          payload-file: ${{ steps.scan.outputs.report-path }}
+          product-name: ${{ inputs.product-name }}
+          dry-run: ${{ inputs.dry-run && 'true' || 'false' }}
+
+      - name: 📡 Report release info to CRA Hub
+        id: report-release
+        if: inputs.send-release-info
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-hub-report@main
+        with:
+          api-url: ${{ inputs.api-url }}
+          kind: ReleaseInfo
+          payload-file: ${{ steps.release-meta.outputs.release-meta-path }}
+          product-name: ${{ inputs.product-name }}
+          dry-run: ${{ inputs.dry-run && 'true' || 'false' }}
+
+      # ---- Summary ----
+
+      - name: 📊 Generate summary
+        if: always()
+        shell: bash
+        run: |
+          DRY_RUN="${{ inputs.dry-run }}"
+          MODE="LIVE"
+          if [ "$DRY_RUN" = "true" ]; then MODE="DRY-RUN"; fi
+
+          echo "## 📡 CRA Hub Report Summary (${MODE})" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Report | Status | Request ID |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|--------|--------|------------|" >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "${{ inputs.send-sbom }}" = "true" ]; then
+            echo "| SbomReport | ${{ steps.report-sbom.outputs.status-code || 'skipped' }} | ${{ steps.report-sbom.outputs.request-id || '-' }} |" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "${{ inputs.send-vulnerabilities }}" = "true" ]; then
+            echo "| VulnerabilityScan | ${{ steps.report-scan.outputs.status-code || 'skipped' }} | ${{ steps.report-scan.outputs.request-id || '-' }} |" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "${{ inputs.send-release-info }}" = "true" ]; then
+            echo "| ReleaseInfo | ${{ steps.report-release.outputs.status-code || 'skipped' }} | ${{ steps.report-release.outputs.request-id || '-' }} |" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "**API Endpoint:** ${{ inputs.api-url }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Product:** ${{ inputs.product-name || github.event.repository.name }}" >> "$GITHUB_STEP_SUMMARY"

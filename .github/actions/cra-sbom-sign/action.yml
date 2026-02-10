@@ -1,0 +1,108 @@
+# =============================================================================
+# CRA Composite Action: SBOM Sign
+# =============================================================================
+# Signs a CycloneDX SBOM using Cosign (keyless / Sigstore OIDC).
+# Produces a detached signature (.sig) and certificate (.cert).
+# Includes automatic verification after signing.
+#
+# Usage:
+#   - uses: bauer-group/SEC-CRACompliance/.github/actions/cra-sbom-sign@main
+#     with:
+#       sbom-path: sbom.cdx.json
+#
+# CRA Reference: Art. 10 Abs. 12 (Integrität von Sicherheitsupdates)
+# =============================================================================
+
+name: '🔏 CRA SBOM Sign'
+description: 'Sign CycloneDX SBOM with Cosign for CRA compliance (Art. 10 Abs. 12)'
+
+inputs:
+  sbom-path:
+    description: 'Path to the SBOM file to sign'
+    required: true
+  cosign-version:
+    description: 'Cosign version to install'
+    required: false
+    default: 'v2.4.1'
+
+outputs:
+  signature-path:
+    description: 'Path to the detached signature file'
+    value: ${{ steps.sign.outputs.signature-path }}
+  certificate-path:
+    description: 'Path to the signing certificate'
+    value: ${{ steps.sign.outputs.certificate-path }}
+  signed:
+    description: 'Whether signing was successful (true/false)'
+    value: ${{ steps.sign.outputs.signed }}
+
+runs:
+  using: 'composite'
+  steps:
+    # ---- Install ----
+
+    - name: 📦 Install Cosign
+      uses: sigstore/cosign-installer@main
+      with:
+        cosign-release: ${{ inputs.cosign-version }}
+
+    # ---- Sign ----
+
+    - name: 🔏 Sign SBOM (keyless OIDC)
+      id: sign
+      shell: bash
+      env:
+        COSIGN_EXPERIMENTAL: '1'
+      run: |
+        SBOM_PATH="${{ inputs.sbom-path }}"
+        SIG_PATH="${SBOM_PATH}.sig"
+        CERT_PATH="${SBOM_PATH}.cert"
+
+        if [ ! -f "$SBOM_PATH" ]; then
+          echo "::error::SBOM file not found: ${SBOM_PATH}"
+          echo "signed=false" >> "$GITHUB_OUTPUT"
+          exit 1
+        fi
+
+        echo "::group::SBOM Signing"
+        echo "Signing: ${SBOM_PATH}"
+        echo "Using keyless signing (Sigstore OIDC / GitHub Actions identity)"
+
+        cosign sign-blob \
+          --yes \
+          --output-signature "${SIG_PATH}" \
+          --output-certificate "${CERT_PATH}" \
+          "${SBOM_PATH}"
+
+        echo "::endgroup::"
+
+        echo "signature-path=${SIG_PATH}" >> "$GITHUB_OUTPUT"
+        echo "certificate-path=${CERT_PATH}" >> "$GITHUB_OUTPUT"
+        echo "signed=true" >> "$GITHUB_OUTPUT"
+
+        echo "SBOM signed successfully"
+        echo "  Signature:   ${SIG_PATH}"
+        echo "  Certificate: ${CERT_PATH}"
+
+    # ---- Verify ----
+
+    - name: ✅ Verify signature
+      shell: bash
+      env:
+        COSIGN_EXPERIMENTAL: '1'
+      run: |
+        SBOM_PATH="${{ inputs.sbom-path }}"
+        SIG_PATH="${SBOM_PATH}.sig"
+        CERT_PATH="${SBOM_PATH}.cert"
+
+        echo "::group::Signature Verification"
+
+        cosign verify-blob \
+          --signature "${SIG_PATH}" \
+          --certificate "${CERT_PATH}" \
+          --certificate-identity-regexp ".*" \
+          --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
+          "${SBOM_PATH}"
+
+        echo "Signature verification: PASSED"
+        echo "::endgroup::"

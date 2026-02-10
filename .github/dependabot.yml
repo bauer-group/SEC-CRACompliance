@@ -1,0 +1,55 @@
+# =============================================================================
+# Dependabot – Automated Dependency Updates
+# =============================================================================
+# Keeps GitHub Actions and npm dependencies up to date.
+# Schedule: weekly on Sunday at 04:00 UTC.
+#
+# CRA Reference: Art. 10 Abs. 6 (timely security updates)
+# =============================================================================
+
+version: 2
+updates:
+  # ---------------------------------------------------------------------------
+  # GitHub Actions
+  # ---------------------------------------------------------------------------
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "04:00"
+      timezone: "Etc/UTC"
+    commit-message:
+      prefix: "chore(ci)"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
+  # ---------------------------------------------------------------------------
+  # npm (VitePress + dev tooling)
+  # ---------------------------------------------------------------------------
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "04:00"
+      timezone: "Etc/UTC"
+    commit-message:
+      prefix: "chore(deps)"
+    labels:
+      - "dependencies"
+      - "npm"
+    groups:
+      vitepress:
+        patterns:
+          - "vitepress"
+      dev-tooling:
+        patterns:
+          - "markdownlint-cli2"
+          - "linkinator"
+          - "rimraf"

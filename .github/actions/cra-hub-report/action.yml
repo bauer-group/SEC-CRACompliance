@@ -1,0 +1,232 @@
+# =============================================================================
+# CRA Composite Action: Software Security Hub Report
+# =============================================================================
+# Sends CRA compliance data to the Software Security Hub via API.
+# Uses a versioned envelope payload (Kubernetes-inspired) for forward/backward
+# compatibility across workflow versions.
+#
+# Auto-collects all metadata from GitHub environment variables (zero-config).
+#
+# Usage:
+#   - uses: bauer-group/SEC-CRACompliance/.github/actions/cra-hub-report@main
+#     with:
+#       kind: SbomReport
+#       payload-file: sbom.cdx.json
+#
+# API Payload: apiVersion cra.docs.bauer-group.com/v1
+# =============================================================================
+
+name: '📡 CRA Hub Report'
+description: 'Send CRA compliance data to Software Security Hub API'
+
+inputs:
+  api-url:
+    description: 'Software Security Hub API endpoint URL'
+    required: false
+    default: 'https://cra.docs.bauer-group.com/api/v1/ingest'
+  kind:
+    description: 'Report kind: SbomReport, VulnerabilityScan, ReleaseInfo, ProductInfo'
+    required: true
+  payload-file:
+    description: 'Path to the data file (SBOM, scan results, etc.)'
+    required: false
+    default: ''
+  payload-json:
+    description: 'Inline JSON payload for spec field (alternative to payload-file)'
+    required: false
+    default: ''
+  product-name:
+    description: 'Product name override (auto-detected from repo name if empty)'
+    required: false
+    default: ''
+  dry-run:
+    description: 'If true, assemble payload but do not send (for testing)'
+    required: false
+    default: 'false'
+
+outputs:
+  payload-path:
+    description: 'Path to the assembled API payload file'
+    value: ${{ steps.assemble.outputs.payload-path }}
+  status-code:
+    description: 'HTTP status code from the API response'
+    value: ${{ steps.send.outputs.status-code }}
+  response-body:
+    description: 'API response body'
+    value: ${{ steps.send.outputs.response-body }}
+  request-id:
+    description: 'Request ID from the API response'
+    value: ${{ steps.send.outputs.request-id }}
+
+runs:
+  using: 'composite'
+  steps:
+    # ---- Metadata Collection ----
+
+    - name: 📊 Collect repository metadata
+      id: meta
+      shell: bash
+      run: |
+        # Auto-detect all metadata from GitHub context - zero config
+        REPO="${GITHUB_REPOSITORY}"
+        REPO_NAME="${GITHUB_REPOSITORY#*/}"
+        REPO_OWNER="${GITHUB_REPOSITORY_OWNER}"
+        REF="${GITHUB_REF}"
+        SHA="${GITHUB_SHA}"
+        SHORT_SHA="${GITHUB_SHA:0:8}"
+        RUN_ID="${GITHUB_RUN_ID}"
+        RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+        WORKFLOW="${GITHUB_WORKFLOW}"
+        ACTOR="${GITHUB_ACTOR}"
+        EVENT="${GITHUB_EVENT_NAME}"
+        TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+        # Product name: input override or repo name
+        PRODUCT="${{ inputs.product-name }}"
+        if [ -z "$PRODUCT" ]; then
+          PRODUCT="${REPO_NAME}"
+        fi
+
+        # Detect version from ref (tag) or SHA
+        VERSION=""
+        if echo "$REF" | grep -qE '^refs/tags/'; then
+          VERSION="${REF#refs/tags/}"
+        else
+          VERSION="${SHORT_SHA}"
+        fi
+
+        # Export all
+        echo "repo=${REPO}" >> "$GITHUB_OUTPUT"
+        echo "repo-name=${REPO_NAME}" >> "$GITHUB_OUTPUT"
+        echo "repo-owner=${REPO_OWNER}" >> "$GITHUB_OUTPUT"
+        echo "ref=${REF}" >> "$GITHUB_OUTPUT"
+        echo "sha=${SHA}" >> "$GITHUB_OUTPUT"
+        echo "short-sha=${SHORT_SHA}" >> "$GITHUB_OUTPUT"
+        echo "run-id=${RUN_ID}" >> "$GITHUB_OUTPUT"
+        echo "run-url=${RUN_URL}" >> "$GITHUB_OUTPUT"
+        echo "workflow=${WORKFLOW}" >> "$GITHUB_OUTPUT"
+        echo "actor=${ACTOR}" >> "$GITHUB_OUTPUT"
+        echo "event=${EVENT}" >> "$GITHUB_OUTPUT"
+        echo "timestamp=${TIMESTAMP}" >> "$GITHUB_OUTPUT"
+        echo "product=${PRODUCT}" >> "$GITHUB_OUTPUT"
+        echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+
+    # ---- Payload Assembly ----
+
+    - name: 📦 Assemble API payload
+      id: assemble
+      shell: bash
+      run: |
+        PAYLOAD_PATH="${GITHUB_WORKSPACE}/.cra-hub-payload.json"
+        KIND="${{ inputs.kind }}"
+
+        # Build the spec section
+        SPEC='{}'
+        if [ -n "${{ inputs.payload-file }}" ] && [ -f "${{ inputs.payload-file }}" ]; then
+          SPEC=$(cat "${{ inputs.payload-file }}")
+        elif [ -n "${{ inputs.payload-json }}" ]; then
+          SPEC='${{ inputs.payload-json }}'
+        fi
+
+        # Assemble versioned envelope
+        jq -n \
+          --arg apiVersion "cra.docs.bauer-group.com/v1" \
+          --arg kind "$KIND" \
+          --arg name "${{ steps.meta.outputs.repo }}" \
+          --arg uid "${{ steps.meta.outputs.run-id }}-${KIND}" \
+          --arg timestamp "${{ steps.meta.outputs.timestamp }}" \
+          --arg repository "${{ steps.meta.outputs.repo }}" \
+          --arg repositoryOwner "${{ steps.meta.outputs.repo-owner }}" \
+          --arg ref "${{ steps.meta.outputs.ref }}" \
+          --arg sha "${{ steps.meta.outputs.sha }}" \
+          --arg shortSha "${{ steps.meta.outputs.short-sha }}" \
+          --arg workflow "${{ steps.meta.outputs.workflow }}" \
+          --arg runId "${{ steps.meta.outputs.run-id }}" \
+          --arg runUrl "${{ steps.meta.outputs.run-url }}" \
+          --arg actor "${{ steps.meta.outputs.actor }}" \
+          --arg event "${{ steps.meta.outputs.event }}" \
+          --arg product "${{ steps.meta.outputs.product }}" \
+          --arg version "${{ steps.meta.outputs.version }}" \
+          --arg workflowVersion "1.0.0" \
+          --argjson spec "$SPEC" \
+          '{
+            apiVersion: $apiVersion,
+            kind: $kind,
+            metadata: {
+              name: $name,
+              uid: $uid,
+              timestamp: $timestamp,
+              labels: {
+                "cra.docs.bauer-group.com/product": $product,
+                "cra.docs.bauer-group.com/version": $version,
+                "github.com/repository": $repository,
+                "github.com/repository-owner": $repositoryOwner,
+                "github.com/ref": $ref,
+                "github.com/sha": $sha,
+                "github.com/short-sha": $shortSha,
+                "github.com/workflow": $workflow,
+                "github.com/run-id": $runId,
+                "github.com/run-url": $runUrl,
+                "github.com/actor": $actor,
+                "github.com/event": $event
+              },
+              annotations: {
+                "cra.docs.bauer-group.com/workflow-version": $workflowVersion,
+                "cra.docs.bauer-group.com/schema-version": "1.0.0"
+              }
+            },
+            spec: $spec
+          }' > "${PAYLOAD_PATH}"
+
+        echo "payload-path=${PAYLOAD_PATH}" >> "$GITHUB_OUTPUT"
+
+        echo "::group::Software Security Hub Payload (${KIND})"
+        jq '.' "${PAYLOAD_PATH}"
+        echo "::endgroup::"
+
+    # ---- Send ----
+
+    - name: 📡 Send to Software Security Hub
+      id: send
+      if: inputs.dry-run != 'true'
+      shell: bash
+      run: |
+        API_URL="${{ inputs.api-url }}"
+        PAYLOAD_PATH="${{ steps.assemble.outputs.payload-path }}"
+        RESPONSE_FILE="${GITHUB_WORKSPACE}/.cra-hub-response.json"
+
+        echo "Sending ${{ inputs.kind }} to ${API_URL}"
+
+        HTTP_CODE=$(curl -s -w "%{http_code}" \
+          -o "${RESPONSE_FILE}" \
+          -X POST \
+          -H "Content-Type: application/json" \
+          -H "X-GitHub-Repository: ${GITHUB_REPOSITORY}" \
+          -H "X-GitHub-Run-ID: ${GITHUB_RUN_ID}" \
+          -H "X-GitHub-SHA: ${GITHUB_SHA}" \
+          -H "X-CRA-Workflow-Version: 1.0.0" \
+          -d @"${PAYLOAD_PATH}" \
+          "${API_URL}")
+
+        RESPONSE_BODY=$(cat "${RESPONSE_FILE}" 2>/dev/null || echo "{}")
+        REQUEST_ID=$(echo "${RESPONSE_BODY}" | jq -r '.requestId // .id // "unknown"' 2>/dev/null || echo "unknown")
+
+        echo "status-code=${HTTP_CODE}" >> "$GITHUB_OUTPUT"
+        echo "response-body=${RESPONSE_BODY}" >> "$GITHUB_OUTPUT"
+        echo "request-id=${REQUEST_ID}" >> "$GITHUB_OUTPUT"
+
+        if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 300 ]; then
+          echo "Software Security Hub accepted report (HTTP ${HTTP_CODE}, Request-ID: ${REQUEST_ID})"
+        else
+          echo "::warning::Software Security Hub returned HTTP ${HTTP_CODE}. Report delivery may have failed."
+          echo "Response: ${RESPONSE_BODY}"
+        fi
+
+    # ---- Dry-Run ----
+
+    - name: ℹ️ Dry-run notice
+      if: inputs.dry-run == 'true'
+      shell: bash
+      run: |
+        echo "::notice::Dry-run mode - payload assembled but NOT sent to API"
+        echo "Payload saved to: ${{ steps.assemble.outputs.payload-path }}"

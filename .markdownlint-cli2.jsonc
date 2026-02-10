@@ -1,0 +1,31 @@
+{
+  // VitePress uses Vue components and inline HTML in Markdown
+  "config": {
+    "MD033": {
+      "allowed_elements": [
+        "script",
+        "style",
+        "div",
+        "span",
+        "a",
+        "br",
+        "img",
+        "Badge"
+      ]
+    },
+    // VitePress frontmatter can be long
+    "MD013": false,
+    // Allow duplicate headings in different sections
+    "MD024": {
+      "siblings_only": true
+    },
+    // Trailing punctuation in headings (common in German: "Schritt 1:")
+    "MD026": false,
+    // Emphasis used as heading (intentional style choice for sub-sections)
+    "MD036": false,
+    // Code blocks without language (plaintext blocks, templates)
+    "MD040": false,
+    // Table column pipe alignment (impractical with varying column widths)
+    "MD060": false
+  }
+}

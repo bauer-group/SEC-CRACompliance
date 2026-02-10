@@ -1,0 +1,133 @@
+# =============================================================================
+# CRA Composite Action: SBOM Generate
+# =============================================================================
+# Generates a CycloneDX SBOM for the current repository using Trivy.
+# Uses the official aquasecurity/trivy-action GitHub Action.
+# Auto-detects project type (Node.js, Go, Python, Rust, Java, .NET, Docker).
+#
+# Usage:
+#   - uses: bauer-group/SEC-CRACompliance/.github/actions/cra-sbom-generate@main
+#     with:
+#       scan-target: '.'
+#
+# CRA Reference: Art. 13 Abs. 23, Annex I Teil II Nr. 1
+# =============================================================================
+
+name: '📋 CRA SBOM Generate'
+description: 'Generate CycloneDX SBOM for CRA compliance (Art. 13 Abs. 23)'
+
+inputs:
+  scan-target:
+    description: 'Target to scan (directory path or container image reference)'
+    required: false
+    default: '.'
+  scan-type:
+    description: 'Scan type: fs (filesystem), image (container image), auto'
+    required: false
+    default: 'auto'
+  output-file:
+    description: 'Output filename for the SBOM'
+    required: false
+    default: 'sbom.cdx.json'
+  trivy-version:
+    description: 'Trivy version to use'
+    required: false
+    default: 'latest'
+
+outputs:
+  sbom-path:
+    description: 'Absolute path to the generated SBOM file'
+    value: ${{ github.workspace }}/${{ inputs.output-file }}
+  sbom-filename:
+    description: 'SBOM filename'
+    value: ${{ inputs.output-file }}
+  component-count:
+    description: 'Number of components in the SBOM'
+    value: ${{ steps.metadata.outputs.component-count }}
+  project-type:
+    description: 'Detected project type'
+    value: ${{ steps.detect.outputs.project-type }}
+
+runs:
+  using: 'composite'
+  steps:
+    # ---- Detection ----
+
+    - name: 🔍 Detect project type
+      id: detect
+      shell: bash
+      run: |
+        TARGET="${{ inputs.scan-target }}"
+        SCAN_TYPE="${{ inputs.scan-type }}"
+
+        if [ "$SCAN_TYPE" != "auto" ]; then
+          echo "project-type=$SCAN_TYPE" >> "$GITHUB_OUTPUT"
+          echo "scan-type=$SCAN_TYPE" >> "$GITHUB_OUTPUT"
+          if [ "$SCAN_TYPE" = "image" ]; then
+            echo "trivy-image-ref=${TARGET}" >> "$GITHUB_OUTPUT"
+          else
+            echo "trivy-scan-ref=${TARGET}" >> "$GITHUB_OUTPUT"
+          fi
+          exit 0
+        fi
+
+        # Auto-detect: if target contains : or @ it's likely an image reference
+        if echo "$TARGET" | grep -qE ':|@'; then
+          echo "project-type=container-image" >> "$GITHUB_OUTPUT"
+          echo "scan-type=image" >> "$GITHUB_OUTPUT"
+          echo "trivy-image-ref=${TARGET}" >> "$GITHUB_OUTPUT"
+        else
+          # Filesystem scan - detect project type for logging
+          TYPE="unknown"
+          if [ -f "$TARGET/package.json" ]; then TYPE="nodejs"; fi
+          if [ -f "$TARGET/go.mod" ]; then TYPE="golang"; fi
+          if [ -f "$TARGET/requirements.txt" ] || [ -f "$TARGET/pyproject.toml" ]; then TYPE="python"; fi
+          if [ -f "$TARGET/Cargo.toml" ]; then TYPE="rust"; fi
+          if [ -f "$TARGET/pom.xml" ] || [ -f "$TARGET/build.gradle" ]; then TYPE="java"; fi
+          if ls "$TARGET"/*.csproj 1>/dev/null 2>&1 || ls "$TARGET"/*.sln 1>/dev/null 2>&1; then TYPE="dotnet"; fi
+          if [ -f "$TARGET/Dockerfile" ]; then TYPE="dockerfile"; fi
+          echo "project-type=$TYPE" >> "$GITHUB_OUTPUT"
+          echo "scan-type=fs" >> "$GITHUB_OUTPUT"
+          echo "trivy-scan-ref=${TARGET}" >> "$GITHUB_OUTPUT"
+        fi
+
+    # ---- Generate ----
+
+    - name: 📋 Generate SBOM
+      uses: aquasecurity/trivy-action@0.33.1
+      with:
+        scan-type: ${{ steps.detect.outputs.scan-type }}
+        scan-ref: ${{ steps.detect.outputs.trivy-scan-ref }}
+        image-ref: ${{ steps.detect.outputs.trivy-image-ref }}
+        format: 'cyclonedx'
+        output: ${{ inputs.output-file }}
+        version: ${{ inputs.trivy-version }}
+
+    # ---- Validate ----
+
+    - name: ✅ Validate SBOM
+      shell: bash
+      run: |
+        SBOM_PATH="${GITHUB_WORKSPACE}/${{ inputs.output-file }}"
+        if [ ! -f "${SBOM_PATH}" ]; then
+          echo "::error::SBOM generation failed - output file not found"
+          exit 1
+        fi
+        echo "SBOM generated successfully: ${SBOM_PATH}"
+
+    # ---- Metadata ----
+
+    - name: 📊 Extract SBOM metadata
+      id: metadata
+      shell: bash
+      run: |
+        SBOM_PATH="${GITHUB_WORKSPACE}/${{ inputs.output-file }}"
+
+        if command -v jq &>/dev/null; then
+          COUNT=$(jq '.components | length' "$SBOM_PATH" 2>/dev/null || echo "0")
+        else
+          COUNT=$(grep -c '"bom-ref"' "$SBOM_PATH" 2>/dev/null || echo "0")
+        fi
+
+        echo "component-count=${COUNT}" >> "$GITHUB_OUTPUT"
+        echo "SBOM contains ${COUNT} components"

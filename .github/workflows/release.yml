@@ -1,0 +1,66 @@
+# =============================================================================
+# Release – CRA Compliance Documentation
+# =============================================================================
+# Validates the VitePress documentation build (lint + build) and creates a
+# semantic release on success.
+#
+# Triggered on push to main or manual dispatch.
+#
+# Pipeline: Validate (Node.js lint + build) → Semantic Release
+# =============================================================================
+
+name: 🚀 Release
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '.github/**'
+  workflow_dispatch:
+    inputs:
+      force-release:
+        description: 'force create release'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Validation: Node.js Lint + Build
+  # ---------------------------------------------------------------------------
+
+  validate:
+    name: 🔍 Validate Node.js Build
+    uses: bauer-group/automation-templates/.github/workflows/nodejs-build.yml@main
+    with:
+      node-version-file: '.nvmrc'
+      package-manager: 'npm'
+      frozen-lockfile: true
+      run-lint: true
+      lint-command: 'npm run lint'
+      build-command: 'npm run docs:build'
+      run-tests: false
+      run-audit: true
+      audit-level: 'moderate'
+      upload-artifacts: false
+
+  # ---------------------------------------------------------------------------
+  # Semantic Release (only after successful validation)
+  # ---------------------------------------------------------------------------
+
+  release:
+    name: 📦 Create Semantic Release
+    needs: [validate]
+    if: |
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      needs.validate.result == 'success'
+    uses: bauer-group/automation-templates/.github/workflows/modules-semantic-release.yml@main
+    with:
+      target-branch: 'main'
+      dry-run: false
+      force-release: ${{ inputs.force-release || false }}
+    secrets: inherit

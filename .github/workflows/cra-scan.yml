@@ -1,0 +1,226 @@
+# =============================================================================
+# CRA Reusable Workflow: Scheduled Vulnerability Scan (Repo-Local)
+# =============================================================================
+# Type 1 Workflow: Runs scheduled or on-demand vulnerability scans.
+# Results are stored as artifacts and uploaded to GitHub Security tab.
+#
+# Designed for continuous CVE monitoring (Art. 10 Abs. 8):
+#   - Filesystem scan (source code dependencies)
+#   - Container image scan
+#   - SBOM-based scan (from a previous release)
+#
+# Automatic GitHub issue creation for CRITICAL findings with
+# CRA-specific labels and remediation SLAs.
+#
+# Usage (scheduled daily):
+#   on:
+#     schedule:
+#       - cron: '0 6 * * *'
+#     workflow_dispatch:
+#   jobs:
+#     cra-scan:
+#       uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-scan.yml@main
+#       permissions:
+#         contents: read
+#         security-events: write
+#         issues: write
+#
+# CRA Reference: Art. 10 Abs. 6, Art. 10 Abs. 8
+# =============================================================================
+
+name: 🛡️ CRA Vulnerability Scan
+
+on:
+  workflow_call:
+    inputs:
+      # -------------------------------------------------------------------
+      # Scan Configuration
+      # -------------------------------------------------------------------
+      scan-target:
+        description: 'Target to scan (directory, image, or SBOM file path)'
+        type: string
+        required: false
+        default: '.'
+      scan-type:
+        description: 'Scan type: fs, image, sbom, auto'
+        type: string
+        required: false
+        default: 'auto'
+      severity-threshold:
+        description: 'Minimum severity: UNKNOWN, LOW, MEDIUM, HIGH, CRITICAL'
+        type: string
+        required: false
+        default: 'MEDIUM'
+      fail-on-critical:
+        description: 'Fail if CRITICAL vulnerabilities found'
+        type: boolean
+        required: false
+        default: false
+      enable-grype:
+        description: 'Run Grype as second engine'
+        type: boolean
+        required: false
+        default: false
+      enable-osv:
+        description: 'Run OSV-Scanner as additional engine'
+        type: boolean
+        required: false
+        default: true
+
+      # -------------------------------------------------------------------
+      # Issue & Retention
+      # -------------------------------------------------------------------
+      create-issue:
+        description: 'Create GitHub issue for CRITICAL findings'
+        type: boolean
+        required: false
+        default: true
+      retention-days:
+        description: 'Artifact retention in days'
+        type: number
+        required: false
+        default: 90
+
+    outputs:
+      critical-count:
+        description: 'Number of CRITICAL vulnerabilities'
+        value: ${{ jobs.cra-scan.outputs.critical-count }}
+      high-count:
+        description: 'Number of HIGH vulnerabilities'
+        value: ${{ jobs.cra-scan.outputs.high-count }}
+      total-count:
+        description: 'Total vulnerabilities found'
+        value: ${{ jobs.cra-scan.outputs.total-count }}
+      report-path:
+        description: 'Path to vulnerability report'
+        value: ${{ jobs.cra-scan.outputs.report-path }}
+
+# ---------------------------------------------------------------------------
+# Permissions
+# ---------------------------------------------------------------------------
+
+permissions:
+  contents: read
+  security-events: write
+  issues: write
+
+# =============================================================================
+# Jobs
+# =============================================================================
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Job: CRA Vulnerability Scan
+  # ---------------------------------------------------------------------------
+  cra-scan:
+    name: 🛡️ Vulnerability Scan
+    runs-on: ubuntu-latest
+    outputs:
+      critical-count: ${{ steps.scan.outputs.critical-count }}
+      high-count: ${{ steps.scan.outputs.high-count }}
+      total-count: ${{ steps.scan.outputs.total-count }}
+      report-path: ${{ steps.scan.outputs.report-path }}
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      # ---- Scan ----
+
+      - name: 🛡️ Run vulnerability scan
+        id: scan
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-vulnerability-scan@main
+        with:
+          scan-target: ${{ inputs.scan-target }}
+          scan-type: ${{ inputs.scan-type }}
+          severity-threshold: ${{ inputs.severity-threshold }}
+          fail-on-critical: ${{ inputs.fail-on-critical && 'true' || 'false' }}
+          enable-grype: ${{ inputs.enable-grype && 'true' || 'false' }}
+          enable-osv: ${{ inputs.enable-osv && 'true' || 'false' }}
+
+      # ---- Upload ----
+
+      - name: 📤 Upload SARIF to GitHub Security
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ${{ steps.scan.outputs.sarif-path }}
+        continue-on-error: true
+
+      - name: 📦 Upload scan artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cra-scan-${{ github.run_id }}
+          retention-days: ${{ inputs.retention-days }}
+          path: |
+            ${{ steps.scan.outputs.report-path }}
+            ${{ steps.scan.outputs.grype-report-path }}
+            ${{ steps.scan.outputs.osv-report-path }}
+
+      # ---- Issue Creation ----
+
+      - name: 🚨 Create issue for critical findings
+        if: inputs.create-issue && steps.scan.outputs.critical-count > 0
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          CRITICAL="${{ steps.scan.outputs.critical-count }}"
+          HIGH="${{ steps.scan.outputs.high-count }}"
+          TOTAL="${{ steps.scan.outputs.total-count }}"
+          RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+
+          # Check if a similar issue already exists
+          EXISTING=$(gh issue list \
+            --label "cra-vulnerability,critical" \
+            --state open \
+            --limit 1 \
+            --json number \
+            --jq '.[0].number // empty' 2>/dev/null || echo "")
+
+          if [ -n "$EXISTING" ]; then
+            echo "Updating existing issue #${EXISTING}"
+            gh issue comment "$EXISTING" --body "$(cat <<EOF
+          ### Scan Update ($(date -u +"%Y-%m-%d %H:%M UTC"))
+
+          | Severity | Count |
+          |----------|------:|
+          | CRITICAL | ${CRITICAL} |
+          | HIGH | ${HIGH} |
+          | Total | ${TOTAL} |
+
+          [Workflow Run](${RUN_URL})
+          EOF
+          )"
+          else
+            echo "Creating new issue"
+            gh issue create \
+              --title "[CRA] ${CRITICAL} Critical Vulnerabilities Detected" \
+              --label "cra-vulnerability,critical,security" \
+              --body "$(cat <<EOF
+          ## CRA Vulnerability Alert
+
+          The scheduled CRA vulnerability scan detected **${CRITICAL} CRITICAL** vulnerabilities.
+
+          | Severity | Count |
+          |----------|------:|
+          | CRITICAL | ${CRITICAL} |
+          | HIGH | ${HIGH} |
+          | Total | ${TOTAL} |
+
+          ### Required Action (Art. 10 Abs. 8 CRA)
+
+          Products must not contain known exploitable vulnerabilities. Critical findings require immediate remediation per the [Patch Management SLAs](/vulnerability-management/patch-management).
+
+          **Priority:** P0 – Fix within 24 hours
+
+          ### Details
+
+          - [Workflow Run](${RUN_URL})
+          - Download the scan report from the workflow artifacts
+
+          ---
+          *This issue was automatically created by the CRA Vulnerability Scan workflow.*
+          EOF
+          )"
+          fi

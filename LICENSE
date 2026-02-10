@@ -1,4 +1,12 @@
-MIT License
+# License
+
+This repository uses a dual-license model.
+
+## Code (MIT License)
+
+All source code, configuration files, GitHub Actions workflows, and composite
+actions (everything except the `docs/` directory) are licensed under the
+MIT License.
 
 Copyright (c) 2026 BAUER GROUP
 
@@ -19,3 +27,27 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Documentation (CC BY-NC 4.0)
+
+All documentation content in the `docs/` directory (including all Markdown
+files, templates, and guides) is licensed under the Creative Commons
+Attribution-NonCommercial 4.0 International License.
+
+Copyright (c) 2026 BAUER GROUP
+
+You are free to:
+
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material
+
+Under the following terms:
+
+- **Attribution** — You must give appropriate credit to BAUER GROUP, provide
+  a link to the license, and indicate if changes were made.
+- **NonCommercial** — You may not use the material for commercial purposes.
+
+No additional restrictions — You may not apply legal terms or technological
+measures that legally restrict others from doing anything the license permits.
+
+Full license text: https://creativecommons.org/licenses/by-nc/4.0/legalcode

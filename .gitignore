@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# VitePress Build
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# Environment
+.env
+.env.*
+*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Internal (nicht-öffentliche Dokumente)
+internal/
+
+# Claude
+.claude/
+
+# OS
+*.tmp
+*.bak
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+nul
