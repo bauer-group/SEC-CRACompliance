@@ -1,3 +1,9 @@
+## [0.2.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.1.0...v0.2.0) (2026-02-10)
+
+### 🚀 Features
+
+* add title template for CRA Compliance documentation ([4a70bff](https://github.com/bauer-group/SEC-CRACompliance/commit/4a70bff18c5d8d458b51d3355b58ec6ed88e4d8e))
+
 ## [0.1.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.0.0...v0.1.0) (2026-02-10)
 
 ### 🚀 Features
