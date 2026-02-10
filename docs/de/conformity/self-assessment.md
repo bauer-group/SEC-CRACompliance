@@ -1,6 +1,6 @@
-# 8.1 Interne Kontrolle (Modul A)
+# 7.2 Interne Kontrolle (Modul A)
 
-## Verfahren
+## 7.2.1 Verfahren
 
 Die interne Kontrolle gemäß Annex VIII, Modul A, CRA ist das einfachste Konformitätsbewertungsverfahren. Der Hersteller bewertet selbst, ob sein Produkt die wesentlichen Anforderungen erfüllt.
 
@@ -13,7 +13,7 @@ Modul A ist anwendbar für:
 Für **Klasse II** und **Kritisch** ist Modul A **nicht** ausreichend.
 :::
 
-## Ablauf der internen Kontrolle
+## 7.2.2 Ablauf der internen Kontrolle
 
 ### 1. Technische Dokumentation erstellen
 
@@ -84,7 +84,7 @@ Nach erfolgreicher Prüfung:
 - EU-Konformitätserklärung: **10 Jahre** nach Inverkehrbringen
 - Speicherort: Dieses Repository (Git-versioniert)
 
-## Checkliste: Modul A – Interne Kontrolle
+## 7.2.3 Checkliste: Modul A – Interne Kontrolle
 
 - [ ] Produktklassifizierung durchgeführt (Standard oder Klasse I mit harm. Normen)
 - [ ] Technische Dokumentation vollständig (Annex VII)

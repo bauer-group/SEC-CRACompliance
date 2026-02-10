@@ -1,10 +1,10 @@
-# Product Security Information
+# A.8 Product Security Information
 
-## Template: Security Information for Users pursuant to Annex II CRA
+## A.8.1 Template: Security Information for Users pursuant to Annex II CRA
 
 ---
 
-## Security Information: [Product Name]
+## A.8.2 Security Information: [Product Name]
 
 **Version:** [X.Y.Z]
 **Date:** [YYYY-MM-DD]

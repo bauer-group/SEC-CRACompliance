@@ -28,7 +28,7 @@ This handbook is **binding** for all employees of BAUER GROUP who are involved i
 
 ---
 
-## 1.1 Regulation (EU) 2024/2847 – Cyber Resilience Act
+## Regulation (EU) 2024/2847 – Cyber Resilience Act
 
 The **Cyber Resilience Act (CRA)** is the EU regulation on horizontal cybersecurity requirements for products with digital elements. It was published in the Official Journal of the European Union on 20 November 2024 (OJ L, 2024/2847) and entered into force on **10 December 2024**.
 
@@ -45,7 +45,7 @@ The CRA applies directly in all EU Member States and establishes binding obligat
 | **Full applicability from** | **11.12.2027** (all requirements) |
 | **Penalties** | Up to EUR 15 million or 2.5% of global annual turnover (Art. 64) |
 
-## 1.2 Purpose and Objectives
+## Purpose and Objectives
 
 The CRA pursues two core objectives:
 
@@ -57,7 +57,7 @@ The CRA pursues two core objectives:
 
 The CRA complements the **NIS2 Directive** (Directive (EU) 2022/2555). While NIS2 governs the cybersecurity of operators of essential and important entities, the CRA addresses the security of the **products** used by those entities. The reporting obligations under the CRA (Art. 14) are modelled on the NIS2 reporting obligations (Art. 23 NIS2) and utilise the same ENISA reporting platform.
 
-## 1.3 Scope
+## Scope
 
 Pursuant to Art. 2 CRA, this regulation applies to **products with digital elements** whose intended or reasonably foreseeable use includes a direct or indirect logical or physical data connection to a device or network.
 
@@ -90,7 +90,7 @@ Detailed product categories and exemptions: see [1.1 Scope & Products](./scope).
 | **1.13** | [General Product Safety (Art. 9)](./product-safety) |
 | **1.14** | [NIS2 Integration](./nis2-integration) |
 
-## 1.4 Structure of this Handbook
+## Structure of this Handbook
 
 This handbook is structured according to the core processes of the CRA. Each chapter addresses a distinct compliance area with legal basis, process description, and operational implementation:
 
@@ -106,7 +106,7 @@ This handbook is structured according to the core processes of the CRA. Each cha
 | **Ch. 8** | [Compliance Matrix](/en/compliance-matrix/) | Complete requirements mapping |
 | **Appendix** | [Templates](/en/templates/) | ENISA notifications, EU DoC, Reports |
 
-## 1.5 Toolchain
+## Toolchain
 
 BAUER GROUP relies on a fully automated toolchain to ensure CRA conformity without additional manual effort:
 
@@ -126,7 +126,7 @@ BAUER GROUP relies on a fully automated toolchain to ensure CRA conformity witho
 | CI/CD | GitHub Actions | Automation of all compliance processes | Active |
 | Documentation | VitePress + GitHub Pages | This compliance handbook | Active |
 
-## 1.6 Regulatory References
+## Regulatory References
 
 | Regulation | Reference | Relevance |
 |------------|-----------|-----------|
@@ -140,7 +140,7 @@ BAUER GROUP relies on a fully automated toolchain to ensure CRA conformity witho
 | **NIST SP 800-161r1** | C-SCRM | Supply chain risk management best practice |
 | **IEC 62443** | Industrial Cybersecurity | Reference for industrial control systems |
 
-## 1.7 Terms and Definitions
+## Terms and Definitions
 
 | Term | Definition | CRA Reference |
 |------|-----------|---------------|

@@ -1,4 +1,4 @@
-# 第9章：CRA 合规矩阵 (Compliance Matrix)
+# 第8章：CRA 合规矩阵
 
 ## 完整映射：CRA 条款 -> 文档 -> 工具
 
@@ -21,7 +21,7 @@
 
 :::
 
-详细映射：[9.1 工具映射](/zh/compliance-matrix/tooling-map)（工具 -> CRA 要求）
+详细映射：[8.1 工具映射](/zh/compliance-matrix/tooling-map)（工具 -> CRA 要求）
 
 ## Art. 10 -- 制造商义务 (Obligations of Manufacturers)
 

@@ -1,10 +1,10 @@
-# Nutzerinformation (Produkt-Sicherheitsinformation)
+# A.8 Produktsicherheitsinformation
 
-## Vorlage: Sicherheitsinformationen für Nutzer gemäß Annex II CRA
+## A.8.1 Vorlage: Sicherheitsinformationen für Nutzer gemäß Annex II CRA
 
 ---
 
-## Sicherheitsinformationen: [Produktname]
+## A.8.2 Sicherheitsinformationen: [Produktname]
 
 **Version:** [X.Y.Z]
 **Datum:** [YYYY-MM-DD]

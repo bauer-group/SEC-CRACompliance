@@ -1,6 +1,6 @@
-# Pflichten der Importeure (Art. 15)
+# 1.4 Importeur-Pflichten (Art. 15)
 
-## Übersicht
+## 1.4.1 Übersicht
 
 Importeure sind Wirtschaftsakteure, die ein Produkt mit digitalen Elementen eines Drittlands-Herstellers (außerhalb der EU) auf dem Unionsmarkt in Verkehr bringen. Der CRA legt ihnen spezifische Sorgfaltspflichten auf, um sicherzustellen, dass nur konforme Produkte den EU-Markt erreichen.
 
@@ -10,7 +10,7 @@ Importeure sind Wirtschaftsakteure, die ein Produkt mit digitalen Elementen eine
 **Art. 3 Nr. 21 CRA:** *„Importeur" ist jede in der Union ansässige natürliche oder juristische Person, die ein Produkt mit digitalen Elementen, das den Namen oder die Handelsmarke einer außerhalb der Union ansässigen Person trägt, in Verkehr bringt.*
 :::
 
-## Wann ist BAUER GROUP Importeur?
+## 1.4.2 Wann ist BAUER GROUP Importeur?
 
 BAUER GROUP agiert als Importeur, wenn:
 
@@ -22,7 +22,7 @@ BAUER GROUP agiert als Importeur, wenn:
 Wenn BAUER GROUP ein Drittlands-Produkt unter **eigenem Namen oder Marke** in Verkehr bringt, gilt BAUER GROUP als **Hersteller** (nicht als Importeur) und unterliegt den vollen Herstellerpflichten nach Art. 10.
 :::
 
-## Pflichten im Detail
+## 1.4.3 Pflichten im Detail
 
 ### 1. Konformitätsprüfung vor Inverkehrbringen (Art. 15 Abs. 1)
 
@@ -81,7 +81,7 @@ Bei Kenntnis einer **aktiv ausgenutzten Schwachstelle** oder eines **schwerwiege
 - Hersteller **unverzüglich** informieren
 - Falls Hersteller nicht reagiert: Selbst bei ENISA und der nationalen CSIRT-Stelle melden
 
-## Prüfcheckliste für Importeure
+## 1.4.4 Prüfcheckliste für Importeure
 
 ### Vor dem Inverkehrbringen
 
@@ -102,7 +102,7 @@ Bei Kenntnis einer **aktiv ausgenutzten Schwachstelle** oder eines **schwerwiege
 - [ ] Kooperationsbereitschaft mit Behörden sichergestellt
 - [ ] Dokumentation archiviert (10 Jahre)
 
-## Haftung und Sanktionen
+## 1.4.5 Haftung und Sanktionen
 
 | Verstoß | Sanktion |
 |---------|---------|

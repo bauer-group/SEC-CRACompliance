@@ -1,6 +1,6 @@
-# 7.2 安全架构 (Security Architecture)
+# 6.2 安全架构
 
-## 安全设计流程 (Security-by-Design)
+## 6.2.1 安全设计流程 (Security-by-Design)
 
 安全架构文档说明了网络安全如何被集成到设计、开发和维护流程中。
 
@@ -10,7 +10,7 @@
 **Annex I，第I部分：** 产品的基本网络安全要求。
 :::
 
-## 安全开发生命周期 (Secure Development Lifecycle, SDLC)
+## 6.2.2 安全开发生命周期 (Secure Development Lifecycle, SDLC)
 
 ```
 规划 → 设计 → 开发 → 测试 → 发布 → 维护
@@ -40,7 +40,7 @@
        合规要求
 ```
 
-## Annex I，第I部分 — 基本要求
+## 6.2.3 Annex I，第I部分 — 基本要求
 
 以下来自 CRA Annex I 第I部分的要求在安全架构中得到了落实：
 
@@ -92,7 +92,7 @@
 | 监控 | 异常检测（产品特定） |
 | 隔离 | 容器隔离、网络策略 |
 
-## CI/CD 安全措施
+## 6.2.4 CI/CD 安全措施
 
 | 措施 | 实现方式 | 工作流 |
 |------|----------|--------|
@@ -106,7 +106,7 @@
 | 制品签名 | 发布时使用 Cosign | `docker-build.yml` |
 | 依赖项更新 | Dependabot | `docker-maintenance-dependabot.yml` |
 
-## 安全架构的证据
+## 6.2.5 安全架构的证据
 
 安全架构通过以下方式提供证据：
 

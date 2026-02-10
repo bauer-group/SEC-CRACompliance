@@ -1,10 +1,10 @@
-# 产品安全信息 (Product Security Information)
+# A.8 产品安全信息
 
-## 模板：根据 Annex II CRA 的面向用户安全信息
+## A.8.1 模板：根据 Annex II CRA 的面向用户安全信息
 
 ---
 
-## 安全信息：[产品名称]
+## A.8.2 安全信息：[产品名称]
 
 **版本：** [X.Y.Z]
 **日期：** [YYYY-MM-DD]

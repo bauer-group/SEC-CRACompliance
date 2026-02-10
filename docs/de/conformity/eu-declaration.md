@@ -1,6 +1,6 @@
-# 8.3 EU-Konformitätserklärung
+# 7.8 EU-Konformitätserklärung
 
-## Übersicht
+## 7.8.1 Übersicht
 
 Die EU-Konformitätserklärung (Declaration of Conformity, DoC) ist das formale Dokument, mit dem der Hersteller erklärt, dass sein Produkt die Anforderungen des CRA erfüllt. Sie ist Voraussetzung für die CE-Kennzeichnung.
 
@@ -10,7 +10,7 @@ Die EU-Konformitätserklärung (Declaration of Conformity, DoC) ist das formale 
 **Annex V CRA** definiert den Mindestinhalt der EU-Konformitätserklärung.
 :::
 
-## Inhalt gemäß Annex V CRA
+## 7.8.2 Inhalt gemäß Annex V CRA
 
 Die EU-Konformitätserklärung muss mindestens enthalten:
 
@@ -25,12 +25,12 @@ Die EU-Konformitätserklärung muss mindestens enthalten:
 9. **Unterschrift** der verantwortlichen Person mit Name und Funktion
 10. **Support-Zeitraum** des Produkts
 
-## Template
+## 7.8.3 Template
 
 Ein ausfüllbares Template ist verfügbar unter:
 → [EU-Konformitätserklärung Template](/de/templates/eu-declaration-of-conformity)
 
-## CE-Kennzeichnung
+## 7.8.4 CE-Kennzeichnung
 
 Nach Ausstellen der EU-Konformitätserklärung wird die CE-Kennzeichnung angebracht:
 
@@ -53,7 +53,7 @@ Nach Ausstellen der EU-Konformitätserklärung wird die CE-Kennzeichnung angebra
 - Kennnummer der notifizierten Stelle (falls beteiligt)
 - Neben der CE-Kennzeichnung: Postanschrift des Herstellers
 
-## Aufbewahrung
+## 7.8.5 Aufbewahrung
 
 | Dokument | Aufbewahrungsdauer | Speicherort |
 |----------|-------------------|-------------|
@@ -61,7 +61,7 @@ Nach Ausstellen der EU-Konformitätserklärung wird die CE-Kennzeichnung angebra
 | Technische Dokumentation | **10 Jahre** nach Inverkehrbringen | Dieses Repository |
 | Konformitätsbewertungsunterlagen | **10 Jahre** nach Inverkehrbringen | Dieses Repository |
 
-## Bereitstellung für Behörden
+## 7.8.6 Bereitstellung für Behörden
 
 Gemäß Art. 28 Abs. 5 CRA muss die EU-Konformitätserklärung auf Anfrage den Marktaufsichtsbehörden vorgelegt werden:
 
@@ -69,7 +69,7 @@ Gemäß Art. 28 Abs. 5 CRA muss die EU-Konformitätserklärung auf Anfrage den M
 - Als PDF auf Anfrage
 - In der Sprache der anfragenden Behörde (mindestens Englisch)
 
-## Aktualisierung
+## 7.8.7 Aktualisierung
 
 Die EU-Konformitätserklärung muss aktualisiert werden bei:
 

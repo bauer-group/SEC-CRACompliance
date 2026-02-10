@@ -1,6 +1,6 @@
-# Marktüberwachung (Art. 52-58)
+# 1.10 Marktüberwachung (Art. 52–58)
 
-## Übersicht
+## 1.10.1 Übersicht
 
 Die Marktüberwachung stellt sicher, dass auf dem EU-Markt befindliche Produkte die CRA-Anforderungen erfüllen. Die Verordnung (EU) 2019/1020 (Marktüberwachungsverordnung) findet Anwendung. Hersteller müssen auf Anfragen der Marktüberwachungsbehörden reagieren und bei Korrekturmaßnahmen kooperieren.
 
@@ -10,7 +10,7 @@ Die Marktüberwachung stellt sicher, dass auf dem EU-Markt befindliche Produkte 
 **Art. 53-58 CRA:** Spezifische Verfahren für Korrekturmaßnahmen, Schutzklausel, formale Nicht-Konformität und Unionsschutzklausel.
 :::
 
-## Zuständige Behörden
+## 1.10.2 Zuständige Behörden
 
 | Land | Zuständige Marktüberwachungsbehörde |
 |------|-------------------------------------|
@@ -20,7 +20,7 @@ Die Marktüberwachung stellt sicher, dass auf dem EU-Markt befindliche Produkte 
 
 *Die genaue Zuständigkeitsverteilung wird von den Mitgliedstaaten bis zum 11.06.2026 festgelegt.*
 
-## Befugnisse der Marktüberwachungsbehörden
+## 1.10.3 Befugnisse der Marktüberwachungsbehörden
 
 ### Informationsanfragen (Art. 52)
 
@@ -48,7 +48,7 @@ Behörden können:
 - Vertriebsstopp
 - Vernichtung des Produkts (in schweren Fällen)
 
-## Verfahren
+## 1.10.4 Verfahren
 
 ### Art. 53 – Korrekturmaßnahmen auf nationaler Ebene
 
@@ -96,7 +96,7 @@ Formale Verstöße (ohne inhaltliches Risiko):
 → Hersteller muss **formale Konformität** herstellen
 → Bei Nichtbefolgung: Vertriebsstopp oder Rückruf
 
-## Pflichten von BAUER GROUP
+## 1.10.5 Pflichten von BAUER GROUP
 
 ### Vorbereitung auf Marktüberwachung
 
@@ -132,7 +132,7 @@ Falls ein Rückruf angeordnet oder freiwillig durchgeführt wird:
 
 → Siehe auch: [Kommunikationsplan](/de/incident-response/communication)
 
-## Checkliste: Bereitschaft für Marktüberwachung
+## 1.10.6 Checkliste: Bereitschaft für Marktüberwachung
 
 - [ ] Technische Dokumentation aller Produkte aktuell und abrufbar
 - [ ] EU-Konformitätserklärungen für alle Produkte vorhanden

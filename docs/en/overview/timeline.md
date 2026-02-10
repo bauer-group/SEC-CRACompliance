@@ -1,6 +1,6 @@
-# 1.3 Deadlines & Timelines
+# 1.3 Timelines & Deadlines
 
-## CRA Timeline
+## 1.3.1 CRA Timeline
 
 The Cyber Resilience Act (Regulation (EU) 2024/2847) was published in the Official Journal of the EU on 20 November 2024 and entered into force on 10 December 2024.
 
@@ -45,14 +45,14 @@ From 11 September 2026, actively exploited vulnerabilities must be reported to E
 - SBOM available for every shipped product
 - User information provided in accordance with Annex II
 
-## NIS2 Timeline
+## 1.3.2 NIS2 Timeline
 
 | Date | Requirement |
 |------|-------------|
 | 17.10.2024 | NIS2 transposition deadline for Member States |
 | Ongoing | Reporting obligations pursuant to Art. 23 NIS2 for significant security incidents |
 
-## Internal Implementation Timeline
+## 1.3.3 Internal Implementation Timeline
 
 | Quarter | Measures |
 |---------|----------|

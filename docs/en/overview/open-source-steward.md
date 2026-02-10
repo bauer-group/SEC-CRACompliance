@@ -1,6 +1,6 @@
-# Open Source Software Steward (Art. 18-19)
+# 1.7 Open-Source Steward (Art. 18–19)
 
-## Overview
+## 1.7.1 Overview
 
 The CRA introduces the new role of the **Open Source Software Steward**. This concerns legal persons (e.g., foundations, companies) that systematically support the development of open-source software intended for commercial activities.
 
@@ -12,7 +12,7 @@ The CRA introduces the new role of the **Open Source Software Steward**. This co
 **Art. 19 CRA:** Security attestation for free and open-source software.
 :::
 
-## When Does the OSS Steward Role Apply?
+## 1.7.2 When Does the OSS Steward Role Apply?
 
 ### Requirements (cumulative)
 
@@ -43,7 +43,7 @@ The CRA introduces the new role of the **Open Source Software Steward**. This co
 Based on current knowledge, BAUER GROUP primarily acts as a **Manufacturer** (own code) and **user** (OSS dependencies). The OSS steward role is currently **not applicable**, but must be reviewed for new OSS engagements.
 :::
 
-## Obligations of the OSS Steward (Art. 18)
+## 1.7.3 Obligations of the OSS Steward (Art. 18)
 
 Even though the steward role is less comprehensive than that of the Manufacturer, the following obligations apply:
 
@@ -73,7 +73,7 @@ Open-source software stewards may initiate a **voluntary security attestation**:
 - Evidence of vulnerability handling processes
 - Third-party attestation (optional)
 
-## Role Distinction for Open Source
+## 1.7.4 Role Distinction for Open Source
 
 | Role | CRA Status | Obligations |
 |------|-----------|-------------|
@@ -83,7 +83,7 @@ Open-source software stewards may initiate a **voluntary security attestation**:
 | **OSS steward** (organisation) | Art. 18-19 obligations | Limited obligations (see above) |
 | **Manufacturer of OSS** (commercial) | Full Manufacturer (Art. 10) | Full manufacturer obligations |
 
-## Impact on the Supply Chain
+## 1.7.5 Impact on the Supply Chain
 
 ### For BAUER GROUP as a Manufacturer
 
@@ -96,7 +96,7 @@ Even if BAUER GROUP is not an OSS steward, the OSS steward provisions have impli
 
 > See: [Supply Chain Security](/en/supply-chain/) and [Third-Party Assessment](/en/supply-chain/third-party-assessment)
 
-## Penalties
+## 1.7.6 Penalties
 
 OSS stewards are subject to **reduced penalties** compared to manufacturers:
 
@@ -106,7 +106,7 @@ OSS stewards are subject to **reduced penalties** compared to manufacturers:
 
 *The Commission takes into account the special role and non-commercial character of the steward activity when determining penalties.*
 
-## Relevant Developments
+## 1.7.7 Relevant Developments
 
 - The EU Commission will adopt **implementing acts** that further specify the security attestation (Art. 19)
 - Harmonised standards for OSS stewards are under development

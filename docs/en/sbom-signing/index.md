@@ -1,4 +1,4 @@
-# SBOM & Signing
+# Chapter 2: SBOM & Signing
 
 ## Overview
 

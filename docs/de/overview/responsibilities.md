@@ -1,6 +1,6 @@
 # 1.2 Rollen & Verantwortlichkeiten
 
-## CRA-Rollen gemäß Verordnung
+## 1.2.1 CRA-Rollen gemäß Verordnung
 
 Der CRA definiert drei Wirtschaftsakteure mit jeweils eigenen Pflichten:
 
@@ -91,7 +91,7 @@ Die Vollmacht muss mindestens folgende Aufgaben umfassen:
 Bei der Beschaffung von Produkten mit digitalen Elementen von Nicht-EU-Herstellern ist im Rahmen des Third-Party Assessment (→ [6.3](/de/supply-chain/third-party-assessment)) zu prüfen, ob der Lieferant einen EU-Bevollmächtigten benannt hat. Dies ist eine **Voraussetzung** für das legale Inverkehrbringen auf dem EU-Markt.
 :::
 
-## Interne Rollenverteilung
+## 1.2.2 Interne Rollenverteilung
 
 | Rolle | Verantwortung | CRA-Bezug |
 |-------|---------------|-----------|
@@ -102,7 +102,7 @@ Bei der Beschaffung von Produkten mit digitalen Elementen von Nicht-EU-Herstelle
 | **QA / Release Manager** | Konformitätsbewertung, Release-Freigabe | Annex VII |
 | **Management** | Ressourcenbereitstellung, Eskalationsentscheidungen | Art. 10 Abs. 2 |
 
-## RACI-Matrix
+## 1.2.3 RACI-Matrix
 
 | Aktivität | Security Lead | Product Owner | DevOps | Dev Team | Management |
 |-----------|:---:|:---:|:---:|:---:|:---:|

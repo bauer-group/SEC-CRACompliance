@@ -1,6 +1,6 @@
-# Europäisches Cybersicherheitszertifikat (EUCC)
+# 7.5 EUCC-Zertifizierung
 
-## Übersicht
+## 7.5.1 Übersicht
 
 Für **kritische Produkte** (Annex IV CRA) ist ein Europäisches Cybersicherheitszertifikat (EUCC) auf mindestens der Vertrauenswürdigkeitsstufe „substanziell" erforderlich. Das EUCC basiert auf dem **EU Cybersecurity Act** (Verordnung (EU) 2019/881) und dem Common Criteria Framework (ISO/IEC 15408).
 
@@ -12,7 +12,7 @@ Für **kritische Produkte** (Annex IV CRA) ist ein Europäisches Cybersicherheit
 **EUCC-Schema (Durchführungsverordnung (EU) 2024/482):** Spezifiziert das europäische Common-Criteria-basierte Zertifizierungsschema.
 :::
 
-## Anwendbarkeit
+## 7.5.2 Anwendbarkeit
 
 | Kategorie | EUCC erforderlich? |
 |-----------|-------------------|
@@ -31,7 +31,7 @@ Folgende Produkte sind als kritisch eingestuft:
 - Sensoren und Aktoren für Roboter und Maschinensteuerungen
 - Smart Meter Gateways
 
-## Vertrauenswürdigkeitsstufen
+## 7.5.3 Vertrauenswürdigkeitsstufen
 
 Das EUCC kennt zwei Stufen, basierend auf den Common Criteria Evaluation Assurance Levels (EAL):
 
@@ -42,7 +42,7 @@ Das EUCC kennt zwei Stufen, basierend auf den Common Criteria Evaluation Assuran
 
 Für den CRA ist mindestens die Stufe **„substanziell"** erforderlich.
 
-## Verfahrensablauf
+## 7.5.4 Verfahrensablauf
 
 ### 1. Evaluierungsstelle (ITSEF) auswählen
 
@@ -99,7 +99,7 @@ Nach erfolgreicher Evaluierung:
 - **Re-Evaluierung:** Bei wesentlichen Änderungen
 - **Vulnerability Management:** Laufende Pflicht zur Schwachstellenbehandlung
 
-## Zeitplanung
+## 7.5.5 Zeitplanung
 
 | Phase | Geschätzter Zeitaufwand |
 |-------|------------------------|
@@ -113,7 +113,7 @@ Nach erfolgreicher Evaluierung:
 EUCC-Evaluierungen sind aufwändig und langwierig. Beginnen Sie mindestens **18-24 Monate** vor dem geplanten Inverkehrbringen mit der Planung.
 :::
 
-## Kosten
+## 7.5.6 Kosten
 
 | Kostenfaktor | Geschätzter Bereich |
 |-------------|---------------------|
@@ -125,7 +125,7 @@ EUCC-Evaluierungen sind aufwändig und langwierig. Beginnen Sie mindestens **18-
 
 *Hinweis: Die tatsächlichen Kosten hängen stark von der Produktkomplexität und dem angestrebten EAL ab.*
 
-## Relevanz für BAUER GROUP
+## 7.5.7 Relevanz für BAUER GROUP
 
 Basierend auf der [Produktklassifizierung](/de/conformity/product-classification):
 
@@ -140,13 +140,13 @@ Basierend auf der [Produktklassifizierung](/de/conformity/product-classification
 Nach derzeitigem Kenntnisstand fallen keine BAUER GROUP Produkte unter Annex IV. Diese Einschätzung wird bei jedem neuen Produkt und bei Änderungen der Delegated Acts überprüft.
 :::
 
-## Übergangsregelungen
+## 7.5.8 Übergangsregelungen
 
 - **Art. 24 Abs. 5 CRA:** Solange kein passendes EUCC-Schema für eine Annex IV Produktkategorie existiert, kann alternativ Modul B+C angewendet werden
 - Die EU-Kommission kann per Delegated Act weitere Produkte zu Annex IV hinzufügen
 - Hersteller müssen die Entwicklung der Implementing Acts aktiv verfolgen
 
-## Checkliste: EUCC
+## 7.5.9 Checkliste: EUCC
 
 - [ ] Produktklassifizierung abgeschlossen (Annex IV bestätigt)
 - [ ] Relevantes Protection Profile identifiziert (falls vorhanden)

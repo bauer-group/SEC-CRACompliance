@@ -1,10 +1,10 @@
-# 4.3 Verifikation
+# 2.6 Verifikation
 
-## Verifikationsverfahren
+## 2.6.1 Verifikationsverfahren
 
 Die Verifikation stellt sicher, dass ausgelieferte Artefakte authentisch und unverändert sind. Nutzer und Systeme können die Integrität jederzeit prüfen.
 
-## Container Images verifizieren
+## 2.6.2 Container Images verifizieren
 
 ```bash
 # 1. Public Key herunterladen (einmalig)
@@ -23,7 +23,7 @@ The following checks were performed on each of these signatures:
   - The signatures were verified against the specified public key
 ```
 
-## Binaries & Firmware verifizieren
+## 2.6.3 Binaries & Firmware verifizieren
 
 ```bash
 # 1. Artefakt, Signatur und Public Key herunterladen
@@ -38,7 +38,7 @@ cosign verify-blob --key cosign.pub --signature artifact.bin.sig artifact.bin
 sha256sum -c SHA256SUMS.txt
 ```
 
-## SBOM verifizieren
+## 2.6.4 SBOM verifizieren
 
 ```bash
 # SBOM-Signatur prüfen
@@ -51,7 +51,7 @@ cosign verify-blob \
 sha256sum -c sbom.cdx.json.sha256
 ```
 
-## Automatische Verifikation im Deployment
+## 2.6.5 Automatische Verifikation im Deployment
 
 ### OTA-Update-Verifikation (Firmware)
 
@@ -93,7 +93,7 @@ spec:
           -----END PUBLIC KEY-----
 ```
 
-## Verifikation durch Marktaufsichtsbehörden
+## 2.6.6 Verifikation durch Marktaufsichtsbehörden
 
 Marktaufsichtsbehörden können die Integrität aller Artefakte wie folgt prüfen:
 

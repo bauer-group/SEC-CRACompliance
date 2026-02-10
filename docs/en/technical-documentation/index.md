@@ -1,6 +1,6 @@
-# Chapter 7: Technical Documentation
+# Chapter 6: Technical Documentation
 
-## 7.1 Overview
+## Overview
 
 The Technical Documentation pursuant to Annex VII CRA constitutes the central evidence documentation for the conformity of a product with digital elements. It must be prepared prior to placing on the market and retained for at least 10 years.
 

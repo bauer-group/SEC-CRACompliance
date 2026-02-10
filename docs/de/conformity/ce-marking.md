@@ -1,6 +1,6 @@
-# CE-Kennzeichnung (Art. 29-30)
+# 7.7 CE-Kennzeichnung (Art. 29–30)
 
-## Übersicht
+## 7.7.1 Übersicht
 
 Die CE-Kennzeichnung ist das sichtbare Zeichen dafür, dass ein Produkt mit digitalen Elementen alle anwendbaren EU-Anforderungen erfüllt. Sie ist **zwingend vorgeschrieben**, bevor ein Produkt auf dem EU-Markt in Verkehr gebracht wird. Die CE-Kennzeichnung bezieht sich dabei nicht ausschließlich auf den CRA, sondern auf alle für das Produkt geltenden EU-Harmonisierungsrechtsvorschriften.
 
@@ -12,7 +12,7 @@ Die CE-Kennzeichnung ist das sichtbare Zeichen dafür, dass ein Produkt mit digi
 **Verordnung (EG) Nr. 765/2008, Art. 30:** Allgemeine Grundsätze der CE-Kennzeichnung (Proportionen, Mindestgröße, Sichtbarkeit).
 :::
 
-## Bedeutung der CE-Kennzeichnung
+## 7.7.2 Bedeutung der CE-Kennzeichnung
 
 Die CE-Kennzeichnung bestätigt, dass:
 
@@ -25,7 +25,7 @@ Die CE-Kennzeichnung bestätigt, dass:
 Die CE-Kennzeichnung ist **kein Qualitätssiegel** und kein Zertifikat einer unabhängigen Stelle (außer bei Modul B+C oder H). Sie ist eine **Herstellererklärung** über die Einhaltung der EU-Anforderungen.
 :::
 
-## Wann wird die CE-Kennzeichnung angebracht?
+## 7.7.3 Wann wird die CE-Kennzeichnung angebracht?
 
 Die CE-Kennzeichnung darf **erst** angebracht werden, wenn:
 
@@ -35,7 +35,7 @@ Die CE-Kennzeichnung darf **erst** angebracht werden, wenn:
 - [ ] Alle **wesentlichen Anforderungen** aus Annex I (Teil I und Teil II) erfüllt sind
 - [ ] Bei externer Bewertung: Die **Bescheinigung der notifizierten Stelle** vorliegt
 
-## Physische Anforderungen
+## 7.7.4 Physische Anforderungen
 
 Gemäß Verordnung (EG) Nr. 765/2008 und Art. 29-30 CRA:
 
@@ -48,7 +48,7 @@ Gemäß Verordnung (EG) Nr. 765/2008 und Art. 29-30 CRA:
 | Dauerhaftigkeit | Nicht leicht entfernbar (indelibel) |
 | Sprache | Keine Sprachanforderung (universelles Symbol) |
 
-## Anbringungsort
+## 7.7.5 Anbringungsort
 
 ### Hardware / Physische Produkte
 
@@ -88,7 +88,7 @@ Für containerisierte Software:
 | Benutzeroberfläche | Im Webinterface oder der Konfigurationsoberfläche des Geräts |
 | Update-Portal | Auf der Download-Seite für Firmware-Updates |
 
-## Zusätzliche Kennzeichnungen
+## 7.7.6 Zusätzliche Kennzeichnungen
 
 ### Kennnummer der notifizierten Stelle
 
@@ -113,7 +113,7 @@ Neben der CE-Kennzeichnung müssen angegeben werden:
 - **Postanschrift** des Herstellers (oder des Bevollmächtigten)
 - **Eindeutige Produktidentifikation** (Typ, Version, Seriennummer)
 
-## Verbotene Kennzeichnungen
+## 7.7.7 Verbotene Kennzeichnungen
 
 ::: danger VERBOTEN
 Folgende Kennzeichnungen sind **unzulässig** und können zu Sanktionen führen:
@@ -125,7 +125,7 @@ Folgende Kennzeichnungen sind **unzulässig** und können zu Sanktionen führen:
 - **Manipulierte oder gefälschte CE-Kennzeichnungen**
 :::
 
-## Zusammenhang mit der EU-Konformitätserklärung
+## 7.7.8 Zusammenhang mit der EU-Konformitätserklärung
 
 Die CE-Kennzeichnung und die EU-Konformitätserklärung (DoC) sind untrennbar verbunden:
 
@@ -140,7 +140,7 @@ Die CE-Kennzeichnung darf **nur** angebracht werden, wenn eine gültige EU-Konfo
 
 > Template: [EU-Konformitätserklärung Template](/de/templates/eu-declaration-of-conformity)
 
-## Marktüberwachung und fehlende CE-Kennzeichnung
+## 7.7.9 Marktüberwachung und fehlende CE-Kennzeichnung
 
 ### Art. 56 -- Formale Nicht-Konformität
 
@@ -171,7 +171,7 @@ Behörde stellt formale Nicht-Konformität fest
 
 > Details: [Marktüberwachung (Art. 52-58)](/de/overview/market-surveillance)
 
-## BAUER GROUP Umsetzung
+## 7.7.10 BAUER GROUP Umsetzung
 
 ### Software-Produkte
 
@@ -199,7 +199,7 @@ Behörde stellt formale Nicht-Konformität fest
 | Webinterface | CE-Hinweis im Admin-Panel / Info-Seite |
 | Update-Dokumentation | CE-Verweis in den Release Notes |
 
-## Checkliste: CE-Kennzeichnung
+## 7.7.11 Checkliste: CE-Kennzeichnung
 
 ### Vor Anbringung
 
@@ -233,7 +233,7 @@ Behörde stellt formale Nicht-Konformität fest
 - [ ] Keine irreführenden Kennzeichnungen vorhanden
 - [ ] Dokumentation aktuell
 
-## Querverweise
+## 7.7.12 Querverweise
 
 - [EU-Konformitätserklärung](/de/conformity/eu-declaration)
 - [Selbstbewertung (Modul A)](/de/conformity/self-assessment)

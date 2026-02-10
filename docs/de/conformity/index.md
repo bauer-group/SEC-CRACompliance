@@ -1,6 +1,6 @@
-# Kapitel 8: Konformitätsbewertung
+# Kapitel 7: Konformitätsbewertung
 
-## 8.1 Übersicht
+## Übersicht
 
 Die Konformitätsbewertung ist der formale Nachweis, dass ein Produkt mit digitalen Elementen die wesentlichen Cybersicherheitsanforderungen des CRA erfüllt. Die Art der Bewertung hängt von der Produktklassifizierung ab.
 
@@ -10,7 +10,7 @@ Die Konformitätsbewertung ist der formale Nachweis, dass ein Produkt mit digita
 **Art. 28 CRA:** Nach erfolgreicher Konformitätsbewertung stellt der Hersteller eine EU-Konformitätserklärung aus und bringt die CE-Kennzeichnung an.
 :::
 
-## 8.2 Bewertungsverfahren nach Produktkategorie
+## Bewertungsverfahren nach Produktkategorie
 
 | Kategorie | Verfahren | Beschreibung |
 |-----------|-----------|--------------|
@@ -21,7 +21,7 @@ Die Konformitätsbewertung ist der formale Nachweis, dass ein Produkt mit digita
 
 *\* Modul A für Klasse I nur bei vollständiger Anwendung harmonisierter Normen*
 
-## 8.3 Kapitelstruktur
+## Kapitelstruktur
 
 | Sektion | Thema | Beschreibung |
 |---------|-------|-------------|

@@ -1,6 +1,6 @@
-# Market Surveillance (Art. 52-58)
+# 1.10 Market Surveillance (Art. 52–58)
 
-## Overview
+## 1.10.1 Overview
 
 Market Surveillance ensures that products on the EU market meet the CRA requirements. Regulation (EU) 2019/1020 (Market Surveillance Regulation) applies. Manufacturers must respond to requests from Market Surveillance authorities and cooperate with corrective measures.
 
@@ -10,7 +10,7 @@ Market Surveillance ensures that products on the EU market meet the CRA requirem
 **Art. 53-58 CRA:** Specific procedures for corrective measures, safeguard clause, formal non-conformity, and Union safeguard clause.
 :::
 
-## Competent Authorities
+## 1.10.2 Competent Authorities
 
 | Country | Competent Market Surveillance Authority |
 |---------|----------------------------------------|
@@ -20,7 +20,7 @@ Market Surveillance ensures that products on the EU market meet the CRA requirem
 
 *The exact distribution of competences will be determined by the Member States by 11.06.2026.*
 
-## Powers of Market Surveillance Authorities
+## 1.10.3 Powers of Market Surveillance Authorities
 
 ### Information Requests (Art. 52)
 
@@ -48,7 +48,7 @@ Authorities may:
 - Distribution stop
 - Destruction of the product (in severe cases)
 
-## Procedures
+## 1.10.4 Procedures
 
 ### Art. 53 -- Corrective Measures at National Level
 
@@ -96,7 +96,7 @@ Formal violations (without substantive risk):
 > Manufacturer must establish **formal conformity**
 > In case of non-compliance: distribution stop or recall
 
-## BAUER GROUP Obligations
+## 1.10.5 BAUER GROUP Obligations
 
 ### Preparation for Market Surveillance
 
@@ -132,7 +132,7 @@ If a recall is ordered or carried out voluntarily:
 
 > See also: [Communication Plan](/en/incident-response/communication)
 
-## Checklist: Readiness for Market Surveillance
+## 1.10.6 Checklist: Readiness for Market Surveillance
 
 - [ ] Technical documentation of all products up to date and retrievable
 - [ ] EU declarations of conformity available for all products

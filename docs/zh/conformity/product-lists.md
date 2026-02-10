@@ -1,6 +1,6 @@
-# 产品清单（Annex III 和 IV）
+# 7.6 产品清单（Annex III 和 IV）
 
-## 概述
+## 7.6.1 概述
 
 《网络弹性法案》(Cyber Resilience Act, CRA) 在 **Annex III** 和 **Annex IV** 中定义了特定的产品类别，这些类别适用特殊的合规评估 (Conformity Assessment) 程序。本页面包含其中规定的所有产品类别的完整清单，包括描述、所需评估程序以及对 BAUER GROUP 的相关性评估。
 
@@ -20,7 +20,7 @@
 
 ---
 
-## Annex III — 重要的含数字元素产品
+## 7.6.2 Annex III — 重要的含数字元素产品
 
 ### 第I部分 — Class I
 
@@ -63,7 +63,7 @@ Class II 产品需要强制性的第三方评估：[EU 型式检验（Module B+C
 
 ---
 
-## Annex IV — 关键的含数字元素产品
+## 7.6.3 Annex IV — 关键的含数字元素产品
 
 关键产品需要保证级别为"实质性"或更高的[欧洲网络安全证书 (EUCC)](/zh/conformity/eucc)。
 
@@ -77,7 +77,7 @@ Class II 产品需要强制性的第三方评估：[EU 型式检验（Module B+C
 
 ---
 
-## 合规模块概览
+## 7.6.4 合规模块概览
 
 | 产品类别 | Module A（自评） | Module B+C（型式） | Module H（质量） | EUCC |
 |----------|:-:|:-:|:-:|:-:|
@@ -97,7 +97,7 @@ Class II 产品需要强制性的第三方评估：[EU 型式检验（Module B+C
 
 ---
 
-## BAUER GROUP 相关性评估
+## 7.6.5 BAUER GROUP 相关性评估
 
 下表评估了 Annex III 和 IV 中每个产品类别对 BAUER GROUP 的相关性。
 
@@ -161,7 +161,7 @@ Class II 产品需要强制性的第三方评估：[EU 型式检验（Module B+C
 Annex III 和 Annex IV 的产品清单可能根据 Art. 7(3) CRA 由欧盟委员会通过**授权法案**进行修改。因此，这些清单必须定期检查更新，并与当前适用版本的 Regulation (EU) 2024/2847 进行比对。修改可能包括添加新的产品类别以及重新分类现有类别。
 :::
 
-## 后续步骤
+## 7.6.6 后续步骤
 
 1. **执行分类** — 使用[产品分类](/zh/conformity/product-classification)页面的决策树
 2. **审查相关性** — 将每个 BAUER GROUP 产品与上述清单进行比对

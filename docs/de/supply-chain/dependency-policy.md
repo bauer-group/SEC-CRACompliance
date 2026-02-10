@@ -1,6 +1,6 @@
-# 6.1 Dependency Policy
+# 5.1 Dependency Policy
 
-## Grundsätze
+## 5.1.1 Grundsätze
 
 ### 1. Minimalprinzip
 
@@ -18,7 +18,7 @@ Nur Abhängigkeiten mit kompatiblen Lizenzen verwenden.
 
 Abhängigkeiten müssen auf spezifische Versionen gepinnt werden (kein `latest`, keine Ranges).
 
-## Erlaubte Lizenzen
+## 5.1.2 Erlaubte Lizenzen
 
 | Lizenz | Status |
 |--------|--------|
@@ -31,7 +31,7 @@ Abhängigkeiten müssen auf spezifische Versionen gepinnt werden (kein `latest`,
 | Unlicense | ✅ Erlaubt |
 | MPL-2.0 | ⚠️ Prüfung erforderlich |
 
-## Verbotene Lizenzen
+## 5.1.3 Verbotene Lizenzen
 
 | Lizenz | Status | Grund |
 |--------|--------|-------|
@@ -43,7 +43,7 @@ Abhängigkeiten müssen auf spezifische Versionen gepinnt werden (kein `latest`,
 
 Die Lizenzprüfung wird automatisiert durch `modules-license-compliance.yml` durchgeführt.
 
-## Bewertungskriterien für neue Abhängigkeiten
+## 5.1.4 Bewertungskriterien für neue Abhängigkeiten
 
 Vor der Aufnahme einer neuen Abhängigkeit:
 
@@ -56,7 +56,7 @@ Vor der Aufnahme einer neuen Abhängigkeit:
 | **Transitive Abhängigkeiten** | Keine bekannten Risiken |
 | **Maintainer** | Identifizierbar, keine anonymen Einweg-Accounts |
 
-## Automatisierte Durchsetzung
+## 5.1.5 Automatisierte Durchsetzung
 
 ### CI/CD Pipeline
 
@@ -73,7 +73,7 @@ Vor der Aufnahme einer neuen Abhängigkeit:
 - Automatische PRs bei Sicherheitsupdates
 - Auto-Merge für Patch-Updates vertrauenswürdiger Pakete
 
-## Prozess bei Supply-Chain-Angriffen
+## 5.1.6 Prozess bei Supply-Chain-Angriffen
 
 Bei Verdacht auf kompromittierte Abhängigkeiten (Dependency Confusion, Typosquatting, Maintainer Takeover):
 

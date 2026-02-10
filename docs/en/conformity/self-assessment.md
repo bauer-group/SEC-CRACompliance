@@ -1,6 +1,6 @@
-# 8.1 Internal Control (Module A)
+# 7.2 Internal Control (Module A)
 
-## Procedure
+## 7.2.1 Procedure
 
 The Internal Control pursuant to Annex VIII, Module A, CRA is the simplest Conformity Assessment procedure. The manufacturer assesses independently whether its product meets the essential requirements.
 
@@ -13,7 +13,7 @@ Module A is applicable for:
 For **Class II** and **Critical**, Module A is **not** sufficient.
 :::
 
-## Internal Control Process
+## 7.2.2 Internal Control Process
 
 ### 1. Prepare Technical Documentation
 
@@ -84,7 +84,7 @@ Following a successful review:
 - EU Declaration of Conformity: **10 years** after placing on the market
 - Storage location: This repository (Git-versioned)
 
-## Checklist: Module A -- Internal Control
+## 7.2.3 Checklist: Module A -- Internal Control
 
 - [ ] Product Classification completed (Standard or Class I with harmonised standards)
 - [ ] Technical documentation complete (Annex VII)

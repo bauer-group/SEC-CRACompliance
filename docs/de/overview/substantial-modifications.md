@@ -1,6 +1,6 @@
-# Wesentliche Änderungen (Art. 20)
+# 1.8 Wesentliche Änderungen (Art. 20)
 
-## Übersicht
+## 1.8.1 Übersicht
 
 Eine **wesentliche Änderung** (substantial modification) an einem Produkt mit digitalen Elementen kann dazu führen, dass die Person, die die Änderung vornimmt, als neuer **Hersteller** gilt und damit die vollen Herstellerpflichten nach Art. 10 übernehmen muss. Art. 20 CRA definiert, wann eine Änderung als „wesentlich" gilt und welche Konsequenzen daraus folgen.
 
@@ -10,7 +10,7 @@ Eine **wesentliche Änderung** (substantial modification) an einem Produkt mit d
 **Art. 3 Nr. 31 CRA:** Definition der wesentlichen Änderung.
 :::
 
-## Definition: Wesentliche Änderung
+## 1.8.2 Definition: Wesentliche Änderung
 
 Eine Änderung gilt als **wesentlich**, wenn alle folgenden Bedingungen erfüllt sind:
 
@@ -18,7 +18,7 @@ Eine Änderung gilt als **wesentlich**, wenn alle folgenden Bedingungen erfüllt
 2. Die Änderung geht über die vom **ursprünglichen Hersteller** vorgesehenen Wartungs- und Sicherheitsupdates hinaus
 3. Die Änderung führt dazu, dass die vorhandene **Konformitätsbewertung** nicht mehr gültig ist
 
-## Entscheidungsbaum
+## 1.8.3 Entscheidungsbaum
 
 ```
 Wurde das Produkt nach dem Inverkehrbringen verändert?
@@ -33,7 +33,7 @@ Wurde das Produkt nach dem Inverkehrbringen verändert?
                 → Person, die die Änderung vornimmt, wird zum Hersteller
 ```
 
-## Beispiele
+## 1.8.4 Beispiele
 
 ### Keine wesentliche Änderung
 
@@ -52,7 +52,7 @@ Wurde das Produkt nach dem Inverkehrbringen verändert?
 - **Portierung auf neue Plattform** mit anderem Sicherheitsmodell
 - **Major-Version-Upgrade einer Kernabhängigkeit** mit geänderten Sicherheitseigenschaften
 
-## Konsequenzen einer wesentlichen Änderung
+## 1.8.5 Konsequenzen einer wesentlichen Änderung
 
 Wer eine wesentliche Änderung vornimmt, muss:
 
@@ -82,7 +82,7 @@ Wer eine wesentliche Änderung vornimmt, muss:
 - Schwachstellen im geänderten Produkt melden (Art. 14)
 - 24h/72h/14d Fristen einhalten
 
-## Prozess bei BAUER GROUP
+## 1.8.6 Prozess bei BAUER GROUP
 
 ### Prüfung vor jeder Änderung an Drittprodukt
 
@@ -106,7 +106,7 @@ Wer eine wesentliche Änderung vornimmt, muss:
 | 11 | EU-Konformitätserklärung ausstellen |
 | 12 | Support-Zeitraum festlegen |
 
-## Dokumentation
+## 1.8.7 Dokumentation
 
 Jede Änderungsentscheidung wird dokumentiert:
 

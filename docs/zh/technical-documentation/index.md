@@ -1,6 +1,6 @@
-# 第七章：技术文档 (Technical Documentation)
+# 第6章：技术文档
 
-## 7.1 概述
+## 概述
 
 根据 CRA 附录 VII (Annex VII) 编制的技术文档是证明含数字元素产品 (Product with Digital Elements) 合规性的核心证据文件。技术文档必须在产品投放市场前编制完成，并保留至少10年。
 

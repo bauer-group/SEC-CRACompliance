@@ -1,4 +1,4 @@
-# SBOM & Signierung
+# Kapitel 2: SBOM & Signierung
 
 ## Übersicht
 

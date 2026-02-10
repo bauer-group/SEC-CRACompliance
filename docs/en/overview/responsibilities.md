@@ -1,6 +1,6 @@
 # 1.2 Roles & Responsibilities
 
-## CRA Roles under the Regulation
+## 1.2.1 CRA Roles under the Regulation
 
 The CRA defines three economic operators, each with their own obligations:
 
@@ -91,7 +91,7 @@ The mandate must cover at least the following tasks:
 When procuring products with digital elements from non-EU manufacturers, it must be verified as part of the Third-Party Assessment (--> [6.3](/en/supply-chain/third-party-assessment)) whether the supplier has designated an EU authorised representative. This is a **prerequisite** for the lawful placing on the market within the EU.
 :::
 
-## Internal Role Assignments
+## 1.2.2 Internal Role Assignments
 
 | Role | Responsibility | CRA Reference |
 |------|----------------|---------------|
@@ -102,7 +102,7 @@ When procuring products with digital elements from non-EU manufacturers, it must
 | **QA / Release Manager** | Conformity assessment, release approval | Annex VII |
 | **Management** | Resource allocation, escalation decisions | Art. 10(2) |
 
-## RACI Matrix
+## 1.2.3 RACI Matrix
 
 | Activity | Security Lead | Product Owner | DevOps | Dev Team | Management |
 |----------|:---:|:---:|:---:|:---:|:---:|

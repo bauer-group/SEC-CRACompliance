@@ -1,10 +1,10 @@
-# 5.4 Communication Plan
+# 4.4 Communication Plan
 
-## Overview
+## 4.4.1 Overview
 
 The communication plan defines the internal and external communication channels for security incidents. The objective is rapid, consistent and legally compliant information sharing.
 
-## Communication Matrix
+## 4.4.2 Communication Matrix
 
 ### Internal Communication
 
@@ -24,7 +24,7 @@ The communication plan defines the internal and external communication channels 
 | **Public** | GitHub Security Advisory | After patch availability | Security Lead |
 | **Security researchers** (CVD) | GitHub Advisory / Email | Per Disclosure Policy | Security Lead |
 
-## Communication Templates
+## 4.4.3 Communication Templates
 
 ### Internal Initial Notification (Teams)
 
@@ -67,7 +67,7 @@ Details: [Link to Security Advisory]
 For questions, please contact: disclosure@cra.docs.bauer-group.com
 ```
 
-## Escalation Paths
+## 4.4.4 Escalation Paths
 
 ```
 SEV-1 (Critical):
@@ -85,7 +85,7 @@ SEV-4 (Low):
 Developer → Backlog → Regular release
 ```
 
-## Teams Integration
+## 4.4.5 Teams Integration
 
 The existing Teams notification (`teams-notifications.yml`) is extended for security incidents:
 
@@ -93,7 +93,7 @@ The existing Teams notification (`teams-notifications.yml`) is extended for secu
 - **Automatic Alerts:** For CRITICAL/HIGH CVE findings from the CVE monitor
 - **Status Updates:** Automatic updates on status changes of the incident ticket
 
-## Documentation Requirement
+## 4.4.6 Documentation Requirement
 
 All communication in the context of a security incident is documented:
 

@@ -1,10 +1,10 @@
-# 5.4 Kommunikationsplan
+# 4.4 Kommunikationsplan
 
-## Übersicht
+## 4.4.1 Übersicht
 
 Der Kommunikationsplan definiert die internen und externen Kommunikationswege bei Sicherheitsvorfällen. Ziel ist eine schnelle, konsistente und rechtskonforme Informationsweitergabe.
 
-## Kommunikationsmatrix
+## 4.4.2 Kommunikationsmatrix
 
 ### Interne Kommunikation
 
@@ -24,7 +24,7 @@ Der Kommunikationsplan definiert die internen und externen Kommunikationswege be
 | **Öffentlichkeit** | GitHub Security Advisory | Nach Patch-Verfügbarkeit | Security Lead |
 | **Sicherheitsforscher** (bei CVD) | GitHub Advisory / E-Mail | Gem. Disclosure Policy | Security Lead |
 
-## Kommunikationsvorlagen
+## 4.4.3 Kommunikationsvorlagen
 
 ### Interne Erstmeldung (Teams)
 
@@ -67,7 +67,7 @@ Details: [Link zum Security Advisory]
 Bei Fragen wenden Sie sich an: disclosure@cra.docs.bauer-group.com
 ```
 
-## Eskalationspfade
+## 4.4.4 Eskalationspfade
 
 ```
 SEV-1 (Kritisch):
@@ -85,7 +85,7 @@ SEV-4 (Niedrig):
 Developer → Backlog → Regulärer Release
 ```
 
-## Teams-Integration
+## 4.4.5 Teams-Integration
 
 Die bestehende Teams-Notification (`teams-notifications.yml`) wird für Sicherheitsvorfälle erweitert:
 
@@ -93,7 +93,7 @@ Die bestehende Teams-Notification (`teams-notifications.yml`) wird für Sicherhe
 - **Automatische Alerts:** Bei CRITICAL/HIGH CVE-Findings aus dem CVE-Monitor
 - **Status-Updates:** Automatische Updates bei Statusänderung des Incident-Tickets
 
-## Dokumentationspflicht
+## 4.4.6 Dokumentationspflicht
 
 Alle Kommunikation im Rahmen eines Sicherheitsvorfalls wird dokumentiert:
 

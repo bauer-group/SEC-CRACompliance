@@ -1,6 +1,6 @@
-# Identifizierung der Wirtschaftsakteure (Art. 21)
+# 5.4 Wirtschaftsakteur-Identifizierung (Art. 21)
 
-## Übersicht
+## 5.4.1 Übersicht
 
 Art. 21 CRA verpflichtet alle Wirtschaftsakteure, ihre Lieferanten und Abnehmer in der Lieferkette identifizieren zu können. Auf Anfrage der Marktüberwachungsbehörden müssen diese Informationen bereitgestellt werden. Ziel ist die lückenlose Rückverfolgbarkeit von Produkten mit digitalen Elementen über die gesamte Lieferkette.
 
@@ -13,7 +13,7 @@ Art. 21 CRA verpflichtet alle Wirtschaftsakteure, ihre Lieferanten und Abnehmer 
 *Die Wirtschaftsakteure müssen diese Informationen für einen Zeitraum von **10 Jahren** nach der Lieferung vorlegen können."*
 :::
 
-## Betroffene Wirtschaftsakteure
+## 5.4.2 Betroffene Wirtschaftsakteure
 
 Die Identifizierungspflicht gilt für alle Rollen in der Lieferkette:
 
@@ -24,7 +24,7 @@ Die Identifizierungspflicht gilt für alle Rollen in der Lieferkette:
 | Händler | Importeur/Hersteller (Lieferant) + Kunden (Abnehmer) | Art. 17, Art. 21 |
 | Bevollmächtigter | Hersteller (Auftraggeber) + Abnehmer | Art. 16, Art. 21 |
 
-## Anforderungen an die Dokumentation
+## 5.4.3 Anforderungen an die Dokumentation
 
 ### Mindestinhalte der Aufzeichnungen
 
@@ -41,7 +41,7 @@ Für jeden CRA-relevanten Geschäftsvorgang müssen folgende Daten vorgehalten w
 Alle Identifizierungsdaten müssen für mindestens **10 Jahre** nach dem Zeitpunkt der Lieferung aufbewahrt und auf Anfrage der Marktüberwachungsbehörden vorgelegt werden können.
 :::
 
-## Umsetzung bei BAUER GROUP
+## 5.4.4 Umsetzung bei BAUER GROUP
 
 ### Eingangsseite (Lieferanten)
 
@@ -69,7 +69,7 @@ Alle Identifizierungsdaten müssen für mindestens **10 Jahre** nach dem Zeitpun
 4. Zusammenstellung der Lieferanten- und Abnehmerdaten aus ERP/DMS
 5. Übermittlung an die Behörde innerhalb der gesetzten Frist
 
-## Checkliste
+## 5.4.5 Checkliste
 
 - [ ] ERP-Aufbewahrungsfristen für Lieferanten- und Kundendaten auf ≥ 10 Jahre geprüft
 - [ ] DMS-Archivierungsrichtlinien für Beschaffungs- und Vertriebsdokumente aktualisiert
@@ -77,7 +77,7 @@ Alle Identifizierungsdaten müssen für mindestens **10 Jahre** nach dem Zeitpun
 - [ ] Zuständigkeiten für die Beantwortung von Anfragen nach Art. 21 definiert
 - [ ] Regelmäßige Prüfung der Datenqualität in den Stammdatensystemen
 
-## Querverweise
+## 5.4.6 Querverweise
 
 - [Supply-Chain-Sicherheit](/de/supply-chain/) -- Gesamtüberblick über die Lieferkettensicherheit
 - [Marktüberwachung](/de/overview/market-surveillance) -- Kooperation mit Behörden und Reaktionsprozesse

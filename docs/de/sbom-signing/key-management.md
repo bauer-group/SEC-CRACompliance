@@ -1,10 +1,10 @@
-# 4.2 Key Management
+# 2.5 Key Management
 
-## Schlüsselverwaltung
+## 2.5.1 Schlüsselverwaltung
 
 Die sichere Verwaltung kryptographischer Schlüssel ist essenziell für die Integrität der Signierungsprozesse.
 
-## Schlüsseltypen
+## 2.5.2 Schlüsseltypen
 
 | Schlüssel | Typ | Speicherort | Zweck |
 |-----------|-----|-------------|-------|
@@ -12,7 +12,7 @@ Die sichere Verwaltung kryptographischer Schlüssel ist essenziell für die Inte
 | Cosign Password | Passwort | GitHub Secrets | Schutz des Private Keys |
 | Cosign Public Key | Ed25519 / ECDSA P-256 | Repository (`cosign.pub`) | Verifikation durch Nutzer |
 
-## Schlüsselerzeugung
+## 2.5.3 Schlüsselerzeugung
 
 ```bash
 # Neues Schlüsselpaar generieren
@@ -23,7 +23,7 @@ cosign generate-key-pair
 # cosign.pub  → Public Key
 ```
 
-## Schlüsselspeicherung
+## 2.5.4 Schlüsselspeicherung
 
 ### Private Key
 
@@ -45,7 +45,7 @@ Der Private Key wird **ausschließlich** in GitHub Secrets gespeichert:
 - **Verfügbarkeit:** Öffentlich
 - **Zweck:** Verifikation durch Nutzer und Systeme
 
-## Schlüsselrotation
+## 2.5.5 Schlüsselrotation
 
 | Auslöser | Aktion | Frist |
 |----------|--------|-------|
@@ -79,7 +79,7 @@ Der Private Key wird **ausschließlich** in GitHub Secrets gespeichert:
    └── Test-Signierung und -Verifikation durchführen
 ```
 
-## Notfallverfahren bei Schlüsselkompromittierung
+## 2.5.6 Notfallverfahren bei Schlüsselkompromittierung
 
 1. **Sofort:** GitHub Secrets rotieren (neues Schlüsselpaar)
 2. **Innerhalb 1h:** Alle seit Kompromittierung signierten Releases identifizieren
@@ -87,7 +87,7 @@ Der Private Key wird **ausschließlich** in GitHub Secrets gespeichert:
 4. **Innerhalb 24h:** Nutzer informieren über Schlüsselwechsel
 5. **Dokumentation:** Vorfall im Incident-Report dokumentieren
 
-## Zugriffsberechtigungen
+## 2.5.7 Zugriffsberechtigungen
 
 | Rolle | Private Key | Public Key | Key-Rotation |
 |-------|:-----------:|:----------:|:------------:|

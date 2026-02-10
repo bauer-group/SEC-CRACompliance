@@ -1,10 +1,10 @@
-# 6.3 Third-Party Assessment
+# 5.3 Third-Party Assessment
 
-## Assessment of Third-Party Components
+## 5.3.1 Assessment of Third-Party Components
 
 Pursuant to Art. 10(4) CRA, the manufacturer must exercise due diligence when integrating third-party components. This page describes the assessment process.
 
-## Assessment Framework
+## 5.3.2 Assessment Framework
 
 ### Automated Checks (for every dependency)
 
@@ -40,7 +40,7 @@ When introducing new dependencies in security-critical areas, an additional manu
 | **C – At Risk** | Significant limitations | Use only with justification + review |
 | **D – Not Acceptable** | Critical limitations | Use prohibited |
 
-## Special Case: Vendor SDKs (Embedded)
+## 5.3.3 Special Case: Vendor SDKs (Embedded)
 
 For firmware projects, vendor SDKs (ESP-IDF, STM32 HAL, Zephyr) are assessed separately:
 
@@ -51,7 +51,7 @@ For firmware projects, vendor SDKs (ESP-IDF, STM32 HAL, Zephyr) are assessed sep
 | Zephyr RTOS | A | Linux Foundation project, Security WG active |
 | PlatformIO | B | Community project, widely adopted |
 
-## Continuous Monitoring
+## 5.3.4 Continuous Monitoring
 
 All integrated third-party components are continuously monitored after integration:
 
@@ -60,7 +60,7 @@ All integrated third-party components are continuously monitored after integrati
 3. **License Compliance** – On every build
 4. **Base Image Monitor** – Weekly checks for new base image versions
 
-## Documentation
+## 5.3.5 Documentation
 
 For the technical documentation (Annex VII CRA), a list of all third-party components is maintained:
 

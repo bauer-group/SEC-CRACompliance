@@ -1,6 +1,6 @@
-# 第八章：合规评估 (Conformity Assessment)
+# 第7章：合规评估 (Conformity Assessment)
 
-## 8.1 概述
+## 概述
 
 合规评估 (Conformity Assessment) 是正式证明含数字元素产品满足 CRA 基本网络安全要求的过程。评估类型取决于产品分类 (Product Classification)。
 
@@ -10,7 +10,7 @@
 **Art. 28 CRA：** 合规评估成功完成后，制造商应编制 EU 符合性声明 (EU Declaration of Conformity) 并加贴 CE 标志。
 :::
 
-## 8.2 各产品类别的评估程序
+## 各产品类别的评估程序
 
 | 类别 | 程序 | 描述 |
 |------|------|------|
@@ -21,7 +21,7 @@
 
 *\* Module A 仅在完全适用协调标准 (Harmonised Standards) 时可用于 Class I 产品*
 
-## 8.3 章节结构
+## 章节结构
 
 | 章节 | 主题 | 描述 |
 |------|------|------|

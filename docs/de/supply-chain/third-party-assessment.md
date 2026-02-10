@@ -1,10 +1,10 @@
-# 6.3 Third-Party Assessment
+# 5.3 Third-Party Assessment
 
-## Bewertung von Drittkomponenten
+## 5.3.1 Bewertung von Drittkomponenten
 
 Gemäß Art. 10 Abs. 4 CRA muss der Hersteller bei der Integration von Drittkomponenten die gebotene Sorgfalt walten lassen. Diese Seite beschreibt den Bewertungsprozess.
 
-## Bewertungsrahmen
+## 5.3.2 Bewertungsrahmen
 
 ### Automatisierte Prüfung (für jede Abhängigkeit)
 
@@ -40,7 +40,7 @@ Bei der Einführung neuer Abhängigkeiten in sicherheitskritischen Bereichen wir
 | **C – Risikobehaftet** | Relevante Einschränkungen | Nutzung nur mit Begründung + Review |
 | **D – Nicht akzeptabel** | Kritische Einschränkungen | Nutzung verboten |
 
-## Sonderfall: Vendor SDKs (Embedded)
+## 5.3.3 Sonderfall: Vendor SDKs (Embedded)
 
 Für Firmware-Projekte werden Vendor SDKs (ESP-IDF, STM32 HAL, Zephyr) separat bewertet:
 
@@ -51,7 +51,7 @@ Für Firmware-Projekte werden Vendor SDKs (ESP-IDF, STM32 HAL, Zephyr) separat b
 | Zephyr RTOS | A | Linux Foundation Projekt, Security WG aktiv |
 | PlatformIO | B | Community-Projekt, breite Nutzung |
 
-## Kontinuierliches Monitoring
+## 5.3.4 Kontinuierliches Monitoring
 
 Alle integrierten Drittkomponenten werden nach Integration kontinuierlich überwacht:
 
@@ -60,7 +60,7 @@ Alle integrierten Drittkomponenten werden nach Integration kontinuierlich überw
 3. **License Compliance** – Bei jedem Build
 4. **Base Image Monitor** – Wöchentliche Prüfung auf neue Base-Image-Versionen
 
-## Dokumentation
+## 5.3.5 Dokumentation
 
 Für die technische Dokumentation (Annex VII CRA) wird eine Liste aller Drittkomponenten gepflegt:
 

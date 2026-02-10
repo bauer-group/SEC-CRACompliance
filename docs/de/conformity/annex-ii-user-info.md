@@ -1,6 +1,6 @@
-# Nutzerinformation (Annex II)
+# 7.10 Nutzerinformation (Annex II)
 
-## Übersicht
+## 7.10.1 Übersicht
 
 Annex II des CRA definiert die Pflichtinformationen, die der Hersteller den Nutzern des Produkts bereitstellen muss. Diese Informationen müssen klar, verständlich und in einer für den Nutzer leicht zugänglichen Weise bereitgestellt werden.
 
@@ -8,7 +8,7 @@ Annex II des CRA definiert die Pflichtinformationen, die der Hersteller den Nutz
 **Annex II CRA:** Informationen und Anweisungen für den Nutzer. Die folgenden Informationen werden dem Produkt mit digitalen Elementen beigefügt.
 :::
 
-## Pflichtinhalte
+## 7.10.2 Pflichtinhalte
 
 ### Nr. 1 – Herstellerinformationen
 
@@ -184,11 +184,11 @@ Signiert: Ja (Cosign)
 - Benachrichtigungskanal (GitHub Watch, E-Mail, RSS)
 - Update-Anleitung in der Dokumentation
 
-## Template: Nutzerinformation
+## 7.10.3 Template: Nutzerinformation
 
 → Ausfüllbares Template: [Nutzerinformation / Product Security Info](/de/templates/product-security-info)
 
-## Checkliste: Annex II
+## 7.10.4 Checkliste: Annex II
 
 - [ ] Herstellerangaben im Produkt und der Dokumentation
 - [ ] SECURITY.md mit Kontaktstelle und CVD-Policy

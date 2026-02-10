@@ -1,6 +1,6 @@
-# Chapter 8: Conformity Assessment
+# Chapter 7: Conformity Assessment
 
-## 8.1 Overview
+## Overview
 
 The Conformity Assessment is the formal demonstration that a product with digital elements meets the essential cybersecurity requirements of the CRA. The type of assessment depends on the Product Classification.
 
@@ -10,7 +10,7 @@ The Conformity Assessment is the formal demonstration that a product with digita
 **Art. 28 CRA:** Following a successful Conformity Assessment, the manufacturer shall draw up an EU Declaration of Conformity and affix the CE marking.
 :::
 
-## 8.2 Assessment Procedures by Product Category
+## Assessment Procedures by Product Category
 
 | Category | Procedure | Description |
 |----------|-----------|-------------|
@@ -21,7 +21,7 @@ The Conformity Assessment is the formal demonstration that a product with digita
 
 *\* Module A for Class I only where harmonised standards are applied in full*
 
-## 8.3 Chapter Structure
+## Chapter Structure
 
 | Section | Topic | Description |
 |---------|-------|-------------|

@@ -1,6 +1,6 @@
-# 5.3 ENISA-Meldeprozess
+# 4.3 ENISA-Meldeprozess
 
-## 5.3.1 Rechtsgrundlage
+## 4.3.1 Rechtsgrundlage
 
 Gemäß Art. 14 CRA sind Hersteller verpflichtet, bestimmte Sicherheitsereignisse an ENISA bzw. die zuständige nationale CSIRT-Behörde zu melden. Die Meldepflicht gilt ab dem **11. September 2026**.
 
@@ -22,7 +22,7 @@ Gemäß Art. 14 CRA sind Hersteller verpflichtet, bestimmte Sicherheitsereigniss
 
 :::
 
-## 5.3.2 Meldepflichtige Ereignisse
+## 4.3.2 Meldepflichtige Ereignisse
 
 ### Aktiv ausgenutzte Schwachstelle (Art. 14 Abs. 1)
 
@@ -49,7 +49,7 @@ Ein Vorfall, der die Sicherheit des Produkts oder seiner Nutzer erheblich beeint
 | Verfügbarkeitsverlust | Sicherheitsrelevante Funktionen sind eingeschränkt | Auth-Bypass, Update-Mechanismus gestört |
 | Kompromittierte Updates | Manipulierte Updates werden ausgeliefert | Supply-Chain-Angriff, Signing-Key-Kompromittierung |
 
-## 5.3.3 Rollen und Verantwortlichkeiten
+## 4.3.3 Rollen und Verantwortlichkeiten
 
 | Rolle | Verantwortung im Meldeprozess |
 |-------|-------------------------------|
@@ -59,7 +59,7 @@ Ein Vorfall, der die Sicherheit des Produkts oder seiner Nutzer erheblich beeint
 | **Management** | Freigabe bei SEV-1/SEV-2, Ressourcenzuweisung, Eskalation |
 | **Entwickler** | Root-Cause-Analyse, Patch-Entwicklung, Security-Review |
 
-## 5.3.4 Meldeplattform
+## 4.3.4 Meldeplattform
 
 ### ENISA Single Reporting Platform (SRP)
 
@@ -113,7 +113,7 @@ Falls die ENISA SRP temporär nicht verfügbar ist, erfolgt die Meldung an das z
 Bei Nutzung des nationalen CSIRT als Fallback ist die Meldung unverzüglich nachzuholen, sobald die ENISA SRP wieder verfügbar ist.
 :::
 
-## 5.3.5 Meldeprozess
+## 4.3.5 Meldeprozess
 
 ### Phase 1: Frühwarnung (≤ 24 Stunden)
 
@@ -224,7 +224,7 @@ Behebung abgeschlossen oder fortgeschritten
 
 **Nachweis:** Meldungsbestätigung + vollständige Kopie im Incident-Ticket + Archivierung
 
-## 5.3.6 Nutzerbenachrichtigung (Art. 14 Abs. 8)
+## 4.3.6 Nutzerbenachrichtigung (Art. 14 Abs. 8)
 
 Parallel zur ENISA-Meldung müssen betroffene Nutzer **unverzüglich** über die Schwachstelle und verfügbare Korrekturmaßnahmen informiert werden.
 
@@ -242,7 +242,7 @@ Parallel zur ENISA-Meldung müssen betroffene Nutzer **unverzüglich** über die
 Die Nutzerbenachrichtigung darf keine Details enthalten, die die Ausnutzung der Schwachstelle erleichtern könnten, solange kein Patch verfügbar ist. In Abstimmung mit ENISA kann eine verzögerte Offenlegung vereinbart werden (Art. 14 Abs. 7).
 :::
 
-## 5.3.7 Dokumentation und Nachweisführung
+## 4.3.7 Dokumentation und Nachweisführung
 
 Jede ENISA-Meldung wird vollständig dokumentiert. Diese Dokumentation dient als **Nachweis der Pflichterfüllung** gegenüber Marktaufsichtsbehörden (Art. 52 CRA).
 
@@ -268,7 +268,7 @@ Alle Meldungen verwenden ein einheitliches Referenzierungsschema:
 | Abschlussbericht | `FR-YYYY-NNN` | FR-2026-001 |
 | Interner Incident | `INC-YYYY-NNN` | INC-2026-001 |
 
-## 5.3.8 Vorbereitungsmaßnahmen (vor 11.09.2026)
+## 4.3.8 Vorbereitungsmaßnahmen (vor 11.09.2026)
 
 Die folgenden Maßnahmen müssen vor dem Inkrafttreten der Meldepflicht abgeschlossen sein:
 
@@ -283,7 +283,7 @@ Die folgenden Maßnahmen müssen vor dem Inkrafttreten der Meldepflicht abgeschl
 | 7 | ENISA-Zugangsdaten sicher hinterlegen | Security Lead | Q3 2026 | Ausstehend |
 | 8 | Meldeprozess in Tabletop-Übung testen | Security Lead | Q3 2026 | Ausstehend |
 
-## 5.3.9 Entscheidungsbaum: Meldepflicht
+## 4.3.9 Entscheidungsbaum: Meldepflicht
 
 ```
 Sicherheitsereignis erkannt

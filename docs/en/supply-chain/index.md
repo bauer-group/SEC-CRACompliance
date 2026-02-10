@@ -1,6 +1,6 @@
-# Chapter 6: Supply Chain Security
+# Chapter 5: Supply Chain Security
 
-## 6.1 Overview
+## Overview
 
 Securing the software supply chain is a core CRA requirement. Manufacturers must exercise due diligence when integrating third-party components and ensure the integrity of the entire supply chain.
 
@@ -10,7 +10,7 @@ Securing the software supply chain is a core CRA requirement. Manufacturers must
 **Annex I, Part II, No. 1:** *"The manufacturer shall identify and document the vulnerabilities and components contained in the product, including by drawing up a software bill of materials."*
 :::
 
-## 6.2 Security Measures
+## Security Measures
 
 ### Implemented Measures
 
@@ -24,11 +24,11 @@ Securing the software supply chain is a core CRA requirement. Manufacturers must
 | Container Image Signing | Cosign | `docker-build.yml` | ✅ |
 | SBOM Generation | Trivy / Syft | `modules-license-compliance.yml` | ✅ |
 
-## 6.3 Chapter Structure
+## Chapter Structure
 
 | Section | Topic | Description |
 |---------|-------|-------------|
-| **6.1** | [Dependency Policy](/en/supply-chain/dependency-policy) | Policies for dependencies |
-| **6.2** | [Base Image Policy](/en/supply-chain/base-image-policy) | Docker base image management |
-| **6.3** | [Third-Party Assessment](/en/supply-chain/third-party-assessment) | Assessment of third-party components |
-| **6.4** | [Economic Operator Identification (Art. 21)](/en/supply-chain/economic-operator-identification) | Supply chain traceability |
+| **5.1** | [Dependency Policy](/en/supply-chain/dependency-policy) | Policies for dependencies |
+| **5.2** | [Base Image Policy](/en/supply-chain/base-image-policy) | Docker base image management |
+| **5.3** | [Third-Party Assessment](/en/supply-chain/third-party-assessment) | Assessment of third-party components |
+| **5.4** | [Economic Operator Identification (Art. 21)](/en/supply-chain/economic-operator-identification) | Supply chain traceability |

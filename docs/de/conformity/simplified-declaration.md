@@ -1,6 +1,6 @@
-# Vereinfachte EU-Konformitätserklärung (Annex VI)
+# 7.9 Vereinfachte DoC (Annex VI)
 
-## Übersicht
+## 7.9.1 Übersicht
 
 Neben der vollständigen EU-Konformitätserklärung (Annex V) erlaubt der CRA eine **vereinfachte Fassung** gemäß Annex VI. Diese darf dem Produkt beigefügt werden, sofern die vollständige Version online abrufbar ist.
 
@@ -10,7 +10,7 @@ Neben der vollständigen EU-Konformitätserklärung (Annex V) erlaubt der CRA ei
 **Annex VI CRA:** Inhalt der vereinfachten EU-Konformitätserklärung.
 :::
 
-## Wann die vereinfachte Version nutzen?
+## 7.9.2 Wann die vereinfachte Version nutzen?
 
 | Situation | Version |
 |-----------|---------|
@@ -19,7 +19,7 @@ Neben der vollständigen EU-Konformitätserklärung (Annex V) erlaubt der CRA ei
 | Online abrufbar | Vollständig (Annex V) |
 | Release Notes | Vereinfacht (Annex VI) mit URL zur vollständigen |
 
-## Pflichtinhalt (Annex VI)
+## 7.9.3 Pflichtinhalt (Annex VI)
 
 Die vereinfachte EU-Konformitätserklärung muss mindestens enthalten:
 
@@ -50,7 +50,7 @@ Die vollständige EU-Konformitätserklärung ist abrufbar unter:
 [URL]
 ```
 
-## Template: Vereinfachte EU-Konformitätserklärung
+## 7.9.4 Template: Vereinfachte EU-Konformitätserklärung
 
 ```markdown
 ## EU-Konformitätserklärung (vereinfacht)
@@ -69,7 +69,7 @@ Support-Zeitraum: [Datum] bis [Datum]
 Kontakt: [E-Mail]
 ```
 
-## Platzierung
+## 7.9.5 Platzierung
 
 ### Für Software-Produkte
 
@@ -85,7 +85,7 @@ Kontakt: [E-Mail]
 - **Quick Start Guide**
 - **Produktetikett** (QR-Code mit URL)
 
-## Beispiel für Container-Image Label
+## 7.9.6 Beispiel für Container-Image Label
 
 ```dockerfile
 LABEL eu.cra.doc.url="https://go.bauer-group.com/cra/doc/[produkt]"
@@ -93,7 +93,7 @@ LABEL eu.cra.doc.version="1.0"
 LABEL eu.cra.support.end="2031-12-31"
 ```
 
-## Verhältnis zu Annex V
+## 7.9.7 Verhältnis zu Annex V
 
 | Aspekt | Annex V (vollständig) | Annex VI (vereinfacht) |
 |--------|----------------------|------------------------|

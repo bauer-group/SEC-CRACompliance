@@ -1,10 +1,10 @@
-# 6.2 Base Image Policy
+# 5.2 Base Image Policy
 
-## Docker Base Image Management
+## 5.2.1 Docker Base Image Management
 
 The security of container-based products begins with the base image. This policy defines the requirements for base images and their continuous updating.
 
-## Requirements
+## 5.2.2 Requirements
 
 ### Permitted Base Images
 
@@ -22,7 +22,7 @@ The security of container-based products begins with the base image. This policy
 - **Minimal Size:** Prefer slim/Alpine variants
 - **Known Vulnerabilities:** No unpatched CRITICAL CVEs
 
-## Automated Base Image Monitoring
+## 5.2.3 Automated Base Image Monitoring
 
 The existing workflow `modules-docker-base-image-monitor.yml` continuously monitors the base images of all container projects.
 
@@ -66,7 +66,7 @@ updates:
       - "security"
 ```
 
-## Multi-Stage Builds
+## 5.2.4 Multi-Stage Builds
 
 For production images, we use multi-stage builds:
 
@@ -90,7 +90,7 @@ CMD ["app/server.js"]
 - Smaller image size
 - Fewer potential vulnerabilities
 
-## Patch Process for Base Images
+## 5.2.5 Patch Process for Base Images
 
 | CVE Severity in Base Image | Action | Deadline |
 |----------------------------|--------|----------|

@@ -1,6 +1,6 @@
-# Kapitel 7: Technische Dokumentation
+# Kapitel 6: Technische Dokumentation
 
-## 7.1 Übersicht
+## Übersicht
 
 Die technische Dokumentation gemäß Annex VII CRA ist die zentrale Nachweisdokumentation für die Konformität eines Produkts mit digitalen Elementen. Sie muss vor dem Inverkehrbringen erstellt und mindestens 10 Jahre aufbewahrt werden.
 

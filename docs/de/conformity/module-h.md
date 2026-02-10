@@ -1,6 +1,6 @@
-# Umfassende Qualitätssicherung (Modul H)
+# 7.4 Qualitätssicherung (Modul H)
 
-## Übersicht
+## 7.4.1 Übersicht
 
 Die umfassende Qualitätssicherung nach Modul H ist ein alternatives Konformitätsbewertungsverfahren für **Klasse II** Produkte. Im Gegensatz zu Modul B+C wird hier nicht ein einzelnes Baumuster geprüft, sondern das **gesamte Qualitätsmanagementsystem** des Herstellers.
 
@@ -10,7 +10,7 @@ Die umfassende Qualitätssicherung nach Modul H ist ein alternatives Konformitä
 **Annex VIII, Modul H** des CRA beschreibt die Anforderungen an das Qualitätsmanagementsystem.
 :::
 
-## Anwendbarkeit
+## 7.4.2 Anwendbarkeit
 
 | Kategorie | Modul H anwendbar? |
 |-----------|-------------------|
@@ -19,7 +19,7 @@ Die umfassende Qualitätssicherung nach Modul H ist ein alternatives Konformitä
 | **Klasse II** | **Ja** (Alternative zu Modul B+C) |
 | Kritisch | Nein – EUCC erforderlich |
 
-## Modul H vs. Modul B+C
+## 7.4.3 Modul H vs. Modul B+C
 
 | Kriterium | Modul B+C | Modul H |
 |-----------|-----------|---------|
@@ -30,7 +30,7 @@ Die umfassende Qualitätssicherung nach Modul H ist ein alternatives Konformitä
 | **Nachteil** | Jedes neue Produkt einzeln prüfen | Höherer initialer Aufwand |
 | **Empfohlen wenn** | 1-3 Klasse II Produkte | 4+ Klasse II Produkte |
 
-## Verfahrensablauf
+## 7.4.4 Verfahrensablauf
 
 ### 1. Qualitätsmanagementsystem aufbauen
 
@@ -96,7 +96,7 @@ Nach erfolgreichem Audit stellt die notifizierte Stelle ein **QMS-Zertifikat** a
 - **Unangekündigte Prüfungen** sind möglich
 - **Re-Zertifizierung** bei wesentlichen Änderungen am QMS
 
-## Integration mit bestehenden Standards
+## 7.4.5 Integration mit bestehenden Standards
 
 Modul H lässt sich gut mit bestehenden Managementsystemen verbinden:
 
@@ -111,7 +111,7 @@ Modul H lässt sich gut mit bestehenden Managementsystemen verbinden:
 Falls bereits ein ISO 27001 oder ISO 9001 zertifiziertes Managementsystem besteht, kann dieses als Grundlage für das CRA-QMS dienen. Die Cybersecurity-spezifischen Anforderungen aus Annex I müssen ergänzt werden.
 :::
 
-## Zeitplanung
+## 7.4.6 Zeitplanung
 
 | Phase | Geschätzter Zeitaufwand |
 |-------|------------------------|
@@ -123,7 +123,7 @@ Falls bereits ein ISO 27001 oder ISO 9001 zertifiziertes Managementsystem besteh
 | Zertifikat | 1-2 Wochen |
 | **Gesamt** | **ca. 9-15 Monate** |
 
-## Kosten
+## 7.4.7 Kosten
 
 | Kostenfaktor | Geschätzter Bereich |
 |-------------|---------------------|
@@ -134,7 +134,7 @@ Falls bereits ein ISO 27001 oder ISO 9001 zertifiziertes Managementsystem besteh
 
 *Hinweis: Die Werte dienen als Orientierung. Bei bestehendem ISO 27001/9001 reduziert sich der Aufwand erheblich.*
 
-## Checkliste: Modul H
+## 7.4.8 Checkliste: Modul H
 
 - [ ] Produktklassifizierung abgeschlossen (Klasse II bestätigt)
 - [ ] Entscheidung Modul H vs. Modul B+C getroffen und begründet

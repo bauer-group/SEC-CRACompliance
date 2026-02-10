@@ -1,6 +1,6 @@
-# 7.4 Support & Lifecycle Policy
+# 6.4 Support & Lifecycle
 
-## 7.4.1 Legal Basis
+## 6.4.1 Legal Basis
 
 Pursuant to Art. 13(8) CRA, the manufacturer must determine and publish the Support Period for each product. During this period, security updates must be provided.
 
@@ -12,7 +12,7 @@ Pursuant to Art. 13(8) CRA, the manufacturer must determine and publish the Supp
 **Annex II No. 5 CRA:** The Support Period is part of the mandatory user information that must accompany the product.
 :::
 
-## 7.4.2 Minimum Support Period
+## 6.4.2 Minimum Support Period
 
 The CRA prescribes a minimum Support Period of **5 years**. For product categories with a longer expected useful life, BAUER GROUP establishes longer periods:
 
@@ -28,7 +28,7 @@ The CRA prescribes a minimum Support Period of **5 years**. For product categori
 The determination of the Support Period must be made **prior to placing on the market** and cannot be shortened thereafter. An extension is possible at any time and is recommended if the actual useful life exceeds the original estimate.
 :::
 
-## 7.4.3 Lifecycle Phases
+## 6.4.3 Lifecycle Phases
 
 Each product passes through three defined lifecycle phases:
 
@@ -62,7 +62,7 @@ Each product passes through three defined lifecycle phases:
 | Active → Security | New major release OR management decision | Release Notes + SECURITY.md update |
 | Security → EOL | Support Period expired | 12-month advance notice (see EOL process) |
 
-## 7.4.4 EOL Process
+## 6.4.4 EOL Process
 
 ### Announcement Schedule
 
@@ -85,7 +85,7 @@ Even after reaching EOL, the following retention obligations apply pursuant to A
 | Existing releases downloadable | **10 years** after placing on the market | GitHub Releases / Registry |
 | Declaration of Conformity available | **10 years** after placing on the market | Git repository |
 
-## 7.4.5 Versioning Strategy
+## 6.4.5 Versioning Strategy
 
 BAUER GROUP uses [Semantic Versioning 2.0.0](https://semver.org/):
 
@@ -99,7 +99,7 @@ PATCH – Backward-compatible bug fixes / security updates
 
 **Security updates** are always published as **PATCH** releases and are backward-compatible. If a breaking change is unavoidable to remediate a vulnerability, a workaround for the current MAJOR version is provided in parallel.
 
-## 7.4.6 Product Catalogue — Support Status
+## 6.4.6 Product Catalogue — Support Status
 
 ::: warning PRODUCT-SPECIFIC
 The following product catalogue must be maintained for each CRA-relevant product of BAUER GROUP. The table is updated upon each major release, phase transition, or EOL event.
@@ -117,7 +117,7 @@ The following product catalogue must be maintained for each CRA-relevant product
 For each product within the CRA scope (→ Ch. 1.3), a row must be entered in this table. The **Support Start** corresponds to the date of placing on the market (first public provision). The **Support End** must be at least 5 years after the Support Start.
 :::
 
-## 7.4.7 User Information
+## 6.4.7 User Information
 
 Pursuant to Annex II No. 5 CRA, users must be informed about the Support Period. The information must be provided at the following locations:
 
@@ -131,7 +131,7 @@ Pursuant to Annex II No. 5 CRA, users must be informed about the Support Period.
 
 The template for user information can be found under [Annex: User Information](/en/templates/product-security-info).
 
-## 7.4.8 Process Integration
+## 6.4.8 Process Integration
 
 The lifecycle process is integrated into the existing CI/CD workflows:
 

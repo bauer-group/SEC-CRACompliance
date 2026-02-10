@@ -1,6 +1,6 @@
-# EU-Baumusterprüfung (Modul B+C)
+# 7.3 EU-Baumusterprüfung (Modul B+C)
 
-## Übersicht
+## 7.3.1 Übersicht
 
 Die EU-Baumusterprüfung nach Modul B in Kombination mit der Konformität mit der Bauart nach Modul C ist das Konformitätsbewertungsverfahren für **Klasse I** (ohne harmonisierte Normen) und **Klasse II** Produkte.
 
@@ -10,7 +10,7 @@ Die EU-Baumusterprüfung nach Modul B in Kombination mit der Konformität mit de
 **Annex VIII, Modul B und C** des CRA beschreiben die Verfahrensanforderungen.
 :::
 
-## Anwendbarkeit
+## 7.3.2 Anwendbarkeit
 
 | Kategorie | Modul B+C erforderlich? |
 |-----------|------------------------|
@@ -20,7 +20,7 @@ Die EU-Baumusterprüfung nach Modul B in Kombination mit der Konformität mit de
 | **Klasse II** | **Ja** (Alternative: Modul H) |
 | Kritisch | Nein – EUCC erforderlich |
 
-## Verfahrensablauf
+## 7.3.3 Verfahrensablauf
 
 ### Modul B – EU-Baumusterprüfung
 
@@ -88,7 +88,7 @@ Modul C stellt sicher, dass die **produzierten Exemplare** dem geprüften Baumus
 - Automatisierte Tests bei jedem Release
 - SBOM pro Release generieren und archivieren ([SBOM Lifecycle](/de/sbom-signing/))
 
-## Zeitplanung
+## 7.3.4 Zeitplanung
 
 | Phase | Geschätzter Zeitaufwand |
 |-------|------------------------|
@@ -103,7 +103,7 @@ Modul C stellt sicher, dass die **produzierten Exemplare** dem geprüften Baumus
 Die Verfügbarkeit notifizierter Stellen für CRA-Prüfungen wird anfangs begrenzt sein. Beginnen Sie frühzeitig mit der Identifikation und Kontaktaufnahme geeigneter Stellen.
 :::
 
-## Kosten
+## 7.3.5 Kosten
 
 Die Kosten variieren je nach Produktkomplexität und notifizierter Stelle:
 
@@ -115,7 +115,7 @@ Die Kosten variieren je nach Produktkomplexität und notifizierter Stelle:
 
 *Hinweis: Aktuelle Marktpreise für CRA-Prüfungen sind noch nicht etabliert. Die Werte dienen als Orientierung basierend auf vergleichbaren Richtlinien.*
 
-## Checkliste: Modul B+C
+## 7.3.6 Checkliste: Modul B+C
 
 - [ ] Produktklassifizierung abgeschlossen (Klasse I ohne harm. Normen oder Klasse II)
 - [ ] Technische Dokumentation vollständig (Annex VII)

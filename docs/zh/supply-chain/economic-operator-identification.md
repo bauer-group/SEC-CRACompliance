@@ -1,6 +1,6 @@
-# 经济运营者识别 (Identification of Economic Operators)（Art. 21）
+# 5.4 经济运营者识别 (Art. 21)
 
-## 概述
+## 5.4.1 概述
 
 Art. 21 CRA 要求所有经济运营者 (Economic Operators) 能够识别其在供应链中的供应商和客户。该信息须应市场监管机构 (Market Surveillance Authorities) 的要求予以提供。其目标是确保含数字元素的产品 (Products with Digital Elements) 在整个供应链中的完全可追溯性。
 
@@ -13,7 +13,7 @@ Art. 21 CRA 要求所有经济运营者 (Economic Operators) 能够识别其在�
 *Economic operators shall be able to present this information for a period of **10 years** after they have been supplied with the product and for 10 years after they have supplied the product."*
 :::
 
-## 受影响的经济运营者
+## 5.4.2 受影响的经济运营者
 
 识别义务适用于供应链中的所有角色：
 
@@ -24,7 +24,7 @@ Art. 21 CRA 要求所有经济运营者 (Economic Operators) 能够识别其在�
 | 分销商 (Distributor) | 进口商/制造商（供应商）+ 客户 | Art. 17, Art. 21 |
 | 授权代表 (Authorised Representative) | 制造商（委托方）+ 客户 | Art. 16, Art. 21 |
 
-## 文档要求
+## 5.4.3 文档要求
 
 ### 最低记录内容
 
@@ -41,7 +41,7 @@ Art. 21 CRA 要求所有经济运营者 (Economic Operators) 能够识别其在�
 所有识别记录必须自供应之日起至少保留 **10 年**，并须应市场监管机构的要求随时可供提供。
 :::
 
-## BAUER GROUP 实施方案
+## 5.4.4 BAUER GROUP 实施方案
 
 ### 入库供应（供应商）
 
@@ -69,7 +69,7 @@ Art. 21 CRA 要求所有经济运营者 (Economic Operators) 能够识别其在�
 4. 从 ERP/DMS 中汇编供应商和客户数据
 5. 在规定期限内向机构提交
 
-## 检查清单
+## 5.4.5 检查清单
 
 - [ ] ERP 中供应商和客户数据的保留期限已验证为 ≥ 10 年
 - [ ] DMS 中采购和销售文件的归档策略已更新
@@ -77,7 +77,7 @@ Art. 21 CRA 要求所有经济运营者 (Economic Operators) 能够识别其在�
 - [ ] 响应 Art. 21 请求的职责已明确
 - [ ] 主数据系统中数据质量的定期审查
 
-## 交叉引用
+## 5.4.6 交叉引用
 
 - [供应链安全](/zh/supply-chain/) -- 供应链安全措施概览
 - [市场监管](/zh/overview/market-surveillance) -- 与机构的合作及响应流程

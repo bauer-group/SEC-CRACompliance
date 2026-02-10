@@ -1,6 +1,6 @@
-# Annex VII – Technical Documentation Guide
+# 6.6 Annex VII – Guide
 
-## Overview
+## 6.6.1 Overview
 
 Annex VII of the CRA defines the complete content of the technical documentation that every manufacturer must create and retain for 10 years. This guide explains each requirement in detail and references the respective documentation location.
 
@@ -10,7 +10,7 @@ Annex VII of the CRA defines the complete content of the technical documentation
 **Annex VII CRA:** Content of the technical documentation.
 :::
 
-## Requirement 1 – General Product Description
+## 6.6.2 Requirement 1 – General Product Description
 
 **Annex VII No. 1:** A general description of the product with digital elements, including:
 
@@ -25,7 +25,7 @@ Annex VII of the CRA defines the complete content of the technical documentation
 
 ---
 
-## Requirement 2 – Design and Development Description
+## 6.6.3 Requirement 2 – Design and Development Description
 
 **Annex VII No. 2:** Description of the design and development processes, including:
 
@@ -38,7 +38,7 @@ Annex VII of the CRA defines the complete content of the technical documentation
 
 ---
 
-## Requirement 3 – Cybersecurity Risk Assessment
+## 6.6.4 Requirement 3 – Cybersecurity Risk Assessment
 
 **Annex VII No. 3:** The cybersecurity risk assessment pursuant to Art. 10(2), including:
 
@@ -52,7 +52,7 @@ Annex VII of the CRA defines the complete content of the technical documentation
 
 ---
 
-## Requirement 4 – Vulnerability Handling
+## 6.6.5 Requirement 4 – Vulnerability Handling
 
 **Annex VII No. 4:** Description of vulnerability handling processes:
 
@@ -66,7 +66,7 @@ Annex VII of the CRA defines the complete content of the technical documentation
 
 ---
 
-## Requirement 5 – Applied Standards and Specifications
+## 6.6.6 Requirement 5 – Applied Standards and Specifications
 
 **Annex VII No. 5:** List of applied harmonised standards, Common Specifications or cybersecurity certification schemes:
 
@@ -88,7 +88,7 @@ Once harmonised standards for the CRA are published, these will enable the presu
 
 ---
 
-## Requirement 6 – Test Results
+## 6.6.7 Requirement 6 – Test Results
 
 **Annex VII No. 6:** Results of the tests and examinations performed:
 
@@ -106,7 +106,7 @@ Once harmonised standards for the CRA are published, these will enable the presu
 
 ---
 
-## Requirement 7 – Conformity Assessment Results
+## 6.6.8 Requirement 7 – Conformity Assessment Results
 
 **Annex VII No. 7:** Results of the conformity assessment:
 
@@ -119,7 +119,7 @@ Once harmonised standards for the CRA are published, these will enable the presu
 
 ---
 
-## Requirement 8 – EU Declaration of Conformity
+## 6.6.9 Requirement 8 – EU Declaration of Conformity
 
 **Annex VII No. 8:** Copy of the EU Declaration of Conformity:
 
@@ -128,7 +128,7 @@ Once harmonised standards for the CRA are published, these will enable the presu
 
 ---
 
-## Requirement 9 – Support Period
+## 6.6.10 Requirement 9 – Support Period
 
 **Annex VII No. 9:** Determination of the Support Period:
 
@@ -136,7 +136,7 @@ Once harmonised standards for the CRA are published, these will enable the presu
 
 ---
 
-## Completeness Checklist
+## 6.6.11 Completeness Checklist
 
 - [ ] No. 1: Product description created
 - [ ] No. 2: Design and development processes documented

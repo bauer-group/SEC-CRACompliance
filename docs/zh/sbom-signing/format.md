@@ -1,6 +1,6 @@
 # 2.2 格式规范
 
-## CycloneDX JSON
+## 2.2.1 CycloneDX JSON
 
 我们使用 **CycloneDX** 作为主要的 SBOM 格式。CycloneDX 是一项 OWASP 标准，满足 CRA 对"常用的、机器可读的格式"的要求 (Art. 13(23))。
 
@@ -104,7 +104,7 @@ sbom-web-frontend-v4.0.1.cdx.json
 
 产品的每个新版本都有其独立的 SBOM。当针对同一产品版本重新生成 SBOM 时（例如，修正 SBOM 本身时），SBOM 版本（`version` 字段）会递增。
 
-## SPDX（次要格式）
+## 2.2.2 SPDX（次要格式）
 
 SPDX 作为次要格式受到支持，主要用于业务合作伙伴或监管机构明确要求 SPDX 的场景。
 

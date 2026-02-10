@@ -1,6 +1,6 @@
-# Risikobewertung
+# A.6 Risikobewertung
 
-## Vorlage: Cybersecurity-Risikobewertung gemäß Art. 10 Abs. 2 CRA
+## A.6.1 Vorlage: Cybersecurity-Risikobewertung gemäß Art. 10 Abs. 2 CRA
 
 ---
 

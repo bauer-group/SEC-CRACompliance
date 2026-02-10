@@ -1,6 +1,6 @@
-# Risk Assessment
+# A.6 Risk Assessment
 
-## Template: Cybersecurity Risk Assessment pursuant to Art. 10(2) CRA
+## A.6.1 Template: Cybersecurity Risk Assessment pursuant to Art. 10(2) CRA
 
 ---
 

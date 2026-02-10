@@ -1,10 +1,10 @@
-# EU Declaration of Conformity
+# A.7 EU Declaration of Conformity
 
-## Template pursuant to Annex V of Regulation (EU) 2024/2847 (Cyber Resilience Act)
+## A.7.1 Template pursuant to Annex V of Regulation (EU) 2024/2847 (Cyber Resilience Act)
 
 ---
 
-## EU DECLARATION OF CONFORMITY
+## A.7.2 EU DECLARATION OF CONFORMITY
 
 ### No. [DoC-YYYY-NNN]
 

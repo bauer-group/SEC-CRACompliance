@@ -1,6 +1,6 @@
-# 5.2 漏洞披露政策 (Vulnerability Disclosure Policy)
+# 4.2 漏洞披露政策
 
-## 协调漏洞披露 (Coordinated Vulnerability Disclosure, CVD)
+## 4.2.1 协调漏洞披露 (Coordinated Vulnerability Disclosure, CVD)
 
 本政策定义了根据 CRA Art. 13(6) 和 ISO/IEC 29147:2018 进行协调漏洞披露 (Coordinated Vulnerability Disclosure) 的流程。
 
@@ -8,7 +8,7 @@
 **Art. 13(6) CRA:** *"The manufacturer shall facilitate the coordinated disclosure of vulnerabilities by designating a contact point for the reporting of vulnerabilities and setting out its coordinated vulnerability disclosure policy."*
 :::
 
-## 适用范围
+## 4.2.2 适用范围
 
 本政策适用于 BAUER GROUP 的所有含数字元素的产品 (Products with Digital Elements)，包括：
 
@@ -17,7 +17,7 @@
 - 固件 (Firmware)（ESP32、STM32、Zephyr）
 - 可公开访问的服务
 
-## 报告渠道
+## 4.2.3 报告渠道
 
 ### 1. GitHub Security Advisories（首选）
 
@@ -46,7 +46,7 @@
 - 支持的版本
 - 响应时间
 
-## 外部报告者流程
+## 4.2.4 外部报告者流程
 
 ### 我们的期望
 
@@ -88,7 +88,7 @@
 对于被积极利用的漏洞，披露时间线将被缩短。在此类情况下，补丁将立即提供，并触发 ENISA 报告义务（24 小时）。
 :::
 
-## 接收报告的内部流程
+## 4.2.5 接收报告的内部流程
 
 ```
 外部漏洞报告
@@ -122,7 +122,7 @@
         └── 感谢并致谢报告者
 ```
 
-## 安全港 (Safe Harbor)
+## 4.2.6 安全港 (Safe Harbor)
 
 BAUER GROUP 不会对以下安全研究人员采取法律行动：
 
@@ -132,7 +132,7 @@ BAUER GROUP 不会对以下安全研究人员采取法律行动：
 - 不通过拒绝服务损害服务
 - 不危及受影响的第三方
 
-## 合规参考
+## 4.2.7 合规参考
 
 | 标准 | 覆盖范围 |
 |------|----------|

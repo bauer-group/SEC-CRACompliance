@@ -1,4 +1,4 @@
-# Kapitel 9: CRA-Anforderungsmatrix
+# Kapitel 8: CRA-Anforderungsmatrix
 
 ## Vollständige Zuordnung: CRA-Artikel → Dokumentation → Tooling
 
@@ -21,7 +21,7 @@ Diese Matrix ordnet jede relevante CRA-Anforderung der entsprechenden Dokumentat
 
 :::
 
-Detaillierte Zuordnung: [9.1 Tooling-Zuordnung](/de/compliance-matrix/tooling-map) (Tool → CRA-Anforderung)
+Detaillierte Zuordnung: [8.1 Tooling-Zuordnung](/de/compliance-matrix/tooling-map) (Tool → CRA-Anforderung)
 
 ## Art. 10 – Pflichten der Hersteller
 

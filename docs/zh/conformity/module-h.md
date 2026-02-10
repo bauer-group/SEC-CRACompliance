@@ -1,6 +1,6 @@
-# 全面质量保证（Module H）
+# 7.4 质量保证（Module H）
 
-## 概述
+## 7.4.1 概述
 
 Module H 下的全面质量保证 (Comprehensive Quality Assurance) 是 **Class II** 产品的替代合规评估程序。与 Module B+C 不同，此方法不检验单个型式样品，而是检验制造商的**整个质量管理体系 (Quality Management System, QMS)**。
 
@@ -10,7 +10,7 @@ Module H 下的全面质量保证 (Comprehensive Quality Assurance) 是 **Class 
 **CRA Annex VIII，Module H** 描述了对质量管理体系的要求。
 :::
 
-## 适用范围
+## 7.4.2 适用范围
 
 | 类别 | Module H 是否适用？ |
 |------|---------------------|
@@ -19,7 +19,7 @@ Module H 下的全面质量保证 (Comprehensive Quality Assurance) 是 **Class 
 | **Class II** | **是**（作为 Module B+C 的替代方案） |
 | 关键 | 否 — 需要 EUCC |
 
-## Module H 与 Module B+C 比较
+## 7.4.3 Module H 与 Module B+C 比较
 
 | 标准 | Module B+C | Module H |
 |------|-----------|----------|
@@ -30,7 +30,7 @@ Module H 下的全面质量保证 (Comprehensive Quality Assurance) 是 **Class 
 | **劣势** | 每个新产品需单独检验 | 初始投入较高 |
 | **建议适用** | 1-3个 Class II 产品 | 4个以上 Class II 产品 |
 
-## 程序
+## 7.4.4 程序
 
 ### 1. 建立质量管理体系
 
@@ -96,7 +96,7 @@ QMS 必须涵盖以下领域：
 - 可能进行**不预先通知的检查**
 - QMS 发生重大变更时需**重新认证**
 
-## 与现有标准的整合
+## 7.4.5 与现有标准的整合
 
 Module H 与现有管理体系具有良好的整合性：
 
@@ -111,7 +111,7 @@ Module H 与现有管理体系具有良好的整合性：
 如果已有经认证的 ISO 27001 或 ISO 9001 管理体系，可将其作为 CRA QMS 的基础。需补充 Annex I 的网络安全特定要求。
 :::
 
-## 时间线
+## 7.4.6 时间线
 
 | 阶段 | 预估时间 |
 |------|----------|
@@ -123,7 +123,7 @@ Module H 与现有管理体系具有良好的整合性：
 | 证书签发 | 1-2周 |
 | **总计** | **约9-15个月** |
 
-## 费用
+## 7.4.7 费用
 
 | 费用项目 | 预估范围 |
 |----------|----------|
@@ -134,7 +134,7 @@ Module H 与现有管理体系具有良好的整合性：
 
 *注：数值仅供参考。如已有 ISO 27001/9001，投入将显著减少。*
 
-## 检查清单：Module H
+## 7.4.8 检查清单：Module H
 
 - [ ] 产品分类已完成（确认为 Class II）
 - [ ] Module H 与 Module B+C 的选择已做出并论证

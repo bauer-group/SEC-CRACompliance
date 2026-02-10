@@ -1,6 +1,6 @@
-# 5.2 Vulnerability Disclosure Policy
+# 4.2 Vulnerability Disclosure Policy
 
-## Coordinated Vulnerability Disclosure (CVD)
+## 4.2.1 Coordinated Vulnerability Disclosure (CVD)
 
 Diese Policy definiert den Prozess für die koordinierte Offenlegung von Schwachstellen gemäß CRA Art. 13 Abs. 6 und ISO/IEC 29147:2018.
 
@@ -8,7 +8,7 @@ Diese Policy definiert den Prozess für die koordinierte Offenlegung von Schwach
 **Art. 13 Abs. 6 CRA:** *„Der Hersteller erleichtert die koordinierte Offenlegung von Schwachstellen, indem er eine Kontaktstelle für die Meldung von Schwachstellen benennt und seine Maßnahmen zur koordinierten Offenlegung von Schwachstellen in einer Richtlinie festlegt."*
 :::
 
-## Geltungsbereich
+## 4.2.2 Geltungsbereich
 
 Diese Policy gilt für alle Produkte mit digitalen Elementen der BAUER GROUP, einschließlich:
 
@@ -17,7 +17,7 @@ Diese Policy gilt für alle Produkte mit digitalen Elementen der BAUER GROUP, ei
 - Firmware (ESP32, STM32, Zephyr)
 - Öffentlich zugängliche Dienste
 
-## Meldewege
+## 4.2.3 Meldewege
 
 ### 1. GitHub Security Advisories (bevorzugt)
 
@@ -46,7 +46,7 @@ Jedes Repository enthält eine `SECURITY.md` mit:
 - Unterstützte Versionen
 - Reaktionszeiten
 
-## Prozess für externe Melder
+## 4.2.4 Prozess für externe Melder
 
 ### Was wir erwarten
 
@@ -88,7 +88,7 @@ Tag 90:  Koordinierte Offenlegung (Default-Deadline)
 Bei aktiv ausgenutzten Schwachstellen wird der Offenlegungszeitraum verkürzt. In diesem Fall wird unverzüglich ein Patch bereitgestellt und die ENISA-Meldepflicht ausgelöst (24h).
 :::
 
-## Interner Prozess bei eingehender Meldung
+## 4.2.5 Interner Prozess bei eingehender Meldung
 
 ```
 Externe Schwachstellenmeldung
@@ -122,7 +122,7 @@ Externe Schwachstellenmeldung
         └── Melder danken und nennen
 ```
 
-## Safe Harbor
+## 4.2.6 Safe Harbor
 
 BAUER GROUP wird keine rechtlichen Schritte gegen Sicherheitsforscher einleiten, die:
 
@@ -132,7 +132,7 @@ BAUER GROUP wird keine rechtlichen Schritte gegen Sicherheitsforscher einleiten,
 - Keine Dienste durch Denial-of-Service beeinträchtigen
 - Betroffene Dritte nicht gefährden
 
-## Compliance-Referenzen
+## 4.2.7 Compliance-Referenzen
 
 | Standard | Abdeckung |
 |----------|-----------|

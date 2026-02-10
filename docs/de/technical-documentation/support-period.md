@@ -1,6 +1,6 @@
-# 7.4 Support & Lifecycle Policy
+# 6.4 Support & Lifecycle
 
-## 7.4.1 Rechtsgrundlage
+## 6.4.1 Rechtsgrundlage
 
 Gemäß Art. 13 Abs. 8 CRA muss der Hersteller den Support-Zeitraum für jedes Produkt festlegen und veröffentlichen. Während dieses Zeitraums müssen Sicherheitsupdates bereitgestellt werden.
 
@@ -12,7 +12,7 @@ Gemäß Art. 13 Abs. 8 CRA muss der Hersteller den Support-Zeitraum für jedes P
 **Annex II Nr. 5 CRA:** Der Support-Zeitraum gehört zu den verpflichtenden Nutzerinformationen, die dem Produkt beigefügt werden müssen.
 :::
 
-## 7.4.2 Mindest-Support-Zeitraum
+## 6.4.2 Mindest-Support-Zeitraum
 
 Der CRA schreibt einen Mindest-Support-Zeitraum von **5 Jahren** vor. Für Produktkategorien mit längerer erwarteter Nutzungsdauer legt die BAUER GROUP längere Zeiträume fest:
 
@@ -28,7 +28,7 @@ Der CRA schreibt einen Mindest-Support-Zeitraum von **5 Jahren** vor. Für Produ
 Die Festlegung des Support-Zeitraums muss **vor dem Inverkehrbringen** erfolgen und ist danach nicht verkürzbar. Eine Verlängerung ist jederzeit möglich und wird empfohlen, wenn die tatsächliche Nutzungsdauer die ursprüngliche Schätzung übersteigt.
 :::
 
-## 7.4.3 Lifecycle-Phasen
+## 6.4.3 Lifecycle-Phasen
 
 Jedes Produkt durchläuft drei definierte Lifecycle-Phasen:
 
@@ -62,7 +62,7 @@ Jedes Produkt durchläuft drei definierte Lifecycle-Phasen:
 | Active → Security | Neues Major Release ODER Managemententscheidung | Release Notes + SECURITY.md-Update |
 | Security → EOL | Support-Zeitraum abgelaufen | 12-Monats-Vorankündigung (s. EOL-Prozess) |
 
-## 7.4.4 EOL-Prozess
+## 6.4.4 EOL-Prozess
 
 ### Ankündigungszeitplan
 
@@ -85,7 +85,7 @@ Auch nach Erreichen des EOL bestehen folgende Aufbewahrungspflichten gemäß Art
 | Bestehende Releases downloadbar | **10 Jahre** nach Inverkehrbringen | GitHub Releases / Registry |
 | Konformitätserklärung verfügbar | **10 Jahre** nach Inverkehrbringen | Git-Repository |
 
-## 7.4.5 Versionierungsstrategie
+## 6.4.5 Versionierungsstrategie
 
 Die BAUER GROUP verwendet [Semantic Versioning 2.0.0](https://semver.org/):
 
@@ -99,7 +99,7 @@ PATCH – Abwärtskompatible Fehlerbehebungen / Sicherheitsupdates
 
 **Sicherheitsupdates** werden immer als **PATCH**-Releases veröffentlicht und sind abwärtskompatibel. Ist ein Breaking Change für die Behebung einer Schwachstelle unvermeidbar, wird parallel ein Workaround für die aktuelle MAJOR-Version bereitgestellt.
 
-## 7.4.6 Produktkatalog – Support-Status
+## 6.4.6 Produktkatalog – Support-Status
 
 ::: warning PRODUKTSPEZIFISCH
 Der folgende Produktkatalog muss für jedes CRA-relevante Produkt der BAUER GROUP gepflegt werden. Die Tabelle wird bei jedem Major Release, Phasenübergang oder EOL-Ereignis aktualisiert.
@@ -117,7 +117,7 @@ Der folgende Produktkatalog muss für jedes CRA-relevante Produkt der BAUER GROU
 Für jedes Produkt im CRA-Geltungsbereich (→ Kap. 1.3) ist eine Zeile in dieser Tabelle einzutragen. Der **Support-Start** entspricht dem Datum des Inverkehrbringens (erste öffentliche Bereitstellung). Das **Support-Ende** muss mindestens 5 Jahre nach Support-Start liegen.
 :::
 
-## 7.4.7 Nutzerinformation
+## 6.4.7 Nutzerinformation
 
 Gemäß Annex II Nr. 5 CRA müssen Nutzer über den Support-Zeitraum informiert werden. Die Information muss an folgenden Stellen bereitgestellt werden:
 
@@ -131,7 +131,7 @@ Gemäß Annex II Nr. 5 CRA müssen Nutzer über den Support-Zeitraum informiert 
 
 Das Template für die Nutzerinformation findet sich unter [Anhang: Nutzerinformation](/de/templates/product-security-info).
 
-## 7.4.8 Prozessintegration
+## 6.4.8 Prozessintegration
 
 Der Lifecycle-Prozess ist in die bestehenden CI/CD-Workflows integriert:
 

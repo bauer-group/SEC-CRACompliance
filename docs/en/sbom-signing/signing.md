@@ -1,6 +1,6 @@
-# Signing
+# 2.4 Signing
 
-## Overview
+## 2.4.1 Overview
 
 Signing ensures the integrity and authenticity of all artifacts produced during the release process. This includes SBOMs, container images, release binaries, and firmware. All signing operations use **Cosign** (Sigstore), which supports both key-based and keyless signing.
 
@@ -8,7 +8,7 @@ Signing ensures the integrity and authenticity of all artifacts produced during 
 **Art. 10(12) CRA:** Manufacturers must ensure that security updates and associated information (including SBOMs) are provided "securely and with the integrity guaranteed".
 :::
 
-## Tool: Cosign (Sigstore)
+## 2.4.2 Tool: Cosign (Sigstore)
 
 Cosign is the primary signing tool in the BAUER GROUP ecosystem. It is part of the Sigstore project and supports:
 
@@ -17,7 +17,7 @@ Cosign is the primary signing tool in the BAUER GROUP ecosystem. It is part of t
 
 Cosign is integrated across the CI/CD pipeline: container image signing (`docker-build.yml`), SBOM signing, and binary/firmware signing (`cra-release.yml`).
 
-## Signing Procedures
+## 2.4.3 Signing Procedures
 
 ### 1. Container Image Signing
 
@@ -123,7 +123,7 @@ cosign sign-blob \
 sha256sum firmware.bin > firmware.bin.sha256
 ```
 
-## OTA Security
+## 2.4.4 OTA Security
 
 For firmware updates via OTA (Over-The-Air), additional requirements apply:
 
@@ -132,7 +132,7 @@ For firmware updates via OTA (Over-The-Air), additional requirements apply:
 3. **Rollback protection** -- Anti-rollback counter prevents installation of older (insecure) versions
 4. **Secure Boot Chain** -- Firmware is only executed if the signature chain up to the Root-of-Trust is valid
 
-## Supply Chain Attestation
+## 2.4.5 Supply Chain Attestation
 
 In addition to signing, SLSA-compatible attestations are supported:
 
@@ -145,7 +145,7 @@ cosign attest \
   <registry>/<image>@<digest>
 ```
 
-## GitHub Actions Integration
+## 2.4.6 GitHub Actions Integration
 
 ```yaml
 # Signing steps in each release workflow
@@ -183,7 +183,7 @@ steps:
         sbom.cdx.json.sha256
 ```
 
-## Key Management
+## 2.4.7 Key Management
 
 The keys for all signing operations are managed in accordance with the [Key Management Policy](/en/sbom-signing/key-management):
 
@@ -192,7 +192,7 @@ The keys for all signing operations are managed in accordance with the [Key Mana
 - Public key: Published in the repository (`cosign.pub`)
 - Key rotation: Annually or upon suspicion of compromise
 
-## Release Assets After Signing
+## 2.4.8 Release Assets After Signing
 
 ```
 Release v2.1.0

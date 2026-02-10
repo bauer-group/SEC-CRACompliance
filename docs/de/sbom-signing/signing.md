@@ -1,6 +1,6 @@
-# Signierung
+# 2.4 Signierung
 
-## Zweck der Signierung
+## 2.4.1 Zweck der Signierung
 
 Die kryptographische Signierung von Artefakten stellt sicher, dass:
 
@@ -12,11 +12,11 @@ Die kryptographische Signierung von Artefakten stellt sicher, dass:
 **Art. 10 Abs. 12 CRA:** Hersteller müssen sicherstellen, dass Sicherheitsupdates und zugehörige Informationen (inkl. SBOM) „sicher und unter Gewährleistung der Integrität" bereitgestellt werden.
 :::
 
-## Tool: Cosign (Sigstore)
+## 2.4.2 Tool: Cosign (Sigstore)
 
 Cosign ist das primäre Signierungstool im BAUER GROUP Ökosystem. Es ist Teil des Sigstore-Projekts und unterstützt sowohl key-basierte als auch keyless Signierung. Cosign wird einheitlich für alle Artefakttypen eingesetzt -- Container-Images, Binaries, Firmware und SBOMs.
 
-## Signierungsverfahren nach Artefakttyp
+## 2.4.3 Signierungsverfahren nach Artefakttyp
 
 ### 1. Container Image Signing
 
@@ -118,7 +118,7 @@ cosign sign-blob \
 sha256sum firmware.bin > firmware.bin.sha256
 ```
 
-## OTA-Sicherheit
+## 2.4.4 OTA-Sicherheit
 
 Für Firmware-Updates über OTA (Over-The-Air) gelten zusätzliche Anforderungen:
 
@@ -127,7 +127,7 @@ Für Firmware-Updates über OTA (Over-The-Air) gelten zusätzliche Anforderungen
 3. **Rollback-Schutz** -- Anti-Rollback-Counter verhindert Installation älterer (unsicherer) Versionen
 4. **Secure Boot Chain** -- Firmware wird nur ausgeführt, wenn die Signaturkette bis zum Root-of-Trust gültig ist
 
-## Supply Chain Attestation
+## 2.4.5 Supply Chain Attestation
 
 Zusätzlich zur Signierung werden SLSA-kompatible Attestierungen unterstützt:
 
@@ -140,7 +140,7 @@ cosign attest \
   <registry>/<image>@<digest>
 ```
 
-## GitHub Actions Integration
+## 2.4.6 GitHub Actions Integration
 
 Der folgende Abschnitt zeigt die vollständige Signierungspipeline in GitHub Actions, die alle Artefakttypen abdeckt:
 
@@ -182,7 +182,7 @@ steps:
         SHA256SUMS.txt
 ```
 
-## Key Management
+## 2.4.7 Key Management
 
 Die Schlüssel für alle Signierungsvorgänge werden gemäß der [Key Management Policy](/de/sbom-signing/key-management) verwaltet:
 
@@ -191,7 +191,7 @@ Die Schlüssel für alle Signierungsvorgänge werden gemäß der [Key Management
 - **Public Key:** Im Repository veröffentlicht (`cosign.pub`)
 - **Key-Rotation:** Jährlich oder bei Kompromittierungsverdacht
 
-## Release-Assets nach Signierung
+## 2.4.8 Release-Assets nach Signierung
 
 ```
 Release v2.1.0

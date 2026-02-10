@@ -1,6 +1,6 @@
-# Product Lists (Annex III & IV)
+# 7.6 Product Lists (Annex III & IV)
 
-## Overview
+## 7.6.1 Overview
 
 The Cyber Resilience Act (CRA) defines specific product categories in **Annex III** and **Annex IV** that are subject to special conformity assessment procedures. This page contains the complete lists of all product categories specified therein, including descriptions, required assessment procedures, and a relevance assessment for BAUER GROUP.
 
@@ -20,7 +20,7 @@ The classification logic (decision tree, assessment procedure per category) is d
 
 ---
 
-## Annex III -- Important Products with Digital Elements
+## 7.6.2 Annex III -- Important Products with Digital Elements
 
 ### Part I -- Class I
 
@@ -63,7 +63,7 @@ Class II products require mandatory third-party assessment: [EU type examination
 
 ---
 
-## Annex IV -- Critical Products with Digital Elements
+## 7.6.3 Annex IV -- Critical Products with Digital Elements
 
 Critical products require a [European cybersecurity certificate (EUCC)](/en/conformity/eucc) at assurance level "substantial" or higher.
 
@@ -77,7 +77,7 @@ Critical products require a [European cybersecurity certificate (EUCC)](/en/conf
 
 ---
 
-## Conformity Module Overview
+## 7.6.4 Conformity Module Overview
 
 | Product Category | Module A (Self) | Module B+C (Type) | Module H (Quality) | EUCC |
 |-----------------|:-:|:-:|:-:|:-:|
@@ -97,7 +97,7 @@ Detailed information on the individual modules:
 
 ---
 
-## BAUER GROUP Relevance Assessment
+## 7.6.5 BAUER GROUP Relevance Assessment
 
 The following table assesses the relevance of each product category from Annex III and IV for BAUER GROUP.
 
@@ -161,7 +161,7 @@ The relevance assessment should be carried out individually for each BAUER GROUP
 The product lists in Annex III and Annex IV may be amended by **delegated acts** of the European Commission pursuant to Art. 7(3) CRA. These lists must therefore be reviewed regularly for updates and compared against the currently applicable version of Regulation (EU) 2024/2847. Amendments may include the addition of new product categories as well as the reclassification of existing categories.
 :::
 
-## Next Steps
+## 7.6.6 Next Steps
 
 1. **Perform classification** -- Use the decision tree on the [Product Classification](/en/conformity/product-classification) page
 2. **Review relevance** -- Compare each BAUER GROUP product against the lists above

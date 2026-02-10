@@ -1,6 +1,6 @@
-# 5.3 ENISA Reporting Process
+# 4.3 ENISA Reporting Process
 
-## 5.3.1 Legal Basis
+## 4.3.1 Legal Basis
 
 Pursuant to Art. 14 CRA, manufacturers are required to report certain security events to ENISA or the competent national CSIRT authority. The reporting obligation applies from **11 September 2026**.
 
@@ -22,7 +22,7 @@ Pursuant to Art. 14 CRA, manufacturers are required to report certain security e
 
 :::
 
-## 5.3.2 Reportable Events
+## 4.3.2 Reportable Events
 
 ### Actively Exploited Vulnerability (Art. 14(1))
 
@@ -49,7 +49,7 @@ An incident that significantly affects the security of the product or its users 
 | Availability loss | Security-relevant functions are impaired | Auth bypass, update mechanism disrupted |
 | Compromised updates | Manipulated updates are delivered | Supply chain attack, signing key compromise |
 
-## 5.3.3 Roles and Responsibilities
+## 4.3.3 Roles and Responsibilities
 
 | Role | Responsibility in the Reporting Process |
 |------|-----------------------------------------|
@@ -59,7 +59,7 @@ An incident that significantly affects the security of the product or its users 
 | **Management** | Approval for SEV-1/SEV-2, resource allocation, escalation |
 | **Developer** | Root cause analysis, patch development, security review |
 
-## 5.3.4 Reporting Platform
+## 4.3.4 Reporting Platform
 
 ### ENISA Single Reporting Platform (SRP)
 
@@ -113,7 +113,7 @@ If the ENISA SRP is temporarily unavailable, the notification shall be submitted
 When using the national CSIRT as a fallback, the notification must be re-submitted without delay once the ENISA SRP is available again.
 :::
 
-## 5.3.5 Reporting Process
+## 4.3.5 Reporting Process
 
 ### Phase 1: Early Warning (≤ 24 hours)
 
@@ -224,7 +224,7 @@ Remediation completed or well advanced
 
 **Evidence:** Notification confirmation + complete copy in incident ticket + archiving
 
-## 5.3.6 User Notification (Art. 14(8))
+## 4.3.6 User Notification (Art. 14(8))
 
 In parallel to the ENISA notification, affected users must be informed **without delay** about the vulnerability and available corrective measures.
 
@@ -242,7 +242,7 @@ In parallel to the ENISA notification, affected users must be informed **without
 The user notification must not contain details that could facilitate exploitation of the vulnerability as long as no patch is available. A delayed disclosure may be agreed in coordination with ENISA (Art. 14(7)).
 :::
 
-## 5.3.7 Documentation and Record-Keeping
+## 4.3.7 Documentation and Record-Keeping
 
 Each ENISA notification is fully documented. This documentation serves as **evidence of compliance** vis-a-vis market surveillance authorities (Art. 52 CRA).
 
@@ -268,7 +268,7 @@ All notifications use a uniform reference numbering scheme:
 | Final report | `FR-YYYY-NNN` | FR-2026-001 |
 | Internal incident | `INC-YYYY-NNN` | INC-2026-001 |
 
-## 5.3.8 Preparatory Measures (before 11.09.2026)
+## 4.3.8 Preparatory Measures (before 11.09.2026)
 
 The following measures must be completed before the reporting obligation enters into force:
 
@@ -283,7 +283,7 @@ The following measures must be completed before the reporting obligation enters 
 | 7 | Securely store ENISA access credentials | Security Lead | Q3 2026 | Pending |
 | 8 | Test reporting process in tabletop exercise | Security Lead | Q3 2026 | Pending |
 
-## 5.3.9 Decision Tree: Reporting Obligation
+## 4.3.9 Decision Tree: Reporting Obligation
 
 ```
 Security event detected

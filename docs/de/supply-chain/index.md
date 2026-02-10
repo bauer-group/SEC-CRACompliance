@@ -1,6 +1,6 @@
-# Kapitel 6: Supply-Chain-Sicherheit
+# Kapitel 5: Supply-Chain-Sicherheit
 
-## 6.1 Übersicht
+## Übersicht
 
 Die Absicherung der Software-Lieferkette ist eine zentrale CRA-Anforderung. Hersteller müssen Sorgfaltspflichten bei der Integration von Drittkomponenten erfüllen und die Integrität der gesamten Lieferkette gewährleisten.
 
@@ -10,7 +10,7 @@ Die Absicherung der Software-Lieferkette ist eine zentrale CRA-Anforderung. Hers
 **Annex I, Teil II, Nr. 1:** *„Der Hersteller ermittelt und dokumentiert die Schwachstellen und Komponenten, die in dem Produkt enthalten sind, unter anderem durch Erstellung einer Software-Stückliste."*
 :::
 
-## 6.2 Sicherheitsmaßnahmen
+## Sicherheitsmaßnahmen
 
 ### Implementierte Maßnahmen
 
@@ -24,11 +24,11 @@ Die Absicherung der Software-Lieferkette ist eine zentrale CRA-Anforderung. Hers
 | Container Image Signing | Cosign | `docker-build.yml` | ✅ |
 | SBOM Generation | Trivy / Syft | `modules-license-compliance.yml` | ✅ |
 
-## 6.3 Kapitelstruktur
+## Kapitelstruktur
 
 | Sektion | Thema | Beschreibung |
 |---------|-------|-------------|
-| **6.1** | [Dependency Policy](/de/supply-chain/dependency-policy) | Richtlinien für Abhängigkeiten |
-| **6.2** | [Base Image Policy](/de/supply-chain/base-image-policy) | Docker Base-Image-Verwaltung |
-| **6.3** | [Third-Party Assessment](/de/supply-chain/third-party-assessment) | Bewertung von Drittkomponenten |
-| **6.4** | [Wirtschaftsakteur-Identifizierung (Art. 21)](/de/supply-chain/economic-operator-identification) | Rückverfolgbarkeit in der Lieferkette |
+| **5.1** | [Dependency Policy](/de/supply-chain/dependency-policy) | Richtlinien für Abhängigkeiten |
+| **5.2** | [Base Image Policy](/de/supply-chain/base-image-policy) | Docker Base-Image-Verwaltung |
+| **5.3** | [Third-Party Assessment](/de/supply-chain/third-party-assessment) | Bewertung von Drittkomponenten |
+| **5.4** | [Wirtschaftsakteur-Identifizierung (Art. 21)](/de/supply-chain/economic-operator-identification) | Rückverfolgbarkeit in der Lieferkette |

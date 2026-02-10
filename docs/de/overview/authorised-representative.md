@@ -1,6 +1,6 @@
-# Bevollmächtigter (Art. 16)
+# 1.5 Bevollmächtigter (Art. 16)
 
-## Übersicht
+## 1.5.1 Übersicht
 
 Art. 16 CRA ermöglicht Herstellern, die außerhalb der EU ansässig sind, einen **Bevollmächtigten** (Authorised Representative) mit Sitz in der EU zu benennen, der in ihrem Namen bestimmte Aufgaben wahrnimmt. Der Bevollmächtigte übernimmt gegenüber Behörden eine Schnittstellen- und Dokumentationsfunktion, ersetzt aber nicht die inhaltliche Verantwortung des Herstellers für Produktdesign und Konformität.
 
@@ -10,7 +10,7 @@ Art. 16 CRA ermöglicht Herstellern, die außerhalb der EU ansässig sind, einen
 **Art. 3 Nr. 22 CRA:** *„Bevollmächtigter" ist jede in der Union ansässige natürliche oder juristische Person, die vom Hersteller schriftlich beauftragt wurde, in seinem Namen bestimmte Aufgaben wahrzunehmen.*
 :::
 
-## Wann ist ein Bevollmächtigter erforderlich?
+## 1.5.2 Wann ist ein Bevollmächtigter erforderlich?
 
 Ein Bevollmächtigter wird benötigt, wenn:
 
@@ -22,7 +22,7 @@ Ein Bevollmächtigter wird benötigt, wenn:
 Die Benennung eines Bevollmächtigten ersetzt **nicht** die Pflichten des Importeurs (Art. 15). Wenn ein separater Importeur existiert, hat dieser eigene, unabhängige Pflichten. Existiert kein Bevollmächtigter und kein Importeur, können die Behörden den Hersteller unmittelbar nicht in der EU erreichen, was zu verschärften Maßnahmen führen kann.
 :::
 
-## Delegierbare Aufgaben (Art. 16 Abs. 2)
+## 1.5.3 Delegierbare Aufgaben (Art. 16 Abs. 2)
 
 Der Bevollmächtigte nimmt die Aufgaben wahr, die in der Vollmacht festgelegt sind. Mindestens umfassen diese:
 
@@ -44,7 +44,7 @@ Der Bevollmächtigte nimmt die Aufgaben wahr, die in der Vollmacht festgelegt si
 - Behörden über die **Identität des Herstellers** und dessen Kontaktdaten informieren
 - Bei Kenntnis einer **aktiv ausgenutzten Schwachstelle** die zuständigen Stellen (ENISA, nationale CSIRT) unterrichten, falls der Hersteller nicht reagiert
 
-## Nicht-delegierbare Pflichten
+## 1.5.4 Nicht-delegierbare Pflichten
 
 ::: danger NICHT ÜBERTRAGBAR
 Folgende Herstellerpflichten können **nicht** auf den Bevollmächtigten übertragen werden:
@@ -56,7 +56,7 @@ Folgende Herstellerpflichten können **nicht** auf den Bevollmächtigten übertr
 - **Sicherheitsupdates** – Die Bereitstellung von Patches und Updates
 :::
 
-## Formale Anforderungen an die Vollmacht
+## 1.5.5 Formale Anforderungen an die Vollmacht
 
 Die Benennung des Bevollmächtigten muss folgende Anforderungen erfüllen:
 
@@ -72,7 +72,7 @@ Die Benennung des Bevollmächtigten muss folgende Anforderungen erfüllen:
 Die schriftliche Vollmacht muss den Marktüberwachungsbehörden auf Anfrage vorgelegt werden können. Sie sollte gemeinsam mit der EU-Konformitätserklärung und der technischen Dokumentation archiviert werden (Aufbewahrungsfrist: **10 Jahre** nach Inverkehrbringen des letzten betroffenen Produkts).
 :::
 
-## BAUER GROUP Kontext
+## 1.5.6 BAUER GROUP Kontext
 
 ### Szenario 1: BAUER GROUP als Nicht-EU-Hersteller
 
@@ -100,7 +100,7 @@ Wenn BAUER GROUP als Bevollmächtigter für einen **Nicht-EU-Partnerlieferanten*
 Als Bevollmächtigter haftet BAUER GROUP gesamtschuldnerisch mit dem Hersteller für bestimmte Pflichten. Eine sorgfältige vertragliche Absicherung und Haftungsfreistellung ist unbedingt erforderlich.
 :::
 
-## Verhältnis zu Importeur (Art. 15)
+## 1.5.7 Verhältnis zu Importeur (Art. 15)
 
 Die Rollen von Bevollmächtigtem und Importeur sind komplementär, aber unterschiedlich:
 
@@ -117,7 +117,7 @@ Wenn **kein Bevollmächtigter** benannt ist, übernimmt der Importeur zusätzlic
 
 > Details: [Pflichten der Importeure](/de/overview/importer-obligations)
 
-## Checkliste: Bevollmächtigter
+## 1.5.8 Checkliste: Bevollmächtigter
 
 ### Benennung
 
@@ -137,7 +137,7 @@ Wenn **kein Bevollmächtigter** benannt ist, übernimmt der Importeur zusätzlic
 - [ ] Vollmacht bei Produktänderungen oder neuen Produkten aktualisiert
 - [ ] Archivierung für 10 Jahre sichergestellt
 
-## Sanktionen
+## 1.5.9 Sanktionen
 
 | Verstoß | Sanktion |
 |---------|---------|
@@ -145,7 +145,7 @@ Wenn **kein Bevollmächtigter** benannt ist, übernimmt der Importeur zusätzlic
 | Falsche / unvollständige Angaben an Behörden | Bis zu 5 Mio. EUR oder 1% des Jahresumsatzes |
 | Vollmacht nicht vorlegbar | Formale Nicht-Konformität (Art. 56) |
 
-## Querverweise
+## 1.5.10 Querverweise
 
 - [Pflichten der Importeure (Art. 15)](/de/overview/importer-obligations)
 - [EU-Konformitätserklärung](/de/conformity/eu-declaration)

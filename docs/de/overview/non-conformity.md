@@ -1,6 +1,6 @@
-# Nichtkonformität & Erhebliches Risiko (Art. 22-23)
+# 1.9 Nichtkonformität (Art. 22–23)
 
-## Übersicht
+## 1.9.1 Übersicht
 
 Der CRA unterscheidet zwischen **formaler Nichtkonformität** (Art. 22) und **Produkten mit erheblichem Cybersicherheitsrisiko** (Art. 23). Diese Unterscheidung ist entscheidend: Art. 22 betrifft administrative Mängel (fehlende Dokumente, falsche Kennzeichnung), während Art. 23 substanzielle Sicherheitsprobleme adressiert. Beide Artikel ermächtigen die Marktüberwachungsbehörden zu Korrekturmaßnahmen bis hin zum Vertriebsstopp oder Rückruf.
 
@@ -10,7 +10,7 @@ Der CRA unterscheidet zwischen **formaler Nichtkonformität** (Art. 22) und **Pr
 **Art. 23 CRA (EU) 2024/2847:** Verfahren bei Produkten mit erheblichem Cybersicherheitsrisiko -- die Behörde ordnet Korrekturmaßnahmen an, wenn die wesentlichen Anforderungen (Anhang I) substanziell nicht erfüllt werden.
 :::
 
-## Art. 22 -- Formale Nichtkonformität
+## 1.9.2 Art. 22 -- Formale Nichtkonformität
 
 Die Marktüberwachungsbehörde verlangt Korrekturmaßnahmen, wenn sie einen der folgenden formalen Mängel feststellt:
 
@@ -33,7 +33,7 @@ Die Marktüberwachungsbehörde verlangt Korrekturmaßnahmen, wenn sie einen der 
 Formale Mängel mögen trivial erscheinen, können aber zu einem sofortigen Vertriebsstopp führen. Die vollständige Dokumentation muss jederzeit verfügbar sein.
 :::
 
-## Art. 23 -- Produkt mit erheblichem Cybersicherheitsrisiko
+## 1.9.3 Art. 23 -- Produkt mit erheblichem Cybersicherheitsrisiko
 
 Stellt ein Produkt mit digitalen Elementen ein **erhebliches Cybersicherheitsrisiko** dar, greift ein verschärftes Verfahren:
 
@@ -48,7 +48,7 @@ Art. 23 greift insbesondere, wenn die **wesentlichen Anforderungen nach Anhang I
 Ein erhebliches Cybersicherheitsrisiko kann zu Sofortmaßnahmen führen. Im Gegensatz zu formaler Nichtkonformität steht hier die tatsächliche Sicherheit der Nutzer im Vordergrund. Sanktionen nach [Art. 64](/de/overview/penalties) (bis zu 15 Mio. EUR / 2,5% Umsatz) können zusätzlich verhängt werden.
 :::
 
-## Vergleich: Art. 22 vs. Art. 23
+## 1.9.4 Vergleich: Art. 22 vs. Art. 23
 
 | Kriterium | Art. 22 -- Formale Nichtkonformität | Art. 23 -- Erhebliches Cybersicherheitsrisiko |
 |-----------|-------------------------------------|-----------------------------------------------|
@@ -59,7 +59,7 @@ Ein erhebliches Cybersicherheitsrisiko kann zu Sofortmaßnahmen führen. Im Gege
 | **Eskalation** | Vertriebsstopp, Rücknahme | Vertriebsstopp, Rücknahme, Rückruf |
 | **Bußgeldrisiko** | Stufe 2 (bis 10 Mio. EUR / 2%) | Stufe 1 (bis 15 Mio. EUR / 2,5%) |
 
-## Praktische Maßnahmen für BAUER GROUP
+## 1.9.5 Praktische Maßnahmen für BAUER GROUP
 
 ### Checkliste: Formale Konformität sicherstellen
 
@@ -98,7 +98,7 @@ Behördenanfrage eingehend
         +-- Parallele Information an ENISA (falls Art. 14 betroffen)
 ```
 
-## Weiterführende Seiten
+## 1.9.6 Weiterführende Seiten
 
 - [CE-Kennzeichnung](/de/conformity/ce-marking) -- Anforderungen an die korrekte Anbringung
 - [EU-Konformitätserklärung](/de/conformity/eu-declaration) -- Inhalt und Form der DoC

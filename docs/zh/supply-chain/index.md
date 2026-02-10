@@ -1,6 +1,6 @@
-# 第六章：供应链安全 (Supply Chain Security)
+# 第5章：供应链安全
 
-## 6.1 概述
+## 概述
 
 保障软件供应链安全是 CRA 的核心要求。制造商在集成第三方组件时必须履行尽职调查 (Due Diligence) 义务，并确保整个供应链的完整性。
 
@@ -10,7 +10,7 @@
 **Annex I, Part II, No. 1:** *"The manufacturer shall identify and document the vulnerabilities and components contained in the product, including by drawing up a software bill of materials."*
 :::
 
-## 6.2 安全措施
+## 安全措施
 
 ### 已实施的措施
 
@@ -24,11 +24,11 @@
 | 容器镜像签名 | Cosign | `docker-build.yml` | ✅ |
 | SBOM 生成 | Trivy / Syft | `modules-license-compliance.yml` | ✅ |
 
-## 6.3 章节结构
+## 章节结构
 
 | 章节 | 主题 | 描述 |
 |------|------|------|
-| **6.1** | [依赖政策](/zh/supply-chain/dependency-policy) | 依赖项管理策略 |
-| **6.2** | [基础镜像政策](/zh/supply-chain/base-image-policy) | Docker 基础镜像管理 |
-| **6.3** | [第三方评估](/zh/supply-chain/third-party-assessment) | 第三方组件评估 |
-| **6.4** | [经济运营者识别 (Art. 21)](/zh/supply-chain/economic-operator-identification) | 供应链可追溯性 |
+| **5.1** | [依赖政策](/zh/supply-chain/dependency-policy) | 依赖项管理策略 |
+| **5.2** | [基础镜像政策](/zh/supply-chain/base-image-policy) | Docker 基础镜像管理 |
+| **5.3** | [第三方评估](/zh/supply-chain/third-party-assessment) | 第三方组件评估 |
+| **5.4** | [经济运营者识别 (Art. 21)](/zh/supply-chain/economic-operator-identification) | 供应链可追溯性 |

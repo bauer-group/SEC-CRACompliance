@@ -1,10 +1,10 @@
-# ENISA Early Warning (24h)
+# A.3 ENISA Early Warning (24h)
 
 ::: danger TIME-CRITICAL
 This notification must be sent to ENISA / the competent national CSIRT within **24 hours** of becoming aware of an actively exploited vulnerability or a severe security incident.
 :::
 
-## Template: Early Warning pursuant to Art. 14(2)(a) CRA
+## A.3.1 Template: Early Warning pursuant to Art. 14(2)(a) CRA
 
 ---
 

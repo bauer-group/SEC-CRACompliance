@@ -1,10 +1,10 @@
-# ENISA Schwachstellenmeldung (72h)
+# A.4 ENISA Meldung (72h)
 
 ::: warning FRIST
 Diese Meldung muss innerhalb von **72 Stunden** nach Kenntnisnahme an ENISA / die zuständige nationale CSIRT gesendet werden. Sie ergänzt die Frühwarnung (24h).
 :::
 
-## Vorlage: Schwachstellenmeldung gemäß Art. 14 Abs. 2 lit. b CRA
+## A.4.1 Vorlage: Schwachstellenmeldung gemäß Art. 14 Abs. 2 lit. b CRA
 
 ---
 

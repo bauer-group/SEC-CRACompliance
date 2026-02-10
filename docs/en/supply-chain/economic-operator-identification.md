@@ -1,6 +1,6 @@
-# Identification of Economic Operators (Art. 21)
+# 5.4 Economic Operator Identification (Art. 21)
 
-## Overview
+## 5.4.1 Overview
 
 Art. 21 CRA requires all economic operators to be able to identify their suppliers and customers within the supply chain. This information must be provided to market surveillance authorities upon request. The objective is to ensure complete traceability of products with digital elements across the entire supply chain.
 
@@ -13,7 +13,7 @@ Art. 21 CRA requires all economic operators to be able to identify their supplie
 *Economic operators shall be able to present this information for a period of **10 years** after they have been supplied with the product and for 10 years after they have supplied the product."*
 :::
 
-## Affected Economic Operators
+## 5.4.2 Affected Economic Operators
 
 The identification obligation applies to all roles in the supply chain:
 
@@ -24,7 +24,7 @@ The identification obligation applies to all roles in the supply chain:
 | Distributor | Importer/manufacturer (supplier) + customers | Art. 17, Art. 21 |
 | Authorised Representative | Manufacturer (principal) + customers | Art. 16, Art. 21 |
 
-## Documentation Requirements
+## 5.4.3 Documentation Requirements
 
 ### Minimum Record Contents
 
@@ -41,7 +41,7 @@ The following data must be maintained for each CRA-relevant transaction:
 All identification records must be retained for at least **10 years** from the date of supply and must be available to market surveillance authorities upon request.
 :::
 
-## BAUER GROUP Implementation
+## 5.4.4 BAUER GROUP Implementation
 
 ### Incoming Supply (Suppliers)
 
@@ -69,7 +69,7 @@ All identification records must be retained for at least **10 years** from the d
 4. Compilation of supplier and customer data from ERP/DMS
 5. Submission to the authority within the specified deadline
 
-## Checklist
+## 5.4.5 Checklist
 
 - [ ] ERP retention periods for supplier and customer data verified at ≥ 10 years
 - [ ] DMS archival policies for procurement and sales documents updated
@@ -77,7 +77,7 @@ All identification records must be retained for at least **10 years** from the d
 - [ ] Responsibilities for responding to Art. 21 requests defined
 - [ ] Regular review of data quality in master data systems
 
-## Cross-References
+## 5.4.6 Cross-References
 
 - [Supply Chain Security](/en/supply-chain/) -- Overview of supply chain security measures
 - [Market Surveillance](/en/overview/market-surveillance) -- Cooperation with authorities and response processes

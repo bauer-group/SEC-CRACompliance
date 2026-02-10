@@ -1,6 +1,6 @@
-# 7.3 Update-Mechanismus
+# 6.3 Update-Mechanismus
 
-## Übersicht
+## 6.3.1 Übersicht
 
 Der Update-Mechanismus stellt sicher, dass Sicherheitsupdates sicher, authentisch und zeitnah an Nutzer ausgeliefert werden.
 
@@ -10,7 +10,7 @@ Der Update-Mechanismus stellt sicher, dass Sicherheitsupdates sicher, authentisc
 **Art. 10 Abs. 12 CRA:** Die Integrität von Sicherheitsupdates muss gewährleistet sein, insbesondere bei automatischer Installation.
 :::
 
-## Update-Kanäle
+## 6.3.2 Update-Kanäle
 
 ### Container-basierte Produkte
 
@@ -75,7 +75,7 @@ Patch verfügbar
         └── npm update / dotnet update
 ```
 
-## Integritätsschutz
+## 6.3.3 Integritätsschutz
 
 Jedes Update wird durch folgende Mechanismen geschützt:
 
@@ -87,7 +87,7 @@ Jedes Update wird durch folgende Mechanismen geschützt:
 | Anti-Rollback | N/A | ✅ | N/A |
 | Secure Boot Chain | N/A | ✅ (wo unterstützt) | N/A |
 
-## Kostenlose Bereitstellung
+## 6.3.4 Kostenlose Bereitstellung
 
 Gemäß Art. 10 Abs. 7 CRA werden alle Sicherheitsupdates **kostenlos** bereitgestellt:
 
@@ -95,7 +95,7 @@ Gemäß Art. 10 Abs. 7 CRA werden alle Sicherheitsupdates **kostenlos** bereitge
 - Firmware über GitHub Releases (öffentlicher Download)
 - Software-Pakete über öffentliche Registries
 
-## Update-Frequenz
+## 6.3.5 Update-Frequenz
 
 | Produkttyp | Reguläre Updates | Sicherheitsupdates |
 |------------|-----------------|-------------------|

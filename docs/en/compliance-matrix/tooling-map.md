@@ -1,10 +1,10 @@
-# 9.1 Tooling Map
+# 8.1 Tooling Map
 
-## Tool → CRA Compliance Matrix
+## 8.1.1 Tool → CRA Compliance Matrix
 
 This mapping shows which tool covers which CRA requirements.
 
-## GitHub Ecosystem
+## 8.1.2 GitHub Ecosystem
 
 ### Dependabot
 
@@ -36,7 +36,7 @@ This mapping shows which tool covers which CRA requirements.
 | `security-management.yml` | Art. 13(8) | SECURITY.md auto-generation |
 | `teams-notifications.yml` | Art. 14 (supporting) | Incident communication |
 
-## Security Scanning
+## 8.1.3 Security Scanning
 
 ### Trivy (Aqua Security)
 
@@ -77,7 +77,7 @@ This mapping shows which tool covers which CRA requirements.
 | Art. 10(1) | Prevention of secret exposure |
 | Annex I, Part I, No. 5 | Protection against unauthorised access (secrets) |
 
-## SBOM & Compliance
+## 8.1.4 SBOM & Compliance
 
 ### Syft (Anchore)
 
@@ -94,7 +94,7 @@ This mapping shows which tool covers which CRA requirements.
 | Art. 10(4) | Due diligence for third-party components (licences) |
 | Annex I, Part II, No. 1 | Licence inventory as part of the SBOM |
 
-## Signing & Integrity
+## 8.1.5 Signing & Integrity
 
 ### Cosign (Sigstore)
 
@@ -104,7 +104,7 @@ This mapping shows which tool covers which CRA requirements.
 | Annex I, Part I, No. 3.2 | Integrity protection (data/artefacts) |
 | Annex I, Part II, No. 6 | Secure provision of updates |
 
-## CRA Compliance Workflows (this repository)
+## 8.1.6 CRA Compliance Workflows (this repository)
 
 In addition to the automation templates, this repository provides dedicated CRA workflows that can be reused in every source code repository.
 
@@ -125,14 +125,14 @@ In addition to the automation templates, this repository provides dedicated CRA 
 | `cra-scan.yml` | Repo-local | Art. 10(6), (8) | Scheduled CVE scan with issue creation |
 | `cra-report.yml` | API reporting | Art. 10, Art. 13, Annex VII | All CRA data to CRA Compliance Hub |
 
-## Planned Extensions
+## 8.1.7 Planned Extensions
 
 | Tool / Workflow | CRA Requirement | Status |
 |----------------|-----------------|--------|
 | **CodeQL** (SAST) | Annex I, Part II, No. 3 | 🔧 Optional |
 | **CRA Compliance Hub** (web app) | Central evaluation | 🔧 Planned |
 
-## Summary: CRA Coverage through Tooling
+## 8.1.8 Summary: CRA Coverage through Tooling
 
 ```
                          CRA Requirement

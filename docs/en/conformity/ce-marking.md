@@ -1,6 +1,6 @@
-# CE Marking (Art. 29-30)
+# 7.7 CE Marking (Art. 29-30)
 
-## Overview
+## 7.7.1 Overview
 
 The CE marking is the visible sign that a product with digital elements meets all applicable EU requirements. It is **mandatory** before a product is placed on the EU market. The CE marking does not refer exclusively to the CRA but to all EU harmonisation legislation applicable to the product.
 
@@ -12,7 +12,7 @@ The CE marking is the visible sign that a product with digital elements meets al
 **Regulation (EC) No 765/2008, Art. 30:** General principles of the CE marking (proportions, minimum size, visibility).
 :::
 
-## What the CE Marking Signifies
+## 7.7.2 What the CE Marking Signifies
 
 The CE marking confirms that:
 
@@ -25,7 +25,7 @@ The CE marking confirms that:
 The CE marking is **not a quality seal** and not a certificate issued by an independent body (except where Module B+C or H applies). It is a **manufacturer's declaration** of compliance with EU requirements.
 :::
 
-## When Is the CE Marking Affixed?
+## 7.7.3 When Is the CE Marking Affixed?
 
 The CE marking may **only** be affixed when:
 
@@ -35,7 +35,7 @@ The CE marking may **only** be affixed when:
 - [ ] All **essential requirements** from Annex I (Part I and Part II) are met
 - [ ] Where external assessment applies: The **certificate from the notified body** has been obtained
 
-## Physical Requirements
+## 7.7.4 Physical Requirements
 
 Pursuant to Regulation (EC) No 765/2008 and Art. 29-30 CRA:
 
@@ -48,7 +48,7 @@ Pursuant to Regulation (EC) No 765/2008 and Art. 29-30 CRA:
 | Indelibility | Not easily removable (indelible) |
 | Language | No language requirement (universal symbol) |
 
-## Where to Place the CE Marking
+## 7.7.5 Where to Place the CE Marking
 
 ### Hardware / Physical Products
 
@@ -88,7 +88,7 @@ For containerised software:
 | User interface | In the web interface or configuration interface of the device |
 | Update portal | On the download page for firmware updates |
 
-## Additional Markings
+## 7.7.6 Additional Markings
 
 ### Notified Body Identification Number
 
@@ -113,7 +113,7 @@ In addition to the CE marking, the following must be indicated:
 - **Postal address** of the manufacturer (or of the Authorised Representative)
 - **Unique product identification** (type, version, serial number)
 
-## Prohibited Markings
+## 7.7.7 Prohibited Markings
 
 ::: danger PROHIBITED
 The following markings are **impermissible** and may lead to penalties:
@@ -125,7 +125,7 @@ The following markings are **impermissible** and may lead to penalties:
 - **Manipulated or counterfeit CE markings**
 :::
 
-## Relationship to the EU Declaration of Conformity
+## 7.7.8 Relationship to the EU Declaration of Conformity
 
 The CE marking and the EU declaration of conformity (DoC) are inseparably linked:
 
@@ -140,7 +140,7 @@ The CE marking may **only** be affixed where a valid EU declaration of conformit
 
 > Template: [EU Declaration of Conformity Template](/en/templates/eu-declaration-of-conformity)
 
-## Market Surveillance and Missing CE Marking
+## 7.7.9 Market Surveillance and Missing CE Marking
 
 ### Art. 56 -- Formal Non-Conformity
 
@@ -171,7 +171,7 @@ Authority determines formal non-conformity
 
 > Details: [Market Surveillance (Art. 52-58)](/en/overview/market-surveillance)
 
-## BAUER GROUP Implementation
+## 7.7.10 BAUER GROUP Implementation
 
 ### Software Products
 
@@ -199,7 +199,7 @@ Authority determines formal non-conformity
 | Web interface | CE note in the admin panel / info page |
 | Update documentation | CE reference in the release notes |
 
-## Checklist: CE Marking
+## 7.7.11 Checklist: CE Marking
 
 ### Before Affixing
 
@@ -233,7 +233,7 @@ Authority determines formal non-conformity
 - [ ] No misleading markings present
 - [ ] Documentation up to date
 
-## Cross-References
+## 7.7.12 Cross-References
 
 - [EU Declaration of Conformity](/en/conformity/eu-declaration)
 - [Self-Assessment (Module A)](/en/conformity/self-assessment)

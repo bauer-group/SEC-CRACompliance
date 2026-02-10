@@ -1,6 +1,6 @@
-# 8.3 EU Declaration of Conformity
+# 7.8 EU Declaration of Conformity
 
-## Overview
+## 7.8.1 Overview
 
 The EU Declaration of Conformity (DoC) is the formal document by which the manufacturer declares that its product meets the requirements of the CRA. It is a prerequisite for affixing the CE marking.
 
@@ -10,7 +10,7 @@ The EU Declaration of Conformity (DoC) is the formal document by which the manuf
 **Annex V CRA** defines the minimum content of the EU Declaration of Conformity.
 :::
 
-## Content in accordance with Annex V CRA
+## 7.8.2 Content in accordance with Annex V CRA
 
 The EU Declaration of Conformity must contain at least:
 
@@ -25,12 +25,12 @@ The EU Declaration of Conformity must contain at least:
 9. **Signature** of the responsible person, including name and function
 10. **Support period** of the product
 
-## Template
+## 7.8.3 Template
 
 A fillable template is available at:
 → [EU Declaration of Conformity Template](/en/templates/eu-declaration-of-conformity)
 
-## CE Marking
+## 7.8.4 CE Marking
 
 After issuing the EU Declaration of Conformity, the CE marking shall be affixed:
 
@@ -53,7 +53,7 @@ After issuing the EU Declaration of Conformity, the CE marking shall be affixed:
 - Identification number of the notified body (if involved)
 - Next to the CE marking: postal address of the manufacturer
 
-## Retention
+## 7.8.5 Retention
 
 | Document | Retention Period | Storage Location |
 |----------|-----------------|------------------|
@@ -61,7 +61,7 @@ After issuing the EU Declaration of Conformity, the CE marking shall be affixed:
 | Technical documentation | **10 years** after placing on the market | This repository |
 | Conformity Assessment records | **10 years** after placing on the market | This repository |
 
-## Provision to Authorities
+## 7.8.6 Provision to Authorities
 
 Pursuant to Art. 28(5) CRA, the EU Declaration of Conformity must be made available to market surveillance authorities upon request:
 
@@ -69,7 +69,7 @@ Pursuant to Art. 28(5) CRA, the EU Declaration of Conformity must be made availa
 - As a PDF upon request
 - In the language of the requesting authority (at least English)
 
-## Updates
+## 7.8.7 Updates
 
 The EU Declaration of Conformity must be updated in the event of:
 

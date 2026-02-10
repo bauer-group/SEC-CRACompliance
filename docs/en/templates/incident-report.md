@@ -1,6 +1,6 @@
-# Incident Report (Internal)
+# A.1 Incident Report (Internal)
 
-## Template: Internal Security Incident Report
+## A.1.1 Template: Internal Security Incident Report
 
 ---
 

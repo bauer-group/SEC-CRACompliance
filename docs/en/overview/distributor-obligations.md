@@ -1,6 +1,6 @@
-# Distributor Obligations (Art. 17)
+# 1.6 Distributor Obligations (Art. 17)
 
-## Overview
+## 1.6.1 Overview
 
 Distributors are economic operators in the supply chain that make a product with digital elements available on the market without being a Manufacturer or Importer. The CRA imposes due diligence obligations on them that are primarily focused on verification and cooperation.
 
@@ -10,7 +10,7 @@ Distributors are economic operators in the supply chain that make a product with
 **Art. 3 No. 22 CRA:** *"Distributor" means any natural or legal person in the supply chain that makes a product with digital elements available on the market without being a Manufacturer or Importer.*
 :::
 
-## When Is BAUER GROUP a Distributor?
+## 1.6.2 When Is BAUER GROUP a Distributor?
 
 BAUER GROUP acts as a Distributor when:
 
@@ -25,7 +25,7 @@ BAUER GROUP acts as a Distributor when:
 - **Manufacturer** --> Own product or substantial modification (--> Art. 20)
 :::
 
-## Obligations in Detail
+## 1.6.3 Obligations in Detail
 
 ### 1. Due Diligence (Art. 17 Para. 1)
 
@@ -77,7 +77,7 @@ If the Distributor determines that an already distributed product is non-complia
 - Inform Market Surveillance authorities
 - Document all measures
 
-## Checklist for Distributors
+## 1.6.4 Checklist for Distributors
 
 ### Before Making Available
 
@@ -95,7 +95,7 @@ If the Distributor determines that an already distributed product is non-complia
 - [ ] Support manufacturer recall actions
 - [ ] Distribution channels integrity-secured
 
-## Difference Between Distributor and Importer
+## 1.6.5 Difference Between Distributor and Importer
 
 | Criterion | Distributor | Importer |
 |-----------|-------------|----------|
@@ -105,7 +105,7 @@ If the Distributor determines that an already distributed product is non-complia
 | **Document retention** | Not explicitly required | 10-year obligation |
 | **ENISA reporting obligation** | Subsidiary (if Manufacturer does not respond) | Subsidiary (if Manufacturer does not respond) |
 
-## Liability and Penalties
+## 1.6.6 Liability and Penalties
 
 | Violation | Penalty |
 |-----------|---------|

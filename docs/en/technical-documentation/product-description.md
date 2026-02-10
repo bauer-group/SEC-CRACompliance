@@ -1,6 +1,6 @@
-# 7.1 Product Description (Template)
+# 6.1 Product Description
 
-## Template: Product Description pursuant to Annex VII CRA
+## 6.1.1 Template: Product Description pursuant to Annex VII CRA
 
 ::: tip USAGE
 This template is completed individually for each CRA-relevant product. Copy this template and create a product-specific version.

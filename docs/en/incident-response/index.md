@@ -1,6 +1,6 @@
-# Chapter 5: Incident Response & Disclosure
+# Chapter 4: Incident Response & Disclosure
 
-## 5.1 Overview
+## Overview
 
 The Incident Response Framework covers the complete CRA reporting obligations. From **11 September 2026**, manufacturers are required to report actively exploited vulnerabilities and severe security incidents to ENISA or the competent national authority.
 
@@ -8,7 +8,7 @@ The Incident Response Framework covers the complete CRA reporting obligations. F
 The reporting obligations pursuant to Art. 14 CRA enter into force on 11 September 2026. From that date, actively exploited vulnerabilities must be reported within **24 hours**.
 :::
 
-## 5.2 Reporting Obligations Overview
+## Reporting Obligations Overview
 
 | Event | Deadline | Recipient | Template |
 |-------|----------|-----------|----------|
@@ -22,7 +22,7 @@ The reporting obligations pursuant to Art. 14 CRA enter into force on 11 Septemb
 
 | Section | Topic | CRA Reference |
 |---------|-------|---------------|
-| **5.1** | [Incident Response Playbook](/en/incident-response/playbook) – Escalation levels, phases, checklists | Art. 14, Annex I Part II |
-| **5.2** | [Vulnerability Disclosure Policy](/en/incident-response/disclosure-policy) – CVD per ISO 29147 | Art. 13(6) |
-| **5.3** | [ENISA Reporting Process](/en/incident-response/enisa-reporting) – Deadlines, procedure, documentation | Art. 14(1)-(3) |
-| **5.4** | [Communication Plan](/en/incident-response/communication) – Internal/external communication channels | Art. 14(8) |
+| **4.1** | [Incident Response Playbook](/en/incident-response/playbook) – Escalation levels, phases, checklists | Art. 14, Annex I Part II |
+| **4.2** | [Vulnerability Disclosure Policy](/en/incident-response/disclosure-policy) – CVD per ISO 29147 | Art. 13(6) |
+| **4.3** | [ENISA Reporting Process](/en/incident-response/enisa-reporting) – Deadlines, procedure, documentation | Art. 14(1)-(3) |
+| **4.4** | [Communication Plan](/en/incident-response/communication) – Internal/external communication channels | Art. 14(8) |

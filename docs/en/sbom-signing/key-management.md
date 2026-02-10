@@ -1,10 +1,10 @@
-# 4.2 Key Management
+# 2.5 Key Management
 
-## Key Management
+## 2.5.1 Key Management
 
 The secure management of cryptographic keys is essential for the integrity of the signing processes.
 
-## Key Types
+## 2.5.2 Key Types
 
 | Key | Type | Storage Location | Purpose |
 |-----|------|------------------|---------|
@@ -12,7 +12,7 @@ The secure management of cryptographic keys is essential for the integrity of th
 | Cosign Password | Password | GitHub Secrets | Protection of the Private Key |
 | Cosign Public Key | Ed25519 / ECDSA P-256 | Repository (`cosign.pub`) | Verification by users |
 
-## Key Generation
+## 2.5.3 Key Generation
 
 ```bash
 # Generate new key pair
@@ -23,7 +23,7 @@ cosign generate-key-pair
 # cosign.pub  → Public Key
 ```
 
-## Key Storage
+## 2.5.4 Key Storage
 
 ### Private Key
 
@@ -45,7 +45,7 @@ The Private Key is stored **exclusively** in GitHub Secrets:
 - **Availability:** Public
 - **Purpose:** Verification by users and systems
 
-## Key Rotation
+## 2.5.5 Key Rotation
 
 | Trigger | Action | Deadline |
 |---------|--------|----------|
@@ -79,7 +79,7 @@ The Private Key is stored **exclusively** in GitHub Secrets:
    └── Perform test signing and verification
 ```
 
-## Emergency Procedure in Case of Key Compromise
+## 2.5.6 Emergency Procedure in Case of Key Compromise
 
 1. **Immediately:** Rotate GitHub Secrets (new key pair)
 2. **Within 1h:** Identify all releases signed since the compromise
@@ -87,7 +87,7 @@ The Private Key is stored **exclusively** in GitHub Secrets:
 4. **Within 24h:** Notify users of the key change
 5. **Documentation:** Document the incident in the Incident Report
 
-## Access Permissions
+## 2.5.7 Access Permissions
 
 | Role | Private Key | Public Key | Key Rotation |
 |------|:-----------:|:----------:|:------------:|

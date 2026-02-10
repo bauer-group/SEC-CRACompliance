@@ -1,6 +1,6 @@
-# Wesentliche Sicherheitsanforderungen (Annex I Teil I)
+# 6.5 Sicherheitsanforderungen (Annex I)
 
-## Übersicht
+## 6.5.1 Übersicht
 
 Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, die jedes Produkt mit digitalen Elementen erfüllen muss. Diese Seite bietet detaillierte Umsetzungshinweise für jede einzelne Anforderung.
 
@@ -8,7 +8,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 **Annex I Teil I CRA:** Wesentliche Cybersicherheitsanforderungen. Produkte mit digitalen Elementen werden so konzipiert, entwickelt und hergestellt, dass sie unter Berücksichtigung der Risiken ein angemessenes Cybersicherheitsniveau gewährleisten.
 :::
 
-## Nr. 1 – Angemessenes Cybersicherheitsniveau
+## 6.5.2 Nr. 1 – Angemessenes Cybersicherheitsniveau
 
 **Anforderung:** Produkte werden so konzipiert, entwickelt und hergestellt, dass sie ein angemessenes Cybersicherheitsniveau gewährleisten, basierend auf den Risiken.
 
@@ -23,7 +23,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 
 ---
 
-## Nr. 2 – Keine bekannten ausnutzbaren Schwachstellen
+## 6.5.3 Nr. 2 – Keine bekannten ausnutzbaren Schwachstellen
 
 **Anforderung:** Produkte werden ohne bekannte ausnutzbare Schwachstellen ausgeliefert.
 
@@ -38,7 +38,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 
 ---
 
-## Nr. 3 – Schutz der Vertraulichkeit, Integrität und Verfügbarkeit
+## 6.5.4 Nr. 3 – Schutz der Vertraulichkeit, Integrität und Verfügbarkeit
 
 ### Nr. 3.1 – Vertraulichkeitsschutz
 
@@ -83,7 +83,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 
 ---
 
-## Nr. 4 – Sichere Standardkonfiguration
+## 6.5.5 Nr. 4 – Sichere Standardkonfiguration
 
 **Anforderung:** Produkte werden mit einer sicheren Standardkonfiguration ausgeliefert, einschließlich der Möglichkeit, das Produkt in den Originalzustand zurückzusetzen.
 
@@ -99,7 +99,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 
 ---
 
-## Nr. 5 – Schutz vor unbefugtem Zugriff
+## 6.5.6 Nr. 5 – Schutz vor unbefugtem Zugriff
 
 **Anforderung:** Schutz vor unbefugtem Zugriff durch angemessene Kontrollmechanismen (Authentifizierung, Identitätsmanagement, Zugriffskontrolle).
 
@@ -115,7 +115,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 
 ---
 
-## Nr. 6 – Minimale Angriffsfläche
+## 6.5.7 Nr. 6 – Minimale Angriffsfläche
 
 **Anforderung:** Minimierung der Angriffsfläche, einschließlich externer Schnittstellen.
 
@@ -131,7 +131,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 
 ---
 
-## Nr. 7 – Vertraulichkeit gespeicherter Daten
+## 6.5.8 Nr. 7 – Vertraulichkeit gespeicherter Daten
 
 **Anforderung:** Schutz der Vertraulichkeit von gespeicherten, übertragenen oder anderweitig verarbeiteten Daten, einschließlich personenbezogener Daten.
 
@@ -147,7 +147,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 
 ---
 
-## Nr. 8 – Integrität gespeicherter Daten
+## 6.5.9 Nr. 8 – Integrität gespeicherter Daten
 
 **Anforderung:** Schutz der Integrität gespeicherter Daten und Befehle gegen Manipulation.
 
@@ -163,7 +163,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 
 ---
 
-## Nr. 9 – Datenminimierung
+## 6.5.10 Nr. 9 – Datenminimierung
 
 **Anforderung:** Verarbeitung nur der Daten (persönlich oder anderweitig), die für den bestimmungsgemäßen Gebrauch des Produkts erforderlich sind.
 
@@ -179,7 +179,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 
 ---
 
-## Nr. 10 – Verfügbarkeit wesentlicher Funktionen
+## 6.5.11 Nr. 10 – Verfügbarkeit wesentlicher Funktionen
 
 **Anforderung:** Wesentliche Funktionen des Produkts müssen auch bei Ausfall einzelner Komponenten verfügbar bleiben.
 
@@ -195,7 +195,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 
 ---
 
-## Nr. 11 – Minimierung negativer Auswirkungen
+## 6.5.12 Nr. 11 – Minimierung negativer Auswirkungen
 
 **Anforderung:** Minimierung der negativen Auswirkungen auf die Verfügbarkeit anderer Geräte und Netzwerke bei Sicherheitsvorfall.
 
@@ -211,7 +211,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 
 ---
 
-## Nr. 12 – Sicherheitsrelevante Informationen
+## 6.5.13 Nr. 12 – Sicherheitsrelevante Informationen
 
 **Anforderung:** Sammlung und Bereitstellung von sicherheitsrelevanten Informationen, einschließlich Logging und Monitoring.
 
@@ -227,7 +227,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 
 ---
 
-## Nr. 13 – Sichere Update-Möglichkeit
+## 6.5.14 Nr. 13 – Sichere Update-Möglichkeit
 
 **Anforderung:** Möglichkeit zur sicheren Aktualisierung des Produkts, einschließlich automatischer Benachrichtigung über verfügbare Updates.
 
@@ -243,7 +243,7 @@ Annex I Teil I des CRA definiert 13 wesentliche Cybersicherheitsanforderungen, d
 
 ---
 
-## Compliance-Matrix
+## 6.5.15 Compliance-Matrix
 
 | Nr. | Anforderung | Umsetzungsstatus | Nachweis-Ort |
 |-----|-------------|:---:|-------------|

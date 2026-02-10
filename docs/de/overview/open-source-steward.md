@@ -1,6 +1,6 @@
-# Open-Source-Software-Steward (Art. 18-19)
+# 1.7 Open-Source-Steward (Art. 18–19)
 
-## Übersicht
+## 1.7.1 Übersicht
 
 Der CRA führt die neue Rolle des **Open-Source-Software-Stewards** ein. Dies betrifft juristische Personen (z.B. Stiftungen, Unternehmen), die die Entwicklung von Open-Source-Software systematisch unterstützen, welche für kommerzielle Aktivitäten bestimmt ist.
 
@@ -12,7 +12,7 @@ Der CRA führt die neue Rolle des **Open-Source-Software-Stewards** ein. Dies be
 **Art. 19 CRA:** Sicherheitsattestierung für freie und quelloffene Software.
 :::
 
-## Wann gilt die OSS-Steward-Rolle?
+## 1.7.2 Wann gilt die OSS-Steward-Rolle?
 
 ### Voraussetzungen (kumulativ)
 
@@ -43,7 +43,7 @@ Der CRA führt die neue Rolle des **Open-Source-Software-Stewards** ein. Dies be
 Nach derzeitigem Kenntnisstand agiert BAUER GROUP primär als **Hersteller** (eigener Code) und **Nutzer** (OSS-Abhängigkeiten). Die OSS-Steward-Rolle ist derzeit **nicht einschlägig**, muss aber bei neuen OSS-Engagements geprüft werden.
 :::
 
-## Pflichten des OSS-Stewards (Art. 18)
+## 1.7.3 Pflichten des OSS-Stewards (Art. 18)
 
 Auch wenn die Steward-Rolle weniger umfassend ist als die des Herstellers, bestehen folgende Pflichten:
 
@@ -73,7 +73,7 @@ Open-Source-Software-Stewards können eine **freiwillige Sicherheitsattestierung
 - Nachweis der Schwachstellenbehandlungsprozesse
 - Attestierung durch Dritte (optional)
 
-## Abgrenzung der Rollen bei Open Source
+## 1.7.4 Abgrenzung der Rollen bei Open Source
 
 | Rolle | CRA-Status | Pflichten |
 |-------|-----------|-----------|
@@ -83,7 +83,7 @@ Open-Source-Software-Stewards können eine **freiwillige Sicherheitsattestierung
 | **OSS-Steward** (Organisation) | Art. 18-19 Pflichten | Eingeschränkte Pflichten (s. oben) |
 | **Hersteller von OSS** (kommerziell) | Voller Hersteller (Art. 10) | Volle Herstellerpflichten |
 
-## Auswirkungen auf die Supply Chain
+## 1.7.5 Auswirkungen auf die Supply Chain
 
 ### Für BAUER GROUP als Hersteller
 
@@ -96,7 +96,7 @@ Auch wenn BAUER GROUP kein OSS-Steward ist, hat die OSS-Steward-Regelung Auswirk
 
 → Siehe: [Supply-Chain-Sicherheit](/de/supply-chain/) und [Third-Party Assessment](/de/supply-chain/third-party-assessment)
 
-## Sanktionen
+## 1.7.6 Sanktionen
 
 OSS-Stewards unterliegen **reduzierten Sanktionen** im Vergleich zu Herstellern:
 
@@ -106,7 +106,7 @@ OSS-Stewards unterliegen **reduzierten Sanktionen** im Vergleich zu Herstellern:
 
 *Die Kommission berücksichtigt bei der Festlegung die besondere Rolle und den nicht-kommerziellen Charakter der Steward-Tätigkeit.*
 
-## Relevante Entwicklungen
+## 1.7.7 Relevante Entwicklungen
 
 - Die EU-Kommission wird **Implementing Acts** erlassen, die die Sicherheitsattestierung (Art. 19) näher spezifizieren
 - Harmonisierte Normen für OSS-Stewards sind in Entwicklung

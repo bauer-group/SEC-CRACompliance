@@ -1,10 +1,10 @@
-# 9.1 Tooling-Zuordnung
+# 8.1 Tooling-Zuordnung
 
-## Tool → CRA-Anforderungsmatrix
+## 8.1.1 Tool → CRA-Anforderungsmatrix
 
 Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 
-## GitHub Ecosystem
+## 8.1.2 GitHub Ecosystem
 
 ### Dependabot
 
@@ -36,7 +36,7 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 | `security-management.yml` | Art. 13 Abs. 8 | SECURITY.md Auto-Generierung |
 | `teams-notifications.yml` | Art. 14 (unterstützend) | Incident-Kommunikation |
 
-## Security Scanning
+## 8.1.3 Security Scanning
 
 ### Trivy (Aqua Security)
 
@@ -77,7 +77,7 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 | Art. 10 Abs. 1 | Verhinderung von Secret Exposure |
 | Annex I, Teil I, Nr. 5 | Schutz vor unbefugtem Zugriff (Secrets) |
 
-## SBOM & Compliance
+## 8.1.4 SBOM & Compliance
 
 ### Syft (Anchore)
 
@@ -94,7 +94,7 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 | Art. 10 Abs. 4 | Sorgfaltspflicht bei Drittkomponenten (Lizenzen) |
 | Annex I, Teil II, Nr. 1 | Lizenzinventar als Teil der SBOM |
 
-## Signing & Integrity
+## 8.1.5 Signing & Integrity
 
 ### Cosign (Sigstore)
 
@@ -104,7 +104,7 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 | Annex I, Teil I, Nr. 3.2 | Integritätsschutz (Daten/Artefakte) |
 | Annex I, Teil II, Nr. 6 | Sichere Bereitstellung von Updates |
 
-## CRA Compliance Workflows (dieses Repository)
+## 8.1.6 CRA Compliance Workflows (dieses Repository)
 
 Zusätzlich zu den Automation-Templates stellt dieses Repository dedizierte CRA-Workflows bereit, die in jedem Quellcode-Repository wiederverwendet werden können.
 
@@ -125,14 +125,14 @@ Zusätzlich zu den Automation-Templates stellt dieses Repository dedizierte CRA-
 | `cra-scan.yml` | Repo-lokal | Art. 10 Abs. 6, 8 | Geplanter CVE-Scan mit Issue-Erstellung |
 | `cra-report.yml` | API-Reporting | Art. 10, Art. 13, Annex VII | Alle CRA-Daten an CRA Compliance Hub |
 
-## Geplante Erweiterungen
+## 8.1.7 Geplante Erweiterungen
 
 | Tool / Workflow | CRA-Anforderung | Status |
 |----------------|-----------------|--------|
 | **CodeQL** (SAST) | Annex I, Teil II, Nr. 3 | 🔧 Optional |
 | **CRA Compliance Hub** (Web-App) | Zentrale Auswertung | 🔧 Geplant |
 
-## Zusammenfassung: CRA-Abdeckung durch Tooling
+## 8.1.8 Zusammenfassung: CRA-Abdeckung durch Tooling
 
 ```
                          CRA-Anforderung

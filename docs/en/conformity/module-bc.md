@@ -1,6 +1,6 @@
-# EU Type Examination (Module B+C)
+# 7.3 EU Type Examination (Module B+C)
 
-## Overview
+## 7.3.1 Overview
 
 The EU type examination under Module B in combination with conformity to type under Module C is the conformity assessment procedure for **Class I** (without harmonised standards) and **Class II** products.
 
@@ -10,7 +10,7 @@ The EU type examination under Module B in combination with conformity to type un
 **Annex VIII, Modules B and C** of the CRA describe the procedural requirements.
 :::
 
-## Applicability
+## 7.3.2 Applicability
 
 | Category | Module B+C required? |
 |----------|---------------------|
@@ -20,7 +20,7 @@ The EU type examination under Module B in combination with conformity to type un
 | **Class II** | **Yes** (Alternative: Module H) |
 | Critical | No – EUCC required |
 
-## Procedure
+## 7.3.3 Procedure
 
 ### Module B – EU Type Examination
 
@@ -88,7 +88,7 @@ Module C ensures that the **produced units** correspond to the examined type.
 - Automated tests with each release
 - SBOM generated and archived per release ([SBOM Lifecycle](/en/sbom-signing/))
 
-## Timeline
+## 7.3.4 Timeline
 
 | Phase | Estimated Duration |
 |-------|-------------------|
@@ -103,7 +103,7 @@ Module C ensures that the **produced units** correspond to the examined type.
 Availability of notified bodies for CRA examinations will be limited initially. Begin identifying and contacting suitable bodies early.
 :::
 
-## Costs
+## 7.3.5 Costs
 
 Costs vary depending on product complexity and the notified body:
 
@@ -115,7 +115,7 @@ Costs vary depending on product complexity and the notified body:
 
 *Note: Current market prices for CRA examinations are not yet established. Values serve as guidance based on comparable directives.*
 
-## Checklist: Module B+C
+## 7.3.6 Checklist: Module B+C
 
 - [ ] Product classification completed (Class I without harm. standards or Class II)
 - [ ] Technical documentation complete (Annex VII)

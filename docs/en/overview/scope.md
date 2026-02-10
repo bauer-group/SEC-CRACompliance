@@ -1,10 +1,10 @@
-# 1.1 Scope & Products
+# 1.1 Scope
 
-## Scope of Application
+## 1.1.1 Scope of Application
 
 Pursuant to Art. 2 CRA, this regulation applies to products with digital elements that are made available on the EU market and whose intended or reasonably foreseeable use includes a direct or indirect data connection.
 
-## Affected Product Categories
+## 1.1.2 Affected Product Categories
 
 ### Software Products
 
@@ -32,7 +32,7 @@ Pursuant to Art. 2 CRA, this regulation applies to products with digital element
 | Docker Compose Stacks | Multi-container deployments | Yes (as part of the product) |
 | CI/CD Pipelines | GitHub Actions Workflows | No (internal tooling) |
 
-## Exemptions (Art. 2(2) CRA)
+## 1.1.3 Exemptions (Art. 2(2) CRA)
 
 The following are not subject to the CRA:
 
@@ -40,7 +40,7 @@ The following are not subject to the CRA:
 - SaaS services (fall under NIS2, not CRA) – unless remote data processing is an integral part of the product
 - Products subject to sector-specific EU legislation (e.g. medical devices, motor vehicles, aviation)
 
-## Product Catalogue
+## 1.1.4 Product Catalogue
 
 ::: warning ACTION REQUIRED
 For each CRA-relevant product, an individual classification and documentation must be carried out. Use the template at [Product Description](/en/technical-documentation/product-description) as a basis.

@@ -1,10 +1,10 @@
-# 1.1 Geltungsbereich & Produkte
+# 1.1 Geltungsbereich
 
-## Anwendungsbereich
+## 1.1.1 Anwendungsbereich
 
 Gemäß Art. 2 CRA gilt diese Verordnung für Produkte mit digitalen Elementen, die auf dem EU-Markt bereitgestellt werden und deren bestimmungsgemäße oder vernünftigerweise vorhersehbare Verwendung eine direkte oder indirekte Datenverbindung umfasst.
 
-## Betroffene Produktkategorien
+## 1.1.2 Betroffene Produktkategorien
 
 ### Software-Produkte
 
@@ -32,7 +32,7 @@ Gemäß Art. 2 CRA gilt diese Verordnung für Produkte mit digitalen Elementen, 
 | Docker Compose Stacks | Multi-Container-Deployments | Ja (als Teil des Produkts) |
 | CI/CD Pipelines | GitHub Actions Workflows | Nein (interne Tooling) |
 
-## Ausnahmen (Art. 2 Abs. 2 CRA)
+## 1.1.3 Ausnahmen (Art. 2 Abs. 2 CRA)
 
 Nicht unter den CRA fallen:
 
@@ -40,7 +40,7 @@ Nicht unter den CRA fallen:
 - SaaS-Dienste (fallen unter NIS2, nicht CRA) – es sei denn, Remote-Datenverarbeitung ist integraler Bestandteil des Produkts
 - Produkte, die unter sektorspezifische EU-Rechtsvorschriften fallen (z.B. Medizinprodukte, Kraftfahrzeuge, Luftfahrt)
 
-## Produktkatalog
+## 1.1.4 Produktkatalog
 
 ::: warning HANDLUNGSBEDARF
 Für jedes CRA-relevante Produkt muss eine individuelle Einstufung und Dokumentation erfolgen. Verwenden Sie das Template unter [Produktbeschreibung](/de/technical-documentation/product-description) als Vorlage.

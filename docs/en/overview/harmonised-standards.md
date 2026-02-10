@@ -1,6 +1,6 @@
-# Free Movement & Harmonised Standards (Art. 5-6)
+# 1.12 Harmonised Standards (Art. 5–6)
 
-## Overview
+## 1.12.1 Overview
 
 Art. 5 and 6 CRA govern the free movement of products with digital elements within the EU single market and the role of harmonised standards in establishing a presumption of conformity. For BAUER GROUP, these provisions are pivotal as they determine the conditions under which products may be made available on the EU market and which conformity assessment procedure applies.
 
@@ -10,7 +10,7 @@ Art. 5 and 6 CRA govern the free movement of products with digital elements with
 **Art. 6 CRA:** Harmonised standards -- Products conforming to harmonised standards (or parts thereof) whose references have been published in the Official Journal of the EU (OJEU) are presumed to comply with the corresponding essential requirements of Annex I.
 :::
 
-## Art. 5 -- Free Movement of Products
+## 1.12.2 Art. 5 -- Free Movement of Products
 
 ### Principle
 
@@ -32,7 +32,7 @@ Products may be presented at trade fairs, exhibitions, and demonstrations **with
 When BAUER GROUP exhibits at trade fairs, prototypes and pre-production products must carry a corresponding notice, e.g.: *"This product does not yet meet the requirements of Regulation (EU) 2024/2847 (Cyber Resilience Act) and is not intended to be made available on the market."*
 :::
 
-## Art. 6 -- Harmonised Standards & Presumption of Conformity
+## 1.12.3 Art. 6 -- Harmonised Standards & Presumption of Conformity
 
 ### Presumption of Conformity Mechanism
 
@@ -69,7 +69,7 @@ The availability of harmonised standards has a **direct impact** on the applicab
 For Class I products manufactured by BAUER GROUP (e.g. microcontrollers with security-relevant functions), the availability of harmonised standards is decisive: without fully applied harmonised standards, Module A is **not sufficient** -- instead, the more demanding [Module B+C](/en/conformity/module-bc) procedure is required.
 :::
 
-## Practical Implications for BAUER GROUP
+## 1.12.4 Practical Implications for BAUER GROUP
 
 ### Monitoring Process for Harmonised Standards
 

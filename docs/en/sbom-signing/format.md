@@ -1,6 +1,6 @@
 # 2.2 Format Specification
 
-## CycloneDX JSON
+## 2.2.1 CycloneDX JSON
 
 We use **CycloneDX** as the primary SBOM format. CycloneDX is an OWASP standard and fulfils the CRA requirement for a "commonly used and machine-readable format" (Art. 13(23)).
 
@@ -104,7 +104,7 @@ sbom-web-frontend-v4.0.1.cdx.json
 
 Each new version of a product receives its own SBOM. The SBOM version (`version` field) is incremented with each regeneration for the same product version (e.g., when correcting the SBOM itself).
 
-## SPDX (Secondary Format)
+## 2.2.2 SPDX (Secondary Format)
 
 SPDX is supported as a secondary format, primarily for scenarios in which business partners or regulators explicitly request SPDX.
 

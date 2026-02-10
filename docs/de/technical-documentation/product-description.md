@@ -1,6 +1,6 @@
-# 7.1 Produktbeschreibung (Template)
+# 6.1 Produktbeschreibung
 
-## Template: Produktbeschreibung gemäß Annex VII CRA
+## 6.1.1 Template: Produktbeschreibung gemäß Annex VII CRA
 
 ::: tip ANWENDUNG
 Dieses Template wird für jedes CRA-relevante Produkt individuell ausgefüllt. Kopieren Sie dieses Template und erstellen Sie eine produktspezifische Version.

@@ -1,6 +1,6 @@
-# CRA und NIS2 – Integration und Abgrenzung
+# 1.14 NIS2-Integration
 
-## Übersicht
+## 1.14.1 Übersicht
 
 Der Cyber Resilience Act (CRA) und die NIS2-Richtlinie (Richtlinie (EU) 2022/2555) sind komplementäre EU-Regulierungen zur Cybersicherheit. Während der CRA **Produkte** reguliert, betrifft NIS2 **Betreiber** (wesentliche und wichtige Einrichtungen). Unternehmen wie BAUER GROUP können beiden Regulierungen gleichzeitig unterliegen.
 
@@ -10,7 +10,7 @@ Der Cyber Resilience Act (CRA) und die NIS2-Richtlinie (Richtlinie (EU) 2022/255
 **NIS2 Art. 21:** Cybersicherheitsmaßnahmen für wesentliche und wichtige Einrichtungen, einschließlich Lieferkettensicherheit.
 :::
 
-## Abgrenzung CRA vs. NIS2
+## 1.14.2 Abgrenzung CRA vs. NIS2
 
 | Kriterium | CRA | NIS2 |
 |-----------|-----|------|
@@ -22,7 +22,7 @@ Der Cyber Resilience Act (CRA) und die NIS2-Richtlinie (Richtlinie (EU) 2022/255
 | **Sanktionen** | Bis zu 15 Mio. EUR / 2,5% | Bis zu 10 Mio. EUR / 2% |
 | **Meldepflicht** | ENISA (24h/72h/14d) | CSIRT (24h/72h/1 Monat) |
 
-## Entscheidungsbaum: Welche Regulierung gilt?
+## 1.14.3 Entscheidungsbaum: Welche Regulierung gilt?
 
 ```
 Stellt BAUER GROUP Produkte mit digitalen Elementen her?
@@ -39,7 +39,7 @@ Ist BAUER GROUP eine wesentliche oder wichtige Einrichtung?
 └── Nein → NIS2 gilt nicht
 ```
 
-## Überlappende Anforderungen
+## 1.14.4 Überlappende Anforderungen
 
 ### Schwachstellenmanagement
 
@@ -89,7 +89,7 @@ Wenn BAUER GROUP sowohl als CRA-Hersteller als auch als NIS2-Einrichtung betroff
 
 → **Gap:** NIS2 fordert explizit Business Continuity und Krisenmanagement, der CRA fokussiert auf Produktsicherheit.
 
-## Kombinierte Compliance-Strategie
+## 1.14.5 Kombinierte Compliance-Strategie
 
 ### Schritt 1: Geltungsbereich bestimmen
 
@@ -135,7 +135,7 @@ Für Unternehmen, die beiden Regulierungen unterliegen:
 3. **Einheitliche Templates** ([ENISA Frühwarnung](/de/templates/enisa-early-warning))
 4. **Dokumentierte Entscheidungslogik:** Welcher Vorfall löst welche Meldepflicht aus
 
-## Zeitstrahl
+## 1.14.6 Zeitstrahl
 
 | Datum | Ereignis |
 |-------|---------|

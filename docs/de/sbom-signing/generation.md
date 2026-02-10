@@ -1,6 +1,6 @@
 # 2.1 SBOM-Generierung
 
-## Generierungsprozess
+## 2.1.1 Generierungsprozess
 
 Die SBOM wird automatisiert bei jedem Release generiert. Der Prozess ist in die bestehende CI/CD-Pipeline integriert.
 
@@ -51,7 +51,7 @@ Die SBOM wird mit folgenden Metadaten ergänzt:
 - Commit-SHA
 - Hersteller-Informationen (BAUER GROUP)
 
-## Typ-spezifische Generierung
+## 2.1.2 Typ-spezifische Generierung
 
 ### Docker/Container-Images
 
@@ -117,7 +117,7 @@ Für Firmware-Projekte ist die automatische SBOM-Generierung oft unvollständig.
 - Bootloader-Komponenten
 :::
 
-## Qualitätskriterien
+## 2.1.3 Qualitätskriterien
 
 Die generierte SBOM muss folgende Mindestanforderungen erfüllen:
 

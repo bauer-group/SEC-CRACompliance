@@ -1,6 +1,6 @@
-# 7.2 Security Architecture
+# 6.2 Security Architecture
 
-## Security-by-Design Process
+## 6.2.1 Security-by-Design Process
 
 The Security Architecture documents how cybersecurity is integrated into the design, development, and maintenance process.
 
@@ -10,7 +10,7 @@ The Security Architecture documents how cybersecurity is integrated into the des
 **Annex I, Part I:** Essential cybersecurity requirements for products.
 :::
 
-## Secure Development Lifecycle (SDLC)
+## 6.2.2 Secure Development Lifecycle (SDLC)
 
 ```
 Planning → Design → Development → Testing → Release → Maintenance
@@ -40,7 +40,7 @@ Planning → Design → Development → Testing → Release → Maintenance
        Compliance-Anforderungen
 ```
 
-## Annex I, Part I — Essential Requirements
+## 6.2.3 Annex I, Part I — Essential Requirements
 
 The following requirements from Annex I, Part I, CRA are addressed in the Security Architecture:
 
@@ -92,7 +92,7 @@ The following requirements from Annex I, Part I, CRA are addressed in the Securi
 | Monitoring | Anomaly detection (product-specific) |
 | Isolation | Container isolation, Network Policies |
 
-## CI/CD Security Measures
+## 6.2.4 CI/CD Security Measures
 
 | Measure | Implementation | Workflow |
 |---------|----------------|----------|
@@ -106,7 +106,7 @@ The following requirements from Annex I, Part I, CRA are addressed in the Securi
 | Artifact Signing | Cosign on release | `docker-build.yml` |
 | Dependency Updates | Dependabot | `docker-maintenance-dependabot.yml` |
 
-## Evidence of Security Architecture
+## 6.2.5 Evidence of Security Architecture
 
 The Security Architecture is evidenced by:
 

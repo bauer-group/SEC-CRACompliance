@@ -1,6 +1,6 @@
-# CRA and NIS2 – Integration and Delineation
+# 1.14 NIS2 Integration
 
-## Overview
+## 1.14.1 Overview
 
 The Cyber Resilience Act (CRA) and the NIS2 Directive (Directive (EU) 2022/2555) are complementary EU cybersecurity regulations. While the CRA regulates **products**, NIS2 concerns **operators** (essential and important entities). Companies such as BAUER GROUP can be subject to both regulations simultaneously.
 
@@ -10,7 +10,7 @@ The Cyber Resilience Act (CRA) and the NIS2 Directive (Directive (EU) 2022/2555)
 **NIS2 Art. 21:** Cybersecurity measures for essential and important entities, including supply chain security.
 :::
 
-## Delineation CRA vs. NIS2
+## 1.14.2 Delineation CRA vs. NIS2
 
 | Criterion | CRA | NIS2 |
 |-----------|-----|------|
@@ -22,7 +22,7 @@ The Cyber Resilience Act (CRA) and the NIS2 Directive (Directive (EU) 2022/2555)
 | **Sanctions** | Up to EUR 15 million / 2.5% | Up to EUR 10 million / 2% |
 | **Reporting obligation** | ENISA (24h/72h/14d) | CSIRT (24h/72h/1 month) |
 
-## Decision Tree: Which Regulation Applies?
+## 1.14.3 Decision Tree: Which Regulation Applies?
 
 ```
 Does BAUER GROUP manufacture products with digital elements?
@@ -39,7 +39,7 @@ Is BAUER GROUP an essential or important entity?
 └── No → NIS2 does not apply
 ```
 
-## Overlapping Requirements
+## 1.14.4 Overlapping Requirements
 
 ### Vulnerability Management
 
@@ -89,7 +89,7 @@ If BAUER GROUP is affected both as a CRA manufacturer and as a NIS2 entity, **tw
 
 > **Gap:** NIS2 explicitly requires business continuity and crisis management, while the CRA focuses on product security.
 
-## Combined Compliance Strategy
+## 1.14.5 Combined Compliance Strategy
 
 ### Step 1: Determine Scope
 
@@ -135,7 +135,7 @@ For companies subject to both regulations:
 3. **Unified templates** ([ENISA Early Warning](/en/templates/enisa-early-warning))
 4. **Documented decision logic:** Which incident triggers which reporting obligation
 
-## Timeline
+## 1.14.6 Timeline
 
 | Date | Event |
 |------|-------|

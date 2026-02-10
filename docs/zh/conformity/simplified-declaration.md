@@ -1,6 +1,6 @@
-# 简化 EU 符合性声明（Annex VI）
+# 7.9 简化 DoC（Annex VI）
 
-## 概述
+## 7.9.1 概述
 
 除了完整的 EU 符合性声明（Annex V）外，CRA 还允许根据 Annex VI 使用**简化版本 (Simplified EU Declaration of Conformity)**。前提是完整版本可在线获取时，简化版本可随产品提供。
 
@@ -10,7 +10,7 @@
 **Annex VI CRA：** 简化 EU 符合性声明的内容。
 :::
 
-## 何时使用简化版本？
+## 7.9.2 何时使用简化版本？
 
 | 场景 | 版本 |
 |------|------|
@@ -19,7 +19,7 @@
 | 在线提供 | 完整版（Annex V） |
 | 发布说明 | 简化版（Annex VI）附完整版 URL |
 
-## 强制性内容（Annex VI）
+## 7.9.3 强制性内容（Annex VI）
 
 简化 EU 符合性声明至少应包含：
 
@@ -50,7 +50,7 @@
 [URL]
 ```
 
-## 模板：简化 EU 符合性声明
+## 7.9.4 模板：简化 EU 符合性声明
 
 ```markdown
 ## EU 符合性声明（简化版）
@@ -69,7 +69,7 @@
 联系方式：[电子邮件]
 ```
 
-## 放置位置
+## 7.9.5 放置位置
 
 ### 软件产品
 
@@ -85,7 +85,7 @@
 - **快速入门指南**
 - **产品标签**（带 URL 的二维码）
 
-## 容器镜像标签示例
+## 7.9.6 容器镜像标签示例
 
 ```dockerfile
 LABEL eu.cra.doc.url="https://go.bauer-group.com/cra/doc/[product]"
@@ -93,7 +93,7 @@ LABEL eu.cra.doc.version="1.0"
 LABEL eu.cra.support.end="2031-12-31"
 ```
 
-## 与 Annex V 的关系
+## 7.9.7 与 Annex V 的关系
 
 | 方面 | Annex V（完整版） | Annex VI（简化版） |
 |------|-------------------|-------------------|

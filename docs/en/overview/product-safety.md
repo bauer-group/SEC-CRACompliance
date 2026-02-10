@@ -1,6 +1,6 @@
-# Art. 9 CRA – General Product Safety
+# 1.13 General Product Safety (Art. 9)
 
-## Relationship to the General Product Safety Regulation (GPSR)
+## 1.13.1 Relationship to the General Product Safety Regulation (GPSR)
 
 The Cyber Resilience Act (CRA) is **lex specialis** for cybersecurity requirements of products with digital elements. Products that comply with the CRA essential cybersecurity requirements (Annex I) are deemed to comply with the cybersecurity aspects of the General Product Safety Regulation (EU) 2023/988 (GPSR).
 
@@ -12,7 +12,7 @@ The Cyber Resilience Act (CRA) is **lex specialis** for cybersecurity requiremen
 
 The GPSR continues to apply in full for all **non-cybersecurity** safety aspects. The CRA does not replace existing EU product legislation but complements it with specific cybersecurity requirements.
 
-## Delineation Table: CRA and Other EU Product Legislation
+## 1.13.2 Delineation Table: CRA and Other EU Product Legislation
 
 | Legislation | Subject Matter | Relationship to CRA |
 |-------------|---------------|-------------------|
@@ -28,7 +28,7 @@ The GPSR continues to apply in full for all **non-cybersecurity** safety aspects
 The CRA is designed not to duplicate existing sector-specific EU legislation. Products already subject to sector-specific cybersecurity requirements (medical devices, motor vehicles, aviation) are **exempt** from the CRA. For all other products, the CRA complements existing safety legislation with the cybersecurity dimension.
 :::
 
-## Practical Implications for BAUER GROUP
+## 1.13.3 Practical Implications for BAUER GROUP
 
 ### Principle
 

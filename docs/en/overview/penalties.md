@@ -1,6 +1,6 @@
-# Penalties and Fines (Art. 64)
+# 1.11 Penalties (Art. 64)
 
-## Overview
+## 1.11.1 Overview
 
 The CRA provides for significant penalties for violations. The fines follow the GDPR framework and are tiered according to the severity of the violation. The determination and imposition is the responsibility of the national Market Surveillance authorities of the Member States.
 
@@ -8,7 +8,7 @@ The CRA provides for significant penalties for violations. The fines follow the 
 **Art. 64 CRA:** The Member States shall lay down rules on penalties and take all necessary measures to ensure their enforcement. The penalties shall be effective, proportionate, and dissuasive.
 :::
 
-## Fine Framework
+## 1.11.2 Fine Framework
 
 ### Tier 1 -- Serious Violations (Art. 64 Para. 2)
 
@@ -48,7 +48,7 @@ Violations of:
 - Reduced penalties for [Open Source Software Stewards](/en/overview/open-source-steward)
 - Consideration of the non-commercial character
 
-## Overview Table
+## 1.11.3 Overview Table
 
 | Violation Category | Maximum | Typical Triggers |
 |--------------------|---------|------------------|
@@ -56,7 +56,7 @@ Violations of:
 | **Tier 2** | EUR 10 million / 2% | Missing CE marking, Importer without verification, no DoC |
 | **Tier 3** | EUR 5 million / 1% | False information to authorities, refusal to cooperate |
 
-## Assessment Criteria
+## 1.11.4 Assessment Criteria
 
 When determining the amount of the fine, the authorities take into account:
 
@@ -78,7 +78,7 @@ When determining the amount of the fine, the authorities take into account:
 - **First violation** -- No previous violations
 - **Company size** -- Proportionality for SMEs
 
-## Comparison with Other Regulations
+## 1.11.5 Comparison with Other Regulations
 
 | Regulation | Maximum Fine | Calculation |
 |------------|-------------|-------------|
@@ -87,7 +87,7 @@ When determining the amount of the fine, the authorities take into account:
 | **NIS2** | EUR 10 million / 2% | Per violation |
 | **AI Act** | EUR 35 million / 7% | Per violation |
 
-## Risk Minimisation
+## 1.11.6 Risk Minimisation
 
 ### Compliance as Protection
 

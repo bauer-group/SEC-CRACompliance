@@ -1,10 +1,10 @@
-# Produktklassifizierung
+# 7.1 Produktklassifizierung
 
-## Übersicht
+## 7.1.1 Übersicht
 
 Jedes Produkt mit digitalen Elementen muss gemäß dem Cyber Resilience Act (CRA) in eine Risikokategorie eingestuft werden. Die Einstufung bestimmt das erforderliche Konformitätsbewertungsverfahren. Der CRA unterscheidet vier Kategorien: **Standard**, **Klasse I** (Wichtig), **Klasse II** (Wichtig) und **Kritisch**.
 
-## Entscheidungsbaum zur Klassifizierung
+## 7.1.2 Entscheidungsbaum zur Klassifizierung
 
 Der folgende Entscheidungsbaum zeigt den systematischen Ablauf der Produktklassifizierung:
 
@@ -21,7 +21,7 @@ Ist das Produkt in Annex IV aufgeführt?
 
 *\* Modul A nur bei vollständiger Anwendung harmonisierter Normen*
 
-## Produktkategorien
+## 7.1.3 Produktkategorien
 
 ### Kategorie: Standard (Default)
 
@@ -81,7 +81,7 @@ Die Mehrheit der Produkte fällt in diese Kategorie. Der Hersteller führt die K
 - Sensoren und Aktoren für Roboter und Maschinensteuerungen
 - Smart Meter Gateways
 
-## Konformitätsbewertung je Kategorie
+## 7.1.4 Konformitätsbewertung je Kategorie
 
 | Kategorie | Modul A (Selbst) | Modul B+C (Baumuster) | Modul H (Qualität) | EUCC |
 |-----------|:-:|:-:|:-:|:-:|
@@ -92,7 +92,7 @@ Die Mehrheit der Produkte fällt in diese Kategorie. Der Hersteller führt die K
 
 *\* Nur bei Anwendung harmonisierter Normen oder bei Konformität mit EU-Cybersicherheitszertifizierung*
 
-## Relevante Produkttypen für BAUER GROUP
+## 7.1.5 Relevante Produkttypen für BAUER GROUP
 
 ### Prüfung gegen Annex III (Wichtige Produkte)
 
@@ -131,7 +131,7 @@ Die Mehrheit der Produkte fällt in diese Kategorie. Der Hersteller führt die K
 | Firmware mit Authentifizierungsfunktion | Klasse I | Modul A* oder B+C |
 | Netzwerk-Router mit Firmware | Klasse I | Modul A* oder B+C |
 
-## Klassifizierungsprozess
+## 7.1.6 Klassifizierungsprozess
 
 Für jedes Produkt ist folgender Prozess durchzuführen:
 
@@ -156,7 +156,7 @@ Verwenden Sie das Template [Risikobewertung](/de/templates/risk-assessment) zur 
 Im Zweifelsfall die höhere Kategorie wählen. Eine konservative Einstufung ist regulatorisch sicherer als eine zu niedrige.
 :::
 
-## Dokumentation der Klassifizierung
+## 7.1.7 Dokumentation der Klassifizierung
 
 Für jedes Produkt wird die Klassifizierung in der [Produktbeschreibung](/de/technical-documentation/product-description) dokumentiert:
 

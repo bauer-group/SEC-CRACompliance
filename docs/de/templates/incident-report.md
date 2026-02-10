@@ -1,6 +1,6 @@
-# Incident Report (Intern)
+# A.1 Incident Report (Intern)
 
-## Vorlage: Interner Sicherheitsvorfallbericht
+## A.1.1 Vorlage: Interner Sicherheitsvorfallbericht
 
 ---
 

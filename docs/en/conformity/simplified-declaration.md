@@ -1,6 +1,6 @@
-# Simplified EU Declaration of Conformity (Annex VI)
+# 7.9 Simplified DoC (Annex VI)
 
-## Overview
+## 7.9.1 Overview
 
 In addition to the full EU Declaration of Conformity (Annex V), the CRA permits a **simplified version** in accordance with Annex VI. This may accompany the product, provided the full version is available online.
 
@@ -10,7 +10,7 @@ In addition to the full EU Declaration of Conformity (Annex V), the CRA permits 
 **Annex VI CRA:** Content of the simplified EU Declaration of Conformity.
 :::
 
-## When to Use the Simplified Version?
+## 7.9.2 When to Use the Simplified Version?
 
 | Situation | Version |
 |-----------|---------|
@@ -19,7 +19,7 @@ In addition to the full EU Declaration of Conformity (Annex V), the CRA permits 
 | Available online | Full (Annex V) |
 | Release notes | Simplified (Annex VI) with URL to full version |
 
-## Mandatory Content (Annex VI)
+## 7.9.3 Mandatory Content (Annex VI)
 
 The simplified EU Declaration of Conformity must contain at least:
 
@@ -50,7 +50,7 @@ The full EU Declaration of Conformity is available at:
 [URL]
 ```
 
-## Template: Simplified EU Declaration of Conformity
+## 7.9.4 Template: Simplified EU Declaration of Conformity
 
 ```markdown
 ## EU Declaration of Conformity (simplified)
@@ -69,7 +69,7 @@ Support period: [Date] to [Date]
 Contact: [E-mail]
 ```
 
-## Placement
+## 7.9.5 Placement
 
 ### For Software Products
 
@@ -85,7 +85,7 @@ Contact: [E-mail]
 - **Quick Start Guide**
 - **Product label** (QR code with URL)
 
-## Example for Container Image Label
+## 7.9.6 Example for Container Image Label
 
 ```dockerfile
 LABEL eu.cra.doc.url="https://go.bauer-group.com/cra/doc/[product]"
@@ -93,7 +93,7 @@ LABEL eu.cra.doc.version="1.0"
 LABEL eu.cra.support.end="2031-12-31"
 ```
 
-## Relationship to Annex V
+## 7.9.7 Relationship to Annex V
 
 | Aspect | Annex V (full) | Annex VI (simplified) |
 |--------|---------------|----------------------|

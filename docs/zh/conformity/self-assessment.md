@@ -1,6 +1,6 @@
-# 8.1 内部控制（Module A）
+# 7.2 内部控制（Module A）
 
-## 程序
+## 7.2.1 程序
 
 根据 CRA Annex VIII Module A 的内部控制 (Internal Control) 是最简单的合规评估 (Conformity Assessment) 程序。制造商自行评估其产品是否满足基本要求。
 
@@ -13,7 +13,7 @@ Module A 适用于：
 对于 **Class II** 和**关键**产品，Module A **不**足够。
 :::
 
-## 内部控制流程
+## 7.2.2 内部控制流程
 
 ### 1. 编制技术文档
 
@@ -84,7 +84,7 @@ Module A 适用于：
 - EU 符合性声明：产品投放市场后**10年**
 - 存储位置：本仓库（Git 版本控制）
 
-## 检查清单：Module A — 内部控制
+## 7.2.3 检查清单：Module A — 内部控制
 
 - [ ] 产品分类已完成（标准或适用协调标准的 Class I）
 - [ ] 技术文档完整（Annex VII）

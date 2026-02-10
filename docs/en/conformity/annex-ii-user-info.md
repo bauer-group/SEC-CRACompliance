@@ -1,6 +1,6 @@
-# User Information (Annex II)
+# 7.10 User Information (Annex II)
 
-## Overview
+## 7.10.1 Overview
 
 Annex II of the CRA defines the mandatory information that the manufacturer must provide to users of the product. This information must be clear, comprehensible, and made available in a manner that is easily accessible to the user.
 
@@ -8,7 +8,7 @@ Annex II of the CRA defines the mandatory information that the manufacturer must
 **Annex II CRA:** Information and instructions for the user. The following information shall accompany the product with digital elements.
 :::
 
-## Mandatory Content
+## 7.10.2 Mandatory Content
 
 ### No. 1 – Manufacturer Information
 
@@ -184,11 +184,11 @@ Signed: Yes (Cosign)
 - Notification channel (GitHub Watch, e-mail, RSS)
 - Update instructions in the documentation
 
-## Template: User Information
+## 7.10.3 Template: User Information
 
 > Fillable template: [User Information / Product Security Info](/en/templates/product-security-info)
 
-## Checklist: Annex II
+## 7.10.4 Checklist: Annex II
 
 - [ ] Manufacturer details in the product and documentation
 - [ ] SECURITY.md with contact point and CVD policy

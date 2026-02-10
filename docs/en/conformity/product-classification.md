@@ -1,10 +1,10 @@
-# Product Classification
+# 7.1 Product Classification
 
-## Overview
+## 7.1.1 Overview
 
 Every product with digital elements must be classified into a CRA risk category under the Cyber Resilience Act (CRA). The classification determines the required conformity assessment procedure. The CRA distinguishes four categories: **Standard**, **Class I** (Important), **Class II** (Important), and **Critical**.
 
-## Classification Decision Tree
+## 7.1.2 Classification Decision Tree
 
 The following decision tree outlines the systematic approach to product classification:
 
@@ -21,7 +21,7 @@ Is the product listed in Annex IV?
 
 *\* Module A only where harmonised standards are applied in full*
 
-## Product Categories
+## 7.1.3 Product Categories
 
 ### Category: Standard (Default)
 
@@ -81,7 +81,7 @@ The majority of products fall into this category. The manufacturer carries out t
 - Sensors and actuators for robots and machine controllers
 - Smart meter gateways
 
-## Conformity Assessment by Category
+## 7.1.4 Conformity Assessment by Category
 
 | Category | Module A (Self) | Module B+C (Type) | Module H (Quality) | EUCC |
 |----------|:-:|:-:|:-:|:-:|
@@ -92,7 +92,7 @@ The majority of products fall into this category. The manufacturer carries out t
 
 *\* Only when applying harmonised standards or when conforming with EU cybersecurity certification*
 
-## Relevant Product Types for BAUER GROUP
+## 7.1.5 Relevant Product Types for BAUER GROUP
 
 ### Review against Annex III (Important Products)
 
@@ -131,7 +131,7 @@ The majority of products fall into this category. The manufacturer carries out t
 | Firmware with authentication function | Class I | Module A* or B+C |
 | Network router with firmware | Class I | Module A* or B+C |
 
-## Classification Process
+## 7.1.6 Classification Process
 
 The following process must be carried out for each product:
 
@@ -156,7 +156,7 @@ Use the template [Risk Assessment](/en/templates/risk-assessment) to document th
 When in doubt, choose the higher category. A conservative classification is regulatorily safer than one that is too low.
 :::
 
-## Documentation of the Classification
+## 7.1.7 Documentation of the Classification
 
 For each product, the classification is documented in the [Product Description](/en/technical-documentation/product-description):
 

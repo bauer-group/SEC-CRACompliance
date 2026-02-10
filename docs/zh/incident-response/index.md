@@ -1,6 +1,6 @@
-# 第五章：事件响应 (Incident Response) 与披露 (Disclosure)
+# 第4章：事件响应与披露
 
-## 5.1 概述
+## 概述
 
 事件响应框架 (Incident Response Framework) 涵盖了完整的 CRA 报告义务。自 **2026 年 9 月 11 日** 起，制造商须向 ENISA 或相关国家主管机构报告被积极利用的漏洞 (Actively Exploited Vulnerability) 和严重安全事件。
 
@@ -8,7 +8,7 @@
 根据 Art. 14 CRA 的报告义务于 2026 年 9 月 11 日生效。自该日期起，被积极利用的漏洞必须在 **24 小时** 内报告。
 :::
 
-## 5.2 报告义务概览
+## 报告义务概览
 
 | 事件 | 期限 | 接收方 | 模板 |
 |------|------|--------|------|
@@ -22,7 +22,7 @@
 
 | 章节 | 主题 | CRA 引用 |
 |------|------|----------|
-| **5.1** | [事件响应手册](/zh/incident-response/playbook) — 升级级别、阶段、检查清单 | Art. 14, Annex I Part II |
-| **5.2** | [漏洞披露政策](/zh/incident-response/disclosure-policy) — 依据 ISO 29147 的协调漏洞披露 (CVD) | Art. 13(6) |
-| **5.3** | [ENISA 报告流程](/zh/incident-response/enisa-reporting) — 期限、程序、文档记录 | Art. 14(1)-(3) |
-| **5.4** | [沟通计划](/zh/incident-response/communication) — 内部/外部沟通渠道 | Art. 14(8) |
+| **4.1** | [事件响应手册](/zh/incident-response/playbook) — 升级级别、阶段、检查清单 | Art. 14, Annex I Part II |
+| **4.2** | [漏洞披露政策](/zh/incident-response/disclosure-policy) — 依据 ISO 29147 的协调漏洞披露 (CVD) | Art. 13(6) |
+| **4.3** | [ENISA 报告流程](/zh/incident-response/enisa-reporting) — 期限、程序、文档记录 | Art. 14(1)-(3) |
+| **4.4** | [沟通计划](/zh/incident-response/communication) — 内部/外部沟通渠道 | Art. 14(8) |

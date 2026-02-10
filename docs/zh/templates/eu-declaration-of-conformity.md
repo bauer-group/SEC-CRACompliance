@@ -1,10 +1,10 @@
-# 欧盟合规声明 (EU Declaration of Conformity)
+# A.7 EU 符合性声明
 
-## 模板：根据 Regulation (EU) 2024/2847（网络韧性法案）Annex V
+## A.7.1 模板：根据 Regulation (EU) 2024/2847（网络韧性法案）Annex V
 
 ---
 
-## 欧盟合规声明
+## A.7.2 欧盟合规声明
 
 ### 编号 [DoC-YYYY-NNN]
 

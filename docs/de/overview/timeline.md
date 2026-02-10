@@ -1,6 +1,6 @@
-# 1.3 Fristen & Deadlines
+# 1.3 Fristen & Zeitplan
 
-## CRA-Zeitplan
+## 1.3.1 CRA-Zeitplan
 
 Der Cyber Resilience Act (Verordnung (EU) 2024/2847) wurde am 20. November 2024 im Amtsblatt der EU veröffentlicht und trat am 10. Dezember 2024 in Kraft.
 
@@ -45,14 +45,14 @@ Ab dem 11. September 2026 müssen aktiv ausgenutzte Schwachstellen innerhalb von
 - SBOM verfügbar für jedes ausgelieferte Produkt
 - Nutzerinformationen gemäß Annex II bereitgestellt
 
-## NIS2-Zeitplan
+## 1.3.2 NIS2-Zeitplan
 
 | Datum | Anforderung |
 |-------|-------------|
 | 17.10.2024 | NIS2-Umsetzungsfrist für Mitgliedstaaten |
 | Fortlaufend | Meldepflichten gem. Art. 23 NIS2 bei erheblichen Sicherheitsvorfällen |
 
-## Interner Umsetzungszeitplan
+## 1.3.3 Interner Umsetzungszeitplan
 
 | Quartal | Maßnahmen |
 |---------|-----------|

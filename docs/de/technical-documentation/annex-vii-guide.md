@@ -1,6 +1,6 @@
-# Annex VII – Leitfaden Technische Dokumentation
+# 6.6 Annex VII – Leitfaden
 
-## Übersicht
+## 6.6.1 Übersicht
 
 Annex VII des CRA definiert den vollständigen Inhalt der technischen Dokumentation, die jeder Hersteller erstellen und 10 Jahre aufbewahren muss. Dieser Leitfaden erklärt jede Anforderung im Detail und verweist auf die jeweilige Dokumentationsstelle.
 
@@ -10,7 +10,7 @@ Annex VII des CRA definiert den vollständigen Inhalt der technischen Dokumentat
 **Annex VII CRA:** Inhalt der technischen Dokumentation.
 :::
 
-## Anforderung 1 – Allgemeine Produktbeschreibung
+## 6.6.2 Anforderung 1 – Allgemeine Produktbeschreibung
 
 **Annex VII Nr. 1:** Eine allgemeine Beschreibung des Produkts mit digitalen Elementen, einschließlich:
 
@@ -25,7 +25,7 @@ Annex VII des CRA definiert den vollständigen Inhalt der technischen Dokumentat
 
 ---
 
-## Anforderung 2 – Design- und Entwicklungsbeschreibung
+## 6.6.3 Anforderung 2 – Design- und Entwicklungsbeschreibung
 
 **Annex VII Nr. 2:** Beschreibung der Design- und Entwicklungsprozesse, einschließlich:
 
@@ -38,7 +38,7 @@ Annex VII des CRA definiert den vollständigen Inhalt der technischen Dokumentat
 
 ---
 
-## Anforderung 3 – Cybersecurity-Risikobewertung
+## 6.6.4 Anforderung 3 – Cybersecurity-Risikobewertung
 
 **Annex VII Nr. 3:** Die Cybersecurity-Risikobewertung gemäß Art. 10 Abs. 2, einschließlich:
 
@@ -52,7 +52,7 @@ Annex VII des CRA definiert den vollständigen Inhalt der technischen Dokumentat
 
 ---
 
-## Anforderung 4 – Schwachstellenbehandlung
+## 6.6.5 Anforderung 4 – Schwachstellenbehandlung
 
 **Annex VII Nr. 4:** Beschreibung der Schwachstellenbehandlungsprozesse:
 
@@ -66,7 +66,7 @@ Annex VII des CRA definiert den vollständigen Inhalt der technischen Dokumentat
 
 ---
 
-## Anforderung 5 – Angewandte Normen und Spezifikationen
+## 6.6.6 Anforderung 5 – Angewandte Normen und Spezifikationen
 
 **Annex VII Nr. 5:** Liste der angewandten harmonisierten Normen, Common Specifications oder Cybersicherheitszertifizierungsschemata:
 
@@ -88,7 +88,7 @@ Sobald harmonisierte Normen für den CRA veröffentlicht werden, ermöglichen di
 
 ---
 
-## Anforderung 6 – Testergebnisse
+## 6.6.7 Anforderung 6 – Testergebnisse
 
 **Annex VII Nr. 6:** Ergebnisse der durchgeführten Tests und Prüfungen:
 
@@ -106,7 +106,7 @@ Sobald harmonisierte Normen für den CRA veröffentlicht werden, ermöglichen di
 
 ---
 
-## Anforderung 7 – Konformitätsbewertungsergebnisse
+## 6.6.8 Anforderung 7 – Konformitätsbewertungsergebnisse
 
 **Annex VII Nr. 7:** Ergebnisse der Konformitätsbewertung:
 
@@ -119,7 +119,7 @@ Sobald harmonisierte Normen für den CRA veröffentlicht werden, ermöglichen di
 
 ---
 
-## Anforderung 8 – EU-Konformitätserklärung
+## 6.6.9 Anforderung 8 – EU-Konformitätserklärung
 
 **Annex VII Nr. 8:** Kopie der EU-Konformitätserklärung:
 
@@ -128,7 +128,7 @@ Sobald harmonisierte Normen für den CRA veröffentlicht werden, ermöglichen di
 
 ---
 
-## Anforderung 9 – Support-Zeitraum
+## 6.6.10 Anforderung 9 – Support-Zeitraum
 
 **Annex VII Nr. 9:** Festlegung des Support-Zeitraums:
 
@@ -136,7 +136,7 @@ Sobald harmonisierte Normen für den CRA veröffentlicht werden, ermöglichen di
 
 ---
 
-## Vollständigkeitscheckliste
+## 6.6.11 Vollständigkeitscheckliste
 
 - [ ] Nr. 1: Produktbeschreibung erstellt
 - [ ] Nr. 2: Design- und Entwicklungsprozesse dokumentiert

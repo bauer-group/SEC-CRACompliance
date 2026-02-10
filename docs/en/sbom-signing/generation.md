@@ -1,6 +1,6 @@
 # 2.1 SBOM Generation
 
-## Generation Process
+## 2.1.1 Generation Process
 
 The SBOM is generated automatically with each release. The process is integrated into the existing CI/CD pipeline.
 
@@ -51,7 +51,7 @@ The SBOM is enriched with the following metadata:
 - Commit SHA
 - Manufacturer information (BAUER GROUP)
 
-## Type-Specific Generation
+## 2.1.2 Type-Specific Generation
 
 ### Docker/Container Images
 
@@ -117,7 +117,7 @@ For firmware projects, automatic SBOM generation is often incomplete. A manual r
 - Bootloader components
 :::
 
-## Quality Criteria
+## 2.1.3 Quality Criteria
 
 The generated SBOM must meet the following minimum requirements:
 

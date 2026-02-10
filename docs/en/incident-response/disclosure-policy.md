@@ -1,6 +1,6 @@
-# 5.2 Vulnerability Disclosure Policy
+# 4.2 Vulnerability Disclosure Policy
 
-## Coordinated Vulnerability Disclosure (CVD)
+## 4.2.1 Coordinated Vulnerability Disclosure (CVD)
 
 This policy defines the process for Coordinated Vulnerability Disclosure pursuant to CRA Art. 13(6) and ISO/IEC 29147:2018.
 
@@ -8,7 +8,7 @@ This policy defines the process for Coordinated Vulnerability Disclosure pursuan
 **Art. 13(6) CRA:** *"The manufacturer shall facilitate the coordinated disclosure of vulnerabilities by designating a contact point for the reporting of vulnerabilities and setting out its coordinated vulnerability disclosure policy."*
 :::
 
-## Scope
+## 4.2.2 Scope
 
 This policy applies to all products with digital elements of BAUER GROUP, including:
 
@@ -17,7 +17,7 @@ This policy applies to all products with digital elements of BAUER GROUP, includ
 - Firmware (ESP32, STM32, Zephyr)
 - Publicly accessible services
 
-## Reporting Channels
+## 4.2.3 Reporting Channels
 
 ### 1. GitHub Security Advisories (preferred)
 
@@ -46,7 +46,7 @@ Each repository contains a `SECURITY.md` with:
 - Supported versions
 - Response times
 
-## Process for External Reporters
+## 4.2.4 Process for External Reporters
 
 ### What We Expect
 
@@ -88,7 +88,7 @@ Day 90:  Coordinated Vulnerability Disclosure (default deadline)
 For actively exploited vulnerabilities, the disclosure timeline is shortened. In such cases, a patch is provided without delay and the ENISA reporting obligation is triggered (24h).
 :::
 
-## Internal Process for Incoming Reports
+## 4.2.5 Internal Process for Incoming Reports
 
 ```
 External vulnerability report
@@ -122,7 +122,7 @@ External vulnerability report
         └── Thank and credit reporter
 ```
 
-## Safe Harbor
+## 4.2.6 Safe Harbor
 
 BAUER GROUP will not take legal action against security researchers who:
 
@@ -132,7 +132,7 @@ BAUER GROUP will not take legal action against security researchers who:
 - Do not impair services through denial-of-service
 - Do not endanger affected third parties
 
-## Compliance References
+## 4.2.7 Compliance References
 
 | Standard | Coverage |
 |----------|----------|

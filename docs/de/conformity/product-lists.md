@@ -1,6 +1,6 @@
-# Produktlisten (Annex III & IV)
+# 7.6 Produktlisten (Annex III & IV)
 
-## Übersicht
+## 7.6.1 Übersicht
 
 Der Cyber Resilience Act (CRA) definiert in **Annex III** und **Annex IV** spezifische Produktkategorien, die besonderen Konformitätsbewertungsverfahren unterliegen. Diese Seite enthält die vollständigen Listen aller dort genannten Produktkategorien mit Beschreibung, erforderlichem Bewertungsverfahren und einer Relevanzeinschätzung für BAUER GROUP.
 
@@ -20,7 +20,7 @@ Die Klassifizierungslogik (Entscheidungsbaum, Bewertungsverfahren je Kategorie) 
 
 ---
 
-## Annex III -- Wichtige Produkte mit digitalen Elementen
+## 7.6.2 Annex III -- Wichtige Produkte mit digitalen Elementen
 
 ### Teil I -- Klasse I
 
@@ -63,7 +63,7 @@ Produkte der Klasse II erfordern zwingend eine Bewertung durch Dritte: [EU-Baumu
 
 ---
 
-## Annex IV -- Kritische Produkte mit digitalen Elementen
+## 7.6.3 Annex IV -- Kritische Produkte mit digitalen Elementen
 
 Kritische Produkte erfordern ein [Europäisches Cybersicherheitszertifikat (EUCC)](/de/conformity/eucc) auf mindestens der Vertrauenswürdigkeitsstufe „substanziell".
 
@@ -77,7 +77,7 @@ Kritische Produkte erfordern ein [Europäisches Cybersicherheitszertifikat (EUCC
 
 ---
 
-## Konformitätsmodul-Übersicht
+## 7.6.4 Konformitätsmodul-Übersicht
 
 | Produktkategorie | Modul A (Selbst) | Modul B+C (Baumuster) | Modul H (Qualität) | EUCC |
 |-----------------|:-:|:-:|:-:|:-:|
@@ -97,7 +97,7 @@ Detaillierte Informationen zu den einzelnen Modulen:
 
 ---
 
-## BAUER GROUP Relevanzeinschätzung
+## 7.6.5 BAUER GROUP Relevanzeinschätzung
 
 Die folgende Tabelle bewertet die Relevanz jeder Produktkategorie aus Annex III und IV für BAUER GROUP.
 
@@ -161,7 +161,7 @@ Die Relevanzeinschätzung sollte für jede Produktlinie von BAUER GROUP individu
 Die Produktlisten in Annex III und Annex IV können durch **delegierte Rechtsakte** der Europäischen Kommission gemäß Art. 7 Abs. 3 CRA geändert werden. Diese Listen sind daher regelmäßig auf Aktualisierungen zu prüfen und mit der jeweils geltenden Fassung der Verordnung (EU) 2024/2847 abzugleichen. Änderungen können sowohl die Aufnahme neuer Produktkategorien als auch die Umklassifizierung bestehender Kategorien umfassen.
 :::
 
-## Nächste Schritte
+## 7.6.6 Nächste Schritte
 
 1. **Klassifizierung durchführen** -- Verwenden Sie den Entscheidungsbaum auf der Seite [Produktklassifizierung](/de/conformity/product-classification)
 2. **Relevanz prüfen** -- Gleichen Sie jedes BAUER GROUP Produkt mit den obigen Listen ab

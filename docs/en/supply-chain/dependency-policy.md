@@ -1,6 +1,6 @@
-# 6.1 Dependency Policy
+# 5.1 Dependency Policy
 
-## Principles
+## 5.1.1 Principles
 
 ### 1. Principle of Minimality
 
@@ -18,7 +18,7 @@ Only use dependencies with compatible licenses.
 
 Dependencies must be pinned to specific versions (no `latest`, no ranges).
 
-## Permitted Licenses
+## 5.1.2 Permitted Licenses
 
 | License | Status |
 |---------|--------|
@@ -31,7 +31,7 @@ Dependencies must be pinned to specific versions (no `latest`, no ranges).
 | Unlicense | ✅ Permitted |
 | MPL-2.0 | ⚠️ Review required |
 
-## Prohibited Licenses
+## 5.1.3 Prohibited Licenses
 
 | License | Status | Reason |
 |---------|--------|--------|
@@ -43,7 +43,7 @@ Dependencies must be pinned to specific versions (no `latest`, no ranges).
 
 License compliance checks are performed automatically via `modules-license-compliance.yml`.
 
-## Evaluation Criteria for New Dependencies
+## 5.1.4 Evaluation Criteria for New Dependencies
 
 Before adopting a new dependency:
 
@@ -56,7 +56,7 @@ Before adopting a new dependency:
 | **Transitive Dependencies** | No known risks |
 | **Maintainer** | Identifiable, no anonymous throwaway accounts |
 
-## Automated Enforcement
+## 5.1.5 Automated Enforcement
 
 ### CI/CD Pipeline
 
@@ -73,7 +73,7 @@ Before adopting a new dependency:
 - Automatic PRs for security updates
 - Auto-merge for patch updates of trusted packages
 
-## Process for Supply Chain Attacks
+## 5.1.6 Process for Supply Chain Attacks
 
 In case of suspected compromised dependencies (dependency confusion, typosquatting, maintainer takeover):
 

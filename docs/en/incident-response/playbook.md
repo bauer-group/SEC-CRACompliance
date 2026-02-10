@@ -1,10 +1,10 @@
-# 5.1 Incident Response Playbook
+# 4.1 Incident Response Playbook
 
-## Purpose
+## 4.1.1 Purpose
 
 This playbook defines the binding process for the detection, assessment, containment, remediation and post-incident review of cybersecurity incidents pursuant to CRA Art. 14 and Annex I, Part II.
 
-## Escalation Levels
+## 4.1.2 Escalation Levels
 
 | Level | Designation | Criteria | Examples |
 |-------|-------------|----------|----------|
@@ -13,7 +13,7 @@ This playbook defines the binding process for the detection, assessment, contain
 | **SEV-3** | Medium | Vulnerability without known exploit, limited impact | New CRITICAL CVE without PoC, configuration error |
 | **SEV-4** | Low | Informational findings, best-practice deviations | LOW/MEDIUM CVEs, policy violations |
 
-## Playbook: Phase 1 – Detection & Triage
+## 4.1.3 Playbook: Phase 1 – Detection & Triage
 
 **Timeframe:** 0 – 1 hour
 
@@ -49,7 +49,7 @@ Security event detected
 - [ ] ENISA reporting obligation assessed
 - [ ] Incident ticket created (GitHub Issue with label `incident`)
 
-## Playbook: Phase 2 – Containment
+## 4.1.4 Playbook: Phase 2 – Containment
 
 **Timeframe:** 1 – 4 hours (SEV-1), 4 – 24 hours (SEV-2)
 
@@ -81,7 +81,7 @@ Immediate measures
 - [ ] Affected users informed (if required)
 - [ ] Containment measures documented
 
-## Playbook: Phase 3 – Remediation
+## 4.1.5 Playbook: Phase 3 – Remediation
 
 **Timeframe:** 4 – 48 hours (SEV-1), 1 – 7 days (SEV-2)
 
@@ -124,7 +124,7 @@ Patch development
 - [ ] Security advisory published
 - [ ] Users informed
 
-## Playbook: Phase 4 – Recovery & Validation
+## 4.1.6 Playbook: Phase 4 – Recovery & Validation
 
 **Timeframe:** 1 – 7 days after fix
 
@@ -148,7 +148,7 @@ Recovery
         └── Finalise release notes
 ```
 
-## Playbook: Phase 5 – Post-Incident Review
+## 4.1.7 Playbook: Phase 5 – Post-Incident Review
 
 **Timeframe:** 7 – 14 days after fix
 
@@ -183,7 +183,7 @@ Lessons Learned
 - [ ] Playbook updated (if necessary)
 - [ ] Incident ticket closed
 
-## Contact List
+## 4.1.8 Contact List
 
 | Role | Reachability | Escalation Time |
 |------|-------------|-----------------|

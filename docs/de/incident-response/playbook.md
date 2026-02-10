@@ -1,10 +1,10 @@
-# 5.1 Incident-Response-Playbook
+# 4.1 Incident-Response-Playbook
 
-## Zweck
+## 4.1.1 Zweck
 
 Dieses Playbook definiert den verbindlichen Prozess für die Erkennung, Bewertung, Eindämmung, Behebung und Nachbereitung von Cybersecurity-Vorfällen gemäß CRA Art. 14 und Annex I, Teil II.
 
-## Eskalationsstufen
+## 4.1.2 Eskalationsstufen
 
 | Stufe | Bezeichnung | Kriterien | Beispiele |
 |-------|-------------|-----------|-----------|
@@ -13,7 +13,7 @@ Dieses Playbook definiert den verbindlichen Prozess für die Erkennung, Bewertun
 | **SEV-3** | Mittel | Schwachstelle ohne bekannten Exploit, eingeschränkte Auswirkung | Neue CRITICAL CVE ohne PoC, Konfigurationsfehler |
 | **SEV-4** | Niedrig | Informationelle Findings, Best-Practice-Abweichungen | LOW/MEDIUM CVEs, Policy-Verletzungen |
 
-## Playbook: Phase 1 – Erkennung & Triage
+## 4.1.3 Playbook: Phase 1 – Erkennung & Triage
 
 **Zeitrahmen:** 0 – 1 Stunde
 
@@ -49,7 +49,7 @@ Sicherheitsereignis erkannt
 - [ ] ENISA-Meldepflicht bewertet
 - [ ] Incident-Ticket erstellt (GitHub Issue mit Label `incident`)
 
-## Playbook: Phase 2 – Eindämmung
+## 4.1.4 Playbook: Phase 2 – Eindämmung
 
 **Zeitrahmen:** 1 – 4 Stunden (SEV-1), 4 – 24 Stunden (SEV-2)
 
@@ -81,7 +81,7 @@ Sofortmaßnahmen
 - [ ] Betroffene Nutzer informiert (wenn erforderlich)
 - [ ] Eindämmungsmaßnahmen dokumentiert
 
-## Playbook: Phase 3 – Behebung
+## 4.1.5 Playbook: Phase 3 – Behebung
 
 **Zeitrahmen:** 4 – 48 Stunden (SEV-1), 1 – 7 Tage (SEV-2)
 
@@ -124,7 +124,7 @@ Patch-Entwicklung
 - [ ] Security Advisory veröffentlicht
 - [ ] Nutzer informiert
 
-## Playbook: Phase 4 – Wiederherstellung & Validierung
+## 4.1.6 Playbook: Phase 4 – Wiederherstellung & Validierung
 
 **Zeitrahmen:** 1 – 7 Tage nach Fix
 
@@ -148,7 +148,7 @@ Wiederherstellung
         └── Release Notes finalisieren
 ```
 
-## Playbook: Phase 5 – Nachbereitung
+## 4.1.7 Playbook: Phase 5 – Nachbereitung
 
 **Zeitrahmen:** 7 – 14 Tage nach Fix
 
@@ -183,7 +183,7 @@ Lessons Learned
 - [ ] Playbook aktualisiert (wenn nötig)
 - [ ] Incident-Ticket geschlossen
 
-## Kontaktliste
+## 4.1.8 Kontaktliste
 
 | Rolle | Erreichbarkeit | Eskalationszeit |
 |-------|---------------|-----------------|

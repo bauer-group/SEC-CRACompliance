@@ -1,6 +1,6 @@
-# Substantial Modifications (Art. 20)
+# 1.8 Substantial Modifications (Art. 20)
 
-## Overview
+## 1.8.1 Overview
 
 A **substantial modification** to a product with digital elements may result in the person making the modification being considered a new **Manufacturer** and thus having to assume the full manufacturer obligations under Art. 10. Art. 20 CRA defines when a modification is considered "substantial" and what consequences follow.
 
@@ -10,7 +10,7 @@ A **substantial modification** to a product with digital elements may result in 
 **Art. 3 No. 31 CRA:** Definition of substantial modification.
 :::
 
-## Definition: Substantial Modification
+## 1.8.2 Definition: Substantial Modification
 
 A modification is considered **substantial** if all of the following conditions are met:
 
@@ -18,7 +18,7 @@ A modification is considered **substantial** if all of the following conditions 
 2. The modification goes beyond the maintenance and security updates **intended by the original manufacturer**
 3. The modification renders the existing **conformity assessment** no longer valid
 
-## Decision Tree
+## 1.8.3 Decision Tree
 
 ```
 Was the product modified after placing on the market?
@@ -33,7 +33,7 @@ Was the product modified after placing on the market?
                 --> Person making the modification becomes the Manufacturer
 ```
 
-## Examples
+## 1.8.4 Examples
 
 ### Not a Substantial Modification
 
@@ -52,7 +52,7 @@ Was the product modified after placing on the market?
 - **Porting to a new platform** with a different security model
 - **Major version upgrade of a core dependency** with changed security properties
 
-## Consequences of a Substantial Modification
+## 1.8.5 Consequences of a Substantial Modification
 
 Whoever makes a substantial modification must:
 
@@ -82,7 +82,7 @@ Whoever makes a substantial modification must:
 - Report vulnerabilities in the modified product (Art. 14)
 - Comply with 24h/72h/14d deadlines
 
-## Process at BAUER GROUP
+## 1.8.6 Process at BAUER GROUP
 
 ### Review Before Any Modification to a Third-Party Product
 
@@ -106,7 +106,7 @@ Whoever makes a substantial modification must:
 | 11 | Issue EU declaration of conformity |
 | 12 | Define support period |
 
-## Documentation
+## 1.8.7 Documentation
 
 Every modification decision is documented:
 

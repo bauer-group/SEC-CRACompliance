@@ -1,6 +1,6 @@
-# 签名
+# 2.4 签名
 
-## 概述
+## 2.4.1 概述
 
 签名确保发布过程中产生的所有制品的完整性和真实性。包括 SBOM、容器镜像、发布二进制文件和固件。所有签名操作使用 **Cosign** (Sigstore)，它支持基于密钥的签名和无密钥签名 (Keyless Signing)。
 
@@ -8,7 +8,7 @@
 **Art. 10(12) CRA:** 制造商必须确保安全更新及相关信息（包括 SBOM）"以安全的方式提供，并保证完整性"。
 :::
 
-## 工具：Cosign (Sigstore)
+## 2.4.2 工具：Cosign (Sigstore)
 
 Cosign 是 BAUER GROUP 生态系统中的主要签名工具。它是 Sigstore 项目的一部分，支持：
 
@@ -17,7 +17,7 @@ Cosign 是 BAUER GROUP 生态系统中的主要签名工具。它是 Sigstore �
 
 Cosign 在整个 CI/CD 流水线中集成：容器镜像签名 (`docker-build.yml`)、SBOM 签名以及二进制文件/固件签名 (`cra-release.yml`)。
 
-## 签名流程
+## 2.4.3 签名流程
 
 ### 1. 容器镜像签名
 
@@ -123,7 +123,7 @@ cosign sign-blob \
 sha256sum firmware.bin > firmware.bin.sha256
 ```
 
-## OTA 安全
+## 2.4.4 OTA 安全
 
 对于通过 OTA（空中下载，Over-The-Air）进行的固件更新，适用以下额外要求：
 
@@ -132,7 +132,7 @@ sha256sum firmware.bin > firmware.bin.sha256
 3. **回滚保护** —— 防回滚计数器防止安装旧的（不安全的）版本
 4. **安全启动链 (Secure Boot Chain)** —— 仅当签名链至信任根 (Root-of-Trust) 有效时才执行固件
 
-## 供应链证明 (Supply Chain Attestation)
+## 2.4.5 供应链证明 (Supply Chain Attestation)
 
 除签名外，还支持 SLSA 兼容的证明：
 
@@ -145,7 +145,7 @@ cosign attest \
   <registry>/<image>@<digest>
 ```
 
-## GitHub Actions 集成
+## 2.4.6 GitHub Actions 集成
 
 ```yaml
 # 每个发布工作流中的签名步骤
@@ -183,7 +183,7 @@ steps:
         sbom.cdx.json.sha256
 ```
 
-## 密钥管理
+## 2.4.7 密钥管理
 
 所有签名操作的密钥均按照[密钥管理策略](/zh/sbom-signing/key-management)进行管理：
 
@@ -192,7 +192,7 @@ steps:
 - 公钥：在仓库中发布 (`cosign.pub`)
 - 密钥轮换：每年一次或在怀疑泄露时
 
-## 签名后的发布资产
+## 2.4.8 签名后的发布资产
 
 ```
 Release v2.1.0

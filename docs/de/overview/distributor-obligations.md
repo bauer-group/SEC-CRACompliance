@@ -1,6 +1,6 @@
-# Pflichten der Händler (Art. 17)
+# 1.6 Händler-Pflichten (Art. 17)
 
-## Übersicht
+## 1.6.1 Übersicht
 
 Händler (Distributoren) sind Wirtschaftsakteure in der Lieferkette, die ein Produkt mit digitalen Elementen auf dem Markt bereitstellen, ohne Hersteller oder Importeur zu sein. Der CRA legt ihnen Sorgfaltspflichten auf, die primär auf Überprüfung und Kooperation ausgerichtet sind.
 
@@ -10,7 +10,7 @@ Händler (Distributoren) sind Wirtschaftsakteure in der Lieferkette, die ein Pro
 **Art. 3 Nr. 22 CRA:** *„Händler" ist jede natürliche oder juristische Person in der Lieferkette, die ein Produkt mit digitalen Elementen auf dem Markt bereitstellt, ohne Hersteller oder Importeur zu sein.*
 :::
 
-## Wann ist BAUER GROUP Händler?
+## 1.6.2 Wann ist BAUER GROUP Händler?
 
 BAUER GROUP agiert als Händler, wenn:
 
@@ -25,7 +25,7 @@ BAUER GROUP agiert als Händler, wenn:
 - **Hersteller** → Eigenes Produkt oder wesentliche Änderung (→ Art. 20)
 :::
 
-## Pflichten im Detail
+## 1.6.3 Pflichten im Detail
 
 ### 1. Sorgfaltspflicht (Art. 17 Abs. 1)
 
@@ -77,7 +77,7 @@ Wenn der Händler feststellt, dass ein bereits vertriebenes Produkt nicht konfor
 - Marktüberwachungsbehörden informieren
 - Alle Maßnahmen dokumentieren
 
-## Prüfcheckliste für Händler
+## 1.6.4 Prüfcheckliste für Händler
 
 ### Vor Bereitstellung
 
@@ -95,7 +95,7 @@ Wenn der Händler feststellt, dass ein bereits vertriebenes Produkt nicht konfor
 - [ ] Rückrufaktionen des Herstellers unterstützen
 - [ ] Distributionskanäle integritätsgesichert
 
-## Unterschied Händler vs. Importeur
+## 1.6.5 Unterschied Händler vs. Importeur
 
 | Kriterium | Händler | Importeur |
 |-----------|---------|-----------|
@@ -105,7 +105,7 @@ Wenn der Händler feststellt, dass ein bereits vertriebenes Produkt nicht konfor
 | **Dokumentation aufbewahren** | Nicht explizit gefordert | 10 Jahre Pflicht |
 | **ENISA-Meldepflicht** | Subsidiär (wenn Hersteller nicht reagiert) | Subsidiär (wenn Hersteller nicht reagiert) |
 
-## Haftung und Sanktionen
+## 1.6.6 Haftung und Sanktionen
 
 | Verstoß | Sanktion |
 |---------|---------|

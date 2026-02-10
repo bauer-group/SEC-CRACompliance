@@ -1,6 +1,6 @@
 # 2.3 Archiving & Retention
 
-## Archiving Strategy
+## 2.3.1 Archiving Strategy
 
 SBOMs are archived in three locations to ensure availability and traceability.
 
@@ -57,7 +57,7 @@ Build artifacts are stored as GitHub Actions artifacts (90-day retention).
 - Available immediately after the build
 - Temporary analysis and debugging
 
-## Retention Policy
+## 2.3.2 Retention Policy
 
 | Storage Location | Retention Period | Justification |
 |------------------|------------------|---------------|
@@ -71,7 +71,7 @@ Build artifacts are stored as GitHub Actions artifacts (90-day retention).
 SBOMs, as part of the technical documentation, are subject to this retention period.
 :::
 
-## Integrity Protection
+## 2.3.3 Integrity Protection
 
 Each archived SBOM is protected through the following measures:
 
@@ -88,7 +88,7 @@ sha256sum -c SHA256SUMS.txt
 cosign verify-blob --key cosign.pub --signature sbom.cdx.json.sig sbom.cdx.json
 ```
 
-## Access & Provision
+## 2.3.4 Access & Provision
 
 ### For Regulators / Market Surveillance Authorities
 

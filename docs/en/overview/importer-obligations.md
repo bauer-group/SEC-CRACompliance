@@ -1,6 +1,6 @@
-# Importer Obligations (Art. 15)
+# 1.4 Importer Obligations (Art. 15)
 
-## Overview
+## 1.4.1 Overview
 
 Importers are economic operators that place a product with digital elements from a third-country manufacturer (outside the EU) on the Union market. The CRA imposes specific due diligence obligations on them to ensure that only compliant products reach the EU market.
 
@@ -10,7 +10,7 @@ Importers are economic operators that place a product with digital elements from
 **Art. 3 No. 21 CRA:** *"Importer" means any natural or legal person established in the Union who places a product with digital elements bearing the name or trademark of a person established outside the Union on the market.*
 :::
 
-## When Is BAUER GROUP an Importer?
+## 1.4.2 When Is BAUER GROUP an Importer?
 
 BAUER GROUP acts as an Importer when:
 
@@ -22,7 +22,7 @@ BAUER GROUP acts as an Importer when:
 If BAUER GROUP places a third-country product on the market under its **own name or brand**, BAUER GROUP is considered a **Manufacturer** (not an Importer) and is subject to the full manufacturer obligations under Art. 10.
 :::
 
-## Obligations in Detail
+## 1.4.3 Obligations in Detail
 
 ### 1. Conformity Verification Before Placing on the Market (Art. 15 Para. 1)
 
@@ -81,7 +81,7 @@ Upon becoming aware of an **actively exploited vulnerability** or a **severe sec
 - Inform the manufacturer **without delay**
 - If the manufacturer does not respond: Report directly to ENISA and the national CSIRT
 
-## Checklist for Importers
+## 1.4.4 Checklist for Importers
 
 ### Before Placing on the Market
 
@@ -102,7 +102,7 @@ Upon becoming aware of an **actively exploited vulnerability** or a **severe sec
 - [ ] Readiness to cooperate with authorities ensured
 - [ ] Documentation archived (10 years)
 
-## Liability and Penalties
+## 1.4.5 Liability and Penalties
 
 | Violation | Penalty |
 |-----------|---------|

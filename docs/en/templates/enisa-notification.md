@@ -1,10 +1,10 @@
-# ENISA Notification (72h)
+# A.4 ENISA Notification (72h)
 
 ::: warning DEADLINE
 This notification must be sent to ENISA / the competent national CSIRT within **72 hours** of becoming aware. It supplements the Early Warning (24h).
 :::
 
-## Template: Vulnerability Notification pursuant to Art. 14(2)(b) CRA
+## A.4.1 Template: Vulnerability Notification pursuant to Art. 14(2)(b) CRA
 
 ---
 

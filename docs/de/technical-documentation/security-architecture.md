@@ -1,6 +1,6 @@
-# 7.2 Sicherheitsarchitektur
+# 6.2 Sicherheitsarchitektur
 
-## Security-by-Design Prozess
+## 6.2.1 Security-by-Design Prozess
 
 Die Sicherheitsarchitektur dokumentiert, wie Cybersicherheit in den Entwurfs-, Entwicklungs- und Wartungsprozess integriert ist.
 
@@ -10,7 +10,7 @@ Die Sicherheitsarchitektur dokumentiert, wie Cybersicherheit in den Entwurfs-, E
 **Annex I, Teil I:** Wesentliche Cybersicherheitsanforderungen an Produkte.
 :::
 
-## Secure Development Lifecycle (SDLC)
+## 6.2.2 Secure Development Lifecycle (SDLC)
 
 ```
 Planung → Design → Entwicklung → Testing → Release → Wartung
@@ -40,7 +40,7 @@ Planung → Design → Entwicklung → Testing → Release → Wartung
        Compliance-Anforderungen
 ```
 
-## Annex I, Teil I – Wesentliche Anforderungen
+## 6.2.3 Annex I, Teil I – Wesentliche Anforderungen
 
 Die folgenden Anforderungen aus Annex I, Teil I, CRA werden in der Sicherheitsarchitektur adressiert:
 
@@ -92,7 +92,7 @@ Die folgenden Anforderungen aus Annex I, Teil I, CRA werden in der Sicherheitsar
 | Monitoring | Anomalie-Erkennung (produktspezifisch) |
 | Isolation | Container-Isolation, Network Policies |
 
-## CI/CD-Sicherheitsmaßnahmen
+## 6.2.4 CI/CD-Sicherheitsmaßnahmen
 
 | Maßnahme | Implementierung | Workflow |
 |----------|----------------|----------|
@@ -106,7 +106,7 @@ Die folgenden Anforderungen aus Annex I, Teil I, CRA werden in der Sicherheitsar
 | Artifact Signing | Cosign bei Release | `docker-build.yml` |
 | Dependency Updates | Dependabot | `docker-maintenance-dependabot.yml` |
 
-## Nachweis der Sicherheitsarchitektur
+## 6.2.5 Nachweis der Sicherheitsarchitektur
 
 Die Sicherheitsarchitektur wird nachgewiesen durch:
 

@@ -1,10 +1,10 @@
-# 4.3 验证
+# 2.6 验证
 
-## 验证流程
+## 2.6.1 验证流程
 
 验证确保交付的制品是真实的且未被篡改。用户和系统可以随时验证完整性。
 
-## 验证容器镜像
+## 2.6.2 验证容器镜像
 
 ```bash
 # 1. 下载公钥（一次性操作）
@@ -23,7 +23,7 @@ The following checks were performed on each of these signatures:
   - The signatures were verified against the specified public key
 ```
 
-## 验证二进制文件和固件
+## 2.6.3 验证二进制文件和固件
 
 ```bash
 # 1. 下载制品、签名和公钥
@@ -38,7 +38,7 @@ cosign verify-blob --key cosign.pub --signature artifact.bin.sig artifact.bin
 sha256sum -c SHA256SUMS.txt
 ```
 
-## 验证 SBOM
+## 2.6.4 验证 SBOM
 
 ```bash
 # 验证 SBOM 签名
@@ -51,7 +51,7 @@ cosign verify-blob \
 sha256sum -c sbom.cdx.json.sha256
 ```
 
-## 部署中的自动验证
+## 2.6.5 部署中的自动验证
 
 ### OTA 更新验证（固件）
 
@@ -93,7 +93,7 @@ spec:
           -----END PUBLIC KEY-----
 ```
 
-## 市场监督管理机构的验证
+## 2.6.6 市场监督管理机构的验证
 
 市场监督管理机构 (Market Surveillance Authorities) 可按以下方式验证所有制品的完整性：
 

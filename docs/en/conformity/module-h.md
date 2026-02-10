@@ -1,6 +1,6 @@
-# Comprehensive Quality Assurance (Module H)
+# 7.4 Quality Assurance (Module H)
 
-## Overview
+## 7.4.1 Overview
 
 Comprehensive quality assurance under Module H is an alternative conformity assessment procedure for **Class II** products. Unlike Module B+C, this approach does not examine a single type specimen but rather the manufacturer's **entire quality management system**.
 
@@ -10,7 +10,7 @@ Comprehensive quality assurance under Module H is an alternative conformity asse
 **Annex VIII, Module H** of the CRA describes the requirements for the quality management system.
 :::
 
-## Applicability
+## 7.4.2 Applicability
 
 | Category | Module H applicable? |
 |----------|---------------------|
@@ -19,7 +19,7 @@ Comprehensive quality assurance under Module H is an alternative conformity asse
 | **Class II** | **Yes** (Alternative to Module B+C) |
 | Critical | No – EUCC required |
 
-## Module H vs. Module B+C
+## 7.4.3 Module H vs. Module B+C
 
 | Criterion | Module B+C | Module H |
 |-----------|-----------|----------|
@@ -30,7 +30,7 @@ Comprehensive quality assurance under Module H is an alternative conformity asse
 | **Disadvantage** | Each new product examined individually | Higher initial effort |
 | **Recommended when** | 1-3 Class II products | 4+ Class II products |
 
-## Procedure
+## 7.4.4 Procedure
 
 ### 1. Build a Quality Management System
 
@@ -96,7 +96,7 @@ Upon successful audit, the notified body issues a **QMS certificate**. All produ
 - **Unannounced inspections** are possible
 - **Re-certification** for significant changes to the QMS
 
-## Integration with Existing Standards
+## 7.4.5 Integration with Existing Standards
 
 Module H integrates well with existing management systems:
 
@@ -111,7 +111,7 @@ Module H integrates well with existing management systems:
 If a certified ISO 27001 or ISO 9001 management system already exists, it can serve as a foundation for the CRA QMS. The cybersecurity-specific requirements from Annex I must be supplemented.
 :::
 
-## Timeline
+## 7.4.6 Timeline
 
 | Phase | Estimated Duration |
 |-------|-------------------|
@@ -123,7 +123,7 @@ If a certified ISO 27001 or ISO 9001 management system already exists, it can se
 | Certificate issuance | 1-2 weeks |
 | **Total** | **approx. 9-15 months** |
 
-## Costs
+## 7.4.7 Costs
 
 | Cost Factor | Estimated Range |
 |------------|-----------------|
@@ -134,7 +134,7 @@ If a certified ISO 27001 or ISO 9001 management system already exists, it can se
 
 *Note: Values serve as guidance. With an existing ISO 27001/9001, the effort is significantly reduced.*
 
-## Checklist: Module H
+## 7.4.8 Checklist: Module H
 
 - [ ] Product classification completed (Class II confirmed)
 - [ ] Decision Module H vs. Module B+C made and justified

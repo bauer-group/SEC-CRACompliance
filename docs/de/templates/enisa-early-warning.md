@@ -1,10 +1,10 @@
-# ENISA Frühwarnung (24h)
+# A.3 ENISA Frühwarnung (24h)
 
 ::: danger ZEITKRITISCH
 Diese Meldung muss innerhalb von **24 Stunden** nach Kenntnisnahme einer aktiv ausgenutzten Schwachstelle oder eines schweren Sicherheitsvorfalls an ENISA / die zuständige nationale CSIRT gesendet werden.
 :::
 
-## Vorlage: Frühwarnung gemäß Art. 14 Abs. 2 lit. a CRA
+## A.3.1 Vorlage: Frühwarnung gemäß Art. 14 Abs. 2 lit. a CRA
 
 ---
 

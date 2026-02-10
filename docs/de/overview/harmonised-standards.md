@@ -1,6 +1,6 @@
-# Freier Warenverkehr & Harmonisierte Normen (Art. 5-6)
+# 1.12 Harmonisierte Standards (Art. 5–6)
 
-## Übersicht
+## 1.12.1 Übersicht
 
 Art. 5 und 6 CRA regeln den freien Warenverkehr für Produkte mit digitalen Elementen im EU-Binnenmarkt sowie die Rolle harmonisierter Normen bei der Konformitätsvermutung. Für BAUER GROUP sind diese Vorschriften zentral, da sie bestimmen, unter welchen Bedingungen Produkte auf dem EU-Markt bereitgestellt werden dürfen und welches Konformitätsbewertungsverfahren anzuwenden ist.
 
@@ -10,7 +10,7 @@ Art. 5 und 6 CRA regeln den freien Warenverkehr für Produkte mit digitalen Elem
 **Art. 6 CRA:** Harmonisierte Normen -- Produkte, die harmonisierten Normen (oder Teilen davon) entsprechen, deren Fundstellen im Amtsblatt der EU (OJEU) veröffentlicht wurden, genießen eine Konformitätsvermutung hinsichtlich der abgedeckten wesentlichen Anforderungen aus Annex I.
 :::
 
-## Art. 5 -- Freier Warenverkehr
+## 1.12.2 Art. 5 -- Freier Warenverkehr
 
 ### Grundsatz
 
@@ -32,7 +32,7 @@ Produkte dürfen auf Messen, Ausstellungen und Vorführungen auch **ohne vollst�
 Bei Messeauftritten von BAUER GROUP müssen Prototypen und Vorserienprodukte mit einem entsprechenden Hinweisschild versehen werden, z.B.: *„Dieses Produkt entspricht noch nicht den Anforderungen der Verordnung (EU) 2024/2847 (Cyber Resilience Act) und ist nicht für die Bereitstellung auf dem Markt bestimmt."*
 :::
 
-## Art. 6 -- Harmonisierte Normen & Konformitätsvermutung
+## 1.12.3 Art. 6 -- Harmonisierte Normen & Konformitätsvermutung
 
 ### Mechanismus der Konformitätsvermutung
 
@@ -69,7 +69,7 @@ Die Verfügbarkeit harmonisierter Normen hat **direkte Auswirkungen** auf das an
 Für Produkte der Klasse I, die BAUER GROUP herstellt (z.B. Mikrocontroller mit sicherheitsrelevanten Funktionen), ist die Verfügbarkeit harmonisierter Normen entscheidend: Ohne vollständig angewendete harmonisierte Normen ist Modul A **nicht ausreichend** -- stattdessen ist ein aufwändigeres Verfahren nach [Modul B+C](/de/conformity/module-bc) erforderlich.
 :::
 
-## Praktische Auswirkungen für BAUER GROUP
+## 1.12.4 Praktische Auswirkungen für BAUER GROUP
 
 ### Monitoring-Prozess für harmonisierte Normen
 

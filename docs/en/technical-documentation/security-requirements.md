@@ -1,6 +1,6 @@
-# Essential Security Requirements (Annex I Part I)
+# 6.5 Security Requirements (Annex I)
 
-## Overview
+## 6.5.1 Overview
 
 Annex I Part I of the CRA defines 13 essential cybersecurity requirements that every product with digital elements must fulfill. This page provides detailed implementation guidance for each individual requirement.
 
@@ -8,7 +8,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 **Annex I Part I CRA:** Essential cybersecurity requirements. Products with digital elements shall be designed, developed and produced in such a way that they ensure an appropriate level of cybersecurity, taking into account the risks.
 :::
 
-## No. 1 – Appropriate Level of Cybersecurity
+## 6.5.2 No. 1 – Appropriate Level of Cybersecurity
 
 **Requirement:** Products shall be designed, developed and produced in such a way that they ensure an appropriate level of cybersecurity, based on the risks.
 
@@ -23,7 +23,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 
 ---
 
-## No. 2 – No Known Exploitable Vulnerabilities
+## 6.5.3 No. 2 – No Known Exploitable Vulnerabilities
 
 **Requirement:** Products shall be delivered without known exploitable vulnerabilities.
 
@@ -38,7 +38,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 
 ---
 
-## No. 3 – Protection of Confidentiality, Integrity and Availability
+## 6.5.4 No. 3 – Protection of Confidentiality, Integrity and Availability
 
 ### No. 3.1 – Confidentiality Protection
 
@@ -83,7 +83,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 
 ---
 
-## No. 4 – Secure Default Configuration
+## 6.5.5 No. 4 – Secure Default Configuration
 
 **Requirement:** Products shall be delivered with a secure default configuration, including the ability to reset the product to its original state.
 
@@ -99,7 +99,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 
 ---
 
-## No. 5 – Protection Against Unauthorized Access
+## 6.5.6 No. 5 – Protection Against Unauthorized Access
 
 **Requirement:** Protection against unauthorized access through appropriate control mechanisms (authentication, identity management, access control).
 
@@ -115,7 +115,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 
 ---
 
-## No. 6 – Minimal Attack Surface
+## 6.5.7 No. 6 – Minimal Attack Surface
 
 **Requirement:** Minimization of the attack surface, including external interfaces.
 
@@ -131,7 +131,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 
 ---
 
-## No. 7 – Confidentiality of Stored Data
+## 6.5.8 No. 7 – Confidentiality of Stored Data
 
 **Requirement:** Protection of the confidentiality of stored, transmitted or otherwise processed data, including personal data.
 
@@ -147,7 +147,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 
 ---
 
-## No. 8 – Integrity of Stored Data
+## 6.5.9 No. 8 – Integrity of Stored Data
 
 **Requirement:** Protection of the integrity of stored data and commands against manipulation.
 
@@ -163,7 +163,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 
 ---
 
-## No. 9 – Data Minimization
+## 6.5.10 No. 9 – Data Minimization
 
 **Requirement:** Processing only the data (personal or otherwise) that is necessary for the intended use of the product.
 
@@ -179,7 +179,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 
 ---
 
-## No. 10 – Availability of Essential Functions
+## 6.5.11 No. 10 – Availability of Essential Functions
 
 **Requirement:** Essential functions of the product must remain available even in the event of failure of individual components.
 
@@ -195,7 +195,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 
 ---
 
-## No. 11 – Minimization of Negative Impact
+## 6.5.12 No. 11 – Minimization of Negative Impact
 
 **Requirement:** Minimization of negative impact on the availability of other devices and networks in the event of a security incident.
 
@@ -211,7 +211,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 
 ---
 
-## No. 12 – Security-Relevant Information
+## 6.5.13 No. 12 – Security-Relevant Information
 
 **Requirement:** Collection and provision of security-relevant information, including logging and monitoring.
 
@@ -227,7 +227,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 
 ---
 
-## No. 13 – Secure Update Capability
+## 6.5.14 No. 13 – Secure Update Capability
 
 **Requirement:** Ability to securely update the product, including automatic notification of available updates.
 
@@ -243,7 +243,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 
 ---
 
-## Compliance Matrix
+## 6.5.15 Compliance Matrix
 
 | No. | Requirement | Implementation Status | Evidence Location |
 |-----|-------------|:---:|-------------|

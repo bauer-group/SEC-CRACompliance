@@ -1,6 +1,6 @@
-# European Cybersecurity Certificate (EUCC)
+# 7.5 EUCC Certification
 
-## Overview
+## 7.5.1 Overview
 
 For **critical products** (Annex IV CRA), a European Cybersecurity Certificate (EUCC) at least at assurance level "substantial" is required. The EUCC is based on the **EU Cybersecurity Act** (Regulation (EU) 2019/881) and the Common Criteria framework (ISO/IEC 15408).
 
@@ -12,7 +12,7 @@ For **critical products** (Annex IV CRA), a European Cybersecurity Certificate (
 **EUCC Scheme (Implementing Regulation (EU) 2024/482):** Specifies the European Common Criteria-based certification scheme.
 :::
 
-## Applicability
+## 7.5.2 Applicability
 
 | Category | EUCC required? |
 |----------|---------------|
@@ -31,7 +31,7 @@ The following products are classified as critical:
 - Sensors and actuators for robots and machine controls
 - Smart meter gateways
 
-## Assurance Levels
+## 7.5.3 Assurance Levels
 
 The EUCC defines two levels, based on Common Criteria Evaluation Assurance Levels (EAL):
 
@@ -42,7 +42,7 @@ The EUCC defines two levels, based on Common Criteria Evaluation Assurance Level
 
 For the CRA, at least the **"substantial"** level is required.
 
-## Procedure
+## 7.5.4 Procedure
 
 ### 1. Select an Evaluation Facility (ITSEF)
 
@@ -99,7 +99,7 @@ Upon successful evaluation:
 - **Re-evaluation:** For significant changes
 - **Vulnerability management:** Ongoing obligation for vulnerability handling
 
-## Timeline
+## 7.5.5 Timeline
 
 | Phase | Estimated Duration |
 |-------|-------------------|
@@ -113,7 +113,7 @@ Upon successful evaluation:
 EUCC evaluations are extensive and time-consuming. Begin planning at least **18-24 months** before the planned market launch.
 :::
 
-## Costs
+## 7.5.6 Costs
 
 | Cost Factor | Estimated Range |
 |------------|-----------------|
@@ -125,7 +125,7 @@ EUCC evaluations are extensive and time-consuming. Begin planning at least **18-
 
 *Note: Actual costs depend heavily on product complexity and target EAL.*
 
-## Relevance for BAUER GROUP
+## 7.5.7 Relevance for BAUER GROUP
 
 Based on the [Product Classification](/en/conformity/product-classification):
 
@@ -140,13 +140,13 @@ Based on the [Product Classification](/en/conformity/product-classification):
 Based on current assessment, no BAUER GROUP products fall under Annex IV. This assessment is reviewed for each new product and when Delegated Acts are amended.
 :::
 
-## Transitional Provisions
+## 7.5.8 Transitional Provisions
 
 - **Art. 24(5) CRA:** As long as no suitable EUCC scheme exists for an Annex IV product category, Module B+C may be applied as an alternative
 - The EU Commission may add further products to Annex IV via Delegated Act
 - Manufacturers must actively monitor the development of Implementing Acts
 
-## Checklist: EUCC
+## 7.5.9 Checklist: EUCC
 
 - [ ] Product classification completed (Annex IV confirmed)
 - [ ] Relevant Protection Profile identified (if available)

@@ -1,6 +1,6 @@
-# Sanktionen und Bußgelder (Art. 64)
+# 1.11 Sanktionen (Art. 64)
 
-## Übersicht
+## 1.11.1 Übersicht
 
 Der CRA sieht erhebliche Sanktionen für Verstöße vor. Die Bußgelder orientieren sich an der DSGVO-Systematik und sind nach Schwere des Verstoßes gestaffelt. Die Festlegung und Verhängung obliegt den nationalen Marktüberwachungsbehörden der Mitgliedstaaten.
 
@@ -8,7 +8,7 @@ Der CRA sieht erhebliche Sanktionen für Verstöße vor. Die Bußgelder orientie
 **Art. 64 CRA:** Die Mitgliedstaaten erlassen Vorschriften über Sanktionen und ergreifen alle erforderlichen Maßnahmen, um deren Durchsetzung zu gewährleisten. Die Sanktionen müssen wirksam, verhältnismäßig und abschreckend sein.
 :::
 
-## Bußgeldrahmen
+## 1.11.2 Bußgeldrahmen
 
 ### Stufe 1 – Schwerwiegende Verstöße (Art. 64 Abs. 2)
 
@@ -48,7 +48,7 @@ Verstöße gegen:
 - Geringere Sanktionen für [Open-Source-Software-Stewards](/de/overview/open-source-steward)
 - Berücksichtigung des nicht-kommerziellen Charakters
 
-## Übersichtstabelle
+## 1.11.3 Übersichtstabelle
 
 | Verstoß-Kategorie | Maximum | Typische Auslöser |
 |-------------------|---------|-------------------|
@@ -56,7 +56,7 @@ Verstöße gegen:
 | **Stufe 2** | 10 Mio. EUR / 2% | Fehlende CE-Kennzeichnung, Importeur ohne Prüfung, keine DoC |
 | **Stufe 3** | 5 Mio. EUR / 1% | Falsche Angaben an Behörden, Kooperationsverweigerung |
 
-## Bemessungskriterien
+## 1.11.4 Bemessungskriterien
 
 Bei der Festlegung der Bußgeldhöhe berücksichtigen die Behörden:
 
@@ -78,7 +78,7 @@ Bei der Festlegung der Bußgeldhöhe berücksichtigen die Behörden:
 - **Erstverstoß** – Keine vorherigen Verstöße
 - **Unternehmensgröße** – Verhältnismäßigkeit für KMU
 
-## Vergleich mit anderen Regulierungen
+## 1.11.5 Vergleich mit anderen Regulierungen
 
 | Regulierung | Maximales Bußgeld | Berechnung |
 |-------------|-------------------|------------|
@@ -87,7 +87,7 @@ Bei der Festlegung der Bußgeldhöhe berücksichtigen die Behörden:
 | **NIS2** | 10 Mio. EUR / 2% | Pro Verstoß |
 | **AI Act** | 35 Mio. EUR / 7% | Pro Verstoß |
 
-## Risikominimierung
+## 1.11.6 Risikominimierung
 
 ### Compliance als Schutz
 

@@ -1,4 +1,4 @@
-# Chapter 9: CRA Compliance Matrix
+# Chapter 8: CRA Compliance Matrix
 
 ## Complete Mapping: CRA Article → Documentation → Tooling
 
@@ -21,7 +21,7 @@ This matrix maps each relevant CRA requirement to the corresponding documentatio
 
 :::
 
-Detailed mapping: [9.1 Tooling Map](/en/compliance-matrix/tooling-map) (Tool → CRA Requirement)
+Detailed mapping: [8.1 Tooling Map](/en/compliance-matrix/tooling-map) (Tool → CRA Requirement)
 
 ## Art. 10 – Obligations of Manufacturers
 

@@ -1,10 +1,10 @@
-# EU-Konformitätserklärung
+# A.7 EU-Konformitätserklärung
 
-## Vorlage gemäß Annex V der Verordnung (EU) 2024/2847 (Cyber Resilience Act)
+## A.7.1 Vorlage gemäß Annex V der Verordnung (EU) 2024/2847 (Cyber Resilience Act)
 
 ---
 
-## EU-KONFORMITÄTSERKLÄRUNG
+## A.7.2 EU-KONFORMITÄTSERKLÄRUNG
 
 ### Nr. [DoC-YYYY-NNN]
 
