@@ -217,7 +217,7 @@ jobs:
         continue-on-error: true
 
       - name: 📦 Upload CRA artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: cra-release-artifacts
           retention-days: ${{ inputs.retention-days }}
