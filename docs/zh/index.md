@@ -41,6 +41,10 @@ features:
     title: 合格评定
     details: 内部控制（Module A）、产品分类和欧盟符合性声明
     link: /zh/conformity/
+  - icon: 🌐
+    title: 合规发布
+    details: 每个产品的公开 CRA 合规声明，双重发布（代码仓库 + 网站）
+    link: /zh/product-compliance/
   - icon: 📊
     title: 合规矩阵
     details: 所有 CRA 条款与文档和工具的完整映射

@@ -7,6 +7,7 @@ This appendix contains ready-to-use templates for the regulatory obligations und
 1. **ENISA Reporting Obligations** (Art. 14 CRA) -- Time-bound notifications to ENISA / CSIRT
 2. **Incident Documentation** -- Internal and external Incident Reports
 3. **Compliance Documentation** -- Risk Assessment, Declaration of Conformity, Product Security Information
+4. **Product Compliance Publication** -- Public CRA Compliance Statement per product
 
 ::: warning APPLICATION NOTE
 All templates must be completed on a **product-specific** basis. Placeholders in square brackets `[...]` shall be replaced with the actual values. Completed templates are archived in the respective incident ticket or in the product directory (`docs/products/<product-name>/`).
@@ -36,6 +37,12 @@ The ENISA notification templates are to be used operationally from **11 Septembe
 | [Risk Assessment](/en/templates/risk-assessment) | Art. 10(2), Annex VII No. 2 | Cybersecurity Risk Assessment per product | Before placing on the market + upon substantial changes |
 | [EU Declaration of Conformity](/en/templates/eu-declaration-of-conformity) | Art. 28, Annex V | Formal Declaration of Conformity per product | Before placing on the market + upon new versions |
 | [Product Security Information](/en/templates/product-security-info) | Annex II | Security information for end users | Per product, updated upon version changes |
+
+## Product Compliance Publication
+
+| Template | CRA Reference | Usage | Frequency |
+|----------|---------------|-------|-----------|
+| [CRA Compliance Statement](/en/templates/cra-compliance-statement) | Art. 13, Art. 28 | Public compliance statement per product | Per product, updated upon version changes |
 
 ## Templates in the Technical Documentation
 

@@ -7,6 +7,7 @@
 1. **ENISA 报告义务** (Art. 14 CRA) -- 向 ENISA / CSIRT 发送有时限要求的通知
 2. **事件文档** -- 内部和外部事件报告 (Incident Report)
 3. **合规文档** -- 风险评估 (Risk Assessment)、合规声明 (Declaration of Conformity)、产品安全信息
+4. **产品合规发布** -- 每个产品的公开 CRA 合规声明
 
 ::: warning 使用说明
 所有模板必须按**产品**逐一填写。方括号 `[...]` 中的占位符应替换为实际值。填写完成的模板归档在相应的事件工单或产品目录（`docs/products/<product-name>/`）中。
@@ -36,6 +37,12 @@ ENISA 通知模板自 **2026年9月11日** 起投入运营使用（-> [5.3 ENISA
 | [风险评估](/zh/templates/risk-assessment) | Art. 10(2), Annex VII 编号 2 | 每个产品的网络安全风险评估 | 投放市场前 + 发生重大变更时 |
 | [欧盟合规声明](/zh/templates/eu-declaration-of-conformity) | Art. 28, Annex V | 每个产品的正式合规声明 | 投放市场前 + 发布新版本时 |
 | [产品安全信息](/zh/templates/product-security-info) | Annex II | 面向最终用户的安全信息 | 每个产品，版本变更时更新 |
+
+## 产品合规发布
+
+| 模板 | CRA 参考 | 用途 | 频率 |
+|----------|---------------|-------|-----------|
+| [CRA 合规声明](/zh/templates/cra-compliance-statement) | Art. 13, Art. 28 | 每个产品的公开合规声明 | 每个产品，版本变更时更新 |
 
 ## 技术文档中的模板
 

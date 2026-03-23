@@ -45,6 +45,7 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         ]
       },
       { text: 'Konformität', link: '/de/conformity/' },
+      { text: 'Compliance-Publikation', link: '/de/product-compliance/' },
       {
         text: 'Referenz',
         items: [
@@ -199,6 +200,18 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           ]
         },
       ],
+      '/de/product-compliance/': [
+        {
+          text: 'Kapitel 9: Produkt-Compliance-Publikation',
+          items: [
+            { text: 'Übersicht', link: '/de/product-compliance/' },
+            { text: '9.1 CRA Compliance Statement', link: '/de/product-compliance/cra-statement' },
+            { text: '9.2 Publikationsstrategie', link: '/de/product-compliance/publication-strategy' },
+            { text: '9.3 Maschinenlesbares Format', link: '/de/product-compliance/machine-readable' },
+            { text: '9.4 Pflege & Aktualisierung', link: '/de/product-compliance/maintenance' },
+          ]
+        }
+      ],
       '/de/compliance-matrix/': [
         {
           text: 'Kapitel 8: Compliance-Matrix',
@@ -221,6 +234,7 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
             { text: 'A.6 Risikobewertung', link: '/de/templates/risk-assessment' },
             { text: 'A.7 EU-Konformitätserklärung', link: '/de/templates/eu-declaration-of-conformity' },
             { text: 'A.8 Nutzerinformation', link: '/de/templates/product-security-info' },
+            { text: 'A.9 CRA Compliance Statement', link: '/de/templates/cra-compliance-statement' },
           ]
         }
       ],

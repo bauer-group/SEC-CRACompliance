@@ -41,6 +41,10 @@ features:
     title: Conformity Assessment
     details: Internal control (Module A), product classification, and EU Declaration of Conformity
     link: /en/conformity/
+  - icon: 🌐
+    title: Compliance Publication
+    details: Public CRA compliance statements per product with dual publication (repository + website)
+    link: /en/product-compliance/
   - icon: 📊
     title: Compliance Matrix
     details: Complete mapping of all CRA articles to documentation and tooling

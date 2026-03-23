@@ -45,6 +45,7 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         ]
       },
       { text: '合规评估', link: '/zh/conformity/' },
+      { text: '合规发布', link: '/zh/product-compliance/' },
       {
         text: '参考',
         items: [
@@ -199,6 +200,18 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           ]
         },
       ],
+      '/zh/product-compliance/': [
+        {
+          text: '第9章：产品合规发布',
+          items: [
+            { text: '概述', link: '/zh/product-compliance/' },
+            { text: '9.1 CRA 合规声明', link: '/zh/product-compliance/cra-statement' },
+            { text: '9.2 发布策略', link: '/zh/product-compliance/publication-strategy' },
+            { text: '9.3 机器可读格式', link: '/zh/product-compliance/machine-readable' },
+            { text: '9.4 维护与更新', link: '/zh/product-compliance/maintenance' },
+          ]
+        }
+      ],
       '/zh/compliance-matrix/': [
         {
           text: '第8章：合规矩阵',
@@ -221,6 +234,7 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
             { text: 'A.6 风险评估', link: '/zh/templates/risk-assessment' },
             { text: 'A.7 EU 符合性声明', link: '/zh/templates/eu-declaration-of-conformity' },
             { text: 'A.8 产品安全信息', link: '/zh/templates/product-security-info' },
+            { text: 'A.9 CRA 合规声明', link: '/zh/templates/cra-compliance-statement' },
           ]
         }
       ],

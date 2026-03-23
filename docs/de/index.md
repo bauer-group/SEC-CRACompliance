@@ -41,6 +41,10 @@ features:
     title: Konformitätsbewertung
     details: Interne Kontrolle (Modul A), Produktklassifizierung und EU-Konformitätserklärung
     link: /de/conformity/
+  - icon: 🌐
+    title: Compliance-Publikation
+    details: Öffentliche CRA Compliance Statements pro Produkt mit Dual-Publikation (Repository + Website)
+    link: /de/product-compliance/
   - icon: 📊
     title: Compliance-Matrix
     details: Vollständige Zuordnung aller CRA-Artikel zu Dokumentation und Tooling

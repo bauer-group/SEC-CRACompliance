@@ -7,6 +7,7 @@ Dieser Anhang enthält einsatzbereite Vorlagen für die regulatorischen Pflichte
 1. **ENISA-Meldepflichten** (Art. 14 CRA) – Fristgebundene Meldungen an ENISA / CSIRT
 2. **Incident-Dokumentation** – Interne und externe Vorfallberichte
 3. **Compliance-Dokumentation** – Risikobewertung, Konformitätserklärung, Nutzerinformation
+4. **Produkt-Compliance-Publikation** – Öffentliches CRA Compliance Statement pro Produkt
 
 ::: warning ANWENDUNGSHINWEIS
 Alle Vorlagen müssen **produktspezifisch** ausgefüllt werden. Platzhalter in eckigen Klammern `[...]` sind durch die tatsächlichen Werte zu ersetzen. Ausgefüllte Vorlagen werden im jeweiligen Incident-Ticket bzw. im Produktverzeichnis (`docs/products/<produktname>/`) archiviert.
@@ -36,6 +37,12 @@ Die ENISA-Meldevorlagen sind ab dem **11. September 2026** operativ einzusetzen 
 | [Risikobewertung](/de/templates/risk-assessment) | Art. 10 Abs. 2, Annex VII Nr. 2 | Cybersecurity-Risikobewertung pro Produkt | Vor Inverkehrbringen + bei wesentlichen Änderungen |
 | [EU-Konformitätserklärung](/de/templates/eu-declaration-of-conformity) | Art. 28, Annex V | Formale Konformitätserklärung pro Produkt | Vor Inverkehrbringen + bei neuen Versionen |
 | [Nutzerinformation](/de/templates/product-security-info) | Annex II | Sicherheitshinweise für Endnutzer | Pro Produkt, aktualisiert bei Versionsänderungen |
+
+## Produkt-Compliance-Publikation
+
+| Vorlage | CRA-Referenz | Verwendung | Frequenz |
+|---------|-------------|------------|----------|
+| [CRA Compliance Statement](/de/templates/cra-compliance-statement) | Art. 13, Art. 28 | Öffentliches Compliance Statement pro Produkt | Pro Produkt, aktualisiert bei Versionsänderungen |
 
 ## Vorlagen in der Technischen Dokumentation
 
