@@ -1,6 +1,6 @@
 # CRA Compliance Documentation
 
-Vollständige Compliance-Dokumentation und CI/CD-Automatisierung für den **EU Cyber Resilience Act** (Verordnung (EU) 2024/2847) und die **NIS2-Richtlinie** (Richtlinie (EU) 2022/2555) der BAUER GROUP.
+Vollständige Compliance-Dokumentation und CI/CD-Automatisierung für den **EU Cyber Resilience Act** (Verordnung (EU) 2024/2847) der BAUER GROUP.
 
 > **Live-Dokumentation:** [cra.docs.bauer-group.com](https://cra.docs.bauer-group.com)
 >
