@@ -1,3 +1,9 @@
+## [0.3.2](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.3.1...v0.3.2) (2026-03-23)
+
+### 🐛 Bug Fixes
+
+* **deps:** resolve npm audit vulnerabilities ([0369cac](https://github.com/bauer-group/SEC-CRACompliance/commit/0369cacf9d7115724b3d922b2a806872cf45efb4))
+
 ## [0.3.1](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.3.0...v0.3.1) (2026-02-10)
 
 ### 🐛 Bug Fixes
