@@ -8,7 +8,69 @@ Das CRA Compliance Statement ist die **öffentliche Zusammenfassung** aller CRA-
 Das CRA Compliance Statement ist **kein Ersatz** für die rechtsverbindliche EU-Konformitätserklärung (Annex V). Es ist eine ergänzende, öffentlich zugängliche Darstellung, die auf alle relevanten Dokumente verweist.
 :::
 
-## 9.1.2 Pflichtinhalte
+## 9.1.2 Generierungsprinzip
+
+::: info GRUNDSATZ
+**Das maschinenlesbare JSON ist die einzige Quelle.** Alle menschenlesbaren Formate und Compliance-Artefakte werden daraus generiert — nie manuell separat gepflegt.
+:::
+
+```text
+                    ┌──────────────────────────┐
+                    │  .compliance/             │
+                    │  cra-statement.json       │
+                    │  (Single Source of Truth)  │
+                    └─────────┬────────────────┘
+                              │
+          ┌───────────────────┼───────────────────┐
+          │                   │                   │
+          ▼                   ▼                   ▼
+┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ Compliance-Seite│ │ CE-Kennzeichnung│ │ Container-Labels│
+│ (HTML/PDF)      │ │ (About-Dialog,  │ │ (OCI-Annotations│
+│ auf Portal      │ │  README, Footer)│ │  Dockerfile)    │
+└─────────────────┘ └─────────────────┘ └─────────────────┘
+          │                   │                   │
+          ▼                   ▼                   ▼
+┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ API-Endpunkt    │ │ Vereinfachte DoC│ │ Release Notes   │
+│ für Behörden    │ │ (Annex VI)      │ │ Snippet         │
+└─────────────────┘ └─────────────────┘ └─────────────────┘
+```
+
+### Generierte Artefakte
+
+| Artefakt | Generiert aus | Ziel |
+|----------|--------------|------|
+| **Compliance-Seite** (HTML/PDF) | Alle JSON-Felder | Compliance-Portal |
+| **CE-Kennzeichnung** | `manufacturer.*`, `conformity.*`, `cra_classification.notified_body` | About-Dialog, README, Footer, Dokumentation |
+| **Container-Labels** | `conformity.ce_marking`, `conformity.declaration_url`, `support_period.end_date` | Dockerfile / OCI-Annotations |
+| **Vereinfachte DoC** (Annex VI) | `manufacturer.name`, `product.*`, `conformity.declaration_url`, `support_period.*` | README, Release Notes, Verpackung |
+| **API-Response** | Vollständiges JSON | `/api/products/{name}.json` |
+| **Release-Notes-Snippet** | `conformity.*`, `support_period.*`, `security_documentation.*` | GitHub Release |
+
+### CE-Kennzeichnung aus JSON
+
+Die CE-Kennzeichnung wird aus den JSON-Feldern generiert und automatisch an den konfigurierten Stellen platziert (→ [7.7 CE-Kennzeichnung](/de/conformity/ce-marking)):
+
+```text
+Generierte CE-Kennzeichnung:
+
+  CE [1234]                              ← notified_body (falls vorhanden)
+  BAUER GROUP                            ← manufacturer.name
+  Musterstraße 1, 12345 Musterstadt     ← manufacturer.address
+  MinIO Gateway v2.1.0                   ← product.name + product.version
+```
+
+Für Container Images werden zusätzlich OCI-Labels generiert:
+
+```dockerfile
+LABEL org.opencontainers.image.ce-marking="conformant"
+LABEL eu.cra.doc.url="https://go.bauer-group.com/cra-minio-gateway"
+LABEL eu.cra.doc.version="1.0"
+LABEL eu.cra.support.end="2031-03-01"
+```
+
+## 9.1.3 Pflichtinhalte
 
 Folgende Informationen müssen gemäß CRA öffentlich zugänglich sein und werden im Statement gebündelt:
 
@@ -22,7 +84,7 @@ Folgende Informationen müssen gemäß CRA öffentlich zugänglich sein und werd
 | Annex I, Teil II, Nr. 1 | SBOM (maschinenlesbar) | → [Kapitel 2: SBOM & Signierung](/de/sbom-signing/) |
 | Annex VII | Kontaktinformationen des Herstellers | → [6.1 Produktbeschreibung](/de/technical-documentation/product-description) |
 
-## 9.1.3 Empfohlene Struktur
+## 9.1.4 Empfohlene Struktur
 
 Ein CRA Compliance Statement sollte folgende Abschnitte enthalten:
 
@@ -71,7 +133,7 @@ Links zu:
 - CVE-Monitoring-Status
 - Patch-SLAs (→ [3.3 Patch Management](/de/vulnerability-management/patch-management))
 
-## 9.1.4 Beispiel
+## 9.1.5 Beispiel
 
 So könnte ein CRA Compliance Statement für ein fiktives Produkt aussehen:
 
@@ -100,7 +162,7 @@ So könnte ein CRA Compliance Statement für ein fiktives Produkt aussehen:
 
 ---
 
-## 9.1.5 Platzierung
+## 9.1.6 Platzierung
 
 | Kanal | Format | Zielgruppe |
 |-------|--------|------------|
@@ -112,7 +174,7 @@ So könnte ein CRA Compliance Statement für ein fiktives Produkt aussehen:
 
 → Details zur Publikationsstrategie: [9.2 Publikationsstrategie](/de/product-compliance/publication-strategy)
 
-## 9.1.6 Querverweise
+## 9.1.7 Querverweise
 
 | Dokument | Link |
 |----------|------|

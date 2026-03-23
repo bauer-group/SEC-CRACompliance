@@ -8,7 +8,69 @@ The CRA Compliance Statement is the **public summary** of all CRA compliance art
 The CRA Compliance Statement is **not a replacement** for the legally binding EU Declaration of Conformity (Annex V). It is a supplementary, publicly accessible presentation that links to all relevant documents.
 :::
 
-## 9.1.2 Required Content
+## 9.1.2 Generation Principle
+
+::: info PRINCIPLE
+**The machine-readable JSON is the single source.** All human-readable formats and compliance artefacts are generated from it — never maintained separately.
+:::
+
+```text
+                    ┌──────────────────────────┐
+                    │  .compliance/             │
+                    │  cra-statement.json       │
+                    │  (Single Source of Truth)  │
+                    └─────────┬────────────────┘
+                              │
+          ┌───────────────────┼───────────────────┐
+          │                   │                   │
+          ▼                   ▼                   ▼
+┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ Compliance Page │ │ CE Marking      │ │ Container Labels│
+│ (HTML/PDF)      │ │ (About dialog,  │ │ (OCI annotations│
+│ on portal       │ │  README, footer)│ │  Dockerfile)    │
+└─────────────────┘ └─────────────────┘ └─────────────────┘
+          │                   │                   │
+          ▼                   ▼                   ▼
+┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ API endpoint    │ │ Simplified DoC  │ │ Release notes   │
+│ for authorities │ │ (Annex VI)      │ │ snippet         │
+└─────────────────┘ └─────────────────┘ └─────────────────┘
+```
+
+### Generated Artefacts
+
+| Artefact | Generated from | Target |
+|----------|---------------|--------|
+| **Compliance page** (HTML/PDF) | All JSON fields | Compliance portal |
+| **CE marking** | `manufacturer.*`, `conformity.*`, `cra_classification.notified_body` | About dialog, README, footer, documentation |
+| **Container labels** | `conformity.ce_marking`, `conformity.declaration_url`, `support_period.end_date` | Dockerfile / OCI annotations |
+| **Simplified DoC** (Annex VI) | `manufacturer.name`, `product.*`, `conformity.declaration_url`, `support_period.*` | README, release notes, packaging |
+| **API response** | Full JSON | `/api/products/{name}.json` |
+| **Release notes snippet** | `conformity.*`, `support_period.*`, `security_documentation.*` | GitHub Release |
+
+### CE Marking from JSON
+
+The CE marking is generated from JSON fields and automatically placed at the configured locations (→ [7.7 CE Marking](/en/conformity/ce-marking)):
+
+```text
+Generated CE marking:
+
+  CE [1234]                              ← notified_body (if applicable)
+  BAUER GROUP                            ← manufacturer.name
+  Musterstraße 1, 12345 Musterstadt     ← manufacturer.address
+  MinIO Gateway v2.1.0                   ← product.name + product.version
+```
+
+For container images, OCI labels are additionally generated:
+
+```dockerfile
+LABEL org.opencontainers.image.ce-marking="conformant"
+LABEL eu.cra.doc.url="https://go.bauer-group.com/cra-minio-gateway"
+LABEL eu.cra.doc.version="1.0"
+LABEL eu.cra.support.end="2031-03-01"
+```
+
+## 9.1.3 Required Content
 
 The following information must be publicly accessible under the CRA and is consolidated in the statement:
 
@@ -22,7 +84,7 @@ The following information must be publicly accessible under the CRA and is conso
 | Annex I, Part II, No. 1 | SBOM (machine-readable) | → [Chapter 2: SBOM & Signing](/en/sbom-signing/) |
 | Annex VII | Manufacturer contact information | → [6.1 Product Description](/en/technical-documentation/product-description) |
 
-## 9.1.3 Recommended Structure
+## 9.1.4 Recommended Structure
 
 A CRA Compliance Statement should contain the following sections:
 
@@ -71,7 +133,7 @@ Links to:
 - CVE monitoring status
 - Patch SLAs (→ [3.3 Patch Management](/en/vulnerability-management/patch-management))
 
-## 9.1.4 Example
+## 9.1.5 Example
 
 A CRA Compliance Statement for a fictional product might look like this:
 
@@ -100,7 +162,7 @@ A CRA Compliance Statement for a fictional product might look like this:
 
 ---
 
-## 9.1.5 Placement
+## 9.1.6 Placement
 
 | Channel | Format | Audience |
 |---------|--------|----------|
@@ -112,7 +174,7 @@ A CRA Compliance Statement for a fictional product might look like this:
 
 → Publication strategy details: [9.2 Publication Strategy](/en/product-compliance/publication-strategy)
 
-## 9.1.6 Cross-References
+## 9.1.7 Cross-References
 
 | Document | Link |
 |----------|------|

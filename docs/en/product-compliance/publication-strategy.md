@@ -10,16 +10,21 @@
 Compliance data is maintained in exactly one place — the respective product's repository. From there, it is automatically published to a central compliance website.
 
 ```text
-┌────────────────────┐     CI/CD      ┌──────────────────────────┐
-│  Product Repo      │ ──────────────→│  Compliance Portal       │
+┌────────────────────┐                ┌──────────────────────────┐
+│  Product Repo      │     CI/CD      │  Generated Artefacts     │
 │                    │                │                          │
-│  .compliance/      │  Validation    │  /products/{name}/       │
-│    cra-statement.  │  + Publish     │    → HTML rendering      │
-│    json            │                │    → PDF download        │
+│  .compliance/      │  Validation    │  ┌── Compliance Portal   │
+│    cra-statement.  │──────────────→│  │   (HTML/PDF)           │
+│    json            │  + Generation  │  ├── CE Marking          │
+│                    │                │  │   (About, README)      │
+│  (single source)   │                │  ├── Container Labels    │
+│                    │                │  │   (OCI annotations)    │
+│                    │                │  ├── Simplified DoC       │
+│                    │                │  └── API Endpoint         │
 └────────────────────┘                └──────────────────────────┘
         ↑                                       ↑
-   Developers                          Customers, authorities,
-   maintain here                       public
+   Developers maintain                 Customers, authorities,
+   only the JSON                       public
 ```
 
 ## 9.2.2 Benefits

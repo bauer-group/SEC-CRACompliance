@@ -10,16 +10,21 @@
 Compliance-Daten werden an genau einer Stelle gepflegt — im Repository des jeweiligen Produkts. Von dort werden sie automatisiert auf eine zentrale Compliance-Website publiziert.
 
 ```text
-┌────────────────────┐     CI/CD      ┌──────────────────────────┐
-│  Produkt-Repo      │ ──────────────→│  Compliance-Portal       │
+┌────────────────────┐                ┌──────────────────────────┐
+│  Produkt-Repo      │     CI/CD      │  Generierte Artefakte    │
 │                    │                │                          │
-│  .compliance/      │   Validierung  │  /products/{name}/       │
-│    cra-statement.  │   + Publish    │    → HTML-Darstellung    │
-│    json            │                │    → PDF-Download        │
+│  .compliance/      │  Validierung   │  ┌── Compliance-Portal   │
+│    cra-statement.  │──────────────→│  │   (HTML/PDF)           │
+│    json            │  + Generierung │  ├── CE-Kennzeichnung    │
+│                    │                │  │   (About, README)      │
+│  (einzige Quelle)  │                │  ├── Container-Labels    │
+│                    │                │  │   (OCI-Annotations)    │
+│                    │                │  ├── Vereinfachte DoC     │
+│                    │                │  └── API-Endpunkt         │
 └────────────────────┘                └──────────────────────────┘
         ↑                                       ↑
-   Entwickler                          Kunden, Behörden,
-   pflegen hier                        Öffentlichkeit
+   Entwickler pflegen                  Kunden, Behörden,
+   nur das JSON                        Öffentlichkeit
 ```
 
 ## 9.2.2 Vorteile
