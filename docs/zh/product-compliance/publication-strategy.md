@@ -64,7 +64,7 @@ product-repo/
 中央合规门户遵循统一的 URL 结构：
 
 ```text
-https://cra.docs.bauer-group.com/
+https://cra.app.bauer-group.com/
 ├── /products/                      # 产品目录
 │   ├── /products/{name}/           # 产品合规页面
 │   │   ├── /cra                    # CRA 合规声明

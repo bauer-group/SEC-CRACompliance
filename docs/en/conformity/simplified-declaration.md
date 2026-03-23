@@ -88,7 +88,7 @@ Contact: [E-mail]
 ## 7.9.6 Example for Container Image Label
 
 ```dockerfile
-LABEL eu.cra.doc.url="https://go.bauer-group.com/cra/doc/[product]"
+LABEL eu.cra.doc.url="https://go.bauer-group.com/cra-[product]"
 LABEL eu.cra.doc.version="1.0"
 LABEL eu.cra.support.end="2031-12-31"
 ```

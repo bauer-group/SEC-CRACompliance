@@ -15,7 +15,7 @@ This notification must be sent to ENISA / the competent national CSIRT within **
 | **Company** | BAUER GROUP |
 | **Address** | [Full postal address] |
 | **Contact Person** | [Name, Role] |
-| **Email** | <disclosure@cra.docs.bauer-group.com> |
+| **Email** | <disclosure@bauer-group.com> |
 | **Phone** | [Phone number] |
 | **Notification Date** | [YYYY-MM-DD HH:MM UTC] |
 | **Notification Reference** | [EW-YYYY-NNN] |

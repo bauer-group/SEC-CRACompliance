@@ -88,7 +88,7 @@
 ## 7.9.6 容器镜像标签示例
 
 ```dockerfile
-LABEL eu.cra.doc.url="https://go.bauer-group.com/cra/doc/[product]"
+LABEL eu.cra.doc.url="https://go.bauer-group.com/cra-[product]"
 LABEL eu.cra.doc.version="1.0"
 LABEL eu.cra.support.end="2031-12-31"
 ```

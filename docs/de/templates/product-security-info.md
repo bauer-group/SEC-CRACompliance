@@ -19,7 +19,7 @@
 | **Unternehmen** | BAUER GROUP |
 | **Anschrift** | [Vollständige Postanschrift] |
 | **E-Mail (allgemein)** | [E-Mail-Adresse] |
-| **E-Mail (Sicherheit)** | <disclosure@cra.docs.bauer-group.com> |
+| **E-Mail (Sicherheit)** | <disclosure@bauer-group.com> |
 | **Webseite** | [URL] |
 
 ### 2. Produktidentifikation
@@ -101,7 +101,7 @@ Nach Ablauf des Support-Zeitraums werden keine weiteren Sicherheitsupdates berei
 Wenn Sie eine Sicherheitslücke in diesem Produkt entdecken:
 
 1. **Bevorzugt:** GitHub Security Advisory im entsprechenden Repository
-2. **E-Mail:** <disclosure@cra.docs.bauer-group.com>
+2. **E-Mail:** <disclosure@bauer-group.com>
 3. **Details:** Siehe [Vulnerability Disclosure Policy](/de/incident-response/disclosure-policy)
 
 **Bitte melden Sie Schwachstellen nicht öffentlich**, bevor ein Fix bereitsteht.

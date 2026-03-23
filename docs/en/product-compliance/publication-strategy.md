@@ -64,7 +64,7 @@ product-repo/
 The central compliance portal follows a uniform URL structure:
 
 ```text
-https://cra.docs.bauer-group.com/
+https://cra.app.bauer-group.com/
 ├── /products/                      # Product directory
 │   ├── /products/{name}/           # Product compliance page
 │   │   ├── /cra                    # CRA Compliance Statement

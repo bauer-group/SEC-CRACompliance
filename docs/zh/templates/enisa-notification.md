@@ -23,7 +23,7 @@
 |-------|-------|
 | **公司** | BAUER GROUP |
 | **联系人** | [姓名, 职务] |
-| **电子邮件** | <disclosure@cra.docs.bauer-group.com> |
+| **电子邮件** | <disclosure@bauer-group.com> |
 | **电话** | [电话号码] |
 
 ### 3. 受影响产品（更新）

@@ -35,7 +35,7 @@ CRA 合规声明应包含以下部分：
 ### 2. 制造商信息
 
 - 公司、地址
-- 安全联系方式（如 `disclosure@cra.docs.bauer-group.com`）
+- 安全联系方式（如 `disclosure@bauer-group.com`）
 - 授权代表（如适用）
 
 ### 3. 合规状态
@@ -96,7 +96,7 @@ CRA 合规声明应包含以下部分：
 > | SECURITY.md | [链接] |
 > | 用户信息 (Annex II) | [链接] |
 > | 支持期限 | 2026-03-01 至 2031-03-01 |
-> | 漏洞披露 | `disclosure@cra.docs.bauer-group.com` |
+> | 漏洞披露 | `disclosure@bauer-group.com` |
 
 ---
 

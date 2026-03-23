@@ -19,7 +19,7 @@
 |-------|-------|
 | **Company** | BAUER GROUP |
 | **Contact Person** | [Name, Role] |
-| **Email** | <disclosure@cra.docs.bauer-group.com> |
+| **Email** | <disclosure@bauer-group.com> |
 
 ### 3. Summary
 

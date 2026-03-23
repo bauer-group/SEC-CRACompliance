@@ -39,7 +39,7 @@ Web:          [Product URL]
 **Implementation at BAUER GROUP:**
 
 - SECURITY.md in every repository ([Template](/en/SECURITY))
-- Contact: `disclosure@cra.docs.bauer-group.com`
+- Contact: `disclosure@bauer-group.com`
 - GitHub Security Advisories enabled
 - Reference to [Disclosure Policy](/en/incident-response/disclosure-policy)
 

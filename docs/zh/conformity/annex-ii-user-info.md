@@ -39,7 +39,7 @@ CRA 的 Annex II 定义了制造商必须向产品用户提供的强制性信息
 **BAUER GROUP 的实施方式：**
 
 - 每个仓库中的 SECURITY.md（[模板](/zh/SECURITY)）
-- 联系方式：`disclosure@cra.docs.bauer-group.com`
+- 联系方式：`disclosure@bauer-group.com`
 - 已启用 GitHub Security Advisories
 - 引用[披露策略](/zh/incident-response/disclosure-policy)
 

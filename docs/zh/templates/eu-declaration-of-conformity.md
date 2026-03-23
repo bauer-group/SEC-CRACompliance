@@ -26,7 +26,7 @@
 |-------|-------|
 | 公司 | BAUER GROUP |
 | 地址 | [完整邮寄地址] |
-| 电子邮件 | <disclosure@cra.docs.bauer-group.com> |
+| 电子邮件 | <disclosure@bauer-group.com> |
 | 网站 | [URL] |
 | **授权代表**（如适用） | [姓名, 地址] 或 "不适用" |
 
@@ -63,7 +63,7 @@
 | CRA 产品类别 | [标准 / Class I / Class II / 关键] |
 | 合规性评估程序 | [Module A / Module B+C / Module H / EUCC] |
 | SBOM 可用 | [是 -- CycloneDX JSON] |
-| 漏洞报告 | <disclosure@cra.docs.bauer-group.com> / GitHub Security Advisories |
+| 漏洞报告 | <disclosure@bauer-group.com> / GitHub Security Advisories |
 
 **9. 支持期限：**
 

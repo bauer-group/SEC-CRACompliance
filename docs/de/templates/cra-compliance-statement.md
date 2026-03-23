@@ -37,7 +37,7 @@ Platzhalter in eckigen Klammern `[...]` sind durch die tatsächlichen Werte zu e
 |------|------|
 | Unternehmen | BAUER GROUP |
 | Anschrift | [Vollständige Postanschrift] |
-| Sicherheitskontakt | <disclosure@cra.docs.bauer-group.com> |
+| Sicherheitskontakt | <disclosure@bauer-group.com> |
 | Webseite | [URL] |
 | Bevollmächtigter (falls zutreffend) | [Name, Anschrift] oder „Entfällt" |
 
@@ -83,7 +83,7 @@ Platzhalter in eckigen Klammern `[...]` sind durch die tatsächlichen Werte zu e
 | Feld | Wert |
 |------|------|
 | Vulnerability Disclosure Policy | [URL zur SECURITY.md] |
-| Meldekontakt | <disclosure@cra.docs.bauer-group.com> |
+| Meldekontakt | <disclosure@bauer-group.com> |
 | CVE-Monitoring | [Automatisiert (täglich) / Manuell] |
 | Patch-SLAs | [Kritisch: 48h / Hoch: 7d / Mittel: 30d / Niedrig: 90d] |
 | ENISA-Meldepflicht | [Ja, gemäß Art. 14 CRA] |

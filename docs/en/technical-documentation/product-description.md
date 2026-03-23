@@ -16,7 +16,7 @@ This template is completed individually for each CRA-relevant product. Copy this
 | **Product Type** | [Software / Firmware / Container Image / Embedded System] |
 | **Current Version** | [Version number] |
 | **Manufacturer** | BAUER GROUP |
-| **Contact** | <disclosure@cra.docs.bauer-group.com> |
+| **Contact** | <disclosure@bauer-group.com> |
 | **Created on** | [Date] |
 | **Last Updated** | [Date] |
 

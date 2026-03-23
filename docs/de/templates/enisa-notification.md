@@ -23,7 +23,7 @@ Diese Meldung muss innerhalb von **72 Stunden** nach Kenntnisnahme an ENISA / di
 |------|------|
 | **Unternehmen** | BAUER GROUP |
 | **Kontaktperson** | [Name, Funktion] |
-| **E-Mail** | <disclosure@cra.docs.bauer-group.com> |
+| **E-Mail** | <disclosure@bauer-group.com> |
 | **Telefon** | [Telefonnummer] |
 
 ### 3. Betroffenes Produkt (aktualisiert)

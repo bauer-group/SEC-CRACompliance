@@ -64,7 +64,7 @@ Please update to version [X.Y.Z].
 
 Details: [Link to Security Advisory]
 
-For questions, please contact: disclosure@cra.docs.bauer-group.com
+For questions, please contact: disclosure@bauer-group.com
 ```
 
 ## 4.4.4 Escalation Paths

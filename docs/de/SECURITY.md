@@ -10,7 +10,7 @@ For each affected repository, use **Security → Advisories → New Draft Adviso
 
 ### Email
 
-**Email:** <disclosure@cra.docs.bauer-group.com>
+**Email:** <disclosure@bauer-group.com>
 
 Please include:
 

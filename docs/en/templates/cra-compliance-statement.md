@@ -37,7 +37,7 @@ Placeholders in square brackets `[...]` shall be replaced with the actual values
 |-------|-------|
 | Company | BAUER GROUP |
 | Address | [Full postal address] |
-| Security contact | <disclosure@cra.docs.bauer-group.com> |
+| Security contact | <disclosure@bauer-group.com> |
 | Website | [URL] |
 | Authorised representative (if applicable) | [Name, address] or "Not applicable" |
 
@@ -83,7 +83,7 @@ Placeholders in square brackets `[...]` shall be replaced with the actual values
 | Field | Value |
 |-------|-------|
 | Vulnerability Disclosure Policy | [URL to SECURITY.md] |
-| Reporting contact | <disclosure@cra.docs.bauer-group.com> |
+| Reporting contact | <disclosure@bauer-group.com> |
 | CVE monitoring | [Automated (daily) / Manual] |
 | Patch SLAs | [Critical: 48h / High: 7d / Medium: 30d / Low: 90d] |
 | ENISA reporting obligation | [Yes, pursuant to Art. 14 CRA] |

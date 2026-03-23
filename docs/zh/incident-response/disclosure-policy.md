@@ -32,7 +32,7 @@
 
 ### 2. 电子邮件
 
-**地址：** <disclosure@cra.docs.bauer-group.com>
+**地址：** <disclosure@bauer-group.com>
 
 - 加密：PGP 密钥在代码仓库中（`SECURITY.md`）
 - 语言：德语或英语

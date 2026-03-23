@@ -64,7 +64,7 @@ Bitte aktualisieren Sie auf Version [X.Y.Z].
 
 Details: [Link zum Security Advisory]
 
-Bei Fragen wenden Sie sich an: disclosure@cra.docs.bauer-group.com
+Bei Fragen wenden Sie sich an: disclosure@bauer-group.com
 ```
 
 ## 4.4.4 Eskalationspfade

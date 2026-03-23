@@ -16,7 +16,7 @@
 | **产品类型** | [软件 / 固件 / 容器镜像 / 嵌入式系统] |
 | **当前版本** | [版本号] |
 | **制造商** | BAUER GROUP |
-| **联系方式** | <disclosure@cra.docs.bauer-group.com> |
+| **联系方式** | <disclosure@bauer-group.com> |
 | **创建日期** | [日期] |
 | **最后更新** | [日期] |
 

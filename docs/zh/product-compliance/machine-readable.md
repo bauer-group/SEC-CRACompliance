@@ -19,13 +19,13 @@ CRA 合规声明遵循已定义的 JSON Schema：
 
 ```json
 {
-  "$schema": "https://cra.docs.bauer-group.com/schemas/cra-statement/v1.json",
+  "$schema": "https://cra.app.bauer-group.com/schemas/cra-statement/v1.json",
   "schema_version": "1.0.0",
 
   "manufacturer": {
     "name": "BAUER GROUP",
     "address": "[完整邮寄地址]",
-    "contact_email": "disclosure@cra.docs.bauer-group.com",
+    "contact_email": "disclosure@bauer-group.com",
     "website": "[URL]"
   },
 
@@ -57,7 +57,7 @@ CRA 合规声明遵循已定义的 JSON Schema：
     "sbom_version": "1.5",
     "security_policy_url": "[SECURITY.md 的 URL]",
     "user_info_url": "[用户信息 (Annex II) 的 URL]",
-    "disclosure_contact": "disclosure@cra.docs.bauer-group.com"
+    "disclosure_contact": "disclosure@bauer-group.com"
   },
 
   "support_period": {
@@ -152,13 +152,13 @@ CRA 合规声明遵循已定义的 JSON Schema：
 
 ```json
 {
-  "$schema": "https://cra.docs.bauer-group.com/schemas/cra-statement/v1.json",
+  "$schema": "https://cra.app.bauer-group.com/schemas/cra-statement/v1.json",
   "schema_version": "1.0.0",
 
   "manufacturer": {
     "name": "BAUER GROUP",
     "address": "Musterstraße 1, 12345 Musterstadt, Deutschland",
-    "contact_email": "disclosure@cra.docs.bauer-group.com",
+    "contact_email": "disclosure@bauer-group.com",
     "website": "https://www.bauer-group.com"
   },
 
@@ -177,7 +177,7 @@ CRA 合规声明遵循已定义的 JSON Schema：
   },
 
   "conformity": {
-    "declaration_url": "https://cra.docs.bauer-group.com/products/minio-gateway/doc",
+    "declaration_url": "https://cra.app.bauer-group.com/products/minio-gateway/doc",
     "declaration_date": "2026-03-01",
     "ce_marking": true,
     "ce_marking_placement": "about_dialog",
@@ -189,8 +189,8 @@ CRA 合规声明遵循已定义的 JSON Schema：
     "sbom_format": "CycloneDX",
     "sbom_version": "1.5",
     "security_policy_url": "https://github.com/bauer-group/minio-gateway/blob/main/SECURITY.md",
-    "user_info_url": "https://cra.docs.bauer-group.com/products/minio-gateway/user-info",
-    "disclosure_contact": "disclosure@cra.docs.bauer-group.com"
+    "user_info_url": "https://cra.app.bauer-group.com/products/minio-gateway/user-info",
+    "disclosure_contact": "disclosure@bauer-group.com"
   },
 
   "support_period": {

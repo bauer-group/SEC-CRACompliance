@@ -37,7 +37,7 @@
 |------|-----|
 | 公司 | BAUER GROUP |
 | 地址 | [完整邮寄地址] |
-| 安全联系方式 | <disclosure@cra.docs.bauer-group.com> |
+| 安全联系方式 | <disclosure@bauer-group.com> |
 | 网站 | [URL] |
 | 授权代表（如适用） | [姓名、地址] 或"不适用" |
 
@@ -83,7 +83,7 @@
 | 字段 | 值 |
 |------|-----|
 | 漏洞披露政策 | [SECURITY.md 的 URL] |
-| 报告联系方式 | <disclosure@cra.docs.bauer-group.com> |
+| 报告联系方式 | <disclosure@bauer-group.com> |
 | CVE 监控 | [自动化（每日） / 手动] |
 | 补丁 SLA | [关键：48小时 / 高：7天 / 中：30天 / 低：90天] |
 | ENISA 报告义务 | [是，根据 Art. 14 CRA] |

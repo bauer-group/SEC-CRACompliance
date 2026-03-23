@@ -19,7 +19,7 @@
 | **公司** | BAUER GROUP |
 | **地址** | [完整邮寄地址] |
 | **电子邮件（一般）** | [电子邮件地址] |
-| **电子邮件（安全）** | <disclosure@cra.docs.bauer-group.com> |
+| **电子邮件（安全）** | <disclosure@bauer-group.com> |
 | **网站** | [URL] |
 
 ### 2. 产品标识
@@ -101,7 +101,7 @@
 如果您在本产品中发现安全漏洞：
 
 1. **首选方式：** 在对应仓库中提交 GitHub Security Advisory
-2. **电子邮件：** <disclosure@cra.docs.bauer-group.com>
+2. **电子邮件：** <disclosure@bauer-group.com>
 3. **详情：** 参见[漏洞披露政策](/zh/incident-response/disclosure-policy)
 
 **请勿公开披露漏洞**，直到修复可用为止。

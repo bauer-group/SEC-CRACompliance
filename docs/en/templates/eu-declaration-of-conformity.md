@@ -26,7 +26,7 @@
 |-------|-------|
 | Company | BAUER GROUP |
 | Address | [Full postal address] |
-| Email | <disclosure@cra.docs.bauer-group.com> |
+| Email | <disclosure@bauer-group.com> |
 | Website | [URL] |
 | **Authorised Representative** (if applicable) | [Name, Address] or "Not applicable" |
 
@@ -63,7 +63,7 @@
 | CRA Product Category | [Standard / Class I / Class II / Critical] |
 | Conformity Assessment Procedure | [Module A / Module B+C / Module H / EUCC] |
 | SBOM available | [Yes -- CycloneDX JSON] |
-| Vulnerability reporting | <disclosure@cra.docs.bauer-group.com> / GitHub Security Advisories |
+| Vulnerability reporting | <disclosure@bauer-group.com> / GitHub Security Advisories |
 
 **9. Support Period:**
 

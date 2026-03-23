@@ -63,7 +63,7 @@ CVE：[CVE-ID]
 
 详情：[安全公告链接]
 
-如有疑问，请联系：disclosure@cra.docs.bauer-group.com
+如有疑问，请联系：disclosure@bauer-group.com
 ```
 
 ## 4.4.4 升级路径

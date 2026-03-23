@@ -19,7 +19,7 @@
 | **Company** | BAUER GROUP |
 | **Address** | [Full postal address] |
 | **Email (general)** | [Email address] |
-| **Email (security)** | <disclosure@cra.docs.bauer-group.com> |
+| **Email (security)** | <disclosure@bauer-group.com> |
 | **Website** | [URL] |
 
 ### 2. Product Identification
@@ -101,7 +101,7 @@ After the support period expires, no further security updates will be provided. 
 If you discover a security vulnerability in this product:
 
 1. **Preferred:** GitHub Security Advisory in the corresponding repository
-2. **Email:** <disclosure@cra.docs.bauer-group.com>
+2. **Email:** <disclosure@bauer-group.com>
 3. **Details:** See [Vulnerability Disclosure Policy](/en/incident-response/disclosure-policy)
 
 **Please do not disclose vulnerabilities publicly** until a fix is available.

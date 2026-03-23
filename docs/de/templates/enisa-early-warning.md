@@ -15,7 +15,7 @@ Diese Meldung muss innerhalb von **24 Stunden** nach Kenntnisnahme einer aktiv a
 | **Unternehmen** | BAUER GROUP |
 | **Anschrift** | [Vollständige Postanschrift] |
 | **Kontaktperson** | [Name, Funktion] |
-| **E-Mail** | <disclosure@cra.docs.bauer-group.com> |
+| **E-Mail** | <disclosure@bauer-group.com> |
 | **Telefon** | [Telefonnummer] |
 | **Meldedatum** | [YYYY-MM-DD HH:MM UTC] |
 | **Melde-Referenz** | [EW-YYYY-NNN] |

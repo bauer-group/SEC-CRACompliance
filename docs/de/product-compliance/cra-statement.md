@@ -35,7 +35,7 @@ Ein CRA Compliance Statement sollte folgende Abschnitte enthalten:
 ### 2. Herstellerangaben
 
 - Unternehmen, Anschrift
-- Sicherheitskontakt (z.B. `disclosure@cra.docs.bauer-group.com`)
+- Sicherheitskontakt (z.B. `disclosure@bauer-group.com`)
 - Bevollmächtigter (falls zutreffend)
 
 ### 3. Konformitätsstatus
@@ -96,7 +96,7 @@ So könnte ein CRA Compliance Statement für ein fiktives Produkt aussehen:
 > | SECURITY.md | [Link] |
 > | Nutzerinformation (Annex II) | [Link] |
 > | Support-Zeitraum | 2026-03-01 bis 2031-03-01 |
-> | Vulnerability Disclosure | `disclosure@cra.docs.bauer-group.com` |
+> | Vulnerability Disclosure | `disclosure@bauer-group.com` |
 
 ---
 

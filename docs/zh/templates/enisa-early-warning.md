@@ -15,7 +15,7 @@
 | **公司** | BAUER GROUP |
 | **地址** | [完整邮寄地址] |
 | **联系人** | [姓名, 职务] |
-| **电子邮件** | <disclosure@cra.docs.bauer-group.com> |
+| **电子邮件** | <disclosure@bauer-group.com> |
 | **电话** | [电话号码] |
 | **通知日期** | [YYYY-MM-DD HH:MM UTC] |
 | **通知参考号** | [EW-YYYY-NNN] |

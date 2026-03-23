@@ -32,7 +32,7 @@ Vorteile:
 
 ### 2. E-Mail
 
-**Adresse:** <disclosure@cra.docs.bauer-group.com>
+**Adresse:** <disclosure@bauer-group.com>
 
 - Verschlüsselung: PGP-Schlüssel im Repository (`SECURITY.md`)
 - Sprache: Deutsch oder Englisch
