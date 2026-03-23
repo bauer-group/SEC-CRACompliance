@@ -48,6 +48,7 @@ Ein CRA Compliance Statement sollte folgende Abschnitte enthalten:
 ### 4. Sicherheitsdokumentation
 
 Links zu:
+
 - SBOM (CycloneDX JSON)
 - Vulnerability Disclosure Policy / SECURITY.md
 - Nutzerinformation (Annex II)

@@ -48,6 +48,7 @@ CRA 合规声明应包含以下部分：
 ### 4. 安全文档
 
 链接至：
+
 - SBOM (CycloneDX JSON)
 - 漏洞披露政策 / SECURITY.md
 - 用户信息 (Annex II)
