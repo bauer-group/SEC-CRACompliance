@@ -32,3 +32,7 @@ Securing the software supply chain is a core CRA requirement. Manufacturers must
 | **5.2** | [Base Image Policy](/en/supply-chain/base-image-policy) | Docker base image management |
 | **5.3** | [Third-Party Assessment](/en/supply-chain/third-party-assessment) | Assessment of third-party components |
 | **5.4** | [Economic Operator Identification (Art. 21)](/en/supply-chain/economic-operator-identification) | Supply chain traceability |
+
+::: tip NIS2 Synergy
+IT service provider and infrastructure vendor assessment is described in the [NIS2 Compliance Documentation](https://nis2.docs.bauer-group.com/en/supply-chain/). CRA focuses on software supply chain, NIS2 on service provider assessment.
+:::

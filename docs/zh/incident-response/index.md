@@ -26,3 +26,7 @@
 | **4.2** | [漏洞披露政策](/zh/incident-response/disclosure-policy) — 依据 ISO 29147 的协调漏洞披露 (CVD) | Art. 13(6) |
 | **4.3** | [ENISA 报告流程](/zh/incident-response/enisa-reporting) — 期限、程序、文档记录 | Art. 14(1)-(3) |
 | **4.4** | [沟通计划](/zh/incident-response/communication) — 内部/外部沟通渠道 | Art. 14(8) |
+
+::: tip NIS2协同效应
+运营事件响应流程和BSI报告义务（§32 BSIG）在[NIS2合规文档](https://nis2.docs.bauer-group.com/zh/incident-management/)中描述。产品漏洞通过此CRA流程报告，运营事件通过NIS2流程报告。
+:::

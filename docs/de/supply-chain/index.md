@@ -32,3 +32,7 @@ Die Absicherung der Software-Lieferkette ist eine zentrale CRA-Anforderung. Hers
 | **5.2** | [Base Image Policy](/de/supply-chain/base-image-policy) | Docker Base-Image-Verwaltung |
 | **5.3** | [Third-Party Assessment](/de/supply-chain/third-party-assessment) | Bewertung von Drittkomponenten |
 | **5.4** | [Wirtschaftsakteur-Identifizierung (Art. 21)](/de/supply-chain/economic-operator-identification) | Rückverfolgbarkeit in der Lieferkette |
+
+::: tip NIS2-Synergie
+Die Bewertung von IT-Dienstleistern und Infrastrukturanbietern ist in der [NIS2-Compliance-Dokumentation](https://nis2.docs.bauer-group.com/de/supply-chain/) beschrieben. CRA fokussiert auf die Software-Supply-Chain, NIS2 auf Dienstleisterbewertung.
+:::

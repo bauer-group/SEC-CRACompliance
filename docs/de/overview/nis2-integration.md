@@ -4,6 +4,8 @@
 
 Der Cyber Resilience Act (CRA) und die NIS2-Richtlinie (Richtlinie (EU) 2022/2555) sind komplementäre EU-Regulierungen zur Cybersicherheit. Während der CRA **Produkte** reguliert, betrifft NIS2 **Betreiber** (wesentliche und wichtige Einrichtungen). Unternehmen wie BAUER GROUP können beiden Regulierungen gleichzeitig unterliegen.
 
+> Die vollständige NIS2-Compliance-Dokumentation der BAUER GROUP ist verfügbar unter [nis2.docs.bauer-group.com](https://nis2.docs.bauer-group.com).
+
 ::: info RECHTSGRUNDLAGE
 **CRA Erwägungsgrund 20:** Der CRA ergänzt die NIS2-Richtlinie und ist kohärent mit deren Anforderungen. Produkte, die den CRA-Anforderungen entsprechen, tragen zur Einhaltung der NIS2-Anforderungen durch deren Betreiber bei.
 
@@ -145,4 +147,8 @@ Für Unternehmen, die beiden Regulierungen unterliegen:
 
 ::: tip EMPFEHLUNG
 Beginnen Sie mit der NIS2-Compliance (bereits anwendbar) und nutzen Sie die implementierten Prozesse als Grundlage für die CRA-Compliance (ab 2027). So vermeiden Sie Doppelarbeit und schaffen ein integriertes Compliance-Framework.
+:::
+
+::: tip AI-Act-Bezug
+Für KI-gestützte Produkte gelten zusätzlich die Anforderungen des AI Act (Verordnung (EU) 2024/1689). Die vollständige Dokumentation ist verfügbar unter [ai-act.docs.bauer-group.com](https://ai-act.docs.bauer-group.com).
 :::

@@ -26,3 +26,7 @@ Die Meldepflichten gemäß Art. 14 CRA treten am 11. September 2026 in Kraft. Ab
 | **4.2** | [Vulnerability Disclosure Policy](/de/incident-response/disclosure-policy) – CVD nach ISO 29147 | Art. 13 Abs. 6 |
 | **4.3** | [ENISA-Meldeprozess](/de/incident-response/enisa-reporting) – Fristen, Ablauf, Dokumentation | Art. 14 Abs. 1-3 |
 | **4.4** | [Kommunikationsplan](/de/incident-response/communication) – Interne/externe Kommunikationswege | Art. 14 Abs. 8 |
+
+::: tip NIS2-Synergie
+Der betriebsbezogene Incident-Response-Prozess und die BSI-Meldepflichten (§32 BSIG) sind in der [NIS2-Compliance-Dokumentation](https://nis2.docs.bauer-group.com/de/incident-management/) beschrieben. Produktschwachstellen werden über diesen CRA-Prozess gemeldet, betriebliche Vorfälle über den NIS2-Prozess.
+:::

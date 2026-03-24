@@ -32,3 +32,7 @@
 | **5.2** | [基础镜像政策](/zh/supply-chain/base-image-policy) | Docker 基础镜像管理 |
 | **5.3** | [第三方评估](/zh/supply-chain/third-party-assessment) | 第三方组件评估 |
 | **5.4** | [经济运营者识别 (Art. 21)](/zh/supply-chain/economic-operator-identification) | 供应链可追溯性 |
+
+::: tip NIS2协同效应
+IT服务提供商和基础设施供应商评估在[NIS2合规文档](https://nis2.docs.bauer-group.com/zh/supply-chain/)中描述。CRA侧重于软件供应链，NIS2侧重于服务提供商评估。
+:::

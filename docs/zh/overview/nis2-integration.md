@@ -4,6 +4,8 @@
 
 网络弹性法案 (CRA) 和 NIS2 指令（指令 (EU) 2022/2555）是互补的欧盟网络安全法规。CRA 规范**产品**，而 NIS2 涉及**运营方**（关键和重要实体）。像 BAUER GROUP 这样的公司可能同时受两项法规的约束。
 
+> BAUER GROUP 的完整NIS2合规文档请访问 [nis2.docs.bauer-group.com](https://nis2.docs.bauer-group.com)。
+
 ::: info 法律依据
 **CRA 序言第20条：** CRA 补充 NIS2 指令，并与其要求保持一致。符合 CRA 要求的产品有助于其运营方满足 NIS2 要求。
 
@@ -145,4 +147,8 @@ BAUER GROUP 是否为关键或重要实体？
 
 ::: tip 建议
 从 NIS2 合规开始（已经适用），并将已实施的流程作为 CRA 合规（自2027年起）的基础。这样可以避免重复工作，并创建一个综合合规框架。
+:::
+
+::: tip AI法案参考
+对于AI驱动的产品，还适用AI法案（法规 (EU) 2024/1689）的额外要求。完整文档请访问 [ai-act.docs.bauer-group.com](https://ai-act.docs.bauer-group.com)。
 :::

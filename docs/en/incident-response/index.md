@@ -26,3 +26,7 @@ The reporting obligations pursuant to Art. 14 CRA enter into force on 11 Septemb
 | **4.2** | [Vulnerability Disclosure Policy](/en/incident-response/disclosure-policy) – CVD per ISO 29147 | Art. 13(6) |
 | **4.3** | [ENISA Reporting Process](/en/incident-response/enisa-reporting) – Deadlines, procedure, documentation | Art. 14(1)-(3) |
 | **4.4** | [Communication Plan](/en/incident-response/communication) – Internal/external communication channels | Art. 14(8) |
+
+::: tip NIS2 Synergy
+The operational incident response process and BSI reporting obligations (§32 BSIG) are described in the [NIS2 Compliance Documentation](https://nis2.docs.bauer-group.com/en/incident-management/). Product vulnerabilities are reported via this CRA process, operational incidents via the NIS2 process.
+:::
