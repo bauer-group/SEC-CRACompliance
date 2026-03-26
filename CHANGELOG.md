@@ -1,3 +1,9 @@
+## [0.8.5](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.8.4...v0.8.5) (2026-03-26)
+
+### 🐛 Bug Fixes
+
+* **seo:** add hreflang to RSS auto-discovery link tags ([db24a88](https://github.com/bauer-group/SEC-CRACompliance/commit/db24a88db2773faa6f857fccaccc5ccafc696ba5))
+
 ## [0.8.4](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.8.3...v0.8.4) (2026-03-26)
 
 ### 🐛 Bug Fixes
