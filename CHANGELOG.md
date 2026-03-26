@@ -1,3 +1,9 @@
+## [0.8.2](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.8.1...v0.8.2) (2026-03-26)
+
+### 🐛 Bug Fixes
+
+* **config:** remove RSS icon from socialLinks (not locale-aware) ([5af41b4](https://github.com/bauer-group/SEC-CRACompliance/commit/5af41b4bf994a96cd756333a4cf604d19d30510c))
+
 ## [0.8.1](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.8.0...v0.8.1) (2026-03-26)
 
 ### 🐛 Bug Fixes
