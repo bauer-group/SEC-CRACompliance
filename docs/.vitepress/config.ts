@@ -8,6 +8,9 @@ export default defineConfig({
   titleTemplate: ':title | BAUER GROUP',
   lastUpdated: true,
   cleanUrls: true,
+  sitemap: {
+    hostname: 'https://cra.docs.bauer-group.com',
+  },
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
