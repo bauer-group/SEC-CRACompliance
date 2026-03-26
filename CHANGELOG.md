@@ -1,3 +1,9 @@
+## [0.8.1](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.8.0...v0.8.1) (2026-03-26)
+
+### 🐛 Bug Fixes
+
+* **config:** prevent RSS plugin from replacing socialLinks ([def1e32](https://github.com/bauer-group/SEC-CRACompliance/commit/def1e32bff44cf404f9dbdf77767f7a7fd6e4fc5))
+
 ## [0.8.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.7.0...v0.8.0) (2026-03-26)
 
 ### 🚀 Features
