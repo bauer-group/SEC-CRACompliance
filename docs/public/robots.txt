@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cra.docs.bauer-group.com/sitemap.xml

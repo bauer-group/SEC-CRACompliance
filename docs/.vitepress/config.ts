@@ -1,7 +1,10 @@
 import { defineConfig } from 'vitepress'
+import { RssPlugin } from 'vitepress-plugin-rss'
 import { de } from './locales/de'
 import { en } from './locales/en'
 import { zh } from './locales/zh'
+
+const baseUrl = 'https://cra.docs.bauer-group.com'
 
 export default defineConfig({
   title: 'CRA Compliance',
@@ -12,7 +15,28 @@ export default defineConfig({
     image: { lazyLoading: true },
   },
   sitemap: {
-    hostname: 'https://cra.docs.bauer-group.com',
+    hostname: baseUrl,
+  },
+  vite: {
+    plugins: [
+      RssPlugin({
+        title: 'CRA Compliance – BAUER GROUP',
+        baseUrl,
+        copyright: `© ${new Date().getFullYear()} BAUER GROUP`,
+        description: 'Cyber Resilience Act – Compliance Documentation Updates',
+        language: 'en',
+        author: { name: 'BAUER GROUP', link: baseUrl },
+        icon: true,
+        ignoreHome: true,
+        ignorePublish: true,
+        log: true,
+        locales: {
+          en: { filename: 'feed-en.xml', language: 'en' },
+          de: { filename: 'feed-de.xml', language: 'de' },
+          zh: { filename: 'feed-zh.xml', language: 'zh' },
+        },
+      }),
+    ],
   },
 
   head: [
