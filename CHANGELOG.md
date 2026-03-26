@@ -1,3 +1,9 @@
+## [0.8.4](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.8.3...v0.8.4) (2026-03-26)
+
+### 🐛 Bug Fixes
+
+* **rss:** implement per-locale feeds via URL filter ([e81100b](https://github.com/bauer-group/SEC-CRACompliance/commit/e81100b30579225926948d0adab81129a62abb55))
+
 ## [0.8.3](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.8.2...v0.8.3) (2026-03-26)
 
 ### 🐛 Bug Fixes
