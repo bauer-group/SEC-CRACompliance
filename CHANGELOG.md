@@ -1,3 +1,9 @@
+## [0.8.3](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.8.2...v0.8.3) (2026-03-26)
+
+### 🐛 Bug Fixes
+
+* **rss:** simplify to single feed.xml with auto-discovery ([30c502b](https://github.com/bauer-group/SEC-CRACompliance/commit/30c502b2355dfb9be4a7de649ea8fbf5f9a2c3d7))
+
 ## [0.8.2](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.8.1...v0.8.2) (2026-03-26)
 
 ### 🐛 Bug Fixes
