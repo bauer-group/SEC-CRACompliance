@@ -1,3 +1,9 @@
+## [0.5.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.4.0...v0.5.0) (2026-03-26)
+
+### 🚀 Features
+
+* **theme:** add print stylesheet for audit-ready documentation output ([3b0050b](https://github.com/bauer-group/SEC-CRACompliance/commit/3b0050b0038c5221d651feafe66d05c47f8346df))
+
 ## [0.4.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.3.2...v0.4.0) (2026-03-26)
 
 ### 🚀 Features
