@@ -26,20 +26,17 @@ export default defineConfig({
         description: 'Cyber Resilience Act – Compliance Documentation Updates',
         language: 'en',
         author: { name: 'BAUER GROUP', link: baseUrl },
+        filename: 'feed.xml',
         icon: false,
         ignoreHome: true,
         ignorePublish: true,
         log: true,
-        locales: {
-          en: { filename: 'feed-en.xml', language: 'en' },
-          de: { filename: 'feed-de.xml', language: 'de' },
-          zh: { filename: 'feed-zh.xml', language: 'zh' },
-        },
       }),
     ],
   },
 
   head: [
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: 'CRA Compliance – BAUER GROUP', href: `${baseUrl}/feed.xml` }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
     ['meta', { name: 'theme-color', content: '#FF8500' }],
     ['meta', { name: 'og:type', content: 'website' }],
