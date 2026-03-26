@@ -92,6 +92,14 @@ Die Mehrheit der Produkte fällt in diese Kategorie. Der Hersteller führt die K
 
 *\* Nur bei Anwendung harmonisierter Normen oder bei Konformität mit EU-Cybersicherheitszertifizierung*
 
+::: tip AI-Act-Synergie
+Produkte, die in **Annex III des AI Act** als Hochrisiko-KI-Systeme gelistet sind, können auch in CRA Annex III erscheinen (z.B. IACS, Sicherheitskomponenten). Wenn ein Produkt unter beide Verordnungen fällt, gilt die **strengere Konformitätsbewertung**. Stimmen Sie Klassifizierungsentscheidungen zwischen CRA- und AI-Act-Teams ab.
+:::
+
+::: tip Scope-Checker
+Nutzen Sie den interaktiven [Scope-Checker](/de/overview/scope-checker), um den vollständigen Klassifizierungsprozess Schritt für Schritt durchzugehen, einschließlich Aufwandsschätzungen pro Produktklasse.
+:::
+
 ## 7.1.5 Relevante Produkttypen für BAUER GROUP
 
 ### Prüfung gegen Annex III (Wichtige Produkte)

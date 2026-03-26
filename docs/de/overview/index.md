@@ -57,6 +57,14 @@ Der CRA verfolgt zwei Kernziele:
 
 Der CRA ergänzt die **NIS2-Richtlinie** (Richtlinie (EU) 2022/2555). Während NIS2 die Cybersicherheit von Betreibern wesentlicher und wichtiger Einrichtungen regelt, adressiert der CRA die Sicherheit der von diesen Einrichtungen eingesetzten **Produkte**. Die Meldepflichten des CRA (Art. 14) sind an die NIS2-Meldepflichten (Art. 23 NIS2) angelehnt und laufen über die gleiche ENISA-Meldeplattform.
 
+::: tip AI-Act-Synergie
+Produkte mit KI-Komponenten müssen **sowohl** den CRA als auch den [EU AI Act (Verordnung 2024/1689)](/de/overview/nis2-integration) einhalten. Der CRA deckt die Cybersicherheit des Produkts ab; der AI Act deckt Sicherheit, Transparenz und Grundrechte ab. Art. 8(2) AI Act erlaubt die Integration der CRA-Compliance-Aktivitäten in den AI-Act-Konformitätsprozess.
+:::
+
+::: danger Hier starten
+Unsicher, ob der CRA auf Ihr Produkt anwendbar ist? Nutzen Sie den **[Scope-Checker](/de/overview/scope-checker)** für eine interaktive Entscheidungshilfe — von der Anwendbarkeit über die Produktklassifizierung bis zum richtigen Konformitätsweg.
+:::
+
 ## Geltungsbereich
 
 Gemäß Art. 2 CRA gilt diese Verordnung für **Produkte mit digitalen Elementen**, deren bestimmungsgemäße oder vernünftigerweise vorhersehbare Verwendung eine direkte oder indirekte logische oder physische Datenverbindung mit einem Gerät oder Netzwerk umfasst.

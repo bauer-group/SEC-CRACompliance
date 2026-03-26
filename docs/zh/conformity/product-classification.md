@@ -92,6 +92,14 @@
 
 *\* 仅在适用协调标准或符合 EU 网络安全认证时*
 
+::: tip AI Act 协同
+在 **AI Act Annex III** 中列为高风险 AI 系统的产品也可能出现在 CRA Annex III 中（如 IACS、安全组件）。当产品同时受两部法规约束时，适用**更严格的合规评估**。请协调 CRA 和 AI Act 团队之间的分类决策。
+:::
+
+::: tip 适用性检查
+使用交互式[适用性检查](/zh/overview/scope-checker)逐步完成完整分类流程，包括各产品类别的工作量估算。
+:::
+
 ## 7.1.5 BAUER GROUP 的相关产品类型
 
 ### 对照 Annex III（重要产品）审查

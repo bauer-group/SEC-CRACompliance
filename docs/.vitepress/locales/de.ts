@@ -65,6 +65,7 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           text: 'Kapitel 1: Einführung',
           items: [
             { text: 'CRA-Übersicht', link: '/de/overview/' },
+            { text: '🔍 Scope-Checker', link: '/de/overview/scope-checker' },
             { text: '1.1 Geltungsbereich', link: '/de/overview/scope' },
             { text: '1.2 Rollen & Verantwortlichkeiten', link: '/de/overview/responsibilities' },
             { text: '1.3 Fristen & Zeitplan', link: '/de/overview/timeline' },
@@ -72,6 +73,7 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: 'Wirtschaftsakteure',
+          collapsed: true,
           items: [
             { text: '1.4 Importeur-Pflichten (Art. 15)', link: '/de/overview/importer-obligations' },
             { text: '1.5 Bevollmächtigter (Art. 16)', link: '/de/overview/authorised-representative' },
@@ -82,6 +84,7 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: 'Durchsetzung',
+          collapsed: true,
           items: [
             { text: '1.9 Nichtkonformität (Art. 22–23)', link: '/de/overview/non-conformity' },
             { text: '1.10 Marktüberwachung (Art. 52–58)', link: '/de/overview/market-surveillance' },
@@ -90,6 +93,7 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: 'Regulatorischer Kontext',
+          collapsed: true,
           items: [
             { text: '1.12 Harmonisierte Normen (Art. 5–6)', link: '/de/overview/harmonised-standards' },
             { text: '1.13 Allgemeine Produktsicherheit (Art. 9)', link: '/de/overview/product-safety' },
@@ -124,6 +128,7 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: 'CRA-Anforderungen',
+          collapsed: true,
           items: [
             { text: '3.5 Schwachstellenbehandlung (Annex I Teil II)', link: '/de/vulnerability-management/handling-requirements' },
           ]
@@ -166,6 +171,7 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: 'CRA-Anforderungen',
+          collapsed: true,
           items: [
             { text: '6.5 Sicherheitsanforderungen (Annex I)', link: '/de/technical-documentation/security-requirements' },
             { text: '6.6 Annex VII – Leitfaden', link: '/de/technical-documentation/annex-vii-guide' },
@@ -186,6 +192,7 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: 'Produkteinstufung',
+          collapsed: true,
           items: [
             { text: '7.6 Produktlisten (Annex III & IV)', link: '/de/conformity/product-lists' },
             { text: '7.7 CE-Kennzeichnung (Art. 29–30)', link: '/de/conformity/ce-marking' },
@@ -193,6 +200,7 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: 'Erklärungen & Informationen',
+          collapsed: true,
           items: [
             { text: '7.8 EU-Konformitätserklärung', link: '/de/conformity/eu-declaration' },
             { text: '7.9 Vereinfachte DoC (Annex VI)', link: '/de/conformity/simplified-declaration' },
@@ -235,6 +243,7 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
             { text: 'A.7 EU-Konformitätserklärung', link: '/de/templates/eu-declaration-of-conformity' },
             { text: 'A.8 Nutzerinformation', link: '/de/templates/product-security-info' },
             { text: 'A.9 CRA Compliance Statement', link: '/de/templates/cra-compliance-statement' },
+            { text: 'A.10 Produktklassifizierungs-Protokoll', link: '/de/templates/product-classification-record' },
           ]
         }
       ],

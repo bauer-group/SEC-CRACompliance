@@ -92,6 +92,14 @@ The majority of products fall into this category. The manufacturer carries out t
 
 *\* Only when applying harmonised standards or when conforming with EU cybersecurity certification*
 
+::: tip AI Act Synergy
+Products listed in **Annex III of the AI Act** as high-risk AI systems may also appear in CRA Annex III (e.g. IACS, safety components). When a product is classified under both regulations, the **stricter conformity assessment** applies. Coordinate classification decisions between CRA and AI Act teams.
+:::
+
+::: tip Scope Checker
+Use the interactive [Scope Checker](/en/overview/scope-checker) to walk through the full classification process step by step, including effort estimates per product class.
+:::
+
 ## 7.1.5 Relevant Product Types for BAUER GROUP
 
 ### Review against Annex III (Important Products)

@@ -146,6 +146,145 @@
   font-weight: 700;
 }
 
+/* ─── Role Badges (Economic Operator) ─── */
+.badge-manufacturer {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+}
+
+.badge-importer {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+  background: rgba(139, 92, 246, 0.12);
+  color: #7c3aed;
+}
+
+.badge-distributor {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+  background: rgba(20, 184, 166, 0.12);
+  color: #0d9488;
+}
+
+.badge-all-operators {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+  background: rgba(107, 114, 128, 0.12);
+  color: #4b5563;
+}
+
+/* ─── Product Class Badges ─── */
+.badge-default {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--cra-compliant);
+}
+
+.badge-class-i {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+  background: rgba(234, 179, 8, 0.12);
+  color: var(--cra-partial);
+}
+
+.badge-class-ii {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+  background: rgba(255, 133, 0, 0.12);
+  color: var(--vp-c-brand-1);
+}
+
+.badge-critical {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--cra-missing);
+}
+
+/* Dark mode adjustments for badges */
+.dark .badge-manufacturer {
+  background: rgba(96, 165, 250, 0.16);
+  color: #93bbfd;
+}
+
+.dark .badge-importer {
+  background: rgba(167, 139, 250, 0.16);
+  color: #c4b5fd;
+}
+
+.dark .badge-distributor {
+  background: rgba(45, 212, 191, 0.16);
+  color: #5eead4;
+}
+
+.dark .badge-all-operators {
+  background: rgba(156, 163, 175, 0.16);
+  color: #d1d5db;
+}
+
+/* ─── Decision Tree (Scope Checker) ─── */
+.decision-tree {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.9em;
+  line-height: 1.6;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 24px;
+  overflow-x: auto;
+}
+
+.decision-tree .node {
+  border-left: 3px solid var(--bg-orange-500);
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  background: var(--vp-c-bg);
+  border-radius: 0 8px 8px 0;
+}
+
+.decision-tree .node-result {
+  font-weight: 700;
+}
+
+.decision-tree .result-go {
+  color: var(--cra-compliant);
+}
+
+.decision-tree .result-stop {
+  color: var(--cra-missing);
+}
+
+.decision-tree .result-check {
+  color: var(--cra-partial);
+}
+
 /* ─── Timeline Component ─── */
 .cra-timeline {
   border-left: 3px solid var(--bg-orange-500);

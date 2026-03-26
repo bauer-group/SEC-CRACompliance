@@ -23,6 +23,52 @@ This matrix maps each relevant CRA requirement to the corresponding documentatio
 
 Detailed mapping: [8.1 Tooling Map](/en/compliance-matrix/tooling-map) (Tool → CRA Requirement)
 
+## Obligations by Economic Operator Role
+
+| CRA Area | <span class="badge-manufacturer">Manufacturer</span> | <span class="badge-importer">Importer</span> | <span class="badge-distributor">Distributor</span> |
+|----------|:---:|:---:|:---:|
+| Cybersecurity by design (Art. 10) | ✅ Full | — | — |
+| Conformity assessment (Art. 10(5)) | ✅ Full | — | — |
+| SBOM generation (Art. 13(23)) | ✅ Full | — | — |
+| Vulnerability handling (Annex I Part II) | ✅ Full | — | — |
+| Security updates (Art. 10(7)) | ✅ Full | — | — |
+| Incident reporting to ENISA (Art. 14) | ✅ Full | — | — |
+| CE marking & EU DoC (Art. 28–29) | ✅ Full | ✅ Verify | ✅ Verify |
+| User information (Annex II) | ✅ Full | ✅ Verify | ✅ Verify |
+| Technical documentation (Annex VII) | ✅ Full | ✅ Keep available | — |
+| Verify conformity before market placement | — | ✅ Full (Art. 15) | ✅ Full (Art. 17) |
+| Inform manufacturer of non-conformity | — | ✅ Full | ✅ Full |
+| Cooperate with market surveillance | ✅ Full | ✅ Full | ✅ Full |
+| Name & address on product/packaging | ✅ Full | ✅ Full | ✅ Full |
+
+::: tip Role Legend
+**Manufacturer** — Bears primary compliance responsibility. Designs, develops, and produces the product.
+**Importer** — Must verify manufacturer's compliance before placing product on EU market.
+**Distributor** — Must verify CE marking and declarations exist. Not responsible for content.
+:::
+
+## Estimated Effort by Product Class
+
+| Requirement Area | <span class="badge-default">Standard</span> | <span class="badge-class-i">Class I</span> | <span class="badge-class-ii">Class II</span> | <span class="badge-critical">Critical</span> | Automation |
+|---|---|---|---|---|---|
+| Security risk assessment | 20–40h | 20–40h | 30–60h | 40–80h | Manual |
+| SBOM & signing | 8–16h | 8–16h | 8–16h | 8–16h | Automated |
+| Vulnerability handling | 20–40h | 20–40h | 20–40h | 20–40h | Automated |
+| Incident reporting setup | 16–32h | 16–32h | 16–32h | 16–32h | Semi-auto |
+| Technical documentation | 40–80h | 40–80h | 60–120h | 80–160h | Manual |
+| CE marking & EU DoC | 8–16h | 8–16h | 8–16h | 8–16h | Manual |
+| Conformity assessment | Self (0h) | Self or 40–80h\* | 40–80h | 80–160h | Manual |
+| **One-off total** | **112–224h** | **112–304h** | **182–364h** | **252–504h** | |
+| **Annual total** | **60–120h** | **60–160h** | **90–200h** | **130–260h** | |
+
+\* Class I: self-assessment if harmonised standards are applied in full; third-party assessment otherwise.
+
+::: tip BAUER GROUP Approach
+Automated tooling (Trivy, Grype, CycloneDX, Cosign, GitHub Actions) reduces actual effort significantly for Standard and Class I products. See [Scope Checker](/en/overview/scope-checker) for decision guidance.
+:::
+
+---
+
 ## Art. 10 – Obligations of Manufacturers
 
 | CRA Reference | Requirement | Documentation | Tooling | Status |

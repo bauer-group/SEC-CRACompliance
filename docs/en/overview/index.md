@@ -57,6 +57,14 @@ The CRA pursues two core objectives:
 
 The CRA complements the **NIS2 Directive** (Directive (EU) 2022/2555). While NIS2 governs the cybersecurity of operators of essential and important entities, the CRA addresses the security of the **products** used by those entities. The reporting obligations under the CRA (Art. 14) are modelled on the NIS2 reporting obligations (Art. 23 NIS2) and utilise the same ENISA reporting platform.
 
+::: tip AI Act Synergy
+Products with AI components must comply with **both** the CRA and the [EU AI Act (Regulation 2024/1689)](/en/overview/nis2-integration). The CRA covers cybersecurity of the product; the AI Act covers safety, transparency, and rights. Art. 8(2) AI Act permits integration of CRA compliance activities into the AI Act conformity process.
+:::
+
+::: danger Start Here
+Not sure if the CRA applies to your product? Use the **[Scope Checker](/en/overview/scope-checker)** for interactive decision guidance — from applicability through product classification to the correct conformity path.
+:::
+
 ## Scope
 
 Pursuant to Art. 2 CRA, this regulation applies to **products with digital elements** whose intended or reasonably foreseeable use includes a direct or indirect logical or physical data connection to a device or network.

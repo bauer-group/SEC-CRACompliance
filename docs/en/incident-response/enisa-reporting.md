@@ -22,6 +22,14 @@ Pursuant to Art. 14 CRA, manufacturers are required to report certain security e
 
 :::
 
+::: tip NIS2 Synergy
+CRA Art. 14 reporting aligns with **NIS2 Art. 23** (incident notification). Both use the same ENISA Single Reporting Platform (SRP). Organizations already reporting under NIS2 can **reuse the same platform and largely the same process** — only the reporting scope differs: NIS2 covers operational incidents, CRA covers product vulnerabilities.
+:::
+
+::: tip AI Act Synergy
+Products containing AI components that are classified as high-risk under the AI Act have **additional reporting obligations** (Art. 62 AI Act). Coordinate AI-related incident reports with CRA reporting to avoid duplicate filings.
+:::
+
 ## 4.3.2 Reportable Events
 
 ### Actively Exploited Vulnerability (Art. 14(1))

@@ -22,6 +22,14 @@ Gemäß Art. 14 CRA sind Hersteller verpflichtet, bestimmte Sicherheitsereigniss
 
 :::
 
+::: tip NIS2-Synergie
+Die CRA-Meldepflicht (Art. 14) ist an **NIS2 Art. 23** (Incident-Notification) angelehnt. Beide nutzen dieselbe ENISA Single Reporting Platform (SRP). Organisationen, die bereits unter NIS2 melden, können **dieselbe Plattform und weitgehend denselben Prozess nutzen** — nur der Meldeumfang unterscheidet sich: NIS2 deckt operative Vorfälle ab, CRA deckt Produktschwachstellen ab.
+:::
+
+::: tip AI-Act-Synergie
+Produkte mit KI-Komponenten, die nach dem AI Act als Hochrisiko eingestuft sind, haben **zusätzliche Meldepflichten** (Art. 62 AI Act). Stimmen Sie KI-bezogene Incident-Meldungen mit der CRA-Meldung ab, um Doppelmeldungen zu vermeiden.
+:::
+
 ## 4.3.2 Meldepflichtige Ereignisse
 
 ### Aktiv ausgenutzte Schwachstelle (Art. 14 Abs. 1)

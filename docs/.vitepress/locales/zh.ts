@@ -65,6 +65,7 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           text: '第1章：概述',
           items: [
             { text: 'CRA 概览', link: '/zh/overview/' },
+            { text: '🔍 适用性检查', link: '/zh/overview/scope-checker' },
             { text: '1.1 适用范围', link: '/zh/overview/scope' },
             { text: '1.2 角色与职责', link: '/zh/overview/responsibilities' },
             { text: '1.3 时间表与截止日期', link: '/zh/overview/timeline' },
@@ -72,6 +73,7 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: '经济运营者',
+          collapsed: true,
           items: [
             { text: '1.4 进口商义务 (Art. 15)', link: '/zh/overview/importer-obligations' },
             { text: '1.5 授权代表 (Art. 16)', link: '/zh/overview/authorised-representative' },
@@ -82,6 +84,7 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: '执法',
+          collapsed: true,
           items: [
             { text: '1.9 不合规 (Art. 22–23)', link: '/zh/overview/non-conformity' },
             { text: '1.10 市场监督 (Art. 52–58)', link: '/zh/overview/market-surveillance' },
@@ -90,6 +93,7 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: '监管背景',
+          collapsed: true,
           items: [
             { text: '1.12 协调标准 (Art. 5–6)', link: '/zh/overview/harmonised-standards' },
             { text: '1.13 一般产品安全 (Art. 9)', link: '/zh/overview/product-safety' },
@@ -124,6 +128,7 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: 'CRA 要求',
+          collapsed: true,
           items: [
             { text: '3.5 漏洞处理要求 (Annex I 第二部分)', link: '/zh/vulnerability-management/handling-requirements' },
           ]
@@ -166,6 +171,7 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: 'CRA 要求',
+          collapsed: true,
           items: [
             { text: '6.5 安全要求 (Annex I)', link: '/zh/technical-documentation/security-requirements' },
             { text: '6.6 Annex VII – 指南', link: '/zh/technical-documentation/annex-vii-guide' },
@@ -186,6 +192,7 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: '产品分级',
+          collapsed: true,
           items: [
             { text: '7.6 产品清单 (Annex III & IV)', link: '/zh/conformity/product-lists' },
             { text: '7.7 CE 标志 (Art. 29–30)', link: '/zh/conformity/ce-marking' },
@@ -193,6 +200,7 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
         },
         {
           text: '声明与信息',
+          collapsed: true,
           items: [
             { text: '7.8 EU 符合性声明', link: '/zh/conformity/eu-declaration' },
             { text: '7.9 简化 DoC (Annex VI)', link: '/zh/conformity/simplified-declaration' },
@@ -235,6 +243,7 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
             { text: 'A.7 EU 符合性声明', link: '/zh/templates/eu-declaration-of-conformity' },
             { text: 'A.8 产品安全信息', link: '/zh/templates/product-security-info' },
             { text: 'A.9 CRA 合规声明', link: '/zh/templates/cra-compliance-statement' },
+            { text: 'A.10 产品分类记录', link: '/zh/templates/product-classification-record' },
           ]
         }
       ],

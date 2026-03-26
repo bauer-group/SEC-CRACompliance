@@ -23,6 +23,52 @@ Diese Matrix ordnet jede relevante CRA-Anforderung der entsprechenden Dokumentat
 
 Detaillierte Zuordnung: [8.1 Tooling-Zuordnung](/de/compliance-matrix/tooling-map) (Tool → CRA-Anforderung)
 
+## Pflichten nach Wirtschaftsakteur-Rolle
+
+| CRA-Bereich | <span class="badge-manufacturer">Hersteller</span> | <span class="badge-importer">Importeur</span> | <span class="badge-distributor">Händler</span> |
+|-------------|:---:|:---:|:---:|
+| Cybersicherheit by Design (Art. 10) | ✅ Voll | — | — |
+| Konformitätsbewertung (Art. 10(5)) | ✅ Voll | — | — |
+| SBOM-Erstellung (Art. 13(23)) | ✅ Voll | — | — |
+| Schwachstellenbehandlung (Annex I Teil II) | ✅ Voll | — | — |
+| Sicherheitsupdates (Art. 10(7)) | ✅ Voll | — | — |
+| Incident-Meldung an ENISA (Art. 14) | ✅ Voll | — | — |
+| CE-Kennzeichnung & EU-DoC (Art. 28–29) | ✅ Voll | ✅ Prüfen | ✅ Prüfen |
+| Nutzerinformation (Annex II) | ✅ Voll | ✅ Prüfen | ✅ Prüfen |
+| Technische Dokumentation (Annex VII) | ✅ Voll | ✅ Bereithalten | — |
+| Konformität vor Inverkehrbringen prüfen | — | ✅ Voll (Art. 15) | ✅ Voll (Art. 17) |
+| Hersteller bei Nichtkonformität informieren | — | ✅ Voll | ✅ Voll |
+| Kooperation mit Marktüberwachung | ✅ Voll | ✅ Voll | ✅ Voll |
+| Name & Adresse auf Produkt/Verpackung | ✅ Voll | ✅ Voll | ✅ Voll |
+
+::: tip Rollen-Legende
+**Hersteller** — Trägt die primäre Compliance-Verantwortung. Entwirft, entwickelt und produziert das Produkt.
+**Importeur** — Muss die Konformität des Herstellers vor dem Inverkehrbringen auf dem EU-Markt prüfen.
+**Händler** — Muss CE-Kennzeichnung und Erklärungen prüfen. Nicht für den Inhalt verantwortlich.
+:::
+
+## Geschätzter Aufwand nach Produktklasse
+
+| Anforderungsbereich | <span class="badge-default">Standard</span> | <span class="badge-class-i">Klasse I</span> | <span class="badge-class-ii">Klasse II</span> | <span class="badge-critical">Kritisch</span> | Automatisierung |
+|---|---|---|---|---|---|
+| Sicherheitsrisikobewertung | 20–40h | 20–40h | 30–60h | 40–80h | Manuell |
+| SBOM & Signierung | 8–16h | 8–16h | 8–16h | 8–16h | Automatisiert |
+| Schwachstellenbehandlung | 20–40h | 20–40h | 20–40h | 20–40h | Automatisiert |
+| Incident-Reporting-Aufbau | 16–32h | 16–32h | 16–32h | 16–32h | Teilautom. |
+| Technische Dokumentation | 40–80h | 40–80h | 60–120h | 80–160h | Manuell |
+| CE-Kennzeichnung & EU-DoC | 8–16h | 8–16h | 8–16h | 8–16h | Manuell |
+| Konformitätsbewertung | Selbst (0h) | Selbst oder 40–80h\* | 40–80h | 80–160h | Manuell |
+| **Einmalig gesamt** | **112–224h** | **112–304h** | **182–364h** | **252–504h** | |
+| **Jährlich gesamt** | **60–120h** | **60–160h** | **90–200h** | **130–260h** | |
+
+\* Klasse I: Selbstbewertung bei vollständiger Anwendung harmonisierter Normen; sonst Drittbewertung.
+
+::: tip BAUER GROUP Ansatz
+Automatisiertes Tooling (Trivy, Grype, CycloneDX, Cosign, GitHub Actions) reduziert den tatsächlichen Aufwand für Standard- und Klasse-I-Produkte erheblich. Siehe [Scope-Checker](/de/overview/scope-checker) für Entscheidungshilfe.
+:::
+
+---
+
 ## Art. 10 – Pflichten der Hersteller
 
 | CRA-Referenz | Anforderung | Dokumentation | Tooling | Status |
