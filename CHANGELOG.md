@@ -1,3 +1,9 @@
+## [0.8.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.7.0...v0.8.0) (2026-03-26)
+
+### 🚀 Features
+
+* **seo:** add robots.txt and RSS feeds per locale ([0f0eaf2](https://github.com/bauer-group/SEC-CRACompliance/commit/0f0eaf2da455dc598001162a51adc7ae3c6b07cd))
+
 ## [0.7.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.6.0...v0.7.0) (2026-03-26)
 
 ### 🚀 Features
