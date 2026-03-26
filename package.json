@@ -26,6 +26,9 @@
   "lint-staged": {
     "docs/**/*.md": "markdownlint-cli2 --fix"
   },
+  "overrides": {
+    "smol-toml": ">=1.6.1"
+  },
   "devDependencies": {
     "husky": "^9.1.7",
     "linkinator": "^7.6.1",
