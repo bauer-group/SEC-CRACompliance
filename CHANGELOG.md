@@ -1,3 +1,9 @@
+## [0.7.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.6.0...v0.7.0) (2026-03-26)
+
+### 🚀 Features
+
+* **config:** enable image lazy loading for markdown images ([6db562e](https://github.com/bauer-group/SEC-CRACompliance/commit/6db562ebe95a747da70612707c8e77c2b43ffbcf))
+
 ## [0.6.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.5.0...v0.6.0) (2026-03-26)
 
 ### 🚀 Features
