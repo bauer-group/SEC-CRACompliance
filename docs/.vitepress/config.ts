@@ -26,7 +26,7 @@ export default defineConfig({
         description: 'Cyber Resilience Act – Compliance Documentation Updates',
         language: 'en',
         author: { name: 'BAUER GROUP', link: baseUrl },
-        icon: true,
+        icon: false,
         ignoreHome: true,
         ignorePublish: true,
         log: true,
@@ -64,6 +64,7 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/bauer-group/SEC-CRACompliance' },
       { icon: { svg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>' }, link: 'https://go.bauer-group.com/cra-compliance', ariaLabel: 'Homepage' },
+      { icon: { svg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1Z"/></svg>' }, link: '/feed-en.xml', ariaLabel: 'RSS Feed' },
     ],
 
     search: {
