@@ -1,3 +1,9 @@
+## [0.9.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.8.5...v0.9.0) (2026-03-27)
+
+### 🚀 Features
+
+* **cra:** add compliance report, CLI tool, VEX template, and workflow integration ([6459b38](https://github.com/bauer-group/SEC-CRACompliance/commit/6459b381ec20b5a06a0d65d21c85db599c77b388))
+
 ## [0.8.5](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.8.4...v0.8.5) (2026-03-26)
 
 ### 🐛 Bug Fixes
