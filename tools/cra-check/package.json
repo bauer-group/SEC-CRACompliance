@@ -1,0 +1,31 @@
+{
+  "name": "@bauer-group/cra-check",
+  "version": "1.0.0",
+  "description": "CRA Compliance checker for GitHub repositories and local projects",
+  "type": "module",
+  "bin": {
+    "cra-check": "./bin/cra-check.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "keywords": [
+    "cra",
+    "cyber-resilience-act",
+    "compliance",
+    "sbom",
+    "vex",
+    "security"
+  ],
+  "author": "BAUER GROUP",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bauer-group/SEC-CRACompliance.git",
+    "directory": "tools/cra-check"
+  }
+}

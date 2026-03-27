@@ -1,0 +1,511 @@
+# =============================================================================
+# CRA Compliance Report Generator
+# =============================================================================
+# Aggregates all CRA compliance artifacts (SBOM, VEX, vulnerability scan,
+# signing, attestation) into a machine-readable JSON report and a
+# human-readable Markdown report.
+#
+# Usage:
+#   - uses: bauer-group/SEC-CRACompliance/.github/actions/cra-compliance-report@main
+#     with:
+#       sbom-path: sbom.cdx.json
+#       vulnerability-report-path: vulnerability-report.json
+#
+# Outputs:
+#   cra-compliance-report.json — Machine-readable (schema versioned)
+#   cra-compliance-report.md   — Human-readable for auditors
+#
+# CRA References: Art. 10, Art. 13, Annex I, Annex VII
+# =============================================================================
+
+name: 'CRA Compliance Report'
+description: 'Generate machine-readable and human-readable CRA compliance reports from scan artifacts'
+author: 'BAUER GROUP'
+
+inputs:
+  product-name:
+    description: 'Product display name (auto-detected from repo if empty)'
+    required: false
+    default: ''
+  product-version:
+    description: 'Product version (auto-detected from tag or SHA)'
+    required: false
+    default: ''
+  sbom-path:
+    description: 'Path to SBOM file'
+    required: false
+    default: 'sbom.cdx.json'
+  vulnerability-report-path:
+    description: 'Path to Trivy JSON vulnerability report'
+    required: false
+    default: 'vulnerability-report.json'
+  vex-path:
+    description: 'Path to OpenVEX document (optional)'
+    required: false
+    default: 'vex.openvex.json'
+  sbom-signed:
+    description: 'Whether SBOM was signed with Cosign'
+    required: false
+    default: 'false'
+  sbom-attested:
+    description: 'Whether SBOM has GitHub attestation'
+    required: false
+    default: 'false'
+  attestation-id:
+    description: 'GitHub attestation ID (if attested)'
+    required: false
+    default: ''
+  support-period-years:
+    description: 'Product support period in years (Art. 13(8))'
+    required: false
+    default: '5'
+  output-prefix:
+    description: 'Output filename prefix'
+    required: false
+    default: 'cra-compliance-report'
+  schema-version:
+    description: 'Report schema version'
+    required: false
+    default: '1.0.0'
+
+outputs:
+  json-report-path:
+    description: 'Path to machine-readable JSON report'
+    value: ${{ steps.report.outputs.json-path }}
+  md-report-path:
+    description: 'Path to human-readable Markdown report'
+    value: ${{ steps.report.outputs.md-path }}
+  compliance-score:
+    description: 'Overall compliance score (0-100)'
+    value: ${{ steps.report.outputs.compliance-score }}
+  passed:
+    description: 'Whether minimum compliance threshold is met'
+    value: ${{ steps.report.outputs.passed }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 📊 Generate CRA compliance report
+      id: report
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        PREFIX="${{ inputs.output-prefix }}"
+        JSON_OUT="${PREFIX}.json"
+        MD_OUT="${PREFIX}.md"
+        SCHEMA_VERSION="${{ inputs.schema-version }}"
+        TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+        TODAY=$(date -u +"%Y-%m-%d")
+
+        # ── Product metadata ──
+        PRODUCT_NAME="${{ inputs.product-name }}"
+        PRODUCT_VERSION="${{ inputs.product-version }}"
+
+        if [ -z "$PRODUCT_NAME" ]; then
+          PRODUCT_NAME=$(echo "$GITHUB_REPOSITORY" | cut -d'/' -f2)
+        fi
+
+        if [ -z "$PRODUCT_VERSION" ]; then
+          PRODUCT_VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "${GITHUB_SHA:0:8}")
+        fi
+
+        RELEASE_TAG=$(git describe --tags --exact-match 2>/dev/null || echo "")
+        COMMIT_SHA="${GITHUB_SHA:-$(git rev-parse HEAD)}"
+
+        echo "📊 CRA Compliance Report"
+        echo "  Product: $PRODUCT_NAME $PRODUCT_VERSION"
+
+        # ── Analyze SBOM ──
+        SBOM_GENERATED=false
+        SBOM_FORMAT=""
+        SBOM_COMPONENTS=0
+        SBOM_FILE="${{ inputs.sbom-path }}"
+
+        if [ -f "$SBOM_FILE" ]; then
+          SBOM_GENERATED=true
+          # Detect format
+          if jq -e '.bomFormat' "$SBOM_FILE" > /dev/null 2>&1; then
+            SBOM_FORMAT="CycloneDX"
+          elif jq -e '.spdxVersion' "$SBOM_FILE" > /dev/null 2>&1; then
+            SBOM_FORMAT="SPDX"
+          else
+            SBOM_FORMAT="unknown"
+          fi
+          SBOM_COMPONENTS=$(jq '[.components // [] | length, .packages // [] | length] | max' "$SBOM_FILE" 2>/dev/null || echo "0")
+          echo "  SBOM: $SBOM_FORMAT ($SBOM_COMPONENTS components)"
+        else
+          echo "  SBOM: not found"
+        fi
+
+        SBOM_SIGNED="${{ inputs.sbom-signed }}"
+        SBOM_ATTESTED="${{ inputs.sbom-attested }}"
+        ATTESTATION_ID="${{ inputs.attestation-id }}"
+
+        # ── Analyze vulnerabilities ──
+        VULN_CRITICAL=0
+        VULN_HIGH=0
+        VULN_MEDIUM=0
+        VULN_LOW=0
+        VULN_TOTAL=0
+        VULN_ENGINE="none"
+        VULN_FILE="${{ inputs.vulnerability-report-path }}"
+
+        if [ -f "$VULN_FILE" ]; then
+          VULN_ENGINE="Trivy"
+          VULN_CRITICAL=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity == "CRITICAL")] | length' "$VULN_FILE" 2>/dev/null || echo "0")
+          VULN_HIGH=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity == "HIGH")] | length' "$VULN_FILE" 2>/dev/null || echo "0")
+          VULN_MEDIUM=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity == "MEDIUM")] | length' "$VULN_FILE" 2>/dev/null || echo "0")
+          VULN_LOW=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity == "LOW")] | length' "$VULN_FILE" 2>/dev/null || echo "0")
+          VULN_TOTAL=$((VULN_CRITICAL + VULN_HIGH + VULN_MEDIUM + VULN_LOW))
+          echo "  Vulnerabilities: $VULN_CRITICAL critical, $VULN_HIGH high, $VULN_MEDIUM medium, $VULN_LOW low"
+        else
+          echo "  Vulnerabilities: report not found"
+        fi
+
+        # ── Analyze VEX ──
+        VEX_GENERATED=false
+        VEX_TOTAL=0
+        VEX_OVERRIDES=0
+        VEX_NOT_AFFECTED=0
+        VEX_AFFECTED=0
+        VEX_FIXED=0
+        VEX_UNDER_INVESTIGATION=0
+        VEX_FILE="${{ inputs.vex-path }}"
+
+        if [ -f "$VEX_FILE" ]; then
+          VEX_GENERATED=true
+          VEX_TOTAL=$(jq '.statements | length' "$VEX_FILE" 2>/dev/null || echo "0")
+          VEX_NOT_AFFECTED=$(jq '[.statements[] | select(.status == "not_affected")] | length' "$VEX_FILE" 2>/dev/null || echo "0")
+          VEX_AFFECTED=$(jq '[.statements[] | select(.status == "affected")] | length' "$VEX_FILE" 2>/dev/null || echo "0")
+          VEX_FIXED=$(jq '[.statements[] | select(.status == "fixed")] | length' "$VEX_FILE" 2>/dev/null || echo "0")
+          VEX_UNDER_INVESTIGATION=$(jq '[.statements[] | select(.status == "under_investigation")] | length' "$VEX_FILE" 2>/dev/null || echo "0")
+          # Overrides = everything that's NOT under_investigation
+          VEX_OVERRIDES=$((VEX_NOT_AFFECTED + VEX_AFFECTED + VEX_FIXED))
+          echo "  VEX: $VEX_TOTAL statements ($VEX_OVERRIDES triaged)"
+        else
+          echo "  VEX: not found"
+        fi
+
+        # ── Check security policy ──
+        SECURITY_MD=false
+        DISCLOSURE_EMAIL=""
+        CVD_PROCESS=false
+
+        for SPATH in SECURITY.md docs/SECURITY.md .github/SECURITY.md; do
+          if [ -f "$SPATH" ]; then
+            SECURITY_MD=true
+            DISCLOSURE_EMAIL=$(grep -oP '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}' "$SPATH" 2>/dev/null | head -1 || echo "")
+            if grep -qi "disclosure\|coordinated\|CVD\|responsible" "$SPATH" 2>/dev/null; then
+              CVD_PROCESS=true
+            fi
+            break
+          fi
+        done
+        echo "  Security Policy: $([ "$SECURITY_MD" = true ] && echo "present" || echo "missing")"
+
+        # ── Calculate support period ──
+        SUPPORT_YEARS="${{ inputs.support-period-years }}"
+        SUPPORT_START="$TODAY"
+        if [ -n "$RELEASE_TAG" ]; then
+          SUPPORT_START=$(git log -1 --format=%aI "$RELEASE_TAG" 2>/dev/null | cut -dT -f1 || echo "$TODAY")
+        fi
+        SUPPORT_END=$(date -u -d "$SUPPORT_START + $SUPPORT_YEARS years" +"%Y-%m-%d" 2>/dev/null || echo "")
+
+        # ── Calculate compliance score ──
+        SCORE=0
+
+        # SBOM (20 max): generated=10, signed=5, attested=5
+        [ "$SBOM_GENERATED" = true ] && SCORE=$((SCORE + 10))
+        [ "$SBOM_SIGNED" = "true" ] && SCORE=$((SCORE + 5))
+        [ "$SBOM_ATTESTED" = "true" ] && SCORE=$((SCORE + 5))
+        SCORE_SBOM=$((SCORE))
+
+        # Signing verification (15 max): cosign=10, attestation=5
+        SCORE_SIGNING=0
+        [ "$SBOM_SIGNED" = "true" ] && SCORE_SIGNING=$((SCORE_SIGNING + 10))
+        [ "$SBOM_ATTESTED" = "true" ] && SCORE_SIGNING=$((SCORE_SIGNING + 5))
+        SCORE=$((SCORE + SCORE_SIGNING))
+
+        # Vulnerabilities (20 max): 0 critical=15, 0 high=5
+        SCORE_VULN=0
+        [ "$VULN_CRITICAL" -eq 0 ] && SCORE_VULN=$((SCORE_VULN + 15))
+        [ "$VULN_HIGH" -eq 0 ] && SCORE_VULN=$((SCORE_VULN + 5))
+        SCORE=$((SCORE + SCORE_VULN))
+
+        # VEX (10 max): generated=5, has overrides=5
+        SCORE_VEX=0
+        [ "$VEX_GENERATED" = true ] && SCORE_VEX=$((SCORE_VEX + 5))
+        [ "$VEX_OVERRIDES" -gt 0 ] && SCORE_VEX=$((SCORE_VEX + 5))
+        SCORE=$((SCORE + SCORE_VEX))
+
+        # Security policy (15 max): present=10, CVD=5
+        SCORE_POLICY=0
+        [ "$SECURITY_MD" = true ] && SCORE_POLICY=$((SCORE_POLICY + 10))
+        [ "$CVD_PROCESS" = true ] && SCORE_POLICY=$((SCORE_POLICY + 5))
+        SCORE=$((SCORE + SCORE_POLICY))
+
+        # Support period (10 max): defined=10
+        SCORE_SUPPORT=0
+        [ -n "$SUPPORT_END" ] && SCORE_SUPPORT=10
+        SCORE=$((SCORE + SCORE_SUPPORT))
+
+        # Deduct signing points counted in both SBOM and Signing categories
+        # Adjust: SBOM section already counted signed+attested, remove double-count
+        SCORE=$((SCORE - ([ "$SBOM_SIGNED" = "true" ] && echo 5 || echo 0) - ([ "$SBOM_ATTESTED" = "true" ] && echo 5 || echo 0) ))
+        # Simpler: recalculate cleanly
+        SCORE=0
+        # SBOM: 20 max
+        S_SBOM=0; [ "$SBOM_GENERATED" = true ] && S_SBOM=$((S_SBOM + 10)); [ "$SBOM_SIGNED" = "true" ] && S_SBOM=$((S_SBOM + 5)); [ "$SBOM_ATTESTED" = "true" ] && S_SBOM=$((S_SBOM + 5))
+        # Signing: 15 max
+        S_SIGN=0; [ "$SBOM_SIGNED" = "true" ] && S_SIGN=$((S_SIGN + 10)); [ "$SBOM_ATTESTED" = "true" ] && S_SIGN=$((S_SIGN + 5))
+        # Vulns: 20 max
+        S_VULN=0; [ "$VULN_CRITICAL" -eq 0 ] && S_VULN=$((S_VULN + 15)); [ "$VULN_HIGH" -eq 0 ] && S_VULN=$((S_VULN + 5))
+        # VEX: 10 max
+        S_VEX=0; [ "$VEX_GENERATED" = true ] && S_VEX=$((S_VEX + 5)); [ "$VEX_OVERRIDES" -gt 0 ] && S_VEX=$((S_VEX + 5))
+        # Policy: 15 max
+        S_POL=0; [ "$SECURITY_MD" = true ] && S_POL=$((S_POL + 10)); [ "$CVD_PROCESS" = true ] && S_POL=$((S_POL + 5))
+        # Support: 10 max
+        S_SUP=0; [ -n "$SUPPORT_END" ] && S_SUP=10
+        # Article coverage: 10 max (based on overall)
+        ARTICLES_MET=0; ARTICLES_TOTAL=9
+        [ "$SBOM_GENERATED" = true ] && ARTICLES_MET=$((ARTICLES_MET + 1))
+        [ "$VULN_CRITICAL" -eq 0 ] && ARTICLES_MET=$((ARTICLES_MET + 1))
+        [ -f "$VULN_FILE" ] && ARTICLES_MET=$((ARTICLES_MET + 1))
+        [ "$SBOM_SIGNED" = "true" ] && ARTICLES_MET=$((ARTICLES_MET + 1))
+        [ "$SECURITY_MD" = true ] && ARTICLES_MET=$((ARTICLES_MET + 1))
+        [ "$CVD_PROCESS" = true ] && ARTICLES_MET=$((ARTICLES_MET + 1))
+        [ "$VEX_GENERATED" = true ] && ARTICLES_MET=$((ARTICLES_MET + 1))
+        [ -n "$SUPPORT_END" ] && ARTICLES_MET=$((ARTICLES_MET + 1))
+        [ "$SBOM_ATTESTED" = "true" ] && ARTICLES_MET=$((ARTICLES_MET + 1))
+        S_ART=$(( (ARTICLES_MET * 10) / ARTICLES_TOTAL ))
+
+        SCORE=$((S_SBOM + S_SIGN + S_VULN + S_VEX + S_POL + S_SUP + S_ART))
+        PASSED=$([ "$SCORE" -ge 70 ] && echo "true" || echo "false")
+
+        echo "  Compliance Score: $SCORE/100 ($PASSED)"
+
+        # ── Build CRA article mapping ──
+        art_status() { [ "$1" = true ] && echo "met" || echo "not_met"; }
+
+        # ── Generate JSON report ──
+        jq -n \
+          --arg schema "$SCHEMA_VERSION" \
+          --arg ts "$TIMESTAMP" \
+          --arg pname "$PRODUCT_NAME" \
+          --arg pver "$PRODUCT_VERSION" \
+          --arg repo "$GITHUB_REPOSITORY" \
+          --arg sha "$COMMIT_SHA" \
+          --arg tag "$RELEASE_TAG" \
+          --argjson sbom_gen "$SBOM_GENERATED" \
+          --arg sbom_fmt "$SBOM_FORMAT" \
+          --argjson sbom_comp "$SBOM_COMPONENTS" \
+          --arg sbom_sign "$SBOM_SIGNED" \
+          --arg sbom_att "$SBOM_ATTESTED" \
+          --arg att_id "$ATTESTATION_ID" \
+          --argjson vex_gen "$VEX_GENERATED" \
+          --argjson vex_total "$VEX_TOTAL" \
+          --argjson vex_over "$VEX_OVERRIDES" \
+          --argjson vex_na "$VEX_NOT_AFFECTED" \
+          --argjson vex_af "$VEX_AFFECTED" \
+          --argjson vex_fx "$VEX_FIXED" \
+          --argjson vex_ui "$VEX_UNDER_INVESTIGATION" \
+          --arg vuln_eng "$VULN_ENGINE" \
+          --argjson vc "$VULN_CRITICAL" \
+          --argjson vh "$VULN_HIGH" \
+          --argjson vm "$VULN_MEDIUM" \
+          --argjson vl "$VULN_LOW" \
+          --argjson vt "$VULN_TOTAL" \
+          --argjson sec_md "$SECURITY_MD" \
+          --arg disc_email "$DISCLOSURE_EMAIL" \
+          --argjson cvd "$CVD_PROCESS" \
+          --arg sup_years "$SUPPORT_YEARS" \
+          --arg sup_start "$SUPPORT_START" \
+          --arg sup_end "$SUPPORT_END" \
+          --argjson score "$SCORE" \
+          --argjson s_sbom "$S_SBOM" \
+          --argjson s_sign "$S_SIGN" \
+          --argjson s_vuln "$S_VULN" \
+          --argjson s_vex "$S_VEX" \
+          --argjson s_pol "$S_POL" \
+          --argjson s_sup "$S_SUP" \
+          --argjson s_art "$S_ART" \
+          --arg passed "$PASSED" \
+          '{
+            "$schema": ("https://cra.docs.bauer-group.com/schemas/compliance-report/v" + $schema),
+            "schemaVersion": $schema,
+            "generatedAt": $ts,
+            "generator": {
+              "name": "bauer-group/SEC-CRACompliance/cra-compliance-report",
+              "version": "1.0.0"
+            },
+            "product": {
+              "name": $pname,
+              "version": $pver,
+              "repository": $repo,
+              "commit": $sha,
+              "releaseTag": (if $tag == "" then null else $tag end)
+            },
+            "sbom": {
+              "generated": $sbom_gen,
+              "format": (if $sbom_fmt == "" then null else $sbom_fmt end),
+              "componentCount": $sbom_comp,
+              "signed": ($sbom_sign == "true"),
+              "attested": ($sbom_att == "true"),
+              "attestationId": (if $att_id == "" then null else $att_id end)
+            },
+            "vex": {
+              "generated": $vex_gen,
+              "totalStatements": $vex_total,
+              "manualOverrides": $vex_over,
+              "statuses": {
+                "not_affected": $vex_na,
+                "affected": $vex_af,
+                "fixed": $vex_fx,
+                "under_investigation": $vex_ui
+              }
+            },
+            "vulnerabilities": {
+              "scanEngine": $vuln_eng,
+              "summary": {
+                "critical": $vc,
+                "high": $vh,
+                "medium": $vm,
+                "low": $vl,
+                "total": $vt
+              }
+            },
+            "securityPolicy": {
+              "securityMdPresent": $sec_md,
+              "disclosureEmail": (if $disc_email == "" then null else $disc_email end),
+              "cvdProcessDefined": $cvd
+            },
+            "supportPeriod": {
+              "years": ($sup_years | tonumber),
+              "startDate": $sup_start,
+              "endDate": (if $sup_end == "" then null else $sup_end end)
+            },
+            "complianceScore": {
+              "score": $score,
+              "maxScore": 100,
+              "passed": ($passed == "true"),
+              "breakdown": {
+                "sbom": $s_sbom,
+                "signing": $s_sign,
+                "vulnerabilities": $s_vuln,
+                "vex": $s_vex,
+                "securityPolicy": $s_pol,
+                "supportPeriod": $s_sup,
+                "articleCoverage": $s_art
+              }
+            }
+          }' > "$JSON_OUT"
+
+        echo "✅ JSON report: $JSON_OUT"
+
+        # ── Generate Markdown report ──
+        PASS_ICON=$([ "$PASSED" = "true" ] && echo "✅" || echo "❌")
+        SBOM_ICON=$([ "$SBOM_GENERATED" = true ] && echo "✅" || echo "❌")
+        SIGN_ICON=$([ "$SBOM_SIGNED" = "true" ] && echo "✅" || echo "—")
+        ATT_ICON=$([ "$SBOM_ATTESTED" = "true" ] && echo "✅" || echo "—")
+        VEX_ICON=$([ "$VEX_GENERATED" = true ] && echo "✅" || echo "—")
+        VULN_ICON=$([ "$VULN_CRITICAL" -eq 0 ] && echo "✅" || echo "❌")
+        SEC_ICON=$([ "$SECURITY_MD" = true ] && echo "✅" || echo "❌")
+        SUP_ICON=$([ -n "$SUPPORT_END" ] && echo "✅" || echo "⚠️")
+
+        # Build progress bar
+        FILLED=$((SCORE / 5))
+        EMPTY=$((20 - FILLED))
+        BAR=$(printf '█%.0s' $(seq 1 $FILLED 2>/dev/null || echo ""))$(printf '░%.0s' $(seq 1 $EMPTY 2>/dev/null || echo ""))
+
+        cat > "$MD_OUT" << MDEOF
+        # CRA Compliance Report
+
+        **Product:** $PRODUCT_NAME $PRODUCT_VERSION
+        **Repository:** $GITHUB_REPOSITORY
+        **Commit:** \`${COMMIT_SHA:0:8}\`$([ -n "$RELEASE_TAG" ] && echo " (Tag: $RELEASE_TAG)" || echo "")
+        **Generated:** $TIMESTAMP
+        **Schema:** v$SCHEMA_VERSION
+
+        ---
+
+        ## Compliance Score: $SCORE/100 $PASS_ICON
+
+        \`$BAR\` $SCORE%
+
+        | Category | Score | Max |
+        |----------|------:|----:|
+        | SBOM | $S_SBOM | 20 |
+        | Signing & Attestation | $S_SIGN | 15 |
+        | Vulnerabilities | $S_VULN | 20 |
+        | VEX | $S_VEX | 10 |
+        | Security Policy | $S_POL | 15 |
+        | Support Period | $S_SUP | 10 |
+        | CRA Article Coverage | $S_ART | 10 |
+
+        ---
+
+        ## Checklist
+
+        | Check | Status | Details |
+        |-------|--------|---------|
+        | SBOM Generated | $SBOM_ICON | $SBOM_FORMAT, $SBOM_COMPONENTS components |
+        | SBOM Signed (Cosign) | $SIGN_ICON | $([ "$SBOM_SIGNED" = "true" ] && echo "Cosign keyless signature" || echo "Not signed") |
+        | SBOM Attested (GitHub) | $ATT_ICON | $([ -n "$ATTESTATION_ID" ] && echo "ID: \`$ATTESTATION_ID\`" || echo "No attestation") |
+        | VEX Document | $VEX_ICON | $VEX_TOTAL statements ($VEX_OVERRIDES triaged) |
+        | Vulnerabilities | $VULN_ICON | $VULN_CRITICAL critical, $VULN_HIGH high, $VULN_MEDIUM medium, $VULN_LOW low |
+        | SECURITY.md | $SEC_ICON | $([ "$SECURITY_MD" = true ] && echo "Present" || echo "Missing") |
+        | CVD Process | $([ "$CVD_PROCESS" = true ] && echo "✅" || echo "—") | $([ "$CVD_PROCESS" = true ] && echo "Defined" || echo "Not found") |
+        | Support Period | $SUP_ICON | ${SUPPORT_YEARS} years (${SUPPORT_START} → ${SUPPORT_END:-TBD}) |
+
+        ---
+
+        ## CRA Article Mapping
+
+        | Article | Requirement | Status |
+        |---------|-------------|--------|
+        | Art. 10(6) | Vulnerability management | $([ -f "$VULN_FILE" ] && echo "✅ Met" || echo "❌ Not met") |
+        | Art. 10(8) | No known exploitable vulnerabilities | $([ "$VULN_CRITICAL" -eq 0 ] && echo "✅ Met" || echo "❌ $VULN_CRITICAL critical found") |
+        | Art. 10(12) | Integrity of security updates | $([ "$SBOM_SIGNED" = "true" ] && echo "✅ Met" || echo "⚠️ SBOM not signed") |
+        | Art. 13(6) | Security contact point | $([ "$SECURITY_MD" = true ] && echo "✅ Met" || echo "❌ SECURITY.md missing") |
+        | Art. 13(8) | Coordinated vulnerability disclosure | $([ "$CVD_PROCESS" = true ] && echo "✅ Met" || echo "⚠️ CVD process not defined") |
+        | Art. 13(23) | SBOM provided | $([ "$SBOM_GENERATED" = true ] && echo "✅ Met ($SBOM_COMPONENTS components)" || echo "❌ No SBOM") |
+        | Annex I II.1 | SBOM with dependencies | $([ "$SBOM_GENERATED" = true ] && echo "✅ Met" || echo "❌ No SBOM") |
+        | Annex I II.2 | Vulnerability handling (VEX) | $([ "$VEX_GENERATED" = true ] && echo "✅ Met" || echo "⚠️ No VEX document") |
+        | Annex VII | Technical documentation | ⚠️ Partial (automated report) |
+
+        ---
+
+        *Generated by [CRA Compliance Report](https://github.com/bauer-group/SEC-CRACompliance) v1.0.0*
+        MDEOF
+
+        # Remove leading whitespace from heredoc
+        sed -i 's/^        //' "$MD_OUT"
+
+        echo "✅ Markdown report: $MD_OUT"
+
+        # ── Set outputs ──
+        echo "json-path=$(realpath "$JSON_OUT")" >> "$GITHUB_OUTPUT"
+        echo "md-path=$(realpath "$MD_OUT")" >> "$GITHUB_OUTPUT"
+        echo "compliance-score=$SCORE" >> "$GITHUB_OUTPUT"
+        echo "passed=$PASSED" >> "$GITHUB_OUTPUT"
+
+    # ---- Summary ----
+
+    - name: 📊 Report summary
+      shell: bash
+      run: |
+        SCORE="${{ steps.report.outputs.compliance-score }}"
+        PASSED="${{ steps.report.outputs.passed }}"
+
+        if [ "$PASSED" = "true" ]; then
+          echo "### ✅ CRA Compliance Score: ${SCORE}/100 — PASSED" >> "$GITHUB_STEP_SUMMARY"
+        else
+          echo "### ❌ CRA Compliance Score: ${SCORE}/100 — BELOW THRESHOLD" >> "$GITHUB_STEP_SUMMARY"
+        fi
+        echo "" >> "$GITHUB_STEP_SUMMARY"
+
+        # Append the markdown report to the summary
+        if [ -f "${{ inputs.output-prefix }}.md" ]; then
+          cat "${{ inputs.output-prefix }}.md" >> "$GITHUB_STEP_SUMMARY"
+        fi

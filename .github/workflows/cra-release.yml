@@ -5,8 +5,10 @@
 # as part of a release. All output stays in the executing repository.
 #
 # Artifacts produced:
-#   - CycloneDX SBOM (signed with Cosign)
+#   - CycloneDX SBOM (signed with Cosign + GitHub Attestation)
+#   - OpenVEX document (vulnerability exploitability)
 #   - Vulnerability scan report (Trivy + optional Grype + OSV-Scanner)
+#   - CRA Compliance Report (JSON + Markdown)
 #   - SARIF upload to GitHub Security tab
 #
 # Optional: Node.js project validation (lint, build) before artifact generation.
@@ -32,9 +34,10 @@
 #       permissions:
 #         contents: write
 #         id-token: write
+#         attestations: write
 #         security-events: write
 #
-# CRA Reference: Art. 10 Abs. 12, Art. 13 Abs. 23
+# CRA Reference: Art. 10 Abs. 12, Art. 13 Abs. 23, Annex I Part II
 # =============================================================================
 
 name: 📦 CRA Release
@@ -101,6 +104,35 @@ on:
         default: true
 
       # -------------------------------------------------------------------
+      # Attestation, VEX & Compliance Report
+      # -------------------------------------------------------------------
+      attest-sbom:
+        description: 'Create GitHub SBOM attestation (requires attestations: write)'
+        type: boolean
+        required: false
+        default: true
+      generate-vex:
+        description: 'Generate OpenVEX document from scan results'
+        type: boolean
+        required: false
+        default: true
+      vex-overrides:
+        description: 'Path to manual VEX triage overrides file'
+        type: string
+        required: false
+        default: 'security/vex-overrides.json'
+      generate-compliance-report:
+        description: 'Generate CRA compliance report (JSON + Markdown)'
+        type: boolean
+        required: false
+        default: true
+      support-period-years:
+        description: 'Product support period in years (Art. 13(8) CRA)'
+        type: number
+        required: false
+        default: 5
+
+      # -------------------------------------------------------------------
       # Release & Retention
       # -------------------------------------------------------------------
       upload-to-release:
@@ -127,6 +159,15 @@ on:
       sbom-signed:
         description: 'Whether SBOM was signed'
         value: ${{ jobs.cra-release.outputs.sbom-signed }}
+      sbom-attested:
+        description: 'Whether SBOM has GitHub attestation'
+        value: ${{ jobs.cra-release.outputs.sbom-attested }}
+      vex-path:
+        description: 'Path to the generated VEX document'
+        value: ${{ jobs.cra-release.outputs.vex-path }}
+      compliance-score:
+        description: 'CRA compliance score (0-100)'
+        value: ${{ jobs.cra-release.outputs.compliance-score }}
 
 # ---------------------------------------------------------------------------
 # Permissions
@@ -135,6 +176,7 @@ on:
 permissions:
   contents: write
   id-token: write
+  attestations: write
   security-events: write
 
 # =============================================================================
@@ -153,6 +195,9 @@ jobs:
       vulnerability-count: ${{ steps.scan.outputs.total-count }}
       critical-count: ${{ steps.scan.outputs.critical-count }}
       sbom-signed: ${{ steps.sign.outputs.signed }}
+      sbom-attested: ${{ steps.attest.outputs.attested || 'false' }}
+      vex-path: ${{ steps.vex.outputs.vex-path || '' }}
+      compliance-score: ${{ steps.compliance-report.outputs.compliance-score || '' }}
     steps:
       - name: 📥 Checkout repository
         uses: actions/checkout@v6
@@ -207,6 +252,41 @@ jobs:
           enable-grype: ${{ inputs.enable-grype && 'true' || 'false' }}
           enable-osv: ${{ inputs.enable-osv && 'true' || 'false' }}
 
+      # ---- SBOM Attestation ----
+
+      - name: 📜 Attest SBOM provenance
+        id: attest
+        if: inputs.attest-sbom && inputs.sign-sbom
+        uses: bauer-group/automation-templates/.github/actions/sbom-attest@main
+        with:
+          sbom-path: ${{ steps.sbom.outputs.sbom-path }}
+
+      # ---- VEX Generation ----
+
+      - name: 📋 Generate OpenVEX document
+        id: vex
+        if: inputs.generate-vex
+        uses: bauer-group/automation-templates/.github/actions/vex-generate@main
+        with:
+          vulnerability-report: ${{ steps.scan.outputs.report-path }}
+          vex-overrides: ${{ inputs.vex-overrides }}
+          product-id: 'pkg:github/${{ github.repository }}'
+
+      # ---- CRA Compliance Report ----
+
+      - name: 📊 Generate CRA compliance report
+        id: compliance-report
+        if: inputs.generate-compliance-report
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-compliance-report@main
+        with:
+          sbom-path: ${{ steps.sbom.outputs.sbom-path }}
+          vulnerability-report-path: ${{ steps.scan.outputs.report-path }}
+          vex-path: ${{ steps.vex.outputs.vex-path || 'vex.openvex.json' }}
+          sbom-signed: ${{ steps.sign.outputs.signed || 'false' }}
+          sbom-attested: ${{ steps.attest.outputs.attested || 'false' }}
+          attestation-id: ${{ steps.attest.outputs.attestation-id || '' }}
+          support-period-years: ${{ inputs.support-period-years }}
+
       # ---- Upload & Publish ----
 
       - name: 📤 Upload SARIF to GitHub Security
@@ -226,6 +306,9 @@ jobs:
             ${{ steps.sbom.outputs.sbom-path }}.sig
             ${{ steps.sbom.outputs.sbom-path }}.cert
             ${{ steps.scan.outputs.report-path }}
+            ${{ steps.vex.outputs.vex-path }}
+            cra-compliance-report.json
+            cra-compliance-report.md
 
       - name: 📎 Attach to GitHub Release
         if: inputs.upload-to-release && github.event_name == 'release'
@@ -253,6 +336,18 @@ jobs:
             gh release upload "$TAG" "$VULN_REPORT" --clobber
           fi
 
+          # VEX document
+          VEX_FILE="${{ steps.vex.outputs.vex-path }}"
+          if [ -n "$VEX_FILE" ] && [ -f "$VEX_FILE" ]; then
+            gh release upload "$TAG" "$VEX_FILE" --clobber
+          fi
+
+          # Compliance report
+          if [ -f "cra-compliance-report.json" ]; then
+            gh release upload "$TAG" "cra-compliance-report.json" --clobber
+            gh release upload "$TAG" "cra-compliance-report.md" --clobber
+          fi
+
       # ---- Summary ----
 
       - name: 📊 Generate summary
@@ -265,7 +360,10 @@ jobs:
           echo "|----------|--------|" >> "$GITHUB_STEP_SUMMARY"
           echo "| SBOM (${{ inputs.sbom-filename }}) | ${{ steps.sbom.outputs.component-count }} components |" >> "$GITHUB_STEP_SUMMARY"
           echo "| SBOM Signed | ${{ steps.sign.outputs.signed || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| SBOM Attested | ${{ steps.attest.outputs.attested || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Vulnerabilities | ${{ steps.scan.outputs.total-count }} total (${{ steps.scan.outputs.critical-count }} critical) |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| VEX Document | ${{ steps.vex.outputs.total-statements || 'skipped' }} statements |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Compliance Score | ${{ steps.compliance-report.outputs.compliance-score || 'skipped' }}/100 |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Project Type | ${{ steps.sbom.outputs.project-type }} |" >> "$GITHUB_STEP_SUMMARY"
 
           if [ "${{ inputs.run-validation }}" = "true" ]; then
