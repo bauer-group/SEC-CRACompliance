@@ -42,7 +42,7 @@ runs:
     # ---- Install ----
 
     - name: 📦 Install Cosign
-      uses: sigstore/cosign-installer@main
+      uses: sigstore/cosign-installer@v3
       with:
         cosign-release: ${{ inputs.cosign-version }}
 

@@ -18,9 +18,8 @@
 # CRA References: Art. 10, Art. 13, Annex I, Annex VII
 # =============================================================================
 
-name: 'CRA Compliance Report'
+name: '📊 CRA Compliance Report'
 description: 'Generate machine-readable and human-readable CRA compliance reports from scan artifacts'
-author: 'BAUER GROUP'
 
 inputs:
   product-name:
@@ -213,61 +212,45 @@ runs:
         SUPPORT_END=$(date -u -d "$SUPPORT_START + $SUPPORT_YEARS years" +"%Y-%m-%d" 2>/dev/null || echo "")
 
         # ── Calculate compliance score ──
-        SCORE=0
+        # Categories are independent — no double-counting.
+        # SBOM category: artifact exists + integrity proven
+        # Signing category: verification methods available
+        #
+        # Max score: 20+15+20+10+15+10+10 = 100
+        # Note: SBOM awards points for generation; Signing awards
+        # separate points for verification capability.
 
-        # SBOM (20 max): generated=10, signed=5, attested=5
-        [ "$SBOM_GENERATED" = true ] && SCORE=$((SCORE + 10))
-        [ "$SBOM_SIGNED" = "true" ] && SCORE=$((SCORE + 5))
-        [ "$SBOM_ATTESTED" = "true" ] && SCORE=$((SCORE + 5))
-        SCORE_SBOM=$((SCORE))
+        # SBOM (20 max): generated=10, format valid=5, components>0=5
+        S_SBOM=0
+        [ "$SBOM_GENERATED" = true ] && S_SBOM=$((S_SBOM + 10))
+        [ -n "$SBOM_FORMAT" ] && [ "$SBOM_FORMAT" != "unknown" ] && S_SBOM=$((S_SBOM + 5))
+        [ "$SBOM_COMPONENTS" -gt 0 ] 2>/dev/null && S_SBOM=$((S_SBOM + 5))
 
-        # Signing verification (15 max): cosign=10, attestation=5
-        SCORE_SIGNING=0
-        [ "$SBOM_SIGNED" = "true" ] && SCORE_SIGNING=$((SCORE_SIGNING + 10))
-        [ "$SBOM_ATTESTED" = "true" ] && SCORE_SIGNING=$((SCORE_SIGNING + 5))
-        SCORE=$((SCORE + SCORE_SIGNING))
+        # Signing & Attestation (15 max): cosign=8, attestation=7
+        S_SIGN=0
+        [ "$SBOM_SIGNED" = "true" ] && S_SIGN=$((S_SIGN + 8))
+        [ "$SBOM_ATTESTED" = "true" ] && S_SIGN=$((S_SIGN + 7))
 
         # Vulnerabilities (20 max): 0 critical=15, 0 high=5
-        SCORE_VULN=0
-        [ "$VULN_CRITICAL" -eq 0 ] && SCORE_VULN=$((SCORE_VULN + 15))
-        [ "$VULN_HIGH" -eq 0 ] && SCORE_VULN=$((SCORE_VULN + 5))
-        SCORE=$((SCORE + SCORE_VULN))
+        S_VULN=0
+        [ "$VULN_CRITICAL" -eq 0 ] && S_VULN=$((S_VULN + 15))
+        [ "$VULN_HIGH" -eq 0 ] && S_VULN=$((S_VULN + 5))
 
-        # VEX (10 max): generated=5, has overrides=5
-        SCORE_VEX=0
-        [ "$VEX_GENERATED" = true ] && SCORE_VEX=$((SCORE_VEX + 5))
-        [ "$VEX_OVERRIDES" -gt 0 ] && SCORE_VEX=$((SCORE_VEX + 5))
-        SCORE=$((SCORE + SCORE_VEX))
+        # VEX (10 max): generated=5, manual overrides present=5
+        S_VEX=0
+        [ "$VEX_GENERATED" = true ] && S_VEX=$((S_VEX + 5))
+        [ "$VEX_OVERRIDES" -gt 0 ] 2>/dev/null && S_VEX=$((S_VEX + 5))
 
-        # Security policy (15 max): present=10, CVD=5
-        SCORE_POLICY=0
-        [ "$SECURITY_MD" = true ] && SCORE_POLICY=$((SCORE_POLICY + 10))
-        [ "$CVD_PROCESS" = true ] && SCORE_POLICY=$((SCORE_POLICY + 5))
-        SCORE=$((SCORE + SCORE_POLICY))
+        # Security Policy (15 max): SECURITY.md=10, CVD process=5
+        S_POL=0
+        [ "$SECURITY_MD" = true ] && S_POL=$((S_POL + 10))
+        [ "$CVD_PROCESS" = true ] && S_POL=$((S_POL + 5))
 
-        # Support period (10 max): defined=10
-        SCORE_SUPPORT=0
-        [ -n "$SUPPORT_END" ] && SCORE_SUPPORT=10
-        SCORE=$((SCORE + SCORE_SUPPORT))
+        # Support Period (10 max): defined=10
+        S_SUP=0
+        [ -n "$SUPPORT_END" ] && S_SUP=10
 
-        # Deduct signing points counted in both SBOM and Signing categories
-        # Adjust: SBOM section already counted signed+attested, remove double-count
-        SCORE=$((SCORE - ([ "$SBOM_SIGNED" = "true" ] && echo 5 || echo 0) - ([ "$SBOM_ATTESTED" = "true" ] && echo 5 || echo 0) ))
-        # Simpler: recalculate cleanly
-        SCORE=0
-        # SBOM: 20 max
-        S_SBOM=0; [ "$SBOM_GENERATED" = true ] && S_SBOM=$((S_SBOM + 10)); [ "$SBOM_SIGNED" = "true" ] && S_SBOM=$((S_SBOM + 5)); [ "$SBOM_ATTESTED" = "true" ] && S_SBOM=$((S_SBOM + 5))
-        # Signing: 15 max
-        S_SIGN=0; [ "$SBOM_SIGNED" = "true" ] && S_SIGN=$((S_SIGN + 10)); [ "$SBOM_ATTESTED" = "true" ] && S_SIGN=$((S_SIGN + 5))
-        # Vulns: 20 max
-        S_VULN=0; [ "$VULN_CRITICAL" -eq 0 ] && S_VULN=$((S_VULN + 15)); [ "$VULN_HIGH" -eq 0 ] && S_VULN=$((S_VULN + 5))
-        # VEX: 10 max
-        S_VEX=0; [ "$VEX_GENERATED" = true ] && S_VEX=$((S_VEX + 5)); [ "$VEX_OVERRIDES" -gt 0 ] && S_VEX=$((S_VEX + 5))
-        # Policy: 15 max
-        S_POL=0; [ "$SECURITY_MD" = true ] && S_POL=$((S_POL + 10)); [ "$CVD_PROCESS" = true ] && S_POL=$((S_POL + 5))
-        # Support: 10 max
-        S_SUP=0; [ -n "$SUPPORT_END" ] && S_SUP=10
-        # Article coverage: 10 max (based on overall)
+        # CRA Article Coverage (10 max): percentage of mapped articles met
         ARTICLES_MET=0; ARTICLES_TOTAL=9
         [ "$SBOM_GENERATED" = true ] && ARTICLES_MET=$((ARTICLES_MET + 1))
         [ "$VULN_CRITICAL" -eq 0 ] && ARTICLES_MET=$((ARTICLES_MET + 1))

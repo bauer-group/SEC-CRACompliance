@@ -190,6 +190,7 @@ jobs:
   cra-release:
     name: 📦 CRA Release Artifacts
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     outputs:
       sbom-path: ${{ steps.sbom.outputs.sbom-path }}
       vulnerability-count: ${{ steps.scan.outputs.total-count }}
@@ -268,7 +269,7 @@ jobs:
         if: inputs.generate-vex
         uses: bauer-group/automation-templates/.github/actions/vex-generate@main
         with:
-          vulnerability-report: ${{ steps.scan.outputs.report-path }}
+          vulnerability-report-path: ${{ steps.scan.outputs.report-path }}
           vex-overrides: ${{ inputs.vex-overrides }}
           product-id: 'pkg:github/${{ github.repository }}'
 

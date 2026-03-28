@@ -125,7 +125,13 @@ runs:
         if [ -n "${{ inputs.payload-file }}" ] && [ -f "${{ inputs.payload-file }}" ]; then
           SPEC=$(cat "${{ inputs.payload-file }}")
         elif [ -n "${{ inputs.payload-json }}" ]; then
-          SPEC='${{ inputs.payload-json }}'
+          echo '${{ inputs.payload-json }}' > /tmp/cra-hub-payload-inline.json
+          if jq empty /tmp/cra-hub-payload-inline.json 2>/dev/null; then
+            SPEC=$(cat /tmp/cra-hub-payload-inline.json)
+          else
+            echo "::error::payload-json input is not valid JSON"
+            exit 1
+          fi
         fi
 
         # Assemble versioned envelope

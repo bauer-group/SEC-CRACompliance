@@ -1,6 +1,6 @@
 {
   "name": "@bauer-group/cra-check",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "CRA Compliance checker for GitHub repositories and local projects",
   "type": "module",
   "bin": {

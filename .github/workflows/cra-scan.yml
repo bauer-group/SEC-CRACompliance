@@ -115,6 +115,7 @@ jobs:
   cra-scan:
     name: 🛡️ Vulnerability Scan
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     outputs:
       critical-count: ${{ steps.scan.outputs.critical-count }}
       high-count: ${{ steps.scan.outputs.high-count }}
@@ -160,7 +161,7 @@ jobs:
       # ---- Issue Creation ----
 
       - name: 🚨 Create issue for critical findings
-        if: inputs.create-issue && steps.scan.outputs.critical-count > 0
+        if: inputs.create-issue && steps.scan.outputs.critical-count != '0' && steps.scan.outputs.critical-count != ''
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
