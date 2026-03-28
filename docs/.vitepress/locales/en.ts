@@ -226,6 +226,8 @@ export const en: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           items: [
             { text: 'CRA Requirements Matrix', link: '/en/compliance-matrix/' },
             { text: '8.1 Tooling Map', link: '/en/compliance-matrix/tooling-map' },
+            { text: '8.2 Automation Workflows', link: '/en/compliance-matrix/automation-workflows' },
+            { text: '8.3 cra-check CLI', link: '/en/compliance-matrix/cra-check' },
           ]
         }
       ],

@@ -226,6 +226,8 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           items: [
             { text: 'CRA 要求矩阵', link: '/zh/compliance-matrix/' },
             { text: '8.1 工具映射', link: '/zh/compliance-matrix/tooling-map' },
+            { text: '8.2 自动化工作流', link: '/zh/compliance-matrix/automation-workflows' },
+            { text: '8.3 cra-check CLI', link: '/zh/compliance-matrix/cra-check' },
           ]
         }
       ],
