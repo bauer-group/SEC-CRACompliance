@@ -106,9 +106,9 @@
 
 ## 8.1.6 CRA 合规工作流（本仓库）
 
-除了自动化模板之外，本仓库还提供了专用的 CRA 工作流，可在每个源代码仓库中复用。
+除了自动化模板之外，本仓库还提供了专用的 CRA 工作流，可在每个源代码仓库中复用。详见 [8.2 自动化工作流](/zh/compliance-matrix/automation-workflows)。
 
-### 组合操作 (Composite Actions)
+### 组合操作（CRA 专用）
 
 | 操作 | CRA 要求 | 功能 |
 |--------|-----------------|----------|
@@ -116,21 +116,34 @@
 | `cra-sbom-sign` | Art. 10(12) | 签名 SBOM (Cosign, 无密钥 OIDC) |
 | `cra-vulnerability-scan` | Art. 10(6), (8) | 多引擎漏洞扫描 (Trivy + Grype + OSV-Scanner) |
 | `cra-hub-report` | Art. 10, Art. 13 | 向软件安全中心 API 发送合规数据 |
+| `cra-compliance-report` | Annex VII | JSON + Markdown 合规报告（含评分） |
 
-### 可复用工作流 (Reusable Workflows)
+### 组合操作（通用，在 automation-templates 中）
+
+| 操作 | CRA 要求 | 功能 |
+|--------|-----------------|----------|
+| `vex-generate` | Annex I, 第II部分, 编号 2 | 从扫描结果 + 手动分类生成 OpenVEX 文档 |
+| `sbom-attest` | Art. 10(12) | 创建 GitHub 原生 SBOM 认证 |
+
+### 可复用工作流
 
 | 工作流 | 类型 | CRA 要求 | 功能 |
 |----------|-----|-----------------|----------|
-| `cra-release.yml` | 仓库本地 | Art. 10(12), Art. 13(23) | SBOM + 签名 + 扫描作为发布资产 |
+| `cra-release.yml` | 仓库本地 | Art. 10(12), Art. 13(23), Annex VII | SBOM + 签名 + 认证 + VEX + 合规报告 |
 | `cra-scan.yml` | 仓库本地 | Art. 10(6), (8) | 计划 CVE 扫描并创建 issue |
 | `cra-report.yml` | API 报告 | Art. 10, Art. 13, Annex VII | 所有 CRA 数据发送至 CRA 合规中心 |
+
+### CLI 工具
+
+| 工具 | CRA 要求 | 功能 |
+|------|-----------------|----------|
+| [`cra-check`](/zh/compliance-matrix/cra-check) | Annex VII | 本地/远程合规验证（含评分） |
 
 ## 8.1.7 计划扩展
 
 | 工具/工作流 | CRA 要求 | 状态 |
 |----------------|-----------------|--------|
 | **CodeQL** (SAST) | Annex I, 第II部分, 编号 3 | 🔧 可选 |
-| **CRA 合规中心** (Web 应用) | 集中评估 | 🔧 计划中 |
 
 ## 8.1.8 总结：通过工具实现的 CRA 覆盖
 
@@ -145,7 +158,7 @@
                     │  ├── (7) 更新            │──→ Dependabot, CI/CD
                     │  ├── (8) 无 CVE          │──→ CVE-Monitor, Trivy
                     │  ├── (9) CVD             │──→ GitHub Advisories
-                    │  ├── (12) 完整性         │──→ Cosign
+                    │  ├── (12) 完整性         │──→ Cosign + Attestation
                     │  └── (16) 支持           │──→ SECURITY.md
                     ├─────────────────────────┤
                     │  Art. 13（信息）          │

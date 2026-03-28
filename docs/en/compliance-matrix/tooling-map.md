@@ -94,7 +94,7 @@ This mapping shows which tool covers which CRA requirements.
 | Art. 10(4) | Due diligence for third-party components (licences) |
 | Annex I, Part II, No. 1 | Licence inventory as part of the SBOM |
 
-## 8.1.5 Signing & Integrity
+## 8.1.5 Signing, Attestation & Integrity
 
 ### Cosign (Sigstore)
 
@@ -104,11 +104,22 @@ This mapping shows which tool covers which CRA requirements.
 | Annex I, Part I, No. 3.2 | Integrity protection (data/artefacts) |
 | Annex I, Part II, No. 6 | Secure provision of updates |
 
+### GitHub Attestation (Sigstore via GitHub)
+
+| CRA Requirement | Coverage |
+|-----------------|-----------|
+| Art. 10(12) | Cryptographic provenance of SBOM |
+| Annex I, Part I, No. 3.2 | Verifiable build-time integrity |
+
+::: tip Belt + Suspenders
+Both Cosign (portable) and GitHub Attestation (native) are used simultaneously. Cosign works outside GitHub; Attestation is verifiable via `gh attestation verify`.
+:::
+
 ## 8.1.6 CRA Compliance Workflows (this repository)
 
-In addition to the automation templates, this repository provides dedicated CRA workflows that can be reused in every source code repository.
+In addition to the automation templates, this repository provides dedicated CRA workflows that can be reused in every source code repository. See [8.2 Automation Workflows](/en/compliance-matrix/automation-workflows) for detailed usage.
 
-### Composite Actions
+### Composite Actions (CRA-specific)
 
 | Action | CRA Requirement | Function |
 |--------|-----------------|----------|
@@ -116,21 +127,34 @@ In addition to the automation templates, this repository provides dedicated CRA 
 | `cra-sbom-sign` | Art. 10(12) | Sign SBOM (Cosign, keyless OIDC) |
 | `cra-vulnerability-scan` | Art. 10(6), (8) | Multi-engine vulnerability scan (Trivy + Grype + OSV-Scanner) |
 | `cra-hub-report` | Art. 10, Art. 13 | Send compliance data to Software Security Hub API |
+| `cra-compliance-report` | Annex VII | Generate JSON + Markdown compliance report with scoring |
+
+### Composite Actions (Generic, in automation-templates)
+
+| Action | CRA Requirement | Function |
+|--------|-----------------|----------|
+| `vex-generate` | Annex I, Part II, No. 2 | Generate OpenVEX document from scan results + manual triage |
+| `sbom-attest` | Art. 10(12) | Create GitHub-native SBOM attestation |
 
 ### Reusable Workflows
 
 | Workflow | Type | CRA Requirement | Function |
 |----------|-----|-----------------|----------|
-| `cra-release.yml` | Repo-local | Art. 10(12), Art. 13(23) | SBOM + signature + scan as release assets |
+| `cra-release.yml` | Repo-local | Art. 10(12), Art. 13(23), Annex VII | SBOM + signature + attestation + VEX + compliance report |
 | `cra-scan.yml` | Repo-local | Art. 10(6), (8) | Scheduled CVE scan with issue creation |
 | `cra-report.yml` | API reporting | Art. 10, Art. 13, Annex VII | All CRA data to CRA Compliance Hub |
+
+### CLI Tool
+
+| Tool | CRA Requirement | Function |
+|------|-----------------|----------|
+| [`cra-check`](/en/compliance-matrix/cra-check) | Annex VII | Local/remote compliance verification with scoring |
 
 ## 8.1.7 Planned Extensions
 
 | Tool / Workflow | CRA Requirement | Status |
 |----------------|-----------------|--------|
 | **CodeQL** (SAST) | Annex I, Part II, No. 3 | 🔧 Optional |
-| **CRA Compliance Hub** (web app) | Central evaluation | 🔧 Planned |
 
 ## 8.1.8 Summary: CRA Coverage through Tooling
 
@@ -145,7 +169,7 @@ In addition to the automation templates, this repository provides dedicated CRA 
                     │  ├── (7) Updates          │──→ Dependabot, CI/CD
                     │  ├── (8) No CVEs          │──→ CVE-Monitor, Trivy
                     │  ├── (9) CVD              │──→ GitHub Advisories
-                    │  ├── (12) Integrity       │──→ Cosign
+                    │  ├── (12) Integrity       │──→ Cosign + Attestation
                     │  └── (16) Support         │──→ SECURITY.md
                     ├─────────────────────────┤
                     │  Art. 13 (Information)     │

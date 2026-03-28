@@ -106,9 +106,9 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 
 ## 8.1.6 CRA Compliance Workflows (dieses Repository)
 
-Zusätzlich zu den Automation-Templates stellt dieses Repository dedizierte CRA-Workflows bereit, die in jedem Quellcode-Repository wiederverwendet werden können.
+Zusätzlich zu den Automation-Templates stellt dieses Repository dedizierte CRA-Workflows bereit, die in jedem Quellcode-Repository wiederverwendet werden können. Siehe [8.2 Automatisierte Workflows](/de/compliance-matrix/automation-workflows) für Details.
 
-### Composite Actions
+### Composite Actions (CRA-spezifisch)
 
 | Action | CRA-Anforderung | Funktion |
 |--------|-----------------|----------|
@@ -116,21 +116,34 @@ Zusätzlich zu den Automation-Templates stellt dieses Repository dedizierte CRA-
 | `cra-sbom-sign` | Art. 10 Abs. 12 | SBOM signieren (Cosign, keyless OIDC) |
 | `cra-vulnerability-scan` | Art. 10 Abs. 6, 8 | Multi-Engine Vulnerability Scan (Trivy + Grype + OSV-Scanner) |
 | `cra-hub-report` | Art. 10, Art. 13 | Compliance-Daten an Software Security Hub API senden |
+| `cra-compliance-report` | Annex VII | JSON + Markdown Compliance-Report mit Scoring |
+
+### Composite Actions (Generisch, in automation-templates)
+
+| Action | CRA-Anforderung | Funktion |
+|--------|-----------------|----------|
+| `vex-generate` | Annex I, Teil II, Nr. 2 | OpenVEX-Dokument aus Scan + manueller Triage |
+| `sbom-attest` | Art. 10 Abs. 12 | GitHub-native SBOM-Attestation |
 
 ### Reusable Workflows
 
 | Workflow | Typ | CRA-Anforderung | Funktion |
 |----------|-----|-----------------|----------|
-| `cra-release.yml` | Repo-lokal | Art. 10 Abs. 12, Art. 13 Abs. 23 | SBOM + Signatur + Scan als Release-Assets |
+| `cra-release.yml` | Repo-lokal | Art. 10 Abs. 12, Art. 13 Abs. 23, Annex VII | SBOM + Signatur + Attestation + VEX + Compliance Report |
 | `cra-scan.yml` | Repo-lokal | Art. 10 Abs. 6, 8 | Geplanter CVE-Scan mit Issue-Erstellung |
 | `cra-report.yml` | API-Reporting | Art. 10, Art. 13, Annex VII | Alle CRA-Daten an CRA Compliance Hub |
+
+### CLI-Tool
+
+| Tool | CRA-Anforderung | Funktion |
+|------|-----------------|----------|
+| [`cra-check`](/de/compliance-matrix/cra-check) | Annex VII | Lokale/Remote Compliance-Prüfung mit Scoring |
 
 ## 8.1.7 Geplante Erweiterungen
 
 | Tool / Workflow | CRA-Anforderung | Status |
 |----------------|-----------------|--------|
 | **CodeQL** (SAST) | Annex I, Teil II, Nr. 3 | 🔧 Optional |
-| **CRA Compliance Hub** (Web-App) | Zentrale Auswertung | 🔧 Geplant |
 
 ## 8.1.8 Zusammenfassung: CRA-Abdeckung durch Tooling
 
@@ -145,7 +158,7 @@ Zusätzlich zu den Automation-Templates stellt dieses Repository dedizierte CRA-
                     │  ├── Abs. 7 (Updates)    │──→ Dependabot, CI/CD
                     │  ├── Abs. 8 (Keine CVEs) │──→ CVE-Monitor, Trivy
                     │  ├── Abs. 9 (CVD)        │──→ GitHub Advisories
-                    │  ├── Abs. 12 (Integrität)│──→ Cosign
+                    │  ├── Abs. 12 (Integrität)│──→ Cosign + Attestation
                     │  └── Abs. 16 (Support)   │──→ SECURITY.md
                     ├─────────────────────────┤
                     │  Art. 13 (Information)    │
