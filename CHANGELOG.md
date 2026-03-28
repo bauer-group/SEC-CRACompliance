@@ -1,3 +1,9 @@
+## [0.9.1](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.9.0...v0.9.1) (2026-03-28)
+
+### 🐛 Bug Fixes
+
+* **cra:** resolve all 12 code review findings ([4b2063d](https://github.com/bauer-group/SEC-CRACompliance/commit/4b2063d86ae2111d33ccbcfa043cf5d5505de440)), closes [#1](https://github.com/bauer-group/SEC-CRACompliance/issues/1) [#5](https://github.com/bauer-group/SEC-CRACompliance/issues/5) [#8](https://github.com/bauer-group/SEC-CRACompliance/issues/8) [#11](https://github.com/bauer-group/SEC-CRACompliance/issues/11)
+
 ## [0.9.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.8.5...v0.9.0) (2026-03-27)
 
 ### 🚀 Features
