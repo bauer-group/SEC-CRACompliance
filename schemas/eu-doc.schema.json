@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cra.docs.bauer-group.com/schemas/eu-doc/v1.0.0",
+  "title": "EU Declaration of Conformity",
+  "description": "Machine-readable EU Declaration of Conformity pursuant to Annex V of Regulation (EU) 2024/2847 (Cyber Resilience Act)",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "document": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "const": "EU-Declaration-of-Conformity" },
+        "number": { "type": "string", "description": "Unique document number (e.g., DoC-2026-product-v1.0.0-abc12345)" },
+        "regulation": { "type": "string" },
+        "annex": { "type": "string", "const": "V" },
+        "schemaVersion": { "type": "string" },
+        "generatedAt": { "type": "string", "format": "date-time" },
+        "generatedBy": { "type": "string" }
+      },
+      "required": ["type", "number", "regulation", "annex", "schemaVersion", "generatedAt"]
+    },
+    "manufacturer": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "address": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "website": { "type": "string", "format": "uri" },
+        "authorizedRepresentative": { "type": ["string", "null"] }
+      },
+      "required": ["name", "email"]
+    },
+    "product": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "type": "string", "enum": ["Software", "Firmware", "Container Image", "Embedded System"] },
+        "version": { "type": "string" },
+        "description": { "type": "string" },
+        "uniqueIdentification": { "type": "string", "description": "Package URL (purl) or other unique identifier" },
+        "repository": { "type": "string", "format": "uri" },
+        "commit": { "type": "string" },
+        "tag": { "type": "string" }
+      },
+      "required": ["name", "version", "uniqueIdentification"]
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "category": { "type": "string", "enum": ["standard", "important-class-1", "important-class-2", "critical"] },
+        "categoryDisplay": { "type": "string" }
+      },
+      "required": ["category"]
+    },
+    "legislation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "reference": { "type": "string" },
+          "officialJournal": { "type": "string" }
+        },
+        "required": ["name", "reference"]
+      }
+    },
+    "standards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "status": { "type": "string", "enum": ["applied", "partially-applied", "not-applied"] }
+        },
+        "required": ["id", "title", "status"]
+      }
+    },
+    "conformityAssessment": {
+      "type": "object",
+      "properties": {
+        "module": { "type": "string", "enum": ["module-a", "module-b-c", "module-h", "eucc"] },
+        "moduleDisplay": { "type": "string" },
+        "notifiedBody": { "type": ["string", "null"] },
+        "date": { "type": "string", "format": "date" }
+      },
+      "required": ["module", "date"]
+    },
+    "compliance": {
+      "type": "object",
+      "properties": {
+        "score": { "type": ["number", "string"] },
+        "sbom": {
+          "type": "object",
+          "properties": {
+            "generated": { "type": "boolean" },
+            "signed": { "type": "boolean" },
+            "attested": { "type": "boolean" },
+            "components": { "type": "integer" },
+            "format": { "type": "string" }
+          }
+        },
+        "vulnerabilities": {
+          "type": "object",
+          "properties": {
+            "critical": { "type": "integer" },
+            "high": { "type": "integer" }
+          }
+        },
+        "securityPolicy": { "type": "boolean" },
+        "vulnerabilityReporting": { "type": "string" }
+      }
+    },
+    "supportPeriod": {
+      "type": "object",
+      "properties": {
+        "years": { "type": "integer", "minimum": 5 },
+        "start": { "type": "string", "format": "date" },
+        "end": { "type": ["string", "null"], "format": "date" },
+        "type": { "type": "string" }
+      },
+      "required": ["years"]
+    },
+    "declaration": {
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "signedBy": { "type": ["string", "null"] },
+        "signatoryRole": { "type": ["string", "null"] },
+        "place": { "type": ["string", "null"] },
+        "date": { "type": "string", "format": "date" }
+      },
+      "required": ["text", "date"]
+    }
+  },
+  "required": ["document", "manufacturer", "product", "classification", "conformityAssessment", "declaration"]
+}

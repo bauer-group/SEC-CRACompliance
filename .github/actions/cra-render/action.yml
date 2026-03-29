@@ -1,0 +1,412 @@
+# =============================================================================
+# CRA Render Action (JSON → PDF)
+# =============================================================================
+# Renders machine-readable CRA compliance artifacts (JSON) into professional
+# PDF documents with BAUER GROUP corporate design.
+#
+# Uses Puppeteer (headless Chrome) for high-fidelity PDF rendering with full
+# CSS control — tables, badges, scoring visualisation, header/footer.
+#
+# Usage:
+#   - uses: bauer-group/SEC-CRACompliance/.github/actions/cra-render@main
+#     with:
+#       eu-doc-path: eu-doc.json
+#       compliance-report-path: cra-compliance-report.json
+#
+# CRA References: Art. 28 (DoC), Annex V (DoC format), Annex VII (tech docs)
+# =============================================================================
+
+name: '🖨️ CRA Render (JSON → PDF)'
+description: 'Render CRA compliance artifacts to professional PDF documents'
+
+inputs:
+  eu-doc-path:
+    description: 'Path to EU DoC JSON file'
+    required: false
+    default: ''
+  compliance-report-path:
+    description: 'Path to CRA compliance report JSON file'
+    required: false
+    default: ''
+  output-dir:
+    description: 'Output directory for rendered PDFs'
+    required: false
+    default: 'cra-rendered'
+  product-name:
+    description: 'Product name (used in PDF filenames, auto-detected if empty)'
+    required: false
+    default: ''
+  product-version:
+    description: 'Product version (used in PDF filenames, auto-detected if empty)'
+    required: false
+    default: ''
+
+outputs:
+  eu-doc-pdf-path:
+    description: 'Path to rendered EU DoC PDF'
+    value: ${{ steps.render.outputs.eu-doc-pdf-path }}
+  compliance-report-pdf-path:
+    description: 'Path to rendered compliance report PDF'
+    value: ${{ steps.render.outputs.compliance-report-pdf-path }}
+  rendered-files:
+    description: 'Comma-separated list of all rendered PDF files'
+    value: ${{ steps.render.outputs.rendered-files }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 📦 Setup Node.js for Puppeteer
+      uses: actions/setup-node@v6
+      with:
+        node-version: '24'
+
+    - name: 🖨️ Render PDFs
+      id: render
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        OUTPUT_DIR="${{ inputs.output-dir }}"
+        mkdir -p "$OUTPUT_DIR"
+
+        # ── Auto-detect product info ──
+        PRODUCT_NAME="${{ inputs.product-name }}"
+        if [ -z "$PRODUCT_NAME" ]; then
+          PRODUCT_NAME="${GITHUB_REPOSITORY##*/}"
+        fi
+
+        PRODUCT_VERSION="${{ inputs.product-version }}"
+        if [ -z "$PRODUCT_VERSION" ]; then
+          if [ -n "${GITHUB_REF_NAME:-}" ] && [[ "$GITHUB_REF_NAME" =~ ^v?[0-9] ]]; then
+            PRODUCT_VERSION="$GITHUB_REF_NAME"
+          else
+            PRODUCT_VERSION="${GITHUB_SHA:0:8}"
+          fi
+        fi
+
+        SAFE_NAME=$(echo "$PRODUCT_NAME" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')
+        RENDERED_FILES=""
+
+        # ── Install Puppeteer ──
+        echo "📦 Installing Puppeteer..."
+        npm install --no-save puppeteer@24 2>/dev/null
+
+        # ── Create render script ──
+        cat > _cra_render.mjs << 'RENDERSCRIPT'
+        import puppeteer from 'puppeteer';
+        import { readFileSync, writeFileSync } from 'fs';
+
+        const [,, templateType, jsonPath, outputPath, productName, productVersion] = process.argv;
+
+        const data = JSON.parse(readFileSync(jsonPath, 'utf-8'));
+
+        function escapeHtml(str) {
+          if (str == null) return '';
+          return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        function scoreBar(score, max = 100) {
+          const pct = Math.round((score / max) * 100);
+          const color = pct >= 70 ? '#22c55e' : pct >= 50 ? '#f59e0b' : '#ef4444';
+          return `<div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:120px;height:12px;background:#e5e7eb;border-radius:6px;overflow:hidden;">
+              <div style="width:${pct}%;height:100%;background:${color};border-radius:6px;"></div>
+            </div>
+            <span style="font-weight:600;">${score}/${max}</span>
+          </div>`;
+        }
+
+        function statusIcon(val) {
+          if (val === true || val === 'true') return '✅';
+          if (val === false || val === 'false') return '❌';
+          return '⚠️';
+        }
+
+        function generateEuDocHtml(d) {
+          return `<!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <style>
+              @page { size: A4; margin: 20mm 15mm 25mm 15mm; }
+              * { box-sizing: border-box; margin: 0; padding: 0; }
+              body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: 11pt; line-height: 1.5; color: #1a1a1a; }
+              .header { text-align: center; border-bottom: 3px solid #1e3a5f; padding-bottom: 12px; margin-bottom: 20px; }
+              .header h1 { font-size: 18pt; color: #1e3a5f; margin-bottom: 4px; }
+              .header .subtitle { font-size: 10pt; color: #666; }
+              .doc-number { text-align: center; font-size: 10pt; color: #888; margin-bottom: 20px; }
+              .section { margin-bottom: 16px; }
+              .section-title { font-size: 11pt; font-weight: 700; color: #1e3a5f; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-bottom: 8px; }
+              table { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 10pt; }
+              th, td { padding: 6px 10px; text-align: left; border: 1px solid #ddd; }
+              th { background: #f8f9fa; font-weight: 600; width: 35%; color: #1e3a5f; }
+              .declaration-box { border: 2px solid #1e3a5f; padding: 16px; margin: 20px 0; background: #f8fafc; border-radius: 4px; }
+              .declaration-box p { font-style: italic; margin-bottom: 12px; }
+              .signature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
+              .sig-field { border-bottom: 1px solid #333; padding-bottom: 4px; min-height: 24px; }
+              .sig-label { font-size: 9pt; color: #666; margin-top: 4px; }
+              .ce-mark { text-align: center; margin: 24px 0; font-size: 36pt; font-weight: 900; color: #1e3a5f; letter-spacing: 4px; }
+              .legal-notice { font-size: 8pt; color: #888; border-top: 1px solid #ddd; padding-top: 8px; margin-top: 20px; }
+              .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 9pt; font-weight: 600; }
+              .badge-pass { background: #dcfce7; color: #166534; }
+              .badge-warn { background: #fef3c7; color: #92400e; }
+              .badge-fail { background: #fce7e7; color: #991b1b; }
+            </style>
+          </head>
+          <body>
+            <div class="header">
+              <h1>EU DECLARATION OF CONFORMITY</h1>
+              <div class="subtitle">Pursuant to Annex V of Regulation (EU) 2024/2847 — Cyber Resilience Act</div>
+            </div>
+            <div class="doc-number">No. ${escapeHtml(d.document?.number)}</div>
+
+            <div class="section">
+              <div class="section-title">1. Product with digital elements</div>
+              <table>
+                <tr><th>Product Name</th><td>${escapeHtml(d.product?.name)}</td></tr>
+                <tr><th>Product Type</th><td>${escapeHtml(d.product?.type)}</td></tr>
+                <tr><th>Version</th><td>${escapeHtml(d.product?.version)}</td></tr>
+                <tr><th>Unique Identification</th><td><code>${escapeHtml(d.product?.uniqueIdentification)}</code></td></tr>
+                ${d.product?.description ? `<tr><th>Description</th><td>${escapeHtml(d.product.description)}</td></tr>` : ''}
+              </table>
+            </div>
+
+            <div class="section">
+              <div class="section-title">2. Manufacturer</div>
+              <table>
+                <tr><th>Company</th><td>${escapeHtml(d.manufacturer?.name)}</td></tr>
+                ${d.manufacturer?.address ? `<tr><th>Address</th><td>${escapeHtml(d.manufacturer.address)}</td></tr>` : ''}
+                <tr><th>Email</th><td>${escapeHtml(d.manufacturer?.email)}</td></tr>
+                ${d.manufacturer?.website ? `<tr><th>Website</th><td>${escapeHtml(d.manufacturer.website)}</td></tr>` : ''}
+                <tr><th>Authorised Representative</th><td>${d.manufacturer?.authorizedRepresentative ? escapeHtml(d.manufacturer.authorizedRepresentative) : 'Not applicable'}</td></tr>
+              </table>
+            </div>
+
+            <div class="section">
+              <div class="section-title">3. Declaration Statement</div>
+              <div class="declaration-box">
+                <p>${escapeHtml(d.declaration?.text)}</p>
+              </div>
+            </div>
+
+            <div class="section">
+              <div class="section-title">4. Applicable Legislation</div>
+              <table>
+                <tr><th>Legislation</th><th>Reference</th></tr>
+                ${(d.legislation || []).map(l => `<tr><td>${escapeHtml(l.name)}</td><td>${escapeHtml(l.reference)}</td></tr>`).join('')}
+              </table>
+            </div>
+
+            <div class="section">
+              <div class="section-title">5. Harmonised Standards</div>
+              <table>
+                <tr><th>Standard</th><th>Description</th><th>Status</th></tr>
+                ${(d.standards || []).map(s => `<tr><td>${escapeHtml(s.id)}</td><td>${escapeHtml(s.title)}</td><td>${escapeHtml(s.status)}</td></tr>`).join('')}
+              </table>
+            </div>
+
+            <div class="section">
+              <div class="section-title">6. Conformity Assessment</div>
+              <table>
+                <tr><th>Module</th><td>${escapeHtml(d.conformityAssessment?.moduleDisplay)}</td></tr>
+                <tr><th>Notified Body</th><td>${d.conformityAssessment?.notifiedBody || 'Not applicable (Module A)'}</td></tr>
+                <tr><th>Date</th><td>${escapeHtml(d.conformityAssessment?.date)}</td></tr>
+              </table>
+            </div>
+
+            <div class="section">
+              <div class="section-title">7. Product Classification & Compliance</div>
+              <table>
+                <tr><th>CRA Category</th><td>${escapeHtml(d.classification?.categoryDisplay)}</td></tr>
+                <tr><th>Compliance Score</th><td>${d.compliance?.score != null ? d.compliance.score + '/100' : 'N/A'}</td></tr>
+                <tr><th>SBOM Available</th><td>${statusIcon(d.compliance?.sbom?.generated)} ${d.compliance?.sbom?.format || ''} (${d.compliance?.sbom?.components || 0} components)</td></tr>
+                <tr><th>SBOM Signed</th><td>${statusIcon(d.compliance?.sbom?.signed)} Cosign (Sigstore OIDC)</td></tr>
+                <tr><th>Vulnerability Reporting</th><td>${escapeHtml(d.compliance?.vulnerabilityReporting)} / GitHub Security Advisories</td></tr>
+              </table>
+            </div>
+
+            <div class="section">
+              <div class="section-title">8. Support Period (Art. 13(8))</div>
+              <table>
+                <tr><th>Duration</th><td>${d.supportPeriod?.years || 5} years</td></tr>
+                <tr><th>Start</th><td>${escapeHtml(d.supportPeriod?.start)}</td></tr>
+                <tr><th>End</th><td>${escapeHtml(d.supportPeriod?.end) || 'TBD'}</td></tr>
+                <tr><th>Type</th><td>${escapeHtml(d.supportPeriod?.type)}</td></tr>
+              </table>
+            </div>
+
+            <div class="ce-mark">CE</div>
+
+            <div class="section">
+              <div class="section-title">Signed for and on behalf of the manufacturer</div>
+              <div class="signature-grid">
+                <div>
+                  <div class="sig-field">${escapeHtml(d.declaration?.place) || ''}</div>
+                  <div class="sig-label">Place</div>
+                </div>
+                <div>
+                  <div class="sig-field">${escapeHtml(d.declaration?.date)}</div>
+                  <div class="sig-label">Date</div>
+                </div>
+                <div>
+                  <div class="sig-field">${escapeHtml(d.declaration?.signedBy) || ''}</div>
+                  <div class="sig-label">Name</div>
+                </div>
+                <div>
+                  <div class="sig-field">${escapeHtml(d.declaration?.signatoryRole) || ''}</div>
+                  <div class="sig-label">Role / Title</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="legal-notice">
+              This Declaration of Conformity is a legally binding document pursuant to Art. 28 of Regulation (EU) 2024/2847.
+              Generated: ${d.document?.generatedAt || ''} | Schema: eu-doc/v${d.document?.schemaVersion || '1.0.0'}
+            </div>
+          </body>
+          </html>`;
+        }
+
+        function generateComplianceReportHtml(d) {
+          const score = d.complianceScore?.score ?? d.compliance_score ?? 0;
+          const maxScore = d.complianceScore?.maxScore ?? 100;
+
+          return `<!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <style>
+              @page { size: A4; margin: 18mm 15mm 22mm 15mm; }
+              * { box-sizing: border-box; margin: 0; padding: 0; }
+              body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 10pt; line-height: 1.4; color: #1a1a1a; }
+              .header { border-bottom: 3px solid #1e3a5f; padding-bottom: 10px; margin-bottom: 16px; }
+              .header h1 { font-size: 16pt; color: #1e3a5f; }
+              .header .meta { font-size: 9pt; color: #666; margin-top: 4px; }
+              .score-hero { text-align: center; padding: 20px; margin: 16px 0; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; }
+              .score-hero .number { font-size: 36pt; font-weight: 800; }
+              .score-hero .label { font-size: 10pt; color: #666; }
+              .score-pass { color: #166534; }
+              .score-warn { color: #92400e; }
+              .score-fail { color: #991b1b; }
+              .section { margin-bottom: 14px; page-break-inside: avoid; }
+              .section-title { font-size: 11pt; font-weight: 700; color: #1e3a5f; border-bottom: 1px solid #ddd; padding-bottom: 3px; margin-bottom: 6px; }
+              table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin-bottom: 10px; }
+              th, td { padding: 5px 8px; text-align: left; border: 1px solid #ddd; }
+              th { background: #f8f9fa; font-weight: 600; color: #1e3a5f; }
+              .check { color: #166534; } .cross { color: #991b1b; } .warn { color: #92400e; }
+              .footer { font-size: 8pt; color: #888; border-top: 1px solid #ddd; padding-top: 6px; margin-top: 16px; }
+            </style>
+          </head>
+          <body>
+            <div class="header">
+              <h1>CRA Compliance Report</h1>
+              <div class="meta">
+                ${escapeHtml(d.product?.name || '')} ${escapeHtml(d.product?.version || '')}
+                · ${escapeHtml(d.product?.repo || '')}
+                · Generated: ${escapeHtml(d.generatedAt || d.timestamp || '')}
+              </div>
+            </div>
+
+            <div class="score-hero">
+              <div class="number ${score >= 70 ? 'score-pass' : score >= 50 ? 'score-warn' : 'score-fail'}">${score}</div>
+              <div class="label">out of ${maxScore} · ${score >= 70 ? 'PASS' : 'FAIL'}</div>
+            </div>
+
+            <div class="section">
+              <div class="section-title">Compliance Checklist</div>
+              <table>
+                <tr><th>Check</th><th>Status</th><th>Details</th></tr>
+                <tr><td>SBOM Generated</td><td>${statusIcon(d.sbom?.generated)}</td><td>${d.sbom?.format || ''}, ${d.sbom?.components || 0} components</td></tr>
+                <tr><td>SBOM Signed (Cosign)</td><td>${statusIcon(d.signing?.cosign)}</td><td>Sigstore keyless OIDC</td></tr>
+                <tr><td>SBOM Attested (GitHub)</td><td>${statusIcon(d.signing?.attestation)}</td><td>GitHub-native Sigstore</td></tr>
+                <tr><td>Vulnerabilities</td><td>${(d.vulnerabilities?.critical || 0) === 0 && (d.vulnerabilities?.high || 0) === 0 ? '✅' : '⚠️'}</td><td>${d.vulnerabilities?.critical || 0} critical, ${d.vulnerabilities?.high || 0} high, ${d.vulnerabilities?.medium || 0} medium, ${d.vulnerabilities?.low || 0} low</td></tr>
+                <tr><td>VEX Document</td><td>${statusIcon(d.vex?.generated)}</td><td>${d.vex?.totalStatements || 0} statements, ${d.vex?.overrides || 0} triaged</td></tr>
+                <tr><td>Security Policy</td><td>${statusIcon(d.securityPolicy?.present)}</td><td>${d.securityPolicy?.cvdProcess ? 'CVD process documented' : 'SECURITY.md'}</td></tr>
+                <tr><td>Support Period</td><td>${statusIcon(d.supportPeriod?.defined)}</td><td>${d.supportPeriod?.years || '?'} years</td></tr>
+              </table>
+            </div>
+
+            ${d.craArticleMapping ? `
+            <div class="section">
+              <div class="section-title">CRA Article Mapping</div>
+              <table>
+                <tr><th>Article</th><th>Requirement</th><th>Status</th></tr>
+                ${d.craArticleMapping.map(a => `<tr><td>${escapeHtml(a.article)}</td><td>${escapeHtml(a.requirement)}</td><td>${a.status === 'met' ? '<span class="check">✅ Met</span>' : a.status === 'partial' ? '<span class="warn">⚠️ Partial</span>' : '<span class="cross">❌ Not met</span>'}</td></tr>`).join('')}
+              </table>
+            </div>` : ''}
+
+            <div class="footer">
+              Schema: compliance-report/v${d.schemaVersion || '1.0.0'} |
+              Generated by bauer-group/SEC-CRACompliance cra-render action
+            </div>
+          </body>
+          </html>`;
+        }
+
+        // ── Main ──
+        const templates = { 'eu-doc': generateEuDocHtml, 'compliance-report': generateComplianceReportHtml };
+        const generator = templates[templateType];
+        if (!generator) { console.error(`Unknown template: ${templateType}`); process.exit(1); }
+
+        const html = generator(data);
+        const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+        const page = await browser.newPage();
+        await page.setContent(html, { waitUntil: 'networkidle0' });
+        await page.pdf({
+          path: outputPath,
+          format: 'A4',
+          printBackground: true,
+          displayHeaderFooter: true,
+          headerTemplate: `<div style="font-size:8px;width:100%;text-align:center;color:#999;">${escapeHtml(productName)} ${escapeHtml(productVersion)} — CRA Compliance</div>`,
+          footerTemplate: '<div style="font-size:8px;width:100%;text-align:center;color:#999;">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
+          margin: { top: '30mm', bottom: '20mm', left: '15mm', right: '15mm' }
+        });
+        await browser.close();
+        console.log(`✅ Rendered: ${outputPath}`);
+        RENDERSCRIPT
+
+        # ── Render EU DoC ──
+        EU_DOC_PATH="${{ inputs.eu-doc-path }}"
+        EU_DOC_PDF=""
+        if [ -n "$EU_DOC_PATH" ] && [ -f "$EU_DOC_PATH" ]; then
+          EU_DOC_PDF="${OUTPUT_DIR}/EU-Declaration-${SAFE_NAME}-${PRODUCT_VERSION}.pdf"
+          echo "🖨️ Rendering EU Declaration of Conformity..."
+          node _cra_render.mjs "eu-doc" "$EU_DOC_PATH" "$EU_DOC_PDF" "$PRODUCT_NAME" "$PRODUCT_VERSION"
+          RENDERED_FILES="${EU_DOC_PDF}"
+        fi
+
+        # ── Render Compliance Report ──
+        REPORT_PATH="${{ inputs.compliance-report-path }}"
+        REPORT_PDF=""
+        if [ -n "$REPORT_PATH" ] && [ -f "$REPORT_PATH" ]; then
+          REPORT_PDF="${OUTPUT_DIR}/CRA-Compliance-Report-${SAFE_NAME}-${PRODUCT_VERSION}.pdf"
+          echo "🖨️ Rendering CRA Compliance Report..."
+          node _cra_render.mjs "compliance-report" "$REPORT_PATH" "$REPORT_PDF" "$PRODUCT_NAME" "$PRODUCT_VERSION"
+          if [ -n "$RENDERED_FILES" ]; then
+            RENDERED_FILES="${RENDERED_FILES},${REPORT_PDF}"
+          else
+            RENDERED_FILES="${REPORT_PDF}"
+          fi
+        fi
+
+        # ── Cleanup ──
+        rm -f _cra_render.mjs
+
+        # ── Outputs ──
+        echo "eu-doc-pdf-path=${EU_DOC_PDF}" >> "$GITHUB_OUTPUT"
+        echo "compliance-report-pdf-path=${REPORT_PDF}" >> "$GITHUB_OUTPUT"
+        echo "rendered-files=${RENDERED_FILES}" >> "$GITHUB_OUTPUT"
+
+        echo "✅ PDF rendering complete"
+        if [ -n "$EU_DOC_PDF" ]; then echo "   📄 ${EU_DOC_PDF}"; fi
+        if [ -n "$REPORT_PDF" ]; then echo "   📄 ${REPORT_PDF}"; fi
+
+        # ── Step Summary ──
+        {
+          echo "## 🖨️ CRA PDF Rendering"
+          echo ""
+          echo "| Document | File |"
+          echo "|----------|------|"
+          if [ -n "$EU_DOC_PDF" ]; then echo "| EU Declaration of Conformity | \`$(basename "$EU_DOC_PDF")\` |"; fi
+          if [ -n "$REPORT_PDF" ]; then echo "| CRA Compliance Report | \`$(basename "$REPORT_PDF")\` |"; fi
+        } >> "$GITHUB_STEP_SUMMARY"

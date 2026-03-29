@@ -1,0 +1,329 @@
+# =============================================================================
+# CRA Reusable Workflow: Incident Response
+# =============================================================================
+# Triggers an incident response workflow. Calculates ENISA reporting deadlines,
+# creates a GitHub issue with the deadline table, sends Teams notifications,
+# and optionally registers the incident in the CRA Compliance Hub.
+#
+# This is a thin trigger workflow — incident lifecycle management happens in
+# the CRA Compliance Hub, not in GitHub.
+#
+# Usage (manual trigger):
+#   jobs:
+#     incident:
+#       uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-incident.yml@main
+#       with:
+#         severity: 'SEV-1'
+#         title: 'Critical RCE in auth module'
+#         cve-ids: 'CVE-2026-1234'
+#         actively-exploited: true
+#       permissions:
+#         contents: read
+#         issues: write
+#         security-events: write
+#
+# CRA Reference: Art. 14 (Reporting), Art. 10(9) (CVD)
+# =============================================================================
+
+name: 🚨 CRA Incident Response
+
+on:
+  workflow_call:
+    inputs:
+      severity:
+        description: 'Incident severity: SEV-1 (Critical), SEV-2 (High), SEV-3 (Medium), SEV-4 (Low)'
+        type: string
+        required: true
+      title:
+        description: 'Incident title / short description'
+        type: string
+        required: true
+      description:
+        description: 'Detailed incident description'
+        type: string
+        required: false
+        default: ''
+      cve-ids:
+        description: 'Associated CVE IDs (comma-separated)'
+        type: string
+        required: false
+        default: ''
+      actively-exploited:
+        description: 'Is this vulnerability actively exploited? Triggers ENISA 24h obligation.'
+        type: boolean
+        required: false
+        default: false
+      affected-versions:
+        description: 'Affected product versions (comma-separated)'
+        type: string
+        required: false
+        default: ''
+      teams-webhook-url:
+        description: 'Microsoft Teams webhook URL for PSIRT notification'
+        type: string
+        required: false
+        default: ''
+      report-to-hub:
+        description: 'Report incident to CRA Compliance Hub'
+        type: boolean
+        required: false
+        default: false
+
+    outputs:
+      incident-id:
+        description: 'Generated incident ID'
+        value: ${{ jobs.incident.outputs.incident-id }}
+      issue-url:
+        description: 'GitHub issue URL for this incident'
+        value: ${{ jobs.incident.outputs.issue-url }}
+      enisa-24h-deadline:
+        description: 'ENISA 24h early warning deadline'
+        value: ${{ jobs.incident.outputs.enisa-24h }}
+      enisa-72h-deadline:
+        description: 'ENISA 72h notification deadline'
+        value: ${{ jobs.incident.outputs.enisa-72h }}
+
+permissions:
+  contents: read
+  issues: write
+  security-events: write
+
+jobs:
+  incident:
+    name: 🚨 Incident Response
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      incident-id: ${{ steps.deadlines.outputs.incident-id }}
+      issue-url: ${{ steps.issue.outputs.issue-url }}
+      enisa-24h: ${{ steps.deadlines.outputs.enisa-24h }}
+      enisa-72h: ${{ steps.deadlines.outputs.enisa-72h }}
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v6
+
+      # ---- Calculate ENISA deadlines ----
+
+      - name: ⏰ Calculate ENISA reporting deadlines
+        id: deadlines
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          T0=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          T0_EPOCH=$(date -u +%s)
+
+          # Generate incident ID
+          INC_DATE=$(date -u +"%Y%m%d")
+          INC_SEQ=$(printf "%03d" $((RANDOM % 999 + 1)))
+          INCIDENT_ID="INC-${INC_DATE}-${INC_SEQ}"
+
+          # ENISA deadlines (Art. 14 CRA)
+          ENISA_24H=$(date -u -d "@$((T0_EPOCH + 86400))" +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null || \
+            date -u -r $((T0_EPOCH + 86400)) +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null || echo "")
+          ENISA_72H=$(date -u -d "@$((T0_EPOCH + 259200))" +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null || \
+            date -u -r $((T0_EPOCH + 259200)) +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null || echo "")
+          ENISA_14D=$(date -u -d "@$((T0_EPOCH + 1209600))" +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null || \
+            date -u -r $((T0_EPOCH + 1209600)) +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null || echo "")
+
+          # Internal alert thresholds
+          ALERT_20H=$(date -u -d "@$((T0_EPOCH + 72000))" +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null || echo "")
+          ALERT_48H=$(date -u -d "@$((T0_EPOCH + 172800))" +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null || echo "")
+
+          echo "incident-id=${INCIDENT_ID}" >> "$GITHUB_OUTPUT"
+          echo "t0=${T0}" >> "$GITHUB_OUTPUT"
+          echo "enisa-24h=${ENISA_24H}" >> "$GITHUB_OUTPUT"
+          echo "enisa-72h=${ENISA_72H}" >> "$GITHUB_OUTPUT"
+          echo "enisa-14d=${ENISA_14D}" >> "$GITHUB_OUTPUT"
+          echo "alert-20h=${ALERT_20H}" >> "$GITHUB_OUTPUT"
+          echo "alert-48h=${ALERT_48H}" >> "$GITHUB_OUTPUT"
+
+          echo "🚨 Incident: ${INCIDENT_ID}"
+          echo "   T₀ (Discovery): ${T0}"
+          echo "   24h deadline:   ${ENISA_24H}"
+          echo "   72h deadline:   ${ENISA_72H}"
+          echo "   14d deadline:   ${ENISA_14D}"
+
+      # ---- Create GitHub Issue ----
+
+      - name: 📝 Create incident issue
+        id: issue
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          INCIDENT_ID="${{ steps.deadlines.outputs.incident-id }}"
+          SEVERITY="${{ inputs.severity }}"
+          TITLE="${{ inputs.title }}"
+          CVE_IDS="${{ inputs.cve-ids }}"
+          EXPLOITED="${{ inputs.actively-exploited }}"
+          PRODUCT="${GITHUB_REPOSITORY##*/}"
+
+          # Severity label mapping
+          case "$SEVERITY" in
+            SEV-1) SEV_LABEL="severity/critical" ; SEV_EMOJI="🔴" ;;
+            SEV-2) SEV_LABEL="severity/high"     ; SEV_EMOJI="🟠" ;;
+            SEV-3) SEV_LABEL="severity/medium"    ; SEV_EMOJI="🟡" ;;
+            SEV-4) SEV_LABEL="severity/low"       ; SEV_EMOJI="🟢" ;;
+            *)     SEV_LABEL="severity/unknown"   ; SEV_EMOJI="⚪" ;;
+          esac
+
+          ENISA_NOTE=""
+          if [ "$EXPLOITED" = "true" ]; then
+            ENISA_NOTE="
+          > **⚠️ ACTIVELY EXPLOITED — ENISA 24h early warning REQUIRED (Art. 14(2)(a) CRA)**
+          > Submit early warning to ENISA Single Reporting Platform within 24 hours."
+          fi
+
+          BODY="## ${SEV_EMOJI} Security Incident: ${TITLE}
+
+          **Incident ID:** \`${INCIDENT_ID}\`
+          **Severity:** ${SEVERITY}
+          **Product:** ${PRODUCT}
+          **CVE(s):** ${CVE_IDS:-None assigned}
+          **Actively Exploited:** ${EXPLOITED}
+          **Affected Versions:** ${{ inputs.affected-versions || 'TBD' }}
+          ${ENISA_NOTE}
+
+          ### ENISA Reporting Deadlines (Art. 14 CRA)
+
+          | Deadline | Due | Status |
+          |----------|-----|--------|
+          | 📋 **Early Warning** (24h) | \`${{ steps.deadlines.outputs.enisa-24h }}\` | ⏳ Pending |
+          | 📄 **Notification** (72h) | \`${{ steps.deadlines.outputs.enisa-72h }}\` | ⏳ Pending |
+          | 📑 **Final Report** (14d) | \`${{ steps.deadlines.outputs.enisa-14d }}\` | ⏳ Pending |
+
+          ### Internal Alert Schedule
+
+          | Alert | Time |
+          |-------|------|
+          | Pre-24h warning | \`${{ steps.deadlines.outputs.alert-20h }}\` |
+          | Pre-72h warning | \`${{ steps.deadlines.outputs.alert-48h }}\` |
+
+          ### Description
+
+          ${{ inputs.description || '_No description provided. Please update this issue with incident details._' }}
+
+          ### Response Checklist
+
+          - [ ] Triage completed
+          - [ ] Root cause identified
+          - [ ] Affected products/versions confirmed
+          - [ ] ENISA early warning submitted (if required)
+          - [ ] Fix developed
+          - [ ] Fix tested
+          - [ ] ENISA notification submitted
+          - [ ] Security advisory published
+          - [ ] Patched release created
+          - [ ] Users notified
+          - [ ] ENISA final report submitted
+
+          ---
+          *Generated by CRA Incident Response workflow — [${GITHUB_RUN_ID}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})*"
+
+          # Create labels if they don't exist
+          gh label create "cra-incident" --color "d73a4a" --description "CRA security incident" 2>/dev/null || true
+          gh label create "$SEV_LABEL" --color "e11d48" 2>/dev/null || true
+          if [ "$EXPLOITED" = "true" ]; then
+            gh label create "enisa-urgent" --color "7c3aed" --description "ENISA 24h reporting required" 2>/dev/null || true
+          fi
+
+          # Build label list
+          LABELS="cra-incident,${SEV_LABEL}"
+          if [ "$EXPLOITED" = "true" ]; then
+            LABELS="${LABELS},enisa-urgent"
+          fi
+
+          ISSUE_URL=$(gh issue create \
+            --title "${SEV_EMOJI} [${INCIDENT_ID}] ${TITLE}" \
+            --body "$BODY" \
+            --label "$LABELS")
+
+          echo "issue-url=${ISSUE_URL}" >> "$GITHUB_OUTPUT"
+          echo "✅ Created incident issue: ${ISSUE_URL}"
+
+      # ---- Teams Notification ----
+
+      - name: 📢 Send Teams notification
+        if: inputs.teams-webhook-url != ''
+        shell: bash
+        run: |
+          WEBHOOK="${{ inputs.teams-webhook-url }}"
+          INCIDENT_ID="${{ steps.deadlines.outputs.incident-id }}"
+          SEVERITY="${{ inputs.severity }}"
+          TITLE="${{ inputs.title }}"
+          ISSUE_URL="${{ steps.issue.outputs.issue-url }}"
+          EXPLOITED="${{ inputs.actively-exploited }}"
+
+          URGENCY=""
+          if [ "$EXPLOITED" = "true" ]; then
+            URGENCY=" — ⚠️ ACTIVELY EXPLOITED, ENISA 24h REQUIRED"
+          fi
+
+          PAYLOAD=$(jq -n \
+            --arg title "🚨 CRA Incident: ${SEVERITY} — ${TITLE}${URGENCY}" \
+            --arg text "**Incident:** ${INCIDENT_ID}\n**Severity:** ${SEVERITY}\n**CVEs:** ${{ inputs.cve-ids || 'N/A' }}\n**24h Deadline:** ${{ steps.deadlines.outputs.enisa-24h }}\n**Issue:** ${ISSUE_URL}" \
+            '{"title": $title, "text": $text}')
+
+          curl -sS -X POST -H "Content-Type: application/json" -d "$PAYLOAD" "$WEBHOOK" || true
+
+      # ---- Report to Hub ----
+
+      - name: 📡 Report to CRA Hub
+        if: inputs.report-to-hub
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-hub-report@main
+        with:
+          kind: IncidentReport
+          payload-json: |
+            {
+              "incident": {
+                "id": "${{ steps.deadlines.outputs.incident-id }}",
+                "severity": "${{ inputs.severity }}",
+                "title": "${{ inputs.title }}",
+                "cveIds": "${{ inputs.cve-ids }}",
+                "activelyExploited": ${{ inputs.actively-exploited }},
+                "discoveredAt": "${{ steps.deadlines.outputs.t0 }}",
+                "deadlines": {
+                  "enisa24h": "${{ steps.deadlines.outputs.enisa-24h }}",
+                  "enisa72h": "${{ steps.deadlines.outputs.enisa-72h }}",
+                  "enisa14d": "${{ steps.deadlines.outputs.enisa-14d }}"
+                },
+                "issueUrl": "${{ steps.issue.outputs.issue-url }}"
+              }
+            }
+          dry-run: true
+        continue-on-error: true
+
+      # ---- Summary ----
+
+      - name: 📊 Incident summary
+        if: always()
+        shell: bash
+        run: |
+          EXPLOITED="${{ inputs.actively-exploited }}"
+
+          {
+            echo "## 🚨 CRA Incident Response"
+            echo ""
+            echo "| Field | Value |"
+            echo "|-------|-------|"
+            echo "| Incident ID | \`${{ steps.deadlines.outputs.incident-id }}\` |"
+            echo "| Severity | ${{ inputs.severity }} |"
+            echo "| Title | ${{ inputs.title }} |"
+            echo "| CVE(s) | ${{ inputs.cve-ids || 'None' }} |"
+            echo "| Actively Exploited | ${EXPLOITED} |"
+            echo "| Issue | ${{ steps.issue.outputs.issue-url || 'N/A' }} |"
+            echo ""
+            echo "### ENISA Deadlines"
+            echo ""
+            echo "| Deadline | Due |"
+            echo "|----------|-----|"
+            echo "| Early Warning (24h) | \`${{ steps.deadlines.outputs.enisa-24h }}\` |"
+            echo "| Notification (72h) | \`${{ steps.deadlines.outputs.enisa-72h }}\` |"
+            echo "| Final Report (14d) | \`${{ steps.deadlines.outputs.enisa-14d }}\` |"
+
+            if [ "$EXPLOITED" = "true" ]; then
+              echo ""
+              echo "> **⚠️ ACTIVELY EXPLOITED — Submit ENISA early warning within 24 hours**"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

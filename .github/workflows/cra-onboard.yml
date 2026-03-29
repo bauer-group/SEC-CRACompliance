@@ -1,0 +1,431 @@
+# =============================================================================
+# CRA Reusable Workflow: Product Onboarding
+# =============================================================================
+# One-click CRA enrollment for any repository. Generates all necessary files
+# (SECURITY.md, cra-product.json, consumer workflow) and opens a PR.
+#
+# Usage:
+#   jobs:
+#     onboard:
+#       uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-onboard.yml@main
+#       with:
+#         product-name: 'API-Gateway'
+#         classification: 'important-class-1'
+#       permissions:
+#         contents: write
+#         pull-requests: write
+#         id-token: write
+#
+# CRA Reference: Art. 10, Art. 13(6), Art. 13(16)
+# =============================================================================
+
+name: 🚀 CRA Onboarding
+
+on:
+  workflow_call:
+    inputs:
+      product-name:
+        description: 'Product display name'
+        type: string
+        required: true
+      product-description:
+        description: 'Product description'
+        type: string
+        required: false
+        default: ''
+      classification:
+        description: 'CRA classification: standard, important-class-1, important-class-2, critical'
+        type: string
+        required: false
+        default: 'standard'
+      conformity-module:
+        description: 'Conformity module: module-a, module-b-c, module-h, eucc'
+        type: string
+        required: false
+        default: 'module-a'
+      support-period-years:
+        description: 'Support period in years (minimum 5 per Art. 13(16))'
+        type: number
+        required: false
+        default: 5
+      manufacturer-name:
+        description: 'Manufacturer legal name'
+        type: string
+        required: false
+        default: 'BAUER GROUP GmbH'
+      manufacturer-address:
+        description: 'Manufacturer postal address'
+        type: string
+        required: false
+        default: ''
+      security-email:
+        description: 'Security disclosure email'
+        type: string
+        required: false
+        default: 'disclosure@bauer-group.com'
+      product-owner:
+        description: 'Product owner email'
+        type: string
+        required: false
+        default: ''
+      dry-run:
+        description: 'Generate files but do not create PR or register in Hub'
+        type: boolean
+        required: false
+        default: false
+
+    outputs:
+      pr-url:
+        description: 'URL of the created onboarding PR'
+        value: ${{ jobs.onboard.outputs.pr-url }}
+      compliance-score:
+        description: 'Initial compliance score'
+        value: ${{ jobs.onboard.outputs.compliance-score }}
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  onboard:
+    name: 🚀 CRA Product Onboarding
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      pr-url: ${{ steps.pr.outputs.pr-url }}
+      compliance-score: ${{ steps.compliance.outputs.compliance-score }}
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      # ---- Generate cra-product.json ----
+
+      - name: 📄 Generate cra-product.json
+        if: ${{ !hashFiles('cra-product.json') }}
+        shell: bash
+        run: |
+          if [ -f "cra-product.json" ]; then
+            echo "📄 cra-product.json already exists, skipping"
+            exit 0
+          fi
+
+          SUPPORT_END=$(date -u -d "+${{ inputs.support-period-years }} years" +"%Y-%m-%d" 2>/dev/null || \
+            date -u -v+${{ inputs.support-period-years }}y +"%Y-%m-%d" 2>/dev/null || \
+            echo "")
+
+          cat > cra-product.json << EOJSON
+          {
+            "\$schema": "https://cra.docs.bauer-group.com/schemas/cra-product/v1.0.0",
+            "product": {
+              "name": $(jq -n --arg v "${{ inputs.product-name }}" '$v'),
+              "description": $(jq -n --arg v "${{ inputs.product-description }}" '$v'),
+              "classification": "${{ inputs.classification }}",
+              "conformityModule": "${{ inputs.conformity-module }}"
+            },
+            "manufacturer": {
+              "name": $(jq -n --arg v "${{ inputs.manufacturer-name }}" '$v'),
+              "address": $(jq -n --arg v "${{ inputs.manufacturer-address }}" '$v')
+            },
+            "support": {
+              "periodYears": ${{ inputs.support-period-years }},
+              "until": "${SUPPORT_END}"
+            },
+            "contacts": {
+              "securityEmail": "${{ inputs.security-email }}",
+              "productOwner": "${{ inputs.product-owner }}"
+            }
+          }
+          EOJSON
+
+          # Clean up heredoc whitespace
+          TEMP=$(mktemp)
+          jq '.' cra-product.json > "$TEMP" && mv "$TEMP" cra-product.json
+          echo "✅ Generated cra-product.json"
+
+      # ---- Generate SECURITY.md ----
+
+      - name: 🔒 Generate SECURITY.md
+        shell: bash
+        run: |
+          if [ -f "SECURITY.md" ]; then
+            echo "🔒 SECURITY.md already exists, skipping"
+            exit 0
+          fi
+
+          PRODUCT_NAME="${{ inputs.product-name }}"
+          SECURITY_EMAIL="${{ inputs.security-email }}"
+          SUPPORT_YEARS="${{ inputs.support-period-years }}"
+
+          cat > SECURITY.md << 'SECEOF'
+          # Security Policy
+
+          ## Supported Versions
+
+          | Version | Supported |
+          |---------|-----------|
+          | Latest  | ✅         |
+
+          ## Reporting a Vulnerability
+
+          We take security seriously. If you discover a vulnerability, please report it responsibly.
+
+          ### How to Report
+
+          SECEOF
+
+          cat >> SECURITY.md << SECEOF2
+          - **Email:** [${SECURITY_EMAIL}](mailto:${SECURITY_EMAIL})
+          - **GitHub:** [Report via Security Advisory](https://github.com/${GITHUB_REPOSITORY}/security/advisories/new)
+
+          ### What to Expect
+
+          - **Acknowledgement:** Within 5 business days
+          - **Assessment:** Within 10 business days
+          - **Resolution:** Depending on severity (Critical: 24h, High: 48h, Medium: 7d, Low: 30d)
+
+          ### Coordinated Vulnerability Disclosure (CVD)
+
+          We follow a coordinated disclosure process:
+          1. Reporter submits vulnerability details
+          2. We confirm receipt and begin assessment
+          3. We develop and test a fix
+          4. We coordinate disclosure timing with the reporter
+          5. Security advisory is published with credit to the reporter
+
+          Default embargo period: **90 days**
+
+          ## Support Period
+
+          This product is supported for **${SUPPORT_YEARS} years** from the date of placing on the market, as required by Art. 13(16) of the Cyber Resilience Act.
+
+          ## CRA Compliance
+
+          This product complies with Regulation (EU) 2024/2847 (Cyber Resilience Act). Compliance artifacts (SBOM, VEX, EU Declaration of Conformity) are attached to each GitHub Release.
+          SECEOF2
+
+          echo "✅ Generated SECURITY.md"
+
+      # ---- Generate consumer CRA workflow ----
+
+      - name: ⚙️ Generate CRA workflow
+        shell: bash
+        run: |
+          WORKFLOW_DIR=".github/workflows"
+          WORKFLOW_FILE="${WORKFLOW_DIR}/cra.yml"
+
+          if [ -f "$WORKFLOW_FILE" ]; then
+            echo "⚙️ ${WORKFLOW_FILE} already exists, skipping"
+            exit 0
+          fi
+
+          mkdir -p "$WORKFLOW_DIR"
+
+          cat > "$WORKFLOW_FILE" << 'WFEOF'
+          # =============================================================================
+          # CRA Compliance Workflows
+          # =============================================================================
+          # Auto-generated by cra-onboard. Calls reusable CRA workflows from
+          # bauer-group/SEC-CRACompliance for release compliance, scheduled scanning,
+          # and API reporting.
+          # =============================================================================
+
+          name: 🛡️ CRA Compliance
+
+          on:
+            release:
+              types: [published]
+            schedule:
+              - cron: '0 6 * * 1'  # Weekly CVE scan (Monday 06:00 UTC)
+            workflow_dispatch:
+              inputs:
+                job:
+                  description: 'Which job to run'
+                  type: choice
+                  options:
+                    - release
+                    - scan
+                    - report
+                  default: scan
+
+          permissions:
+            contents: write
+            id-token: write
+            attestations: write
+            security-events: write
+            issues: write
+
+          jobs:
+            # On release: Generate all CRA artifacts
+            cra-release:
+              if: github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && inputs.job == 'release')
+              uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-release.yml@main
+              permissions:
+                contents: write
+                id-token: write
+                attestations: write
+                security-events: write
+
+            # Weekly: Scan for new CVEs
+            cra-scan:
+              if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.job == 'scan')
+              uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-scan.yml@main
+              permissions:
+                contents: read
+                security-events: write
+                issues: write
+
+            # After release: Report to CRA Hub
+            cra-report:
+              if: github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && inputs.job == 'report')
+              needs: [cra-release]
+              uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-report.yml@main
+              with:
+                dry-run: true  # Set to false when Hub is operational
+              permissions:
+                contents: read
+                id-token: write
+          WFEOF
+
+          echo "✅ Generated ${WORKFLOW_FILE}"
+
+      # ---- Initial SBOM ----
+
+      - name: 📋 Generate initial SBOM
+        id: sbom
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-sbom-generate@main
+
+      # ---- Initial compliance check ----
+
+      - name: 📊 Initial compliance check
+        id: compliance
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-compliance-report@main
+        with:
+          sbom-path: ${{ steps.sbom.outputs.sbom-path }}
+          support-period-years: ${{ inputs.support-period-years }}
+
+      # ---- Register in Hub ----
+
+      - name: 📡 Register product in CRA Hub
+        if: ${{ !inputs.dry-run }}
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-hub-report@main
+        with:
+          kind: ProductInfo
+          payload-json: |
+            {
+              "product": {
+                "name": "${{ inputs.product-name }}",
+                "classification": "${{ inputs.classification }}",
+                "conformityModule": "${{ inputs.conformity-module }}",
+                "supportPeriodYears": ${{ inputs.support-period-years }},
+                "securityEmail": "${{ inputs.security-email }}"
+              },
+              "initialCompliance": {
+                "score": ${{ steps.compliance.outputs.compliance-score || 0 }},
+                "sbomComponents": ${{ steps.sbom.outputs.component-count || 0 }}
+              }
+            }
+          dry-run: true
+        continue-on-error: true
+
+      # ---- Create PR ----
+
+      - name: 🔀 Create onboarding PR
+        id: pr
+        if: ${{ !inputs.dry-run }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH="cra/onboard-$(date +%Y%m%d)"
+          PRODUCT="${{ inputs.product-name }}"
+
+          # Check if there are changes
+          if git diff --quiet && git diff --cached --quiet; then
+            # Check for untracked files
+            UNTRACKED=$(git ls-files --others --exclude-standard | head -5)
+            if [ -z "$UNTRACKED" ]; then
+              echo "No changes to commit"
+              echo "pr-url=" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
+
+          git checkout -b "$BRANCH"
+          git add cra-product.json SECURITY.md .github/workflows/cra.yml
+          git add -f "${{ steps.sbom.outputs.sbom-path }}" || true
+          git add cra-compliance-report.json cra-compliance-report.md || true
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "feat(cra): onboarded ${PRODUCT} for CRA compliance
+
+          Generated CRA compliance files:
+          - cra-product.json (product configuration)
+          - SECURITY.md (vulnerability disclosure policy)
+          - .github/workflows/cra.yml (CRA automation)
+          - Initial SBOM and compliance report
+
+          CRA Classification: ${{ inputs.classification }}
+          Conformity Module: ${{ inputs.conformity-module }}
+          Support Period: ${{ inputs.support-period-years }} years
+          Initial Score: ${{ steps.compliance.outputs.compliance-score }}/100"
+
+          git push origin "$BRANCH"
+
+          PR_URL=$(gh pr create \
+            --title "feat(cra): onboard ${PRODUCT} for CRA compliance" \
+            --body "$(cat <<'PRBODY'
+          ## CRA Product Onboarding
+
+          This PR enrolls **${PRODUCT}** for EU Cyber Resilience Act compliance.
+
+          ### Generated Files
+
+          | File | Purpose |
+          |------|---------|
+          | `cra-product.json` | Product configuration (classification, support period) |
+          | `SECURITY.md` | Vulnerability disclosure policy (Art. 13(6)) |
+          | `.github/workflows/cra.yml` | CRA automation (release, scan, report) |
+
+          ### Initial Compliance
+
+          - **Score:** ${{ steps.compliance.outputs.compliance-score }}/100
+          - **SBOM:** ${{ steps.sbom.outputs.component-count }} components detected
+          - **Classification:** ${{ inputs.classification }}
+          - **Conformity Module:** ${{ inputs.conformity-module }}
+
+          ### What happens after merge?
+
+          1. On every **release**: SBOM + signing + VEX + compliance report + EU DoC + PDFs
+          2. **Weekly** (Monday 06:00 UTC): CVE scan against latest SBOM
+          3. On release: Data reported to CRA Compliance Hub
+
+          🤖 Generated with [CRA Compliance Automation](https://cra.docs.bauer-group.com)
+          PRBODY
+          )")
+
+          echo "pr-url=${PR_URL}" >> "$GITHUB_OUTPUT"
+          echo "✅ Created PR: ${PR_URL}"
+
+      # ---- Summary ----
+
+      - name: 📊 Onboarding summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## 🚀 CRA Onboarding Summary"
+            echo ""
+            echo "| Field | Value |"
+            echo "|-------|-------|"
+            echo "| Product | ${{ inputs.product-name }} |"
+            echo "| Classification | ${{ inputs.classification }} |"
+            echo "| Conformity Module | ${{ inputs.conformity-module }} |"
+            echo "| Support Period | ${{ inputs.support-period-years }} years |"
+            echo "| Initial Score | ${{ steps.compliance.outputs.compliance-score || 'N/A' }}/100 |"
+            echo "| SBOM Components | ${{ steps.sbom.outputs.component-count || 'N/A' }} |"
+            echo "| PR | ${{ steps.pr.outputs.pr-url || 'dry-run / no changes' }} |"
+          } >> "$GITHUB_STEP_SUMMARY"

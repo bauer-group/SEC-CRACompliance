@@ -1,0 +1,397 @@
+# =============================================================================
+# CRA EU Declaration of Conformity Generator
+# =============================================================================
+# Generates a machine-readable EU Declaration of Conformity (EU DoC) in JSON
+# format pursuant to Annex V of Regulation (EU) 2024/2847 (Cyber Resilience Act).
+#
+# The JSON output follows a versioned schema and can be rendered to PDF/HTML
+# by the cra-render action.
+#
+# Usage:
+#   - uses: bauer-group/SEC-CRACompliance/.github/actions/cra-eu-doc@main
+#     with:
+#       product-name: 'API-Gateway'
+#       product-version: 'v3.2.1'
+#       compliance-report-path: cra-compliance-report.json
+#
+# CRA References: Art. 28, Annex V
+# =============================================================================
+
+name: '📜 CRA EU Declaration of Conformity'
+description: 'Generate machine-readable EU DoC (Annex V) from CRA compliance artifacts'
+
+inputs:
+  product-name:
+    description: 'Product name (auto-detected from repo if empty)'
+    required: false
+    default: ''
+  product-version:
+    description: 'Product version (auto-detected from tag or SHA)'
+    required: false
+    default: ''
+  product-description:
+    description: 'Product description for the declaration'
+    required: false
+    default: ''
+  product-type:
+    description: 'Product type: Software, Firmware, Container Image, Embedded System'
+    required: false
+    default: 'Software'
+  classification:
+    description: 'CRA product classification: standard, important-class-1, important-class-2, critical'
+    required: false
+    default: 'standard'
+  conformity-module:
+    description: 'Conformity assessment module: module-a, module-b-c, module-h, eucc'
+    required: false
+    default: 'module-a'
+
+  # Manufacturer
+  manufacturer-name:
+    description: 'Manufacturer legal name'
+    required: false
+    default: 'BAUER GROUP GmbH'
+  manufacturer-address:
+    description: 'Manufacturer postal address'
+    required: false
+    default: ''
+  manufacturer-email:
+    description: 'Manufacturer contact email'
+    required: false
+    default: 'disclosure@bauer-group.com'
+  manufacturer-website:
+    description: 'Manufacturer website URL'
+    required: false
+    default: ''
+  authorized-representative:
+    description: 'Authorised representative (if applicable)'
+    required: false
+    default: ''
+  signatory-name:
+    description: 'Name of person signing the declaration'
+    required: false
+    default: ''
+  signatory-role:
+    description: 'Role/title of signatory'
+    required: false
+    default: ''
+  signing-place:
+    description: 'Place of signing'
+    required: false
+    default: ''
+
+  # Compliance data
+  compliance-report-path:
+    description: 'Path to CRA compliance report JSON (for auto-filling compliance data)'
+    required: false
+    default: 'cra-compliance-report.json'
+  sbom-path:
+    description: 'Path to SBOM file (for component count)'
+    required: false
+    default: 'sbom.cdx.json'
+  support-period-years:
+    description: 'Product support period in years'
+    required: false
+    default: '5'
+
+  # Product config file
+  product-config:
+    description: 'Path to cra-product.json (overrides individual inputs if present)'
+    required: false
+    default: 'cra-product.json'
+
+  # Output
+  output-file:
+    description: 'Output filename for the EU DoC JSON'
+    required: false
+    default: 'eu-doc.json'
+
+outputs:
+  eu-doc-path:
+    description: 'Path to the generated EU DoC JSON file'
+    value: ${{ steps.generate.outputs.eu-doc-path }}
+  doc-number:
+    description: 'Generated DoC document number'
+    value: ${{ steps.generate.outputs.doc-number }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 📜 Generate EU Declaration of Conformity
+      id: generate
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        OUTPUT_FILE="${{ inputs.output-file }}"
+        TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+        TODAY=$(date -u +"%Y-%m-%d")
+        YEAR=$(date -u +"%Y")
+
+        # ── Auto-detect product name ──
+        PRODUCT_NAME="${{ inputs.product-name }}"
+        if [ -z "$PRODUCT_NAME" ]; then
+          PRODUCT_NAME="${GITHUB_REPOSITORY##*/}"
+        fi
+
+        # ── Auto-detect version ──
+        PRODUCT_VERSION="${{ inputs.product-version }}"
+        if [ -z "$PRODUCT_VERSION" ]; then
+          if [ -n "${GITHUB_REF_NAME:-}" ] && [[ "$GITHUB_REF_NAME" =~ ^v?[0-9] ]]; then
+            PRODUCT_VERSION="$GITHUB_REF_NAME"
+          else
+            PRODUCT_VERSION="${GITHUB_SHA:0:8}"
+          fi
+        fi
+
+        # ── Read cra-product.json if present ──
+        CONFIG_FILE="${{ inputs.product-config }}"
+        CFG_PRODUCT_NAME=""
+        CFG_DESCRIPTION=""
+        CFG_CLASSIFICATION=""
+        CFG_MODULE=""
+        CFG_MFR_NAME=""
+        CFG_MFR_ADDRESS=""
+        CFG_SUPPORT_YEARS=""
+        CFG_SUPPORT_UNTIL=""
+        CFG_SECURITY_EMAIL=""
+        CFG_SIGNATORY_NAME=""
+        CFG_SIGNATORY_ROLE=""
+        CFG_SIGNING_PLACE=""
+
+        if [ -f "$CONFIG_FILE" ]; then
+          echo "📄 Reading product config from $CONFIG_FILE"
+          CFG_PRODUCT_NAME=$(jq -r '.product.name // empty' "$CONFIG_FILE" 2>/dev/null || true)
+          CFG_DESCRIPTION=$(jq -r '.product.description // empty' "$CONFIG_FILE" 2>/dev/null || true)
+          CFG_CLASSIFICATION=$(jq -r '.product.classification // empty' "$CONFIG_FILE" 2>/dev/null || true)
+          CFG_MODULE=$(jq -r '.product.conformityModule // empty' "$CONFIG_FILE" 2>/dev/null || true)
+          CFG_MFR_NAME=$(jq -r '.manufacturer.name // empty' "$CONFIG_FILE" 2>/dev/null || true)
+          CFG_MFR_ADDRESS=$(jq -r '.manufacturer.address // empty' "$CONFIG_FILE" 2>/dev/null || true)
+          CFG_SUPPORT_YEARS=$(jq -r '.support.periodYears // empty' "$CONFIG_FILE" 2>/dev/null || true)
+          CFG_SUPPORT_UNTIL=$(jq -r '.support.until // empty' "$CONFIG_FILE" 2>/dev/null || true)
+          CFG_SECURITY_EMAIL=$(jq -r '.contacts.securityEmail // empty' "$CONFIG_FILE" 2>/dev/null || true)
+          CFG_SIGNATORY_NAME=$(jq -r '.declaration.signatoryName // empty' "$CONFIG_FILE" 2>/dev/null || true)
+          CFG_SIGNATORY_ROLE=$(jq -r '.declaration.signatoryRole // empty' "$CONFIG_FILE" 2>/dev/null || true)
+          CFG_SIGNING_PLACE=$(jq -r '.declaration.signingPlace // empty' "$CONFIG_FILE" 2>/dev/null || true)
+        fi
+
+        # ── Resolve values (input > config > default) ──
+        PRODUCT_NAME="${{ inputs.product-name }}"
+        [ -z "$PRODUCT_NAME" ] && PRODUCT_NAME="${CFG_PRODUCT_NAME:-${GITHUB_REPOSITORY##*/}}"
+
+        DESCRIPTION="${{ inputs.product-description }}"
+        [ -z "$DESCRIPTION" ] && DESCRIPTION="${CFG_DESCRIPTION:-}"
+
+        CLASSIFICATION="${{ inputs.classification }}"
+        [ "$CLASSIFICATION" = "standard" ] && [ -n "$CFG_CLASSIFICATION" ] && CLASSIFICATION="$CFG_CLASSIFICATION"
+
+        MODULE="${{ inputs.conformity-module }}"
+        [ "$MODULE" = "module-a" ] && [ -n "$CFG_MODULE" ] && MODULE="$CFG_MODULE"
+
+        MFR_NAME="${{ inputs.manufacturer-name }}"
+        [ "$MFR_NAME" = "BAUER GROUP GmbH" ] && [ -n "$CFG_MFR_NAME" ] && MFR_NAME="$CFG_MFR_NAME"
+
+        MFR_ADDRESS="${{ inputs.manufacturer-address }}"
+        [ -z "$MFR_ADDRESS" ] && MFR_ADDRESS="${CFG_MFR_ADDRESS:-}"
+
+        MFR_EMAIL="${{ inputs.manufacturer-email }}"
+        [ -z "${CFG_SECURITY_EMAIL:-}" ] || MFR_EMAIL="$CFG_SECURITY_EMAIL"
+
+        SUPPORT_YEARS="${{ inputs.support-period-years }}"
+        [ "$SUPPORT_YEARS" = "5" ] && [ -n "$CFG_SUPPORT_YEARS" ] && SUPPORT_YEARS="$CFG_SUPPORT_YEARS"
+
+        SIGNATORY_NAME="${{ inputs.signatory-name }}"
+        [ -z "$SIGNATORY_NAME" ] && SIGNATORY_NAME="${CFG_SIGNATORY_NAME:-}"
+
+        SIGNATORY_ROLE="${{ inputs.signatory-role }}"
+        [ -z "$SIGNATORY_ROLE" ] && SIGNATORY_ROLE="${CFG_SIGNATORY_ROLE:-}"
+
+        SIGNING_PLACE="${{ inputs.signing-place }}"
+        [ -z "$SIGNING_PLACE" ] && SIGNING_PLACE="${CFG_SIGNING_PLACE:-}"
+
+        # ── Calculate support period ──
+        SUPPORT_UNTIL="${CFG_SUPPORT_UNTIL:-}"
+        if [ -z "$SUPPORT_UNTIL" ]; then
+          SUPPORT_UNTIL=$(date -u -d "+${SUPPORT_YEARS} years" +"%Y-%m-%d" 2>/dev/null || \
+            date -u -v+${SUPPORT_YEARS}y +"%Y-%m-%d" 2>/dev/null || \
+            echo "")
+        fi
+
+        # ── Generate DoC number ──
+        SHORT_SHA="${GITHUB_SHA:0:8}"
+        DOC_NUMBER="DoC-${YEAR}-${PRODUCT_NAME}-${PRODUCT_VERSION}-${SHORT_SHA}"
+        DOC_NUMBER=$(echo "$DOC_NUMBER" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')
+
+        # ── Read compliance data if available ──
+        COMPLIANCE_SCORE="N/A"
+        SBOM_GENERATED="false"
+        SBOM_SIGNED="false"
+        SBOM_ATTESTED="false"
+        VULN_CRITICAL=0
+        VULN_HIGH=0
+        COMPONENT_COUNT=0
+
+        REPORT_FILE="${{ inputs.compliance-report-path }}"
+        if [ -f "$REPORT_FILE" ]; then
+          echo "📊 Reading compliance data from $REPORT_FILE"
+          COMPLIANCE_SCORE=$(jq -r '.complianceScore.score // "N/A"' "$REPORT_FILE" 2>/dev/null || echo "N/A")
+          SBOM_GENERATED=$(jq -r '.sbom.generated // false' "$REPORT_FILE" 2>/dev/null || echo "false")
+          SBOM_SIGNED=$(jq -r '.signing.cosign // false' "$REPORT_FILE" 2>/dev/null || echo "false")
+          SBOM_ATTESTED=$(jq -r '.signing.attestation // false' "$REPORT_FILE" 2>/dev/null || echo "false")
+          VULN_CRITICAL=$(jq -r '.vulnerabilities.critical // 0' "$REPORT_FILE" 2>/dev/null || echo "0")
+          VULN_HIGH=$(jq -r '.vulnerabilities.high // 0' "$REPORT_FILE" 2>/dev/null || echo "0")
+          COMPONENT_COUNT=$(jq -r '.sbom.components // 0' "$REPORT_FILE" 2>/dev/null || echo "0")
+        fi
+
+        # ── Read SBOM component count as fallback ──
+        SBOM_FILE="${{ inputs.sbom-path }}"
+        if [ "$COMPONENT_COUNT" = "0" ] && [ -f "$SBOM_FILE" ]; then
+          COMPONENT_COUNT=$(jq -r '.components | length // 0' "$SBOM_FILE" 2>/dev/null || echo "0")
+        fi
+
+        # ── Map classification to display name ──
+        case "$CLASSIFICATION" in
+          standard)           CLASS_DISPLAY="Standard (Default)" ;;
+          important-class-1)  CLASS_DISPLAY="Important — Class I (Annex III)" ;;
+          important-class-2)  CLASS_DISPLAY="Important — Class II (Annex III)" ;;
+          critical)           CLASS_DISPLAY="Critical (Annex IV)" ;;
+          *)                  CLASS_DISPLAY="$CLASSIFICATION" ;;
+        esac
+
+        # ── Map conformity module to display name ──
+        case "$MODULE" in
+          module-a)   MODULE_DISPLAY="Module A — Internal Control (Annex VIII Part I)" ;;
+          module-b-c) MODULE_DISPLAY="Module B+C — EU-Type Examination + Conformity to Type (Annex VIII Part II+III)" ;;
+          module-h)   MODULE_DISPLAY="Module H — Full Quality Assurance (Annex VIII Part IV)" ;;
+          eucc)       MODULE_DISPLAY="European Cybersecurity Certification (EUCC)" ;;
+          *)          MODULE_DISPLAY="$MODULE" ;;
+        esac
+
+        # ── Notified body (only for Module B+C and H) ──
+        NOTIFIED_BODY="null"
+        if [ "$MODULE" = "module-b-c" ] || [ "$MODULE" = "module-h" ]; then
+          NOTIFIED_BODY='"Required — not yet assigned"'
+        fi
+
+        # ── Build unique product identifier ──
+        PRODUCT_PURL="pkg:github/${GITHUB_REPOSITORY}@${PRODUCT_VERSION}"
+
+        # ── Generate EU DoC JSON ──
+        cat > "$OUTPUT_FILE" <<EOJSON
+        {
+          "\$schema": "https://cra.docs.bauer-group.com/schemas/eu-doc/v1.0.0",
+          "document": {
+            "type": "EU-Declaration-of-Conformity",
+            "number": "${DOC_NUMBER}",
+            "regulation": "Regulation (EU) 2024/2847 (Cyber Resilience Act)",
+            "annex": "V",
+            "schemaVersion": "1.0.0",
+            "generatedAt": "${TIMESTAMP}",
+            "generatedBy": "bauer-group/SEC-CRACompliance cra-eu-doc action"
+          },
+          "manufacturer": {
+            "name": $(jq -n --arg v "$MFR_NAME" '$v'),
+            "address": $(jq -n --arg v "$MFR_ADDRESS" '$v'),
+            "email": $(jq -n --arg v "$MFR_EMAIL" '$v'),
+            "website": $(jq -n --arg v "${{ inputs.manufacturer-website }}" '$v'),
+            "authorizedRepresentative": $(jq -n --arg v "${{ inputs.authorized-representative }}" 'if $v == "" then null else $v end')
+          },
+          "product": {
+            "name": $(jq -n --arg v "$PRODUCT_NAME" '$v'),
+            "type": $(jq -n --arg v "${{ inputs.product-type }}" '$v'),
+            "version": $(jq -n --arg v "$PRODUCT_VERSION" '$v'),
+            "description": $(jq -n --arg v "$DESCRIPTION" '$v'),
+            "uniqueIdentification": "${PRODUCT_PURL}",
+            "repository": "https://github.com/${GITHUB_REPOSITORY}",
+            "commit": "${GITHUB_SHA}",
+            "tag": "${GITHUB_REF_NAME}"
+          },
+          "classification": {
+            "category": $(jq -n --arg v "$CLASSIFICATION" '$v'),
+            "categoryDisplay": $(jq -n --arg v "$CLASS_DISPLAY" '$v')
+          },
+          "legislation": [
+            {
+              "name": "Cyber Resilience Act",
+              "reference": "Regulation (EU) 2024/2847",
+              "officialJournal": "OJ L, 2024/2847, 20.11.2024"
+            }
+          ],
+          "standards": [
+            { "id": "CycloneDX v1.5", "title": "SBOM format (OWASP)", "status": "applied" },
+            { "id": "ISO/IEC 29147:2018", "title": "Vulnerability Disclosure", "status": "applied" },
+            { "id": "OpenVEX v0.2.0", "title": "Vulnerability Exploitability Exchange", "status": "applied" }
+          ],
+          "conformityAssessment": {
+            "module": $(jq -n --arg v "$MODULE" '$v'),
+            "moduleDisplay": $(jq -n --arg v "$MODULE_DISPLAY" '$v'),
+            "notifiedBody": ${NOTIFIED_BODY},
+            "date": "${TODAY}"
+          },
+          "compliance": {
+            "score": ${COMPLIANCE_SCORE},
+            "sbom": {
+              "generated": ${SBOM_GENERATED},
+              "signed": ${SBOM_SIGNED},
+              "attested": ${SBOM_ATTESTED},
+              "components": ${COMPONENT_COUNT},
+              "format": "CycloneDX JSON"
+            },
+            "vulnerabilities": {
+              "critical": ${VULN_CRITICAL},
+              "high": ${VULN_HIGH}
+            },
+            "securityPolicy": true,
+            "vulnerabilityReporting": $(jq -n --arg v "$MFR_EMAIL" '$v')
+          },
+          "supportPeriod": {
+            "years": ${SUPPORT_YEARS},
+            "start": "${TODAY}",
+            "end": $(jq -n --arg v "$SUPPORT_UNTIL" 'if $v == "" then null else $v end'),
+            "type": "Security Support"
+          },
+          "declaration": {
+            "text": "This declaration of conformity is issued under the sole responsibility of the manufacturer. The product described above is in conformity with the relevant Union harmonisation legislation listed.",
+            "signedBy": $(jq -n --arg v "$SIGNATORY_NAME" 'if $v == "" then null else $v end'),
+            "signatoryRole": $(jq -n --arg v "$SIGNATORY_ROLE" 'if $v == "" then null else $v end'),
+            "place": $(jq -n --arg v "$SIGNING_PLACE" 'if $v == "" then null else $v end'),
+            "date": "${TODAY}"
+          }
+        }
+        EOJSON
+
+        # ── Validate JSON ──
+        if ! jq empty "$OUTPUT_FILE" 2>/dev/null; then
+          echo "::error::Generated EU DoC JSON is invalid"
+          exit 1
+        fi
+
+        # ── Clean up whitespace (remove leading spaces from heredoc) ──
+        TEMP_FILE=$(mktemp)
+        jq '.' "$OUTPUT_FILE" > "$TEMP_FILE" && mv "$TEMP_FILE" "$OUTPUT_FILE"
+
+        echo "eu-doc-path=${OUTPUT_FILE}" >> "$GITHUB_OUTPUT"
+        echo "doc-number=${DOC_NUMBER}" >> "$GITHUB_OUTPUT"
+
+        echo "✅ EU Declaration of Conformity generated: ${OUTPUT_FILE}"
+        echo "   Document Number: ${DOC_NUMBER}"
+        echo "   Product: ${PRODUCT_NAME} ${PRODUCT_VERSION}"
+        echo "   Classification: ${CLASS_DISPLAY}"
+        echo "   Module: ${MODULE_DISPLAY}"
+
+        # ── Step Summary ──
+        {
+          echo "## 📜 EU Declaration of Conformity"
+          echo ""
+          echo "| Field | Value |"
+          echo "|-------|-------|"
+          echo "| Document Number | \`${DOC_NUMBER}\` |"
+          echo "| Product | ${PRODUCT_NAME} ${PRODUCT_VERSION} |"
+          echo "| Manufacturer | ${MFR_NAME} |"
+          echo "| Classification | ${CLASS_DISPLAY} |"
+          echo "| Conformity Module | ${MODULE_DISPLAY} |"
+          echo "| Compliance Score | ${COMPLIANCE_SCORE}/100 |"
+          echo "| Support Period | ${SUPPORT_YEARS} years (until ${SUPPORT_UNTIL:-TBD}) |"
+          echo "| Components | ${COMPONENT_COUNT} |"
+          echo "| Vulnerabilities | ${VULN_CRITICAL} critical, ${VULN_HIGH} high |"
+        } >> "$GITHUB_STEP_SUMMARY"

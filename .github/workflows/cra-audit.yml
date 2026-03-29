@@ -1,0 +1,311 @@
+# =============================================================================
+# CRA Reusable Workflow: Compliance Audit
+# =============================================================================
+# Performs a comprehensive CRA compliance audit covering all requirements.
+# Designed for weekly scheduled execution or on-demand runs.
+#
+# Creates/updates a GitHub issue with audit results and optionally reports
+# to the CRA Compliance Hub.
+#
+# Usage:
+#   jobs:
+#     audit:
+#       uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-audit.yml@main
+#       permissions:
+#         contents: read
+#         issues: write
+#         security-events: read
+#
+# CRA Reference: Art. 10, Art. 13, Annex I, Annex VII
+# =============================================================================
+
+name: 🔍 CRA Compliance Audit
+
+on:
+  workflow_call:
+    inputs:
+      scan-target:
+        description: 'Target to scan (directory path or container image)'
+        type: string
+        required: false
+        default: '.'
+      scan-type:
+        description: 'Scan type: fs, image, auto'
+        type: string
+        required: false
+        default: 'auto'
+      min-score:
+        description: 'Minimum passing compliance score (0-100)'
+        type: number
+        required: false
+        default: 70
+      create-issue:
+        description: 'Create/update GitHub issue with audit results'
+        type: boolean
+        required: false
+        default: true
+      report-to-hub:
+        description: 'Report audit results to CRA Compliance Hub'
+        type: boolean
+        required: false
+        default: false
+      support-period-years:
+        description: 'Expected support period in years'
+        type: number
+        required: false
+        default: 5
+
+    outputs:
+      compliance-score:
+        description: 'Compliance score (0-100)'
+        value: ${{ jobs.audit.outputs.compliance-score }}
+      passed:
+        description: 'Whether minimum score was met'
+        value: ${{ jobs.audit.outputs.passed }}
+
+permissions:
+  contents: read
+  issues: write
+  security-events: read
+
+jobs:
+  audit:
+    name: 🔍 CRA Compliance Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      compliance-score: ${{ steps.report.outputs.compliance-score }}
+      passed: ${{ steps.evaluate.outputs.passed }}
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      # ---- SBOM Generation ----
+
+      - name: 📋 Generate SBOM
+        id: sbom
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-sbom-generate@main
+        with:
+          scan-target: ${{ inputs.scan-target }}
+          scan-type: ${{ inputs.scan-type }}
+
+      # ---- Vulnerability Scan ----
+
+      - name: 🛡️ Vulnerability scan
+        id: scan
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-vulnerability-scan@main
+        with:
+          scan-target: ${{ inputs.scan-target }}
+          scan-type: ${{ inputs.scan-type }}
+
+      # ---- Compliance Report ----
+
+      - name: 📊 Generate compliance report
+        id: report
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-compliance-report@main
+        with:
+          sbom-path: ${{ steps.sbom.outputs.sbom-path }}
+          vulnerability-report-path: ${{ steps.scan.outputs.report-path }}
+          support-period-years: ${{ inputs.support-period-years }}
+
+      # ---- Additional Checks ----
+
+      - name: 🔍 Extended audit checks
+        id: extended
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          ISSUES=""
+          WARNINGS=""
+
+          # ── SECURITY.md freshness ──
+          if [ -f "SECURITY.md" ]; then
+            LAST_MODIFIED=$(git log -1 --format="%ai" -- SECURITY.md 2>/dev/null || echo "")
+            if [ -n "$LAST_MODIFIED" ]; then
+              MODIFIED_EPOCH=$(date -d "$LAST_MODIFIED" +%s 2>/dev/null || echo "0")
+              NOW_EPOCH=$(date +%s)
+              DIFF_DAYS=$(( (NOW_EPOCH - MODIFIED_EPOCH) / 86400 ))
+              if [ "$DIFF_DAYS" -gt 365 ]; then
+                WARNINGS="${WARNINGS}\n- ⚠️ SECURITY.md not updated in ${DIFF_DAYS} days (>1 year)"
+              fi
+            fi
+          else
+            ISSUES="${ISSUES}\n- ❌ SECURITY.md missing (Art. 13(6))"
+          fi
+
+          # ── cra-product.json ──
+          if [ -f "cra-product.json" ]; then
+            SUPPORT_UNTIL=$(jq -r '.support.until // empty' cra-product.json 2>/dev/null || true)
+            if [ -n "$SUPPORT_UNTIL" ]; then
+              SUPPORT_EPOCH=$(date -d "$SUPPORT_UNTIL" +%s 2>/dev/null || echo "0")
+              NOW_EPOCH=$(date +%s)
+              if [ "$SUPPORT_EPOCH" -lt "$NOW_EPOCH" ]; then
+                ISSUES="${ISSUES}\n- ❌ Support period expired (${SUPPORT_UNTIL})"
+              fi
+            fi
+          else
+            WARNINGS="${WARNINGS}\n- ⚠️ cra-product.json not found (recommended for CRA metadata)"
+          fi
+
+          # ── EU DoC in latest release ──
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          HAS_EU_DOC="false"
+          if [ -n "$LATEST_TAG" ]; then
+            # Check release assets via GitHub API
+            EU_DOC_ASSET=$(gh release view "$LATEST_TAG" --json assets -q '.assets[].name | select(startswith("eu-doc"))' 2>/dev/null || true)
+            if [ -n "$EU_DOC_ASSET" ]; then
+              HAS_EU_DOC="true"
+            else
+              WARNINGS="${WARNINGS}\n- ⚠️ Latest release ($LATEST_TAG) has no EU Declaration of Conformity"
+            fi
+          fi
+
+          # ── .github/workflows/cra.yml ──
+          if [ ! -f ".github/workflows/cra.yml" ]; then
+            WARNINGS="${WARNINGS}\n- ⚠️ No CRA workflow found (.github/workflows/cra.yml). Run cra-onboard to set up."
+          fi
+
+          echo "issues<<EOFISSUES" >> "$GITHUB_OUTPUT"
+          echo -e "$ISSUES" >> "$GITHUB_OUTPUT"
+          echo "EOFISSUES" >> "$GITHUB_OUTPUT"
+
+          echo "warnings<<EOFWARN" >> "$GITHUB_OUTPUT"
+          echo -e "$WARNINGS" >> "$GITHUB_OUTPUT"
+          echo "EOFWARN" >> "$GITHUB_OUTPUT"
+
+          echo "has-eu-doc=${HAS_EU_DOC}" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      # ---- Evaluate ----
+
+      - name: ✅ Evaluate audit result
+        id: evaluate
+        shell: bash
+        run: |
+          SCORE="${{ steps.report.outputs.compliance-score }}"
+          MIN_SCORE="${{ inputs.min-score }}"
+
+          if [ -z "$SCORE" ] || [ "$SCORE" = "N/A" ]; then
+            echo "passed=false" >> "$GITHUB_OUTPUT"
+            echo "⚠️ Could not determine compliance score"
+            exit 0
+          fi
+
+          if [ "$SCORE" -ge "$MIN_SCORE" ]; then
+            echo "passed=true" >> "$GITHUB_OUTPUT"
+            echo "✅ Compliance score ${SCORE}/100 meets minimum ${MIN_SCORE}"
+          else
+            echo "passed=false" >> "$GITHUB_OUTPUT"
+            echo "❌ Compliance score ${SCORE}/100 below minimum ${MIN_SCORE}"
+          fi
+
+      # ---- Create/Update Issue ----
+
+      - name: 📝 Create/update audit issue
+        if: inputs.create-issue
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          SCORE="${{ steps.report.outputs.compliance-score }}"
+          PASSED="${{ steps.evaluate.outputs.passed }}"
+          PRODUCT="${GITHUB_REPOSITORY##*/}"
+          TODAY=$(date -u +"%Y-%m-%d")
+
+          if [ "$PASSED" = "true" ]; then
+            STATUS_EMOJI="✅"
+            STATUS_TEXT="PASS"
+          else
+            STATUS_EMOJI="❌"
+            STATUS_TEXT="FAIL"
+          fi
+
+          BODY="## 🔍 CRA Compliance Audit — ${TODAY}
+
+          **Product:** ${PRODUCT}
+          **Score:** ${STATUS_EMOJI} **${SCORE}/100** (${STATUS_TEXT}, minimum: ${{ inputs.min-score }})
+          **Run:** [${GITHUB_RUN_ID}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})
+
+          ### Compliance Checklist
+
+          | Check | Result |
+          |-------|--------|
+          | SBOM Generated | ${{ steps.sbom.outputs.component-count || '0' }} components |
+          | Vulnerabilities | ${{ steps.scan.outputs.critical-count || '0' }} critical, ${{ steps.scan.outputs.total-count || '0' }} total |
+          | Compliance Score | ${SCORE}/100 |
+          | EU Declaration | ${{ steps.extended.outputs.has-eu-doc }} |
+
+          ### Extended Checks
+          ${{ steps.extended.outputs.issues }}
+          ${{ steps.extended.outputs.warnings }}
+
+          ---
+          *Auto-generated by CRA Compliance Audit workflow*"
+
+          # Find existing audit issue
+          EXISTING=$(gh issue list --label "cra-audit" --state open --json number -q '.[0].number' 2>/dev/null || echo "")
+
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+            echo "📝 Updated existing audit issue #${EXISTING}"
+          else
+            gh issue create \
+              --title "🔍 CRA Compliance Audit — ${PRODUCT}" \
+              --body "$BODY" \
+              --label "cra-audit,compliance"
+            echo "📝 Created new audit issue"
+          fi
+
+      # ---- Report to Hub ----
+
+      - name: 📡 Report to CRA Hub
+        if: inputs.report-to-hub
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-hub-report@main
+        with:
+          kind: AuditReport
+          payload-json: |
+            {
+              "audit": {
+                "date": "${{ github.event.repository.updated_at }}",
+                "score": ${{ steps.report.outputs.compliance-score || 0 }},
+                "passed": ${{ steps.evaluate.outputs.passed || false }},
+                "minScore": ${{ inputs.min-score }},
+                "sbomComponents": ${{ steps.sbom.outputs.component-count || 0 }},
+                "vulnerabilities": {
+                  "critical": ${{ steps.scan.outputs.critical-count || 0 }},
+                  "total": ${{ steps.scan.outputs.total-count || 0 }}
+                },
+                "euDoc": ${{ steps.extended.outputs.has-eu-doc || false }}
+              }
+            }
+          dry-run: true
+        continue-on-error: true
+
+      # ---- Summary ----
+
+      - name: 📊 Audit summary
+        if: always()
+        shell: bash
+        run: |
+          SCORE="${{ steps.report.outputs.compliance-score }}"
+          PASSED="${{ steps.evaluate.outputs.passed }}"
+
+          {
+            echo "## 🔍 CRA Compliance Audit"
+            echo ""
+            if [ "$PASSED" = "true" ]; then
+              echo "### ✅ PASS — Score: ${SCORE}/100"
+            else
+              echo "### ❌ FAIL — Score: ${SCORE}/100 (minimum: ${{ inputs.min-score }})"
+            fi
+            echo ""
+            echo "| Check | Result |"
+            echo "|-------|--------|"
+            echo "| SBOM | ${{ steps.sbom.outputs.component-count || '0' }} components (${{ steps.sbom.outputs.project-type || 'unknown' }}) |"
+            echo "| Vulnerabilities | ${{ steps.scan.outputs.critical-count || '0' }} critical / ${{ steps.scan.outputs.total-count || '0' }} total |"
+            echo "| EU Declaration | ${{ steps.extended.outputs.has-eu-doc }} |"
+          } >> "$GITHUB_STEP_SUMMARY"

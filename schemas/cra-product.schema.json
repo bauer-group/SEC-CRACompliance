@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cra.docs.bauer-group.com/schemas/cra-product/v1.0.0",
+  "title": "CRA Product Configuration",
+  "description": "Product-level configuration for CRA compliance automation. Place as cra-product.json in the repository root.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "const": "https://cra.docs.bauer-group.com/schemas/cra-product/v1.0.0"
+    },
+    "product": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Product display name"
+        },
+        "description": {
+          "type": "string",
+          "description": "Product description for the EU Declaration of Conformity"
+        },
+        "classification": {
+          "type": "string",
+          "enum": ["standard", "important-class-1", "important-class-2", "critical"],
+          "default": "standard",
+          "description": "CRA product classification per Annex III/IV"
+        },
+        "conformityModule": {
+          "type": "string",
+          "enum": ["module-a", "module-b-c", "module-h", "eucc"],
+          "default": "module-a",
+          "description": "Conformity assessment module per Annex VIII"
+        }
+      },
+      "required": ["name", "classification"]
+    },
+    "manufacturer": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Manufacturer legal name"
+        },
+        "address": {
+          "type": "string",
+          "description": "Manufacturer postal address"
+        }
+      },
+      "required": ["name"]
+    },
+    "support": {
+      "type": "object",
+      "properties": {
+        "periodYears": {
+          "type": "integer",
+          "minimum": 5,
+          "default": 5,
+          "description": "Support period in years (minimum 5 per Art. 13(16))"
+        },
+        "until": {
+          "type": "string",
+          "format": "date",
+          "description": "Support end date (YYYY-MM-DD)"
+        }
+      }
+    },
+    "contacts": {
+      "type": "object",
+      "properties": {
+        "securityEmail": {
+          "type": "string",
+          "format": "email",
+          "description": "Security vulnerability disclosure email"
+        },
+        "productOwner": {
+          "type": "string",
+          "format": "email",
+          "description": "Product owner email"
+        }
+      }
+    },
+    "declaration": {
+      "type": "object",
+      "description": "EU Declaration of Conformity signing details",
+      "properties": {
+        "signatoryName": {
+          "type": "string",
+          "description": "Name of person signing the EU DoC"
+        },
+        "signatoryRole": {
+          "type": "string",
+          "description": "Role/title of the signatory"
+        },
+        "signingPlace": {
+          "type": "string",
+          "description": "Place of signing"
+        }
+      }
+    }
+  },
+  "required": ["product", "manufacturer"]
+}

@@ -133,6 +133,35 @@ on:
         default: 5
 
       # -------------------------------------------------------------------
+      # EU Declaration of Conformity & PDF Rendering
+      # -------------------------------------------------------------------
+      generate-eu-doc:
+        description: 'Generate EU Declaration of Conformity (Annex V) as JSON'
+        type: boolean
+        required: false
+        default: true
+      render-pdfs:
+        description: 'Render JSON artifacts to PDF (EU DoC + Compliance Report)'
+        type: boolean
+        required: false
+        default: true
+      classification:
+        description: 'CRA product classification: standard, important-class-1, important-class-2, critical'
+        type: string
+        required: false
+        default: 'standard'
+      conformity-module:
+        description: 'Conformity assessment module: module-a, module-b-c, module-h, eucc'
+        type: string
+        required: false
+        default: 'module-a'
+      manufacturer-name:
+        description: 'Manufacturer legal name'
+        type: string
+        required: false
+        default: 'BAUER GROUP GmbH'
+
+      # -------------------------------------------------------------------
       # Release & Retention
       # -------------------------------------------------------------------
       upload-to-release:
@@ -168,6 +197,9 @@ on:
       compliance-score:
         description: 'CRA compliance score (0-100)'
         value: ${{ jobs.cra-release.outputs.compliance-score }}
+      eu-doc-path:
+        description: 'Path to the generated EU DoC JSON'
+        value: ${{ jobs.cra-release.outputs.eu-doc-path }}
 
 # ---------------------------------------------------------------------------
 # Permissions
@@ -199,6 +231,7 @@ jobs:
       sbom-attested: ${{ steps.attest.outputs.attested || 'false' }}
       vex-path: ${{ steps.vex.outputs.vex-path || '' }}
       compliance-score: ${{ steps.compliance-report.outputs.compliance-score || '' }}
+      eu-doc-path: ${{ steps.eu-doc.outputs.eu-doc-path || '' }}
     steps:
       - name: 📥 Checkout repository
         uses: actions/checkout@v6
@@ -288,6 +321,30 @@ jobs:
           attestation-id: ${{ steps.attest.outputs.attestation-id || '' }}
           support-period-years: ${{ inputs.support-period-years }}
 
+      # ---- EU Declaration of Conformity ----
+
+      - name: 📜 Generate EU Declaration of Conformity
+        id: eu-doc
+        if: inputs.generate-eu-doc
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-eu-doc@main
+        with:
+          compliance-report-path: ${{ steps.compliance-report.outputs.json-report-path || 'cra-compliance-report.json' }}
+          sbom-path: ${{ steps.sbom.outputs.sbom-path }}
+          classification: ${{ inputs.classification }}
+          conformity-module: ${{ inputs.conformity-module }}
+          manufacturer-name: ${{ inputs.manufacturer-name }}
+          support-period-years: ${{ inputs.support-period-years }}
+
+      # ---- PDF Rendering ----
+
+      - name: 🖨️ Render PDF documents
+        id: render
+        if: inputs.render-pdfs
+        uses: bauer-group/SEC-CRACompliance/.github/actions/cra-render@main
+        with:
+          eu-doc-path: ${{ steps.eu-doc.outputs.eu-doc-path || '' }}
+          compliance-report-path: ${{ steps.compliance-report.outputs.json-report-path || 'cra-compliance-report.json' }}
+
       # ---- Upload & Publish ----
 
       - name: 📤 Upload SARIF to GitHub Security
@@ -310,6 +367,8 @@ jobs:
             ${{ steps.vex.outputs.vex-path }}
             cra-compliance-report.json
             cra-compliance-report.md
+            eu-doc.json
+            cra-rendered/*.pdf
 
       - name: 📎 Attach to GitHub Release
         if: inputs.upload-to-release && github.event_name == 'release'
@@ -349,6 +408,19 @@ jobs:
             gh release upload "$TAG" "cra-compliance-report.md" --clobber
           fi
 
+          # EU Declaration of Conformity
+          EU_DOC="${{ steps.eu-doc.outputs.eu-doc-path }}"
+          if [ -n "$EU_DOC" ] && [ -f "$EU_DOC" ]; then
+            gh release upload "$TAG" "$EU_DOC" --clobber
+          fi
+
+          # Rendered PDFs
+          for PDF in cra-rendered/*.pdf; do
+            if [ -f "$PDF" ]; then
+              gh release upload "$TAG" "$PDF" --clobber
+            fi
+          done
+
       # ---- Summary ----
 
       - name: 📊 Generate summary
@@ -365,6 +437,8 @@ jobs:
           echo "| Vulnerabilities | ${{ steps.scan.outputs.total-count }} total (${{ steps.scan.outputs.critical-count }} critical) |" >> "$GITHUB_STEP_SUMMARY"
           echo "| VEX Document | ${{ steps.vex.outputs.total-statements || 'skipped' }} statements |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Compliance Score | ${{ steps.compliance-report.outputs.compliance-score || 'skipped' }}/100 |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| EU Declaration | ${{ steps.eu-doc.outputs.doc-number || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| PDF Documents | ${{ steps.render.outputs.rendered-files || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Project Type | ${{ steps.sbom.outputs.project-type }} |" >> "$GITHUB_STEP_SUMMARY"
 
           if [ "${{ inputs.run-validation }}" = "true" ]; then

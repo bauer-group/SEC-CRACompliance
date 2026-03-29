@@ -117,6 +117,8 @@
 | `cra-vulnerability-scan` | Art. 10(6), (8) | 多引擎漏洞扫描 (Trivy + Grype + OSV-Scanner) |
 | `cra-hub-report` | Art. 10, Art. 13 | 向软件安全中心 API 发送合规数据 |
 | `cra-compliance-report` | Annex VII | JSON + Markdown 合规报告（含评分） |
+| `cra-eu-doc` | Art. 28, Annex V | 生成机器可读的 EU 符合性声明 (JSON) |
+| `cra-render` | Annex V, Annex VII | 将 JSON 制品渲染为 PDF（EU DoC、合规报告） |
 
 ### 组合操作（通用，在 automation-templates 中）
 
@@ -132,6 +134,9 @@
 | `cra-release.yml` | 仓库本地 | Art. 10(12), Art. 13(23), Annex VII | SBOM + 签名 + 认证 + VEX + 合规报告 |
 | `cra-scan.yml` | 仓库本地 | Art. 10(6), (8) | 计划 CVE 扫描并创建 issue |
 | `cra-report.yml` | API 报告 | Art. 10, Art. 13, Annex VII | 所有 CRA 数据发送至 CRA 合规中心 |
+| `cra-onboard.yml` | 仓库本地 | Art. 10, Art. 13(6) | 一键 CRA 注册（适用于任何仓库） |
+| `cra-audit.yml` | 仓库本地 | Annex I, Annex VII | 每周合规审计（含 Issue 创建） |
+| `cra-incident.yml` | 仓库本地 | Art. 14 | 事件响应触发器（含 ENISA 截止日期计算） |
 
 ### CLI 工具
 

@@ -128,6 +128,8 @@ In addition to the automation templates, this repository provides dedicated CRA 
 | `cra-vulnerability-scan` | Art. 10(6), (8) | Multi-engine vulnerability scan (Trivy + Grype + OSV-Scanner) |
 | `cra-hub-report` | Art. 10, Art. 13 | Send compliance data to Software Security Hub API |
 | `cra-compliance-report` | Annex VII | Generate JSON + Markdown compliance report with scoring |
+| `cra-eu-doc` | Art. 28, Annex V | Generate machine-readable EU Declaration of Conformity (JSON) |
+| `cra-render` | Annex V, Annex VII | Render JSON artifacts to PDF (EU DoC, Compliance Report) |
 
 ### Composite Actions (Generic, in automation-templates)
 
@@ -143,6 +145,9 @@ In addition to the automation templates, this repository provides dedicated CRA 
 | `cra-release.yml` | Repo-local | Art. 10(12), Art. 13(23), Annex VII | SBOM + signature + attestation + VEX + compliance report |
 | `cra-scan.yml` | Repo-local | Art. 10(6), (8) | Scheduled CVE scan with issue creation |
 | `cra-report.yml` | API reporting | Art. 10, Art. 13, Annex VII | All CRA data to CRA Compliance Hub |
+| `cra-onboard.yml` | Repo-local | Art. 10, Art. 13(6) | One-click CRA enrollment for any repository |
+| `cra-audit.yml` | Repo-local | Annex I, Annex VII | Weekly compliance audit with issue creation |
+| `cra-incident.yml` | Repo-local | Art. 14 | Incident response trigger with ENISA deadline calculation |
 
 ### CLI Tool
 
