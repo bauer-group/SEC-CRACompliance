@@ -195,7 +195,7 @@ runs:
         [ -z "$MFR_ADDRESS" ] && MFR_ADDRESS="${CFG_MFR_ADDRESS:-}"
 
         MFR_EMAIL="${{ inputs.manufacturer-email }}"
-        [ -z "${CFG_SECURITY_EMAIL:-}" ] || MFR_EMAIL="$CFG_SECURITY_EMAIL"
+        [ "$MFR_EMAIL" = "disclosure@bauer-group.com" ] && [ -n "$CFG_SECURITY_EMAIL" ] && MFR_EMAIL="$CFG_SECURITY_EMAIL"
 
         SUPPORT_YEARS="${{ inputs.support-period-years }}"
         [ "$SUPPORT_YEARS" = "5" ] && [ -n "$CFG_SUPPORT_YEARS" ] && SUPPORT_YEARS="$CFG_SUPPORT_YEARS"
@@ -236,11 +236,11 @@ runs:
           echo "📊 Reading compliance data from $REPORT_FILE"
           COMPLIANCE_SCORE=$(jq -r '.complianceScore.score // "N/A"' "$REPORT_FILE" 2>/dev/null || echo "N/A")
           SBOM_GENERATED=$(jq -r '.sbom.generated // false' "$REPORT_FILE" 2>/dev/null || echo "false")
-          SBOM_SIGNED=$(jq -r '.signing.cosign // false' "$REPORT_FILE" 2>/dev/null || echo "false")
-          SBOM_ATTESTED=$(jq -r '.signing.attestation // false' "$REPORT_FILE" 2>/dev/null || echo "false")
-          VULN_CRITICAL=$(jq -r '.vulnerabilities.critical // 0' "$REPORT_FILE" 2>/dev/null || echo "0")
-          VULN_HIGH=$(jq -r '.vulnerabilities.high // 0' "$REPORT_FILE" 2>/dev/null || echo "0")
-          COMPONENT_COUNT=$(jq -r '.sbom.components // 0' "$REPORT_FILE" 2>/dev/null || echo "0")
+          SBOM_SIGNED=$(jq -r '.sbom.signed // false' "$REPORT_FILE" 2>/dev/null || echo "false")
+          SBOM_ATTESTED=$(jq -r '.sbom.attested // false' "$REPORT_FILE" 2>/dev/null || echo "false")
+          VULN_CRITICAL=$(jq -r '.vulnerabilities.summary.critical // 0' "$REPORT_FILE" 2>/dev/null || echo "0")
+          VULN_HIGH=$(jq -r '.vulnerabilities.summary.high // 0' "$REPORT_FILE" 2>/dev/null || echo "0")
+          COMPONENT_COUNT=$(jq -r '.sbom.componentCount // 0' "$REPORT_FILE" 2>/dev/null || echo "0")
         fi
 
         # ── Read SBOM component count as fallback ──

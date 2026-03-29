@@ -338,9 +338,14 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
+          PRODUCT: ${{ inputs.product-name }}
+          CLASSIFICATION: ${{ inputs.classification }}
+          CONFORMITY_MODULE: ${{ inputs.conformity-module }}
+          COMPLIANCE_SCORE: ${{ steps.compliance.outputs.compliance-score || '0' }}
+          SBOM_COMPONENTS: ${{ steps.sbom.outputs.component-count || '0' }}
+          SUPPORT_YEARS: ${{ inputs.support-period-years }}
         run: |
           BRANCH="cra/onboard-$(date +%Y%m%d)"
-          PRODUCT="${{ inputs.product-name }}"
 
           # Check if there are changes
           if git diff --quiet && git diff --cached --quiet; then
@@ -355,7 +360,8 @@ jobs:
 
           git checkout -b "$BRANCH"
           git add cra-product.json SECURITY.md .github/workflows/cra.yml
-          git add -f "${{ steps.sbom.outputs.sbom-path }}" || true
+          SBOM_PATH="${{ steps.sbom.outputs.sbom-path }}"
+          git add -f "$SBOM_PATH" || true
           git add cra-compliance-report.json cra-compliance-report.md || true
 
           git config user.name "github-actions[bot]"
@@ -368,16 +374,16 @@ jobs:
           - .github/workflows/cra.yml (CRA automation)
           - Initial SBOM and compliance report
 
-          CRA Classification: ${{ inputs.classification }}
-          Conformity Module: ${{ inputs.conformity-module }}
-          Support Period: ${{ inputs.support-period-years }} years
-          Initial Score: ${{ steps.compliance.outputs.compliance-score }}/100"
+          CRA Classification: ${CLASSIFICATION}
+          Conformity Module: ${CONFORMITY_MODULE}
+          Support Period: ${SUPPORT_YEARS} years
+          Initial Score: ${COMPLIANCE_SCORE}/100"
 
           git push origin "$BRANCH"
 
           PR_URL=$(gh pr create \
             --title "feat(cra): onboard ${PRODUCT} for CRA compliance" \
-            --body "$(cat <<'PRBODY'
+            --body "$(cat <<PRBODY
           ## CRA Product Onboarding
 
           This PR enrolls **${PRODUCT}** for EU Cyber Resilience Act compliance.
@@ -386,24 +392,22 @@ jobs:
 
           | File | Purpose |
           |------|---------|
-          | `cra-product.json` | Product configuration (classification, support period) |
-          | `SECURITY.md` | Vulnerability disclosure policy (Art. 13(6)) |
-          | `.github/workflows/cra.yml` | CRA automation (release, scan, report) |
+          | \`cra-product.json\` | Product configuration (classification, support period) |
+          | \`SECURITY.md\` | Vulnerability disclosure policy (Art. 13(6)) |
+          | \`.github/workflows/cra.yml\` | CRA automation (release, scan, report) |
 
           ### Initial Compliance
 
-          - **Score:** ${{ steps.compliance.outputs.compliance-score }}/100
-          - **SBOM:** ${{ steps.sbom.outputs.component-count }} components detected
-          - **Classification:** ${{ inputs.classification }}
-          - **Conformity Module:** ${{ inputs.conformity-module }}
+          - **Score:** ${COMPLIANCE_SCORE}/100
+          - **SBOM:** ${SBOM_COMPONENTS} components detected
+          - **Classification:** ${CLASSIFICATION}
+          - **Conformity Module:** ${CONFORMITY_MODULE}
 
           ### What happens after merge?
 
           1. On every **release**: SBOM + signing + VEX + compliance report + EU DoC + PDFs
           2. **Weekly** (Monday 06:00 UTC): CVE scan against latest SBOM
           3. On release: Data reported to CRA Compliance Hub
-
-          🤖 Generated with [CRA Compliance Automation](https://cra.docs.bauer-group.com)
           PRBODY
           )")
 

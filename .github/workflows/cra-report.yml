@@ -162,7 +162,7 @@ jobs:
             LANG_ARRAY="[]"
             [ -f "package.json" ] && LANG_ARRAY=$(echo "$LANG_ARRAY" | jq '. + ["nodejs"]')
             [ -f "go.mod" ] && LANG_ARRAY=$(echo "$LANG_ARRAY" | jq '. + ["golang"]')
-            [ -f "requirements.txt" ] || [ -f "pyproject.toml" ] && LANG_ARRAY=$(echo "$LANG_ARRAY" | jq '. + ["python"]')
+            { [ -f "requirements.txt" ] || [ -f "pyproject.toml" ]; } && LANG_ARRAY=$(echo "$LANG_ARRAY" | jq '. + ["python"]')
             [ -f "Cargo.toml" ] && LANG_ARRAY=$(echo "$LANG_ARRAY" | jq '. + ["rust"]')
             [ -f "Dockerfile" ] && LANG_ARRAY=$(echo "$LANG_ARRAY" | jq '. + ["docker"]')
             ls *.csproj 1>/dev/null 2>&1 && LANG_ARRAY=$(echo "$LANG_ARRAY" | jq '. + ["dotnet"]')

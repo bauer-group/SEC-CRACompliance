@@ -151,12 +151,23 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
+          INPUT_TITLE: ${{ inputs.title }}
+          INPUT_DESCRIPTION: ${{ inputs.description }}
+          INPUT_CVE_IDS: ${{ inputs.cve-ids }}
+          INPUT_SEVERITY: ${{ inputs.severity }}
+          INPUT_EXPLOITED: ${{ inputs.actively-exploited }}
+          INPUT_VERSIONS: ${{ inputs.affected-versions }}
+          INCIDENT_ID: ${{ steps.deadlines.outputs.incident-id }}
+          ENISA_24H: ${{ steps.deadlines.outputs.enisa-24h }}
+          ENISA_72H: ${{ steps.deadlines.outputs.enisa-72h }}
+          ENISA_14D: ${{ steps.deadlines.outputs.enisa-14d }}
+          ALERT_20H: ${{ steps.deadlines.outputs.alert-20h }}
+          ALERT_48H: ${{ steps.deadlines.outputs.alert-48h }}
         run: |
-          INCIDENT_ID="${{ steps.deadlines.outputs.incident-id }}"
-          SEVERITY="${{ inputs.severity }}"
-          TITLE="${{ inputs.title }}"
-          CVE_IDS="${{ inputs.cve-ids }}"
-          EXPLOITED="${{ inputs.actively-exploited }}"
+          SEVERITY="$INPUT_SEVERITY"
+          TITLE="$INPUT_TITLE"
+          CVE_IDS="$INPUT_CVE_IDS"
+          EXPLOITED="$INPUT_EXPLOITED"
           PRODUCT="${GITHUB_REPOSITORY##*/}"
 
           # Severity label mapping
@@ -182,27 +193,27 @@ jobs:
           **Product:** ${PRODUCT}
           **CVE(s):** ${CVE_IDS:-None assigned}
           **Actively Exploited:** ${EXPLOITED}
-          **Affected Versions:** ${{ inputs.affected-versions || 'TBD' }}
+          **Affected Versions:** ${INPUT_VERSIONS:-TBD}
           ${ENISA_NOTE}
 
           ### ENISA Reporting Deadlines (Art. 14 CRA)
 
           | Deadline | Due | Status |
           |----------|-----|--------|
-          | 📋 **Early Warning** (24h) | \`${{ steps.deadlines.outputs.enisa-24h }}\` | ⏳ Pending |
-          | 📄 **Notification** (72h) | \`${{ steps.deadlines.outputs.enisa-72h }}\` | ⏳ Pending |
-          | 📑 **Final Report** (14d) | \`${{ steps.deadlines.outputs.enisa-14d }}\` | ⏳ Pending |
+          | 📋 **Early Warning** (24h) | \`${ENISA_24H}\` | ⏳ Pending |
+          | 📄 **Notification** (72h) | \`${ENISA_72H}\` | ⏳ Pending |
+          | 📑 **Final Report** (14d) | \`${ENISA_14D}\` | ⏳ Pending |
 
           ### Internal Alert Schedule
 
           | Alert | Time |
           |-------|------|
-          | Pre-24h warning | \`${{ steps.deadlines.outputs.alert-20h }}\` |
-          | Pre-72h warning | \`${{ steps.deadlines.outputs.alert-48h }}\` |
+          | Pre-24h warning | \`${ALERT_20H}\` |
+          | Pre-72h warning | \`${ALERT_48H}\` |
 
           ### Description
 
-          ${{ inputs.description || '_No description provided. Please update this issue with incident details._' }}
+          ${INPUT_DESCRIPTION:-_No description provided. Please update this issue with incident details._}
 
           ### Response Checklist
 
@@ -247,13 +258,19 @@ jobs:
       - name: 📢 Send Teams notification
         if: inputs.teams-webhook-url != ''
         shell: bash
+        env:
+          WEBHOOK: ${{ inputs.teams-webhook-url }}
+          INCIDENT_ID: ${{ steps.deadlines.outputs.incident-id }}
+          INPUT_SEVERITY: ${{ inputs.severity }}
+          INPUT_TITLE: ${{ inputs.title }}
+          ISSUE_URL: ${{ steps.issue.outputs.issue-url }}
+          INPUT_EXPLOITED: ${{ inputs.actively-exploited }}
+          INPUT_CVE_IDS: ${{ inputs.cve-ids }}
+          ENISA_24H: ${{ steps.deadlines.outputs.enisa-24h }}
         run: |
-          WEBHOOK="${{ inputs.teams-webhook-url }}"
-          INCIDENT_ID="${{ steps.deadlines.outputs.incident-id }}"
-          SEVERITY="${{ inputs.severity }}"
-          TITLE="${{ inputs.title }}"
-          ISSUE_URL="${{ steps.issue.outputs.issue-url }}"
-          EXPLOITED="${{ inputs.actively-exploited }}"
+          SEVERITY="$INPUT_SEVERITY"
+          TITLE="$INPUT_TITLE"
+          EXPLOITED="$INPUT_EXPLOITED"
 
           URGENCY=""
           if [ "$EXPLOITED" = "true" ]; then
@@ -262,7 +279,7 @@ jobs:
 
           PAYLOAD=$(jq -n \
             --arg title "🚨 CRA Incident: ${SEVERITY} — ${TITLE}${URGENCY}" \
-            --arg text "**Incident:** ${INCIDENT_ID}\n**Severity:** ${SEVERITY}\n**CVEs:** ${{ inputs.cve-ids || 'N/A' }}\n**24h Deadline:** ${{ steps.deadlines.outputs.enisa-24h }}\n**Issue:** ${ISSUE_URL}" \
+            --arg text "**Incident:** ${INCIDENT_ID}\n**Severity:** ${SEVERITY}\n**CVEs:** ${INPUT_CVE_IDS:-N/A}\n**24h Deadline:** ${ENISA_24H}\n**Issue:** ${ISSUE_URL}" \
             '{"title": $title, "text": $text}')
 
           curl -sS -X POST -H "Content-Type: application/json" -d "$PAYLOAD" "$WEBHOOK" || true

@@ -116,6 +116,8 @@ runs:
     - name: 📦 Assemble API payload
       id: assemble
       shell: bash
+      env:
+        PAYLOAD_JSON_INPUT: ${{ inputs.payload-json }}
       run: |
         PAYLOAD_PATH="${GITHUB_WORKSPACE}/.cra-hub-payload.json"
         KIND="${{ inputs.kind }}"
@@ -124,8 +126,8 @@ runs:
         SPEC='{}'
         if [ -n "${{ inputs.payload-file }}" ] && [ -f "${{ inputs.payload-file }}" ]; then
           SPEC=$(cat "${{ inputs.payload-file }}")
-        elif [ -n "${{ inputs.payload-json }}" ]; then
-          echo '${{ inputs.payload-json }}' > /tmp/cra-hub-payload-inline.json
+        elif [ -n "$PAYLOAD_JSON_INPUT" ]; then
+          printf '%s' "$PAYLOAD_JSON_INPUT" > /tmp/cra-hub-payload-inline.json
           if jq empty /tmp/cra-hub-payload-inline.json 2>/dev/null; then
             SPEC=$(cat /tmp/cra-hub-payload-inline.json)
           else
