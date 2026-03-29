@@ -152,10 +152,18 @@ runs:
 
         if [ -f "$VULN_FILE" ]; then
           VULN_ENGINE="Trivy"
-          VULN_CRITICAL=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity == "CRITICAL")] | length' "$VULN_FILE" 2>/dev/null || echo "0")
-          VULN_HIGH=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity == "HIGH")] | length' "$VULN_FILE" 2>/dev/null || echo "0")
-          VULN_MEDIUM=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity == "MEDIUM")] | length' "$VULN_FILE" 2>/dev/null || echo "0")
-          VULN_LOW=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity == "LOW")] | length' "$VULN_FILE" 2>/dev/null || echo "0")
+          # Single jq pass — extract all severity counts at once
+          eval "$(jq -r '
+            [.Results[]?.Vulnerabilities[]?] | group_by(.Severity) |
+            map({key: .[0].Severity, value: length}) | from_entries |
+            "VULN_CRITICAL=\(.CRITICAL // 0)",
+            "VULN_HIGH=\(.HIGH // 0)",
+            "VULN_MEDIUM=\(.MEDIUM // 0)",
+            "VULN_LOW=\(.LOW // 0)"
+          ' "$VULN_FILE" 2>/dev/null || echo "VULN_CRITICAL=0
+          VULN_HIGH=0
+          VULN_MEDIUM=0
+          VULN_LOW=0")"
           VULN_TOTAL=$((VULN_CRITICAL + VULN_HIGH + VULN_MEDIUM + VULN_LOW))
           echo "  Vulnerabilities: $VULN_CRITICAL critical, $VULN_HIGH high, $VULN_MEDIUM medium, $VULN_LOW low"
         else
@@ -174,12 +182,20 @@ runs:
 
         if [ -f "$VEX_FILE" ]; then
           VEX_GENERATED=true
-          VEX_TOTAL=$(jq '.statements | length' "$VEX_FILE" 2>/dev/null || echo "0")
-          VEX_NOT_AFFECTED=$(jq '[.statements[] | select(.status == "not_affected")] | length' "$VEX_FILE" 2>/dev/null || echo "0")
-          VEX_AFFECTED=$(jq '[.statements[] | select(.status == "affected")] | length' "$VEX_FILE" 2>/dev/null || echo "0")
-          VEX_FIXED=$(jq '[.statements[] | select(.status == "fixed")] | length' "$VEX_FILE" 2>/dev/null || echo "0")
-          VEX_UNDER_INVESTIGATION=$(jq '[.statements[] | select(.status == "under_investigation")] | length' "$VEX_FILE" 2>/dev/null || echo "0")
-          # Overrides = everything that's NOT under_investigation
+          # Single jq pass — extract all VEX counts at once
+          eval "$(jq -r '
+            (.statements // []) | group_by(.status) |
+            map({key: .[0].status, value: length}) | from_entries |
+            "VEX_TOTAL=\([.[]] | add // 0)",
+            "VEX_NOT_AFFECTED=\(.not_affected // 0)",
+            "VEX_AFFECTED=\(.affected // 0)",
+            "VEX_FIXED=\(.fixed // 0)",
+            "VEX_UNDER_INVESTIGATION=\(.under_investigation // 0)"
+          ' "$VEX_FILE" 2>/dev/null || echo "VEX_TOTAL=0
+          VEX_NOT_AFFECTED=0
+          VEX_AFFECTED=0
+          VEX_FIXED=0
+          VEX_UNDER_INVESTIGATION=0")"
           VEX_OVERRIDES=$((VEX_NOT_AFFECTED + VEX_AFFECTED + VEX_FIXED))
           echo "  VEX: $VEX_TOTAL statements ($VEX_OVERRIDES triaged)"
         else
