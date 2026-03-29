@@ -1,3 +1,13 @@
+## [0.10.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.9.1...v0.10.0) (2026-03-29)
+
+### 🚀 Features
+
+* **ci:** added EU DoC and PDF rendering ([b5a6e05](https://github.com/bauer-group/SEC-CRACompliance/commit/b5a6e05616f2ea312cc85df3ae85f00f7efd5281))
+
+### ♻️ Refactoring
+
+* **cra-render:** refactored PDF rendering to WeasyPrint ([ff84147](https://github.com/bauer-group/SEC-CRACompliance/commit/ff84147a135165a05fef131bf4f6b6f263c70d03))
+
 ## [0.9.1](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.9.0...v0.9.1) (2026-03-28)
 
 ### 🐛 Bug Fixes
