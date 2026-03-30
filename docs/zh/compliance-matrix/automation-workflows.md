@@ -51,6 +51,116 @@ jobs:
 
 将合规数据发送到软件安全中心 API 进行集中跟踪。
 
+## 完整的消费者工作流
+
+::: tip 复制粘贴
+将此工作流复制到您的产品仓库中，保存为 `.github/workflows/cra.yml`。涵盖发布合规、每周扫描和中心报告。
+:::
+
+### 最小配置（零配置）
+
+```yaml
+# .github/workflows/cra.yml
+name: CRA Compliance
+
+on:
+  release:
+    types: [published]
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+  security-events: write
+  issues: write
+
+jobs:
+  cra-release:
+    if: github.event_name == 'release'
+    uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-release.yml@main
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+      security-events: write
+
+  cra-scan:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-scan.yml@main
+    permissions:
+      contents: read
+      security-events: write
+      issues: write
+```
+
+### 完整配置（所有参数）
+
+```yaml
+jobs:
+  cra-release:
+    if: github.event_name == 'release'
+    uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-release.yml@main
+    with:
+      run-validation: true              # 在生成 CRA 制品前运行验证
+      validation-command: 'npm run ci'
+      sign-sbom: true                   # Cosign 无密钥签名
+      fail-on-critical: true            # CRITICAL CVE 时阻止发布
+      enable-grype: true                # 额外的 Grype 扫描
+      attest-sbom: true                 # GitHub SBOM 认证
+      generate-vex: true                # OpenVEX 文档
+      generate-eu-doc: true             # EU 符合性声明 (Annex V)
+      render-pdfs: true                 # JSON → PDF 渲染
+      classification: 'important-class-1'
+      support-period-years: 5
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+      security-events: write
+
+  cra-scan:
+    if: github.event_name == 'schedule'
+    uses: bauer-group/SEC-CRACompliance/.github/workflows/cra-scan.yml@main
+    with:
+      severity-threshold: 'MEDIUM'
+      create-issue: true
+    permissions:
+      contents: read
+      security-events: write
+      issues: write
+```
+
+## 参数参考
+
+### `cra-release.yml`
+
+| 参数 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `run-validation` | boolean | `false` | 生成 CRA 制品前运行验证 |
+| `sign-sbom` | boolean | `true` | 使用 Cosign 签名 SBOM |
+| `fail-on-critical` | boolean | `false` | CRITICAL 漏洞时失败 |
+| `enable-grype` | boolean | `false` | 启用 Grype 扫描 |
+| `enable-osv` | boolean | `true` | 启用 OSV-Scanner |
+| `attest-sbom` | boolean | `true` | 创建 GitHub SBOM 认证 |
+| `generate-vex` | boolean | `true` | 生成 OpenVEX 文档 |
+| `generate-eu-doc` | boolean | `true` | 生成 EU 符合性声明 |
+| `render-pdfs` | boolean | `true` | JSON → PDF 渲染 |
+| `classification` | string | `'standard'` | `standard`, `important-class-1`, `important-class-2`, `critical` |
+| `support-period-years` | number | `5` | 支持期限（Art. 13(8)） |
+
+### 所需权限
+
+| 工作流 | 权限 | 原因 |
+|--------|------|------|
+| `cra-release` | `contents: write` | 上传发布资产 |
+| `cra-release` | `id-token: write` | Cosign 无密钥签名 (OIDC) |
+| `cra-release` | `attestations: write` | GitHub SBOM 认证 |
+| `cra-release` | `security-events: write` | SARIF 上传 |
+| `cra-scan` | `issues: write` | 创建 CVE Issue |
+
 ## 发布制品
 
 | 制品 | 格式 | 用途 | CRA 参考 |
@@ -60,7 +170,9 @@ jobs:
 | `vulnerability-report.json` | Trivy JSON | 已知漏洞 | Art. 10(6) |
 | `vex.openvex.json` | OpenVEX v0.2.0 | 漏洞可利用性 | Annex I II.2 |
 | `cra-compliance-report.json` | Schema v1.0.0 | 机器可读合规状态 | Annex VII |
-| `cra-compliance-report.md` | Markdown | 人类可读合规状态 | Annex VII |
+| `eu-doc.json` | EU DoC Schema v1.0.0 | 机器可读 EU 符合性声明 | Art. 28, Annex V |
+| `EU-Declaration-*.pdf` | PDF | 可打印 EU 符合性声明 | Art. 28, Annex V |
+| `CRA-Compliance-Report-*.pdf` | PDF | 可打印合规报告 | Annex VII |
 
 ## 合规评分
 
