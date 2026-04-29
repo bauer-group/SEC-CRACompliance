@@ -1,3 +1,9 @@
+## [0.10.2](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.10.1...v0.10.2) (2026-04-29)
+
+### ♻️ Refactoring
+
+* **docs:** zentralisierte Regulatory-Status-Datenschicht ([9f4159d](https://github.com/bauer-group/SEC-CRACompliance/commit/9f4159db8d171ca7523d63b436d0bcad63d51e60))
+
 ## [0.10.1](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.10.0...v0.10.1) (2026-03-30)
 
 ### 🐛 Bug Fixes
