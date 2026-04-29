@@ -1,3 +1,19 @@
+## [0.10.1](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.10.0...v0.10.1) (2026-03-30)
+
+### 🐛 Bug Fixes
+
+* **ci:** fixed report parsing and shell injection ([e77ea8d](https://github.com/bauer-group/SEC-CRACompliance/commit/e77ea8de4db6df79df24497232759616069e0dfc))
+* **ci:** updated checkout action fetch depth parameter ([54a294c](https://github.com/bauer-group/SEC-CRACompliance/commit/54a294c5dbbf0dd4ed63fb2dbefb56b10265faa7))
+
+### ⚡ Performance
+
+* **ci:** optimized CRA scanning performance ([d766e1c](https://github.com/bauer-group/SEC-CRACompliance/commit/d766e1c093fe676c0b248fecd6f8cf3d78f00c92))
+
+### ♻️ Refactoring
+
+* **actions:** simplified jq queries in CRA compliance actions ([351ecb1](https://github.com/bauer-group/SEC-CRACompliance/commit/351ecb11156a572cc42498081d9e860ccb7d3e69))
+* **workflow:** cleaned up CRA compliance workflow template ([9f5d086](https://github.com/bauer-group/SEC-CRACompliance/commit/9f5d086d03991207643cee7cfdb78f9d0252e1b6))
+
 ## [0.10.0](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.9.1...v0.10.0) (2026-03-29)
 
 ### 🚀 Features
