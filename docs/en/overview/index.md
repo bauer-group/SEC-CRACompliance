@@ -136,20 +136,21 @@ BAUER GROUP relies on a fully automated toolchain to ensure CRA conformity witho
 
 ## Regulatory References
 
+### Static legal bases and standards
+
 | Regulation | Reference | Relevance |
 |------------|-----------|-----------|
 | **Cyber Resilience Act** | Regulation (EU) 2024/2847 | Primary legal basis of this handbook |
 | **NIS2 Directive** | Directive (EU) 2022/2555 | Supplementary reporting obligations for operators |
-| **Implementing Act** | Technical descriptions of important & critical products | Adopted 2025-11-28 (Art. 7, 8 CRA) |
-| **Delegated Act** | CSIRT withholding of notification dissemination | Adopted 2025-12-11 (Art. 14 CRA), objection period running |
-| **Delegated Act EUCC presumption** | Presumption of conformity via EUCC scheme | Expected Q4 2026 |
-| **Standardisation Request M/606** | 41 harmonised standards (15 horizontal, 26 vertical) | Accepted April 2025; delivery by 2026-10-30 |
-| **ENISA Single Reporting Platform** | Art. 14 CRA | Central reporting platform; operational from 2026-09-11 (under development) |
 | **ISO/IEC 29147:2018** | Vulnerability Disclosure | Reference standard for Coordinated Vulnerability Disclosure |
 | **ISO/IEC 30111:2019** | Vulnerability Handling | Reference standard for vulnerability handling |
 | **CycloneDX v1.5+** | OWASP Standard | SBOM format |
 | **NIST SP 800-161r1** | C-SCRM | Supply chain risk management best practice |
 | **IEC 62443** | Industrial Cybersecurity | Reference for industrial control systems |
+
+### Dynamic acts and standards
+
+<RegulatoryStatusReferences />
 
 ## Terms and Definitions
 

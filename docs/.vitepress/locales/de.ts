@@ -270,6 +270,83 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
     darkModeSwitchLabel: 'Erscheinungsbild',
     langMenuLabel: 'Sprache',
 
+    // -----------------------------------------------------------------
+    // Regulatory Status — Lokalisierte Labels
+    // Daten: docs/.vitepress/regulatory-status.ts
+    // -----------------------------------------------------------------
+
+    regulatoryStatus: {
+      asOfLabel: 'Stand',
+      harmonisedStandards: {
+        title: 'AKTUELLER STATUS',
+        intro: 'Die europäischen Normungsorganisationen CEN, CENELEC und ETSI haben den **Standardisierungsauftrag {requestId}** der EU-Kommission im {accepted} angenommen. Dieser umfasst **{standardCount} harmonisierte Normen** für den CRA: {horizontalCount} horizontale (federführend {leadCommittee}, Reihe EN 40000) und {verticalCount} vertikale produktspezifische Deliverables.',
+        tableHeaders: { milestone: 'Meilenstein', target: 'Termin', owner: 'Verantwortlich' },
+        rows: {
+          firstHorizontal: 'Erste horizontale Lieferungen',
+          fullDelivery: 'Vollständige Lieferung aller {standardCount} Deliverables',
+          ojeuPublication: 'OJEU-Veröffentlichung der Fundstellen',
+          additional: 'Zusätzliche Deliverables',
+        },
+        rowOwners: { esos: 'CEN, CENELEC, ETSI', commission: 'EU-Kommission' },
+        fallbackNote: 'Bis zur OJEU-Veröffentlichung greift die Konformitätsvermutung **noch nicht**. BAUER GROUP plant entsprechend mit gemeinsamen Spezifikationen oder Modul B+C als Fallback für Klasse-I-Produkte.',
+      },
+      enisaSrp: {
+        title: 'ENISA Single Reporting Platform (SRP)',
+        intro: 'Ab dem {operationalFrom} steht die ENISA Single Reporting Platform als zentrale Meldestelle zur Verfügung. Die Plattform befindet sich derzeit in der Entwicklung; eine Testphase vor dem operativen Start ist von ENISA angekündigt.',
+        rows: {
+          status: 'Status',
+          operational: 'Operativ ab',
+          url: 'URL',
+          access: 'Zugang',
+          format: 'Format',
+          language: 'Sprache',
+          confirmation: 'Bestätigung',
+          source: 'Quelle',
+        },
+        values: {
+          status: 'In Entwicklung — noch nicht operativ, keine Registrierungs-URL veröffentlicht',
+          urlPending: 'Wird von ENISA vor dem Stichtag veröffentlicht',
+          access: 'Registrierung als Hersteller gemäß Art. 14 Abs. 4 CRA erforderlich',
+          format: 'Strukturiertes Online-Formular + API-Zugang (geplant)',
+          language: 'Englisch (EU-weit), ggf. nationale Sprachen',
+          confirmation: 'Automatische Empfangsbestätigung durch die Plattform',
+          sourceLink: 'ENISA SRP',
+        },
+        monitoringTip: 'Security Lead überwacht ENISA-Ankündigungen ab Q2 2026, um Registrierung und Onboarding rechtzeitig vor dem {operationalFrom} abzuschließen.',
+      },
+      references: {
+        title: 'Regulatorische Referenzen — dynamische Akte',
+        columns: { regulation: 'Regelwerk', reference: 'Referenz', relevance: 'Relevanz' },
+        rows: {
+          implementingAct: {
+            regulation: 'Implementing Act',
+            reference: 'Technische Beschreibungen wichtiger & kritischer Produkte',
+            relevance: 'Erlassen {adopted} ({articles})',
+          },
+          delegatedActCsirt: {
+            regulation: 'Delegated Act',
+            reference: 'CSIRT-Verzögerung der Meldungsweiterleitung',
+            relevance: 'Erlassen {adopted} ({articles}), Einspruchsfrist läuft',
+          },
+          delegatedActEucc: {
+            regulation: 'Delegated Act EUCC-Vermutung',
+            reference: 'Konformitätsvermutung über EUCC-Schema',
+            relevance: 'Erwartet {expected}',
+          },
+          m606: {
+            regulation: 'Standardisierungsauftrag {requestId}',
+            reference: '{standardCount} harmonisierte Normen ({horizontalCount} horizontal, {verticalCount} vertikal)',
+            relevance: 'Angenommen {accepted}; Lieferung bis {fullDelivery}',
+          },
+          enisaSrp: {
+            regulation: 'ENISA Single Reporting Platform',
+            reference: 'Art. 14 CRA',
+            relevance: 'Zentrale Meldeplattform; operativ ab {operationalFrom} (in Entwicklung)',
+          },
+        },
+      },
+    },
+
     footer: {
       message: 'Dokumentation lizenziert unter <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a> · Code lizenziert unter <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a>',
       copyright: `© ${new Date().getFullYear()} BAUER GROUP. Kommerzielle Nutzung der Dokumentation nicht gestattet.`

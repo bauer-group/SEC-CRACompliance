@@ -270,6 +270,83 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
     darkModeSwitchLabel: '外观',
     langMenuLabel: '语言',
 
+    // -----------------------------------------------------------------
+    // Regulatory Status — 本地化标签
+    // 数据: docs/.vitepress/regulatory-status.ts
+    // -----------------------------------------------------------------
+
+    regulatoryStatus: {
+      asOfLabel: '截至',
+      harmonisedStandards: {
+        title: '当前状态',
+        intro: '欧洲标准化组织 CEN、CENELEC 和 ETSI 已于 {accepted} 接受欧盟委员会的**标准化请求 {requestId}**。该请求要求为 CRA 制定 **{standardCount} 项协调标准**：{horizontalCount} 项水平标准（由 {leadCommittee} 主导，EN 40000 系列）和 {verticalCount} 项垂直产品特定交付物。',
+        tableHeaders: { milestone: '里程碑', target: '目标', owner: '负责方' },
+        rows: {
+          firstHorizontal: '首批水平交付物',
+          fullDelivery: '全部 {standardCount} 项交付物完成',
+          ojeuPublication: 'OJEU 参考文献发布',
+          additional: '其他交付物',
+        },
+        rowOwners: { esos: 'CEN、CENELEC、ETSI', commission: '欧盟委员会' },
+        fallbackNote: '在 OJEU 发布前，**合规推定尚不适用**。BAUER GROUP 据此采用通用规范或 Module B+C 作为 I 类产品的备选方案。',
+      },
+      enisaSrp: {
+        title: 'ENISA 统一报告平台 (Single Reporting Platform, SRP)',
+        intro: '自 {operationalFrom} 起，ENISA 统一报告平台作为中央报告入口可用。该平台目前正在开发中；ENISA 已宣布在正式上线前将进行测试阶段。',
+        rows: {
+          status: '状态',
+          operational: '运行起始日',
+          url: 'URL',
+          access: '访问',
+          format: '格式',
+          language: '语言',
+          confirmation: '确认',
+          source: '来源',
+        },
+        values: {
+          status: '开发中——尚未运行，未发布注册 URL',
+          urlPending: 'ENISA 将在截止日期前发布',
+          access: '需根据 Art. 14(4) CRA 注册为制造商',
+          format: '结构化在线表单 + API 接入（计划中）',
+          language: '英语（欧盟范围），可能支持国家语言',
+          confirmation: '平台自动发送接收确认',
+          sourceLink: 'ENISA SRP',
+        },
+        monitoringTip: '安全主管自 2026 年第二季度起关注 ENISA 公告，以便在 {operationalFrom} 之前及时完成注册和接入。',
+      },
+      references: {
+        title: '法规参考——动态法案',
+        columns: { regulation: '法规', reference: '参考', relevance: '相关性' },
+        rows: {
+          implementingAct: {
+            regulation: '实施法案',
+            reference: '重要及关键产品的技术描述',
+            relevance: '已于 {adopted} 通过（{articles}）',
+          },
+          delegatedActCsirt: {
+            regulation: '授权法案',
+            reference: 'CSIRT 延迟通知传播',
+            relevance: '已于 {adopted} 通过（{articles}），异议期进行中',
+          },
+          delegatedActEucc: {
+            regulation: 'EUCC 合规推定授权法案',
+            reference: '通过 EUCC 方案的合规推定',
+            relevance: '预计 {expected}',
+          },
+          m606: {
+            regulation: '标准化请求 {requestId}',
+            reference: '{standardCount} 项协调标准（{horizontalCount} 项水平 + {verticalCount} 项垂直）',
+            relevance: '{accepted} 接受；{fullDelivery} 前交付',
+          },
+          enisaSrp: {
+            regulation: 'ENISA 统一报告平台',
+            reference: 'CRA 第 14 条',
+            relevance: '中央报告平台；{operationalFrom} 起运行（开发中）',
+          },
+        },
+      },
+    },
+
     footer: {
       message: '文档基于 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a> 许可 · 代码基于 <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a> 许可',
       copyright: `© ${new Date().getFullYear()} BAUER GROUP。禁止将文档用于商业用途。`

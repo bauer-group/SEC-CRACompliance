@@ -46,18 +46,7 @@ When BAUER GROUP exhibits at trade fairs, prototypes and pre-production products
 
 ### Development Status of Harmonised Standards
 
-::: warning CURRENT STATUS (April 2026)
-The European standardisation organisations CEN, CENELEC, and ETSI accepted the European Commission's **Standardisation Request M/606** in April 2025. It mandates **41 harmonised standards** for the CRA: 15 horizontal (led by CEN-CLC/JTC 13/WG 9, EN 40000 series) and 26 vertical product-specific deliverables.
-
-| Milestone | Target | Owner |
-|-----------|--------|-------|
-| First horizontal deliverables | Q3 2026 | CEN-CLC/JTC 13/WG 9 |
-| Full delivery of all 41 outputs | **2026-10-30** | CEN, CENELEC, ETSI |
-| OJEU publication of references | expected 2027 | EU Commission |
-| Additional deliverables | end of 2027 | ESOs |
-
-Until OJEU publication, the **presumption of conformity does not yet apply**. BAUER GROUP plans accordingly with common specifications or Module B+C as fallback for Class I products.
-:::
+<HarmonisedStandardsStatus />
 
 ### Common Specifications (Fallback)
 

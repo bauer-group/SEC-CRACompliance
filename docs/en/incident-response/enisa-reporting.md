@@ -69,24 +69,7 @@ An incident that significantly affects the security of the product or its users 
 
 ## 4.3.4 Reporting Platform
 
-### ENISA Single Reporting Platform (SRP)
-
-From 11 September 2026, the ENISA Single Reporting Platform is available as the central reporting point. The platform is currently under development; ENISA has announced a testing phase before the operational go-live.
-
-| Property | Details |
-|----------|---------|
-| **Status (April 2026)** | Under development — not yet operational, no registration URL published |
-| **Operational from** | 2026-09-11 (per Art. 14 CRA) |
-| **URL** | To be published by ENISA before the deadline |
-| **Access** | Registration as manufacturer pursuant to Art. 14(4) CRA required |
-| **Format** | Structured online form + API access (planned) |
-| **Language** | English (EU-wide), possibly national languages |
-| **Confirmation** | Automatic acknowledgement of receipt by the platform |
-| **Source** | [ENISA SRP](https://www.enisa.europa.eu/topics/product-security-and-certification/single-reporting-platform-srp) |
-
-::: tip MONITORING
-Security Lead monitors ENISA announcements from Q2 2026 onwards to complete registration and onboarding well before 2026-09-11.
-:::
+<EnisaSrpStatus />
 
 ### National CSIRTs of EU Member States
 

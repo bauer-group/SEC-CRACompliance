@@ -10,7 +10,10 @@
         "a",
         "br",
         "img",
-        "Badge"
+        "Badge",
+        "HarmonisedStandardsStatus",
+        "EnisaSrpStatus",
+        "RegulatoryStatusReferences"
       ]
     },
     // VitePress frontmatter can be long
