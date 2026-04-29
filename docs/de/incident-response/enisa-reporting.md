@@ -71,15 +71,22 @@ Ein Vorfall, der die Sicherheit des Produkts oder seiner Nutzer erheblich beeint
 
 ### ENISA Single Reporting Platform (SRP)
 
-Ab dem 11. September 2026 steht die ENISA Single Reporting Platform als zentrale Meldestelle zur Verfügung:
+Ab dem 11. September 2026 steht die ENISA Single Reporting Platform als zentrale Meldestelle zur Verfügung. Die Plattform befindet sich derzeit in der Entwicklung; eine Testphase vor dem operativen Start ist von ENISA angekündigt.
 
 | Eigenschaft | Details |
 |-------------|---------|
-| **URL** | Wird von ENISA bereitgestellt (voraussichtlich `https://reporting.enisa.europa.eu`) |
+| **Status (April 2026)** | In Entwicklung — noch nicht operativ, keine Registrierungs-URL veröffentlicht |
+| **Operativ ab** | 11.09.2026 (gemäß Art. 14 CRA) |
+| **URL** | Wird von ENISA vor dem Stichtag veröffentlicht |
 | **Zugang** | Registrierung als Hersteller gemäß Art. 14 Abs. 4 CRA erforderlich |
 | **Format** | Strukturiertes Online-Formular + API-Zugang (geplant) |
 | **Sprache** | Englisch (EU-weit), ggf. nationale Sprachen |
 | **Bestätigung** | Automatische Empfangsbestätigung durch die Plattform |
+| **Quelle** | [ENISA SRP](https://www.enisa.europa.eu/topics/product-security-and-certification/single-reporting-platform-srp) |
+
+::: tip MONITORING
+Security Lead überwacht ENISA-Ankündigungen ab Q2 2026, um Registrierung und Onboarding rechtzeitig vor dem 11.09.2026 abzuschließen.
+:::
 
 ### Nationale CSIRTs der EU-Mitgliedstaaten
 
@@ -115,7 +122,7 @@ Falls die ENISA SRP temporär nicht verfügbar ist, erfolgt die Meldung an das z
 | **Ungarn** | NCSC Hungary (NBSZ NKI) | [nki.gov.hu](https://nki.gov.hu) | `cert@nki.gov.hu` |
 | **Zypern** | CSIRT-CY (DMRID) | [csirt.cy](https://csirt.cy) | `info@csirt.cy` |
 
-*Quelle: [ENISA CSIRTs Network](https://csirtsnetwork.eu/) / [ENISA CSIRT Inventory](https://www.enisa.europa.eu/tools/csirts-by-country-interactive-map). Stand: 2026-02. Aktuelle Kontaktdaten vor Erstmeldung verifizieren.*
+*Quelle: [ENISA CSIRTs Network](https://csirtsnetwork.eu/) / [ENISA CSIRT Inventory](https://www.enisa.europa.eu/tools/csirts-by-country-interactive-map). Stand: 2026-04. Aktuelle Kontaktdaten vor Erstmeldung verifizieren.*
 
 ::: warning DOPPELMELDUNG
 Bei Nutzung des nationalen CSIRT als Fallback ist die Meldung unverzüglich nachzuholen, sobald die ENISA SRP wieder verfügbar ist.

@@ -140,8 +140,11 @@ Die BAUER GROUP setzt auf eine durchgehend automatisierte Toolchain, um CRA-Konf
 |-----------|----------|----------|
 | **Cyber Resilience Act** | Verordnung (EU) 2024/2847 | Primäre Rechtsgrundlage dieses Handbuchs |
 | **NIS2-Richtlinie** | Richtlinie (EU) 2022/2555 | Ergänzende Meldepflichten für Betreiber |
-| **Delegierte Rechtsakte** | Art. 7, 8, 14 Abs. 9 CRA | Technische Spezifikationen (erwartet 2026/2027) |
-| **ENISA Single Reporting Platform** | Art. 14 CRA | Zentrale Meldeplattform für Schwachstellen |
+| **Implementing Act** | Technische Beschreibungen wichtiger & kritischer Produkte | Erlassen 28.11.2025 (Art. 7, 8 CRA) |
+| **Delegated Act** | CSIRT-Verzögerung der Meldungsweiterleitung | Erlassen 11.12.2025 (Art. 14 CRA), Einspruchsfrist läuft |
+| **Delegated Act EUCC-Vermutung** | Konformitätsvermutung über EUCC-Schema | Erwartet Q4 2026 |
+| **Standardisierungsauftrag M/606** | 41 harmonisierte Normen (15 horizontal, 26 vertikal) | Angenommen April 2025; Lieferung bis 30.10.2026 |
+| **ENISA Single Reporting Platform** | Art. 14 CRA | Zentrale Meldeplattform; operativ ab 11.09.2026 (in Entwicklung) |
 | **ISO/IEC 29147:2018** | Vulnerability Disclosure | Referenzstandard für Coordinated Vulnerability Disclosure |
 | **ISO/IEC 30111:2019** | Vulnerability Handling | Referenzstandard für Schwachstellenbehandlung |
 | **CycloneDX v1.5+** | OWASP Standard | SBOM-Format |

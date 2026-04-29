@@ -71,15 +71,22 @@ An incident that significantly affects the security of the product or its users 
 
 ### ENISA Single Reporting Platform (SRP)
 
-From 11 September 2026, the ENISA Single Reporting Platform is available as the central reporting point:
+From 11 September 2026, the ENISA Single Reporting Platform is available as the central reporting point. The platform is currently under development; ENISA has announced a testing phase before the operational go-live.
 
 | Property | Details |
 |----------|---------|
-| **URL** | To be provided by ENISA (expected: `https://reporting.enisa.europa.eu`) |
+| **Status (April 2026)** | Under development — not yet operational, no registration URL published |
+| **Operational from** | 2026-09-11 (per Art. 14 CRA) |
+| **URL** | To be published by ENISA before the deadline |
 | **Access** | Registration as manufacturer pursuant to Art. 14(4) CRA required |
 | **Format** | Structured online form + API access (planned) |
 | **Language** | English (EU-wide), possibly national languages |
 | **Confirmation** | Automatic acknowledgement of receipt by the platform |
+| **Source** | [ENISA SRP](https://www.enisa.europa.eu/topics/product-security-and-certification/single-reporting-platform-srp) |
+
+::: tip MONITORING
+Security Lead monitors ENISA announcements from Q2 2026 onwards to complete registration and onboarding well before 2026-09-11.
+:::
 
 ### National CSIRTs of EU Member States
 
@@ -115,7 +122,7 @@ If the ENISA SRP is temporarily unavailable, the notification shall be submitted
 | **Spain** | CCN-CERT / INCIBE-CERT | [www.incibe.es](https://www.incibe.es) | `incidencias@incibe-cert.es` |
 | **Sweden** | CERT-SE (MSB) | [www.cert.se](https://www.cert.se) | `cert@cert.se` |
 
-*Source: [ENISA CSIRTs Network](https://csirtsnetwork.eu/) / [ENISA CSIRT Inventory](https://www.enisa.europa.eu/tools/csirts-by-country-interactive-map). As of: 2026-02. Verify current contact details before initial notification.*
+*Source: [ENISA CSIRTs Network](https://csirtsnetwork.eu/) / [ENISA CSIRT Inventory](https://www.enisa.europa.eu/tools/csirts-by-country-interactive-map). As of: 2026-04. Verify current contact details before initial notification.*
 
 ::: warning DUPLICATE NOTIFICATION
 When using the national CSIRT as a fallback, the notification must be re-submitted without delay once the ENISA SRP is available again.

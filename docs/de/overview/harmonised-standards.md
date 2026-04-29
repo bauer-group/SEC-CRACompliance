@@ -46,8 +46,17 @@ Bei Messeauftritten von BAUER GROUP müssen Prototypen und Vorserienprodukte mit
 
 ### Entwicklungsstand harmonisierter Normen
 
-::: warning AKTUELLER STATUS
-Zum Stand Februar 2026 befinden sich die harmonisierten Normen für den CRA noch **in Entwicklung**. Die europäischen Normungsorganisationen CEN, CENELEC und ETSI arbeiten an den entsprechenden Normen. Die Veröffentlichung der Fundstellen im OJEU wird voraussichtlich **2026/2027** erwartet.
+::: warning AKTUELLER STATUS (April 2026)
+Die europäischen Normungsorganisationen CEN, CENELEC und ETSI haben den **Standardisierungsauftrag M/606** der EU-Kommission im April 2025 angenommen. Dieser umfasst **41 harmonisierte Normen** für den CRA: 15 horizontale (federführend CEN-CLC/JTC 13/WG 9, Reihe EN 40000) und 26 vertikale produktspezifische Deliverables.
+
+| Meilenstein | Termin | Verantwortlich |
+|-------------|--------|----------------|
+| Erste horizontale Lieferungen | Q3 2026 | CEN-CLC/JTC 13/WG 9 |
+| Vollständige Lieferung aller 41 Deliverables | **30.10.2026** | CEN, CENELEC, ETSI |
+| OJEU-Veröffentlichung der Fundstellen | erwartet 2027 | EU-Kommission |
+| Zusätzliche Deliverables | Ende 2027 | ESOs |
+
+Bis zur OJEU-Veröffentlichung greift die Konformitätsvermutung **noch nicht**. BAUER GROUP plant entsprechend mit gemeinsamen Spezifikationen oder Modul B+C als Fallback für Klasse-I-Produkte.
 :::
 
 ### Gemeinsame Spezifikationen (Fallback)
