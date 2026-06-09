@@ -10,7 +10,9 @@ Vollständige Compliance-Dokumentation und CI/CD-Automatisierung für den **EU C
 
 | Frist | Pflicht |
 |-------|---------|
-| **11.09.2026** | Meldepflichten (24h/72h/14d an ENISA) |
+| **11.06.2026** | Verfahren für notifizierende Behörden & Konformitätsbewertungsstellen (Kapitel IV) |
+| **11.09.2026** | Meldepflichten an ENISA (24h Frühwarnung / 72h Meldung / Abschluss 14 Tage bei Schwachstellen bzw. 1 Monat bei schweren Vorfällen) |
+| **11.12.2026** | Ausreichend benannte notifizierte Stellen |
 | **11.12.2027** | Vollständige Anwendbarkeit (CE-Kennzeichnung, technische Dokumentation, Konformitätsbewertung) |
 
 ## Projektstruktur
@@ -53,9 +55,9 @@ Vollständige Compliance-Dokumentation und CI/CD-Automatisierung für den **EU C
 ### CRA-Abdeckung
 
 - Alle 10 Annexe vollständig dokumentiert (I-VII + vereinfachte Erklärung)
-- Alle herstellerrelevanten Artikel (Art. 10-14)
-- Alle Wirtschaftsakteur-Rollen (Art. 15-20)
-- Durchsetzungskette (Art. 22-23, 52-58, 64)
+- Alle herstellerrelevanten Artikel (Art. 13-14)
+- Alle Wirtschaftsakteur-Rollen (Art. 18-25)
+- Durchsetzungskette (Art. 52-58, 64)
 - Regulatorischer Kontext (Art. 5-6, Art. 9, NIS2-Integration)
 
 ## CI/CD-Automatisierung
@@ -64,9 +66,9 @@ Vollständige Compliance-Dokumentation und CI/CD-Automatisierung für den **EU C
 
 | Action | Funktion | CRA-Referenz |
 |--------|----------|--------------|
-| `cra-sbom-generate` | CycloneDX-SBOM-Generierung via Trivy | Art. 13 Abs. 23, Annex I Teil II Nr. 1 |
-| `cra-sbom-sign` | Cosign-Signierung (keyless/Sigstore OIDC) | Art. 10 Abs. 12 |
-| `cra-vulnerability-scan` | Multi-Engine-Scan (Trivy + Grype + OSV-Scanner) | Art. 10 Abs. 6, Annex I Teil II Nr. 2 |
+| `cra-sbom-generate` | CycloneDX-SBOM-Generierung via Trivy | Annex I Teil II (1) |
+| `cra-sbom-sign` | Cosign-Signierung (keyless/Sigstore OIDC) | Annex I Teil II (7) |
+| `cra-vulnerability-scan` | Multi-Engine-Scan (Trivy + Grype + OSV-Scanner) | Annex I Teil II (1) |
 | `cra-hub-report` | API-Reporting an Software Security Hub | - |
 
 ### Reusable Workflows
