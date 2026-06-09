@@ -61,12 +61,12 @@ sbom/
 
 | 存储位置 | 保留期限 | 依据 |
 |----------|----------|------|
-| GitHub 发布资产 | **无限期**（仓库存续期间） | 监管证据 (Art. 10(13) CRA：10 年或产品生命周期，以较长者为准) |
-| 合规仓库 (sbom/) | 最后一次产品部署后 **10 年** | Art. 10(13) CRA |
+| GitHub 发布资产 | **无限期**（仓库存续期间） | 监管证据 (Art. 13(13) CRA：10 年或产品生命周期，以较长者为准) |
+| 合规仓库 (sbom/) | 最后一次产品部署后 **10 年** | Art. 13(13) CRA |
 | GitHub Actions 制品 | **90 天** | 调试和分析 |
 
 ::: danger 保留期限
-**Art. 10(13) CRA:** 技术文档和欧盟符合性声明 (EU Declaration of Conformity) 应在产品投放市场后保留 **10 年**，或在支持期间内保留——以较长者为准。
+**Art. 13(13) CRA:** 技术文档和欧盟符合性声明 (EU Declaration of Conformity) 应在产品投放市场后保留 **10 年**，或在支持期间内保留——以较长者为准。
 
 SBOM 作为技术文档的一部分，受此保留期限约束。
 :::
@@ -92,7 +92,7 @@ cosign verify-blob --key cosign.pub --signature sbom.cdx.json.sig sbom.cdx.json
 
 ### 面向监管机构 / 市场监督管理机构
 
-SBOM 应要求提供 (Art. 13(23) CRA)：
+SBOM 应要求提供 (Annex I, 第II部分, 编号 1 CRA)：
 
 - 通过 GitHub 发布资产访问（针对公开仓库）
 - 直接下载链接

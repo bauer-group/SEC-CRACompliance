@@ -8,10 +8,10 @@
 
 | 类别 | ✅ 已实施 | ⚠️ 产品相关 | ❌ 未完成 | 总计 |
 |-----------|:----------------:|:--------------------:|:--------:|:------:|
-| Art. 10 -- 制造商义务 | 8 | 4 | 0 | 12 |
+| Art. 13 -- 制造商义务 | 8 | 4 | 0 | 12 |
 | Art. 13 -- 信息义务 | 3 | 1 | 0 | 4 |
 | Art. 14 -- 报告义务 | 1 | 3 | 0 | 4 |
-| Art. 16 -- 授权代表 | 1 | 2 | 0 | 3 |
+| Art. 18 -- 授权代表 | 1 | 2 | 0 | 3 |
 | Art. 28/29 -- 合规性与 CE | 0 | 2 | 0 | 2 |
 | Annex I 第I部分 -- 安全性 | 6 | 1 | 0 | 7 |
 | Annex I 第II部分 -- 漏洞 | 8 | 0 | 0 | 8 |
@@ -27,16 +27,16 @@
 
 | CRA 领域 | <span class="badge-manufacturer">制造商</span> | <span class="badge-importer">进口商</span> | <span class="badge-distributor">分销商</span> |
 |----------|:---:|:---:|:---:|
-| 设计安全 (Art. 10) | ✅ 全部 | — | — |
-| 合规性评估 (Art. 10(5)) | ✅ 全部 | — | — |
-| SBOM 生成 (Art. 13(23)) | ✅ 全部 | — | — |
+| 设计安全 (Art. 13) | ✅ 全部 | — | — |
+| 合规性评估 (Art. 13(12)) | ✅ 全部 | — | — |
+| SBOM 生成 (Annex I, 第II部分, 编号 1) | ✅ 全部 | — | — |
 | 漏洞处理 (Annex I 第II部分) | ✅ 全部 | — | — |
-| 安全更新 (Art. 10(7)) | ✅ 全部 | — | — |
+| 安全更新 (Annex I, 第II部分, 编号 2) | ✅ 全部 | — | — |
 | 向 ENISA 报告事件 (Art. 14) | ✅ 全部 | — | — |
 | CE 标志与 EU DoC (Art. 28–29) | ✅ 全部 | ✅ 验证 | ✅ 验证 |
 | 用户信息 (Annex II) | ✅ 全部 | ✅ 验证 | ✅ 验证 |
 | 技术文档 (Annex VII) | ✅ 全部 | ✅ 保存可用 | — |
-| 上市前验证合规性 | — | ✅ 全部 (Art. 15) | ✅ 全部 (Art. 17) |
+| 上市前验证合规性 | — | ✅ 全部 (Art. 19) | ✅ 全部 (Art. 20) |
 | 不合规时通知制造商 | — | ✅ 全部 | ✅ 全部 |
 | 配合市场监督 | ✅ 全部 | ✅ 全部 | ✅ 全部 |
 | 产品/包装上标注名称和地址 | ✅ 全部 | ✅ 全部 | ✅ 全部 |
@@ -69,23 +69,23 @@
 
 ---
 
-## Art. 10 -- 制造商义务 (Obligations of Manufacturers)
+## Art. 13 -- 制造商义务 (Obligations of Manufacturers)
 
 | CRA 参考 | 要求 | 文档 | 工具 | 状态 |
 |-------------|-------------|---------------|---------|:------:|
-| Art. 10(1) | 在设计、开发、生产中达到适当的网络安全水平 | [安全架构](/zh/technical-documentation/security-architecture) | 安全扫描 (Trivy, Grype, Snyk), 代码审查 | ✅ |
-| Art. 10(2) | 进行网络安全风险评估 | [风险评估](/zh/vulnerability-management/risk-assessment) | --（手动流程 + 模板） | ⚠️ |
-| Art. 10(3) | 在文档中包含风险评估 | [技术文档](/zh/technical-documentation/) | Git 版本控制 | ⚠️ |
-| Art. 10(4) | 对第三方组件进行尽职调查 | [供应链](/zh/supply-chain/) | 许可证合规、依赖项扫描 | ✅ |
-| Art. 10(5) | 进行合规性评估 | [合规性评估](/zh/conformity/) | --（手动流程 + 模板） | ⚠️ |
-| Art. 10(6) | 有效识别漏洞 | [漏洞管理](/zh/vulnerability-management/) | CVE-Monitor, Dependabot, Trivy | ✅ |
-| Art. 10(7) | 免费提供安全更新 | [补丁管理](/zh/vulnerability-management/patch-management) | Dependabot, Auto-Merge, 发布流水线 | ✅ |
-| Art. 10(8) | 无已知可利用漏洞 | [CVE 监控](/zh/vulnerability-management/cve-monitoring) | CVE-Monitor（每日）, Trivy | ✅ |
-| Art. 10(9) | 协调漏洞披露 | [披露政策](/zh/incident-response/disclosure-policy) | SECURITY.md, GitHub Advisories | ✅ |
-| Art. 10(10) | 漏洞报告联络点 | [披露政策](/zh/incident-response/disclosure-policy) | 每个仓库中的 SECURITY.md | ✅ |
-| Art. 10(12) | 安全更新的完整性 | [SBOM 与签名](/zh/sbom-signing/) | Cosign, SHA256 | ✅ |
-| Art. 10(13) | 保留文档 10 年 | [技术文档](/zh/technical-documentation/) | Git 仓库（10 年保留期） | ✅ |
-| Art. 10(16) | 定义并发布支持期限 | [支持与生命周期](/zh/technical-documentation/support-period) | SECURITY.md, 产品页面 | ⚠️ |
+| Art. 13(1) | 在设计、开发、生产中达到适当的网络安全水平 | [安全架构](/zh/technical-documentation/security-architecture) | 安全扫描 (Trivy, Grype, Snyk), 代码审查 | ✅ |
+| Art. 13(3) | 进行网络安全风险评估 | [风险评估](/zh/vulnerability-management/risk-assessment) | --（手动流程 + 模板） | ⚠️ |
+| Art. 13(4) | 在文档中包含风险评估 | [技术文档](/zh/technical-documentation/) | Git 版本控制 | ⚠️ |
+| Art. 13(5) | 对第三方组件进行尽职调查 | [供应链](/zh/supply-chain/) | 许可证合规、依赖项扫描 | ✅ |
+| Art. 13(12) | 进行合规性评估 | [合规性评估](/zh/conformity/) | --（手动流程 + 模板） | ⚠️ |
+| Annex I, 第II部分, 编号 1 | 有效识别漏洞 | [漏洞管理](/zh/vulnerability-management/) | CVE-Monitor, Dependabot, Trivy | ✅ |
+| Annex I, 第II部分, 编号 2 | 免费提供安全更新 | [补丁管理](/zh/vulnerability-management/patch-management) | Dependabot, Auto-Merge, 发布流水线 | ✅ |
+| Annex I, 第I部分, 编号 2(a) | 无已知可利用漏洞 | [CVE 监控](/zh/vulnerability-management/cve-monitoring) | CVE-Monitor（每日）, Trivy | ✅ |
+| Annex I, 第II部分, 编号 5 | 协调漏洞披露 | [披露政策](/zh/incident-response/disclosure-policy) | SECURITY.md, GitHub Advisories | ✅ |
+| Art. 13(17) | 漏洞报告联络点 | [披露政策](/zh/incident-response/disclosure-policy) | 每个仓库中的 SECURITY.md | ✅ |
+| Annex I, 第II部分, 编号 7 | 安全更新的完整性 | [SBOM 与签名](/zh/sbom-signing/) | Cosign, SHA256 | ✅ |
+| Art. 13(13) | 保留文档 10 年 | [技术文档](/zh/technical-documentation/) | Git 仓库（10 年保留期） | ✅ |
+| Art. 13(8) | 定义并发布支持期限 | [支持与生命周期](/zh/technical-documentation/support-period) | SECURITY.md, 产品页面 | ⚠️ |
 
 ## Art. 13 -- 信息义务 (Information Obligations)
 
@@ -94,7 +94,7 @@
 | Art. 13(6) | 发布 CVD 政策 | [披露政策](/zh/incident-response/disclosure-policy) | SECURITY.md | ✅ |
 | Art. 13(8) | 漏洞报告的联系方式 | [SECURITY.md](/zh/SECURITY) | 仓库 SECURITY.md | ✅ |
 | Art. 13(16) | 告知支持期限 | [支持与生命周期](/zh/technical-documentation/support-period) | -- | ⚠️ |
-| Art. 13(23) | 生成 SBOM（机器可读） | [SBOM 与签名](/zh/sbom-signing/) | Trivy/Syft -> CycloneDX JSON | ✅ |
+| Annex I, 第II部分, 编号 1 | 生成 SBOM（机器可读） | [SBOM 与签名](/zh/sbom-signing/) | Trivy/Syft -> CycloneDX JSON | ✅ |
 
 ## Art. 14 -- 报告义务 (Reporting Obligations)
 
@@ -105,13 +105,13 @@
 | Art. 14(3) | 最终报告（14天） | [ENISA 报告流程](/zh/incident-response/enisa-reporting) | ENISA SRP | ⚠️ |
 | Art. 14(8) | 用户通知 | [通信计划](/zh/incident-response/communication) | GitHub Advisories, 电子邮件 | ✅ |
 
-## Art. 16 -- 授权代表 (Authorised Representative)
+## Art. 18 -- 授权代表 (Authorised Representative)
 
 | CRA 参考 | 要求 | 文档 | 工具 | 状态 |
 |-------------|-------------|---------------|---------|:------:|
-| Art. 16(1) | 通过书面授权指定授权代表（非欧盟制造商） | [角色与职责](/zh/overview/responsibilities) | --（合同流程） | ⚠️ |
-| Art. 16(2) | 保留合规性文档 10 年 | [角色与职责](/zh/overview/responsibilities) | Git 仓库（10 年保留期） | ✅ |
-| Art. 16(2) | 与市场监督机构合作 | [角色与职责](/zh/overview/responsibilities) | -- | ⚠️ |
+| Art. 18(1) | 通过书面授权指定授权代表（非欧盟制造商） | [角色与职责](/zh/overview/responsibilities) | --（合同流程） | ⚠️ |
+| Art. 18(2) | 保留合规性文档 10 年 | [角色与职责](/zh/overview/responsibilities) | Git 仓库（10 年保留期） | ✅ |
+| Art. 18(2) | 与市场监督机构合作 | [角色与职责](/zh/overview/responsibilities) | -- | ⚠️ |
 
 ## Art. 28 -- 合规声明与 CE (Declaration of Conformity & CE)
 

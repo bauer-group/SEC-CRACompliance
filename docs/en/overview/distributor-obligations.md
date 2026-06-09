@@ -1,11 +1,11 @@
-# 1.6 Distributor Obligations (Art. 17)
+# 1.6 Distributor Obligations (Art. 20)
 
 ## 1.6.1 Overview
 
 Distributors are economic operators in the supply chain that make a product with digital elements available on the market without being a Manufacturer or Importer. The CRA imposes due diligence obligations on them that are primarily focused on verification and cooperation.
 
 ::: info LEGAL BASIS
-**Art. 17 CRA:** The Distributor shall act with due diligence in relation to the requirements of this Regulation when making a product with digital elements available on the market.
+**Art. 20 CRA:** The Distributor shall act with due diligence in relation to the requirements of this Regulation when making a product with digital elements available on the market.
 
 **Art. 3 No. 22 CRA:** *"Distributor" means any natural or legal person in the supply chain that makes a product with digital elements available on the market without being a Manufacturer or Importer.*
 :::
@@ -22,12 +22,12 @@ BAUER GROUP acts as a Distributor when:
 
 - **Distributor** --> Unmodified redistribution
 - **Importer** --> First placing on the market of a non-EU product
-- **Manufacturer** --> Own product or substantial modification (--> Art. 20)
+- **Manufacturer** --> Own product or substantial modification (--> Art. 22)
 :::
 
 ## 1.6.3 Obligations in Detail
 
-### 1. Due Diligence (Art. 17 Para. 1)
+### 1. Due Diligence (Art. 20 Para. 1)
 
 Before a product is made available, the Distributor must verify:
 
@@ -37,7 +37,7 @@ Before a product is made available, the Distributor must verify:
 - [ ] For imported products: Importer has provided their **contact details**
 - [ ] Product has a **unique identification** (type, batch, serial number)
 
-### 2. Distribution Stop in Case of Non-Conformity (Art. 17 Para. 2)
+### 2. Distribution Stop in Case of Non-Conformity (Art. 20 Para. 2)
 
 If the Distributor has reason to believe that a product is **non-compliant**:
 
@@ -45,7 +45,7 @@ If the Distributor has reason to believe that a product is **non-compliant**:
 - **Inform** the Manufacturer or Importer
 - **Inform** the Market Surveillance authorities if a serious risk exists
 
-### 3. Storage and Transport Conditions (Art. 17 Para. 3)
+### 3. Storage and Transport Conditions (Art. 20 Para. 3)
 
 Ensure that storage and transport do not compromise conformity:
 
@@ -53,7 +53,7 @@ Ensure that storage and transport do not compromise conformity:
 - Use secure download channels
 - No tampering with software during distribution
 
-### 4. Cooperation with Authorities (Art. 17 Para. 4)
+### 4. Cooperation with Authorities (Art. 20 Para. 4)
 
 Upon request from Market Surveillance authorities:
 
@@ -61,7 +61,7 @@ Upon request from Market Surveillance authorities:
 - Assist in eliminating risks
 - Be able to identify the Manufacturer and Importer
 
-### 5. Reporting Obligations (Art. 17 Para. 5)
+### 5. Reporting Obligations (Art. 20 Para. 5)
 
 Upon becoming aware of an **actively exploited vulnerability** or a **severe incident**:
 
@@ -69,7 +69,7 @@ Upon becoming aware of an **actively exploited vulnerability** or a **severe inc
 - If the Manufacturer does not respond: inform the Importer
 - If neither responds: Report directly to ENISA and the national CSIRT
 
-### 6. Corrective Measures (Art. 17 Para. 6)
+### 6. Corrective Measures (Art. 20 Para. 6)
 
 If the Distributor determines that an already distributed product is non-compliant:
 

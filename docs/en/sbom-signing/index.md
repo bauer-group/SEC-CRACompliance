@@ -5,16 +5,16 @@
 The Software Bill of Materials (SBOM) and the signing of software artifacts are central pillars of CRA compliance. The SBOM provides a transparent inventory of all components contained in a product, while signing ensures the integrity and authenticity of both the SBOM itself and all delivered artifacts.
 
 ::: info LEGAL BASIS
-**Art. 13(23) CRA:** *"The manufacturer shall identify and document vulnerabilities and components contained in the product with digital elements, including by drawing up a software bill of materials in a commonly used and machine-readable format covering at least the top-level dependencies of the product."*
+**Annex I Part II (1) CRA:** *"The manufacturer shall identify and document vulnerabilities and components contained in the product with digital elements, including by drawing up a software bill of materials in a commonly used and machine-readable format covering at least the top-level dependencies of the product."*
 
-**Art. 10(12) CRA:** *"The manufacturer shall ensure that security updates distributed to users are provided in a secure manner and that the integrity of the product is ensured when such security updates are installed automatically."*
+**Annex I Part II (7) CRA:** *"The manufacturer shall ensure that security updates distributed to users are provided in a secure manner and that the integrity of the product is ensured when such security updates are installed automatically."*
 
 **Annex I, Part I, No. 3:** *"Products with digital elements [...] shall ensure the protection of the integrity of stored, transmitted or otherwise processed data [...] against manipulation or alteration."*
 :::
 
 ## SBOM Lifecycle
 
-Pursuant to Art. 13(23) CRA, the manufacturer must create an SBOM that covers at least the top-level dependencies of the product. The SBOM is generated automatically with each release and undergoes the following lifecycle:
+Pursuant to Annex I Part II (1) CRA, the manufacturer must create an SBOM that covers at least the top-level dependencies of the product. The SBOM is generated automatically with each release and undergoes the following lifecycle:
 
 ```
 Release Trigger (Git Tag)
@@ -58,12 +58,12 @@ Build Pipeline
 
 | Requirement | Implementation | CRA Article |
 |-------------|----------------|-------------|
-| Machine-readable SBOM format | CycloneDX JSON | Art. 13(23) |
-| Top-level dependencies | Automatic detection via Syft/Trivy | Art. 13(23) |
+| Machine-readable SBOM format | CycloneDX JSON | Annex I Part II (1) |
+| Top-level dependencies | Automatic detection via Syft/Trivy | Annex I Part II (1) |
 | Per-release SBOM | SBOM is generated for each release tag | Best Practice |
-| Integrity protection | Signing with Cosign (all artifacts and SBOMs) | Art. 10(12) |
+| Integrity protection | Signing with Cosign (all artifacts and SBOMs) | Annex I Part II (7) |
 | Traceability | Git history + release assets | Annex VII |
-| Availability | Archiving in compliance repo + release assets | Art. 13(23) |
+| Availability | Archiving in compliance repo + release assets | Annex I Part II (1) |
 
 ## Signed Artifact Types
 

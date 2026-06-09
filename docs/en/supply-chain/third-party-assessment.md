@@ -2,7 +2,7 @@
 
 ## 5.3.1 Assessment of Third-Party Components
 
-Pursuant to Art. 10(4) CRA, the manufacturer must exercise due diligence when integrating third-party components. This page describes the assessment process.
+Pursuant to Art. 13(5) CRA, the manufacturer must exercise due diligence when integrating third-party components. This page describes the assessment process.
 
 ## 5.3.2 Assessment Framework
 

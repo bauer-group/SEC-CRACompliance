@@ -46,7 +46,7 @@ Verwenden Sie diesen Entscheidungsbaum, um festzustellen, ob der Cyber Resilienc
 Reine SaaS-Dienste fallen unter NIS2, nicht unter den CRA — es sei denn, die Ferndatenverarbeitung ist integraler Bestandteil eines physischen oder installierbaren Produkts.
 :::
 
-### Gate 3: Open-Source-Bewertung (Art. 18–19)
+### Gate 3: Open-Source-Bewertung (Art. 24–25)
 
 ```
 ┌───────────────────────────────────────────────┐
@@ -59,7 +59,7 @@ Reine SaaS-Dienste fallen unter NIS2, nicht unter den CRA — es sei denn, die F
 │                                               │
 │     NEIN → CRA nicht anwendbar → STOP         │
 │     JA   → Open-Source-Steward-Pflichten      │
-│             gelten (Art. 18–19) → Weiter ↓   │
+│             gelten (Art. 24–25) → Weiter ↓   │
 └───────────────────────────────────────────────┘
 ```
 

@@ -142,7 +142,7 @@ The CE marking may **only** be affixed where a valid EU declaration of conformit
 
 ## 7.7.9 Market Surveillance and Missing CE Marking
 
-### Art. 56 -- Formal Non-Conformity
+### Art. 58 -- Formal Non-Conformity
 
 A missing, defective, or misleading CE marking constitutes **formal non-conformity**:
 
@@ -241,4 +241,4 @@ Authority determines formal non-conformity
 - [Full Quality Assurance (Module H)](/en/conformity/module-h)
 - [Product Classification](/en/conformity/product-classification)
 - [Market Surveillance (Art. 52-58)](/en/overview/market-surveillance)
-- [Importer Obligations (Art. 15)](/en/overview/importer-obligations)
+- [Importer Obligations (Art. 19)](/en/overview/importer-obligations)

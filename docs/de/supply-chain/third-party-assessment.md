@@ -2,7 +2,7 @@
 
 ## 5.3.1 Bewertung von Drittkomponenten
 
-Gemäß Art. 10 Abs. 4 CRA muss der Hersteller bei der Integration von Drittkomponenten die gebotene Sorgfalt walten lassen. Diese Seite beschreibt den Bewertungsprozess.
+Gemäß Art. 13 Abs. 5 CRA muss der Hersteller bei der Integration von Drittkomponenten die gebotene Sorgfalt walten lassen. Diese Seite beschreibt den Bewertungsprozess.
 
 ## 5.3.2 Bewertungsrahmen
 

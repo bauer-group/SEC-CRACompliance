@@ -40,7 +40,7 @@ Annex VII of the CRA defines the complete content of the technical documentation
 
 ## 6.6.4 Requirement 3 – Cybersecurity Risk Assessment
 
-**Annex VII No. 3:** The cybersecurity risk assessment pursuant to Art. 10(2), including:
+**Annex VII No. 3:** The cybersecurity risk assessment pursuant to Art. 13(3), including:
 
 | Element | Description | Documentation Location |
 |---------|-------------|------------------------|

@@ -35,7 +35,7 @@ Die technische Dokumentation gemäß Annex VII CRA ist die zentrale Nachweisdoku
 
 ## Aufbewahrungspflicht
 
-**Art. 10 Abs. 13 CRA:** Die technische Dokumentation ist **10 Jahre** nach dem Inverkehrbringen des Produkts oder für die Dauer des Support-Zeitraums aufzubewahren – je nachdem, welcher Zeitraum länger ist.
+**Art. 13 Abs. 13 CRA:** Die technische Dokumentation ist **10 Jahre** nach dem Inverkehrbringen des Produkts oder für die Dauer des Support-Zeitraums aufzubewahren – je nachdem, welcher Zeitraum länger ist.
 
 | Dokumentationsart | Aufbewahrungsort | Aufbewahrungsdauer |
 |-------------------|-----------------|-------------------|

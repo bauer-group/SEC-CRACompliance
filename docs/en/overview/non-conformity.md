@@ -1,16 +1,16 @@
-# 1.9 Non-Conformity (Art. 22–23)
+# 1.9 Non-Conformity (Art. 54, 58)
 
 ## 1.9.1 Overview
 
-The CRA distinguishes between **formal non-conformity** (Art. 22) and **products presenting a significant cybersecurity risk** (Art. 23). This distinction is critical: Art. 22 addresses administrative deficiencies (missing documents, incorrect marking), while Art. 23 covers substantive security issues. Both articles empower Market Surveillance authorities to order corrective measures up to and including withdrawal or recall.
+The CRA distinguishes between **formal non-conformity** (Art. 58) and **products presenting a significant cybersecurity risk** (Art. 54). This distinction is critical: Art. 58 addresses administrative deficiencies (missing documents, incorrect marking), while Art. 54 covers substantive security issues. Both articles empower Market Surveillance authorities to order corrective measures up to and including withdrawal or recall.
 
 ::: info LEGAL BASIS
-**Art. 22 CRA (EU) 2024/2847:** Procedure for formal non-conformity -- the Market Surveillance authority requires the economic operator to bring the product into conformity within a specified timeframe.
+**Art. 58 CRA (EU) 2024/2847:** Procedure for formal non-conformity -- the Market Surveillance authority requires the economic operator to bring the product into conformity within a specified timeframe.
 
-**Art. 23 CRA (EU) 2024/2847:** Procedure for products presenting a significant cybersecurity risk -- the authority orders corrective measures where the essential requirements (Annex I) are not substantively met.
+**Art. 54 CRA (EU) 2024/2847:** Procedure for products presenting a significant cybersecurity risk -- the authority orders corrective measures where the essential requirements (Annex I) are not substantively met.
 :::
 
-## 1.9.2 Art. 22 -- Formal Non-Conformity
+## 1.9.2 Art. 58 -- Formal Non-Conformity
 
 The Market Surveillance authority shall require corrective action when it identifies any of the following formal deficiencies:
 
@@ -19,7 +19,7 @@ The Market Surveillance authority shall require corrective action when it identi
 | CE marking not affixed or affixed incorrectly | Art. 29-30 | CE mark missing from product or packaging |
 | EU Declaration of Conformity not drawn up or drawn up incorrectly | Art. 28, Annex V | DoC missing or does not contain all mandatory information |
 | Technical documentation not available or incomplete | Art. 31, Annex VII | Documentation cannot be produced within the required timeframe |
-| Manufacturer/importer contact information missing | Art. 10(15), Art. 13(19) | No name, address, or contact details on the product |
+| Manufacturer/importer contact information missing | Art. 13(16), Art. 19 | No name, address, or contact details on the product |
 | Any other administrative requirement not met | Various | Support period not indicated |
 
 ### Procedure
@@ -33,7 +33,7 @@ The Market Surveillance authority shall require corrective action when it identi
 Formal deficiencies may appear trivial but can result in an immediate distribution stop. Complete documentation must be available at all times.
 :::
 
-## 1.9.3 Art. 23 -- Product Presenting a Significant Cybersecurity Risk
+## 1.9.3 Art. 54 -- Product Presenting a Significant Cybersecurity Risk
 
 Where a product with digital elements presents a **significant cybersecurity risk**, an escalated procedure applies:
 
@@ -42,15 +42,15 @@ Where a product with digital elements presents a **significant cybersecurity ris
 3. The manufacturer must take corrective action within the deadline
 4. **If no action is taken:** restriction, withdrawal, or recall of the product
 
-Art. 23 applies in particular where the **essential requirements under Annex I** are not substantively met -- for example missing encryption, unpatched known vulnerabilities, or an inadequate update mechanism.
+Art. 54 applies in particular where the **essential requirements under Annex I** are not substantively met -- for example missing encryption, unpatched known vulnerabilities, or an inadequate update mechanism.
 
 ::: danger SIGNIFICANT RISK
 A significant cybersecurity risk can trigger immediate measures. Unlike formal non-conformity, the focus here is on actual user safety. Penalties under [Art. 64](/en/overview/penalties) (up to EUR 15 million / 2.5% of turnover) may be imposed in addition.
 :::
 
-## 1.9.4 Comparison: Art. 22 vs. Art. 23
+## 1.9.4 Comparison: Art. 58 vs. Art. 54
 
-| Criterion | Art. 22 -- Formal Non-Conformity | Art. 23 -- Significant Cybersecurity Risk |
+| Criterion | Art. 58 -- Formal Non-Conformity | Art. 54 -- Significant Cybersecurity Risk |
 |-----------|----------------------------------|-------------------------------------------|
 | **Subject** | Administrative deficiencies (documentation, marking) | Substantive security deficiencies (Annex I) |
 | **Typical triggers** | Missing CE marking, incomplete DoC | Unpatched vulnerabilities, missing encryption |
@@ -87,11 +87,11 @@ Authority request received
     |
     +-- CISO + Legal department (initial assessment, 1 WD)
     |
-    +-- Formal non-conformity (Art. 22)?
+    +-- Formal non-conformity (Art. 58)?
     |   +-- Yes --> Specialist team corrects (documents, marking)
     |   +-- Evidence submitted to authority within deadline
     |
-    +-- Significant risk (Art. 23)?
+    +-- Significant risk (Art. 54)?
         +-- Yes --> Escalation to senior management
         +-- Immediate risk assessment
         +-- Security update / recall initiated if necessary

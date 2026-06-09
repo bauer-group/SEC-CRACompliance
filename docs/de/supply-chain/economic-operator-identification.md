@@ -1,11 +1,11 @@
-# 5.4 Wirtschaftsakteur-Identifizierung (Art. 21)
+# 5.4 Wirtschaftsakteur-Identifizierung (Art. 23)
 
 ## 5.4.1 Übersicht
 
-Art. 21 CRA verpflichtet alle Wirtschaftsakteure, ihre Lieferanten und Abnehmer in der Lieferkette identifizieren zu können. Auf Anfrage der Marktüberwachungsbehörden müssen diese Informationen bereitgestellt werden. Ziel ist die lückenlose Rückverfolgbarkeit von Produkten mit digitalen Elementen über die gesamte Lieferkette.
+Art. 23 CRA verpflichtet alle Wirtschaftsakteure, ihre Lieferanten und Abnehmer in der Lieferkette identifizieren zu können. Auf Anfrage der Marktüberwachungsbehörden müssen diese Informationen bereitgestellt werden. Ziel ist die lückenlose Rückverfolgbarkeit von Produkten mit digitalen Elementen über die gesamte Lieferkette.
 
 ::: info RECHTSGRUNDLAGE
-**Art. 21 CRA:** *„Die Wirtschaftsakteure benennen den Marktüberwachungsbehörden auf Verlangen die folgenden Angaben:*
+**Art. 23 CRA:** *„Die Wirtschaftsakteure benennen den Marktüberwachungsbehörden auf Verlangen die folgenden Angaben:*
 
 - *jeden Wirtschaftsakteur, der ihnen ein Produkt geliefert hat;*
 - *jeden Wirtschaftsakteur, dem sie ein Produkt geliefert haben.*
@@ -19,10 +19,10 @@ Die Identifizierungspflicht gilt für alle Rollen in der Lieferkette:
 
 | Wirtschaftsakteur | Identifizierungspflicht | Referenz |
 |-------------------|------------------------|----------|
-| Hersteller | Abnehmer (Importeure, Händler) | Art. 10, Art. 21 |
-| Importeur | Hersteller (Lieferant) + Händler (Abnehmer) | Art. 15, Art. 21 |
-| Händler | Importeur/Hersteller (Lieferant) + Kunden (Abnehmer) | Art. 17, Art. 21 |
-| Bevollmächtigter | Hersteller (Auftraggeber) + Abnehmer | Art. 16, Art. 21 |
+| Hersteller | Abnehmer (Importeure, Händler) | Art. 13, Art. 23 |
+| Importeur | Hersteller (Lieferant) + Händler (Abnehmer) | Art. 19, Art. 23 |
+| Händler | Importeur/Hersteller (Lieferant) + Kunden (Abnehmer) | Art. 20, Art. 23 |
+| Bevollmächtigter | Hersteller (Auftraggeber) + Abnehmer | Art. 18, Art. 23 |
 
 ## 5.4.3 Anforderungen an die Dokumentation
 
@@ -74,7 +74,7 @@ Alle Identifizierungsdaten müssen für mindestens **10 Jahre** nach dem Zeitpun
 - [ ] ERP-Aufbewahrungsfristen für Lieferanten- und Kundendaten auf ≥ 10 Jahre geprüft
 - [ ] DMS-Archivierungsrichtlinien für Beschaffungs- und Vertriebsdokumente aktualisiert
 - [ ] Prozess für Behördenanfragen zur Wirtschaftsakteur-Identifizierung dokumentiert
-- [ ] Zuständigkeiten für die Beantwortung von Anfragen nach Art. 21 definiert
+- [ ] Zuständigkeiten für die Beantwortung von Anfragen nach Art. 23 definiert
 - [ ] Regelmäßige Prüfung der Datenqualität in den Stammdatensystemen
 
 ## 5.4.6 Querverweise

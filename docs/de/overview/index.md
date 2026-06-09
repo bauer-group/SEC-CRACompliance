@@ -86,12 +86,12 @@ Detaillierte Produktkategorien und Ausnahmen: siehe [1.1 Geltungsbereich & Produ
 | **1.1** | [Geltungsbereich & Produkte](./scope) |
 | **1.2** | [Rollen & Verantwortlichkeiten](./responsibilities) |
 | **1.3** | [Fristen & Deadlines](./timeline) |
-| **1.4** | [Importeur-Pflichten (Art. 15)](./importer-obligations) |
-| **1.5** | [Bevollmächtigter (Art. 16)](./authorised-representative) |
-| **1.6** | [Händler-Pflichten (Art. 17)](./distributor-obligations) |
-| **1.7** | [Open-Source-Steward (Art. 18–19)](./open-source-steward) |
-| **1.8** | [Wesentliche Änderungen (Art. 20)](./substantial-modifications) |
-| **1.9** | [Nichtkonformität (Art. 22–23)](./non-conformity) |
+| **1.4** | [Importeur-Pflichten (Art. 19)](./importer-obligations) |
+| **1.5** | [Bevollmächtigter (Art. 18)](./authorised-representative) |
+| **1.6** | [Händler-Pflichten (Art. 20)](./distributor-obligations) |
+| **1.7** | [Open-Source-Steward (Art. 24–25)](./open-source-steward) |
+| **1.8** | [Wesentliche Änderungen (Art. 22)](./substantial-modifications) |
+| **1.9** | [Nichtkonformität (Art. 54, 58)](./non-conformity) |
 | **1.10** | [Marktüberwachung (Art. 52–58)](./market-surveillance) |
 | **1.11** | [Sanktionen (Art. 64)](./penalties) |
 | **1.12** | [Harmonisierte Normen (Art. 5–6)](./harmonised-standards) |
@@ -104,13 +104,13 @@ Dieses Handbuch ist nach den Kernprozessen des CRA gegliedert. Jedes Kapitel beh
 
 | Kapitel | Thema | CRA-Bezug |
 |---------|-------|-----------|
-| **Kap. 1** | Übersicht, Geltungsbereich, Rollen, Fristen | Art. 2, 3, 10, 13, 14, 16 |
-| **Kap. 2** | [SBOM & Signierung](/de/sbom-signing/) | Art. 13 Abs. 23, Art. 10 Abs. 12, Annex I Teil I Nr. 3, Teil II Nr. 1 |
-| **Kap. 3** | [Schwachstellenmanagement](/de/vulnerability-management/) | Art. 10 Abs. 6, Annex I Teil II Nr. 2-8 |
+| **Kap. 1** | Übersicht, Geltungsbereich, Rollen, Fristen | Art. 2, 3, 13, 14, 18, 19 |
+| **Kap. 2** | [SBOM & Signierung](/de/sbom-signing/) | Annex I Teil II (1), Annex I Teil II (7), Annex I Teil I Nr. 3 |
+| **Kap. 3** | [Schwachstellenmanagement](/de/vulnerability-management/) | Annex I Teil II (1), Annex I Teil II Nr. 2-8 |
 | **Kap. 4** | [Incident Response & Disclosure](/de/incident-response/) | Art. 13 Abs. 6, Art. 14 |
-| **Kap. 5** | [Supply-Chain-Sicherheit](/de/supply-chain/) | Art. 10 Abs. 4, Annex I Teil II Nr. 1 |
+| **Kap. 5** | [Supply-Chain-Sicherheit](/de/supply-chain/) | Art. 13 Abs. 5, Annex I Teil II Nr. 1 |
 | **Kap. 6** | [Technische Dokumentation](/de/technical-documentation/) | Art. 31, Annex VII |
-| **Kap. 7** | [Konformitätsbewertung](/de/conformity/) | Art. 24-28, Annex V, VIII |
+| **Kap. 7** | [Konformitätsbewertung](/de/conformity/) | Art. 27-32, Annex V, VIII |
 | **Kap. 8** | [Compliance-Matrix](/de/compliance-matrix/) | Vollständige Anforderungszuordnung |
 | **Anhang** | [Vorlagen & Templates](/de/templates/) | ENISA-Meldungen, EU DoC, Berichte |
 
@@ -164,4 +164,4 @@ Die BAUER GROUP setzt auf eine durchgehend automatisierte Toolchain, um CRA-Konf
 | **Support-Zeitraum** | Zeitraum, in dem der Hersteller verpflichtet ist, die Behandlung von Schwachstellen sicherzustellen, mindestens 5 Jahre | Art. 13 Abs. 8 |
 | **Konformitätsbewertung** | Verfahren zur Überprüfung, ob die wesentlichen Anforderungen erfüllt sind | Art. 3 Nr. 30 |
 | **CE-Kennzeichnung** | Kennzeichnung, mit der der Hersteller erklärt, dass das Produkt den geltenden EU-Anforderungen entspricht | Art. 29 |
-| **Bevollmächtigter** | In der EU niedergelassene natürliche oder juristische Person, die vom Hersteller schriftlich beauftragt wurde, in dessen Namen bestimmte Aufgaben wahrzunehmen | Art. 3 Nr. 15, Art. 16 |
+| **Bevollmächtigter** | In der EU niedergelassene natürliche oder juristische Person, die vom Hersteller schriftlich beauftragt wurde, in dessen Namen bestimmte Aufgaben wahrzunehmen | Art. 3 Nr. 15, Art. 18 |

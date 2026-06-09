@@ -1,11 +1,11 @@
-# 1.5 Bevollmächtigter (Art. 16)
+# 1.5 Bevollmächtigter (Art. 18)
 
 ## 1.5.1 Übersicht
 
-Art. 16 CRA ermöglicht Herstellern, die außerhalb der EU ansässig sind, einen **Bevollmächtigten** (Authorised Representative) mit Sitz in der EU zu benennen, der in ihrem Namen bestimmte Aufgaben wahrnimmt. Der Bevollmächtigte übernimmt gegenüber Behörden eine Schnittstellen- und Dokumentationsfunktion, ersetzt aber nicht die inhaltliche Verantwortung des Herstellers für Produktdesign und Konformität.
+Art. 18 CRA ermöglicht Herstellern, die außerhalb der EU ansässig sind, einen **Bevollmächtigten** (Authorised Representative) mit Sitz in der EU zu benennen, der in ihrem Namen bestimmte Aufgaben wahrnimmt. Der Bevollmächtigte übernimmt gegenüber Behörden eine Schnittstellen- und Dokumentationsfunktion, ersetzt aber nicht die inhaltliche Verantwortung des Herstellers für Produktdesign und Konformität.
 
 ::: info RECHTSGRUNDLAGE
-**Art. 16 CRA:** *„Ein Hersteller kann durch eine schriftliche Vollmacht einen Bevollmächtigten benennen. Die Pflichten gemäß Art. 13 Abs. 1 (Sicherheitsanforderungen an das Produktdesign) und die Erstellung der technischen Dokumentation sind nicht Gegenstand der Vollmacht."*
+**Art. 18 CRA:** *„Ein Hersteller kann durch eine schriftliche Vollmacht einen Bevollmächtigten benennen. Die Pflichten gemäß Art. 13 Abs. 1 (Sicherheitsanforderungen an das Produktdesign) und die Erstellung der technischen Dokumentation sind nicht Gegenstand der Vollmacht."*
 
 **Art. 3 Nr. 22 CRA:** *„Bevollmächtigter" ist jede in der Union ansässige natürliche oder juristische Person, die vom Hersteller schriftlich beauftragt wurde, in seinem Namen bestimmte Aufgaben wahrzunehmen.*
 :::
@@ -15,14 +15,14 @@ Art. 16 CRA ermöglicht Herstellern, die außerhalb der EU ansässig sind, einen
 Ein Bevollmächtigter wird benötigt, wenn:
 
 - Der **Hersteller außerhalb der EU** ansässig ist und Produkte mit digitalen Elementen auf dem EU-Markt in Verkehr bringt
-- Kein Importeur gemäß Art. 15 vorhanden ist, der die Schnittstelle zu EU-Behörden übernimmt
+- Kein Importeur gemäß Art. 19 vorhanden ist, der die Schnittstelle zu EU-Behörden übernimmt
 - Der Hersteller eine formale EU-Präsenz für die Kommunikation mit Marktüberwachungsbehörden sicherstellen will
 
 ::: warning KEIN ERSATZ FÜR IMPORTEUR
-Die Benennung eines Bevollmächtigten ersetzt **nicht** die Pflichten des Importeurs (Art. 15). Wenn ein separater Importeur existiert, hat dieser eigene, unabhängige Pflichten. Existiert kein Bevollmächtigter und kein Importeur, können die Behörden den Hersteller unmittelbar nicht in der EU erreichen, was zu verschärften Maßnahmen führen kann.
+Die Benennung eines Bevollmächtigten ersetzt **nicht** die Pflichten des Importeurs (Art. 19). Wenn ein separater Importeur existiert, hat dieser eigene, unabhängige Pflichten. Existiert kein Bevollmächtigter und kein Importeur, können die Behörden den Hersteller unmittelbar nicht in der EU erreichen, was zu verschärften Maßnahmen führen kann.
 :::
 
-## 1.5.3 Delegierbare Aufgaben (Art. 16 Abs. 2)
+## 1.5.3 Delegierbare Aufgaben (Art. 18 Abs. 2)
 
 Der Bevollmächtigte nimmt die Aufgaben wahr, die in der Vollmacht festgelegt sind. Mindestens umfassen diese:
 
@@ -100,11 +100,11 @@ Wenn BAUER GROUP als Bevollmächtigter für einen **Nicht-EU-Partnerlieferanten*
 Als Bevollmächtigter haftet BAUER GROUP gesamtschuldnerisch mit dem Hersteller für bestimmte Pflichten. Eine sorgfältige vertragliche Absicherung und Haftungsfreistellung ist unbedingt erforderlich.
 :::
 
-## 1.5.7 Verhältnis zu Importeur (Art. 15)
+## 1.5.7 Verhältnis zu Importeur (Art. 19)
 
 Die Rollen von Bevollmächtigtem und Importeur sind komplementär, aber unterschiedlich:
 
-| Aspekt | Bevollmächtigter (Art. 16) | Importeur (Art. 15) |
+| Aspekt | Bevollmächtigter (Art. 18) | Importeur (Art. 19) |
 |--------|---------------------------|---------------------|
 | Bestellung | Vom Hersteller per Vollmacht | Eigenständiger Wirtschaftsakteur |
 | Hauptfunktion | Dokumentation + Behördenkontakt | Sorgfaltsprüfung + Inverkehrbringen |
@@ -143,10 +143,10 @@ Wenn **kein Bevollmächtigter** benannt ist, übernimmt der Importeur zusätzlic
 |---------|---------|
 | Bevollmächtigter kommt Pflichten nicht nach | Bis zu 10 Mio. EUR oder 2% des weltweiten Jahresumsatzes |
 | Falsche / unvollständige Angaben an Behörden | Bis zu 5 Mio. EUR oder 1% des Jahresumsatzes |
-| Vollmacht nicht vorlegbar | Formale Nicht-Konformität (Art. 56) |
+| Vollmacht nicht vorlegbar | Formale Nicht-Konformität (Art. 58) |
 
 ## 1.5.10 Querverweise
 
-- [Pflichten der Importeure (Art. 15)](/de/overview/importer-obligations)
+- [Pflichten der Importeure (Art. 19)](/de/overview/importer-obligations)
 - [EU-Konformitätserklärung](/de/conformity/eu-declaration)
 - [Marktüberwachung (Art. 52-58)](/de/overview/market-surveillance)

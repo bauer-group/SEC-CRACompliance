@@ -46,7 +46,7 @@ Use this decision tree to determine whether the Cyber Resilience Act applies to 
 Pure SaaS services fall under NIS2, not CRA — unless remote data processing is an integral part of a physical or installable product.
 :::
 
-### Gate 3: Open-Source Assessment (Art. 18–19)
+### Gate 3: Open-Source Assessment (Art. 24–25)
 
 ```
 ┌───────────────────────────────────────────────┐
@@ -59,7 +59,7 @@ Pure SaaS services fall under NIS2, not CRA — unless remote data processing is
 │                                               │
 │     NO  → CRA not applicable → STOP          │
 │     YES → Open-Source Steward obligations     │
-│           apply (Art. 18–19) → Continue ↓    │
+│           apply (Art. 24–25) → Continue ↓    │
 └───────────────────────────────────────────────┘
 ```
 

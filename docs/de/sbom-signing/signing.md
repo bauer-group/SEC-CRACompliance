@@ -9,7 +9,7 @@ Die kryptographische Signierung von Artefakten stellt sicher, dass:
 - Die Zuordnung zum Release verifizierbar ist (**Nichtabstreitbarkeit**)
 
 ::: info RECHTSGRUNDLAGE
-**Art. 10 Abs. 12 CRA:** Hersteller müssen sicherstellen, dass Sicherheitsupdates und zugehörige Informationen (inkl. SBOM) „sicher und unter Gewährleistung der Integrität" bereitgestellt werden.
+**Annex I Teil II (7) CRA:** Hersteller müssen sicherstellen, dass Sicherheitsupdates und zugehörige Informationen (inkl. SBOM) „sicher und unter Gewährleistung der Integrität" bereitgestellt werden.
 :::
 
 ## 2.4.2 Tool: Cosign (Sigstore)

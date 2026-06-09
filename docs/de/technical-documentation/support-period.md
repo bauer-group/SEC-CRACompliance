@@ -75,7 +75,7 @@ Jedes Produkt durchläuft drei definierte Lifecycle-Phasen:
 
 ### Pflichten nach EOL
 
-Auch nach Erreichen des EOL bestehen folgende Aufbewahrungspflichten gemäß Art. 10 Abs. 13 CRA:
+Auch nach Erreichen des EOL bestehen folgende Aufbewahrungspflichten gemäß Art. 13 Abs. 13 CRA:
 
 | Pflicht | Dauer | Maßnahme |
 |---------|-------|----------|

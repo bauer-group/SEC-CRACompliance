@@ -54,13 +54,13 @@ jobs:
 
 | Schritt | Action | Artefakt | CRA-Referenz |
 |---------|--------|----------|-------------|
-| 1 | SBOM-Generierung | `sbom.cdx.json` | Art. 13(23) |
-| 2 | SBOM-Signierung (Cosign) | `.sig` + `.cert` | Art. 10(12) |
-| 3 | SBOM-Attestation | GitHub Attestation | Art. 10(12) |
-| 4 | Vulnerability Scan | `vulnerability-report.json` | Art. 10(6) |
+| 1 | SBOM-Generierung | `sbom.cdx.json` | Annex I Teil II (1) |
+| 2 | SBOM-Signierung (Cosign) | `.sig` + `.cert` | Annex I Teil II (7) |
+| 3 | SBOM-Attestation | GitHub Attestation | Annex I Teil II (7) |
+| 4 | Vulnerability Scan | `vulnerability-report.json` | Annex I Teil II (1) |
 | 5 | VEX-Generierung | `vex.openvex.json` | Annex I II.2 |
 | 6 | Compliance Report | `.json` + `.md` | Annex VII |
-| 7 | SARIF-Upload | GitHub Security Tab | Art. 10(8) |
+| 7 | SARIF-Upload | GitHub Security Tab | Annex I Teil I (2)(a) |
 | 8 | Release-Anhang | Alle Artefakte am Release | Art. 13 |
 
 ::: tip Zero Config
@@ -69,7 +69,7 @@ Alle neuen Features (Attestation, VEX, Compliance Report) sind standardmäßig a
 
 ### `cra-scan.yml` — Geplanter Vulnerability Scan
 
-Für kontinuierliches CVE-Monitoring (Art. 10 Abs. 8). Täglich per Cron-Schedule ausführen.
+Für kontinuierliches CVE-Monitoring (Annex I Teil I (2)(a)). Täglich per Cron-Schedule ausführen.
 
 ### `cra-report.yml` — Hub-API-Report
 

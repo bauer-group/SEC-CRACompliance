@@ -2,7 +2,7 @@
 
 ## 2.2.1 CycloneDX JSON
 
-我们使用 **CycloneDX** 作为主要的 SBOM 格式。CycloneDX 是一项 OWASP 标准，满足 CRA 对"常用的、机器可读的格式"的要求 (Art. 13(23))。
+我们使用 **CycloneDX** 作为主要的 SBOM 格式。CycloneDX 是一项 OWASP 标准，满足 CRA 对"常用的、机器可读的格式"的要求 (Annex I, 第II部分, 编号 1)。
 
 ### 为什么选择 CycloneDX
 

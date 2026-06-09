@@ -1,11 +1,11 @@
-# 5.4 Economic Operator Identification (Art. 21)
+# 5.4 Economic Operator Identification (Art. 23)
 
 ## 5.4.1 Overview
 
-Art. 21 CRA requires all economic operators to be able to identify their suppliers and customers within the supply chain. This information must be provided to market surveillance authorities upon request. The objective is to ensure complete traceability of products with digital elements across the entire supply chain.
+Art. 23 CRA requires all economic operators to be able to identify their suppliers and customers within the supply chain. This information must be provided to market surveillance authorities upon request. The objective is to ensure complete traceability of products with digital elements across the entire supply chain.
 
 ::: info LEGAL BASIS
-**Art. 21 CRA:** *"Economic operators shall, on request, identify the following to the market surveillance authorities:*
+**Art. 23 CRA:** *"Economic operators shall, on request, identify the following to the market surveillance authorities:*
 
 - *any economic operator who has supplied them with a product;*
 - *any economic operator to whom they have supplied a product.*
@@ -19,10 +19,10 @@ The identification obligation applies to all roles in the supply chain:
 
 | Economic Operator | Identification Obligation | Reference |
 |-------------------|--------------------------|-----------|
-| Manufacturer | Customers (importers, distributors) | Art. 10, Art. 21 |
-| Importer | Manufacturer (supplier) + distributors (customers) | Art. 15, Art. 21 |
-| Distributor | Importer/manufacturer (supplier) + customers | Art. 17, Art. 21 |
-| Authorised Representative | Manufacturer (principal) + customers | Art. 16, Art. 21 |
+| Manufacturer | Customers (importers, distributors) | Art. 13, Art. 23 |
+| Importer | Manufacturer (supplier) + distributors (customers) | Art. 19, Art. 23 |
+| Distributor | Importer/manufacturer (supplier) + customers | Art. 20, Art. 23 |
+| Authorised Representative | Manufacturer (principal) + customers | Art. 18, Art. 23 |
 
 ## 5.4.3 Documentation Requirements
 
@@ -74,7 +74,7 @@ All identification records must be retained for at least **10 years** from the d
 - [ ] ERP retention periods for supplier and customer data verified at ≥ 10 years
 - [ ] DMS archival policies for procurement and sales documents updated
 - [ ] Process for authority requests regarding economic operator identification documented
-- [ ] Responsibilities for responding to Art. 21 requests defined
+- [ ] Responsibilities for responding to Art. 23 requests defined
 - [ ] Regular review of data quality in master data systems
 
 ## 5.4.6 Cross-References

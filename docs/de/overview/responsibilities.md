@@ -4,7 +4,7 @@
 
 Der CRA definiert drei Wirtschaftsakteure mit jeweils eigenen Pflichten:
 
-### Hersteller (Art. 10 CRA)
+### Hersteller (Art. 13 CRA)
 
 Der Hersteller trägt die Hauptverantwortung für die CRA-Konformität. Als Hersteller gilt, wer ein Produkt mit digitalen Elementen entwickelt oder entwickeln lässt und unter eigenem Namen oder eigener Marke vermarktet.
 
@@ -20,7 +20,7 @@ Der Hersteller trägt die Hauptverantwortung für die CRA-Konformität. Als Hers
 - Meldepflichten erfüllen (Art. 14)
 - SBOM erstellen und bereithalten
 
-### Importeur (Art. 13 CRA)
+### Importeur (Art. 19 CRA)
 
 Importeure bringen Produkte von Herstellern außerhalb der EU auf den EU-Markt.
 
@@ -30,7 +30,7 @@ Importeure bringen Produkte von Herstellern außerhalb der EU auf den EU-Markt.
 - Konformitätserklärung und technische Dokumentation prüfen
 - CE-Kennzeichnung und Kontaktdaten des Herstellers prüfen
 
-### Händler (Art. 14 CRA)
+### Händler (Art. 20 CRA)
 
 Händler machen Produkte auf dem Markt verfügbar, ohne sie herzustellen oder zu importieren.
 
@@ -39,7 +39,7 @@ Händler machen Produkte auf dem Markt verfügbar, ohne sie herzustellen oder zu
 - Sorgfaltspflicht: CE-Kennzeichnung und Konformitätserklärung prüfen
 - Bei Kenntnis von Nichtkonformität: Produkt nicht weiter bereitstellen
 
-### Bevollmächtigter / EU Authorized Representative (Art. 16 CRA)
+### Bevollmächtigter / EU Authorized Representative (Art. 18 CRA)
 
 ::: warning PFLICHT FÜR NICHT-EU-HERSTELLER
 Hersteller mit Sitz **außerhalb der EU**, die Produkte mit digitalen Elementen auf dem EU-Markt bereitstellen, **müssen** einen Bevollmächtigten in der EU benennen. Ohne Bevollmächtigten darf das Produkt nicht auf dem EU-Markt bereitgestellt werden.
@@ -48,7 +48,7 @@ Hersteller mit Sitz **außerhalb der EU**, die Produkte mit digitalen Elementen 
 **Rechtsgrundlage:**
 
 > *„Der Hersteller kann mittels einer schriftlichen Vollmacht einen Bevollmächtigten benennen. Der Bevollmächtigte führt die Aufgaben aus, die in der mit dem Hersteller vereinbarten Vollmacht festgelegt sind."*
-> — Art. 16 Abs. 1 CRA
+> — Art. 18 Abs. 1 CRA
 
 **Wann ist ein Bevollmächtigter erforderlich?**
 
@@ -59,7 +59,7 @@ Hersteller mit Sitz **außerhalb der EU**, die Produkte mit digitalen Elementen 
 | Nicht-EU-Hersteller mit EU-Tochtergesellschaft als Importeur | Ja (oder Importeur übernimmt Pflichten) |
 | Open-Source-Steward (Art. 24) | Sonderregelung |
 
-**Pflichten des Bevollmächtigten (Art. 16 Abs. 2):**
+**Pflichten des Bevollmächtigten (Art. 18 Abs. 2):**
 
 1. **Konformitätsdokumentation bereithalten** – EU-Konformitätserklärung und technische Dokumentation mindestens 10 Jahre für Marktüberwachungsbehörden bereithalten
 2. **Informationspflicht** – Auf begründetes Verlangen den zuständigen Behörden alle erforderlichen Informationen und Unterlagen zum Nachweis der Konformität vorlegen
@@ -85,7 +85,7 @@ Die Vollmacht muss mindestens folgende Aufgaben umfassen:
 | BAUER GROUP als EU-Hersteller | Kein Bevollmächtigter nötig – Herstellerpflichten gelten direkt |
 | BAUER GROUP beschafft von Nicht-EU-Herstellern | Prüfpflicht: Bevollmächtigter des Lieferanten vorhanden? → [6.3 Third-Party Assessment](/de/supply-chain/third-party-assessment) |
 | Nicht-EU-Tochtergesellschaft verkauft in EU | Bevollmächtigter in der EU **muss** benannt werden |
-| BAUER GROUP agiert als Importeur | Importeurspflichten nach Art. 13 gelten (CE + Doku prüfen) |
+| BAUER GROUP agiert als Importeur | Importeurspflichten nach Art. 19 gelten (CE + Doku prüfen) |
 
 ::: tip PRAXISHINWEIS
 Bei der Beschaffung von Produkten mit digitalen Elementen von Nicht-EU-Herstellern ist im Rahmen des Third-Party Assessment (→ [6.3](/de/supply-chain/third-party-assessment)) zu prüfen, ob der Lieferant einen EU-Bevollmächtigten benannt hat. Dies ist eine **Voraussetzung** für das legale Inverkehrbringen auf dem EU-Markt.
@@ -95,12 +95,12 @@ Bei der Beschaffung von Produkten mit digitalen Elementen von Nicht-EU-Herstelle
 
 | Rolle | Verantwortung | CRA-Bezug |
 |-------|---------------|-----------|
-| **Security Lead** | Gesamtverantwortung CRA-Compliance, ENISA-Meldungen, Incident Response | Art. 10, Art. 14 |
-| **Product Owner** | Produktklassifizierung, Support-Zeitraum, Nutzerinformation | Art. 10 Abs. 16, Annex II |
-| **DevOps Lead** | SBOM-Generierung, Signing, CI/CD-Pipeline-Pflege | Art. 10 Abs. 12, Art. 13 Abs. 23 |
-| **Development Team** | Security-by-Design, Schwachstellenbehebung, Code-Reviews | Art. 10 Abs. 1 |
+| **Security Lead** | Gesamtverantwortung CRA-Compliance, ENISA-Meldungen, Incident Response | Art. 13, Art. 14 |
+| **Product Owner** | Produktklassifizierung, Support-Zeitraum, Nutzerinformation | Art. 13 Abs. 8, Annex II |
+| **DevOps Lead** | SBOM-Generierung, Signing, CI/CD-Pipeline-Pflege | Annex I Teil II (7), Annex I Teil II (1) |
+| **Development Team** | Security-by-Design, Schwachstellenbehebung, Code-Reviews | Art. 13 Abs. 1 |
 | **QA / Release Manager** | Konformitätsbewertung, Release-Freigabe | Annex VII |
-| **Management** | Ressourcenbereitstellung, Eskalationsentscheidungen | Art. 10 Abs. 2 |
+| **Management** | Ressourcenbereitstellung, Eskalationsentscheidungen | Art. 13 Abs. 3 |
 
 ## 1.2.3 RACI-Matrix
 

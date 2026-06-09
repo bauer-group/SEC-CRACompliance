@@ -22,7 +22,7 @@ The Cyber Resilience Act (CRA) and the NIS2 Directive (Directive (EU) 2022/2555)
 | **Legal form** | Regulation (directly applicable) | Directive (national transposition) |
 | **Applicable from** | 11.12.2027 (fully) | 18.10.2024 (transposition deadline) |
 | **Sanctions** | Up to EUR 15 million / 2.5% | Up to EUR 10 million / 2% |
-| **Reporting obligation** | ENISA (24h/72h/14d) | CSIRT (24h/72h/1 month) |
+| **Reporting obligation** | ENISA (24h/72h/14d vulnerability or 1 month severe incident) | CSIRT (24h/72h/1 month) |
 
 ## 1.14.3 Decision Tree: Which Regulation Applies?
 
@@ -47,10 +47,10 @@ Is BAUER GROUP an essential or important entity?
 
 | Requirement | CRA | NIS2 |
 |-------------|-----|------|
-| Identify vulnerabilities | Art. 10 para. 6, Annex I Part II | Art. 21 para. 2 (e) |
-| Remediate vulnerabilities | Art. 10 para. 6-7 | Art. 21 para. 2 (e) |
-| Coordinated Disclosure | Art. 10 para. 9, Art. 13 para. 6 | Art. 12 |
-| Maintain SBOM | Art. 13 para. 23 | Not explicit (supply chain) |
+| Identify vulnerabilities | Annex I Part II (1) | Art. 21 para. 2 (e) |
+| Remediate vulnerabilities | Annex I Part II (1)-(2) | Art. 21 para. 2 (e) |
+| Coordinated Disclosure | Annex I Part II (5) | Art. 12 |
+| Maintain SBOM | Annex I Part II (1) | Not explicit (supply chain) |
 
 > **Synergy:** CRA-compliant vulnerability handling largely satisfies NIS2 Art. 21 para. 2 (e) as well.
 
@@ -61,7 +61,7 @@ Is BAUER GROUP an essential or important entity?
 | **Trigger** | Actively exploited vulnerability or severe incident | Significant security incident |
 | **Early warning** | 24 hours | 24 hours |
 | **Notification** | 72 hours | 72 hours |
-| **Final report** | 14 days | 1 month |
+| **Final report** | 14 days for vulnerabilities (after a corrective measure is available), 1 month for severe incidents (after the 72h notification) | 1 month |
 | **Reporting body** | ENISA + national CSIRT | National CSIRT/authority |
 | **Platform** | ENISA Single Reporting Platform | National reporting platform |
 
@@ -75,7 +75,7 @@ If BAUER GROUP is affected both as a CRA manufacturer and as a NIS2 entity, **tw
 
 | Requirement | CRA | NIS2 |
 |-------------|-----|------|
-| Supply chain security | Art. 10 para. 4, Annex I Part II No. 1 | Art. 21 para. 2 (d) |
+| Supply chain security | Art. 13 para. 5, Annex I Part II (1) | Art. 21 para. 2 (d) |
 | Supplier due diligence | Annex I Part II No. 1 | Art. 21 para. 2 (d) |
 | Third-party assessment | [Third-Party Assessment](/en/supply-chain/third-party-assessment) | Supplier assessment |
 
@@ -85,7 +85,7 @@ If BAUER GROUP is affected both as a CRA manufacturer and as a NIS2 entity, **tw
 
 | Requirement | CRA | NIS2 |
 |-------------|-----|------|
-| Incident response plan | Implicit (Art. 10) | Art. 21 para. 2 (b) |
+| Incident response plan | Implicit (Art. 13) | Art. 21 para. 2 (b) |
 | Business continuity | Not explicit | Art. 21 para. 2 (c) |
 | Crisis management | Not explicit | Art. 21 para. 2 (c) |
 

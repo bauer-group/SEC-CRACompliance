@@ -8,10 +8,10 @@ This matrix maps each relevant CRA requirement to the corresponding documentatio
 
 | Category | ✅ Implemented | ⚠️ Product-Specific | ❌ Open | Total |
 |-----------|:----------------:|:--------------------:|:--------:|:------:|
-| Art. 10 – Manufacturer Obligations | 8 | 4 | 0 | 12 |
+| Art. 13 – Manufacturer Obligations | 8 | 4 | 0 | 12 |
 | Art. 13 – Information Obligations | 3 | 1 | 0 | 4 |
 | Art. 14 – Reporting Obligations | 1 | 3 | 0 | 4 |
-| Art. 16 – Authorised Representative | 1 | 2 | 0 | 3 |
+| Art. 18 – Authorised Representative | 1 | 2 | 0 | 3 |
 | Art. 28/29 – Conformity & CE | 0 | 2 | 0 | 2 |
 | Annex I Part I – Security | 6 | 1 | 0 | 7 |
 | Annex I Part II – Vulnerabilities | 8 | 0 | 0 | 8 |
@@ -27,16 +27,16 @@ Detailed mapping: [8.1 Tooling Map](/en/compliance-matrix/tooling-map) (Tool →
 
 | CRA Area | <span class="badge-manufacturer">Manufacturer</span> | <span class="badge-importer">Importer</span> | <span class="badge-distributor">Distributor</span> |
 |----------|:---:|:---:|:---:|
-| Cybersecurity by design (Art. 10) | ✅ Full | — | — |
-| Conformity assessment (Art. 10(5)) | ✅ Full | — | — |
-| SBOM generation (Art. 13(23)) | ✅ Full | — | — |
+| Cybersecurity by design (Art. 13) | ✅ Full | — | — |
+| Conformity assessment (Art. 13(12)) | ✅ Full | — | — |
+| SBOM generation (Annex I Part II (1)) | ✅ Full | — | — |
 | Vulnerability handling (Annex I Part II) | ✅ Full | — | — |
-| Security updates (Art. 10(7)) | ✅ Full | — | — |
+| Security updates (Annex I Part II (2)) | ✅ Full | — | — |
 | Incident reporting to ENISA (Art. 14) | ✅ Full | — | — |
 | CE marking & EU DoC (Art. 28–29) | ✅ Full | ✅ Verify | ✅ Verify |
 | User information (Annex II) | ✅ Full | ✅ Verify | ✅ Verify |
 | Technical documentation (Annex VII) | ✅ Full | ✅ Keep available | — |
-| Verify conformity before market placement | — | ✅ Full (Art. 15) | ✅ Full (Art. 17) |
+| Verify conformity before market placement | — | ✅ Full (Art. 19) | ✅ Full (Art. 20) |
 | Inform manufacturer of non-conformity | — | ✅ Full | ✅ Full |
 | Cooperate with market surveillance | ✅ Full | ✅ Full | ✅ Full |
 | Name & address on product/packaging | ✅ Full | ✅ Full | ✅ Full |
@@ -69,23 +69,23 @@ Automated tooling (Trivy, Grype, CycloneDX, Cosign, GitHub Actions) reduces actu
 
 ---
 
-## Art. 10 – Obligations of Manufacturers
+## Art. 13 – Obligations of Manufacturers
 
 | CRA Reference | Requirement | Documentation | Tooling | Status |
 |-------------|-------------|---------------|---------|:------:|
-| Art. 10(1) | Appropriate level of cybersecurity in design, development, production | [Security Architecture](/en/technical-documentation/security-architecture) | Security Scans (Trivy, Grype, Snyk), Code Review | ✅ |
-| Art. 10(2) | Conduct cybersecurity risk assessment | [Risk Assessment](/en/vulnerability-management/risk-assessment) | – (manual process + template) | ⚠️ |
-| Art. 10(3) | Include risk assessment in documentation | [Technical Documentation](/en/technical-documentation/) | Git-versioned | ⚠️ |
-| Art. 10(4) | Due diligence for third-party components | [Supply Chain](/en/supply-chain/) | License Compliance, Dependency Scan | ✅ |
-| Art. 10(5) | Conduct conformity assessment | [Conformity Assessment](/en/conformity/) | – (manual process + template) | ⚠️ |
-| Art. 10(6) | Effectively identify vulnerabilities | [Vulnerability Management](/en/vulnerability-management/) | CVE-Monitor, Dependabot, Trivy | ✅ |
-| Art. 10(7) | Provide security updates free of charge | [Patch Management](/en/vulnerability-management/patch-management) | Dependabot, Auto-Merge, Release Pipeline | ✅ |
-| Art. 10(8) | No known exploitable vulnerabilities | [CVE-Monitoring](/en/vulnerability-management/cve-monitoring) | CVE-Monitor (daily), Trivy | ✅ |
-| Art. 10(9) | Coordinated vulnerability disclosure | [Disclosure Policy](/en/incident-response/disclosure-policy) | SECURITY.md, GitHub Advisories | ✅ |
-| Art. 10(10) | Point of contact for vulnerability reports | [Disclosure Policy](/en/incident-response/disclosure-policy) | SECURITY.md in each repository | ✅ |
-| Art. 10(12) | Integrity of security updates | [SBOM & Signing](/en/sbom-signing/) | Cosign, SHA256 | ✅ |
-| Art. 10(13) | Retain documentation for 10 years | [Technical Documentation](/en/technical-documentation/) | Git repository (10-year retention) | ✅ |
-| Art. 10(16) | Define and publish support period | [Support & Lifecycle](/en/technical-documentation/support-period) | SECURITY.md, product page | ⚠️ |
+| Art. 13(1) | Appropriate level of cybersecurity in design, development, production | [Security Architecture](/en/technical-documentation/security-architecture) | Security Scans (Trivy, Grype, Snyk), Code Review | ✅ |
+| Art. 13(3) | Conduct cybersecurity risk assessment | [Risk Assessment](/en/vulnerability-management/risk-assessment) | – (manual process + template) | ⚠️ |
+| Art. 13(4) | Include risk assessment in documentation | [Technical Documentation](/en/technical-documentation/) | Git-versioned | ⚠️ |
+| Art. 13(5) | Due diligence for third-party components | [Supply Chain](/en/supply-chain/) | License Compliance, Dependency Scan | ✅ |
+| Art. 13(12) | Conduct conformity assessment | [Conformity Assessment](/en/conformity/) | – (manual process + template) | ⚠️ |
+| Annex I Part II (1) | Effectively identify vulnerabilities | [Vulnerability Management](/en/vulnerability-management/) | CVE-Monitor, Dependabot, Trivy | ✅ |
+| Annex I Part II (2) | Provide security updates free of charge | [Patch Management](/en/vulnerability-management/patch-management) | Dependabot, Auto-Merge, Release Pipeline | ✅ |
+| Annex I Part I (2)(a) | No known exploitable vulnerabilities | [CVE-Monitoring](/en/vulnerability-management/cve-monitoring) | CVE-Monitor (daily), Trivy | ✅ |
+| Annex I Part II (5) | Coordinated vulnerability disclosure | [Disclosure Policy](/en/incident-response/disclosure-policy) | SECURITY.md, GitHub Advisories | ✅ |
+| Art. 13(17) | Point of contact for vulnerability reports | [Disclosure Policy](/en/incident-response/disclosure-policy) | SECURITY.md in each repository | ✅ |
+| Annex I Part II (7) | Integrity of security updates | [SBOM & Signing](/en/sbom-signing/) | Cosign, SHA256 | ✅ |
+| Art. 13(13) | Retain documentation for 10 years | [Technical Documentation](/en/technical-documentation/) | Git repository (10-year retention) | ✅ |
+| Art. 13(8) | Define and publish support period | [Support & Lifecycle](/en/technical-documentation/support-period) | SECURITY.md, product page | ⚠️ |
 
 ## Art. 13 – Information Obligations
 
@@ -94,7 +94,7 @@ Automated tooling (Trivy, Grype, CycloneDX, Cosign, GitHub Actions) reduces actu
 | Art. 13(6) | Publish CVD policy | [Disclosure Policy](/en/incident-response/disclosure-policy) | SECURITY.md | ✅ |
 | Art. 13(8) | Contact details for vulnerability reports | [SECURITY.md](/en/SECURITY) | Repository SECURITY.md | ✅ |
 | Art. 13(16) | Communicate support period | [Support & Lifecycle](/en/technical-documentation/support-period) | – | ⚠️ |
-| Art. 13(23) | Produce SBOM (machine-readable) | [SBOM & Signing](/en/sbom-signing/) | Trivy/Syft → CycloneDX JSON | ✅ |
+| Annex I Part II (1) | Produce SBOM (machine-readable) | [SBOM & Signing](/en/sbom-signing/) | Trivy/Syft → CycloneDX JSON | ✅ |
 
 ## Art. 14 – Reporting Obligations
 
@@ -105,13 +105,13 @@ Automated tooling (Trivy, Grype, CycloneDX, Cosign, GitHub Actions) reduces actu
 | Art. 14(3) | Final report (14 days) | [ENISA Reporting Process](/en/incident-response/enisa-reporting) | ENISA SRP | ⚠️ |
 | Art. 14(8) | User notification | [Communication Plan](/en/incident-response/communication) | GitHub Advisories, E-Mail | ✅ |
 
-## Art. 16 – Authorised Representative (EU Authorized Representative)
+## Art. 18 – Authorised Representative (EU Authorized Representative)
 
 | CRA Reference | Requirement | Documentation | Tooling | Status |
 |-------------|-------------|---------------|---------|:------:|
-| Art. 16(1) | Appoint authorised representative by written mandate (non-EU manufacturers) | [Roles & Responsibilities](/en/overview/responsibilities) | – (contractual process) | ⚠️ |
-| Art. 16(2) | Keep conformity documentation available for 10 years | [Roles & Responsibilities](/en/overview/responsibilities) | Git repository (10-year retention) | ✅ |
-| Art. 16(2) | Cooperation with market surveillance authorities | [Roles & Responsibilities](/en/overview/responsibilities) | – | ⚠️ |
+| Art. 18(1) | Appoint authorised representative by written mandate (non-EU manufacturers) | [Roles & Responsibilities](/en/overview/responsibilities) | – (contractual process) | ⚠️ |
+| Art. 18(2) | Keep conformity documentation available for 10 years | [Roles & Responsibilities](/en/overview/responsibilities) | Git repository (10-year retention) | ✅ |
+| Art. 18(2) | Cooperation with market surveillance authorities | [Roles & Responsibilities](/en/overview/responsibilities) | – | ⚠️ |
 
 ## Art. 28 – Declaration of Conformity & CE
 

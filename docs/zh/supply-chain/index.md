@@ -5,7 +5,7 @@
 保障软件供应链安全是 CRA 的核心要求。制造商在集成第三方组件时必须履行尽职调查 (Due Diligence) 义务，并确保整个供应链的完整性。
 
 ::: info 法律依据
-**Art. 10(4) CRA:** *"The manufacturer shall exercise due diligence when integrating components sourced from third parties, to ensure that those components do not compromise the security of the product."*
+**Art. 13(5) CRA:** *"The manufacturer shall exercise due diligence when integrating components sourced from third parties, to ensure that those components do not compromise the security of the product."*
 
 **Annex I, Part II, No. 1:** *"The manufacturer shall identify and document the vulnerabilities and components contained in the product, including by drawing up a software bill of materials."*
 :::
@@ -31,7 +31,7 @@
 | **5.1** | [依赖政策](/zh/supply-chain/dependency-policy) | 依赖项管理策略 |
 | **5.2** | [基础镜像政策](/zh/supply-chain/base-image-policy) | Docker 基础镜像管理 |
 | **5.3** | [第三方评估](/zh/supply-chain/third-party-assessment) | 第三方组件评估 |
-| **5.4** | [经济运营者识别 (Art. 21)](/zh/supply-chain/economic-operator-identification) | 供应链可追溯性 |
+| **5.4** | [经济运营者识别 (Art. 23)](/zh/supply-chain/economic-operator-identification) | 供应链可追溯性 |
 
 ::: tip NIS2协同效应
 IT服务提供商和基础设施供应商评估在[NIS2合规文档](https://nis2.docs.bauer-group.com/zh/supply-chain/)中描述。CRA侧重于软件供应链，NIS2侧重于服务提供商评估。

@@ -10,8 +10,8 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 
 | CRA-Anforderung | Abdeckung |
 |-----------------|-----------|
-| Art. 10 Abs. 6 – Schwachstellen ermitteln | Automatische CVE-Alerts für Abhängigkeiten |
-| Art. 10 Abs. 7 – Sicherheitsupdates | Automatische PRs bei verfügbaren Updates |
+| Annex I Teil II (1) – Schwachstellen ermitteln | Automatische CVE-Alerts für Abhängigkeiten |
+| Annex I Teil II (2) – Sicherheitsupdates | Automatische PRs bei verfügbaren Updates |
 | Annex I, Teil II, Nr. 2 – Unverzügliche Behebung | Auto-Merge für Patch-Updates |
 | Annex I, Teil II, Nr. 5 – Drittkomponenten überwachen | Kontinuierliches Dependency Monitoring |
 
@@ -19,7 +19,7 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 
 | CRA-Anforderung | Abdeckung |
 |-----------------|-----------|
-| Art. 10 Abs. 9 – Koordinierte Offenlegung | Private Advisory, CVE-Zuweisung |
+| Annex I Teil II (5) – Koordinierte Offenlegung | Private Advisory, CVE-Zuweisung |
 | Art. 14 Abs. 8 – Nutzerbenachrichtigung | Öffentliches Advisory mit Handlungsempfehlung |
 | Annex I, Teil II, Nr. 4 – Offenlegung behobener CVEs | Security Advisory veröffentlichen |
 
@@ -27,10 +27,10 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 
 | Workflow | CRA-Anforderung | Funktion |
 |----------|-----------------|----------|
-| `automatic-release.yml` | Art. 10 Abs. 7 | Automatisierte Release-Pipeline |
-| `modules-security-scan.yml` | Art. 10 Abs. 6 | Multi-Engine Security Scanning |
-| `modules-license-compliance.yml` | Art. 10 Abs. 4, Art. 13 Abs. 23 | Lizenzprüfung + SBOM |
-| `docker-build.yml` | Art. 10 Abs. 12 | Image-Build + Signing |
+| `automatic-release.yml` | Annex I Teil II (2) | Automatisierte Release-Pipeline |
+| `modules-security-scan.yml` | Annex I Teil II (1) | Multi-Engine Security Scanning |
+| `modules-license-compliance.yml` | Art. 13 Abs. 5, Annex I Teil II (1) | Lizenzprüfung + SBOM |
+| `docker-build.yml` | Annex I Teil II (7) | Image-Build + Signing |
 | `docker-maintenance-dependabot.yml` | Annex I, Teil II, Nr. 2 | Auto-Merge Dependency Updates |
 | `modules-docker-base-image-monitor.yml` | Annex I, Teil II, Nr. 5 | Base Image Aktualisierung |
 | `security-management.yml` | Art. 13 Abs. 8 | SECURITY.md Auto-Generierung |
@@ -42,9 +42,9 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 
 | CRA-Anforderung | Abdeckung |
 |-----------------|-----------|
-| Art. 10 Abs. 6 | Container-Image Vulnerability Scanning |
-| Art. 10 Abs. 8 | Erkennung bekannter ausnutzbarer Schwachstellen |
-| Art. 13 Abs. 23 | SBOM-Generierung (CycloneDX, SPDX) |
+| Annex I Teil II (1) | Container-Image Vulnerability Scanning |
+| Annex I Teil I (2)(a) | Erkennung bekannter ausnutzbarer Schwachstellen |
+| Annex I Teil II (1) | SBOM-Generierung (CycloneDX, SPDX) |
 | Annex I, Teil II, Nr. 1 | Komponentenerkennung für SBOM |
 | Annex I, Teil II, Nr. 3 | Regelmäßige Sicherheitstests (CI/CD) |
 
@@ -52,29 +52,29 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 
 | CRA-Anforderung | Abdeckung |
 |-----------------|-----------|
-| Art. 10 Abs. 6 | Vulnerability Scanning (komplementär zu Trivy) |
+| Annex I Teil II (1) | Vulnerability Scanning (komplementär zu Trivy) |
 | Annex I, Teil II, Nr. 1 | CVE-Matching gegen SBOM |
 
 ### OSV-Scanner (Google)
 
 | CRA-Anforderung | Abdeckung |
 |-----------------|-----------|
-| Art. 10 Abs. 6 | OSV-Datenbank-basiertes Vulnerability Scanning |
-| Art. 10 Abs. 8 | Erkennung bekannter Schwachstellen (aggregiert NVD, GitHub, PyPI, npm, Go u.a.) |
+| Annex I Teil II (1) | OSV-Datenbank-basiertes Vulnerability Scanning |
+| Annex I Teil I (2)(a) | Erkennung bekannter Schwachstellen (aggregiert NVD, GitHub, PyPI, npm, Go u.a.) |
 | Annex I, Teil II, Nr. 2 | CVE-Matching gegen Lockfiles und SBOMs |
 
 ### Snyk
 
 | CRA-Anforderung | Abdeckung |
 |-----------------|-----------|
-| Art. 10 Abs. 6 | Application Security Scanning |
+| Annex I Teil II (1) | Application Security Scanning |
 | Annex I, Teil II, Nr. 3 | Code-Level Vulnerability Detection |
 
 ### Gitleaks + GitGuardian
 
 | CRA-Anforderung | Abdeckung |
 |-----------------|-----------|
-| Art. 10 Abs. 1 | Verhinderung von Secret Exposure |
+| Art. 13 Abs. 1 | Verhinderung von Secret Exposure |
 | Annex I, Teil I, Nr. 5 | Schutz vor unbefugtem Zugriff (Secrets) |
 
 ## 8.1.4 SBOM & Compliance
@@ -83,7 +83,7 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 
 | CRA-Anforderung | Abdeckung |
 |-----------------|-----------|
-| Art. 13 Abs. 23 | SBOM-Generierung (CycloneDX JSON) |
+| Annex I Teil II (1) | SBOM-Generierung (CycloneDX JSON) |
 | Annex I, Teil II, Nr. 1 | Komponentenerkennung und -dokumentation |
 | Annex VII Nr. 1 | Produktbeschreibung (Abhängigkeiten) |
 
@@ -91,7 +91,7 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 
 | CRA-Anforderung | Abdeckung |
 |-----------------|-----------|
-| Art. 10 Abs. 4 | Sorgfaltspflicht bei Drittkomponenten (Lizenzen) |
+| Art. 13 Abs. 5 | Sorgfaltspflicht bei Drittkomponenten (Lizenzen) |
 | Annex I, Teil II, Nr. 1 | Lizenzinventar als Teil der SBOM |
 
 ## 8.1.5 Signing & Integrity
@@ -100,7 +100,7 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 
 | CRA-Anforderung | Abdeckung |
 |-----------------|-----------|
-| Art. 10 Abs. 12 | Integritätsschutz von Updates |
+| Annex I Teil II (7) | Integritätsschutz von Updates |
 | Annex I, Teil I, Nr. 3.2 | Integritätsschutz (Daten/Artefakte) |
 | Annex I, Teil II, Nr. 6 | Sichere Bereitstellung von Updates |
 
@@ -112,10 +112,10 @@ Zusätzlich zu den Automation-Templates stellt dieses Repository dedizierte CRA-
 
 | Action | CRA-Anforderung | Funktion |
 |--------|-----------------|----------|
-| `cra-sbom-generate` | Art. 13 Abs. 23 | CycloneDX SBOM generieren (Trivy, Auto-Detect) |
-| `cra-sbom-sign` | Art. 10 Abs. 12 | SBOM signieren (Cosign, keyless OIDC) |
-| `cra-vulnerability-scan` | Art. 10 Abs. 6, 8 | Multi-Engine Vulnerability Scan (Trivy + Grype + OSV-Scanner) |
-| `cra-hub-report` | Art. 10, Art. 13 | Compliance-Daten an Software Security Hub API senden |
+| `cra-sbom-generate` | Annex I Teil II (1) | CycloneDX SBOM generieren (Trivy, Auto-Detect) |
+| `cra-sbom-sign` | Annex I Teil II (7) | SBOM signieren (Cosign, keyless OIDC) |
+| `cra-vulnerability-scan` | Annex I Teil II (1), Annex I Teil I (2)(a) | Multi-Engine Vulnerability Scan (Trivy + Grype + OSV-Scanner) |
+| `cra-hub-report` | Art. 13 | Compliance-Daten an Software Security Hub API senden |
 | `cra-compliance-report` | Annex VII | JSON + Markdown Compliance-Report mit Scoring |
 | `cra-eu-doc` | Art. 28, Annex V | Maschinenlesbare EU-Konformitätserklärung generieren (JSON) |
 | `cra-render` | Annex V, Annex VII | JSON-Artefakte zu PDF rendern (EU DoC, Compliance Report) |
@@ -125,16 +125,16 @@ Zusätzlich zu den Automation-Templates stellt dieses Repository dedizierte CRA-
 | Action | CRA-Anforderung | Funktion |
 |--------|-----------------|----------|
 | `vex-generate` | Annex I, Teil II, Nr. 2 | OpenVEX-Dokument aus Scan + manueller Triage |
-| `sbom-attest` | Art. 10 Abs. 12 | GitHub-native SBOM-Attestation |
+| `sbom-attest` | Annex I Teil II (7) | GitHub-native SBOM-Attestation |
 
 ### Reusable Workflows
 
 | Workflow | Typ | CRA-Anforderung | Funktion |
 |----------|-----|-----------------|----------|
-| `cra-release.yml` | Repo-lokal | Art. 10 Abs. 12, Art. 13 Abs. 23, Annex VII | SBOM + Signatur + Attestation + VEX + Compliance Report |
-| `cra-scan.yml` | Repo-lokal | Art. 10 Abs. 6, 8 | Geplanter CVE-Scan mit Issue-Erstellung |
-| `cra-report.yml` | API-Reporting | Art. 10, Art. 13, Annex VII | Alle CRA-Daten an CRA Compliance Hub |
-| `cra-onboard.yml` | Repo-lokal | Art. 10, Art. 13 Abs. 6 | Ein-Klick CRA-Onboarding für jedes Repository |
+| `cra-release.yml` | Repo-lokal | Annex I Teil II (7), Annex I Teil II (1), Annex VII | SBOM + Signatur + Attestation + VEX + Compliance Report |
+| `cra-scan.yml` | Repo-lokal | Annex I Teil II (1), Annex I Teil I (2)(a) | Geplanter CVE-Scan mit Issue-Erstellung |
+| `cra-report.yml` | API-Reporting | Art. 13, Annex VII | Alle CRA-Daten an CRA Compliance Hub |
+| `cra-onboard.yml` | Repo-lokal | Art. 13, Art. 13 Abs. 6 | Ein-Klick CRA-Onboarding für jedes Repository |
 | `cra-audit.yml` | Repo-lokal | Annex I, Annex VII | Wöchentliches Compliance-Audit mit Issue-Erstellung |
 | `cra-incident.yml` | Repo-lokal | Art. 14 | Incident-Response-Trigger mit ENISA-Fristenberechnung |
 
@@ -155,7 +155,7 @@ Zusätzlich zu den Automation-Templates stellt dieses Repository dedizierte CRA-
 ```
                          CRA-Anforderung
                     ┌─────────────────────────┐
-                    │  Art. 10 (Hersteller)    │
+                    │  Art. 13 (Hersteller)    │
                     │  ├── Abs. 1 (Security)   │──→ Trivy, Gitleaks, Code Review
                     │  ├── Abs. 2 (Risiko)     │──→ Manuell + Template
                     │  ├── Abs. 4 (3rd Party)  │──→ FOSSA, License Compliance

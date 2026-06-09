@@ -7,7 +7,7 @@ The Update Mechanism ensures that security updates are delivered to users in a s
 ::: info LEGAL BASIS
 **Annex I, Part II, No. 7:** *"The manufacturer shall ensure that security updates are made available to users without delay and free of charge."*
 
-**Art. 10(12) CRA:** The integrity of security updates must be ensured, in particular in the case of automatic installation.
+**Annex I Part II (7) CRA:** The integrity of security updates must be ensured, in particular in the case of automatic installation.
 :::
 
 ## 6.3.2 Update Channels
@@ -89,7 +89,7 @@ Each update is protected by the following mechanisms:
 
 ## 6.3.4 Free-of-Charge Provision
 
-Pursuant to Art. 10(7) CRA, all security updates are provided **free of charge**:
+Pursuant to Annex I Part II (2) CRA, all security updates are provided **free of charge**:
 
 - Container images via public registries (GHCR)
 - Firmware via GitHub Releases (public download)

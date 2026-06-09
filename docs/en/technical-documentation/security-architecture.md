@@ -5,7 +5,7 @@
 The Security Architecture documents how cybersecurity is integrated into the design, development, and maintenance process.
 
 ::: info LEGAL BASIS
-**Art. 10(1) CRA:** *"The manufacturer shall ensure that the product is designed, developed and produced in such a way as to ensure an appropriate level of cybersecurity."*
+**Art. 13(1) CRA:** *"The manufacturer shall ensure that the product is designed, developed and produced in such a way as to ensure an appropriate level of cybersecurity."*
 
 **Annex I, Part I:** Essential cybersecurity requirements for products.
 :::

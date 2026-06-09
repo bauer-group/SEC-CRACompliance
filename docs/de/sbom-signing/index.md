@@ -5,9 +5,9 @@
 Die Software Bill of Materials (SBOM) und die kryptographische Signierung von Artefakten sind zentrale Bausteine der CRA-Konformität. Dieses Kapitel beschreibt den vollständigen Lebenszyklus einer SBOM -- von der Generierung über die Formatierung und Archivierung bis hin zur Signierung -- sowie die übergreifenden Signierungsverfahren für alle Artefakttypen (Container-Images, Binaries, Firmware, SBOMs).
 
 ::: info RECHTSGRUNDLAGE
-**Art. 13 Abs. 23 CRA:** *„Der Hersteller ermittelt und dokumentiert die Schwachstellen und Komponenten, die in dem Produkt mit digitalen Elementen enthalten sind, unter anderem durch Erstellung einer Software-Stückliste in einem allgemein gebräuchlichen und maschinenlesbaren Format, die mindestens die Top-Level-Abhängigkeiten des Produkts erfasst."*
+**Annex I Teil II (1) CRA:** *„Der Hersteller ermittelt und dokumentiert die Schwachstellen und Komponenten, die in dem Produkt mit digitalen Elementen enthalten sind, unter anderem durch Erstellung einer Software-Stückliste in einem allgemein gebräuchlichen und maschinenlesbaren Format, die mindestens die Top-Level-Abhängigkeiten des Produkts erfasst."*
 
-**Art. 10 Abs. 12 CRA:** *„Der Hersteller stellt sicher, dass Sicherheitsupdates, die an Nutzer weitergegeben werden, sicher bereitgestellt werden und dass die Integrität des Produkts gewährleistet ist, wenn diese Sicherheitsupdates automatisch installiert werden."*
+**Annex I Teil II (7) CRA:** *„Der Hersteller stellt sicher, dass Sicherheitsupdates, die an Nutzer weitergegeben werden, sicher bereitgestellt werden und dass die Integrität des Produkts gewährleistet ist, wenn diese Sicherheitsupdates automatisch installiert werden."*
 
 **Annex I, Teil I, Nr. 3:** *„Produkte mit digitalen Elementen [...] gewährleisten den Schutz der Integrität gespeicherter, übermittelter oder anderweitig verarbeiteter Daten [...] vor Manipulation oder Veränderung."*
 :::
@@ -41,13 +41,13 @@ Build Artifact (Binary, Image, Firmware)
 
 | Anforderung | Umsetzung | CRA-Artikel |
 |-------------|-----------|-------------|
-| Maschinenlesbares Format | CycloneDX JSON | Art. 13 Abs. 23 |
-| Top-Level-Abhängigkeiten | Automatische Erkennung via Syft/Trivy | Art. 13 Abs. 23 |
+| Maschinenlesbares Format | CycloneDX JSON | Annex I Teil II (1) |
+| Top-Level-Abhängigkeiten | Automatische Erkennung via Syft/Trivy | Annex I Teil II (1) |
 | Pro Release | SBOM wird bei jedem Release-Tag generiert | Best Practice |
-| Integritätsschutz | Signierung aller Artefakte mit Cosign | Art. 10 Abs. 12 |
+| Integritätsschutz | Signierung aller Artefakte mit Cosign | Annex I Teil II (7) |
 | Authentizität | Kryptographische Signatur belegt Herkunft | Annex I, Teil I, Nr. 3 |
 | Nachvollziehbarkeit | Git-Historie + Release-Assets | Annex VII |
-| Verfügbarkeit | Archivierung im Compliance-Repo + Release-Assets | Art. 13 Abs. 23 |
+| Verfügbarkeit | Archivierung im Compliance-Repo + Release-Assets | Annex I Teil II (1) |
 
 ## Signierte Artefakttypen
 

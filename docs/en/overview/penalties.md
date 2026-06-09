@@ -16,7 +16,7 @@ The CRA provides for significant penalties for violations. The fines follow the 
 
 Violations of:
 
-- **Art. 10** -- Manufacturer obligations (essential requirements, conformity assessment, technical documentation)
+- **Art. 13** -- Manufacturer obligations (essential requirements, conformity assessment, technical documentation)
 - **Art. 13** -- Information obligations (SBOM, support period, contact details)
 - **Art. 14** -- Reporting Obligations (ENISA 24h/72h/14d)
 - **Annex I** -- Essential cybersecurity requirements
@@ -28,10 +28,10 @@ Violations of:
 
 Violations of:
 
-- **Art. 15** -- [Importer Obligations](/en/overview/importer-obligations)
-- **Art. 17** -- [Distributor Obligations](/en/overview/distributor-obligations)
-- **Art. 20** -- [Substantial Modifications](/en/overview/substantial-modifications) (without assuming manufacturer obligations)
-- **Art. 24-28** -- Conformity Assessment (formally not carried out)
+- **Art. 19** -- [Importer Obligations](/en/overview/importer-obligations)
+- **Art. 20** -- [Distributor Obligations](/en/overview/distributor-obligations)
+- **Art. 22** -- [Substantial Modifications](/en/overview/substantial-modifications) (without assuming manufacturer obligations)
+- **Art. 32** -- Conformity Assessment (formally not carried out)
 
 ### Tier 3 -- False Information (Art. 64 Para. 4)
 
@@ -108,7 +108,7 @@ The highest fine risks exist for:
 |----------|------|------|
 | **1** | No ENISA reporting for actively exploited vulnerability | Tier 1 |
 | **2** | Known exploitable vulnerabilities not remediated | Tier 1 |
-| **3** | No SBOM created (Art. 13 Para. 23) | Tier 1 |
+| **3** | No SBOM created (Annex I Part II (1)) | Tier 1 |
 | **4** | No conformity assessment carried out | Tier 1 |
 | **5** | No technical documentation (Annex VII) | Tier 1 |
 | **6** | No cooperation with authorities | Tier 3 |

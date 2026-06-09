@@ -16,7 +16,7 @@ Der CRA sieht erhebliche Sanktionen für Verstöße vor. Die Bußgelder orientie
 
 Verstöße gegen:
 
-- **Art. 10** – Herstellerpflichten (wesentliche Anforderungen, Konformitätsbewertung, technische Dokumentation)
+- **Art. 13** – Herstellerpflichten (wesentliche Anforderungen, Konformitätsbewertung, technische Dokumentation)
 - **Art. 13** – Informationspflichten (SBOM, Support-Zeitraum, Kontaktdaten)
 - **Art. 14** – Meldepflichten (ENISA 24h/72h/14d)
 - **Annex I** – Wesentliche Cybersicherheitsanforderungen
@@ -28,10 +28,10 @@ Verstöße gegen:
 
 Verstöße gegen:
 
-- **Art. 15** – [Importeur-Pflichten](/de/overview/importer-obligations)
-- **Art. 17** – [Händler-Pflichten](/de/overview/distributor-obligations)
-- **Art. 20** – [Wesentliche Änderungen](/de/overview/substantial-modifications) (ohne Herstellerpflichten zu übernehmen)
-- **Art. 24-28** – Konformitätsbewertung (formal nicht durchgeführt)
+- **Art. 19** – [Importeur-Pflichten](/de/overview/importer-obligations)
+- **Art. 20** – [Händler-Pflichten](/de/overview/distributor-obligations)
+- **Art. 22** – [Wesentliche Änderungen](/de/overview/substantial-modifications) (ohne Herstellerpflichten zu übernehmen)
+- **Art. 32** – Konformitätsbewertung (formal nicht durchgeführt)
 
 ### Stufe 3 – Falsche Angaben (Art. 64 Abs. 4)
 
@@ -108,7 +108,7 @@ Die höchsten Bußgeldrisiken bestehen bei:
 |-----------|---------|--------|
 | **1** | Keine ENISA-Meldung bei aktiv ausgenutzter Schwachstelle | Stufe 1 |
 | **2** | Bekannte ausnutzbare Schwachstellen nicht behoben | Stufe 1 |
-| **3** | Kein SBOM erstellt (Art. 13 Abs. 23) | Stufe 1 |
+| **3** | Kein SBOM erstellt (Annex I Teil II (1)) | Stufe 1 |
 | **4** | Keine Konformitätsbewertung durchgeführt | Stufe 1 |
 | **5** | Keine technische Dokumentation (Annex VII) | Stufe 1 |
 | **6** | Keine Kooperation mit Behörden | Stufe 3 |

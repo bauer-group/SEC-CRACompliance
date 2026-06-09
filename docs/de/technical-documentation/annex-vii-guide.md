@@ -40,7 +40,7 @@ Annex VII des CRA definiert den vollständigen Inhalt der technischen Dokumentat
 
 ## 6.6.4 Anforderung 3 – Cybersecurity-Risikobewertung
 
-**Annex VII Nr. 3:** Die Cybersecurity-Risikobewertung gemäß Art. 10 Abs. 2, einschließlich:
+**Annex VII Nr. 3:** Die Cybersecurity-Risikobewertung gemäß Art. 13 Abs. 3, einschließlich:
 
 | Element | Beschreibung | Dokumentationsort |
 |---------|-------------|-------------------|

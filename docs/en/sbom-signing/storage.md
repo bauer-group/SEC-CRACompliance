@@ -61,12 +61,12 @@ Build artifacts are stored as GitHub Actions artifacts (90-day retention).
 
 | Storage Location | Retention Period | Justification |
 |------------------|------------------|---------------|
-| GitHub Release Assets | **Unlimited** (lifetime of the repo) | Regulatory evidence (Art. 10(13) CRA: 10 years or the lifetime of the product, whichever is longer) |
-| Compliance repo (sbom/) | **10 years** after the last product deployment | Art. 10(13) CRA |
+| GitHub Release Assets | **Unlimited** (lifetime of the repo) | Regulatory evidence (Art. 13(13) CRA: 10 years or the lifetime of the product, whichever is longer) |
+| Compliance repo (sbom/) | **10 years** after the last product deployment | Art. 13(13) CRA |
 | GitHub Actions Artifacts | **90 days** | Debugging and analysis |
 
 ::: danger RETENTION PERIOD
-**Art. 10(13) CRA:** The technical documentation and the EU declaration of conformity shall be retained for **10 years** after the placing on the market of the product or for the duration of the support period -- whichever period is longer.
+**Art. 13(13) CRA:** The technical documentation and the EU declaration of conformity shall be retained for **10 years** after the placing on the market of the product or for the duration of the support period -- whichever period is longer.
 
 SBOMs, as part of the technical documentation, are subject to this retention period.
 :::
@@ -92,7 +92,7 @@ cosign verify-blob --key cosign.pub --signature sbom.cdx.json.sig sbom.cdx.json
 
 ### For Regulators / Market Surveillance Authorities
 
-SBOMs are provided upon request (Art. 13(23) CRA):
+SBOMs are provided upon request (Annex I Part II (1) CRA):
 
 - Access via GitHub release assets (for public repos)
 - Direct download link

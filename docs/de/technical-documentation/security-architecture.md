@@ -5,7 +5,7 @@
 Die Sicherheitsarchitektur dokumentiert, wie Cybersicherheit in den Entwurfs-, Entwicklungs- und Wartungsprozess integriert ist.
 
 ::: info RECHTSGRUNDLAGE
-**Art. 10 Abs. 1 CRA:** *„Der Hersteller stellt sicher, dass das Produkt so entworfen, entwickelt und hergestellt wird, dass es ein angemessenes Cybersicherheitsniveau gewährleistet."*
+**Art. 13 Abs. 1 CRA:** *„Der Hersteller stellt sicher, dass das Produkt so entworfen, entwickelt und hergestellt wird, dass es ein angemessenes Cybersicherheitsniveau gewährleistet."*
 
 **Annex I, Teil I:** Wesentliche Cybersicherheitsanforderungen an Produkte.
 :::

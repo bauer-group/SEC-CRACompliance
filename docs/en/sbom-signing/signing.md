@@ -5,7 +5,7 @@
 Signing ensures the integrity and authenticity of all artifacts produced during the release process. This includes SBOMs, container images, release binaries, and firmware. All signing operations use **Cosign** (Sigstore), which supports both key-based and keyless signing.
 
 ::: info LEGAL BASIS
-**Art. 10(12) CRA:** Manufacturers must ensure that security updates and associated information (including SBOMs) are provided "securely and with the integrity guaranteed".
+**Annex I Part II (7) CRA:** Manufacturers must ensure that security updates and associated information (including SBOMs) are provided "securely and with the integrity guaranteed".
 :::
 
 ## 2.4.2 Tool: Cosign (Sigstore)

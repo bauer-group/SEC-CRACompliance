@@ -16,7 +16,7 @@ The CRA Compliance Statement must be updated upon the following events:
 | New Vulnerability Disclosure Policy | `security_documentation.*` | Within 14 days | 🟡 Medium |
 
 ::: info LEGAL BASIS
-**Art. 10(12) CRA:** *"The manufacturer shall ensure that the product [...] remains in conformity with the essential requirements throughout the support period."*
+**Art. 13(8) CRA:** *"The manufacturer shall ensure that the product [...] remains in conformity with the essential requirements throughout the support period."*
 
 This implies the obligation to keep the public compliance presentation up to date as well.
 :::
@@ -107,7 +107,7 @@ Details: [9.2.6 CI/CD Integration](/en/product-compliance/publication-strategy#_
 When a product reaches the end of its support period:
 
 1. Set `support_period.phase` to `eol`
-2. Compliance statement remains published (10-year retention requirement, Art. 10(13))
+2. Compliance statement remains published (10-year retention requirement, Art. 13(13))
 3. Reference to successor product (if available)
 4. No further security updates — communicate clearly
 

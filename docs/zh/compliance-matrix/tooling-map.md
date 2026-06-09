@@ -10,8 +10,8 @@
 
 | CRA 要求 | 覆盖范围 |
 |-----------------|-----------|
-| Art. 10(6) -- 识别漏洞 | 自动对依赖项发出 CVE 警报 |
-| Art. 10(7) -- 安全更新 | 当更新可用时自动创建 PR |
+| Annex I, 第II部分, 编号 1 -- 识别漏洞 | 自动对依赖项发出 CVE 警报 |
+| Annex I, 第II部分, 编号 2 -- 安全更新 | 当更新可用时自动创建 PR |
 | Annex I, 第II部分, 编号 2 -- 及时修复 | 补丁更新的自动合并 |
 | Annex I, 第II部分, 编号 5 -- 监控第三方组件 | 持续依赖项监控 |
 
@@ -19,7 +19,7 @@
 
 | CRA 要求 | 覆盖范围 |
 |-----------------|-----------|
-| Art. 10(9) -- 协调披露 | 私密公告, CVE 分配 |
+| Annex I, 第II部分, 编号 5 -- 协调披露 | 私密公告, CVE 分配 |
 | Art. 14(8) -- 用户通知 | 包含建议措施的公开公告 |
 | Annex I, 第II部分, 编号 4 -- 已修复 CVE 的披露 | 发布安全公告 |
 
@@ -27,10 +27,10 @@
 
 | 工作流 | CRA 要求 | 功能 |
 |----------|-----------------|----------|
-| `automatic-release.yml` | Art. 10(7) | 自动化发布流水线 |
-| `modules-security-scan.yml` | Art. 10(6) | 多引擎安全扫描 |
-| `modules-license-compliance.yml` | Art. 10(4), Art. 13(23) | 许可证检查 + SBOM |
-| `docker-build.yml` | Art. 10(12) | 镜像构建 + 签名 |
+| `automatic-release.yml` | Annex I, 第II部分, 编号 2 | 自动化发布流水线 |
+| `modules-security-scan.yml` | Annex I, 第II部分, 编号 1 | 多引擎安全扫描 |
+| `modules-license-compliance.yml` | Art. 13(5), Annex I, 第II部分, 编号 1 | 许可证检查 + SBOM |
+| `docker-build.yml` | Annex I, 第II部分, 编号 7 | 镜像构建 + 签名 |
 | `docker-maintenance-dependabot.yml` | Annex I, 第II部分, 编号 2 | 自动合并依赖更新 |
 | `modules-docker-base-image-monitor.yml` | Annex I, 第II部分, 编号 5 | 基础镜像更新 |
 | `security-management.yml` | Art. 13(8) | SECURITY.md 自动生成 |
@@ -42,9 +42,9 @@
 
 | CRA 要求 | 覆盖范围 |
 |-----------------|-----------|
-| Art. 10(6) | 容器镜像漏洞扫描 |
-| Art. 10(8) | 检测已知可利用漏洞 |
-| Art. 13(23) | SBOM 生成 (CycloneDX, SPDX) |
+| Annex I, 第II部分, 编号 1 | 容器镜像漏洞扫描 |
+| Annex I, 第I部分, 编号 2(a) | 检测已知可利用漏洞 |
+| Annex I, 第II部分, 编号 1 | SBOM 生成 (CycloneDX, SPDX) |
 | Annex I, 第II部分, 编号 1 | SBOM 组件检测 |
 | Annex I, 第II部分, 编号 3 | 定期安全测试 (CI/CD) |
 
@@ -52,29 +52,29 @@
 
 | CRA 要求 | 覆盖范围 |
 |-----------------|-----------|
-| Art. 10(6) | 漏洞扫描（与 Trivy 互补） |
+| Annex I, 第II部分, 编号 1 | 漏洞扫描（与 Trivy 互补） |
 | Annex I, 第II部分, 编号 1 | 针对 SBOM 的 CVE 匹配 |
 
 ### OSV-Scanner (Google)
 
 | CRA 要求 | 覆盖范围 |
 |-----------------|-----------|
-| Art. 10(6) | 基于 OSV 数据库的漏洞扫描 |
-| Art. 10(8) | 检测已知漏洞（聚合 NVD, GitHub, PyPI, npm, Go 等） |
+| Annex I, 第II部分, 编号 1 | 基于 OSV 数据库的漏洞扫描 |
+| Annex I, 第I部分, 编号 2(a) | 检测已知漏洞（聚合 NVD, GitHub, PyPI, npm, Go 等） |
 | Annex I, 第II部分, 编号 2 | 针对 lockfiles 和 SBOM 的 CVE 匹配 |
 
 ### Snyk
 
 | CRA 要求 | 覆盖范围 |
 |-----------------|-----------|
-| Art. 10(6) | 应用安全扫描 |
+| Annex I, 第II部分, 编号 1 | 应用安全扫描 |
 | Annex I, 第II部分, 编号 3 | 代码级漏洞检测 |
 
 ### Gitleaks + GitGuardian
 
 | CRA 要求 | 覆盖范围 |
 |-----------------|-----------|
-| Art. 10(1) | 防止敏感信息泄露 |
+| Art. 13(1) | 防止敏感信息泄露 |
 | Annex I, 第I部分, 编号 5 | 防止未授权访问（机密信息） |
 
 ## 8.1.4 SBOM 与合规
@@ -83,7 +83,7 @@
 
 | CRA 要求 | 覆盖范围 |
 |-----------------|-----------|
-| Art. 13(23) | SBOM 生成 (CycloneDX JSON) |
+| Annex I, 第II部分, 编号 1 | SBOM 生成 (CycloneDX JSON) |
 | Annex I, 第II部分, 编号 1 | 组件检测与文档记录 |
 | Annex VII 编号 1 | 产品描述（依赖项） |
 
@@ -91,7 +91,7 @@
 
 | CRA 要求 | 覆盖范围 |
 |-----------------|-----------|
-| Art. 10(4) | 对第三方组件的尽职调查（许可证） |
+| Art. 13(5) | 对第三方组件的尽职调查（许可证） |
 | Annex I, 第II部分, 编号 1 | 作为 SBOM 一部分的许可证清单 |
 
 ## 8.1.5 签名与完整性
@@ -100,7 +100,7 @@
 
 | CRA 要求 | 覆盖范围 |
 |-----------------|-----------|
-| Art. 10(12) | 更新的完整性保护 |
+| Annex I, 第II部分, 编号 7 | 更新的完整性保护 |
 | Annex I, 第I部分, 编号 3.2 | 完整性保护（数据/制品） |
 | Annex I, 第II部分, 编号 6 | 安全提供更新 |
 
@@ -112,10 +112,10 @@
 
 | 操作 | CRA 要求 | 功能 |
 |--------|-----------------|----------|
-| `cra-sbom-generate` | Art. 13(23) | 生成 CycloneDX SBOM (Trivy, 自动检测) |
-| `cra-sbom-sign` | Art. 10(12) | 签名 SBOM (Cosign, 无密钥 OIDC) |
-| `cra-vulnerability-scan` | Art. 10(6), (8) | 多引擎漏洞扫描 (Trivy + Grype + OSV-Scanner) |
-| `cra-hub-report` | Art. 10, Art. 13 | 向软件安全中心 API 发送合规数据 |
+| `cra-sbom-generate` | Annex I, 第II部分, 编号 1 | 生成 CycloneDX SBOM (Trivy, 自动检测) |
+| `cra-sbom-sign` | Annex I, 第II部分, 编号 7 | 签名 SBOM (Cosign, 无密钥 OIDC) |
+| `cra-vulnerability-scan` | Annex I, 第II部分, 编号 1, Annex I, 第I部分, 编号 2(a) | 多引擎漏洞扫描 (Trivy + Grype + OSV-Scanner) |
+| `cra-hub-report` | Art. 13 | 向软件安全中心 API 发送合规数据 |
 | `cra-compliance-report` | Annex VII | JSON + Markdown 合规报告（含评分） |
 | `cra-eu-doc` | Art. 28, Annex V | 生成机器可读的 EU 符合性声明 (JSON) |
 | `cra-render` | Annex V, Annex VII | 将 JSON 制品渲染为 PDF（EU DoC、合规报告） |
@@ -125,16 +125,16 @@
 | 操作 | CRA 要求 | 功能 |
 |--------|-----------------|----------|
 | `vex-generate` | Annex I, 第II部分, 编号 2 | 从扫描结果 + 手动分类生成 OpenVEX 文档 |
-| `sbom-attest` | Art. 10(12) | 创建 GitHub 原生 SBOM 认证 |
+| `sbom-attest` | Annex I, 第II部分, 编号 7 | 创建 GitHub 原生 SBOM 认证 |
 
 ### 可复用工作流
 
 | 工作流 | 类型 | CRA 要求 | 功能 |
 |----------|-----|-----------------|----------|
-| `cra-release.yml` | 仓库本地 | Art. 10(12), Art. 13(23), Annex VII | SBOM + 签名 + 认证 + VEX + 合规报告 |
-| `cra-scan.yml` | 仓库本地 | Art. 10(6), (8) | 计划 CVE 扫描并创建 issue |
-| `cra-report.yml` | API 报告 | Art. 10, Art. 13, Annex VII | 所有 CRA 数据发送至 CRA 合规中心 |
-| `cra-onboard.yml` | 仓库本地 | Art. 10, Art. 13(6) | 一键 CRA 注册（适用于任何仓库） |
+| `cra-release.yml` | 仓库本地 | Annex I, 第II部分, 编号 7, Annex I, 第II部分, 编号 1, Annex VII | SBOM + 签名 + 认证 + VEX + 合规报告 |
+| `cra-scan.yml` | 仓库本地 | Annex I, 第II部分, 编号 1, Annex I, 第I部分, 编号 2(a) | 计划 CVE 扫描并创建 issue |
+| `cra-report.yml` | API 报告 | Art. 13, Annex VII | 所有 CRA 数据发送至 CRA 合规中心 |
+| `cra-onboard.yml` | 仓库本地 | Art. 13, Art. 13(6) | 一键 CRA 注册（适用于任何仓库） |
 | `cra-audit.yml` | 仓库本地 | Annex I, Annex VII | 每周合规审计（含 Issue 创建） |
 | `cra-incident.yml` | 仓库本地 | Art. 14 | 事件响应触发器（含 ENISA 截止日期计算） |
 
@@ -155,7 +155,7 @@
 ```
                          CRA 要求
                     ┌─────────────────────────┐
-                    │  Art. 10（制造商）        │
+                    │  Art. 13（制造商）        │
                     │  ├── (1) 安全性          │──→ Trivy, Gitleaks, 代码审查
                     │  ├── (2) 风险            │──→ 手动 + 模板
                     │  ├── (4) 第三方          │──→ FOSSA, 许可证合规

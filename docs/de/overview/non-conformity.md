@@ -1,16 +1,16 @@
-# 1.9 Nichtkonformität (Art. 22–23)
+# 1.9 Nichtkonformität (Art. 54, 58)
 
 ## 1.9.1 Übersicht
 
-Der CRA unterscheidet zwischen **formaler Nichtkonformität** (Art. 22) und **Produkten mit erheblichem Cybersicherheitsrisiko** (Art. 23). Diese Unterscheidung ist entscheidend: Art. 22 betrifft administrative Mängel (fehlende Dokumente, falsche Kennzeichnung), während Art. 23 substanzielle Sicherheitsprobleme adressiert. Beide Artikel ermächtigen die Marktüberwachungsbehörden zu Korrekturmaßnahmen bis hin zum Vertriebsstopp oder Rückruf.
+Der CRA unterscheidet zwischen **formaler Nichtkonformität** (Art. 58) und **Produkten mit erheblichem Cybersicherheitsrisiko** (Art. 54). Diese Unterscheidung ist entscheidend: Art. 58 betrifft administrative Mängel (fehlende Dokumente, falsche Kennzeichnung), während Art. 54 substanzielle Sicherheitsprobleme adressiert. Beide Artikel ermächtigen die Marktüberwachungsbehörden zu Korrekturmaßnahmen bis hin zum Vertriebsstopp oder Rückruf.
 
 ::: info RECHTSGRUNDLAGE
-**Art. 22 CRA (EU) 2024/2847:** Verfahren bei formaler Nichtkonformität -- die Marktüberwachungsbehörde fordert den Wirtschaftsakteur auf, die Konformität innerhalb einer festgelegten Frist herzustellen.
+**Art. 58 CRA (EU) 2024/2847:** Verfahren bei formaler Nichtkonformität -- die Marktüberwachungsbehörde fordert den Wirtschaftsakteur auf, die Konformität innerhalb einer festgelegten Frist herzustellen.
 
-**Art. 23 CRA (EU) 2024/2847:** Verfahren bei Produkten mit erheblichem Cybersicherheitsrisiko -- die Behörde ordnet Korrekturmaßnahmen an, wenn die wesentlichen Anforderungen (Anhang I) substanziell nicht erfüllt werden.
+**Art. 54 CRA (EU) 2024/2847:** Verfahren bei Produkten mit erheblichem Cybersicherheitsrisiko -- die Behörde ordnet Korrekturmaßnahmen an, wenn die wesentlichen Anforderungen (Anhang I) substanziell nicht erfüllt werden.
 :::
 
-## 1.9.2 Art. 22 -- Formale Nichtkonformität
+## 1.9.2 Art. 58 -- Formale Nichtkonformität
 
 Die Marktüberwachungsbehörde verlangt Korrekturmaßnahmen, wenn sie einen der folgenden formalen Mängel feststellt:
 
@@ -19,7 +19,7 @@ Die Marktüberwachungsbehörde verlangt Korrekturmaßnahmen, wenn sie einen der 
 | CE-Kennzeichnung nicht angebracht oder falsch angebracht | Art. 29-30 | CE-Zeichen fehlt auf dem Produkt oder der Verpackung |
 | EU-Konformitätserklärung nicht erstellt oder fehlerhaft | Art. 28, Anhang V | DoC fehlt oder enthält nicht alle Pflichtangaben |
 | Technische Dokumentation nicht verfügbar oder unvollständig | Art. 31, Anhang VII | Dokumentation nicht innerhalb der Frist vorlegbar |
-| Kontaktdaten des Herstellers/Importeurs fehlen | Art. 10(15), Art. 13(19) | Kein Name, Adresse oder Kontaktmöglichkeit auf dem Produkt |
+| Kontaktdaten des Herstellers/Importeurs fehlen | Art. 13(16), Art. 19 | Kein Name, Adresse oder Kontaktmöglichkeit auf dem Produkt |
 | Sonstige administrative Anforderungen nicht erfüllt | Diverse | Fehlende Angabe des Support-Zeitraums |
 
 ### Verfahrensablauf
@@ -33,7 +33,7 @@ Die Marktüberwachungsbehörde verlangt Korrekturmaßnahmen, wenn sie einen der 
 Formale Mängel mögen trivial erscheinen, können aber zu einem sofortigen Vertriebsstopp führen. Die vollständige Dokumentation muss jederzeit verfügbar sein.
 :::
 
-## 1.9.3 Art. 23 -- Produkt mit erheblichem Cybersicherheitsrisiko
+## 1.9.3 Art. 54 -- Produkt mit erheblichem Cybersicherheitsrisiko
 
 Stellt ein Produkt mit digitalen Elementen ein **erhebliches Cybersicherheitsrisiko** dar, greift ein verschärftes Verfahren:
 
@@ -42,15 +42,15 @@ Stellt ein Produkt mit digitalen Elementen ein **erhebliches Cybersicherheitsris
 3. Der Hersteller muss innerhalb der gesetzten Frist Abhilfe schaffen
 4. **Bei Untätigkeit:** Beschränkung, Rücknahme oder Rückruf des Produkts
 
-Art. 23 greift insbesondere, wenn die **wesentlichen Anforderungen nach Anhang I** substanziell nicht erfüllt werden -- etwa fehlende Verschlüsselung, nicht geschlossene bekannte Schwachstellen oder mangelhafter Update-Mechanismus.
+Art. 54 greift insbesondere, wenn die **wesentlichen Anforderungen nach Anhang I** substanziell nicht erfüllt werden -- etwa fehlende Verschlüsselung, nicht geschlossene bekannte Schwachstellen oder mangelhafter Update-Mechanismus.
 
 ::: danger ERHEBLICHES RISIKO
 Ein erhebliches Cybersicherheitsrisiko kann zu Sofortmaßnahmen führen. Im Gegensatz zu formaler Nichtkonformität steht hier die tatsächliche Sicherheit der Nutzer im Vordergrund. Sanktionen nach [Art. 64](/de/overview/penalties) (bis zu 15 Mio. EUR / 2,5% Umsatz) können zusätzlich verhängt werden.
 :::
 
-## 1.9.4 Vergleich: Art. 22 vs. Art. 23
+## 1.9.4 Vergleich: Art. 58 vs. Art. 54
 
-| Kriterium | Art. 22 -- Formale Nichtkonformität | Art. 23 -- Erhebliches Cybersicherheitsrisiko |
+| Kriterium | Art. 58 -- Formale Nichtkonformität | Art. 54 -- Erhebliches Cybersicherheitsrisiko |
 |-----------|-------------------------------------|-----------------------------------------------|
 | **Gegenstand** | Administrative Mängel (Dokumentation, Kennzeichnung) | Substanzielle Sicherheitsmängel (Anhang I) |
 | **Typische Auslöser** | Fehlende CE-Kennzeichnung, unvollständige DoC | Ungeschlossene Schwachstellen, fehlende Verschlüsselung |
@@ -87,11 +87,11 @@ Behördenanfrage eingehend
     |
     +-- ISB + Rechtsabteilung (Erstbewertung, 1 AT)
     |
-    +-- Formale Nichtkonformität (Art. 22)?
+    +-- Formale Nichtkonformität (Art. 58)?
     |   +-- Ja --> Fachabteilung korrigiert (Dokumente, Kennzeichnung)
     |   +-- Nachweis an Behörde innerhalb der Frist
     |
-    +-- Erhebliches Risiko (Art. 23)?
+    +-- Erhebliches Risiko (Art. 54)?
         +-- Ja --> Eskalation an Geschäftsleitung
         +-- Sofortige Risikobewertung
         +-- Ggf. Sicherheitsupdate / Rückruf einleiten

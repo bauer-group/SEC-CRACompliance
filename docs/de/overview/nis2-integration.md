@@ -22,7 +22,7 @@ Der Cyber Resilience Act (CRA) und die NIS2-Richtlinie (Richtlinie (EU) 2022/255
 | **Rechtsform** | Verordnung (direkt anwendbar) | Richtlinie (nationale Umsetzung) |
 | **Geltung ab** | 11.12.2027 (vollständig) | 18.10.2024 (Umsetzungsfrist) |
 | **Sanktionen** | Bis zu 15 Mio. EUR / 2,5% | Bis zu 10 Mio. EUR / 2% |
-| **Meldepflicht** | ENISA (24h/72h/14d) | CSIRT (24h/72h/1 Monat) |
+| **Meldepflicht** | ENISA (24h/72h/14d Schwachstelle bzw. 1 Monat schwerer Vorfall) | CSIRT (24h/72h/1 Monat) |
 
 ## 1.14.3 Entscheidungsbaum: Welche Regulierung gilt?
 
@@ -47,10 +47,10 @@ Ist BAUER GROUP eine wesentliche oder wichtige Einrichtung?
 
 | Anforderung | CRA | NIS2 |
 |-------------|-----|------|
-| Schwachstellen identifizieren | Art. 10 Abs. 6, Annex I Teil II | Art. 21 Abs. 2 (e) |
-| Schwachstellen beheben | Art. 10 Abs. 6-7 | Art. 21 Abs. 2 (e) |
-| Koordinierte Offenlegung | Art. 10 Abs. 9, Art. 13 Abs. 6 | Art. 12 |
-| SBOM führen | Art. 13 Abs. 23 | Nicht explizit (Lieferkette) |
+| Schwachstellen identifizieren | Annex I Teil II (1) | Art. 21 Abs. 2 (e) |
+| Schwachstellen beheben | Annex I Teil II (1)-(2) | Art. 21 Abs. 2 (e) |
+| Koordinierte Offenlegung | Annex I Teil II (5) | Art. 12 |
+| SBOM führen | Annex I Teil II (1) | Nicht explizit (Lieferkette) |
 
 → **Synergie:** CRA-konforme Schwachstellenbehandlung erfüllt weitgehend auch NIS2 Art. 21 Abs. 2 (e).
 
@@ -61,7 +61,7 @@ Ist BAUER GROUP eine wesentliche oder wichtige Einrichtung?
 | **Auslöser** | Aktiv ausgenutzte Schwachstelle oder schwerwiegender Vorfall | Erheblicher Sicherheitsvorfall |
 | **Frühwarnung** | 24 Stunden | 24 Stunden |
 | **Meldung** | 72 Stunden | 72 Stunden |
-| **Abschluss** | 14 Tage | 1 Monat |
+| **Abschluss** | 14 Tage bei Schwachstellen (nach Verfügbarkeit einer Korrekturmaßnahme), 1 Monat bei schweren Vorfällen (nach der 72h-Meldung) | 1 Monat |
 | **Meldestelle** | ENISA + nationale CSIRT | Nationale CSIRT/Behörde |
 | **Plattform** | ENISA Single Reporting Platform | Nationale Meldeplattform |
 
@@ -75,7 +75,7 @@ Wenn BAUER GROUP sowohl als CRA-Hersteller als auch als NIS2-Einrichtung betroff
 
 | Anforderung | CRA | NIS2 |
 |-------------|-----|------|
-| Lieferkettensicherheit | Art. 10 Abs. 4, Annex I Teil II Nr. 1 | Art. 21 Abs. 2 (d) |
+| Lieferkettensicherheit | Art. 13 Abs. 5, Annex I Teil II (1) | Art. 21 Abs. 2 (d) |
 | Due Diligence Lieferanten | Annex I Teil II Nr. 1 | Art. 21 Abs. 2 (d) |
 | Drittanbieter-Bewertung | [Third-Party Assessment](/de/supply-chain/third-party-assessment) | Lieferantenbewertung |
 
@@ -85,7 +85,7 @@ Wenn BAUER GROUP sowohl als CRA-Hersteller als auch als NIS2-Einrichtung betroff
 
 | Anforderung | CRA | NIS2 |
 |-------------|-----|------|
-| Incident-Response-Plan | Implizit (Art. 10) | Art. 21 Abs. 2 (b) |
+| Incident-Response-Plan | Implizit (Art. 13) | Art. 21 Abs. 2 (b) |
 | Business Continuity | Nicht explizit | Art. 21 Abs. 2 (c) |
 | Krisenmanagement | Nicht explizit | Art. 21 Abs. 2 (c) |
 

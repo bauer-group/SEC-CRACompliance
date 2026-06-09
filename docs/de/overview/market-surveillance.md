@@ -50,7 +50,7 @@ Behörden können:
 
 ## 1.10.4 Verfahren
 
-### Art. 53 – Korrekturmaßnahmen auf nationaler Ebene
+### Art. 54 – Korrekturmaßnahmen auf nationaler Ebene
 
 ```
 Behörde stellt Nicht-Konformität fest
@@ -67,7 +67,7 @@ Behörde stellt Nicht-Konformität fest
     └── Bei ernster Gefahr → Sofortmaßnahmen (ohne Frist)
 ```
 
-### Art. 54 – Schutzklauselverfahren (EU-weit)
+### Art. 55 – Schutzklauselverfahren (EU-weit)
 
 Wenn ein Mitgliedstaat Maßnahmen ergreift und andere Mitgliedstaaten betroffen sind:
 
@@ -76,7 +76,7 @@ Wenn ein Mitgliedstaat Maßnahmen ergreift und andere Mitgliedstaaten betroffen 
 3. Bei Bestätigung: Alle Mitgliedstaaten ergreifen gleiche Maßnahmen
 4. Bei Ablehnung: Mitgliedstaat muss Maßnahme aufheben
 
-### Art. 55 – Konforme Produkte mit Risiko
+### Art. 57 – Konforme Produkte mit Risiko
 
 Auch ein **konformes** Produkt kann ein Risiko darstellen (z.B. neue Bedrohungslage). In diesem Fall:
 
@@ -84,7 +84,7 @@ Auch ein **konformes** Produkt kann ein Risiko darstellen (z.B. neue Bedrohungsl
 - Hersteller muss Abhilfe schaffen (Patch, Warnung, Rückruf)
 - Kommission kann Implementing Acts erlassen
 
-### Art. 56 – Formale Nicht-Konformität
+### Art. 58 – Formale Nicht-Konformität
 
 Formale Verstöße (ohne inhaltliches Risiko):
 

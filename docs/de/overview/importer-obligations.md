@@ -1,11 +1,11 @@
-# 1.4 Importeur-Pflichten (Art. 15)
+# 1.4 Importeur-Pflichten (Art. 19)
 
 ## 1.4.1 Übersicht
 
 Importeure sind Wirtschaftsakteure, die ein Produkt mit digitalen Elementen eines Drittlands-Herstellers (außerhalb der EU) auf dem Unionsmarkt in Verkehr bringen. Der CRA legt ihnen spezifische Sorgfaltspflichten auf, um sicherzustellen, dass nur konforme Produkte den EU-Markt erreichen.
 
 ::: info RECHTSGRUNDLAGE
-**Art. 15 CRA:** Der Importeur bringt nur Produkte in Verkehr, die die wesentlichen Anforderungen aus Annex I erfüllen und deren Hersteller die Konformitätsbewertung ordnungsgemäß durchgeführt hat.
+**Art. 19 CRA:** Der Importeur bringt nur Produkte in Verkehr, die die wesentlichen Anforderungen aus Annex I erfüllen und deren Hersteller die Konformitätsbewertung ordnungsgemäß durchgeführt hat.
 
 **Art. 3 Nr. 21 CRA:** *„Importeur" ist jede in der Union ansässige natürliche oder juristische Person, die ein Produkt mit digitalen Elementen, das den Namen oder die Handelsmarke einer außerhalb der Union ansässigen Person trägt, in Verkehr bringt.*
 :::
@@ -19,12 +19,12 @@ BAUER GROUP agiert als Importeur, wenn:
 - Ein SaaS-Produkt eines Drittlands als On-Premise-Software in der EU vertrieben wird
 
 ::: warning ABGRENZUNG
-Wenn BAUER GROUP ein Drittlands-Produkt unter **eigenem Namen oder Marke** in Verkehr bringt, gilt BAUER GROUP als **Hersteller** (nicht als Importeur) und unterliegt den vollen Herstellerpflichten nach Art. 10.
+Wenn BAUER GROUP ein Drittlands-Produkt unter **eigenem Namen oder Marke** in Verkehr bringt, gilt BAUER GROUP als **Hersteller** (nicht als Importeur) und unterliegt den vollen Herstellerpflichten nach Art. 13.
 :::
 
 ## 1.4.3 Pflichten im Detail
 
-### 1. Konformitätsprüfung vor Inverkehrbringen (Art. 15 Abs. 1)
+### 1. Konformitätsprüfung vor Inverkehrbringen (Art. 19 Abs. 1)
 
 Vor dem Inverkehrbringen muss der Importeur sicherstellen:
 
@@ -35,7 +35,7 @@ Vor dem Inverkehrbringen muss der Importeur sicherstellen:
 - [ ] Hersteller hat Kontaktdaten am Produkt / in der Dokumentation angegeben
 - [ ] Produkt hat eine **eindeutige Identifikation** (Typ, Charge, Seriennummer)
 
-### 2. Eigene Kennzeichnung (Art. 15 Abs. 2)
+### 2. Eigene Kennzeichnung (Art. 19 Abs. 2)
 
 Der Importeur muss am Produkt oder der Verpackung angeben:
 
@@ -44,7 +44,7 @@ Der Importeur muss am Produkt oder der Verpackung angeben:
 
 Bei Software: In der Dokumentation, der Benutzeroberfläche oder dem Repository.
 
-### 3. Lagerungs- und Transportbedingungen (Art. 15 Abs. 3)
+### 3. Lagerungs- und Transportbedingungen (Art. 19 Abs. 3)
 
 Sicherstellen, dass Lagerung und Transport die Konformität nicht beeinträchtigen:
 
@@ -52,7 +52,7 @@ Sicherstellen, dass Lagerung und Transport die Konformität nicht beeinträchtig
 - Sichere Distributionskanäle (HTTPS, signierte Repositories)
 - Keine Manipulation der Firmware/Software während der Logistikkette
 
-### 4. Marktbeobachtung (Art. 15 Abs. 4)
+### 4. Marktbeobachtung (Art. 19 Abs. 4)
 
 Der Importeur muss:
 
@@ -60,13 +60,13 @@ Der Importeur muss:
 - Bei Verdacht auf Nicht-Konformität: Korrekturmaßnahmen ergreifen oder Vertrieb einstellen
 - Bei ernstem Risiko: Hersteller und Marktüberwachungsbehörden informieren
 
-### 5. Dokumentation (Art. 15 Abs. 5)
+### 5. Dokumentation (Art. 19 Abs. 5)
 
 - **EU-Konformitätserklärung** muss dem Importeur vorliegen (Kopie)
 - **Technische Dokumentation** muss auf Anfrage den Behörden bereitgestellt werden können
 - Aufbewahrungsfrist: **10 Jahre** nach Inverkehrbringen
 
-### 6. Kooperation mit Behörden (Art. 15 Abs. 6)
+### 6. Kooperation mit Behörden (Art. 19 Abs. 6)
 
 Auf Anfrage der Marktüberwachungsbehörden muss der Importeur:
 
@@ -74,7 +74,7 @@ Auf Anfrage der Marktüberwachungsbehörden muss der Importeur:
 - In der Sprache der Behörde (oder einer von der Behörde akzeptierten Sprache)
 - Bei der Beseitigung von Risiken kooperieren
 
-### 7. Meldepflichten (Art. 15 Abs. 7)
+### 7. Meldepflichten (Art. 19 Abs. 7)
 
 Bei Kenntnis einer **aktiv ausgenutzten Schwachstelle** oder eines **schwerwiegenden Sicherheitsvorfalls**:
 
@@ -92,7 +92,7 @@ Bei Kenntnis einer **aktiv ausgenutzten Schwachstelle** oder eines **schwerwiege
 - [ ] Technische Dokumentation verfügbar oder abrufbar
 - [ ] Produktidentifikation vorhanden (Typ, Version, Seriennummer)
 - [ ] Eigene Kontaktdaten am Produkt / in der Dokumentation angebracht
-- [ ] SBOM vom Hersteller erhalten (Art. 13 Abs. 23)
+- [ ] SBOM vom Hersteller erhalten (Annex I Teil II (1))
 - [ ] Support-Zeitraum definiert und kommuniziert
 
 ### Laufend

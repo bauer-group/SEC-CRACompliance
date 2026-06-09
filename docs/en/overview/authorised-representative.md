@@ -1,11 +1,11 @@
-# 1.5 Authorised Representative (Art. 16)
+# 1.5 Authorised Representative (Art. 18)
 
 ## 1.5.1 Overview
 
-Art. 16 CRA allows manufacturers established outside the EU to designate an **Authorised Representative** established in the EU to act on their behalf for certain tasks. The Authorised Representative serves as an interface and documentation point for authorities, but does not replace the manufacturer's substantive responsibility for product design and conformity.
+Art. 18 CRA allows manufacturers established outside the EU to designate an **Authorised Representative** established in the EU to act on their behalf for certain tasks. The Authorised Representative serves as an interface and documentation point for authorities, but does not replace the manufacturer's substantive responsibility for product design and conformity.
 
 ::: info LEGAL BASIS
-**Art. 16 CRA:** *"A manufacturer may, by a written mandate, appoint an authorised representative. The obligations laid down in Art. 13(1) (security requirements for product design) and the drawing up of the technical documentation shall not form part of the mandate."*
+**Art. 18 CRA:** *"A manufacturer may, by a written mandate, appoint an authorised representative. The obligations laid down in Art. 13(1) (security requirements for product design) and the drawing up of the technical documentation shall not form part of the mandate."*
 
 **Art. 3 No. 22 CRA:** *"Authorised representative" means any natural or legal person established in the Union who has received a written mandate from a manufacturer to act on its behalf in relation to specified tasks.*
 :::
@@ -15,14 +15,14 @@ Art. 16 CRA allows manufacturers established outside the EU to designate an **Au
 An Authorised Representative is needed when:
 
 - The **manufacturer is established outside the EU** and places products with digital elements on the EU market
-- No importer pursuant to Art. 15 is present to serve as the interface to EU authorities
+- No importer pursuant to Art. 19 is present to serve as the interface to EU authorities
 - The manufacturer wishes to ensure a formal EU presence for communication with Market Surveillance authorities
 
 ::: warning NOT A SUBSTITUTE FOR AN IMPORTER
-The designation of an Authorised Representative does **not** replace the obligations of the Importer (Art. 15). Where a separate Importer exists, the Importer has its own independent obligations. Where neither an Authorised Representative nor an Importer exists, authorities cannot directly reach the manufacturer in the EU, which may lead to intensified enforcement measures.
+The designation of an Authorised Representative does **not** replace the obligations of the Importer (Art. 19). Where a separate Importer exists, the Importer has its own independent obligations. Where neither an Authorised Representative nor an Importer exists, authorities cannot directly reach the manufacturer in the EU, which may lead to intensified enforcement measures.
 :::
 
-## 1.5.3 Delegable Tasks (Art. 16 Para. 2)
+## 1.5.3 Delegable Tasks (Art. 18 Para. 2)
 
 The Authorised Representative shall perform the tasks specified in the mandate. At a minimum, these include:
 
@@ -100,11 +100,11 @@ Where BAUER GROUP acts as Authorised Representative for a **non-EU partner suppl
 As an Authorised Representative, BAUER GROUP is jointly and severally liable with the manufacturer for certain obligations. Careful contractual safeguards and indemnification are essential.
 :::
 
-## 1.5.7 Relationship to Importer (Art. 15)
+## 1.5.7 Relationship to Importer (Art. 19)
 
 The roles of the Authorised Representative and the Importer are complementary but distinct:
 
-| Aspect | Authorised Representative (Art. 16) | Importer (Art. 15) |
+| Aspect | Authorised Representative (Art. 18) | Importer (Art. 19) |
 |--------|--------------------------------------|---------------------|
 | Appointment | By the manufacturer via mandate | Independent economic operator |
 | Primary function | Documentation + authority contact | Due diligence + placing on the market |
@@ -143,10 +143,10 @@ Where **no Authorised Representative** has been designated, the Importer assumes
 |-----------|---------|
 | Authorised Representative fails to fulfil obligations | Up to EUR 10 million or 2% of global annual turnover |
 | False / incomplete information to authorities | Up to EUR 5 million or 1% of annual turnover |
-| Mandate not available for presentation | Formal non-conformity (Art. 56) |
+| Mandate not available for presentation | Formal non-conformity (Art. 58) |
 
 ## 1.5.10 Cross-References
 
-- [Importer Obligations (Art. 15)](/en/overview/importer-obligations)
+- [Importer Obligations (Art. 19)](/en/overview/importer-obligations)
 - [EU Declaration of Conformity](/en/conformity/eu-declaration)
 - [Market Surveillance (Art. 52-58)](/en/overview/market-surveillance)

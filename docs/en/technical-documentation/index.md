@@ -35,7 +35,7 @@ The Technical Documentation pursuant to Annex VII CRA constitutes the central ev
 
 ## Retention Obligation
 
-**Art. 10(13) CRA:** The Technical Documentation shall be retained for **10 years** after the product is placed on the market or for the duration of the Support Period — whichever period is longer.
+**Art. 13(13) CRA:** The Technical Documentation shall be retained for **10 years** after the product is placed on the market or for the duration of the Support Period — whichever period is longer.
 
 | Documentation Type | Storage Location | Retention Period |
 |--------------------|------------------|------------------|

@@ -40,7 +40,7 @@ CRA 的 Annex VII 定义了每个制造商必须创建并保留10年的技术文
 
 ## 6.6.4 要求3 — 网络安全风险评估
 
-**Annex VII 第3项：** 根据 Art. 10(2) 进行的网络安全风险评估 (Cybersecurity Risk Assessment)，包括：
+**Annex VII 第3项：** 根据 Art. 13(3) 进行的网络安全风险评估 (Cybersecurity Risk Assessment)，包括：
 
 | 要素 | 描述 | 文档位置 |
 |------|------|----------|

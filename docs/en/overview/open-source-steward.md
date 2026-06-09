@@ -1,4 +1,4 @@
-# 1.7 Open-Source Steward (Art. 18–19)
+# 1.7 Open-Source Steward (Art. 24–25)
 
 ## 1.7.1 Overview
 
@@ -7,9 +7,9 @@ The CRA introduces the new role of the **Open Source Software Steward**. This co
 ::: info LEGAL BASIS
 **Art. 3 No. 16 CRA:** *"Open-source software steward" means any legal person, other than a manufacturer, who has the purpose of systematically providing support on a sustained basis for the development of specific products with digital elements qualifying as free and open-source software that are intended for commercial activities, and ensures the viability of those products.*
 
-**Art. 18 CRA:** Obligations of the open-source software steward.
+**Art. 24 CRA:** Obligations of the open-source software steward.
 
-**Art. 19 CRA:** Security attestation for free and open-source software.
+**Art. 25 CRA:** Security attestation for free and open-source software.
 :::
 
 ## 1.7.2 When Does the OSS Steward Role Apply?
@@ -43,29 +43,29 @@ The CRA introduces the new role of the **Open Source Software Steward**. This co
 Based on current knowledge, BAUER GROUP primarily acts as a **Manufacturer** (own code) and **user** (OSS dependencies). The OSS steward role is currently **not applicable**, but must be reviewed for new OSS engagements.
 :::
 
-## 1.7.3 Obligations of the OSS Steward (Art. 18)
+## 1.7.3 Obligations of the OSS Steward (Art. 24)
 
 Even though the steward role is less comprehensive than that of the Manufacturer, the following obligations apply:
 
-### 1. Cybersecurity Policy (Art. 18 Para. 1)
+### 1. Cybersecurity Policy (Art. 24 Para. 1)
 
 - Establish and implement a documented cybersecurity policy
 - Promote cooperation with Market Surveillance authorities
 - Support secure development of the software
 
-### 2. Vulnerability Handling (Art. 18 Para. 1)
+### 2. Vulnerability Handling (Art. 24 Para. 1)
 
 - Voluntary reporting of actively exploited vulnerabilities to ENISA and national CSIRTs
 - Facilitate coordinated vulnerability disclosure (CVD)
 - Provide a contact point for vulnerability reports (SECURITY.md or similar)
 
-### 3. Cooperation with Authorities (Art. 18 Para. 2)
+### 3. Cooperation with Authorities (Art. 24 Para. 2)
 
 - Upon request: provide documentation
 - Assist in eliminating security risks
 - Share information about vulnerabilities
 
-### 4. Security Attestation (Art. 19)
+### 4. Security Attestation (Art. 25)
 
 Open-source software stewards may initiate a **voluntary security attestation**:
 
@@ -80,8 +80,8 @@ Open-source software stewards may initiate a **voluntary security attestation**:
 | **OSS user** (as dependency) | Manufacturer of own product | Full manufacturer obligations for the overall product |
 | **OSS contributor** | No CRA role | No direct CRA obligations |
 | **OSS maintainer** (natural person) | Not a steward (legal person required) | No direct CRA obligations |
-| **OSS steward** (organisation) | Art. 18-19 obligations | Limited obligations (see above) |
-| **Manufacturer of OSS** (commercial) | Full Manufacturer (Art. 10) | Full manufacturer obligations |
+| **OSS steward** (organisation) | Art. 24-25 obligations | Limited obligations (see above) |
+| **Manufacturer of OSS** (commercial) | Full Manufacturer (Art. 13) | Full manufacturer obligations |
 
 ## 1.7.5 Impact on the Supply Chain
 
@@ -102,12 +102,12 @@ OSS stewards are subject to **reduced penalties** compared to manufacturers:
 
 | Violation | Maximum Penalty |
 |-----------|-----------------|
-| Non-fulfilment of Art. 18 obligations | Up to EUR 5 million or 1% of annual turnover |
+| Non-fulfilment of Art. 24 obligations | Up to EUR 5 million or 1% of annual turnover |
 
 *The Commission takes into account the special role and non-commercial character of the steward activity when determining penalties.*
 
 ## 1.7.7 Relevant Developments
 
-- The EU Commission will adopt **implementing acts** that further specify the security attestation (Art. 19)
+- The EU Commission will adopt **implementing acts** that further specify the security attestation (Art. 25)
 - Harmonised standards for OSS stewards are under development
 - The precise delineation will be further clarified through practice and case law

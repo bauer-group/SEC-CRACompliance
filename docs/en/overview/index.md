@@ -86,12 +86,12 @@ Detailed product categories and exemptions: see [1.1 Scope & Products](./scope).
 | **1.1** | [Scope & Products](./scope) |
 | **1.2** | [Roles & Responsibilities](./responsibilities) |
 | **1.3** | [Deadlines & Timelines](./timeline) |
-| **1.4** | [Importer Obligations (Art. 15)](./importer-obligations) |
-| **1.5** | [Authorised Representative (Art. 16)](./authorised-representative) |
-| **1.6** | [Distributor Obligations (Art. 17)](./distributor-obligations) |
-| **1.7** | [Open-Source Steward (Art. 18–19)](./open-source-steward) |
-| **1.8** | [Substantial Modifications (Art. 20)](./substantial-modifications) |
-| **1.9** | [Non-Conformity (Art. 22–23)](./non-conformity) |
+| **1.4** | [Importer Obligations (Art. 19)](./importer-obligations) |
+| **1.5** | [Authorised Representative (Art. 18)](./authorised-representative) |
+| **1.6** | [Distributor Obligations (Art. 20)](./distributor-obligations) |
+| **1.7** | [Open-Source Steward (Art. 24–25)](./open-source-steward) |
+| **1.8** | [Substantial Modifications (Art. 22)](./substantial-modifications) |
+| **1.9** | [Non-Conformity (Art. 54, 58)](./non-conformity) |
 | **1.10** | [Market Surveillance (Art. 52–58)](./market-surveillance) |
 | **1.11** | [Penalties (Art. 64)](./penalties) |
 | **1.12** | [Harmonised Standards (Art. 5–6)](./harmonised-standards) |
@@ -104,13 +104,13 @@ This handbook is structured according to the core processes of the CRA. Each cha
 
 | Chapter | Topic | CRA Reference |
 |---------|-------|---------------|
-| **Ch. 1** | Overview, Scope, Roles, Deadlines | Art. 2, 3, 10, 13, 14, 16 |
-| **Ch. 2** | [SBOM & Signing](/en/sbom-signing/) | Art. 13(23), Art. 10(12), Annex I Part I No. 3, Part II No. 1 |
-| **Ch. 3** | [Vulnerability Management](/en/vulnerability-management/) | Art. 10(6), Annex I Part II No. 2-8 |
+| **Ch. 1** | Overview, Scope, Roles, Deadlines | Art. 2, 3, 13, 14, 18, 19 |
+| **Ch. 2** | [SBOM & Signing](/en/sbom-signing/) | Annex I Part II (1), Annex I Part II (7), Annex I Part I No. 3 |
+| **Ch. 3** | [Vulnerability Management](/en/vulnerability-management/) | Annex I Part II (1), Annex I Part II No. 2-8 |
 | **Ch. 4** | [Incident Response & Disclosure](/en/incident-response/) | Art. 13(6), Art. 14 |
-| **Ch. 5** | [Supply Chain Security](/en/supply-chain/) | Art. 10(4), Annex I Part II No. 1 |
+| **Ch. 5** | [Supply Chain Security](/en/supply-chain/) | Art. 13(5), Annex I Part II No. 1 |
 | **Ch. 6** | [Technical Documentation](/en/technical-documentation/) | Art. 31, Annex VII |
-| **Ch. 7** | [Conformity Assessment](/en/conformity/) | Art. 24-28, Annex V, VIII |
+| **Ch. 7** | [Conformity Assessment](/en/conformity/) | Art. 27-32, Annex V, VIII |
 | **Ch. 8** | [Compliance Matrix](/en/compliance-matrix/) | Complete requirements mapping |
 | **Appendix** | [Templates](/en/templates/) | ENISA notifications, EU DoC, Reports |
 
@@ -164,4 +164,4 @@ BAUER GROUP relies on a fully automated toolchain to ensure CRA conformity witho
 | **Support period** | Period during which the manufacturer is obligated to ensure vulnerability handling, at least 5 years | Art. 13(8) |
 | **Conformity assessment** | Procedure for verifying whether the essential requirements have been met | Art. 3(30) |
 | **CE marking** | Marking by which the manufacturer declares that the product complies with the applicable EU requirements | Art. 29 |
-| **Authorised representative** | Natural or legal person established in the EU who has been authorised in writing by the manufacturer to act on their behalf for certain tasks | Art. 3(15), Art. 16 |
+| **Authorised representative** | Natural or legal person established in the EU who has been authorised in writing by the manufacturer to act on their behalf for certain tasks | Art. 3(15), Art. 18 |

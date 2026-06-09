@@ -7,7 +7,7 @@ Der Update-Mechanismus stellt sicher, dass Sicherheitsupdates sicher, authentisc
 ::: info RECHTSGRUNDLAGE
 **Annex I, Teil II, Nr. 7:** *„Der Hersteller stellt sicher, dass Sicherheitsupdates den Nutzern unverzüglich und kostenlos zur Verfügung gestellt werden."*
 
-**Art. 10 Abs. 12 CRA:** Die Integrität von Sicherheitsupdates muss gewährleistet sein, insbesondere bei automatischer Installation.
+**Annex I Teil II (7) CRA:** Die Integrität von Sicherheitsupdates muss gewährleistet sein, insbesondere bei automatischer Installation.
 :::
 
 ## 6.3.2 Update-Kanäle
@@ -89,7 +89,7 @@ Jedes Update wird durch folgende Mechanismen geschützt:
 
 ## 6.3.4 Kostenlose Bereitstellung
 
-Gemäß Art. 10 Abs. 7 CRA werden alle Sicherheitsupdates **kostenlos** bereitgestellt:
+Gemäß Annex I Teil II (2) CRA werden alle Sicherheitsupdates **kostenlos** bereitgestellt:
 
 - Container-Images über öffentliche Registries (GHCR)
 - Firmware über GitHub Releases (öffentlicher Download)

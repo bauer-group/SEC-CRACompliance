@@ -2,7 +2,7 @@
 
 ## 2.2.1 CycloneDX JSON
 
-We use **CycloneDX** as the primary SBOM format. CycloneDX is an OWASP standard and fulfils the CRA requirement for a "commonly used and machine-readable format" (Art. 13(23)).
+We use **CycloneDX** as the primary SBOM format. CycloneDX is an OWASP standard and fulfils the CRA requirement for a "commonly used and machine-readable format" (Annex I Part II (1)).
 
 ### Why CycloneDX
 

@@ -50,7 +50,7 @@ Authorities may:
 
 ## 1.10.4 Procedures
 
-### Art. 53 -- Corrective Measures at National Level
+### Art. 54 -- Corrective Measures at National Level
 
 ```
 Authority determines non-conformity
@@ -67,7 +67,7 @@ Authority determines non-conformity
     +-- In case of serious danger --> Immediate measures (without deadline)
 ```
 
-### Art. 54 -- Safeguard Clause Procedure (EU-wide)
+### Art. 55 -- Safeguard Clause Procedure (EU-wide)
 
 When a Member State takes measures and other Member States are affected:
 
@@ -76,7 +76,7 @@ When a Member State takes measures and other Member States are affected:
 3. If confirmed: All Member States take the same measures
 4. If rejected: Member State must lift the measure
 
-### Art. 55 -- Compliant Products Posing a Risk
+### Art. 57 -- Compliant Products Posing a Risk
 
 Even a **compliant** product can pose a risk (e.g., new threat landscape). In this case:
 
@@ -84,7 +84,7 @@ Even a **compliant** product can pose a risk (e.g., new threat landscape). In th
 - Manufacturer must provide a remedy (patch, warning, recall)
 - Commission may adopt implementing acts
 
-### Art. 56 -- Formal Non-Conformity
+### Art. 58 -- Formal Non-Conformity
 
 Formal violations (without substantive risk):
 

@@ -142,7 +142,7 @@ CE 标志**仅**在存在有效的 EU 符合性声明时方可加贴。反之，
 
 ## 7.7.9 市场监督与缺失的 CE 标志
 
-### Art. 56 — 形式不合规
+### Art. 58 — 形式不合规
 
 缺失、有缺陷或具有误导性的 CE 标志构成**形式不合规 (Formal Non-Conformity)**：
 
@@ -241,4 +241,4 @@ CE 标志**仅**在存在有效的 EU 符合性声明时方可加贴。反之，
 - [全面质量保证（Module H）](/zh/conformity/module-h)
 - [产品分类](/zh/conformity/product-classification)
 - [市场监督（Art. 52-58）](/zh/overview/market-surveillance)
-- [进口商义务（Art. 15）](/zh/overview/importer-obligations)
+- [进口商义务（Art. 19）](/zh/overview/importer-obligations)

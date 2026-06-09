@@ -5,7 +5,7 @@
 Securing the software supply chain is a core CRA requirement. Manufacturers must exercise due diligence when integrating third-party components and ensure the integrity of the entire supply chain.
 
 ::: info LEGAL BASIS
-**Art. 10(4) CRA:** *"The manufacturer shall exercise due diligence when integrating components sourced from third parties, to ensure that those components do not compromise the security of the product."*
+**Art. 13(5) CRA:** *"The manufacturer shall exercise due diligence when integrating components sourced from third parties, to ensure that those components do not compromise the security of the product."*
 
 **Annex I, Part II, No. 1:** *"The manufacturer shall identify and document the vulnerabilities and components contained in the product, including by drawing up a software bill of materials."*
 :::
@@ -31,7 +31,7 @@ Securing the software supply chain is a core CRA requirement. Manufacturers must
 | **5.1** | [Dependency Policy](/en/supply-chain/dependency-policy) | Policies for dependencies |
 | **5.2** | [Base Image Policy](/en/supply-chain/base-image-policy) | Docker base image management |
 | **5.3** | [Third-Party Assessment](/en/supply-chain/third-party-assessment) | Assessment of third-party components |
-| **5.4** | [Economic Operator Identification (Art. 21)](/en/supply-chain/economic-operator-identification) | Supply chain traceability |
+| **5.4** | [Economic Operator Identification (Art. 23)](/en/supply-chain/economic-operator-identification) | Supply chain traceability |
 
 ::: tip NIS2 Synergy
 IT service provider and infrastructure vendor assessment is described in the [NIS2 Compliance Documentation](https://nis2.docs.bauer-group.com/en/supply-chain/). CRA focuses on software supply chain, NIS2 on service provider assessment.

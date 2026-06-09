@@ -61,12 +61,12 @@ Build-Artefakte werden als GitHub Actions Artifacts gespeichert (90 Tage Retenti
 
 | Speicherort | Aufbewahrungsdauer | Begründung |
 |-------------|-------------------|------------|
-| GitHub Release-Assets | **Unbegrenzt** (Lebenszeit des Repos) | Regulatorischer Nachweis (Art. 10 Abs. 13 CRA: 10 Jahre oder Lebensdauer des Produkts, je nachdem, was länger ist) |
-| Compliance-Repo (sbom/) | **10 Jahre** nach letzter Produktbereitstellung | Art. 10 Abs. 13 CRA |
+| GitHub Release-Assets | **Unbegrenzt** (Lebenszeit des Repos) | Regulatorischer Nachweis (Art. 13 Abs. 13 CRA: 10 Jahre oder Lebensdauer des Produkts, je nachdem, was länger ist) |
+| Compliance-Repo (sbom/) | **10 Jahre** nach letzter Produktbereitstellung | Art. 13 Abs. 13 CRA |
 | GitHub Actions Artifacts | **90 Tage** | Debugging und Analyse |
 
 ::: danger AUFBEWAHRUNGSFRIST
-**Art. 10 Abs. 13 CRA:** Die technische Dokumentation und die EU-Konformitätserklärung sind **10 Jahre** nach Inverkehrbringen des Produkts oder für die Dauer des Support-Zeitraums aufzubewahren – je nachdem, welcher Zeitraum länger ist.
+**Art. 13 Abs. 13 CRA:** Die technische Dokumentation und die EU-Konformitätserklärung sind **10 Jahre** nach Inverkehrbringen des Produkts oder für die Dauer des Support-Zeitraums aufzubewahren – je nachdem, welcher Zeitraum länger ist.
 
 SBOMs als Teil der technischen Dokumentation unterliegen dieser Aufbewahrungsfrist.
 :::
@@ -92,7 +92,7 @@ cosign verify-blob --key cosign.pub --signature sbom.cdx.json.sig sbom.cdx.json
 
 ### Für Regulierer / Marktaufsichtsbehörden
 
-SBOMs werden auf Anfrage bereitgestellt (Art. 13 Abs. 23 CRA):
+SBOMs werden auf Anfrage bereitgestellt (Annex I Teil II (1) CRA):
 
 - Zugang über GitHub Release-Assets (bei Public Repos)
 - Direkter Download-Link

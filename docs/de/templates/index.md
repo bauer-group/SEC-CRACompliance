@@ -34,7 +34,7 @@ Die ENISA-Meldevorlagen sind ab dem **11. September 2026** operativ einzusetzen 
 
 | Vorlage | CRA-Referenz | Verwendung | Frequenz |
 |---------|-------------|------------|----------|
-| [Risikobewertung](/de/templates/risk-assessment) | Art. 10 Abs. 2, Annex VII Nr. 2 | Cybersecurity-Risikobewertung pro Produkt | Vor Inverkehrbringen + bei wesentlichen Änderungen |
+| [Risikobewertung](/de/templates/risk-assessment) | Art. 13 Abs. 3, Annex VII Nr. 2 | Cybersecurity-Risikobewertung pro Produkt | Vor Inverkehrbringen + bei wesentlichen Änderungen |
 | [EU-Konformitätserklärung](/de/templates/eu-declaration-of-conformity) | Art. 28, Annex V | Formale Konformitätserklärung pro Produkt | Vor Inverkehrbringen + bei neuen Versionen |
 | [Nutzerinformation](/de/templates/product-security-info) | Annex II | Sicherheitshinweise für Endnutzer | Pro Produkt, aktualisiert bei Versionsänderungen |
 

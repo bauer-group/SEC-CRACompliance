@@ -1,13 +1,13 @@
-# 1.8 Wesentliche Änderungen (Art. 20)
+# 1.8 Wesentliche Änderungen (Art. 22)
 
 ## 1.8.1 Übersicht
 
-Eine **wesentliche Änderung** (substantial modification) an einem Produkt mit digitalen Elementen kann dazu führen, dass die Person, die die Änderung vornimmt, als neuer **Hersteller** gilt und damit die vollen Herstellerpflichten nach Art. 10 übernehmen muss. Art. 20 CRA definiert, wann eine Änderung als „wesentlich" gilt und welche Konsequenzen daraus folgen.
+Eine **wesentliche Änderung** (substantial modification) an einem Produkt mit digitalen Elementen kann dazu führen, dass die Person, die die Änderung vornimmt, als neuer **Hersteller** gilt und damit die vollen Herstellerpflichten nach Art. 13 übernehmen muss. Art. 22 CRA definiert, wann eine Änderung als „wesentlich" gilt und welche Konsequenzen daraus folgen.
 
 ::: info RECHTSGRUNDLAGE
-**Art. 20 CRA:** *Jede natürliche oder juristische Person, die eine wesentliche Änderung an einem bereits in Verkehr gebrachten Produkt mit digitalen Elementen vornimmt, gilt als Hersteller im Sinne dieser Verordnung.*
+**Art. 22 CRA:** *Jede natürliche oder juristische Person, die eine wesentliche Änderung an einem bereits in Verkehr gebrachten Produkt mit digitalen Elementen vornimmt, gilt als Hersteller im Sinne dieser Verordnung.*
 
-**Art. 3 Nr. 31 CRA:** Definition der wesentlichen Änderung.
+**Art. 3 Nr. 30 CRA:** Definition der wesentlichen Änderung.
 :::
 
 ## 1.8.2 Definition: Wesentliche Änderung
@@ -56,7 +56,7 @@ Wurde das Produkt nach dem Inverkehrbringen verändert?
 
 Wer eine wesentliche Änderung vornimmt, muss:
 
-### 1. Herstellerpflichten übernehmen (Art. 10)
+### 1. Herstellerpflichten übernehmen (Art. 13)
 
 - Cybersecurity-Risikobewertung durchführen (für den geänderten Teil)
 - Technische Dokumentation erstellen/aktualisieren (Annex VII)
@@ -79,8 +79,8 @@ Wer eine wesentliche Änderung vornimmt, muss:
 
 ### 4. ENISA-Meldepflichten
 
-- Schwachstellen im geänderten Produkt melden (Art. 14)
-- 24h/72h/14d Fristen einhalten
+- Aktiv ausgenutzte Schwachstellen und schwere Vorfälle im geänderten Produkt melden (Art. 14)
+- Meldefristen einhalten: Frühwarnung 24h, Meldung 72h sowie Abschlussbericht 14 Tage (bei Schwachstellen) bzw. 1 Monat (bei schweren Vorfällen)
 
 ## 1.8.6 Prozess bei BAUER GROUP
 

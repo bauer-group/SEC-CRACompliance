@@ -32,10 +32,10 @@ jobs:
 
 | 步骤 | 操作 | 制品 | CRA 参考 |
 |------|------|------|---------|
-| 1 | SBOM 生成 | `sbom.cdx.json` | Art. 13(23) |
-| 2 | SBOM 签名 (Cosign) | `.sig` + `.cert` | Art. 10(12) |
-| 3 | SBOM 认证 | GitHub Attestation | Art. 10(12) |
-| 4 | 漏洞扫描 | `vulnerability-report.json` | Art. 10(6) |
+| 1 | SBOM 生成 | `sbom.cdx.json` | Annex I, 第II部分, 编号 1 |
+| 2 | SBOM 签名 (Cosign) | `.sig` + `.cert` | Annex I, 第II部分, 编号 7 |
+| 3 | SBOM 认证 | GitHub Attestation | Annex I, 第II部分, 编号 7 |
+| 4 | 漏洞扫描 | `vulnerability-report.json` | Annex I, 第II部分, 编号 1 |
 | 5 | VEX 生成 | `vex.openvex.json` | Annex I II.2 |
 | 6 | 合规报告 | `.json` + `.md` | Annex VII |
 
@@ -45,7 +45,7 @@ jobs:
 
 ### `cra-scan.yml` — 定期漏洞扫描
 
-用于持续 CVE 监控（Art. 10(8)）。通过 cron 计划每日运行。
+用于持续 CVE 监控（Annex I, 第I部分, 编号 2(a)）。通过 cron 计划每日运行。
 
 ### `cra-report.yml` — Hub API 报告
 
@@ -165,9 +165,9 @@ jobs:
 
 | 制品 | 格式 | 用途 | CRA 参考 |
 |------|------|------|---------|
-| `sbom.cdx.json` | CycloneDX JSON | 软件物料清单 | Art. 13(23) |
-| `sbom.cdx.json.sig` | Cosign 签名 | SBOM 完整性 | Art. 10(12) |
-| `vulnerability-report.json` | Trivy JSON | 已知漏洞 | Art. 10(6) |
+| `sbom.cdx.json` | CycloneDX JSON | 软件物料清单 | Annex I, 第II部分, 编号 1 |
+| `sbom.cdx.json.sig` | Cosign 签名 | SBOM 完整性 | Annex I, 第II部分, 编号 7 |
+| `vulnerability-report.json` | Trivy JSON | 已知漏洞 | Annex I, 第II部分, 编号 1 |
 | `vex.openvex.json` | OpenVEX v0.2.0 | 漏洞可利用性 | Annex I II.2 |
 | `cra-compliance-report.json` | Schema v1.0.0 | 机器可读合规状态 | Annex VII |
 | `eu-doc.json` | EU DoC Schema v1.0.0 | 机器可读 EU 符合性声明 | Art. 28, Annex V |

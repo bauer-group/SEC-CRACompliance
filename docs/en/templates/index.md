@@ -34,7 +34,7 @@ The ENISA notification templates are to be used operationally from **11 Septembe
 
 | Template | CRA Reference | Usage | Frequency |
 |----------|---------------|-------|-----------|
-| [Risk Assessment](/en/templates/risk-assessment) | Art. 10(2), Annex VII No. 2 | Cybersecurity Risk Assessment per product | Before placing on the market + upon substantial changes |
+| [Risk Assessment](/en/templates/risk-assessment) | Art. 13(3), Annex VII No. 2 | Cybersecurity Risk Assessment per product | Before placing on the market + upon substantial changes |
 | [EU Declaration of Conformity](/en/templates/eu-declaration-of-conformity) | Art. 28, Annex V | Formal Declaration of Conformity per product | Before placing on the market + upon new versions |
 | [Product Security Information](/en/templates/product-security-info) | Annex II | Security information for end users | Per product, updated upon version changes |
 

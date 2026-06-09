@@ -34,7 +34,7 @@ ENISA 通知模板自 **2026年9月11日** 起投入运营使用（-> [5.3 ENISA
 
 | 模板 | CRA 参考 | 用途 | 频率 |
 |----------|---------------|-------|-----------|
-| [风险评估](/zh/templates/risk-assessment) | Art. 10(2), Annex VII 编号 2 | 每个产品的网络安全风险评估 | 投放市场前 + 发生重大变更时 |
+| [风险评估](/zh/templates/risk-assessment) | Art. 13(3), Annex VII 编号 2 | 每个产品的网络安全风险评估 | 投放市场前 + 发生重大变更时 |
 | [欧盟合规声明](/zh/templates/eu-declaration-of-conformity) | Art. 28, Annex V | 每个产品的正式合规声明 | 投放市场前 + 发布新版本时 |
 | [产品安全信息](/zh/templates/product-security-info) | Annex II | 面向最终用户的安全信息 | 每个产品，版本变更时更新 |
 

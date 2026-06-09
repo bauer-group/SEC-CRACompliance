@@ -142,7 +142,7 @@ Die CE-Kennzeichnung darf **nur** angebracht werden, wenn eine gültige EU-Konfo
 
 ## 7.7.9 Marktüberwachung und fehlende CE-Kennzeichnung
 
-### Art. 56 -- Formale Nicht-Konformität
+### Art. 58 -- Formale Nicht-Konformität
 
 Eine fehlende, fehlerhafte oder irreführende CE-Kennzeichnung stellt eine **formale Nicht-Konformität** dar:
 
@@ -241,4 +241,4 @@ Behörde stellt formale Nicht-Konformität fest
 - [Umfassende Qualitätssicherung (Modul H)](/de/conformity/module-h)
 - [Produktklassifizierung](/de/conformity/product-classification)
 - [Marktüberwachung (Art. 52-58)](/de/overview/market-surveillance)
-- [Pflichten der Importeure (Art. 15)](/de/overview/importer-obligations)
+- [Pflichten der Importeure (Art. 19)](/de/overview/importer-obligations)

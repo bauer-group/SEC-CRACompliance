@@ -76,13 +76,13 @@ jobs:
 
 | Step | Action | Artifact | CRA Reference |
 |------|--------|----------|---------------|
-| 1 | SBOM Generation | `sbom.cdx.json` | Art. 13(23) |
-| 2 | SBOM Signing (Cosign) | `.sig` + `.cert` | Art. 10(12) |
-| 3 | SBOM Attestation | GitHub Attestation | Art. 10(12) |
-| 4 | Vulnerability Scan | `vulnerability-report.json` | Art. 10(6) |
+| 1 | SBOM Generation | `sbom.cdx.json` | Annex I Part II (1) |
+| 2 | SBOM Signing (Cosign) | `.sig` + `.cert` | Annex I Part II (7) |
+| 3 | SBOM Attestation | GitHub Attestation | Annex I Part II (7) |
+| 4 | Vulnerability Scan | `vulnerability-report.json` | Annex I Part II (1) |
 | 5 | VEX Generation | `vex.openvex.json` | Annex I II.2 |
 | 6 | Compliance Report | `.json` + `.md` | Annex VII |
-| 7 | SARIF Upload | GitHub Security tab | Art. 10(8) |
+| 7 | SARIF Upload | GitHub Security tab | Annex I Part I (2)(a) |
 | 8 | Release Attachment | All artifacts on release | Art. 13 |
 
 ::: tip Zero Config
@@ -91,7 +91,7 @@ All new features (attestation, VEX, compliance report) are enabled by default. E
 
 ### `cra-scan.yml` — Scheduled Vulnerability Scan
 
-For continuous CVE monitoring (Art. 10 Abs. 8). Run daily via cron schedule.
+For continuous CVE monitoring (Annex I Part I (2)(a)). Run daily via cron schedule.
 
 ```yaml
 on:
@@ -383,11 +383,11 @@ A fully configured CRA release produces:
 
 | Artifact | Format | Purpose | CRA Reference |
 |----------|--------|---------|---------------|
-| `sbom.cdx.json` | CycloneDX JSON | Software Bill of Materials | Art. 13(23) |
-| `sbom.cdx.json.sig` | Cosign Signature | SBOM integrity (portable) | Art. 10(12) |
-| `sbom.cdx.json.cert` | X.509 Certificate | Signing identity | Art. 10(12) |
-| GitHub Attestation | Sigstore | SBOM provenance (GitHub-native) | Art. 10(12) |
-| `vulnerability-report.json` | Trivy JSON | Known vulnerabilities | Art. 10(6) |
+| `sbom.cdx.json` | CycloneDX JSON | Software Bill of Materials | Annex I Part II (1) |
+| `sbom.cdx.json.sig` | Cosign Signature | SBOM integrity (portable) | Annex I Part II (7) |
+| `sbom.cdx.json.cert` | X.509 Certificate | Signing identity | Annex I Part II (7) |
+| GitHub Attestation | Sigstore | SBOM provenance (GitHub-native) | Annex I Part II (7) |
+| `vulnerability-report.json` | Trivy JSON | Known vulnerabilities | Annex I Part II (1) |
 | `vex.openvex.json` | OpenVEX v0.2.0 | Vulnerability exploitability | Annex I II.2 |
 | `cra-compliance-report.json` | Custom Schema v1.0.0 | Machine-readable compliance status | Annex VII |
 | `cra-compliance-report.md` | Markdown | Human-readable compliance status | Annex VII |

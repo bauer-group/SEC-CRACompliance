@@ -75,7 +75,7 @@ Each product passes through three defined lifecycle phases:
 
 ### Obligations After EOL
 
-Even after reaching EOL, the following retention obligations apply pursuant to Art. 10(13) CRA:
+Even after reaching EOL, the following retention obligations apply pursuant to Art. 13(13) CRA:
 
 | Obligation | Duration | Measure |
 |------------|----------|---------|

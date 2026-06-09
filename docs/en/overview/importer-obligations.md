@@ -1,11 +1,11 @@
-# 1.4 Importer Obligations (Art. 15)
+# 1.4 Importer Obligations (Art. 19)
 
 ## 1.4.1 Overview
 
 Importers are economic operators that place a product with digital elements from a third-country manufacturer (outside the EU) on the Union market. The CRA imposes specific due diligence obligations on them to ensure that only compliant products reach the EU market.
 
 ::: info LEGAL BASIS
-**Art. 15 CRA:** The importer shall only place products on the market that meet the essential requirements of Annex I and whose manufacturer has properly carried out the conformity assessment.
+**Art. 19 CRA:** The importer shall only place products on the market that meet the essential requirements of Annex I and whose manufacturer has properly carried out the conformity assessment.
 
 **Art. 3 No. 21 CRA:** *"Importer" means any natural or legal person established in the Union who places a product with digital elements bearing the name or trademark of a person established outside the Union on the market.*
 :::
@@ -19,12 +19,12 @@ BAUER GROUP acts as an Importer when:
 - A SaaS product from a third country is distributed as on-premise software in the EU
 
 ::: warning DISTINCTION
-If BAUER GROUP places a third-country product on the market under its **own name or brand**, BAUER GROUP is considered a **Manufacturer** (not an Importer) and is subject to the full manufacturer obligations under Art. 10.
+If BAUER GROUP places a third-country product on the market under its **own name or brand**, BAUER GROUP is considered a **Manufacturer** (not an Importer) and is subject to the full manufacturer obligations under Art. 13.
 :::
 
 ## 1.4.3 Obligations in Detail
 
-### 1. Conformity Verification Before Placing on the Market (Art. 15 Para. 1)
+### 1. Conformity Verification Before Placing on the Market (Art. 19 Para. 1)
 
 Before placing on the market, the Importer must ensure:
 
@@ -35,7 +35,7 @@ Before placing on the market, the Importer must ensure:
 - [ ] Manufacturer has provided contact details on the product / in the documentation
 - [ ] Product has a **unique identification** (type, batch, serial number)
 
-### 2. Own Labelling (Art. 15 Para. 2)
+### 2. Own Labelling (Art. 19 Para. 2)
 
 The Importer must indicate on the product or its packaging:
 
@@ -44,7 +44,7 @@ The Importer must indicate on the product or its packaging:
 
 For software: In the documentation, the user interface, or the repository.
 
-### 3. Storage and Transport Conditions (Art. 15 Para. 3)
+### 3. Storage and Transport Conditions (Art. 19 Para. 3)
 
 Ensure that storage and transport do not compromise conformity:
 
@@ -52,7 +52,7 @@ Ensure that storage and transport do not compromise conformity:
 - Secure distribution channels (HTTPS, signed repositories)
 - No tampering with firmware/software during the logistics chain
 
-### 4. Market Monitoring (Art. 15 Para. 4)
+### 4. Market Monitoring (Art. 19 Para. 4)
 
 The Importer must:
 
@@ -60,13 +60,13 @@ The Importer must:
 - In case of suspected non-conformity: take corrective measures or cease distribution
 - In case of serious risk: inform the manufacturer and Market Surveillance authorities
 
-### 5. Documentation (Art. 15 Para. 5)
+### 5. Documentation (Art. 19 Para. 5)
 
 - **EU declaration of conformity** must be available to the Importer (copy)
 - **Technical documentation** must be available to the authorities upon request
 - Retention period: **10 years** after placing on the market
 
-### 6. Cooperation with Authorities (Art. 15 Para. 6)
+### 6. Cooperation with Authorities (Art. 19 Para. 6)
 
 Upon request from Market Surveillance authorities, the Importer must:
 
@@ -74,7 +74,7 @@ Upon request from Market Surveillance authorities, the Importer must:
 - In the language of the authority (or a language accepted by the authority)
 - Cooperate in eliminating risks
 
-### 7. Reporting Obligations (Art. 15 Para. 7)
+### 7. Reporting Obligations (Art. 19 Para. 7)
 
 Upon becoming aware of an **actively exploited vulnerability** or a **severe security incident**:
 
@@ -92,7 +92,7 @@ Upon becoming aware of an **actively exploited vulnerability** or a **severe sec
 - [ ] Technical documentation available or retrievable
 - [ ] Product identification present (type, version, serial number)
 - [ ] Own contact details affixed to the product / in the documentation
-- [ ] SBOM received from manufacturer (Art. 13 Para. 23)
+- [ ] SBOM received from manufacturer (Annex I Part II (1))
 - [ ] Support period defined and communicated
 
 ### Ongoing

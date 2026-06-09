@@ -1,11 +1,11 @@
-# 1.6 Händler-Pflichten (Art. 17)
+# 1.6 Händler-Pflichten (Art. 20)
 
 ## 1.6.1 Übersicht
 
 Händler (Distributoren) sind Wirtschaftsakteure in der Lieferkette, die ein Produkt mit digitalen Elementen auf dem Markt bereitstellen, ohne Hersteller oder Importeur zu sein. Der CRA legt ihnen Sorgfaltspflichten auf, die primär auf Überprüfung und Kooperation ausgerichtet sind.
 
 ::: info RECHTSGRUNDLAGE
-**Art. 17 CRA:** Der Händler handelt mit der gebotenen Sorgfalt in Bezug auf die Anforderungen dieser Verordnung, wenn er ein Produkt mit digitalen Elementen auf dem Markt bereitstellt.
+**Art. 20 CRA:** Der Händler handelt mit der gebotenen Sorgfalt in Bezug auf die Anforderungen dieser Verordnung, wenn er ein Produkt mit digitalen Elementen auf dem Markt bereitstellt.
 
 **Art. 3 Nr. 22 CRA:** *„Händler" ist jede natürliche oder juristische Person in der Lieferkette, die ein Produkt mit digitalen Elementen auf dem Markt bereitstellt, ohne Hersteller oder Importeur zu sein.*
 :::
@@ -22,12 +22,12 @@ BAUER GROUP agiert als Händler, wenn:
 
 - **Händler** → Unveränderte Weiterverteilung
 - **Importeur** → Erstmaliges Inverkehrbringen eines Nicht-EU-Produkts
-- **Hersteller** → Eigenes Produkt oder wesentliche Änderung (→ Art. 20)
+- **Hersteller** → Eigenes Produkt oder wesentliche Änderung (→ Art. 22)
 :::
 
 ## 1.6.3 Pflichten im Detail
 
-### 1. Sorgfaltspflicht (Art. 17 Abs. 1)
+### 1. Sorgfaltspflicht (Art. 20 Abs. 1)
 
 Bevor ein Produkt bereitgestellt wird, muss der Händler überprüfen:
 
@@ -37,7 +37,7 @@ Bevor ein Produkt bereitgestellt wird, muss der Händler überprüfen:
 - [ ] Bei importierten Produkten: Importeur hat seine **Kontaktdaten** angegeben
 - [ ] Produkt hat eine **eindeutige Identifikation** (Typ, Charge, Seriennummer)
 
-### 2. Vertriebsstopp bei Nicht-Konformität (Art. 17 Abs. 2)
+### 2. Vertriebsstopp bei Nicht-Konformität (Art. 20 Abs. 2)
 
 Wenn der Händler Grund zur Annahme hat, dass ein Produkt **nicht konform** ist:
 
@@ -45,7 +45,7 @@ Wenn der Händler Grund zur Annahme hat, dass ein Produkt **nicht konform** ist:
 - Hersteller oder Importeur **informieren**
 - Marktüberwachungsbehörden **informieren**, wenn ein ernstes Risiko besteht
 
-### 3. Lagerungs- und Transportbedingungen (Art. 17 Abs. 3)
+### 3. Lagerungs- und Transportbedingungen (Art. 20 Abs. 3)
 
 Sicherstellen, dass Lagerung und Transport die Konformität nicht beeinträchtigen:
 
@@ -53,7 +53,7 @@ Sicherstellen, dass Lagerung und Transport die Konformität nicht beeinträchtig
 - Sichere Downloadkanäle verwenden
 - Keine Manipulation der Software während der Distribution
 
-### 4. Kooperation mit Behörden (Art. 17 Abs. 4)
+### 4. Kooperation mit Behörden (Art. 20 Abs. 4)
 
 Auf Anfrage der Marktüberwachungsbehörden:
 
@@ -61,7 +61,7 @@ Auf Anfrage der Marktüberwachungsbehörden:
 - An der Beseitigung von Risiken mitwirken
 - Hersteller und Importeur identifizieren können
 
-### 5. Meldepflichten (Art. 17 Abs. 5)
+### 5. Meldepflichten (Art. 20 Abs. 5)
 
 Bei Kenntnis einer **aktiv ausgenutzten Schwachstelle** oder eines **schwerwiegenden Vorfalls**:
 
@@ -69,7 +69,7 @@ Bei Kenntnis einer **aktiv ausgenutzten Schwachstelle** oder eines **schwerwiege
 - Falls Hersteller nicht reagiert: Importeur informieren
 - Falls keiner reagiert: Selbst bei ENISA und der nationalen CSIRT-Stelle melden
 
-### 6. Korrekturmaßnahmen (Art. 17 Abs. 6)
+### 6. Korrekturmaßnahmen (Art. 20 Abs. 6)
 
 Wenn der Händler feststellt, dass ein bereits vertriebenes Produkt nicht konform ist:
 

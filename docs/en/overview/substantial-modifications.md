@@ -1,13 +1,13 @@
-# 1.8 Substantial Modifications (Art. 20)
+# 1.8 Substantial Modifications (Art. 22)
 
 ## 1.8.1 Overview
 
-A **substantial modification** to a product with digital elements may result in the person making the modification being considered a new **Manufacturer** and thus having to assume the full manufacturer obligations under Art. 10. Art. 20 CRA defines when a modification is considered "substantial" and what consequences follow.
+A **substantial modification** to a product with digital elements may result in the person making the modification being considered a new **Manufacturer** and thus having to assume the full manufacturer obligations under Art. 13. Art. 22 CRA defines when a modification is considered "substantial" and what consequences follow.
 
 ::: info LEGAL BASIS
-**Art. 20 CRA:** *Any natural or legal person who makes a substantial modification to a product with digital elements that has already been placed on the market shall be considered a Manufacturer within the meaning of this Regulation.*
+**Art. 22 CRA:** *Any natural or legal person who makes a substantial modification to a product with digital elements that has already been placed on the market shall be considered a Manufacturer within the meaning of this Regulation.*
 
-**Art. 3 No. 31 CRA:** Definition of substantial modification.
+**Art. 3 No. 30 CRA:** Definition of substantial modification.
 :::
 
 ## 1.8.2 Definition: Substantial Modification
@@ -56,7 +56,7 @@ Was the product modified after placing on the market?
 
 Whoever makes a substantial modification must:
 
-### 1. Assume Manufacturer Obligations (Art. 10)
+### 1. Assume Manufacturer Obligations (Art. 13)
 
 - Carry out a cybersecurity risk assessment (for the modified part)
 - Create/update technical documentation (Annex VII)
@@ -79,8 +79,8 @@ Whoever makes a substantial modification must:
 
 ### 4. ENISA Reporting Obligations
 
-- Report vulnerabilities in the modified product (Art. 14)
-- Comply with 24h/72h/14d deadlines
+- Report actively exploited vulnerabilities and severe incidents in the modified product (Art. 14)
+- Comply with the reporting deadlines: early warning 24h, notification 72h, and final report 14 days (for vulnerabilities) or 1 month (for severe incidents)
 
 ## 1.8.6 Process at BAUER GROUP
 
