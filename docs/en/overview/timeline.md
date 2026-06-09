@@ -9,8 +9,9 @@ The Cyber Resilience Act (Regulation (EU) 2024/2847) was published in the Offici
 | Date | Requirement | Status |
 |------|-------------|--------|
 | 10.12.2024 | **Entry into force** of the CRA | Completed |
-| 11.06.2026 | Conformity assessment bodies must be designated | Preparation |
-| **11.09.2026** | **Reporting obligations take effect** – Art. 14 CRA (actively exploited vulnerabilities, severe incidents) | **ACTION REQUIRED** |
+| 11.06.2026 | Procedures for notifying authorities & conformity assessment bodies apply (Chapter IV) | Preparation |
+| **11.09.2026** | **Reporting obligations take effect** – Art. 14 CRA (actively exploited vulnerabilities, severe incidents); ENISA SRP operational | **ACTION REQUIRED** |
+| 11.12.2026 | Sufficient notified bodies designated (avoiding capacity bottlenecks) | Monitoring |
 | **11.12.2027** | **Full applicability** – all requirements incl. conformity assessment, CE marking, technical documentation | **ACTION REQUIRED** |
 
 ::: danger REPORTING OBLIGATION FROM 11.09.2026
@@ -31,9 +32,9 @@ From 11 September 2026, actively exploited vulnerabilities must be reported to E
 
 - Reporting processes must be operational
 - Utilise ENISA Single Reporting Platform (SRP)
-- 24h early warning for actively exploited vulnerabilities
+- 24h early warning for actively exploited vulnerabilities / severe incidents
 - 72h notification with detailed assessment
-- 14d final report
+- Final report: 14 days for vulnerabilities (after a corrective measure is available) or 1 month for severe incidents (after the 72h notification)
 
 **Phase 3: Full Conformity (from 11.12.2027)**
 

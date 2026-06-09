@@ -9,8 +9,9 @@ Der Cyber Resilience Act (Verordnung (EU) 2024/2847) wurde am 20. November 2024 
 | Datum | Anforderung | Status |
 |-------|-------------|--------|
 | 10.12.2024 | **Inkrafttreten** des CRA | Erfolgt |
-| 11.06.2026 | Konformitätsbewertungsstellen müssen benannt sein | Vorbereitung |
-| **11.09.2026** | **Meldepflichten greifen** – Art. 14 CRA (aktiv ausgenutzte Schwachstellen, schwere Vorfälle) | **HANDLUNGSBEDARF** |
+| 11.06.2026 | Verfahren für notifizierende Behörden & Konformitätsbewertungsstellen anwendbar (Kapitel IV) | Vorbereitung |
+| **11.09.2026** | **Meldepflichten greifen** – Art. 14 CRA (aktiv ausgenutzte Schwachstellen, schwere Vorfälle); ENISA SRP operativ | **HANDLUNGSBEDARF** |
+| 11.12.2026 | Ausreichend notifizierte Stellen benannt (Vermeidung von Kapazitätsengpässen) | Beobachtung |
 | **11.12.2027** | **Vollständige Anwendbarkeit** – alle Anforderungen inkl. Konformitätsbewertung, CE-Kennzeichnung, technische Dokumentation | **HANDLUNGSBEDARF** |
 
 ::: danger MELDEPFLICHT AB 11.09.2026
@@ -31,9 +32,9 @@ Ab dem 11. September 2026 müssen aktiv ausgenutzte Schwachstellen innerhalb von
 
 - Meldeprozesse müssen operativ sein
 - ENISA Single Reporting Platform (SRP) nutzen
-- 24h-Frühwarnung bei aktiv ausgenutzten Schwachstellen
+- 24h-Frühwarnung bei aktiv ausgenutzten Schwachstellen / schweren Vorfällen
 - 72h-Meldung mit Detailbewertung
-- 14d-Abschlussbericht
+- Abschlussbericht: 14 Tage bei Schwachstellen (nach Verfügbarkeit einer Korrekturmaßnahme) bzw. 1 Monat bei schweren Vorfällen (nach der 72h-Meldung)
 
 **Phase 3: Vollständige Konformität (ab 11.12.2027)**
 

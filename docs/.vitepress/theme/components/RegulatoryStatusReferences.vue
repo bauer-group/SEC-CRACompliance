@@ -27,6 +27,8 @@ const rows = computed<Row[]>(() => {
       reference: r.implementingAct.reference,
       relevance: interpolate(r.implementingAct.relevance, {
         adopted: data.implementingActProducts.adopted,
+        regulation: data.implementingActProducts.regulation,
+        inForce: data.implementingActProducts.inForce,
         articles: data.implementingActProducts.articles,
       }),
     },
@@ -35,6 +37,8 @@ const rows = computed<Row[]>(() => {
       reference: r.delegatedActCsirt.reference,
       relevance: interpolate(r.delegatedActCsirt.relevance, {
         adopted: data.delegatedActCsirt.adopted,
+        regulation: data.delegatedActCsirt.regulation,
+        published: data.delegatedActCsirt.published,
         articles: data.delegatedActCsirt.articles,
       }),
     },

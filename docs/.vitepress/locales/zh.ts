@@ -321,12 +321,12 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           implementingAct: {
             regulation: '实施法案',
             reference: '重要及关键产品的技术描述',
-            relevance: '已于 {adopted} 通过（{articles}）',
+            relevance: '已于 {adopted} 通过、{inForce} 生效 — {regulation}（{articles}）',
           },
           delegatedActCsirt: {
             regulation: '授权法案',
             reference: 'CSIRT 延迟通知传播',
-            relevance: '已于 {adopted} 通过（{articles}），异议期进行中',
+            relevance: '已于 {adopted} 通过，{published} 作为 {regulation} 公布（{articles}）；已生效',
           },
           delegatedActEucc: {
             regulation: 'EUCC 合规推定授权法案',

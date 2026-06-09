@@ -321,12 +321,12 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           implementingAct: {
             regulation: 'Implementing Act',
             reference: 'Technische Beschreibungen wichtiger & kritischer Produkte',
-            relevance: 'Erlassen {adopted} ({articles})',
+            relevance: 'Erlassen {adopted}, in Kraft {inForce} — {regulation} ({articles})',
           },
           delegatedActCsirt: {
             regulation: 'Delegated Act',
             reference: 'CSIRT-Verzögerung der Meldungsweiterleitung',
-            relevance: 'Erlassen {adopted} ({articles}), Einspruchsfrist läuft',
+            relevance: 'Erlassen {adopted}, veröffentlicht {published} als {regulation} ({articles}); in Kraft',
           },
           delegatedActEucc: {
             regulation: 'Delegated Act EUCC-Vermutung',

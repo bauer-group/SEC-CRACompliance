@@ -31,12 +31,16 @@ export interface RegulatoryStatus {
   /** Implementing Act zu Art. 7/8 (technische Beschreibung wichtiger/kritischer Produkte) */
   implementingActProducts: {
     adopted: string // YYYY-MM-DD
+    regulation: string // amtliche OJ-Fundstelle
+    inForce: string // YYYY-MM-DD
     articles: string
   }
 
   /** Delegated Act zu Art. 14 (CSIRT-Verzögerung der Meldungsweiterleitung) */
   delegatedActCsirt: {
     adopted: string // YYYY-MM-DD
+    regulation: string // amtliche OJ-Fundstelle
+    published: string // YYYY-MM-DD (Veröffentlichung im Amtsblatt)
     articles: string
   }
 
@@ -53,7 +57,7 @@ export interface RegulatoryStatus {
 }
 
 export const regulatoryStatus: RegulatoryStatus = {
-  asOf: '2026-04',
+  asOf: '2026-06',
 
   m606: {
     requestId: 'M/606',
@@ -70,11 +74,15 @@ export const regulatoryStatus: RegulatoryStatus = {
 
   implementingActProducts: {
     adopted: '2025-11-28',
+    regulation: '(EU) 2025/2392',
+    inForce: '2025-12-21',
     articles: 'Art. 7, 8 CRA',
   },
 
   delegatedActCsirt: {
     adopted: '2025-12-11',
+    regulation: '(EU) 2026/881',
+    published: '2026-04-20',
     articles: 'Art. 14 CRA',
   },
 
