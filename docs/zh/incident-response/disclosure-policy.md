@@ -5,7 +5,7 @@
 本政策定义了根据 CRA Art. 13(6) 和 ISO/IEC 29147:2018 进行协调漏洞披露 (Coordinated Vulnerability Disclosure) 的流程。
 
 ::: info 法律依据
-**Art. 13(6) CRA:** *"The manufacturer shall facilitate the coordinated disclosure of vulnerabilities by designating a contact point for the reporting of vulnerabilities and setting out its coordinated vulnerability disclosure policy."*
+**Art. 13(6) CRA：** *"制造商应通过指定漏洞报告联系点并制定其协调漏洞披露政策，促进漏洞的协调披露。"*
 :::
 
 ## 4.2.2 适用范围

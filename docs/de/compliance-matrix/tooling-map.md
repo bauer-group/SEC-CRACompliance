@@ -94,7 +94,7 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 | Art. 13 Abs. 5 | Sorgfaltspflicht bei Drittkomponenten (Lizenzen) |
 | Annex I, Teil II, Nr. 1 | Lizenzinventar als Teil der SBOM |
 
-## 8.1.5 Signing & Integrity
+## 8.1.5 Signing, Attestation & Integrity
 
 ### Cosign (Sigstore)
 
@@ -103,6 +103,17 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 | Annex I Teil II (7) | Integritätsschutz von Updates |
 | Annex I, Teil I, Nr. 3.2 | Integritätsschutz (Daten/Artefakte) |
 | Annex I, Teil II, Nr. 6 | Sichere Bereitstellung von Updates |
+
+### GitHub Attestation (Sigstore via GitHub)
+
+| CRA-Anforderung | Abdeckung |
+|-----------------|-----------|
+| Annex I Teil II (7) | Kryptografische Provenienz der SBOM |
+| Annex I, Teil I, Nr. 3.2 | Verifizierbare Build-Zeit-Integrität |
+
+::: tip Belt + Suspenders
+Es werden sowohl Cosign (portabel) als auch GitHub Attestation (nativ) gleichzeitig verwendet. Cosign funktioniert außerhalb von GitHub; Attestation ist über `gh attestation verify` verifizierbar.
+:::
 
 ## 8.1.6 CRA Compliance Workflows (dieses Repository)
 

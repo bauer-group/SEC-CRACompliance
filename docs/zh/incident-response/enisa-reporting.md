@@ -5,11 +5,11 @@
 根据 Art. 14 CRA，制造商须向 ENISA 或相关国家 CSIRT 主管机构报告特定安全事件。报告义务自 **2026 年 9 月 11 日** 起适用。
 
 ::: info 法律依据
-**Art. 14(1) CRA:** *"The manufacturer shall notify any actively exploited vulnerability contained in the product with digital elements simultaneously to the designated CSIRT and to ENISA. The manufacturer shall submit an early warning within 24 hours of becoming aware of it."*
+**Art. 14(1) CRA：** *"制造商应将含数字元素产品中任何被积极利用的漏洞，同时通知指定的 CSIRT 和 ENISA。制造商应在知悉之日起 24 小时内提交预警。"*
 
-**Art. 14(2) CRA:** *"The manufacturer shall submit within 72 hours of becoming aware a vulnerability notification containing a general description of the vulnerability, an initial assessment of the severity and impact, as well as information on corrective measures taken."*
+**Art. 14(2) CRA：** *"制造商应在知悉之日起 72 小时内提交漏洞通知，其中包含漏洞的总体描述、对严重性和影响的初步评估，以及已采取纠正措施的信息。"*
 
-**Art. 14(3) CRA:** *"The manufacturer shall submit within 14 days of becoming aware a final report containing a detailed description of the vulnerability, information on corrective or mitigating measures taken, and, where applicable, indicators of compromise."*
+**Art. 14(3) CRA：** *"制造商应在知悉之日起 14 天内提交最终报告，其中包含漏洞的详细描述、已采取的纠正或缓解措施的信息，以及在适用情况下的失陷指标 (indicators of compromise)。"*
 :::
 
 ::: danger 关键期限

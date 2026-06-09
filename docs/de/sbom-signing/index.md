@@ -37,6 +37,28 @@ Build Artifact (Binary, Image, Firmware)
             └── SHA256SUMS.txt
 ```
 
+## Signierungsarchitektur
+
+Alle während des Release-Prozesses erzeugten Artefakte werden signiert, um Integrität und Authentizität zu gewährleisten. Die Signierungsarchitektur umfasst jedes Auslieferungsobjekt:
+
+```
+Build Pipeline
+    |
+    +-- Build Artifact (Binary, Image, Firmware)
+    |   +-- SHA256-Hash erzeugen
+    |   +-- Mit Cosign signieren
+    |
+    +-- SBOM (CycloneDX JSON)
+    |   +-- SHA256-Hash erzeugen
+    |   +-- Mit Cosign signieren
+    |
+    +-- Release
+        +-- Artifact + Signature + Hash
+        +-- SBOM + Signature + Hash
+        +-- Public Key (cosign.pub)
+        +-- SHA256SUMS.txt
+```
+
 ## Anforderungen
 
 | Anforderung | Umsetzung | CRA-Artikel |

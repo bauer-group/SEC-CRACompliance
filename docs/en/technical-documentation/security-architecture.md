@@ -17,27 +17,27 @@ Planning → Design → Development → Testing → Release → Maintenance
    │         │          │           │         │         │
    │         │          │           │         │         └── CVE-Monitor
    │         │          │           │         │             Patch Mgmt
-   │         │          │           │         │             ENISA-Meldung
+   │         │          │           │         │             ENISA Reporting
    │         │          │           │         │
-   │         │          │           │         └── SBOM generieren
-   │         │          │           │             Cosign signieren
-   │         │          │           │             Release-Notes
+   │         │          │           │         └── Generate SBOM
+   │         │          │           │             Cosign signing
+   │         │          │           │             Release Notes
    │         │          │           │
    │         │          │           └── Security Scan (Trivy/Grype)
    │         │          │               License Compliance
    │         │          │               Secret Scanning
    │         │          │
-   │         │          └── Code Review (4-Augen)
-   │         │              Dependency Prüfung
+   │         │          └── Code Review (four-eyes)
+   │         │              Dependency Review
    │         │              Branch Protection
    │         │
    │         └── Threat Modeling
-   │             Sicherheitsanforderungen
-   │             Architektur-Review
+   │             Security Requirements
+   │             Architecture Review
    │
-   └── Risikobewertung
-       Produktklassifizierung
-       Compliance-Anforderungen
+   └── Risk Assessment
+       Product Classification
+       Compliance Requirements
 ```
 
 ## 6.2.3 Annex I, Part I — Essential Requirements

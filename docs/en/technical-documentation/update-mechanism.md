@@ -15,63 +15,63 @@ The Update Mechanism ensures that security updates are delivered to users in a s
 ### Container-Based Products
 
 ```
-Patch verfügbar
+Patch available
     │
-    ├── Neues Container-Image bauen
-    │   ├── CI/CD Pipeline (automatisch)
-    │   ├── Trivy Scan (keine neuen CVEs)
-    │   ├── SBOM generieren
-    │   └── Cosign signieren
+    ├── Build new container image
+    │   ├── CI/CD Pipeline (automated)
+    │   ├── Trivy Scan (no new CVEs)
+    │   ├── Generate SBOM
+    │   └── Cosign signing
     │
-    ├── Image publizieren
+    ├── Publish image
     │   ├── GitHub Container Registry (GHCR)
-    │   └── Docker Hub (falls konfiguriert)
+    │   └── Docker Hub (if configured)
     │
-    ├── Nutzer-Benachrichtigung
-    │   ├── GitHub Release mit Changelog
-    │   └── Security Advisory (bei CVE-Fixes)
+    ├── User notification
+    │   ├── GitHub Release with changelog
+    │   └── Security Advisory (for CVE fixes)
     │
-    └── Update durch Nutzer
+    └── Update by user
         ├── docker pull <image>:<new-tag>
-        ├── Signatur verifizieren: cosign verify
-        └── Container neu starten
+        ├── Verify signature: cosign verify
+        └── Restart container
 ```
 
 ### Firmware Updates (OTA)
 
 ```
-Patch verfügbar
+Patch available
     │
-    ├── Firmware bauen
-    │   ├── Build-Workflow (ESP32/STM32/Zephyr)
-    │   ├── SBOM generieren
-    │   └── Cosign signieren
+    ├── Build firmware
+    │   ├── Build workflow (ESP32/STM32/Zephyr)
+    │   ├── Generate SBOM
+    │   └── Cosign signing
     │
-    ├── Firmware publizieren
+    ├── Publish firmware
     │   ├── GitHub Release Asset
-    │   └── OTA-Server (signiert)
+    │   └── OTA server (signed)
     │
-    ├── OTA-Verteilung
-    │   ├── Gerät prüft OTA-Server
-    │   ├── Signatur validieren
-    │   ├── Hash verifizieren
-    │   ├── Firmware installieren
-    │   └── Anti-Rollback prüfen
+    ├── OTA distribution
+    │   ├── Device checks OTA server
+    │   ├── Validate signature
+    │   ├── Verify hash
+    │   ├── Install firmware
+    │   └── Anti-rollback check
     │
     └── Fallback
-        └── Manuelle Update-Möglichkeit (USB/Serial)
+        └── Manual update option (USB/Serial)
 ```
 
 ### Software Packages (NuGet, NPM)
 
 ```
-Patch verfügbar
+Patch available
     │
-    ├── Paket bauen + publizieren
+    ├── Build + publish package
     │   ├── Registry (NuGet.org, npmjs.com)
-    │   └── SBOM als Release Asset
+    │   └── SBOM as Release Asset
     │
-    └── Nutzer aktualisiert
+    └── User updates
         └── npm update / dotnet update
 ```
 

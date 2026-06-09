@@ -62,6 +62,7 @@
 | 顶层依赖项 | 通过 Syft/Trivy 自动检测 | Annex I, 第II部分, 编号 1 |
 | 每次发布的 SBOM | 每个发布标签生成 SBOM | 最佳实践 |
 | 完整性保护 | 使用 Cosign 签名（所有制品和 SBOM） | Annex I, 第II部分, 编号 7 |
+| 真实性 | 加密签名证明来源 | Annex I, Part I, No. 3 |
 | 可追溯性 | Git 历史 + 发布资产 | Annex VII |
 | 可用性 | 归档至合规仓库 + 发布资产 | Annex I, 第II部分, 编号 1 |
 

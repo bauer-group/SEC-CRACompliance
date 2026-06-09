@@ -62,6 +62,7 @@ Build Pipeline
 | Top-level dependencies | Automatic detection via Syft/Trivy | Annex I Part II (1) |
 | Per-release SBOM | SBOM is generated for each release tag | Best Practice |
 | Integrity protection | Signing with Cosign (all artifacts and SBOMs) | Annex I Part II (7) |
+| Authenticity | Cryptographic signature proves provenance | Annex I, Part I, No. 3 |
 | Traceability | Git history + release assets | Annex VII |
 | Availability | Archiving in compliance repo + release assets | Annex I Part II (1) |
 

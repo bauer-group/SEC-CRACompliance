@@ -94,7 +94,7 @@
 | Art. 13(5) | 对第三方组件的尽职调查（许可证） |
 | Annex I, 第II部分, 编号 1 | 作为 SBOM 一部分的许可证清单 |
 
-## 8.1.5 签名与完整性
+## 8.1.5 签名、认证与完整性
 
 ### Cosign (Sigstore)
 
@@ -103,6 +103,17 @@
 | Annex I, 第II部分, 编号 7 | 更新的完整性保护 |
 | Annex I, 第I部分, 编号 3.2 | 完整性保护（数据/制品） |
 | Annex I, 第II部分, 编号 6 | 安全提供更新 |
+
+### GitHub Attestation (Sigstore via GitHub)
+
+| CRA 要求 | 覆盖范围 |
+|-----------------|-----------|
+| Annex I, 第II部分, 编号 7 | SBOM 的加密溯源 |
+| Annex I, 第I部分, 编号 3.2 | 可验证的构建时完整性 |
+
+::: tip Belt + Suspenders
+同时使用 Cosign（可移植）和 GitHub Attestation（原生）。Cosign 可在 GitHub 之外工作；Attestation 可通过 `gh attestation verify` 进行验证。
+:::
 
 ## 8.1.6 CRA 合规工作流（本仓库）
 
