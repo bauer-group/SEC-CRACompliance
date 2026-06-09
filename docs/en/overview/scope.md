@@ -40,7 +40,15 @@ The following are not subject to the CRA:
 - SaaS services (fall under NIS2, not CRA) – unless remote data processing is an integral part of the product
 - Products subject to sector-specific EU legislation (e.g. medical devices, motor vehicles, aviation)
 
-## 1.1.4 Product Catalogue
+## 1.1.4 Transitional Provision / Grandfathering (Art. 69)
+
+Products with digital elements placed on the market **before 11.12.2027** are subject to the requirements of the CRA only if, from that date, they undergo a **substantial modification**. Existing products are therefore grandfathered (out of scope) and only fall within the scope of application through a substantial modification on or after 11.12.2027.
+
+> **Example:** A firmware released in 2026 remains outside the CRA scope – until a security update in 2028 replaces the authentication mechanism and thus constitutes a substantial modification.
+
+What qualifies as a substantial modification is described under [Substantial Modifications](/en/overview/substantial-modifications).
+
+## 1.1.5 Product Catalogue
 
 ::: warning ACTION REQUIRED
 For each CRA-relevant product, an individual classification and documentation must be carried out. Use the template at [Product Description](/en/technical-documentation/product-description) as a basis.

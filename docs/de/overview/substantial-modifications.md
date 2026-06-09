@@ -4,6 +4,8 @@
 
 Eine **wesentliche Änderung** (substantial modification) an einem Produkt mit digitalen Elementen kann dazu führen, dass die Person, die die Änderung vornimmt, als neuer **Hersteller** gilt und damit die vollen Herstellerpflichten nach Art. 13 übernehmen muss. Art. 22 CRA definiert, wann eine Änderung als „wesentlich" gilt und welche Konsequenzen daraus folgen.
 
+Eine wesentliche Änderung ist zudem der Auslöser, durch den ein vor dem 11.12.2027 in Verkehr gebrachtes Produkt überhaupt erst in den CRA-Anwendungsbereich fällt (Art. 69 Übergangsregelung, siehe [Geltungsbereich](/de/overview/scope)).
+
 ::: info RECHTSGRUNDLAGE
 **Art. 22 CRA:** *Jede natürliche oder juristische Person, die eine wesentliche Änderung an einem bereits in Verkehr gebrachten Produkt mit digitalen Elementen vornimmt, gilt als Hersteller im Sinne dieser Verordnung.*
 

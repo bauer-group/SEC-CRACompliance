@@ -40,7 +40,15 @@ Nicht unter den CRA fallen:
 - SaaS-Dienste (fallen unter NIS2, nicht CRA) – es sei denn, Remote-Datenverarbeitung ist integraler Bestandteil des Produkts
 - Produkte, die unter sektorspezifische EU-Rechtsvorschriften fallen (z.B. Medizinprodukte, Kraftfahrzeuge, Luftfahrt)
 
-## 1.1.4 Produktkatalog
+## 1.1.4 Übergangsregelung / Bestandsschutz (Art. 69)
+
+Produkte mit digitalen Elementen, die **vor dem 11.12.2027** in Verkehr gebracht wurden, unterliegen den Anforderungen des CRA nur dann, wenn sie ab diesem Datum einer **wesentlichen Änderung** unterzogen werden. Bestehende Produkte genießen damit Bestandsschutz (Grandfathering) und fallen erst durch eine wesentliche Änderung am oder nach dem 11.12.2027 in den Anwendungsbereich.
+
+> **Beispiel:** Eine 2026 veröffentlichte Firmware bleibt außerhalb des CRA-Anwendungsbereichs – bis ein Sicherheitsupdate im Jahr 2028 den Authentifizierungsmechanismus austauscht und damit eine wesentliche Änderung darstellt.
+
+Was als wesentliche Änderung gilt, ist unter [Wesentliche Änderungen](/de/overview/substantial-modifications) beschrieben.
+
+## 1.1.5 Produktkatalog
 
 ::: warning HANDLUNGSBEDARF
 Für jedes CRA-relevante Produkt muss eine individuelle Einstufung und Dokumentation erfolgen. Verwenden Sie das Template unter [Produktbeschreibung](/de/technical-documentation/product-description) als Vorlage.

@@ -4,6 +4,8 @@
 
 A **substantial modification** to a product with digital elements may result in the person making the modification being considered a new **Manufacturer** and thus having to assume the full manufacturer obligations under Art. 13. Art. 22 CRA defines when a modification is considered "substantial" and what consequences follow.
 
+A substantial modification is also the trigger that brings a product placed on the market before 11.12.2027 within the scope of the CRA in the first place (Art. 69 transitional provision, see [Scope](/en/overview/scope)).
+
 ::: info LEGAL BASIS
 **Art. 22 CRA:** *Any natural or legal person who makes a substantial modification to a product with digital elements that has already been placed on the market shall be considered a Manufacturer within the meaning of this Regulation.*
 
