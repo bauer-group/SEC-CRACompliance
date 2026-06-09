@@ -72,13 +72,13 @@ For production images, we use multi-stage builds:
 
 ```dockerfile
 # Stage 1: Build
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 WORKDIR /app
 COPY . .
 RUN npm ci && npm run build
 
 # Stage 2: Production (minimal image)
-FROM gcr.io/distroless/nodejs20-debian12
+FROM gcr.io/distroless/nodejs24-debian12
 COPY --from=builder /app/dist /app
 CMD ["app/server.js"]
 ```

@@ -49,7 +49,7 @@ This template is completed individually for each CRA-relevant product. Copy this
 
 | Component | Technology | Version |
 |-----------|------------|---------|
-| Runtime | [e.g. Node.js 20, .NET 8, Python 3.12] | [Version] |
+| Runtime | [e.g. Node.js 24, .NET 8, Python 3.12] | [Version] |
 | Framework | [e.g. Express, ASP.NET, Django] | [Version] |
 | Database | [e.g. PostgreSQL, SQLite] | [Version] |
 | Container | [e.g. Alpine 3.19, Distroless] | [Version] |

@@ -49,7 +49,7 @@
 
 | 组件 | 技术 | 版本 |
 |------|------|------|
-| 运行时 | [例如：Node.js 20、.NET 8、Python 3.12] | [版本] |
+| 运行时 | [例如：Node.js 24、.NET 8、Python 3.12] | [版本] |
 | 框架 | [例如：Express、ASP.NET、Django] | [版本] |
 | 数据库 | [例如：PostgreSQL、SQLite] | [版本] |
 | 容器 | [例如：Alpine 3.19、Distroless] | [版本] |

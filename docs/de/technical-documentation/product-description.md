@@ -49,7 +49,7 @@ Dieses Template wird für jedes CRA-relevante Produkt individuell ausgefüllt. K
 
 | Komponente | Technologie | Version |
 |------------|-------------|---------|
-| Runtime | [z.B. Node.js 20, .NET 8, Python 3.12] | [Version] |
+| Runtime | [z.B. Node.js 24, .NET 8, Python 3.12] | [Version] |
 | Framework | [z.B. Express, ASP.NET, Django] | [Version] |
 | Datenbank | [z.B. PostgreSQL, SQLite] | [Version] |
 | Container | [z.B. Alpine 3.19, Distroless] | [Version] |

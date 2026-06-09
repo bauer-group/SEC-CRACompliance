@@ -72,13 +72,13 @@ updates:
 
 ```dockerfile
 # 阶段 1：构建
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 WORKDIR /app
 COPY . .
 RUN npm ci && npm run build
 
 # 阶段 2：生产（最小镜像）
-FROM gcr.io/distroless/nodejs20-debian12
+FROM gcr.io/distroless/nodejs24-debian12
 COPY --from=builder /app/dist /app
 CMD ["app/server.js"]
 ```
