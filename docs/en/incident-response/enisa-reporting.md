@@ -47,7 +47,7 @@ A vulnerability in a BAUER GROUP product is being actively exploited in the wild
 
 ### Severe Security Incident (Art. 14(3))
 
-An incident that significantly affects the security of the product or its users (Art. 3(43) CRA).
+An incident that significantly affects the security of the product or its users (Art. 3(44) CRA).
 
 **Criteria for classification as a severe incident:**
 

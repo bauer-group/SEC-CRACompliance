@@ -7,7 +7,7 @@ Händler (Distributoren) sind Wirtschaftsakteure in der Lieferkette, die ein Pro
 ::: info RECHTSGRUNDLAGE
 **Art. 20 CRA:** Der Händler handelt mit der gebotenen Sorgfalt in Bezug auf die Anforderungen dieser Verordnung, wenn er ein Produkt mit digitalen Elementen auf dem Markt bereitstellt.
 
-**Art. 3 Nr. 22 CRA:** *„Händler" ist jede natürliche oder juristische Person in der Lieferkette, die ein Produkt mit digitalen Elementen auf dem Markt bereitstellt, ohne Hersteller oder Importeur zu sein.*
+**Art. 3 Nr. 17 CRA:** *„Händler" ist jede natürliche oder juristische Person in der Lieferkette, die ein Produkt mit digitalen Elementen auf dem Markt bereitstellt, ohne Hersteller oder Importeur zu sein.*
 :::
 
 ## 1.6.2 Wann ist BAUER GROUP Händler?

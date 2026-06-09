@@ -160,8 +160,8 @@ BAUER GROUP relies on a fully automated toolchain to ensure CRA conformity witho
 | **Manufacturer** | Natural or legal person who develops or has developed a product and markets it under their own name or trademark | Art. 3(13) |
 | **Software Bill of Materials (SBOM)** | Formal, machine-readable record of the components contained in a product and their dependencies | Art. 3(39) |
 | **Actively exploited vulnerability** | Vulnerability for which there is reliable evidence that it has been exploited by a malicious actor in a system without the permission of the owner | Art. 3(42) |
-| **Severe incident** | Incident that has a significant impact on the security of a product, including compromise of supply chain integrity | Art. 3(43) |
+| **Severe incident** | Incident that has a significant impact on the security of a product, including compromise of supply chain integrity | Art. 3(44) |
 | **Support period** | Period during which the manufacturer is obligated to ensure vulnerability handling, at least 5 years | Art. 13(8) |
-| **Conformity assessment** | Procedure for verifying whether the essential requirements have been met | Art. 3(30) |
+| **Conformity assessment** | Procedure for verifying whether the essential requirements have been met | Art. 3(27) |
 | **CE marking** | Marking by which the manufacturer declares that the product complies with the applicable EU requirements | Art. 29 |
 | **Authorised representative** | Natural or legal person established in the EU who has been authorised in writing by the manufacturer to act on their behalf for certain tasks | Art. 3(15), Art. 18 |

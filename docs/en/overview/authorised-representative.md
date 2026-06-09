@@ -7,7 +7,7 @@ Art. 18 CRA allows manufacturers established outside the EU to designate an **Au
 ::: info LEGAL BASIS
 **Art. 18 CRA:** *"A manufacturer may, by a written mandate, appoint an authorised representative. The obligations laid down in Art. 13(1) (security requirements for product design) and the drawing up of the technical documentation shall not form part of the mandate."*
 
-**Art. 3 No. 22 CRA:** *"Authorised representative" means any natural or legal person established in the Union who has received a written mandate from a manufacturer to act on its behalf in relation to specified tasks.*
+**Art. 3 No. 15 CRA:** *"Authorised representative" means any natural or legal person established in the Union who has received a written mandate from a manufacturer to act on its behalf in relation to specified tasks.*
 :::
 
 ## 1.5.2 When Is an Authorised Representative Required?

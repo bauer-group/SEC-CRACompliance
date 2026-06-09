@@ -7,7 +7,7 @@ Importeure sind Wirtschaftsakteure, die ein Produkt mit digitalen Elementen eine
 ::: info RECHTSGRUNDLAGE
 **Art. 19 CRA:** Der Importeur bringt nur Produkte in Verkehr, die die wesentlichen Anforderungen aus Annex I erfüllen und deren Hersteller die Konformitätsbewertung ordnungsgemäß durchgeführt hat.
 
-**Art. 3 Nr. 21 CRA:** *„Importeur" ist jede in der Union ansässige natürliche oder juristische Person, die ein Produkt mit digitalen Elementen, das den Namen oder die Handelsmarke einer außerhalb der Union ansässigen Person trägt, in Verkehr bringt.*
+**Art. 3 Nr. 16 CRA:** *„Importeur" ist jede in der Union ansässige natürliche oder juristische Person, die ein Produkt mit digitalen Elementen, das den Namen oder die Handelsmarke einer außerhalb der Union ansässigen Person trägt, in Verkehr bringt.*
 :::
 
 ## 1.4.2 Wann ist BAUER GROUP Importeur?

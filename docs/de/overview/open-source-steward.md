@@ -5,7 +5,7 @@
 Der CRA führt die neue Rolle des **Open-Source-Software-Stewards** ein. Dies betrifft juristische Personen (z.B. Stiftungen, Unternehmen), die die Entwicklung von Open-Source-Software systematisch unterstützen, welche für kommerzielle Aktivitäten bestimmt ist.
 
 ::: info RECHTSGRUNDLAGE
-**Art. 3 Nr. 16 CRA:** *„Open-Source-Software-Steward" ist jede juristische Person, die keine Hersteller ist und die systematisch und dauerhaft die Entwicklung bestimmter Produkte mit digitalen Elementen, die als freie und quelloffene Software gelten und für kommerzielle Aktivitäten bestimmt sind, unterstützt und eine entscheidende Rolle bei der Gewährleistung der Marktfähigkeit dieser Produkte spielt.*
+**Art. 3 Nr. 14 CRA:** *„Open-Source-Software-Steward" ist jede juristische Person, die keine Hersteller ist und die systematisch und dauerhaft die Entwicklung bestimmter Produkte mit digitalen Elementen, die als freie und quelloffene Software gelten und für kommerzielle Aktivitäten bestimmt sind, unterstützt und eine entscheidende Rolle bei der Gewährleistung der Marktfähigkeit dieser Produkte spielt.*
 
 **Art. 24 CRA:** Pflichten des Open-Source-Software-Stewards.
 

@@ -5,7 +5,7 @@
 The CRA introduces the new role of the **Open Source Software Steward**. This concerns legal persons (e.g., foundations, companies) that systematically support the development of open-source software intended for commercial activities.
 
 ::: info LEGAL BASIS
-**Art. 3 No. 16 CRA:** *"Open-source software steward" means any legal person, other than a manufacturer, who has the purpose of systematically providing support on a sustained basis for the development of specific products with digital elements qualifying as free and open-source software that are intended for commercial activities, and ensures the viability of those products.*
+**Art. 3 No. 14 CRA:** *"Open-source software steward" means any legal person, other than a manufacturer, who has the purpose of systematically providing support on a sustained basis for the development of specific products with digital elements qualifying as free and open-source software that are intended for commercial activities, and ensures the viability of those products.*
 
 **Art. 24 CRA:** Obligations of the open-source software steward.
 

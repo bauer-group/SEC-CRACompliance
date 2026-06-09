@@ -47,7 +47,7 @@ Eine Schwachstelle in einem Produkt der BAUER GROUP wird in freier Wildbahn akti
 
 ### Schwerer Sicherheitsvorfall (Art. 14 Abs. 3)
 
-Ein Vorfall, der die Sicherheit des Produkts oder seiner Nutzer erheblich beeinträchtigt (Art. 3 Nr. 43 CRA).
+Ein Vorfall, der die Sicherheit des Produkts oder seiner Nutzer erheblich beeinträchtigt (Art. 3 Nr. 44 CRA).
 
 **Kriterien für die Einstufung als schwerer Vorfall:**
 

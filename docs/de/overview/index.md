@@ -160,8 +160,8 @@ Die BAUER GROUP setzt auf eine durchgehend automatisierte Toolchain, um CRA-Konf
 | **Hersteller** | Natürliche oder juristische Person, die ein Produkt entwickelt oder entwickeln lässt und unter eigenem Namen oder eigener Marke vermarktet | Art. 3 Nr. 13 |
 | **Software Bill of Materials (SBOM)** | Formale, maschinenlesbare Aufzeichnung der in einem Produkt enthaltenen Komponenten und deren Abhängigkeiten | Art. 3 Nr. 39 |
 | **Aktiv ausgenutzte Schwachstelle** | Schwachstelle, für die zuverlässige Belege existieren, dass sie von einem böswilligen Akteur in einem System ohne Erlaubnis des Eigentümers ausgenutzt wurde | Art. 3 Nr. 42 |
-| **Schwerer Vorfall** | Vorfall, der erhebliche Auswirkungen auf die Sicherheit eines Produkts hat, einschließlich Beeinträchtigung der Integrität der Lieferkette | Art. 3 Nr. 43 |
+| **Schwerer Vorfall** | Vorfall, der erhebliche Auswirkungen auf die Sicherheit eines Produkts hat, einschließlich Beeinträchtigung der Integrität der Lieferkette | Art. 3 Nr. 44 |
 | **Support-Zeitraum** | Zeitraum, in dem der Hersteller verpflichtet ist, die Behandlung von Schwachstellen sicherzustellen, mindestens 5 Jahre | Art. 13 Abs. 8 |
-| **Konformitätsbewertung** | Verfahren zur Überprüfung, ob die wesentlichen Anforderungen erfüllt sind | Art. 3 Nr. 30 |
+| **Konformitätsbewertung** | Verfahren zur Überprüfung, ob die wesentlichen Anforderungen erfüllt sind | Art. 3 Nr. 27 |
 | **CE-Kennzeichnung** | Kennzeichnung, mit der der Hersteller erklärt, dass das Produkt den geltenden EU-Anforderungen entspricht | Art. 29 |
 | **Bevollmächtigter** | In der EU niedergelassene natürliche oder juristische Person, die vom Hersteller schriftlich beauftragt wurde, in dessen Namen bestimmte Aufgaben wahrzunehmen | Art. 3 Nr. 15, Art. 18 |

@@ -7,7 +7,7 @@ Distributors are economic operators in the supply chain that make a product with
 ::: info LEGAL BASIS
 **Art. 20 CRA:** The Distributor shall act with due diligence in relation to the requirements of this Regulation when making a product with digital elements available on the market.
 
-**Art. 3 No. 22 CRA:** *"Distributor" means any natural or legal person in the supply chain that makes a product with digital elements available on the market without being a Manufacturer or Importer.*
+**Art. 3 No. 17 CRA:** *"Distributor" means any natural or legal person in the supply chain that makes a product with digital elements available on the market without being a Manufacturer or Importer.*
 :::
 
 ## 1.6.2 When Is BAUER GROUP a Distributor?

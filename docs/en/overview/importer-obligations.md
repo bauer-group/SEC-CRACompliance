@@ -7,7 +7,7 @@ Importers are economic operators that place a product with digital elements from
 ::: info LEGAL BASIS
 **Art. 19 CRA:** The importer shall only place products on the market that meet the essential requirements of Annex I and whose manufacturer has properly carried out the conformity assessment.
 
-**Art. 3 No. 21 CRA:** *"Importer" means any natural or legal person established in the Union who places a product with digital elements bearing the name or trademark of a person established outside the Union on the market.*
+**Art. 3 No. 16 CRA:** *"Importer" means any natural or legal person established in the Union who places a product with digital elements bearing the name or trademark of a person established outside the Union on the market.*
 :::
 
 ## 1.4.2 When Is BAUER GROUP an Importer?

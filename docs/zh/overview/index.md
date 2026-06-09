@@ -160,8 +160,8 @@ BAUER GROUP 依赖全自动化工具链确保 CRA 合规，无需额外手动操
 | **制造商 (Manufacturer)** | 开发或已开发产品并以自己的名义或商标进行市场销售的自然人或法人 | Art. 3(13) |
 | **软件物料清单 (Software Bill of Materials, SBOM)** | 产品中包含的组件及其依赖关系的正式、机器可读记录 | Art. 3(39) |
 | **被积极利用的漏洞 (Actively exploited vulnerability)** | 有可靠证据表明恶意行为者在未经系统所有者许可的情况下利用的漏洞 | Art. 3(42) |
-| **严重事件 (Severe incident)** | 对产品安全产生重大影响的事件，包括供应链完整性的破坏 | Art. 3(43) |
+| **严重事件 (Severe incident)** | 对产品安全产生重大影响的事件，包括供应链完整性的破坏 | Art. 3(44) |
 | **支持期 (Support period)** | 制造商有义务确保漏洞处理的期间，至少5年 | Art. 13(8) |
-| **合格评定 (Conformity assessment)** | 验证是否满足基本要求的程序 | Art. 3(30) |
+| **合格评定 (Conformity assessment)** | 验证是否满足基本要求的程序 | Art. 3(27) |
 | **CE 标志 (CE marking)** | 制造商声明产品符合适用欧盟要求的标志 | Art. 29 |
 | **授权代表 (Authorised representative)** | 在欧盟境内设立的、经制造商书面授权代表其执行特定任务的自然人或法人 | Art. 3(15), Art. 18 |

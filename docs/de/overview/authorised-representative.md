@@ -7,7 +7,7 @@ Art. 18 CRA ermöglicht Herstellern, die außerhalb der EU ansässig sind, einen
 ::: info RECHTSGRUNDLAGE
 **Art. 18 CRA:** *„Ein Hersteller kann durch eine schriftliche Vollmacht einen Bevollmächtigten benennen. Die Pflichten gemäß Art. 13 Abs. 1 (Sicherheitsanforderungen an das Produktdesign) und die Erstellung der technischen Dokumentation sind nicht Gegenstand der Vollmacht."*
 
-**Art. 3 Nr. 22 CRA:** *„Bevollmächtigter" ist jede in der Union ansässige natürliche oder juristische Person, die vom Hersteller schriftlich beauftragt wurde, in seinem Namen bestimmte Aufgaben wahrzunehmen.*
+**Art. 3 Nr. 15 CRA:** *„Bevollmächtigter" ist jede in der Union ansässige natürliche oder juristische Person, die vom Hersteller schriftlich beauftragt wurde, in seinem Namen bestimmte Aufgaben wahrzunehmen.*
 :::
 
 ## 1.5.2 Wann ist ein Bevollmächtigter erforderlich?
