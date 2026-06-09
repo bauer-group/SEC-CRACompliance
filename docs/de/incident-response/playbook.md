@@ -155,7 +155,7 @@ Wiederherstellung
 ```
 Lessons Learned
     │
-    ├── ENISA-Abschlussbericht (≤ 14 Tage)
+    ├── ENISA-Abschlussbericht (Schwachstelle: ≤ 14 Tage nach Verfügbarkeit einer Korrekturmaßnahme / schwerer Vorfall: ≤ 1 Monat nach der 72h-Meldung)
     │   ├── Root-Cause-Analyse
     │   ├── Getroffene Maßnahmen
     │   ├── Betroffene Nutzer/Produkte
@@ -176,7 +176,7 @@ Lessons Learned
 
 **Checkliste Nachbereitung:**
 
-- [ ] ENISA-Abschlussbericht gesendet (≤ 14 Tage)
+- [ ] ENISA-Abschlussbericht gesendet (14 Tage bei Schwachstellen nach Verfügbarkeit einer Korrekturmaßnahme / 1 Monat bei schweren Vorfällen nach der 72h-Meldung)
 - [ ] Post-Mortem durchgeführt
 - [ ] Lessons Learned dokumentiert
 - [ ] Prozessverbesserungen umgesetzt

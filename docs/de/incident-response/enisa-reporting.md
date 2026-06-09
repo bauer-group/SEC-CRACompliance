@@ -18,7 +18,8 @@ Gemäß Art. 14 CRA sind Hersteller verpflichtet, bestimmte Sicherheitsereigniss
 |---------|-------|-------------|
 | Frühwarnung | **24 Stunden** | Kenntnisnahme der aktiv ausgenutzten Schwachstelle / des schweren Vorfalls |
 | Schwachstellenmeldung | **72 Stunden** | Kenntnisnahme |
-| Abschlussbericht | **14 Tage** | Kenntnisnahme |
+| Abschlussbericht (Schwachstelle) | **14 Tage** | Verfügbarkeit einer Korrekturmaßnahme |
+| Abschlussbericht (schwerer Vorfall) | **1 Monat** | Schwachstellenmeldung (72h-Meldung) |
 
 :::
 
@@ -189,7 +190,7 @@ Detailbewertung läuft / abgeschlossen
 
 **Nachweis:** Meldungsbestätigung + vollständige Kopie im Incident-Ticket
 
-### Phase 3: Abschlussbericht (≤ 14 Tage)
+### Phase 3: Abschlussbericht (≤ 14 Tage bei Schwachstellen / ≤ 1 Monat bei schweren Vorfällen)
 
 **Verantwortlich:** Security Lead
 
@@ -204,7 +205,7 @@ Behebung abgeschlossen oder fortgeschritten
     │   ├── Verbleibende Risiken bewerten
     │   └── Lessons Learned formulieren
     │
-    └── 2. ENISA-Abschlussbericht absenden (≤ 14 Tage)
+    └── 2. ENISA-Abschlussbericht absenden (Schwachstelle: ≤ 14 Tage nach Verfügbarkeit einer Korrekturmaßnahme / schwerer Vorfall: ≤ 1 Monat nach der 72h-Meldung)
         ├── Template: /templates/enisa-final-report
         ├── Plattform: ENISA SRP
         └── Mindestinhalt gemäß Art. 14 Abs. 3:
@@ -292,12 +293,12 @@ Sicherheitsereignis erkannt
     │
     ├── Wird die Schwachstelle aktiv ausgenutzt?
     │   ├── Ja → MELDEPFLICHTIG (Art. 14 Abs. 1)
-    │   │         → 24h Frühwarnung + 72h Meldung + 14d Abschlussbericht
+    │   │         → 24h Frühwarnung + 72h Meldung + 14d Abschlussbericht (nach Verfügbarkeit einer Korrekturmaßnahme)
     │   └── Nein ↓
     │
     ├── Liegt ein schwerer Sicherheitsvorfall vor?
     │   ├── Ja → MELDEPFLICHTIG (Art. 14 Abs. 3)
-    │   │         → 24h Frühwarnung + 72h Meldung + 14d Abschlussbericht
+    │   │         → 24h Frühwarnung + 72h Meldung + 1 Monat Abschlussbericht (nach der 72h-Meldung)
     │   └── Nein ↓
     │
     └── Standardmäßige Schwachstellenbehandlung

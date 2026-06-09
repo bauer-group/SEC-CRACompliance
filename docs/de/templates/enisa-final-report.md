@@ -1,6 +1,13 @@
-# A.5 ENISA Abschlussbericht (14 Tage)
+# A.5 ENISA Abschlussbericht (14 Tage / 1 Monat)
 
 ## A.5.1 Vorlage: Abschlussbericht gemäß Art. 14 Abs. 2 lit. c CRA
+
+::: info FRIST DES ABSCHLUSSBERICHTS
+Die Frist für den Abschlussbericht hängt vom Auslöser ab:
+
+- **Aktiv ausgenutzte Schwachstelle:** innerhalb von **14 Tagen**, nachdem eine Korrektur- oder Abhilfemaßnahme verfügbar ist.
+- **Schwerer Sicherheitsvorfall:** innerhalb von **1 Monat** nach Übermittlung der Schwachstellenmeldung (72h-Meldung).
+:::
 
 ---
 

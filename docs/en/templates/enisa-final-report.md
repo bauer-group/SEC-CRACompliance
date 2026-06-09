@@ -1,6 +1,13 @@
-# A.5 ENISA Final Report (14 Days)
+# A.5 ENISA Final Report (14 Days / 1 Month)
 
 ## A.5.1 Template: Final Report pursuant to Art. 14(2)(c) CRA
+
+::: info FINAL REPORT DEADLINE
+The deadline for the final report depends on the trigger:
+
+- **Actively exploited vulnerability:** within **14 days** after a corrective or mitigating measure is available.
+- **Severe security incident:** within **1 month** after submitting the vulnerability notification (72h notification).
+:::
 
 ---
 

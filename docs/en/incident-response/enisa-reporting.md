@@ -18,7 +18,8 @@ Pursuant to Art. 14 CRA, manufacturers are required to report certain security e
 |--------------|----------|-----------------|
 | Early warning | **24 hours** | Becoming aware of the actively exploited vulnerability / severe incident |
 | Vulnerability notification | **72 hours** | Becoming aware |
-| Final report | **14 days** | Becoming aware |
+| Final report (vulnerability) | **14 days** | A corrective measure becomes available |
+| Final report (severe incident) | **1 month** | The vulnerability notification (72h notification) |
 
 :::
 
@@ -189,7 +190,7 @@ Detailed assessment in progress / completed
 
 **Evidence:** Notification confirmation + complete copy in incident ticket
 
-### Phase 3: Final Report (≤ 14 days)
+### Phase 3: Final Report (≤ 14 days for vulnerabilities / ≤ 1 month for severe incidents)
 
 **Responsible:** Security Lead
 
@@ -204,7 +205,7 @@ Remediation completed or well advanced
     │   ├── Assess residual risks
     │   └── Formulate lessons learned
     │
-    └── 2. Submit ENISA final report (≤ 14 days)
+    └── 2. Submit ENISA final report (vulnerability: ≤ 14 days after a corrective measure is available / severe incident: ≤ 1 month after the 72h notification)
         ├── Template: /templates/enisa-final-report
         ├── Platform: ENISA SRP
         └── Minimum content per Art. 14(3):
@@ -292,12 +293,12 @@ Security event detected
     │
     ├── Is the vulnerability being actively exploited?
     │   ├── Yes → REPORTABLE (Art. 14(1))
-    │   │         → 24h early warning + 72h notification + 14d final report
+    │   │         → 24h early warning + 72h notification + 14d final report (after a corrective measure is available)
     │   └── No ↓
     │
     ├── Is it a severe security incident?
     │   ├── Yes → REPORTABLE (Art. 14(3))
-    │   │         → 24h early warning + 72h notification + 14d final report
+    │   │         → 24h early warning + 72h notification + 1 month final report (after the 72h notification)
     │   └── No ↓
     │
     └── Standard vulnerability handling

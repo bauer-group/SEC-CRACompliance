@@ -155,7 +155,7 @@ Recovery
 ```
 Lessons Learned
     │
-    ├── ENISA final report (≤ 14 days)
+    ├── ENISA final report (vulnerability: ≤ 14 days after a corrective measure is available / severe incident: ≤ 1 month after the 72h notification)
     │   ├── Root cause analysis
     │   ├── Measures taken
     │   ├── Affected users/products
@@ -176,7 +176,7 @@ Lessons Learned
 
 **Post-Incident Review Checklist:**
 
-- [ ] ENISA final report sent (≤ 14 days)
+- [ ] ENISA final report sent (14 days for vulnerabilities after a corrective measure is available / 1 month for severe incidents after the 72h notification)
 - [ ] Post-mortem conducted
 - [ ] Lessons learned documented
 - [ ] Process improvements implemented
