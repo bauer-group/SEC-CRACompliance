@@ -57,7 +57,7 @@ Generated CE marking:
 
   CE [1234]                              ← notified_body (if applicable)
   BAUER GROUP                            ← manufacturer.name
-  Musterstraße 1, 12345 Musterstadt     ← manufacturer.address
+  Example St. 1, 12345 Example City     ← manufacturer.address
   MinIO Gateway v2.1.0                   ← product.name + product.version
 ```
 

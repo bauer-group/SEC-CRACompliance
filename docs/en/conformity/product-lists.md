@@ -76,7 +76,7 @@ The "Conformity Module" column in the table below lists the EUCC as a **possible
 | 1 | Hardware devices with security boxes (HSMs, smartcards, etc.) | Hardware security modules (HSMs), smartcards, and comparable devices that perform cryptographic operations in a protected environment | Module B+C / H (EUCC conditional*) |
 | 2 | Smartcard readers | Devices for reading and processing smartcard data for authentication, signature, or encryption | Module B+C / H (EUCC conditional*) |
 | 3 | Sensor and actuator components for robots and robot controllers (industrial applications) | Sensors and actuators used in robots and robot controllers for industrial applications | Module B+C / H (EUCC conditional*) |
-| 4 | Smart meters within the meaning of Article 2(23) of Directive (EU) 2019/944 | Electronic metering systems for measuring energy consumption under the Electricity Internal Market Directive | Module B+C / H (EUCC conditional*) |
+| 4 | Smart meters within the meaning of Art. 2(23) of Directive (EU) 2019/944 | Electronic metering systems for measuring energy consumption under the Electricity Internal Market Directive | Module B+C / H (EUCC conditional*) |
 | 5 | All devices and software components belonging to Advanced Metering Infrastructure (AMI) | All devices and software that are part of the advanced metering infrastructure | Module B+C / H (EUCC conditional*) |
 
 *\* EUCC is mandatory only after a delegated act under Art. 8(1) CRA is adopted; until then Module B+C or H applies under Art. 32(3) CRA (as of June 2026).*

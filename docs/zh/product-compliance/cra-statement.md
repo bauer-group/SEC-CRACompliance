@@ -57,7 +57,7 @@ CE 标志从 JSON 字段生成，并自动放置在配置的位置（→ [7.7 CE
 
   CE [1234]                              ← notified_body（如适用）
   BAUER GROUP                            ← manufacturer.name
-  Musterstraße 1, 12345 Musterstadt     ← manufacturer.address
+  Example St. 1, 12345 Example City     ← manufacturer.address
   MinIO Gateway v2.1.0                   ← product.name + product.version
 ```
 

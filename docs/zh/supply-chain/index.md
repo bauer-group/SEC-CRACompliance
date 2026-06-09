@@ -5,9 +5,9 @@
 保障软件供应链安全是 CRA 的核心要求。制造商在集成第三方组件时必须履行尽职调查 (Due Diligence) 义务，并确保整个供应链的完整性。
 
 ::: info 法律依据
-**Art. 13(5) CRA:** *"The manufacturer shall exercise due diligence when integrating components sourced from third parties, to ensure that those components do not compromise the security of the product."*
+**Art. 13(5) CRA:** *"制造商在集成来自第三方采购的组件时应尽职调查，以确保这些组件不会损害产品的安全性。"*
 
-**Annex I, Part II, No. 1:** *"The manufacturer shall identify and document the vulnerabilities and components contained in the product, including by drawing up a software bill of materials."*
+**Annex I, Part II, No. 1:** *"制造商应识别并记录产品中包含的漏洞和组件，包括编制软件物料清单。"*
 :::
 
 ## 安全措施

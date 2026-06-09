@@ -157,7 +157,7 @@ Validation of `cra-statement.json` should be integrated into the CI/CD pipeline:
 
   "manufacturer": {
     "name": "BAUER GROUP",
-    "address": "Musterstraße 1, 12345 Musterstadt, Germany",
+    "address": "Example St. 1, 12345 Example City, Germany",
     "contact_email": "disclosure@bauer-group.com",
     "website": "https://www.bauer-group.com"
   },
