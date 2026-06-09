@@ -72,7 +72,10 @@
 │ 产品是否列于 Annex IV？                        │
 │                                               │
 │   是 → 关键产品                                │
-│        → 需要 EUCC 认证                        │
+│        → 当前为 Module B+C 或 H                │
+│          (Art. 32(3) CRA)                     │
+│        → EUCC 仅在授权法案通过后               │
+│          (Art. 8(1) CRA)                      │
 │        → 参见：合规评估 / EUCC                  │
 │   否 ↓                                        │
 ├───────────────────────────────────────────────┤
@@ -98,7 +101,11 @@
 | <span class="badge-default">标准</span> | 默认 | [模块 A（自我评估）](/zh/conformity/self-assessment) | 低 |
 | <span class="badge-class-i">I 类</span> | 重要（I 类） | [模块 A 含 hEN](/zh/conformity/self-assessment) 或 [模块 B+C](/zh/conformity/module-bc) | 中 |
 | <span class="badge-class-ii">II 类</span> | 重要（II 类） | [模块 B+C](/zh/conformity/module-bc) 或 [模块 H](/zh/conformity/module-h) | 高 |
-| <span class="badge-critical">关键</span> | 关键（Annex IV） | [EUCC 认证](/zh/conformity/eucc) | 非常高 |
+| <span class="badge-critical">关键</span> | 关键（Annex IV） | 当前为 [Module B+C](/zh/conformity/module-bc) 或 [Module H](/zh/conformity/module-h)；[EUCC](/zh/conformity/eucc) 仅在授权法案通过后（Art. 8(1)） | 高（EUCC：非常高） |
+
+::: info 关键产品目前并非强制 EUCC
+对于 Annex IV 产品，EUCC 认证**并非自动**要求。只有在欧盟委员会根据 **Art. 8(1) CRA** 通过授权法案后才成为强制要求；**截至 2026 年 6 月，这尚未发生**。在此之前，关键产品遵循与 Class II 相同的合规评估程序——Module B+C 或 Module H（**Art. 32(3) CRA**）。
+:::
 
 ## 预估合规工作量
 

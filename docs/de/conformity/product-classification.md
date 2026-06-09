@@ -10,7 +10,7 @@ Der folgende Entscheidungsbaum zeigt den systematischen Ablauf der Produktklassi
 
 ```
 Ist das Produkt in Annex IV aufgeführt?
-├── Ja → KRITISCH (EUCC erforderlich)
+├── Ja → KRITISCH (Modul B+C oder H; EUCC erst nach delegiertem Rechtsakt nach Art. 8 Abs. 1)
 └── Nein
     └── Ist das Produkt in Annex III aufgeführt?
         ├── Ja → Welche Klasse?
@@ -71,7 +71,13 @@ Die Mehrheit der Produkte fällt in diese Kategorie. Der Hersteller führt die K
 
 ### Kategorie: Kritisch (Annex IV)
 
-**Konformitätsbewertung:** [Europäisches Cybersicherheitszertifikat (EUCC)](/de/conformity/eucc) auf Vertrauenswürdigkeitsstufe „substanziell" oder höher
+**Konformitätsbewertung (derzeit):** [EU-Baumusterprüfung (Modul B+C)](/de/conformity/module-bc) oder [Umfassende Qualitätssicherung (Modul H)](/de/conformity/module-h) gemäß Art. 32 Abs. 3 CRA.
+
+**Konformitätsbewertung (bedingt, künftig):** [Europäisches Cybersicherheitszertifikat (EUCC)](/de/conformity/eucc) auf Vertrauenswürdigkeitsstufe „substanziell" oder höher — verpflichtend erst, sobald die EU-Kommission einen delegierten Rechtsakt nach Art. 8 Abs. 1 CRA erlässt, der das Produkt benennt.
+
+::: info EUCC NICHT AUTOMATISCH VERPFLICHTEND
+Für Annex-IV-Produkte ist das EUCC **nicht automatisch** vorgeschrieben. Nach Art. 8 Abs. 1 CRA kann die Kommission die EUCC-Pflicht per delegiertem Rechtsakt auslösen; **Stand Juni 2026 ist dies nicht geschehen**. Bis dahin gilt die reguläre Konformitätsbewertung (Modul B+C oder H) nach Art. 32 Abs. 3 CRA.
+:::
 
 **Beispiele aus Annex IV:**
 
@@ -88,9 +94,11 @@ Die Mehrheit der Produkte fällt in diese Kategorie. Der Hersteller führt die K
 | Standard | ✅ | - | - | - |
 | Klasse I | ✅* | ✅ | - | - |
 | Klasse II | - | ✅ | ✅ | - |
-| Kritisch | - | - | - | ✅ |
+| Kritisch | - | ✅ | ✅ | ⚠️† |
 
 *\* Nur bei Anwendung harmonisierter Normen oder bei Konformität mit EU-Cybersicherheitszertifizierung*
+
+*† EUCC ist für kritische Produkte **derzeit nicht verpflichtend**. Es wird erst verbindlich, sobald die Kommission einen delegierten Rechtsakt nach Art. 8 Abs. 1 CRA erlässt. Bis dahin gilt Modul B+C oder H nach Art. 32 Abs. 3 CRA (Stand Juni 2026).*
 
 ::: tip AI-Act-Synergie
 Produkte, die in **Annex III des AI Act** als Hochrisiko-KI-Systeme gelistet sind, können auch in CRA Annex III erscheinen (z.B. IACS, Sicherheitskomponenten). Wenn ein Produkt unter beide Verordnungen fällt, gilt die **strengere Konformitätsbewertung**. Stimmen Sie Klassifizierungsentscheidungen zwischen CRA- und AI-Act-Teams ab.

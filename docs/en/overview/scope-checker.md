@@ -74,7 +74,10 @@ Pure SaaS services fall under NIS2, not CRA — unless remote data processing is
 │ Is the product listed in Annex IV?            │
 │                                               │
 │   YES → CRITICAL                              │
-│         → EUCC certification required         │
+│         → Currently Module B+C or H           │
+│           (Art. 32(3) CRA)                    │
+│         → EUCC only after delegated act       │
+│           (Art. 8(1) CRA)                     │
 │         → See: Conformity / EUCC              │
 │   NO  ↓                                      │
 ├───────────────────────────────────────────────┤
@@ -100,7 +103,11 @@ Pure SaaS services fall under NIS2, not CRA — unless remote data processing is
 | <span class="badge-default">Standard</span> | Default | [Module A (Self-Assessment)](/en/conformity/self-assessment) | Low |
 | <span class="badge-class-i">Class I</span> | Important (Class I) | [Module A with hEN](/en/conformity/self-assessment) or [Module B+C](/en/conformity/module-bc) | Medium |
 | <span class="badge-class-ii">Class II</span> | Important (Class II) | [Module B+C](/en/conformity/module-bc) or [Module H](/en/conformity/module-h) | High |
-| <span class="badge-critical">Critical</span> | Critical (Annex IV) | [EUCC Certification](/en/conformity/eucc) | Very High |
+| <span class="badge-critical">Critical</span> | Critical (Annex IV) | Currently [Module B+C](/en/conformity/module-bc) or [Module H](/en/conformity/module-h); [EUCC](/en/conformity/eucc) only after delegated act (Art. 8(1)) | High (EUCC: very high) |
+
+::: info EUCC NOT CURRENTLY MANDATORY FOR CRITICAL PRODUCTS
+EUCC certification is **not automatically** required for Annex IV products. It becomes mandatory only once the EU Commission adopts a delegated act under **Art. 8(1) CRA**; **as of June 2026 this has not happened**. Until then, critical products undergo the same conformity assessment procedures as Class II — Module B+C or Module H (**Art. 32(3) CRA**).
+:::
 
 ## Estimated Compliance Effort
 

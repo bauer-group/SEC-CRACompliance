@@ -2,10 +2,20 @@
 
 ## 7.5.1 Übersicht
 
-Für **kritische Produkte** (Annex IV CRA) ist ein Europäisches Cybersicherheitszertifikat (EUCC) auf mindestens der Vertrauenswürdigkeitsstufe „substanziell" erforderlich. Das EUCC basiert auf dem **EU Cybersecurity Act** (Verordnung (EU) 2019/881) und dem Common Criteria Framework (ISO/IEC 15408).
+Das Europäische Cybersicherheitszertifikat (EUCC) ist ein europäisches, auf Common Criteria (ISO/IEC 15408) basierendes Zertifizierungsschema. Es basiert auf dem **EU Cybersecurity Act** (Verordnung (EU) 2019/881) und kennt die Vertrauenswürdigkeitsstufen „substanziell" und „hoch".
+
+::: warning EUCC IST DERZEIT NICHT VERPFLICHTEND
+Eine EUCC-Zertifizierung ist für kritische Produkte (Annex IV) **nicht automatisch verpflichtend**. Nach **Art. 8 Abs. 1 CRA** ist die EU-Kommission lediglich *ermächtigt*, per **delegiertem Rechtsakt** festzulegen, welche kritischen Produkte ein europäisches Cybersicherheitszertifikat auf mindestens der Stufe „substanziell" erlangen müssen.
+
+**Stand Juni 2026 wurde kein solcher delegierter Rechtsakt erlassen.** Solange dies nicht geschieht, durchlaufen kritische Produkte die regulären Konformitätsbewertungsverfahren gemäß **Art. 32 Abs. 3 CRA** — d.h. EU-Baumusterprüfung (Modul B) + Konformität mit der Bauart (Modul C) oder umfassende Qualitätssicherung (Modul H).
+
+Eine EUCC-Pflicht entsteht erst, **sobald** die Kommission den delegierten Rechtsakt nach Art. 8 Abs. 1 erlässt und das betreffende Produkt darin benannt wird.
+:::
 
 ::: info RECHTSGRUNDLAGE
-**Art. 24 Abs. 3 CRA:** Für in Annex IV aufgeführte kritische Produkte muss ein europäisches Cybersicherheitszertifikat auf der Vertrauenswürdigkeitsstufe „substanziell" oder höher vorliegen.
+**Art. 8 Abs. 1 CRA:** Ermächtigt die Kommission, per delegiertem Rechtsakt festzulegen, welche kritischen Produkte (Annex IV) ein europäisches Cybersicherheitszertifikat auf der Stufe „substanziell" oder höher erlangen müssen. Bis ein solcher Rechtsakt vorliegt, besteht keine EUCC-Pflicht.
+
+**Art. 32 Abs. 3 CRA:** Bis zum Inkrafttreten eines delegierten Rechtsakts nach Art. 8 Abs. 1 unterliegen kritische Produkte den regulären Konformitätsbewertungsverfahren (Modul B+C oder Modul H).
 
 **Verordnung (EU) 2019/881 (Cybersecurity Act):** Definiert den europäischen Rahmen für Cybersicherheitszertifizierung.
 
@@ -14,12 +24,16 @@ Für **kritische Produkte** (Annex IV CRA) ist ein Europäisches Cybersicherheit
 
 ## 7.5.2 Anwendbarkeit
 
-| Kategorie | EUCC erforderlich? |
-|-----------|-------------------|
+| Kategorie | EUCC verpflichtend? |
+|-----------|---------------------|
 | Standard | Nein |
 | Klasse I | Nein |
 | Klasse II | Nein |
-| **Kritisch (Annex IV)** | **Ja** |
+| **Kritisch (Annex IV)** | **Nur bedingt** — erst nach delegiertem Rechtsakt (Art. 8 Abs. 1); derzeit Modul B+C oder H (Art. 32 Abs. 3) |
+
+::: tip DERZEITIGER KONFORMITÄTSWEG FÜR ANNEX-IV-PRODUKTE
+Da bislang kein delegierter Rechtsakt nach Art. 8 Abs. 1 erlassen wurde, folgen kritische Produkte aktuell demselben Verfahren wie Klasse-II-Produkte: [Modul B+C](/de/conformity/module-bc) oder [Modul H](/de/conformity/module-h). Die nachfolgende EUCC-Verfahrensbeschreibung gilt für den Fall, dass die Kommission die EUCC-Pflicht für eine Produktkategorie aktiviert.
+:::
 
 ### Annex IV Produktkategorien
 
@@ -142,9 +156,10 @@ Nach derzeitigem Kenntnisstand fallen keine BAUER GROUP Produkte unter Annex IV.
 
 ## 7.5.8 Übergangsregelungen
 
-- **Art. 24 Abs. 5 CRA:** Solange kein passendes EUCC-Schema für eine Annex IV Produktkategorie existiert, kann alternativ Modul B+C angewendet werden
-- Die EU-Kommission kann per Delegated Act weitere Produkte zu Annex IV hinzufügen
-- Hersteller müssen die Entwicklung der Implementing Acts aktiv verfolgen
+- **Art. 32 Abs. 3 CRA:** Solange die Kommission keinen delegierten Rechtsakt nach Art. 8 Abs. 1 erlassen hat, der eine EUCC-Pflicht auslöst, werden kritische Produkte (Annex IV) über die regulären Konformitätsbewertungsverfahren bewertet — Modul B+C oder Modul H. Dies ist der **derzeitige Status (Stand Juni 2026)**.
+- **Art. 8 Abs. 1 CRA:** Erst der Erlass eines delegierten Rechtsakts macht das EUCC für die darin benannten Produktkategorien verpflichtend.
+- Die EU-Kommission kann per delegiertem Rechtsakt zudem weitere Produkte zu Annex IV hinzufügen.
+- Hersteller müssen die Entwicklung der delegierten und Durchführungsrechtsakte aktiv verfolgen, um eine künftige EUCC-Pflicht rechtzeitig zu erkennen.
 
 ## 7.5.9 Checkliste: EUCC
 

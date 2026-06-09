@@ -9,11 +9,11 @@ The classification logic (decision tree, assessment procedure per category) is d
 ::: info LEGAL BASIS
 **Art. 7 CRA** defines the categories "Important products with digital elements" (Annex III) and "Critical products with digital elements" (Annex IV).
 
-**Art. 24(1)-(3) CRA** establishes the conformity assessment procedures per category:
+**Art. 32 CRA** establishes the conformity assessment procedures per category:
 
 - **Class I (Annex III Part I):** Internal control (Module A) where harmonised standards are applied, otherwise EU type examination (Module B+C)
 - **Class II (Annex III Part II):** EU type examination (Module B+C) or Comprehensive quality assurance (Module H)
-- **Critical (Annex IV):** European cybersecurity certificate (EUCC) at assurance level "substantial" or higher
+- **Critical (Annex IV):** Currently EU type examination (Module B+C) or Comprehensive quality assurance (Module H) under **Art. 32(3) CRA**. A European cybersecurity certificate (EUCC) at assurance level "substantial" or higher becomes mandatory **only once** the Commission names the products concerned by delegated act under **Art. 8(1) CRA** (as of June 2026: no such act adopted).
 
 **Art. 7(3) CRA** empowers the Commission to adopt delegated acts amending Annexes III and IV.
 :::
@@ -65,15 +65,21 @@ Class II products require mandatory third-party assessment: [EU type examination
 
 ## 7.6.3 Annex IV -- Critical Products with Digital Elements
 
-Critical products require a [European cybersecurity certificate (EUCC)](/en/conformity/eucc) at assurance level "substantial" or higher.
+Critical products are **currently** assessed via the standard conformity assessment procedures — [EU type examination (Module B+C)](/en/conformity/module-bc) or [Comprehensive quality assurance (Module H)](/en/conformity/module-h) under Art. 32(3) CRA. A [European cybersecurity certificate (EUCC)](/en/conformity/eucc) at assurance level "substantial" or higher becomes mandatory only once the Commission adopts a delegated act under Art. 8(1) CRA.
+
+::: warning EUCC CONDITIONAL ONLY
+The "Conformity Module" column in the table below lists the EUCC as a **possible future** procedure. **As of June 2026 it is not mandatory** — as long as no delegated act under Art. 8(1) CRA exists, Annex IV products follow Module B+C or Module H (Art. 32(3) CRA).
+:::
 
 | No. | Product Category | Description | Conformity Module |
 |-----|-----------------|-------------|-------------------|
-| 1 | Hardware devices with security boxes (HSMs, smartcards, etc.) | Hardware security modules (HSMs), smartcards, and comparable devices that perform cryptographic operations in a protected environment | EUCC |
-| 2 | Smartcard readers | Devices for reading and processing smartcard data for authentication, signature, or encryption | EUCC |
-| 3 | Sensor and actuator components for robots and robot controllers (industrial applications) | Sensors and actuators used in robots and robot controllers for industrial applications | EUCC |
-| 4 | Smart meters within the meaning of Article 2(23) of Directive (EU) 2019/944 | Electronic metering systems for measuring energy consumption under the Electricity Internal Market Directive | EUCC |
-| 5 | All devices and software components belonging to Advanced Metering Infrastructure (AMI) | All devices and software that are part of the advanced metering infrastructure | EUCC |
+| 1 | Hardware devices with security boxes (HSMs, smartcards, etc.) | Hardware security modules (HSMs), smartcards, and comparable devices that perform cryptographic operations in a protected environment | Module B+C / H (EUCC conditional*) |
+| 2 | Smartcard readers | Devices for reading and processing smartcard data for authentication, signature, or encryption | Module B+C / H (EUCC conditional*) |
+| 3 | Sensor and actuator components for robots and robot controllers (industrial applications) | Sensors and actuators used in robots and robot controllers for industrial applications | Module B+C / H (EUCC conditional*) |
+| 4 | Smart meters within the meaning of Article 2(23) of Directive (EU) 2019/944 | Electronic metering systems for measuring energy consumption under the Electricity Internal Market Directive | Module B+C / H (EUCC conditional*) |
+| 5 | All devices and software components belonging to Advanced Metering Infrastructure (AMI) | All devices and software that are part of the advanced metering infrastructure | Module B+C / H (EUCC conditional*) |
+
+*\* EUCC is mandatory only after a delegated act under Art. 8(1) CRA is adopted; until then Module B+C or H applies under Art. 32(3) CRA (as of June 2026).*
 
 ---
 
@@ -84,9 +90,11 @@ Critical products require a [European cybersecurity certificate (EUCC)](/en/conf
 | Standard (not in Annex III/IV) | ✅ | - | - | - |
 | Class I (Annex III Part I) | ✅* | ✅ | - | - |
 | Class II (Annex III Part II) | - | ✅ | ✅ | - |
-| Critical (Annex IV) | - | - | - | ✅ |
+| Critical (Annex IV) | - | ✅ | ✅ | ⚠️† |
 
 *\* Only where harmonised standards are applied in full*
+
+*† EUCC is **not currently mandatory** for critical products and becomes binding only once the Commission adopts a delegated act under Art. 8(1) CRA. Until then, Module B+C or H applies under Art. 32(3) CRA (as of June 2026).*
 
 Detailed information on the individual modules:
 

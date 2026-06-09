@@ -10,7 +10,7 @@
 
 ```
 产品是否列于 Annex IV 中？
-├── 是 → 关键 (CRITICAL)（需 EUCC）
+├── 是 → 关键 (CRITICAL)（Module B+C 或 H；EUCC 仅在 Art. 8(1) 授权法案通过后）
 └── 否
     └── 产品是否列于 Annex III 中？
         ├── 是 → 属于哪个类别？
@@ -71,7 +71,13 @@
 
 ### 类别：关键（Annex IV）
 
-**合规评估：** [欧洲网络安全证书（EUCC）](/zh/conformity/eucc)，保证级别为"实质性 (substantial)"或更高
+**合规评估（当前）：** 根据 Art. 32(3) CRA，采用 [EU 型式检验（Module B+C）](/zh/conformity/module-bc) 或 [全面质量保证（Module H）](/zh/conformity/module-h)。
+
+**合规评估（有条件，未来）：** [欧洲网络安全证书（EUCC）](/zh/conformity/eucc)，保证级别为"实质性 (substantial)"或更高——仅在欧盟委员会根据 Art. 8(1) CRA 通过指明该产品的授权法案后才成为强制要求。
+
+::: info EUCC 并非自动强制
+对于 Annex IV 产品，EUCC **并非自动**要求。根据 Art. 8(1) CRA，委员会可通过授权法案触发 EUCC 义务；**截至 2026 年 6 月，这尚未发生**。在此之前，适用 Art. 32(3) CRA 规定的标准合规评估（Module B+C 或 H）。
+:::
 
 **Annex IV 中的示例：**
 
@@ -88,9 +94,11 @@
 | 标准 | ✅ | - | - | - |
 | Class I | ✅* | ✅ | - | - |
 | Class II | - | ✅ | ✅ | - |
-| 关键 | - | - | - | ✅ |
+| 关键 | - | ✅ | ✅ | ⚠️† |
 
 *\* 仅在适用协调标准或符合 EU 网络安全认证时*
+
+*† 对于关键产品，EUCC **目前并非强制**。只有在委员会根据 Art. 8(1) CRA 通过授权法案后才具有约束力。在此之前，适用 Art. 32(3) CRA 规定的 Module B+C 或 H（截至 2026 年 6 月）。*
 
 ::: tip AI Act 协同
 在 **AI Act Annex III** 中列为高风险 AI 系统的产品也可能出现在 CRA Annex III 中（如 IACS、安全组件）。当产品同时受两部法规约束时，适用**更严格的合规评估**。请协调 CRA 和 AI Act 团队之间的分类决策。

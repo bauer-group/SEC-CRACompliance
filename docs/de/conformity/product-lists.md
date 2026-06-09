@@ -9,11 +9,11 @@ Die Klassifizierungslogik (Entscheidungsbaum, Bewertungsverfahren je Kategorie) 
 ::: info RECHTSGRUNDLAGE
 **Art. 7 CRA** definiert die Kategorien „Wichtige Produkte mit digitalen Elementen" (Annex III) und „Kritische Produkte mit digitalen Elementen" (Annex IV).
 
-**Art. 24 Abs. 1-3 CRA** legt die Konformitätsbewertungsverfahren je Kategorie fest:
+**Art. 32 CRA** legt die Konformitätsbewertungsverfahren je Kategorie fest:
 
 - **Klasse I (Annex III Teil I):** Interne Kontrolle (Modul A) bei Anwendung harmonisierter Normen, sonst EU-Baumusterprüfung (Modul B+C)
 - **Klasse II (Annex III Teil II):** EU-Baumusterprüfung (Modul B+C) oder Umfassende Qualitätssicherung (Modul H)
-- **Kritisch (Annex IV):** Europäisches Cybersicherheitszertifikat (EUCC) auf Stufe „substanziell" oder höher
+- **Kritisch (Annex IV):** Derzeit EU-Baumusterprüfung (Modul B+C) oder Umfassende Qualitätssicherung (Modul H) nach **Art. 32 Abs. 3 CRA**. Ein Europäisches Cybersicherheitszertifikat (EUCC) auf Stufe „substanziell" oder höher wird **erst dann** verpflichtend, wenn die Kommission per delegiertem Rechtsakt nach **Art. 8 Abs. 1 CRA** entsprechende Produkte benennt (Stand Juni 2026: kein solcher Rechtsakt erlassen).
 
 **Art. 7 Abs. 3 CRA** ermächtigt die Kommission, delegierte Rechtsakte zur Änderung der Annexe III und IV zu erlassen.
 :::
@@ -65,15 +65,21 @@ Produkte der Klasse II erfordern zwingend eine Bewertung durch Dritte: [EU-Baumu
 
 ## 7.6.3 Annex IV -- Kritische Produkte mit digitalen Elementen
 
-Kritische Produkte erfordern ein [Europäisches Cybersicherheitszertifikat (EUCC)](/de/conformity/eucc) auf mindestens der Vertrauenswürdigkeitsstufe „substanziell".
+Kritische Produkte werden **derzeit** über die regulären Konformitätsbewertungsverfahren bewertet — [EU-Baumusterprüfung (Modul B+C)](/de/conformity/module-bc) oder [Umfassende Qualitätssicherung (Modul H)](/de/conformity/module-h) nach Art. 32 Abs. 3 CRA. Ein [Europäisches Cybersicherheitszertifikat (EUCC)](/de/conformity/eucc) auf mindestens der Stufe „substanziell" wird erst verpflichtend, sobald die Kommission einen delegierten Rechtsakt nach Art. 8 Abs. 1 CRA erlässt.
+
+::: warning EUCC NUR BEDINGT VERPFLICHTEND
+Die Spalte „Konformitätsmodul" in der folgenden Tabelle nennt das EUCC als **künftig mögliches** Verfahren. **Stand Juni 2026 ist es nicht verpflichtend** — solange kein delegierter Rechtsakt nach Art. 8 Abs. 1 CRA vorliegt, gilt für Annex-IV-Produkte Modul B+C oder Modul H (Art. 32 Abs. 3 CRA).
+:::
 
 | Nr. | Produktkategorie | Beschreibung | Konformitätsmodul |
 |-----|-----------------|--------------|-------------------|
-| 1 | Hardware-Geräte mit Sicherheitsboxen (HSMs, Smartcards etc.) | Hardware Security Modules (HSMs), Smartcards und vergleichbare Geräte, die kryptographische Operationen in geschützter Umgebung durchführen | EUCC |
-| 2 | Smartcard-Leser | Geräte zum Lesen und Verarbeiten von Smartcard-Daten für Authentifizierung, Signatur oder Verschlüsselung | EUCC |
-| 3 | Sensor- und Aktorkomponenten für Roboter und Robotersteuerungen (Industrieanwendungen) | Sensoren und Aktoren, die in Robotern und Robotersteuerungen für industrielle Anwendungen eingesetzt werden | EUCC |
-| 4 | Intelligente Messsysteme (Smart Meter) im Sinne von Art. 2(23) der Richtlinie (EU) 2019/944 | Elektronische Messsysteme zur Messung des Energieverbrauchs gemäß der Elektrizitätsbinnenmarkt-Richtlinie | EUCC |
-| 5 | Alle Geräte und Softwarekomponenten der Advanced Metering Infrastructure (AMI) | Sämtliche Geräte und Software, die Teil der intelligenten Messinfrastruktur sind | EUCC |
+| 1 | Hardware-Geräte mit Sicherheitsboxen (HSMs, Smartcards etc.) | Hardware Security Modules (HSMs), Smartcards und vergleichbare Geräte, die kryptographische Operationen in geschützter Umgebung durchführen | Modul B+C / H (EUCC bedingt*) |
+| 2 | Smartcard-Leser | Geräte zum Lesen und Verarbeiten von Smartcard-Daten für Authentifizierung, Signatur oder Verschlüsselung | Modul B+C / H (EUCC bedingt*) |
+| 3 | Sensor- und Aktorkomponenten für Roboter und Robotersteuerungen (Industrieanwendungen) | Sensoren und Aktoren, die in Robotern und Robotersteuerungen für industrielle Anwendungen eingesetzt werden | Modul B+C / H (EUCC bedingt*) |
+| 4 | Intelligente Messsysteme (Smart Meter) im Sinne von Art. 2(23) der Richtlinie (EU) 2019/944 | Elektronische Messsysteme zur Messung des Energieverbrauchs gemäß der Elektrizitätsbinnenmarkt-Richtlinie | Modul B+C / H (EUCC bedingt*) |
+| 5 | Alle Geräte und Softwarekomponenten der Advanced Metering Infrastructure (AMI) | Sämtliche Geräte und Software, die Teil der intelligenten Messinfrastruktur sind | Modul B+C / H (EUCC bedingt*) |
+
+*\* EUCC ist erst nach Erlass eines delegierten Rechtsakts nach Art. 8 Abs. 1 CRA verpflichtend; bis dahin gilt Modul B+C oder H nach Art. 32 Abs. 3 CRA (Stand Juni 2026).*
 
 ---
 
@@ -84,9 +90,11 @@ Kritische Produkte erfordern ein [Europäisches Cybersicherheitszertifikat (EUCC
 | Standard (nicht in Annex III/IV) | ✅ | - | - | - |
 | Klasse I (Annex III Teil I) | ✅* | ✅ | - | - |
 | Klasse II (Annex III Teil II) | - | ✅ | ✅ | - |
-| Kritisch (Annex IV) | - | - | - | ✅ |
+| Kritisch (Annex IV) | - | ✅ | ✅ | ⚠️† |
 
 *\* Nur bei vollständiger Anwendung harmonisierter Normen*
+
+*† EUCC ist für kritische Produkte **derzeit nicht verpflichtend** und wird erst verbindlich, sobald die Kommission einen delegierten Rechtsakt nach Art. 8 Abs. 1 CRA erlässt. Bis dahin gilt Modul B+C oder H nach Art. 32 Abs. 3 CRA (Stand Juni 2026).*
 
 Detaillierte Informationen zu den einzelnen Modulen:
 

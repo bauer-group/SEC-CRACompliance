@@ -74,7 +74,10 @@ Reine SaaS-Dienste fallen unter NIS2, nicht unter den CRA — es sei denn, die F
 │ Ist das Produkt in Annex IV gelistet?         │
 │                                               │
 │   JA   → KRITISCH                             │
-│          → EUCC-Zertifizierung erforderlich   │
+│          → Derzeit Modul B+C oder H            │
+│            (Art. 32(3) CRA)                    │
+│          → EUCC erst nach delegiertem          │
+│            Rechtsakt (Art. 8(1) CRA)           │
 │          → Siehe: Konformität / EUCC           │
 │   NEIN ↓                                     │
 ├───────────────────────────────────────────────┤
@@ -100,7 +103,11 @@ Reine SaaS-Dienste fallen unter NIS2, nicht unter den CRA — es sei denn, die F
 | <span class="badge-default">Standard</span> | Standard | [Modul A (Selbstbewertung)](/de/conformity/self-assessment) | Gering |
 | <span class="badge-class-i">Klasse I</span> | Wichtig (Klasse I) | [Modul A mit hEN](/de/conformity/self-assessment) oder [Modul B+C](/de/conformity/module-bc) | Mittel |
 | <span class="badge-class-ii">Klasse II</span> | Wichtig (Klasse II) | [Modul B+C](/de/conformity/module-bc) oder [Modul H](/de/conformity/module-h) | Hoch |
-| <span class="badge-critical">Kritisch</span> | Kritisch (Annex IV) | [EUCC-Zertifizierung](/de/conformity/eucc) | Sehr hoch |
+| <span class="badge-critical">Kritisch</span> | Kritisch (Annex IV) | Derzeit [Modul B+C](/de/conformity/module-bc) oder [Modul H](/de/conformity/module-h); [EUCC](/de/conformity/eucc) erst nach delegiertem Rechtsakt (Art. 8(1)) | Hoch (EUCC: sehr hoch) |
+
+::: info EUCC FÜR KRITISCHE PRODUKTE DERZEIT NICHT VERPFLICHTEND
+Eine EUCC-Zertifizierung ist für Annex-IV-Produkte **nicht automatisch** erforderlich. Sie wird erst verpflichtend, sobald die EU-Kommission einen delegierten Rechtsakt nach **Art. 8 Abs. 1 CRA** erlässt; **Stand Juni 2026 ist dies nicht geschehen**. Bis dahin durchlaufen kritische Produkte dieselben Konformitätsbewertungsverfahren wie Klasse II — Modul B+C oder Modul H (**Art. 32 Abs. 3 CRA**).
+:::
 
 ## Geschätzter Compliance-Aufwand
 

@@ -10,7 +10,7 @@ The following decision tree outlines the systematic approach to product classifi
 
 ```
 Is the product listed in Annex IV?
-├── Yes → CRITICAL (EUCC required)
+├── Yes → CRITICAL (Module B+C or H; EUCC only after delegated act under Art. 8(1))
 └── No
     └── Is the product listed in Annex III?
         ├── Yes → Which class?
@@ -71,7 +71,13 @@ The majority of products fall into this category. The manufacturer carries out t
 
 ### Category: Critical (Annex IV)
 
-**Conformity assessment:** [European cybersecurity certificate (EUCC)](/en/conformity/eucc) at assurance level "substantial" or higher
+**Conformity assessment (current):** [EU type examination (Module B+C)](/en/conformity/module-bc) or [Comprehensive quality assurance (Module H)](/en/conformity/module-h) pursuant to Art. 32(3) CRA.
+
+**Conformity assessment (conditional, future):** [European cybersecurity certificate (EUCC)](/en/conformity/eucc) at assurance level "substantial" or higher — mandatory only once the EU Commission adopts a delegated act under Art. 8(1) CRA naming the product.
+
+::: info EUCC NOT AUTOMATICALLY MANDATORY
+For Annex IV products, the EUCC is **not automatically** required. Under Art. 8(1) CRA the Commission may trigger the EUCC obligation by delegated act; **as of June 2026 this has not happened**. Until then, the standard conformity assessment (Module B+C or H) under Art. 32(3) CRA applies.
+:::
 
 **Examples from Annex IV:**
 
@@ -88,9 +94,11 @@ The majority of products fall into this category. The manufacturer carries out t
 | Standard | ✅ | - | - | - |
 | Class I | ✅* | ✅ | - | - |
 | Class II | - | ✅ | ✅ | - |
-| Critical | - | - | - | ✅ |
+| Critical | - | ✅ | ✅ | ⚠️† |
 
 *\* Only when applying harmonised standards or when conforming with EU cybersecurity certification*
+
+*† EUCC is **not currently mandatory** for critical products. It becomes binding only once the Commission adopts a delegated act under Art. 8(1) CRA. Until then, Module B+C or H applies under Art. 32(3) CRA (as of June 2026).*
 
 ::: tip AI Act Synergy
 Products listed in **Annex III of the AI Act** as high-risk AI systems may also appear in CRA Annex III (e.g. IACS, safety components). When a product is classified under both regulations, the **stricter conformity assessment** applies. Coordinate classification decisions between CRA and AI Act teams.

@@ -2,10 +2,20 @@
 
 ## 7.5.1 Overview
 
-For **critical products** (Annex IV CRA), a European Cybersecurity Certificate (EUCC) at least at assurance level "substantial" is required. The EUCC is based on the **EU Cybersecurity Act** (Regulation (EU) 2019/881) and the Common Criteria framework (ISO/IEC 15408).
+The European Cybersecurity Certificate (EUCC) is a European certification scheme based on the Common Criteria framework (ISO/IEC 15408). It is grounded in the **EU Cybersecurity Act** (Regulation (EU) 2019/881) and defines the assurance levels "substantial" and "high".
+
+::: warning EUCC IS NOT CURRENTLY MANDATORY
+EUCC certification is **not automatically mandatory** for critical products (Annex IV). Under **Art. 8(1) CRA**, the Commission is merely *empowered* to determine, by **delegated act**, which critical products must obtain a European cybersecurity certificate at assurance level at least "substantial".
+
+**As of June 2026, no such delegated act has been adopted.** Until one is, critical products undergo the standard conformity assessment procedures under **Art. 32(3) CRA** — i.e. EU type examination (Module B) + conformity to type (Module C), or full quality assurance (Module H).
+
+An EUCC obligation arises only **once** the Commission adopts the delegated act under Art. 8(1) and names the product concerned within it.
+:::
 
 ::: info LEGAL BASIS
-**Art. 24(3) CRA:** For critical products listed in Annex IV, a European cybersecurity certificate at assurance level "substantial" or higher must be obtained.
+**Art. 8(1) CRA:** Empowers the Commission to determine, by delegated act, which critical products (Annex IV) must obtain a European cybersecurity certificate at assurance level "substantial" or higher. Until such an act is adopted, no EUCC obligation exists.
+
+**Art. 32(3) CRA:** Until a delegated act under Art. 8(1) enters into force, critical products are subject to the standard conformity assessment procedures (Module B+C or Module H).
 
 **Regulation (EU) 2019/881 (Cybersecurity Act):** Defines the European framework for cybersecurity certification.
 
@@ -14,12 +24,16 @@ For **critical products** (Annex IV CRA), a European Cybersecurity Certificate (
 
 ## 7.5.2 Applicability
 
-| Category | EUCC required? |
-|----------|---------------|
+| Category | EUCC mandatory? |
+|----------|-----------------|
 | Default | No |
 | Class I | No |
 | Class II | No |
-| **Critical (Annex IV)** | **Yes** |
+| **Critical (Annex IV)** | **Conditional only** — only after a delegated act (Art. 8(1)); currently Module B+C or H (Art. 32(3)) |
+
+::: tip CURRENT CONFORMITY PATH FOR ANNEX IV PRODUCTS
+As no delegated act under Art. 8(1) has yet been adopted, critical products currently follow the same procedure as Class II products: [Module B+C](/en/conformity/module-bc) or [Module H](/en/conformity/module-h). The EUCC procedure described below applies in the event that the Commission activates the EUCC obligation for a product category.
+:::
 
 ### Annex IV Product Categories
 
@@ -142,9 +156,10 @@ Based on current assessment, no BAUER GROUP products fall under Annex IV. This a
 
 ## 7.5.8 Transitional Provisions
 
-- **Art. 24(5) CRA:** As long as no suitable EUCC scheme exists for an Annex IV product category, Module B+C may be applied as an alternative
-- The EU Commission may add further products to Annex IV via Delegated Act
-- Manufacturers must actively monitor the development of Implementing Acts
+- **Art. 32(3) CRA:** As long as the Commission has not adopted a delegated act under Art. 8(1) triggering an EUCC obligation, critical products (Annex IV) are assessed via the standard conformity assessment procedures — Module B+C or Module H. This is the **current status (as of June 2026)**.
+- **Art. 8(1) CRA:** Only the adoption of a delegated act makes the EUCC mandatory for the product categories named therein.
+- The EU Commission may also add further products to Annex IV via delegated act.
+- Manufacturers must actively monitor the development of delegated and implementing acts in order to identify a future EUCC obligation in good time.
 
 ## 7.5.9 Checklist: EUCC
 
