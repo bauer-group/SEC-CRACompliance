@@ -24,6 +24,7 @@ export const en: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
 
     nav: [
       { text: 'Introduction', link: '/en/overview/' },
+      { text: 'Clarifications', link: '/en/clarifications/' },
       {
         text: 'Documentation',
         items: [
@@ -60,6 +61,16 @@ export const en: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
     // -----------------------------------------------------------------
 
     sidebar: {
+      '/en/clarifications/': [
+        {
+          text: 'Clarifications & Misconceptions',
+          items: [
+            { text: 'Overview', link: '/en/clarifications/' },
+            { text: 'Certificate vs. CRA Lifecycle', link: '/en/clarifications/certificate-vs-lifecycle' },
+            { text: 'IEC 62443 & ISO vs. CRA', link: '/en/clarifications/iec-62443-vs-cra' },
+          ]
+        }
+      ],
       '/en/overview/': [
         {
           text: 'Chapter 1: Introduction',

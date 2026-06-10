@@ -17,6 +17,10 @@ hero:
       link: /en/templates/
 
 features:
+  - icon: 🧭
+    title: Clarifications & Misconceptions
+    details: Why an IEC 62443 or ISO certificate is not CRA compliance — the certificate-vs-lifecycle distinction, explained via the ISO 9001 analogy
+    link: /en/clarifications/
   - icon: 📋
     title: SBOM & Signing
     details: Software Bill of Materials – generation, archival, and Cosign-based signing per release using CycloneDX JSON

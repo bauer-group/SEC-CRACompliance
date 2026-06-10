@@ -24,6 +24,7 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
 
     nav: [
       { text: '概述', link: '/zh/overview/' },
+      { text: '澄清', link: '/zh/clarifications/' },
       {
         text: '文档',
         items: [
@@ -60,6 +61,16 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
     // -----------------------------------------------------------------
 
     sidebar: {
+      '/zh/clarifications/': [
+        {
+          text: '澄清与常见误解',
+          items: [
+            { text: '概述', link: '/zh/clarifications/' },
+            { text: '证书 vs. CRA 全生命周期', link: '/zh/clarifications/certificate-vs-lifecycle' },
+            { text: 'IEC 62443、ISO 与 CRA', link: '/zh/clarifications/iec-62443-vs-cra' },
+          ]
+        }
+      ],
       '/zh/overview/': [
         {
           text: '第1章：概述',

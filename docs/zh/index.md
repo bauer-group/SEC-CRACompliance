@@ -17,6 +17,10 @@ hero:
       link: /zh/templates/
 
 features:
+  - icon: 🧭
+    title: 澄清与常见误解
+    details: 为什么 IEC 62443 或 ISO 证书不等于 CRA 合规——用 ISO 9001 类比讲清「证书 vs. 全生命周期」
+    link: /zh/clarifications/
   - icon: 📋
     title: SBOM 与签名
     details: 软件物料清单 – 使用 CycloneDX JSON 按版本进行生成、归档和基于 Cosign 的签名

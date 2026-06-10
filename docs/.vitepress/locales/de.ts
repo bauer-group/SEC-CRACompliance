@@ -24,6 +24,7 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
 
     nav: [
       { text: 'Einführung', link: '/de/overview/' },
+      { text: 'Klarstellungen', link: '/de/clarifications/' },
       {
         text: 'Dokumentation',
         items: [
@@ -60,6 +61,16 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
     // -----------------------------------------------------------------
 
     sidebar: {
+      '/de/clarifications/': [
+        {
+          text: 'Klarstellungen & Abgrenzungen',
+          items: [
+            { text: 'Übersicht', link: '/de/clarifications/' },
+            { text: 'Zertifikat vs. CRA-Lebenszyklus', link: '/de/clarifications/certificate-vs-lifecycle' },
+            { text: 'IEC 62443 & ISO vs. CRA', link: '/de/clarifications/iec-62443-vs-cra' },
+          ]
+        }
+      ],
       '/de/overview/': [
         {
           text: 'Kapitel 1: Einführung',

@@ -17,6 +17,10 @@ hero:
       link: /de/templates/
 
 features:
+  - icon: 🧭
+    title: Klarstellungen & Abgrenzungen
+    details: Warum ein IEC-62443- oder ISO-Zertifikat keine CRA-Konformität ist — Zertifikat vs. Lebenszyklus, erklärt über die ISO-9001-Analogie
+    link: /de/clarifications/
   - icon: 📋
     title: SBOM & Signierung
     details: Software Bill of Materials – Generierung, Archivierung und Cosign-basierte Signierung pro Release mit CycloneDX JSON
