@@ -234,7 +234,7 @@ jobs:
       eu-doc-path: ${{ steps.eu-doc.outputs.eu-doc-path || '' }}
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
