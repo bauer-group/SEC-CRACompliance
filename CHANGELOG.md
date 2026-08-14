@@ -1,3 +1,9 @@
+## [0.10.3](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.10.2...v0.10.3) (2026-08-14)
+
+### 🐛 Bug Fixes
+
+* **ci:** added the missing permissions block ([0a80582](https://github.com/bauer-group/SEC-CRACompliance/commit/0a80582202bfa8dfe448d26b76b7b27175514f73))
+
 ## [0.10.2](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.10.1...v0.10.2) (2026-04-29)
 
 ### ♻️ Refactoring
