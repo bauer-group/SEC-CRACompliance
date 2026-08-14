@@ -68,6 +68,15 @@ const rows = computed<Row[]>(() => {
         operationalFrom: data.enisaSrp.operationalFrom,
       }),
     },
+    {
+      regulation: r.commissionGuidance.regulation,
+      reference: interpolate(r.commissionGuidance.reference, {
+        reference: data.commissionGuidance.reference,
+      }),
+      relevance: interpolate(r.commissionGuidance.relevance, {
+        contentApproved: data.commissionGuidance.contentApproved,
+      }),
+    },
   ]
 })
 </script>

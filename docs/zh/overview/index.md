@@ -6,7 +6,7 @@
 |-------|-------|
 | **文档标题** | CRA 合规手册 |
 | **文档标识符** | BG-CRA-HB-001 |
-| **版本** | 1.0 |
+| **版本** | 1.1 |
 | **分类** | 公开 |
 | **范围** | BAUER GROUP 所有含数字元素的产品 |
 | **发布方** | BAUER GROUP – 信息安全部门 |
@@ -21,6 +21,7 @@
 | 版本 | 日期 | 作者 | 变更内容 |
 |---------|------|--------|--------|
 | 1.0 | 2026-02-08 | BAUER GROUP | 初始版本 |
+| 1.1 | 2026-08-14 | BAUER GROUP | 纳入委员会 CRA 适用指南（C(2026) 5252 final，2026.07.27）—— 参见[欧盟委员会 CRA 指南](/zh/clarifications/commission-guidance) |
 
 ### 约束力
 
@@ -75,7 +76,7 @@ CRA 补充了 **NIS2 指令**（指令 (EU) 2022/2555）。NIS2 规范的是关�
 - **固件** – 嵌入式系统（ESP32、STM32、Zephyr RTOS）
 - **库** – 公开发布的 NPM 和 NuGet 包
 - **含软件的硬件** – 物联网设备、工业控制器
-- **远程数据处理** – 作为产品组成部分的云组件
+- **远程数据处理** – 作为产品组成部分的云组件 → [1.15 远程数据处理](./remote-data-processing)
 
 详细的产品类别和豁免情况请参见 [1.1 适用范围与产品](./scope)。
 
@@ -89,14 +90,15 @@ CRA 补充了 **NIS2 指令**（指令 (EU) 2022/2555）。NIS2 规范的是关�
 | **1.4** | [进口商义务 (Art. 19)](./importer-obligations) |
 | **1.5** | [授权代表 (Art. 18)](./authorised-representative) |
 | **1.6** | [分销商义务 (Art. 20)](./distributor-obligations) |
-| **1.7** | [开源软件管理者 (Art. 24–25)](./open-source-steward) |
-| **1.8** | [实质性修改 (Art. 22)](./substantial-modifications) |
+| **1.7** | [自由与开源软件及其管理者 (Art. 3(14)、3(48)、24–25)](./open-source-steward) |
+| **1.8** | [实质性修改与备件 (Art. 3(30)、21–22)](./substantial-modifications) |
 | **1.9** | [不合格 (Art. 54, 58)](./non-conformity) |
 | **1.10** | [市场监管 (Art. 52–58)](./market-surveillance) |
 | **1.11** | [处罚 (Art. 64)](./penalties) |
 | **1.12** | [协调标准 (Art. 5–6)](./harmonised-standards) |
 | **1.13** | [一般产品安全 (Art. 9)](./product-safety) |
 | **1.14** | [NIS2 整合](./nis2-integration) |
+| **1.15** | [远程数据处理 (Art. 3(2))](./remote-data-processing) |
 
 ## 本手册结构
 

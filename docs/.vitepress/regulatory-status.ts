@@ -54,10 +54,23 @@ export interface RegulatoryStatus {
     operationalFrom: string // YYYY-MM-DD
     sourceUrl: string
   }
+
+  /**
+   * Kommissionsleitlinien zur Anwendung des CRA (Art. 26)
+   *
+   * `formalAdoption` bleibt leer, solange die förmliche Annahme aussteht.
+   * Sobald sie erfolgt ist: Datum hier eintragen UND die `commissionGuidance`
+   * relevance-Labels in `locales/{de,en,zh}.ts` entsprechend anpassen.
+   */
+  commissionGuidance: {
+    reference: string
+    contentApproved: string // YYYY-MM-DD
+    formalAdoption: string // YYYY-MM-DD oder '' solange ausstehend
+  }
 }
 
 export const regulatoryStatus: RegulatoryStatus = {
-  asOf: '2026-06',
+  asOf: '2026-08',
 
   m606: {
     requestId: 'M/606',
@@ -94,5 +107,11 @@ export const regulatoryStatus: RegulatoryStatus = {
     operationalFrom: '2026-09-11',
     sourceUrl:
       'https://www.enisa.europa.eu/topics/product-security-and-certification/single-reporting-platform-srp',
+  },
+
+  commissionGuidance: {
+    reference: 'C(2026) 5252 final',
+    contentApproved: '2026-07-27',
+    formalAdoption: '',
   },
 }

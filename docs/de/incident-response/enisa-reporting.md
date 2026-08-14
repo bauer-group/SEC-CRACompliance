@@ -5,21 +5,23 @@
 Gemäß Art. 14 CRA sind Hersteller verpflichtet, bestimmte Sicherheitsereignisse an ENISA bzw. die zuständige nationale CSIRT-Behörde zu melden. Die Meldepflicht gilt ab dem **11. September 2026**.
 
 ::: info RECHTSGRUNDLAGE
-**Art. 14 Abs. 1 CRA:** *„Der Hersteller meldet jede aktiv ausgenutzte Schwachstelle, die in dem Produkt mit digitalen Elementen enthalten ist, gleichzeitig dem benannten CSIRT und ENISA. Der Hersteller übermittelt eine Frühwarnung innerhalb von 24 Stunden, nachdem er davon Kenntnis erlangt hat."*
+**Art. 14 Abs. 1 CRA:** Der Hersteller meldet jede **aktiv ausgenutzte Schwachstelle**, die in dem Produkt mit digitalen Elementen enthalten ist, **gleichzeitig** dem als Koordinator benannten CSIRT und ENISA.
 
-**Art. 14 Abs. 2 CRA:** *„Der Hersteller übermittelt innerhalb von 72 Stunden nach Kenntnisnahme eine Schwachstellenmeldung, die eine allgemeine Beschreibung der Schwachstelle, eine erste Bewertung des Schweregrads und der Auswirkungen sowie Informationen über ergriffene Korrekturmaßnahmen enthält."*
+**Art. 14 Abs. 3 CRA:** Der Hersteller meldet jeden **schwerwiegenden Sicherheitsvorfall mit Auswirkungen auf die Sicherheit** des Produkts mit digitalen Elementen, ebenfalls gleichzeitig dem benannten CSIRT und ENISA.
 
-**Art. 14 Abs. 3 CRA:** *„Der Hersteller übermittelt innerhalb von 14 Tagen nach Kenntnisnahme einen Abschlussbericht, der eine detaillierte Beschreibung der Schwachstelle, Informationen über ergriffene Korrektur- oder Abhilfemaßnahmen sowie gegebenenfalls Kompromittierungsindikatoren enthält."*
+**Art. 14 Abs. 8 CRA:** Nach Kenntniserlangung informiert der Hersteller die betroffenen Nutzer und, soweit angemessen, alle Nutzer.
+
+Beide Auslöser folgen derselben dreistufigen Struktur: Frühwarnung, ausführlichere Meldung und Abschlussbericht.
 :::
 
 ::: danger KRITISCHE FRISTEN
 
 | Meldung | Frist | Fristbeginn |
 |---------|-------|-------------|
-| Frühwarnung | **24 Stunden** | Kenntnisnahme der aktiv ausgenutzten Schwachstelle / des schweren Vorfalls |
-| Schwachstellenmeldung | **72 Stunden** | Kenntnisnahme |
-| Abschlussbericht (Schwachstelle) | **14 Tage** | Verfügbarkeit einer Korrekturmaßnahme |
-| Abschlussbericht (schwerer Vorfall) | **1 Monat** | Schwachstellenmeldung (72h-Meldung) |
+| Frühwarnung | Unverzüglich, in jedem Fall **24 Stunden** | Kenntniserlangung von der aktiv ausgenutzten Schwachstelle / dem schwerwiegenden Vorfall |
+| Meldung | Unverzüglich, in jedem Fall **72 Stunden** | Kenntniserlangung |
+| Abschlussbericht (aktiv ausgenutzte Schwachstelle) | **14 Tage** | Verfügbarkeit einer Korrektur- oder Abhilfemaßnahme |
+| Abschlussbericht (schwerwiegender Vorfall) | **1 Monat** | Die 72-Stunden-Meldung |
 
 :::
 
@@ -31,7 +33,65 @@ Die CRA-Meldepflicht (Art. 14) ist an **NIS2 Art. 23** (Incident-Notification) a
 Produkte mit KI-Komponenten, die nach dem AI Act als Hochrisiko eingestuft sind, haben **zusätzliche Meldepflichten** (Art. 62 AI Act). Stimmen Sie KI-bezogene Incident-Meldungen mit der CRA-Meldung ab, um Doppelmeldungen zu vermeiden.
 :::
 
-## 4.3.2 Meldepflichtige Ereignisse
+## 4.3.2 Wann beginnt die Frist? „Kenntniserlangung"
+
+Jede oben genannte Frist läuft ab dem Moment der **Kenntniserlangung**. Die Leitlinien der Kommission definieren diesen Moment und stellen ihn in Einklang mit Erwägungsgrund 31 der Durchführungsverordnung (EU) 2024/2690 sowie Abschnitt II(A) der Leitlinien 9/2022 zur Meldung von Verletzungen des Schutzes personenbezogener Daten nach der DSGVO.
+
+::: info DIE DEFINITION
+Erkennt der Hersteller ein verdächtiges Ereignis — oder macht ein Dritter, etwa eine Einzelperson, ein Kunde, eine Einrichtung, eine Behörde, ein Medienunternehmen oder eine andere Quelle, ihn auf einen möglichen Vorfall oder eine Schwachstelle aufmerksam —, muss er dies **unverzüglich bewerten**.
+
+Der Hersteller gilt als **kenntniserlangt**, wenn er nach dieser Erstbewertung mit **hinreichender Sicherheit** feststellt, dass
+
+1. eine in seinem Produkt enthaltene Schwachstelle **aktiv ausgenutzt wird**, oder
+2. ein **schwerwiegender Sicherheitsvorfall** eingetreten ist und zur Kompromittierung der Sicherheit seines Produkts geführt hat.
+:::
+
+Der genaue Zeitpunkt hängt von den Umständen ab. Mitunter ist die aktive Ausnutzung von Anfang an klar; mitunter dauert es, festzustellen, ob das Produkt überhaupt betroffen ist und ob ein böswilliger Akteur die Schwachstelle ausnutzt.
+
+::: warning ENTSCHEIDEND IST DIE ZÜGIGE BEWERTUNG
+Eine gemächliche Erstbewertung verschiebt die Frist nicht rechtmäßig nach hinten. Verlangt wird **zügiges Handeln** bei der Erstbewertung — insbesondere wenn die Schwachstelle ein erhebliches Risiko darstellen kann — und, wenn die Voraussetzungen vorliegen, Abhilfe und Meldung.
+
+Operativ: Die Erstbewertung von ≤ 2 Stunden im Phase-1-Prozess weiter unten ist der Mechanismus, der die „Kenntniserlangung" belastbar macht. Zeitpunkt des Signaleingangs, Abschluss der Bewertung und die Begründung sind zu dokumentieren.
+:::
+
+Die Meldungen werden anschließend **fortlaufend aktualisiert**, während die interne Untersuchung fortschreitet. Die Frühwarnung enthält bewusst nur begrenzte Informationen; sie ist kein Grund zur Verzögerung.
+
+## 4.3.3 Zeitlicher Anwendungsbereich der Meldepflicht
+
+| Frage | Antwort |
+|-------|---------|
+| Ab wann gilt Art. 14? | **11. September 2026** |
+| Für welche Produkte? | **Alle** Produkte im Anwendungsbereich des CRA — **einschließlich der vor dem 11.12.2027 in Verkehr gebrachten** (Art. 69 Abs. 3, Art. 71 Abs. 2) |
+| Endet sie mit dem Support-Zeitraum? | **Nein.** Anders als die Pflichten zur Schwachstellenbehandlung nach Anhang I Teil II **bestehen die Meldepflichten fort, nachdem ein Produkt nicht mehr unterstützt wird** |
+| Schulden Bestandsprodukte auch Schwachstellenbehandlung? | **Nein.** Wurde ein Produkt vor dem 11.12.2027 in Verkehr gebracht oder ist sein Support-Zeitraum abgelaufen, gelten die Pflichten des Anhangs I Teil II nicht — die Meldepflicht jedoch schon |
+
+::: tip KEINE RÜCKWIRKENDE MELDUNG
+Da die Pflicht durch die **Kenntniserlangung von aktiver Ausnutzung** ausgelöst wird, muss ein Hersteller Schwachstellen **nicht** melden, von deren aktiver Ausnutzung er bereits **vor dem 11. September 2026** Kenntnis erlangt hatte. Der CRA verlangt keine rückwirkende Meldung.
+
+Der umgekehrte Fall **ist** erfasst: Kannte der Hersteller eine Schwachstelle vor dem 11. September 2026, war ihm aber zu diesem Zeitpunkt keine aktive Ausnutzung bekannt — weil noch keine stattgefunden hatte oder weil er davon keine Kenntnis hatte — und tritt die aktive Ausnutzung danach ein oder wird ihm danach bekannt, wird die Schwachstelle zu einer meldepflichtigen, aktiv ausgenutzten Schwachstelle.
+:::
+
+## 4.3.4 Schwachstellen in Drittkomponenten
+
+Ein Hersteller meldet nur aktiv ausgenutzte Schwachstellen, die **in seinem eigenen Produkt enthalten** sind. Daraus ergibt sich eine präzise und häufig falsch angewandte Abgrenzung:
+
+| Sachverhalt | Meldepflichtig nach Art. 14 Abs. 1? |
+|-------------|:-----------------------------------:|
+| Eine Drittkomponente im Produkt enthält eine Schwachstelle, die **im Produkt aktiv ausgenutzt wird** | **Ja** — der Hersteller des Produkts muss sie melden |
+| Eine Drittkomponente enthält eine Schwachstelle, die im Produkt **nicht ausnutzbar** ist (z. B. weil der verwundbare Code nicht erreichbar ist) | **Nein** |
+| Eine Drittkomponente enthält eine Schwachstelle, die im Produkt **nicht ausgenutzt wurde** | **Nein** |
+
+In den beiden verneinenden Fällen ist der Hersteller gleichwohl verpflichtet:
+
+1. die **Anforderungen an die Schwachstellenbehandlung** des Anhangs I Teil II einzuhalten;
+2. die Schwachstelle **nach oben zu melden** — an die Person oder Einrichtung, die die Komponente herstellt oder pflegt (Art. 13 Abs. 6) → [3.5 Anforderungen an die Schwachstellenbehandlung](/de/vulnerability-management/handling-requirements);
+3. und er **kann** freiwillig nach **Art. 15** melden.
+
+::: tip AUCH OPEN-SOURCE-STEWARDS MELDEN
+Verwalter quelloffener Software müssen aktiv ausgenutzte Schwachstellen nach Art. 24 Abs. 3 ebenfalls melden, soweit sie an der Entwicklung des Produkts beteiligt sind. Da FOSS-Komponenten typischerweise nachgelagert integriert werden, erlangt ein Steward die Kenntnis meist über eine Meldung Dritter — von einem Hersteller, der die Ausnutzung in seinem eigenen Produkt entdeckt hat, oder von einem Nutzer bzw. Sicherheitsforscher. Siehe [1.7 Freie & quelloffene Software und der Steward](/de/overview/open-source-steward).
+:::
+
+## 4.3.5 Meldepflichtige Ereignisse
 
 ### Aktiv ausgenutzte Schwachstelle (Art. 14 Abs. 1)
 
@@ -58,7 +118,7 @@ Ein Vorfall, der die Sicherheit des Produkts oder seiner Nutzer erheblich beeint
 | Verfügbarkeitsverlust | Sicherheitsrelevante Funktionen sind eingeschränkt | Auth-Bypass, Update-Mechanismus gestört |
 | Kompromittierte Updates | Manipulierte Updates werden ausgeliefert | Supply-Chain-Angriff, Signing-Key-Kompromittierung |
 
-## 4.3.3 Rollen und Verantwortlichkeiten
+## 4.3.6 Rollen und Verantwortlichkeiten
 
 | Rolle | Verantwortung im Meldeprozess |
 |-------|-------------------------------|
@@ -68,7 +128,7 @@ Ein Vorfall, der die Sicherheit des Produkts oder seiner Nutzer erheblich beeint
 | **Management** | Freigabe bei SEV-1/SEV-2, Ressourcenzuweisung, Eskalation |
 | **Entwickler** | Root-Cause-Analyse, Patch-Entwicklung, Security-Review |
 
-## 4.3.4 Meldeplattform
+## 4.3.7 Meldeplattform
 
 <EnisaSrpStatus />
 
@@ -112,7 +172,7 @@ Falls die ENISA SRP temporär nicht verfügbar ist, erfolgt die Meldung an das z
 Bei Nutzung des nationalen CSIRT als Fallback ist die Meldung unverzüglich nachzuholen, sobald die ENISA SRP wieder verfügbar ist.
 :::
 
-## 4.3.5 Meldeprozess
+## 4.3.8 Meldeprozess
 
 ### Phase 1: Frühwarnung (≤ 24 Stunden)
 
@@ -223,7 +283,7 @@ Behebung abgeschlossen oder fortgeschritten
 
 **Nachweis:** Meldungsbestätigung + vollständige Kopie im Incident-Ticket + Archivierung
 
-## 4.3.6 Nutzerbenachrichtigung (Art. 14 Abs. 8)
+## 4.3.9 Nutzerbenachrichtigung (Art. 14 Abs. 8)
 
 Parallel zur ENISA-Meldung müssen betroffene Nutzer **unverzüglich** über die Schwachstelle und verfügbare Korrekturmaßnahmen informiert werden.
 
@@ -241,7 +301,25 @@ Parallel zur ENISA-Meldung müssen betroffene Nutzer **unverzüglich** über die
 Die Nutzerbenachrichtigung darf keine Details enthalten, die die Ausnutzung der Schwachstelle erleichtern könnten, solange kein Patch verfügbar ist. In Abstimmung mit ENISA kann eine verzögerte Offenlegung vereinbart werden (Art. 14 Abs. 7).
 :::
 
-## 4.3.7 Dokumentation und Nachweisführung
+### Nutzerinformation ist risikobasiert, nicht wahllos
+
+::: info VERHÄLTNISMÄSSIGE OFFENLEGUNG
+Art. 14 Abs. 8 bedeutet **nicht**, dass Informationen über eine aktiv ausgenutzte Schwachstelle oder einen schwerwiegenden Vorfall öffentlich gemacht oder wahllos offengelegt werden müssen. Im Licht der Art des Produkts, der betroffenen Nutzer und der potenziellen Auswirkungen dürfen Hersteller die **Offenlegung detaillierter Informationen auf die betroffenen Nutzer oder Kunden beschränken**.
+
+Das gilt insbesondere für Produkte in **sensiblen oder wesentlichen Umgebungen**, in denen die öffentliche Offenlegung technischer Details selbst Cybersicherheitsrisiken erhöhen oder weitere Ausnutzung erleichtern könnte.
+:::
+
+| Phase | Angemessener Umfang der Offenlegung |
+|-------|-------------------------------------|
+| Vor Behebung oder Minderung der Schwachstelle | Begrenzte, gezielte Offenlegung gegenüber betroffenen Nutzern und Kunden; keine technischen Details, die die Ausnutzung erleichtern |
+| Nach angemessener Behebung oder Minderung | **Eine breitere Offenlegung kann angemessen sein** — etwa zur allgemeinen Sensibilisierung oder damit Nutzer prüfen können, dass ihre Produkte nicht mehr betroffen sind. Detailtiefe und Zeitpunkt bleiben verhältnismäßig zum Restausnutzungsrisiko, zur Art des Produkts und zu den Interessen der Nutzer |
+| Sobald ein Sicherheitsupdate bereitgestellt ist | **Öffentliche Offenlegung ist verpflichtend** nach Anhang I Teil II Nr. 4 — Beschreibung, betroffene Produkte, Auswirkungen, Schweregrad und Abhilfemaßnahmen → [3.5 Anforderungen an die Schwachstellenbehandlung](/de/vulnerability-management/handling-requirements) |
+
+::: danger INFORMIEREN SIE NICHT RECHTZEITIG, KANN DAS CSIRT ES TUN
+Versäumt es ein Hersteller, die Nutzer rechtzeitig zu informieren, **können die CSIRTs, die die Meldung erhalten haben, diese Informationen selbst an die Nutzer weitergeben**, sofern dies als verhältnismäßig und erforderlich erachtet wird, um die Auswirkungen der Schwachstelle oder des Vorfalls zu verhindern oder zu mindern. Die Kontrolle über die Botschaft geht damit verloren.
+:::
+
+## 4.3.10 Dokumentation und Nachweisführung
 
 Jede ENISA-Meldung wird vollständig dokumentiert. Diese Dokumentation dient als **Nachweis der Pflichterfüllung** gegenüber Marktaufsichtsbehörden (Art. 52 CRA).
 
@@ -267,7 +345,7 @@ Alle Meldungen verwenden ein einheitliches Referenzierungsschema:
 | Abschlussbericht | `FR-YYYY-NNN` | FR-2026-001 |
 | Interner Incident | `INC-YYYY-NNN` | INC-2026-001 |
 
-## 4.3.8 Vorbereitungsmaßnahmen (vor 11.09.2026)
+## 4.3.11 Vorbereitungsmaßnahmen (vor 11.09.2026)
 
 Die folgenden Maßnahmen müssen vor dem Inkrafttreten der Meldepflicht abgeschlossen sein:
 
@@ -282,7 +360,7 @@ Die folgenden Maßnahmen müssen vor dem Inkrafttreten der Meldepflicht abgeschl
 | 7 | ENISA-Zugangsdaten sicher hinterlegen | Security Lead | Q3 2026 | Ausstehend |
 | 8 | Meldeprozess in Tabletop-Übung testen | Security Lead | Q3 2026 | Ausstehend |
 
-## 4.3.9 Entscheidungsbaum: Meldepflicht
+## 4.3.12 Entscheidungsbaum: Meldepflicht
 
 ```
 Sicherheitsereignis erkannt
@@ -306,3 +384,5 @@ Sicherheitsereignis erkannt
         → Patch Management gemäß SLA
         → Keine ENISA-Meldepflicht
 ```
+
+> Quelle und Rechtsstatus der Auslegungen auf dieser Seite: [Leitlinien der EU-Kommission zum CRA](/de/clarifications/commission-guidance).

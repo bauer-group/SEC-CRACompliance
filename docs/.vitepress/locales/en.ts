@@ -66,8 +66,10 @@ export const en: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           text: 'Clarifications & Misconceptions',
           items: [
             { text: 'Overview', link: '/en/clarifications/' },
+            { text: 'Commission Guidance (Art. 26)', link: '/en/clarifications/commission-guidance' },
             { text: 'Certificate vs. CRA Lifecycle', link: '/en/clarifications/certificate-vs-lifecycle' },
             { text: 'IEC 62443 & ISO vs. CRA', link: '/en/clarifications/iec-62443-vs-cra' },
+            { text: 'Sectoral Law & Existing Certificates', link: '/en/clarifications/sectoral-law-and-certificates' },
           ]
         }
       ],
@@ -86,18 +88,18 @@ export const en: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           text: 'Economic Operators',
           collapsed: true,
           items: [
-            { text: '1.4 Importer Obligations (Art. 15)', link: '/en/overview/importer-obligations' },
-            { text: '1.5 Authorised Representative (Art. 16)', link: '/en/overview/authorised-representative' },
-            { text: '1.6 Distributor Obligations (Art. 17)', link: '/en/overview/distributor-obligations' },
-            { text: '1.7 Open-Source Steward (Art. 18–19)', link: '/en/overview/open-source-steward' },
-            { text: '1.8 Substantial Modifications (Art. 20)', link: '/en/overview/substantial-modifications' },
+            { text: '1.4 Importer Obligations (Art. 19)', link: '/en/overview/importer-obligations' },
+            { text: '1.5 Authorised Representative (Art. 18)', link: '/en/overview/authorised-representative' },
+            { text: '1.6 Distributor Obligations (Art. 20)', link: '/en/overview/distributor-obligations' },
+            { text: '1.7 FOSS & Open-Source Steward (Art. 24–25)', link: '/en/overview/open-source-steward' },
+            { text: '1.8 Substantial Modifications & Spare Parts (Art. 21–22)', link: '/en/overview/substantial-modifications' },
           ]
         },
         {
           text: 'Enforcement',
           collapsed: true,
           items: [
-            { text: '1.9 Non-Conformity (Art. 22–23)', link: '/en/overview/non-conformity' },
+            { text: '1.9 Non-Conformity (Art. 54, 58)', link: '/en/overview/non-conformity' },
             { text: '1.10 Market Surveillance (Art. 52–58)', link: '/en/overview/market-surveillance' },
             { text: '1.11 Penalties (Art. 64)', link: '/en/overview/penalties' },
           ]
@@ -109,6 +111,7 @@ export const en: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
             { text: '1.12 Harmonised Standards (Art. 5–6)', link: '/en/overview/harmonised-standards' },
             { text: '1.13 General Product Safety (Art. 9)', link: '/en/overview/product-safety' },
             { text: '1.14 NIS2 Integration', link: '/en/overview/nis2-integration' },
+            { text: '1.15 Remote Data Processing (Art. 3(2))', link: '/en/overview/remote-data-processing' },
           ]
         },
       ],
@@ -353,6 +356,11 @@ export const en: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
             regulation: 'ENISA Single Reporting Platform',
             reference: 'Art. 14 CRA',
             relevance: 'Central reporting platform; operational from {operationalFrom} (under development)',
+          },
+          commissionGuidance: {
+            regulation: 'Commission Guidance (Art. 26)',
+            reference: '{reference} — application of the CRA',
+            relevance: 'Content approved {contentApproved}; formal adoption pending — non-binding, applies only from formal adoption',
           },
         },
       },

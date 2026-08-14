@@ -48,9 +48,31 @@ When BAUER GROUP exhibits at trade fairs, prototypes and pre-production products
 
 <HarmonisedStandardsStatus />
 
+### The presumption covers only the risks the standard covers
+
+::: danger PARTIAL COVERAGE IS THE NORMAL CASE
+Art. 27(1) CRA grants a presumption of conformity to products and processes that conform to harmonised standards **"or parts thereof"** — and only for **the essential requirements covered by those standards or parts thereof**.
+
+A product's scope is usually broader than the scope of any single harmonised standard. Where the additional functionalities present cybersecurity risks the standard does not address, the product **does not benefit from the presumption of conformity for those functionalities** — even where the manufacturer is entitled to use [Module A](/en/conformity/self-assessment) for the product as a whole.
+:::
+
+| Situation | Presumption of conformity |
+|-----------|---------------------------|
+| The standard addresses all risks associated with the product's core functionality, and there are no additional functionalities presenting cybersecurity risks | **Full** — the product benefits from the presumption |
+| The standard addresses the core functionality's risks; the product also has ancillary functions whose risks the standard does not cover | **Partial** — presumption for the core functionality only; the ancillary risks must be addressed and documented by other means |
+| The standard is later updated to also cover one of those ancillary functions | Presumption extends to the core functionality **and** that ancillary function — but still not to the others |
+
+> **Example:** Antivirus software whose core functionality is covered by a harmonised standard, plus a disk-cleaning function and an anti-tracking function that the standard does not cover. Module A may be used for the whole product, but the presumption of conformity applies only to the core functionality's risks. If the standard is later extended to cover disk cleaning, the presumption grows to include it — anti-tracking remains outside.
+
+::: warning THE STANDARD DOES NOT RELIEVE YOU OF THE RISK ASSESSMENT
+As the Blue Guide states, in risk-related harmonisation legislation manufacturers **always** — even when using harmonised standards published in the OJEU — remain fully responsible for assessing **all** the risks of their product in order to determine which essential requirements are relevant. Only after that assessment may they choose to apply the technical specifications given in those standards as risk-reduction measures.
+:::
+
+The same rules apply to **common specifications** adopted under Art. 27(5) and to **European cybersecurity certification schemes** under Art. 27(8), where specified by the Commission via delegated acts pursuant to Art. 27(9).
+
 ### Common Specifications (Fallback)
 
-Where harmonised standards do not exist or cover the essential requirements only incompletely, the EU Commission may adopt **common specifications** via implementing acts. These provide the same presumption of conformity.
+Where harmonised standards do not exist or cover the essential requirements only incompletely, the EU Commission may adopt **common specifications** via implementing acts. These provide the same presumption of conformity, within the same limits of coverage.
 
 ### Significance for Conformity Assessment
 
@@ -58,13 +80,19 @@ The availability of harmonised standards has a **direct impact** on the applicab
 
 | Product class | With harmonised standards | Without harmonised standards |
 |---------------|---------------------------|------------------------------|
-| **Standard** | Module A (self-assessment) | Module A (self-assessment) |
-| **Class I** | Module A (self-assessment) -- when applied in full | Module B+C (EU type examination) required |
+| **Standard / default** | Module A (self-assessment) | Module A (self-assessment) |
+| **Class I** | Module A (self-assessment) -- only where **both** conditions below are met | Module B+C (EU type examination) required |
 | **Class II** | Module B+C or Module H | Module B+C or Module H |
-| **Critical** | EUCC certification | EUCC certification |
+| **Critical** | Module B+C or Module H under Art. 32(3); EUCC only once triggered by delegated act under Art. 8(1) | Module B+C or Module H |
+| **Class I / II qualifying as FOSS** | Default-category procedures under Art. 32(5) | Default-category procedures under Art. 32(5) |
 
 ::: warning ACTION REQUIRED FOR CLASS I PRODUCTS
-For Class I products manufactured by BAUER GROUP (e.g. microcontrollers with security-relevant functions), the availability of harmonised standards is decisive: without fully applied harmonised standards, Module A is **not sufficient** -- instead, the more demanding [Module B+C](/en/conformity/module-bc) procedure is required.
+For Class I products manufactured by BAUER GROUP (e.g. microcontrollers with security-relevant functions), the availability of harmonised standards is decisive. Module A is available **only where both** of the following hold:
+
+1. **all applicable requirements** of a relevant harmonised standard are applied — not merely some; and
+2. the **standard's scope covers at least all cybersecurity risks associated with the product's [core functionality](/en/conformity/product-classification)**.
+
+Otherwise the more demanding [Module B+C](/en/conformity/module-bc) procedure is required. See [7.2 Internal Control](/en/conformity/self-assessment).
 :::
 
 ## 1.12.4 Practical Implications for BAUER GROUP

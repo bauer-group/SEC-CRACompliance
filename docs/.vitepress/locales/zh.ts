@@ -66,8 +66,10 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           text: '澄清与常见误解',
           items: [
             { text: '概述', link: '/zh/clarifications/' },
+            { text: '欧盟委员会 CRA 指南 (Art. 26)', link: '/zh/clarifications/commission-guidance' },
             { text: '证书 vs. CRA 全生命周期', link: '/zh/clarifications/certificate-vs-lifecycle' },
             { text: 'IEC 62443、ISO 与 CRA', link: '/zh/clarifications/iec-62443-vs-cra' },
+            { text: '行业法规与既有证书', link: '/zh/clarifications/sectoral-law-and-certificates' },
           ]
         }
       ],
@@ -86,18 +88,18 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           text: '经济运营者',
           collapsed: true,
           items: [
-            { text: '1.4 进口商义务 (Art. 15)', link: '/zh/overview/importer-obligations' },
-            { text: '1.5 授权代表 (Art. 16)', link: '/zh/overview/authorised-representative' },
-            { text: '1.6 分销商义务 (Art. 17)', link: '/zh/overview/distributor-obligations' },
-            { text: '1.7 开源管理者 (Art. 18–19)', link: '/zh/overview/open-source-steward' },
-            { text: '1.8 实质性修改 (Art. 20)', link: '/zh/overview/substantial-modifications' },
+            { text: '1.4 进口商义务 (Art. 19)', link: '/zh/overview/importer-obligations' },
+            { text: '1.5 授权代表 (Art. 18)', link: '/zh/overview/authorised-representative' },
+            { text: '1.6 分销商义务 (Art. 20)', link: '/zh/overview/distributor-obligations' },
+            { text: '1.7 FOSS 与开源管理者 (Art. 24–25)', link: '/zh/overview/open-source-steward' },
+            { text: '1.8 实质性修改与备件 (Art. 21–22)', link: '/zh/overview/substantial-modifications' },
           ]
         },
         {
           text: '执法',
           collapsed: true,
           items: [
-            { text: '1.9 不合规 (Art. 22–23)', link: '/zh/overview/non-conformity' },
+            { text: '1.9 不合规 (Art. 54, 58)', link: '/zh/overview/non-conformity' },
             { text: '1.10 市场监督 (Art. 52–58)', link: '/zh/overview/market-surveillance' },
             { text: '1.11 处罚 (Art. 64)', link: '/zh/overview/penalties' },
           ]
@@ -109,6 +111,7 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
             { text: '1.12 协调标准 (Art. 5–6)', link: '/zh/overview/harmonised-standards' },
             { text: '1.13 一般产品安全 (Art. 9)', link: '/zh/overview/product-safety' },
             { text: '1.14 NIS2 整合', link: '/zh/overview/nis2-integration' },
+            { text: '1.15 远程数据处理 (Art. 3(2))', link: '/zh/overview/remote-data-processing' },
           ]
         },
       ],
@@ -353,6 +356,11 @@ export const zh: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
             regulation: 'ENISA 统一报告平台',
             reference: 'CRA 第 14 条',
             relevance: '中央报告平台；{operationalFrom} 起运行（开发中）',
+          },
+          commissionGuidance: {
+            regulation: '欧盟委员会指南（第 26 条）',
+            reference: '{reference} —— CRA 的适用',
+            relevance: '内容于 {contentApproved} 获批准；正式通过尚待完成 —— 不具约束力，自正式通过之日起适用',
           },
         },
       },

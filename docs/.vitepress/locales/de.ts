@@ -66,8 +66,10 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           text: 'Klarstellungen & Abgrenzungen',
           items: [
             { text: 'Übersicht', link: '/de/clarifications/' },
+            { text: 'Leitlinien der EU-Kommission (Art. 26)', link: '/de/clarifications/commission-guidance' },
             { text: 'Zertifikat vs. CRA-Lebenszyklus', link: '/de/clarifications/certificate-vs-lifecycle' },
             { text: 'IEC 62443 & ISO vs. CRA', link: '/de/clarifications/iec-62443-vs-cra' },
+            { text: 'Sektorrecht & bestehende Zertifikate', link: '/de/clarifications/sectoral-law-and-certificates' },
           ]
         }
       ],
@@ -86,18 +88,18 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
           text: 'Wirtschaftsakteure',
           collapsed: true,
           items: [
-            { text: '1.4 Importeur-Pflichten (Art. 15)', link: '/de/overview/importer-obligations' },
-            { text: '1.5 Bevollmächtigter (Art. 16)', link: '/de/overview/authorised-representative' },
-            { text: '1.6 Händler-Pflichten (Art. 17)', link: '/de/overview/distributor-obligations' },
-            { text: '1.7 Open-Source-Steward (Art. 18–19)', link: '/de/overview/open-source-steward' },
-            { text: '1.8 Wesentliche Änderungen (Art. 20)', link: '/de/overview/substantial-modifications' },
+            { text: '1.4 Importeur-Pflichten (Art. 19)', link: '/de/overview/importer-obligations' },
+            { text: '1.5 Bevollmächtigter (Art. 18)', link: '/de/overview/authorised-representative' },
+            { text: '1.6 Händler-Pflichten (Art. 20)', link: '/de/overview/distributor-obligations' },
+            { text: '1.7 FOSS & Open-Source-Steward (Art. 24–25)', link: '/de/overview/open-source-steward' },
+            { text: '1.8 Wesentliche Änderungen & Ersatzteile (Art. 21–22)', link: '/de/overview/substantial-modifications' },
           ]
         },
         {
           text: 'Durchsetzung',
           collapsed: true,
           items: [
-            { text: '1.9 Nichtkonformität (Art. 22–23)', link: '/de/overview/non-conformity' },
+            { text: '1.9 Nichtkonformität (Art. 54, 58)', link: '/de/overview/non-conformity' },
             { text: '1.10 Marktüberwachung (Art. 52–58)', link: '/de/overview/market-surveillance' },
             { text: '1.11 Sanktionen (Art. 64)', link: '/de/overview/penalties' },
           ]
@@ -109,6 +111,7 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
             { text: '1.12 Harmonisierte Normen (Art. 5–6)', link: '/de/overview/harmonised-standards' },
             { text: '1.13 Allgemeine Produktsicherheit (Art. 9)', link: '/de/overview/product-safety' },
             { text: '1.14 NIS2-Integration', link: '/de/overview/nis2-integration' },
+            { text: '1.15 Fernverarbeitung (Art. 3 Nr. 2)', link: '/de/overview/remote-data-processing' },
           ]
         },
       ],
@@ -348,6 +351,11 @@ export const de: LocaleSpecificConfig<ThemeConfig> & { label: string; link: stri
             regulation: 'Standardisierungsauftrag {requestId}',
             reference: '{standardCount} harmonisierte Normen ({horizontalCount} horizontal, {verticalCount} vertikal)',
             relevance: 'Angenommen {accepted}; Lieferung bis {fullDelivery}',
+          },
+          commissionGuidance: {
+            regulation: 'Leitlinien der Kommission (Art. 26)',
+            reference: '{reference} — Anwendung des CRA',
+            relevance: 'Inhalt gebilligt {contentApproved}; förmliche Annahme ausstehend — unverbindlich, gilt erst ab förmlicher Annahme',
           },
           enisaSrp: {
             regulation: 'ENISA Single Reporting Platform',

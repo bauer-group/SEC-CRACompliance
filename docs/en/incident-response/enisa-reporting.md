@@ -5,21 +5,23 @@
 Pursuant to Art. 14 CRA, manufacturers are required to report certain security events to ENISA or the competent national CSIRT authority. The reporting obligation applies from **11 September 2026**.
 
 ::: info LEGAL BASIS
-**Art. 14(1) CRA:** *"The manufacturer shall notify any actively exploited vulnerability contained in the product with digital elements simultaneously to the designated CSIRT and to ENISA. The manufacturer shall submit an early warning within 24 hours of becoming aware of it."*
+**Art. 14(1) CRA:** The manufacturer shall notify any **actively exploited vulnerability** contained in the product with digital elements **simultaneously** to the CSIRT designated as coordinator and to ENISA.
 
-**Art. 14(2) CRA:** *"The manufacturer shall submit within 72 hours of becoming aware a vulnerability notification containing a general description of the vulnerability, an initial assessment of the severity and impact, as well as information on corrective measures taken."*
+**Art. 14(3) CRA:** The manufacturer shall notify any **severe incident having an impact on the security** of the product with digital elements, likewise simultaneously to the designated CSIRT and to ENISA.
 
-**Art. 14(3) CRA:** *"The manufacturer shall submit within 14 days of becoming aware a final report containing a detailed description of the vulnerability, information on corrective or mitigating measures taken, and, where applicable, indicators of compromise."*
+**Art. 14(8) CRA:** After becoming aware, the manufacturer shall inform impacted users and, where appropriate, all users.
+
+Both triggers follow the same three-stage structure: an early warning, a fuller notification, and a complete report.
 :::
 
 ::: danger CRITICAL DEADLINES
 
 | Notification | Deadline | Deadline Starts |
 |--------------|----------|-----------------|
-| Early warning | **24 hours** | Becoming aware of the actively exploited vulnerability / severe incident |
-| Vulnerability notification | **72 hours** | Becoming aware |
-| Final report (vulnerability) | **14 days** | A corrective measure becomes available |
-| Final report (severe incident) | **1 month** | The vulnerability notification (72h notification) |
+| Early warning | Without undue delay, in any event **24 hours** | Becoming aware of the actively exploited vulnerability / severe incident |
+| Notification | Without undue delay, in any event **72 hours** | Becoming aware |
+| Complete report (actively exploited vulnerability) | **14 days** | A corrective or mitigating measure becomes available |
+| Complete report (severe incident) | **1 month** | The 72-hour notification |
 
 :::
 
@@ -31,7 +33,65 @@ CRA Art. 14 reporting aligns with **NIS2 Art. 23** (incident notification). Both
 Products containing AI components that are classified as high-risk under the AI Act have **additional reporting obligations** (Art. 62 AI Act). Coordinate AI-related incident reports with CRA reporting to avoid duplicate filings.
 :::
 
-## 4.3.2 Reportable Events
+## 4.3.2 When Does the Clock Start? "Becoming Aware"
+
+Every deadline above runs from the moment the manufacturer **becomes aware**. The Commission guidance defines that moment, aligning it with recital 31 of Commission Implementing Regulation (EU) 2024/2690 and Section II(A) of the EDPB Guidelines 9/2022 on personal data breach notification under the GDPR.
+
+::: info THE DEFINITION
+Where the manufacturer detects a suspicious event — or a third party such as an individual, a customer, an entity, an authority, a media organisation or another source brings a potential incident or vulnerability to its attention — the manufacturer must **assess it immediately**.
+
+The manufacturer is regarded as having **become aware** when, after that initial assessment, it has a **reasonable degree of certainty** that:
+
+1. a vulnerability contained in its product **is being actively exploited**, or
+2. a **severe incident** has occurred and has led to the security of its product being compromised.
+:::
+
+The exact point in time depends on the circumstances. Sometimes active exploitation is clear from the outset; sometimes it takes time to establish whether the product is affected at all, and whether a malicious actor is exploiting the vulnerability.
+
+::: warning THE EMPHASIS IS ON PROMPT ASSESSMENT
+An unhurried initial assessment does not lawfully postpone the clock. The requirement is **prompt action** to carry out the initial assessment — particularly where the vulnerability may pose a significant risk — and, where the conditions are met, to take remedial action and notify.
+
+Operationally: the ≤ 2-hour initial assessment in the Phase 1 process below is the mechanism that makes "becoming aware" defensible. Record the time the signal arrived, the time the assessment concluded, and the reasoning.
+:::
+
+Notifications are then **updated progressively** as the internal investigation advances and knowledge becomes more detailed. The early warning contains limited information by design; it is not a reason to delay.
+
+## 4.3.3 Temporal Scope of the Reporting Obligation
+
+| Question | Answer |
+|----------|--------|
+| From when does Art. 14 apply? | **11 September 2026** |
+| To which products? | **All** products in scope of the CRA — **including products placed on the market before 11.12.2027** (Art. 69(3), Art. 71(2)) |
+| Does it stop when the support period ends? | **No.** Unlike the Annex I Part II vulnerability handling obligations, the reporting obligations **continue after a product is no longer supported** |
+| Do grandfathered products also owe vulnerability handling? | **No.** Where a product was placed on the market before 11.12.2027, or its support period has ended, the Annex I Part II obligations do not apply — but reporting does |
+
+::: tip NO RETROACTIVE REPORTING
+Because the obligation is triggered by **becoming aware of active exploitation**, a manufacturer is **not** required to report vulnerabilities whose active exploitation it had already become aware of **before 11 September 2026**. The CRA does not require retroactive reporting.
+
+The converse case **is** covered: where the manufacturer knew of a vulnerability before 11 September 2026 but was not then aware of any active exploitation — because none had occurred, or because it had not become aware of it — and active exploitation subsequently occurs or comes to its attention after that date, the vulnerability becomes an actively exploited one subject to the reporting obligation.
+:::
+
+## 4.3.4 Vulnerabilities in Third-Party Components
+
+A manufacturer reports only actively exploited vulnerabilities **contained in its own product**. That produces a precise, and frequently misapplied, boundary:
+
+| Situation | Reportable under Art. 14(1)? |
+|-----------|:----------------------------:|
+| A third-party component in the product contains a vulnerability that **is being actively exploited in the product** | **Yes** — the manufacturer of the product must notify it |
+| A third-party component contains a vulnerability that **cannot be exploited** in the product (e.g. the vulnerable code is not reachable) | **No** |
+| A third-party component contains a vulnerability that **has not been exploited** in the product | **No** |
+
+In the two negative cases the manufacturer is nevertheless required to:
+
+1. comply with the **vulnerability handling requirements** of Annex I Part II;
+2. **report the vulnerability upstream** to the person or entity manufacturing or maintaining the component (Art. 13(6)) → [3.5 Handling Requirements](/en/vulnerability-management/handling-requirements);
+3. and it **may** notify voluntarily under **Art. 15**.
+
+::: tip OPEN-SOURCE STEWARDS REPORT TOO
+Open-source software stewards are also required to report actively exploited vulnerabilities under Art. 24(3), to the extent they are involved in the development of the product. Because FOSS components are typically integrated downstream, a steward usually becomes aware through a third-party report — from a manufacturer that detected exploitation in its own product, or from a user or security researcher. See [1.7 Free & Open-Source Software and the Steward](/en/overview/open-source-steward).
+:::
+
+## 4.3.5 Reportable Events
 
 ### Actively Exploited Vulnerability (Art. 14(1))
 
@@ -58,7 +118,7 @@ An incident that significantly affects the security of the product or its users 
 | Availability loss | Security-relevant functions are impaired | Auth bypass, update mechanism disrupted |
 | Compromised updates | Manipulated updates are delivered | Supply chain attack, signing key compromise |
 
-## 4.3.3 Roles and Responsibilities
+## 4.3.6 Roles and Responsibilities
 
 | Role | Responsibility in the Reporting Process |
 |------|-----------------------------------------|
@@ -68,7 +128,7 @@ An incident that significantly affects the security of the product or its users 
 | **Management** | Approval for SEV-1/SEV-2, resource allocation, escalation |
 | **Developer** | Root cause analysis, patch development, security review |
 
-## 4.3.4 Reporting Platform
+## 4.3.7 Reporting Platform
 
 <EnisaSrpStatus />
 
@@ -112,7 +172,7 @@ If the ENISA SRP is temporarily unavailable, the notification shall be submitted
 When using the national CSIRT as a fallback, the notification must be re-submitted without delay once the ENISA SRP is available again.
 :::
 
-## 4.3.5 Reporting Process
+## 4.3.8 Reporting Process
 
 ### Phase 1: Early Warning (≤ 24 hours)
 
@@ -223,7 +283,7 @@ Remediation completed or well advanced
 
 **Evidence:** Notification confirmation + complete copy in incident ticket + archiving
 
-## 4.3.6 User Notification (Art. 14(8))
+## 4.3.9 User Notification (Art. 14(8))
 
 In parallel to the ENISA notification, affected users must be informed **without delay** about the vulnerability and available corrective measures.
 
@@ -241,7 +301,25 @@ In parallel to the ENISA notification, affected users must be informed **without
 The user notification must not contain details that could facilitate exploitation of the vulnerability as long as no patch is available. A delayed disclosure may be agreed in coordination with ENISA (Art. 14(7)).
 :::
 
-## 4.3.7 Documentation and Record-Keeping
+### Informing users is risk-based, not indiscriminate
+
+::: info PROPORTIONATE DISCLOSURE
+Art. 14(8) does **not** imply that information about an actively exploited vulnerability or a severe incident must be made public or disclosed indiscriminately. In light of the nature of the product, the affected users and the potential impact, manufacturers **may limit the disclosure of detailed information to the relevant users or customers concerned**.
+
+This applies in particular to products used in **sensitive or essential environments**, where public disclosure of technical details could itself increase cybersecurity risks or facilitate further exploitation.
+:::
+
+| Phase | Appropriate scope of disclosure |
+|-------|--------------------------------|
+| Before the vulnerability is addressed or mitigated | Limited, targeted disclosure to impacted users and customers; no technical detail that would facilitate exploitation |
+| Once adequately addressed or mitigated | **Broader disclosure may be appropriate** — e.g. to raise general awareness or to let users verify that their products are no longer affected. Level of detail and timing remain proportionate to residual exploitation risk, the nature of the product and the interests of the users concerned |
+| Once a security update has been made available | **Public disclosure is mandatory** under point (4) of Annex I Part II — description, affected products, impact, severity and remediation → [3.5 Handling Requirements](/en/vulnerability-management/handling-requirements) |
+
+::: danger IF YOU DO NOT INFORM USERS IN TIME, THE CSIRT MAY
+Where a manufacturer fails to inform users in a timely manner, the CSIRTs that received the notification **may provide that information to users themselves**, where this is considered proportionate and necessary to prevent or mitigate the impact of the vulnerability or incident. Control over the message is lost at that point.
+:::
+
+## 4.3.10 Documentation and Record-Keeping
 
 Each ENISA notification is fully documented. This documentation serves as **evidence of compliance** vis-a-vis market surveillance authorities (Art. 52 CRA).
 
@@ -267,7 +345,7 @@ All notifications use a uniform reference numbering scheme:
 | Final report | `FR-YYYY-NNN` | FR-2026-001 |
 | Internal incident | `INC-YYYY-NNN` | INC-2026-001 |
 
-## 4.3.8 Preparatory Measures (before 11.09.2026)
+## 4.3.11 Preparatory Measures (before 11.09.2026)
 
 The following measures must be completed before the reporting obligation enters into force:
 
@@ -282,7 +360,7 @@ The following measures must be completed before the reporting obligation enters 
 | 7 | Securely store ENISA access credentials | Security Lead | Q3 2026 | Pending |
 | 8 | Test reporting process in tabletop exercise | Security Lead | Q3 2026 | Pending |
 
-## 4.3.9 Decision Tree: Reporting Obligation
+## 4.3.12 Decision Tree: Reporting Obligation
 
 ```
 Security event detected
@@ -306,3 +384,5 @@ Security event detected
         → Patch management per SLA
         → No ENISA reporting obligation
 ```
+
+> Source and legal status of the interpretations on this page: [Commission Guidance on the CRA](/en/clarifications/commission-guidance).

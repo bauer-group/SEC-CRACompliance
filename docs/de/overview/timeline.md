@@ -12,10 +12,18 @@ Der Cyber Resilience Act (Verordnung (EU) 2024/2847) wurde am 20. November 2024 
 | 11.06.2026 | Verfahren für notifizierende Behörden & Konformitätsbewertungsstellen anwendbar (Kapitel IV) | Vorbereitung |
 | **11.09.2026** | **Meldepflichten greifen** – Art. 14 CRA (aktiv ausgenutzte Schwachstellen, schwere Vorfälle); ENISA SRP operativ | **HANDLUNGSBEDARF** |
 | 11.12.2026 | Ausreichend notifizierte Stellen benannt (Vermeidung von Kapazitätsengpässen) | Beobachtung |
+| 20.01.2027 | Maschinenverordnung (EU) 2023/1230 vollständig anwendbar — relevant für [bestehende Zertifikate](/de/clarifications/sectoral-law-and-certificates) | Beobachtung |
 | **11.12.2027** | **Vollständige Anwendbarkeit** – alle Anforderungen inkl. Konformitätsbewertung, CE-Kennzeichnung, technische Dokumentation | **HANDLUNGSBEDARF** |
+| **11.06.2028** | **Harte Grenze für Art. 69 Abs. 1**: EU-Baumusterprüfbescheinigungen und Zulassungsentscheidungen aus anderen Harmonisierungsrechtsvorschriften sind nicht mehr als CRA-Nachweis verwendbar | **HANDLUNGSBEDARF** |
 
 ::: danger MELDEPFLICHT AB 11.09.2026
 Ab dem 11. September 2026 müssen aktiv ausgenutzte Schwachstellen innerhalb von **24 Stunden** an ENISA / die zuständige nationale Behörde gemeldet werden. Der Incident-Response-Prozess muss zu diesem Zeitpunkt vollständig operativ sein.
+
+Die Pflicht erfasst **alle Produkte im Anwendungsbereich des CRA — einschließlich der vor dem 11.12.2027 in Verkehr gebrachten** — und **besteht nach Ende des Support-Zeitraums fort**. Eine **rückwirkende Meldung** aktiver Ausnutzung, von der der Hersteller bereits vor dem 11.09.2026 Kenntnis hatte, ist hingegen **nicht** erforderlich. Siehe [4.3 ENISA-Meldeprozess](/de/incident-response/enisa-reporting).
+:::
+
+::: info LEITLINIEN DER KOMMISSION (ART. 26) — ANNAHME STEHT AUS
+Am **27. Juli 2026** hat die Kommission den **Inhalt** ihrer Leitlinien zur Anwendung des CRA gebilligt. Die förmliche Annahme folgt, sobald alle EU-Sprachfassungen vorliegen; erst ab diesem Zeitpunkt gelten die Leitlinien. Ihre Auslegungen wurden in dieses Handbuch eingearbeitet — Quelle, Rechtsstatus und vollständige Zuordnung siehe [Leitlinien der EU-Kommission zum CRA](/de/clarifications/commission-guidance).
 :::
 
 ### Detaillierter Zeitplan

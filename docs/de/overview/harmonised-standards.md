@@ -48,9 +48,31 @@ Bei Messeauftritten von BAUER GROUP müssen Prototypen und Vorserienprodukte mit
 
 <HarmonisedStandardsStatus />
 
+### Die Vermutung reicht nur so weit wie die Abdeckung der Norm
+
+::: danger TEILABDECKUNG IST DER NORMALFALL
+Art. 27 Abs. 1 CRA gewährt Produkten und Prozessen, die harmonisierten Normen **„oder Teilen davon"** entsprechen, eine Konformitätsvermutung — und zwar nur für die **von diesen Normen oder Teilen davon abgedeckten grundlegenden Anforderungen**.
+
+Der Umfang eines Produkts ist in der Regel breiter als der Anwendungsbereich einer einzelnen harmonisierten Norm. Weisen die zusätzlichen Funktionalitäten Cybersicherheitsrisiken auf, die die Norm nicht adressiert, **gilt für diese Funktionalitäten keine Konformitätsvermutung** — auch dann nicht, wenn der Hersteller für das Produkt als Ganzes [Modul A](/de/conformity/self-assessment) nutzen darf.
+:::
+
+| Sachverhalt | Konformitätsvermutung |
+|-------------|-----------------------|
+| Die Norm adressiert alle Risiken der Kernfunktionalität, und es gibt keine zusätzlichen Funktionalitäten mit Cybersicherheitsrisiken | **Vollständig** — das Produkt profitiert von der Vermutung |
+| Die Norm adressiert die Risiken der Kernfunktionalität; das Produkt hat zusätzlich Nebenfunktionen, deren Risiken die Norm nicht abdeckt | **Teilweise** — Vermutung nur für die Kernfunktionalität; die Nebenrisiken sind anderweitig zu behandeln und zu dokumentieren |
+| Die Norm wird später erweitert und deckt eine dieser Nebenfunktionen mit ab | Die Vermutung erstreckt sich auf Kernfunktionalität **und** diese Nebenfunktion — nicht jedoch auf die übrigen |
+
+> **Beispiel:** Eine Antivirensoftware, deren Kernfunktionalität von einer harmonisierten Norm abgedeckt ist, verfügt zusätzlich über eine Datenträgerbereinigung und eine Anti-Tracking-Funktion, die die Norm nicht abdeckt. Modul A darf für das gesamte Produkt genutzt werden, die Konformitätsvermutung gilt aber nur für die Risiken der Kernfunktionalität. Wird die Norm später um die Datenträgerbereinigung erweitert, wächst die Vermutung entsprechend — Anti-Tracking bleibt außen vor.
+
+::: warning DIE NORM ENTBINDET NICHT VON DER RISIKOBEWERTUNG
+Wie der Blue Guide festhält, bleiben Hersteller in risikobezogenen Harmonisierungsrechtsvorschriften **stets** — auch bei Anwendung im Amtsblatt veröffentlichter harmonisierter Normen — vollumfänglich dafür verantwortlich, **alle** Risiken ihres Produkts zu bewerten, um zu bestimmen, welche grundlegenden Anforderungen einschlägig sind. Erst danach können sie die technischen Spezifikationen dieser Normen als Risikominderungsmaßnahmen anwenden.
+:::
+
+Dieselben Regeln gelten für **gemeinsame Spezifikationen** nach Art. 27 Abs. 5 sowie für **europäische Schemata für die Cybersicherheitszertifizierung** nach Art. 27 Abs. 8, soweit die Kommission dies durch delegierte Rechtsakte nach Art. 27 Abs. 9 festlegt.
+
 ### Gemeinsame Spezifikationen (Fallback)
 
-Solange keine harmonisierten Normen vorliegen oder diese die wesentlichen Anforderungen nur unvollständig abdecken, kann die EU-Kommission **gemeinsame Spezifikationen** (Common Specifications) im Wege von Durchführungsrechtsakten erlassen. Diese entfalten die gleiche Konformitätsvermutung.
+Solange keine harmonisierten Normen vorliegen oder diese die wesentlichen Anforderungen nur unvollständig abdecken, kann die EU-Kommission **gemeinsame Spezifikationen** (Common Specifications) im Wege von Durchführungsrechtsakten erlassen. Diese entfalten die gleiche Konformitätsvermutung, innerhalb derselben Abdeckungsgrenzen.
 
 ### Bedeutung für die Konformitätsbewertung
 
@@ -59,12 +81,18 @@ Die Verfügbarkeit harmonisierter Normen hat **direkte Auswirkungen** auf das an
 | Produktklasse | Mit harmonisierten Normen | Ohne harmonisierte Normen |
 |---------------|---------------------------|---------------------------|
 | **Standard** | Modul A (Selbstbewertung) | Modul A (Selbstbewertung) |
-| **Klasse I** | Modul A (Selbstbewertung) -- bei vollständiger Anwendung | Modul B+C (EU-Baumusterprüfung) erforderlich |
+| **Klasse I** | Modul A (Selbstbewertung) -- nur wenn **beide** Bedingungen unten erfüllt sind | Modul B+C (EU-Baumusterprüfung) erforderlich |
 | **Klasse II** | Modul B+C oder Modul H | Modul B+C oder Modul H |
-| **Kritisch** | EUCC-Zertifizierung | EUCC-Zertifizierung |
+| **Kritisch** | Modul B+C oder Modul H nach Art. 32 Abs. 3; EUCC erst nach delegiertem Rechtsakt gemäß Art. 8 Abs. 1 | Modul B+C oder Modul H |
+| **Klasse I / II als FOSS** | Verfahren der Standardkategorie nach Art. 32 Abs. 5 | Verfahren der Standardkategorie nach Art. 32 Abs. 5 |
 
 ::: warning HANDLUNGSBEDARF FÜR KLASSE-I-PRODUKTE
-Für Produkte der Klasse I, die BAUER GROUP herstellt (z.B. Mikrocontroller mit sicherheitsrelevanten Funktionen), ist die Verfügbarkeit harmonisierter Normen entscheidend: Ohne vollständig angewendete harmonisierte Normen ist Modul A **nicht ausreichend** -- stattdessen ist ein aufwändigeres Verfahren nach [Modul B+C](/de/conformity/module-bc) erforderlich.
+Für Produkte der Klasse I, die BAUER GROUP herstellt (z.B. Mikrocontroller mit sicherheitsrelevanten Funktionen), ist die Verfügbarkeit harmonisierter Normen entscheidend. Modul A steht **nur** zur Verfügung, wenn **beide** Bedingungen erfüllt sind:
+
+1. **alle anwendbaren Anforderungen** einer einschlägigen harmonisierten Norm sind angewendet — nicht nur einige; und
+2. der **Anwendungsbereich der Norm deckt mindestens alle Cybersicherheitsrisiken der [Kernfunktionalität](/de/conformity/product-classification) des Produkts** ab.
+
+Andernfalls ist das aufwändigere Verfahren nach [Modul B+C](/de/conformity/module-bc) erforderlich. Siehe [7.2 Interne Kontrolle](/de/conformity/self-assessment).
 :::
 
 ## 1.12.4 Praktische Auswirkungen für BAUER GROUP
@@ -97,3 +125,5 @@ Bis zur Verfügbarkeit harmonisierter Normen gilt:
 - Nach Veröffentlichung harmonisierter Normen: Klasse-I-Produkte können auf Modul A ([Selbstbewertung](/de/conformity/self-assessment)) umgestellt werden, sofern die Normen vollständig angewendet werden
 
 > Siehe auch: [Produktklassifizierung](/de/conformity/product-classification) | [Selbstbewertung (Modul A)](/de/conformity/self-assessment)
+>
+> Quelle und Rechtsstatus der Auslegungen in Abschnitt 1.12.3: [Leitlinien der EU-Kommission zum CRA](/de/clarifications/commission-guidance).

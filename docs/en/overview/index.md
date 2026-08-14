@@ -6,7 +6,7 @@
 |-------|-------|
 | **Document Title** | CRA Compliance Handbook |
 | **Document Identifier** | BG-CRA-HB-001 |
-| **Version** | 1.0 |
+| **Version** | 1.1 |
 | **Classification** | Public |
 | **Scope** | All products with digital elements of BAUER GROUP |
 | **Publisher** | BAUER GROUP – Information Security |
@@ -21,6 +21,7 @@
 | Version | Date | Author | Change |
 |---------|------|--------|--------|
 | 1.0 | 2026-02-08 | BAUER GROUP | Initial version |
+| 1.1 | 2026-08-14 | BAUER GROUP | Commission guidance on the application of the CRA (C(2026) 5252 final, 27.07.2026) worked in — see [Commission Guidance on the CRA](/en/clarifications/commission-guidance) |
 
 ### Binding Nature
 
@@ -75,7 +76,7 @@ For BAUER GROUP, this concerns:
 - **Firmware** – Embedded systems (ESP32, STM32, Zephyr RTOS)
 - **Libraries** – Publicly published NPM and NuGet packages
 - **Hardware with Software** – IoT devices, industrial controllers
-- **Remote Data Processing** – Cloud components that are an integral part of a product
+- **Remote Data Processing** – Cloud components that are an integral part of a product → [1.15 Remote Data Processing](./remote-data-processing)
 
 Detailed product categories and exemptions: see [1.1 Scope & Products](./scope).
 
@@ -89,14 +90,15 @@ Detailed product categories and exemptions: see [1.1 Scope & Products](./scope).
 | **1.4** | [Importer Obligations (Art. 19)](./importer-obligations) |
 | **1.5** | [Authorised Representative (Art. 18)](./authorised-representative) |
 | **1.6** | [Distributor Obligations (Art. 20)](./distributor-obligations) |
-| **1.7** | [Open-Source Steward (Art. 24–25)](./open-source-steward) |
-| **1.8** | [Substantial Modifications (Art. 22)](./substantial-modifications) |
+| **1.7** | [Free & Open-Source Software and the Steward (Art. 3(14), 3(48), 24–25)](./open-source-steward) |
+| **1.8** | [Substantial Modifications & Spare Parts (Art. 3(30), 21–22)](./substantial-modifications) |
 | **1.9** | [Non-Conformity (Art. 54, 58)](./non-conformity) |
 | **1.10** | [Market Surveillance (Art. 52–58)](./market-surveillance) |
 | **1.11** | [Penalties (Art. 64)](./penalties) |
 | **1.12** | [Harmonised Standards (Art. 5–6)](./harmonised-standards) |
 | **1.13** | [General Product Safety (Art. 9)](./product-safety) |
 | **1.14** | [NIS2 Integration](./nis2-integration) |
+| **1.15** | [Remote Data Processing (Art. 3(2))](./remote-data-processing) |
 
 ## Structure of this Handbook
 

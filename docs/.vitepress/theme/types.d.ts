@@ -66,6 +66,7 @@ export interface RegulatoryStatusLabels {
       delegatedActEucc: { regulation: string; reference: string; relevance: string }
       m606: { regulation: string; reference: string; relevance: string }
       enisaSrp: { regulation: string; reference: string; relevance: string }
+      commissionGuidance: { regulation: string; reference: string; relevance: string }
     }
   }
 }
