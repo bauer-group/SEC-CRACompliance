@@ -123,7 +123,7 @@ jobs:
       report-path: ${{ steps.scan.outputs.report-path }}
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       # ---- Scan ----
 
