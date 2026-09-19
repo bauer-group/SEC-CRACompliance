@@ -1,3 +1,15 @@
+# Changelog
+
+All notable changes to this project are documented here. This file is maintained
+automatically by [semantic-release](https://github.com/semantic-release/semantic-release)
+on every release to `main`.
+
+## [0.10.4](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.10.3...v0.10.4) (2026-09-19)
+
+### 🐛 Bug Fixes
+
+* **docs:** replaced Snyk with OSV-Scanner in scanner references ([3ee2a2e](https://github.com/bauer-group/SEC-CRACompliance/commit/3ee2a2e6fa47ecd1cd0dea6de7a3a7437aae8fc0))
+
 ## [0.10.3](https://github.com/bauer-group/SEC-CRACompliance/compare/v0.10.2...v0.10.3) (2026-08-14)
 
 ### 🐛 Bug Fixes
