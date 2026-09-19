@@ -63,13 +63,6 @@ Diese Zuordnung zeigt, welches Tool welche CRA-Anforderungen abdeckt.
 | Annex I Teil I (2)(a) | Erkennung bekannter Schwachstellen (aggregiert NVD, GitHub, PyPI, npm, Go u.a.) |
 | Annex I, Teil II, Nr. 2 | CVE-Matching gegen Lockfiles und SBOMs |
 
-### Snyk
-
-| CRA-Anforderung | Abdeckung |
-|-----------------|-----------|
-| Annex I Teil II (1) | Application Security Scanning |
-| Annex I, Teil II, Nr. 3 | Code-Level Vulnerability Detection |
-
 ### Gitleaks + GitGuardian
 
 | CRA-Anforderung | Abdeckung |

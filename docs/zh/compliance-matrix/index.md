@@ -73,7 +73,7 @@
 
 | CRA 参考 | 要求 | 文档 | 工具 | 状态 |
 |-------------|-------------|---------------|---------|:------:|
-| Art. 13(1) | 在设计、开发、生产中达到适当的网络安全水平 | [安全架构](/zh/technical-documentation/security-architecture) | 安全扫描 (Trivy, Grype, Snyk), 代码审查 | ✅ |
+| Art. 13(1) | 在设计、开发、生产中达到适当的网络安全水平 | [安全架构](/zh/technical-documentation/security-architecture) | 安全扫描 (Trivy, Grype, OSV-Scanner), 代码审查 | ✅ |
 | Art. 13(3) | 进行网络安全风险评估 | [风险评估](/zh/vulnerability-management/risk-assessment) | --（手动流程 + 模板） | ⚠️ |
 | Art. 13(4) | 在文档中包含风险评估 | [技术文档](/zh/technical-documentation/) | Git 版本控制 | ⚠️ |
 | Art. 13(5) | 对第三方组件进行尽职调查 | [供应链](/zh/supply-chain/) | 许可证合规、依赖项扫描 | ✅ |

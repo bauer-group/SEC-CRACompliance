@@ -96,7 +96,7 @@ Sobald harmonisierte Normen für den CRA veröffentlicht werden, ermöglichen di
 |---------|-------------|---------|
 | Statische Analyse (SAST) | Quellcode-Analyse auf Schwachstellen | SonarQube, Semgrep |
 | Dynamische Analyse (DAST) | Laufzeitprüfung auf Schwachstellen | OWASP ZAP, Burp |
-| Dependency Scanning | Prüfung der Abhängigkeiten | Trivy, Grype, Snyk |
+| Dependency Scanning | Prüfung der Abhängigkeiten | Trivy, Grype, OSV-Scanner |
 | Container Scanning | Prüfung der Container-Images | Trivy |
 | Secret Scanning | Suche nach Geheimnissen im Code | Gitleaks, GitGuardian |
 | Penetrationstests | Manuelle Sicherheitsprüfung | Extern (bei Klasse I+) |

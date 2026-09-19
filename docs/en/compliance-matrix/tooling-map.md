@@ -63,13 +63,6 @@ This mapping shows which tool covers which CRA requirements.
 | Annex I Part I (2)(a) | Detection of known vulnerabilities (aggregates NVD, GitHub, PyPI, npm, Go etc.) |
 | Annex I, Part II, No. 2 | CVE matching against lockfiles and SBOMs |
 
-### Snyk
-
-| CRA Requirement | Coverage |
-|-----------------|-----------|
-| Annex I Part II (1) | Application security scanning |
-| Annex I, Part II, No. 3 | Code-level vulnerability detection |
-
 ### Gitleaks + GitGuardian
 
 | CRA Requirement | Coverage |

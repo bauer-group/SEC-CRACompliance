@@ -16,7 +16,7 @@
 
 | 措施 | 工具 | 工作流 | 状态 |
 |------|------|--------|------|
-| 依赖项漏洞扫描 | Trivy, Grype, Snyk | `modules-security-scan.yml` | ✅ |
+| 依赖项漏洞扫描 | Trivy, Grype, OSV-Scanner | `modules-security-scan.yml`, `cra-scan.yml` | ✅ |
 | 自动化依赖更新 | Dependabot | `docker-maintenance-dependabot.yml` | ✅ |
 | 许可证合规 (License Compliance) | FOSSA / 自定义 | `modules-license-compliance.yml` | ✅ |
 | 密钥扫描 (Secret Scanning) | Gitleaks, GitGuardian | `modules-security-scan.yml` | ✅ |

@@ -63,13 +63,6 @@
 | Annex I, 第I部分, 编号 2(a) | 检测已知漏洞（聚合 NVD, GitHub, PyPI, npm, Go 等） |
 | Annex I, 第II部分, 编号 2 | 针对 lockfiles 和 SBOM 的 CVE 匹配 |
 
-### Snyk
-
-| CRA 要求 | 覆盖范围 |
-|-----------------|-----------|
-| Annex I, 第II部分, 编号 1 | 应用安全扫描 |
-| Annex I, 第II部分, 编号 3 | 代码级漏洞检测 |
-
 ### Gitleaks + GitGuardian
 
 | CRA 要求 | 覆盖范围 |

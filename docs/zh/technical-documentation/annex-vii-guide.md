@@ -96,7 +96,7 @@ CRA 的 Annex VII 定义了每个制造商必须创建并保留10年的技术文
 |----------|------|------|
 | 静态分析 (SAST) | 源代码漏洞分析 | SonarQube、Semgrep |
 | 动态分析 (DAST) | 运行时漏洞测试 | OWASP ZAP、Burp |
-| 依赖项扫描 | 依赖项验证 | Trivy、Grype、Snyk |
+| 依赖项扫描 | 依赖项验证 | Trivy、Grype、OSV-Scanner |
 | 容器扫描 | 容器镜像验证 | Trivy |
 | 密钥扫描 | 在代码中搜索密钥 | Gitleaks、GitGuardian |
 | 渗透测试 (Penetration Testing) | 手动安全测试 | 外部（用于 Class I+） |

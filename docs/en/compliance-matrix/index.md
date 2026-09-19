@@ -73,7 +73,7 @@ Automated tooling (Trivy, Grype, CycloneDX, Cosign, GitHub Actions) reduces actu
 
 | CRA Reference | Requirement | Documentation | Tooling | Status |
 |-------------|-------------|---------------|---------|:------:|
-| Art. 13(1) | Appropriate level of cybersecurity in design, development, production | [Security Architecture](/en/technical-documentation/security-architecture) | Security Scans (Trivy, Grype, Snyk), Code Review | ✅ |
+| Art. 13(1) | Appropriate level of cybersecurity in design, development, production | [Security Architecture](/en/technical-documentation/security-architecture) | Security Scans (Trivy, Grype, OSV-Scanner), Code Review | ✅ |
 | Art. 13(3) | Conduct cybersecurity risk assessment | [Risk Assessment](/en/vulnerability-management/risk-assessment) | – (manual process + template) | ⚠️ |
 | Art. 13(4) | Include risk assessment in documentation | [Technical Documentation](/en/technical-documentation/) | Git-versioned | ⚠️ |
 | Art. 13(5) | Due diligence for third-party components | [Supply Chain](/en/supply-chain/) | License Compliance, Dependency Scan | ✅ |

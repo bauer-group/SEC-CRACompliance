@@ -30,7 +30,7 @@ Annex I Part I of the CRA defines 13 essential cybersecurity requirements that e
 **Implementation at BAUER GROUP:**
 
 - Automated [CVE Monitoring](/en/vulnerability-management/cve-monitoring) (daily)
-- Multi-Engine Security Scanning (Trivy, Grype, Snyk)
+- Multi-Engine Security Scanning (Trivy, Grype, OSV-Scanner)
 - Dependabot for automatic dependency updates
 - Pre-Release Security Gate: No release with known Critical/High CVEs
 

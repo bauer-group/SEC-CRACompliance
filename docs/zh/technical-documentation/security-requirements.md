@@ -30,7 +30,7 @@ CRA Annex I 第I部分定义了每个含数字元素产品必须满足的13项�
 **BAUER GROUP 的实施方式：**
 
 - 自动化 [CVE 监控](/zh/vulnerability-management/cve-monitoring)（每日）
-- 多引擎安全扫描（Trivy、Grype、Snyk）
+- 多引擎安全扫描（Trivy、Grype、OSV-Scanner）
 - Dependabot 自动依赖项更新
 - 发布前安全门禁：存在已知 Critical/High CVE 时不发布
 

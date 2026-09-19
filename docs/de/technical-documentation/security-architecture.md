@@ -98,7 +98,7 @@ Die folgenden Anforderungen aus Annex I, Teil I, CRA werden in der Sicherheitsar
 |----------|----------------|----------|
 | Branch Protection | Main-Branch geschützt, PRs erforderlich | GitHub Settings |
 | Code Review | Mindestens 1 Reviewer | GitHub Settings |
-| Security Scanning | Trivy, Grype, Snyk bei jedem Build | `modules-security-scan.yml` |
+| Security Scanning | Trivy bei jedem Build, geplanter Multi-Engine-Scan (Trivy + Grype + OSV-Scanner) | `modules-security-scan.yml`, `cra-scan.yml` |
 | Secret Scanning | Gitleaks, GitGuardian | `modules-security-scan.yml` |
 | License Compliance | Automatische Prüfung | `modules-license-compliance.yml` |
 | Dockerfile Linting | Hadolint | `modules-validate-dockerfile.yml` |

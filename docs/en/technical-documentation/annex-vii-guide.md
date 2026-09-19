@@ -96,7 +96,7 @@ Once harmonised standards for the CRA are published, these will enable the presu
 |-----------|-------------|---------|
 | Static Analysis (SAST) | Source code analysis for vulnerabilities | SonarQube, Semgrep |
 | Dynamic Analysis (DAST) | Runtime testing for vulnerabilities | OWASP ZAP, Burp |
-| Dependency Scanning | Verification of dependencies | Trivy, Grype, Snyk |
+| Dependency Scanning | Verification of dependencies | Trivy, Grype, OSV-Scanner |
 | Container Scanning | Verification of container images | Trivy |
 | Secret Scanning | Search for secrets in code | Gitleaks, GitGuardian |
 | Penetration Testing | Manual security testing | External (for Class I+) |

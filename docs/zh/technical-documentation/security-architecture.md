@@ -98,7 +98,7 @@
 |------|----------|--------|
 | 分支保护 | 主分支受保护，需提交 PR | GitHub 设置 |
 | 代码审查 | 至少1名审查者 | GitHub 设置 |
-| 安全扫描 | 每次构建均运行 Trivy、Grype、Snyk | `modules-security-scan.yml` |
+| 安全扫描 | 每次构建均运行 Trivy，定时多引擎扫描（Trivy + Grype + OSV-Scanner） | `modules-security-scan.yml`、`cra-scan.yml` |
 | 密钥扫描 | Gitleaks、GitGuardian | `modules-security-scan.yml` |
 | 许可证合规 | 自动检查 | `modules-license-compliance.yml` |
 | Dockerfile 检查 | Hadolint | `modules-validate-dockerfile.yml` |

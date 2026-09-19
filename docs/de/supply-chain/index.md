@@ -16,7 +16,7 @@ Die Absicherung der Software-Lieferkette ist eine zentrale CRA-Anforderung. Hers
 
 | Maßnahme | Tool | Workflow | Status |
 |----------|------|----------|--------|
-| Dependency Vulnerability Scanning | Trivy, Grype, Snyk | `modules-security-scan.yml` | ✅ |
+| Dependency Vulnerability Scanning | Trivy, Grype, OSV-Scanner | `modules-security-scan.yml`, `cra-scan.yml` | ✅ |
 | Automated Dependency Updates | Dependabot | `docker-maintenance-dependabot.yml` | ✅ |
 | License Compliance | FOSSA / Custom | `modules-license-compliance.yml` | ✅ |
 | Secret Scanning | Gitleaks, GitGuardian | `modules-security-scan.yml` | ✅ |
