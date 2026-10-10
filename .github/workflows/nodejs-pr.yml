@@ -1,0 +1,49 @@
+# =============================================================================
+# 🔍 PR Validation
+# =============================================================================
+# Runs markdownlint, the VitePress production build and a dependency audit
+# on every pull request to main - including Dependabot PRs - so dependency
+# updates are verified before they are merged. Inputs mirror the validate
+# job in release.yml, which gates releases on push to main.
+#
+# Deploy (deploy-pages.yml) and release (release.yml) still run on push to
+# main only; this workflow neither deploys nor publishes anything.
+# =============================================================================
+
+name: 🔍 PR Validation
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+# pull-requests: write is required by the reusable workflow's code-quality
+# job declaration (validated at run creation, even with SonarQube disabled).
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: pr-validation-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: 🔍 Validate VitePress Build
+    uses: bauer-group/automation-templates/.github/workflows/nodejs-build.yml@main
+    with:
+      node-version-file: '.nvmrc'
+      package-manager: 'npm'
+      frozen-lockfile: true
+      run-lint: true
+      lint-command: 'npm run lint'
+      build-command: 'npm run docs:build'
+      run-tests: false
+      run-audit: true
+      audit-level: 'high'
+      # Same scope as release.yml: the site ships static output only, every
+      # npm dependency is dev/build tooling.
+      audit-production-only: true
+      upload-artifacts: false
+      timeout-minutes: 15
+    secrets: inherit
