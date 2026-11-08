@@ -2,7 +2,7 @@
 # Dependabot – Automated Dependency Updates
 # =============================================================================
 # Keeps GitHub Actions and npm dependencies up to date.
-# Schedule: weekly on Sunday at 04:00 UTC.
+# Schedule: weekly on Sunday at 13:30 UTC.
 #
 # CRA Reference: Art. 10 Abs. 6 (timely security updates)
 # =============================================================================
@@ -17,7 +17,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "sunday"
-      time: "04:00"
+      time: "13:30"
       timezone: "Etc/UTC"
     commit-message:
       prefix: "chore(ci)"
@@ -37,7 +37,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "sunday"
-      time: "04:00"
+      time: "13:30"
       timezone: "Etc/UTC"
     commit-message:
       prefix: "chore(deps)"
