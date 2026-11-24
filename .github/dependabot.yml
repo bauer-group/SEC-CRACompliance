@@ -2,7 +2,8 @@
 # Dependabot – Automated Dependency Updates
 # =============================================================================
 # Keeps GitHub Actions and npm dependencies up to date.
-# Schedule: weekly on Sunday at 13:30 UTC.
+# Schedule: weekly on Sunday at 18:20 UTC - the auto-merge step of this
+# repository (automation-templates docs/workflows/docker-maintenance.md).
 #
 # CRA Reference: Art. 10 Abs. 6 (timely security updates)
 # =============================================================================
@@ -17,7 +18,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "sunday"
-      time: "13:30"
+      time: "18:20"
       timezone: "Etc/UTC"
     commit-message:
       prefix: "chore(ci)"
@@ -37,7 +38,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "sunday"
-      time: "13:30"
+      time: "18:20"
       timezone: "Etc/UTC"
     commit-message:
       prefix: "chore(deps)"
